@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 129c04fc315743b4399c31c16db35388
+  productGUID: efe9bd533bf19cc43835bcbc0b976c58
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: MagusMagus
+  productName: MagusMagus2AhoraEsPersonal
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -847,14 +847,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: MagusMagus
+  metroPackageName: MagusMagus2AhoraEsPersonal
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: MagusMagus
+  metroApplicationDescription: MagusMagus2AhoraEsPersonal
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -925,10 +925,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7b2373b9-1ca5-4c3a-a045-0dae807fe41b
+  cloudProjectId: 03a89f2f-d617-44ac-a040-c62088086037
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: MagusMagus
+  projectName: MagusMagus2AhoraEsPersonal
   organizationId: sergimarmin
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
