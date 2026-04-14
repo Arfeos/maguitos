@@ -11,9 +11,9 @@ public class SpellLanzaDeLuz : SpellBase
     {
         
     }
-    public override void LanzarHechizo()
+    public override void LanzarHechizo(Transform spellSpawn, GameObject spell, LayerMask layersToHit)
     {
-        base.LanzarHechizo();
+        base.LanzarHechizo(spellSpawn,spell,layersToHit);
         ProducesLine = true;
         Debug.Log("Lanza de Luz: " + ProducesLine);
     }
