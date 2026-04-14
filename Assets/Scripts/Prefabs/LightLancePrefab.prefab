@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1d08dd6de79224c857ad66b9f9a64d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellLanzaDeLuz
+  AmmoSpace: 0
+  lineRenderer: {fileID: 1004042346209241242}
+  ShootDelay: 0
 --- !u!120 &1004042346209241242
 LineRenderer:
   serializedVersion: 3
@@ -95,8 +98,8 @@ LineRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0.6155232, y: 0.803884, z: 1.4381906}
+  - {x: 10, y: 10, z: 10}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

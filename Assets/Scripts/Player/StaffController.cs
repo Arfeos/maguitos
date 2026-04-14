@@ -30,6 +30,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         Ray ray = new Ray(spellSpawn.position, Vector3.forward);
         SpellBase ActualSpell = spell.GetComponent<SpellBase>();
+        ActualSpell.LanzarHechizo();
         RaycastHit hit;
         
         if(Physics.Raycast(spellSpawn.position, this.transform.TransformDirection(Vector3.forward), out hit, ActualSpell.LifeTime, layersToHit))
@@ -38,6 +39,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
             Debug.Log("ObjetoGolpeado");
         }
-        if (!ActualSpell.ProducesLine) ActualSpell.createLine(spellSpawn.position, ray, hit);
+        if (ActualSpell.ProducesLine) ActualSpell.createLine(spellSpawn.position, ray, hit);
     }
 }
