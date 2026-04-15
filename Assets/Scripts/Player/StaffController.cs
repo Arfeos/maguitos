@@ -9,10 +9,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     [Header("Configuracion de Objetos")]
     [SerializeField] private LayerMask layersToHit;
-
+    [Header("prueba sonido")]
+    [SerializeField] private AudioClip _audioClip;
+    private IAudioService _audioService;
     void Start()
     {
-        
+        _audioService =AppContainer.Get<IAudioService>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void LanzarHechizo()
     {
+        if (_audioService != null) {
+            _audioService.PlaySound(_audioClip, false);
+        }
         SpellBase ActualSpell = spell.GetComponent<SpellBase>();
         ActualSpell.LanzarHechizo(spellSpawn, spell, layersToHit);
     }
