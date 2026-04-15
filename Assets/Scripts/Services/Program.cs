@@ -7,9 +7,10 @@ public static class Program
     {
         // Registramos los servicios necesarios
 
-        // LogService se encarga de gestionar todos los logs de la aplicación
+        //    
         AppContainer.Register<IAudioService>(() => new AudioService());
 
 
     }
 }
+  
