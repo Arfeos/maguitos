@@ -12,35 +12,33 @@ public class SpellService : ISpellService
         _rayObjectPrefab = new GameObject("SpellService");
         Object.DontDestroyOnLoad(_rayObjectPrefab);
     }
-    public void CreateRay(GameObject Ray)
+    public GameObject ShootRay(GameObject Ray)
     {
-        if (Ray == null) return;
-        GameObject existingRay = _rayList.FirstOrDefault<GameObject>();
-
-        if (existingRay != null)
-        {
-            //existingRay.Stop();
-            //existingRay.Play();
-            return;
-        }
-        var audioSource = GetOrCreateRay();
-        //audioSource.clip = clip;
-        //audioSource.loop = loop;
-        //audioSource.Play();
+        if (Ray == null) return null;
+        //no hace falta comprobar si el rayo ya existe, porque cada rayo es único y se inactiva al finalizar su animación
+        var RayObject = GetOrCreateRay();
+        RayObject = Ray;
+        return RayObject;
     }
     private GameObject GetOrCreateRay()
     {
-        GameObject Ray = _rayList.FirstOrDefault<GameObject>();
+        GameObject Ray = _rayList.FirstOrDefault(r => !r.activeInHierarchy);
 
         if (Ray == null)
         {
-            Ray = _rayObjectPrefab;
+            Ray = Object.Instantiate(_rayObjectPrefab);
             _rayList.Add(Ray);
         }
 
         return Ray;
     }
-    public void DestroyRay()
+    public void ReturnRay(GameObject ray)
+    {
+        ray.SetActive(false);
+    }
+
+    //este metodo se llamara para eliminar la pool de rayos al salir de un mapa o al cerrar el juego, para evitar que se acumulen objetos en la escena
+    public void DestroyRayObjects()
     {
         foreach (var ray in _rayList)
         {

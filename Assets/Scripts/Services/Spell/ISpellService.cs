@@ -2,6 +2,7 @@ using UnityEngine;
 
 public interface ISpellService
 {
-    void CreateRay(GameObject Ray);
-    void DestroyRay();
+    GameObject ShootRay(GameObject Ray);
+    void DestroyRayObjects();
+    public void ReturnRay(GameObject ray);
 }
