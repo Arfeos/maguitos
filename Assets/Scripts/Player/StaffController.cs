@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using static SpellBase;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Header("Configuracion de hechizo")]
-    [SerializeField] private GameObject spell;
+    [SerializeField] private SpellBase[] spellList;
+    [SerializeField] private SpellBase Actualspell;
     [SerializeField] private Transform spellSpawn;
 
     [Header("Configuracion de Objetos")]
@@ -14,26 +17,42 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private IAudioService _audioService;
     void Start()
     {
-        _audioService =AppContainer.Get<IAudioService>();
+        
+        PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
+        _audioService = AppContainer.Get<IAudioService>();
+    }
+
+    private void OnReloadStarted(InputAction.CallbackContext context)
+    {
+        SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
+        ActualSpell.Invoke( "Reload", ActualSpell.ReloadTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float isAtacking = PlayerInputManager.Actions.Player.Attack.ReadValue<float>();
-        if (isAtacking > 0.1)
+        //TODO: Esto es terrible, hacer un evento
+        SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
+
+        switch (ActualSpell.castType)
         {
-            Debug.Log("Atacando");
-            LanzarHechizo();
+            case CastType.auto:
+                if (PlayerInputManager.Actions.Player.Attack.IsPressed()) LanzarHechizo(ActualSpell);
+                break;
+            case CastType.semi:
+                if (PlayerInputManager.Actions.Player.Attack.WasPressedThisFrame()) LanzarHechizo(ActualSpell);
+                break;
         }
     }
 
-    private void LanzarHechizo()
+
+
+    private void LanzarHechizo(SpellBase ActualSpell)
     {
         if (_audioService != null) {
             _audioService.PlaySound(_audioClip, false);
         }
-        SpellBase ActualSpell = spell.GetComponent<SpellBase>();
-        ActualSpell.LanzarHechizo(spellSpawn, spell, layersToHit);
+        
+        ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
     }
 }

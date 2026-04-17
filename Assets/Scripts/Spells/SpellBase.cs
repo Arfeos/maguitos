@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -6,10 +7,11 @@ public class SpellBase : MonoBehaviour
 {
 #nullable enable
     public enum SpellType { 
-    ray,
-    ball,
-    buff,
-    structure}
+        ray,
+        ball,
+        buff,
+        structure
+    }
     public enum CastType
     {
         auto,
@@ -21,9 +23,13 @@ public class SpellBase : MonoBehaviour
     [SerializeField] private SpellType spell_Type;
     [SerializeField] private CastType cast_Type;
     [SerializeField] private int ammoSpace = 1;
+    [SerializeField] private int currentAmmo = 1;
+    [SerializeField] private float reloadTime = 1;
     [SerializeField] private float velocity = 1f;
+    [SerializeField] private float damage = 1f;
     [SerializeField] private float lifeTime = 1f;
-    [SerializeField] private float shootDelay = 0.5f;
+    [SerializeField] private float shootDelay = 1f;
+    [SerializeField] private float spreadIntensity = 0.1f;
     [SerializeField] private bool producesLine = false;
 
     [Header("Spell particles")]
@@ -37,6 +43,9 @@ public class SpellBase : MonoBehaviour
     [SerializeField] private AudioSource? hitSound;
 
     public bool canCast = true;
+    public bool isCasting = false;
+
+
     Coroutine CastingSpellCoroutine;
     public SpellType spellType { get => spell_Type; set => spell_Type = value; }
     public CastType castType { get => cast_Type; set => cast_Type = value; }
@@ -51,6 +60,10 @@ public class SpellBase : MonoBehaviour
     public AudioSource? SpawnSound { get => spawnSound; set => spawnSound = value; }
     public AudioSource? AirSound { get => airSound; set => airSound = value; }
     public AudioSource? HitSound { get => hitSound; set => hitSound = value; }
+    public float Damage { get => damage; set => damage = value; }
+    public float SpreadIntensity { get => spreadIntensity; set => spreadIntensity = value; }
+    public int CurrentAmmo { get => currentAmmo; set => currentAmmo = value; }
+    public float ReloadTime { get => reloadTime; set => reloadTime = value; }
 
     public void createLine(Vector3 posicionInicio, Ray ray, RaycastHit hit)
     {
@@ -75,28 +88,53 @@ public class SpellBase : MonoBehaviour
         }
         Destroy(particula, 0.3f);
     }
-    public virtual void LanzarHechizo(Transform spellSpawn,GameObject spell, LayerMask layersToHit) {
+    public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) {
 
-        if (canCast == false) return;
-
-        
-        Ray ray = new Ray(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward));
-        SpellBase ActualSpell = spell.GetComponent<SpellBase>();
-        CastingSpellCoroutine = StartCoroutine(ActualSpell.CastingSpell());
-        RaycastHit hit;
-
-        if (Physics.Raycast(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward), out hit, ActualSpell.LifeTime, layersToHit))
+        if(canCast && !isCasting && CurrentAmmo > 0)
         {
-            Debug.DrawRay(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+            CurrentAmmo--;
+            canCast = false;
+            isCasting = true;
 
-            Debug.Log("ObjetoGolpeado");
+            Ray ray = new Ray(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward));
+            SpellBase ActualSpell = spell.GetComponent<SpellBase>();
+
+            
+
+            RaycastHit hit;
+            Vector3 ShootDirection = CalculateDispersion(spellSpawn.transform.TransformDirection(Vector3.forward));
+
+            if (Physics.Raycast(spellSpawn.position, ShootDirection, out hit, ActualSpell.LifeTime, layersToHit))
+            {
+                Debug.DrawRay(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+
+                Debug.Log("ObjetoGolpeado");
+            }
+            if (ActualSpell.ProducesLine) ActualSpell.createLine(spellSpawn.position, ray, hit);
+
+            Invoke("ResetCast", shootDelay);
         }
-        if (ActualSpell.ProducesLine) ActualSpell.createLine(spellSpawn.position, ray, hit);
+        
     }
-    public virtual IEnumerator CastingSpell()
+
+    private Vector3 CalculateDispersion(Vector3 vector3)
     {
-        canCast = false;
-        yield return new WaitForSeconds(1);
+        float xDispersiom = UnityEngine.Random.Range(SpreadIntensity, -SpreadIntensity);
+        float yDispersiom = UnityEngine.Random.Range(SpreadIntensity, -SpreadIntensity);
+
+        Vector3 dispersion = new Vector3(xDispersiom, yDispersiom, 0);
+        return vector3 + dispersion;
+    }
+
+    public virtual void Reload()
+    {
+        
+        CurrentAmmo = AmmoSpace;
+    }
+
+    public virtual void ResetCast()
+    {
+        isCasting = false;
         canCast = true;
     }
 }

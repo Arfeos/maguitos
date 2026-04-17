@@ -46,10 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpellLanzaDeLuz
   spell_Type: 0
   cast_Type: 0
-  ammoSpace: 0
+  ammoSpace: 30
+  currentAmmo: 30
+  reloadTime: 1.1
   velocity: 1
-  lifeTime: 100
-  shootDelay: 0
+  damage: 1
+  lifeTime: 1000
+  shootDelay: 0.1
+  spreadIntensity: 0.05
   producesLine: 1
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 599475939959074545, guid: 91326c06a11f70144b16b67ad3558213, type: 3}
@@ -57,3 +61,5 @@ MonoBehaviour:
   spawnSound: {fileID: 0}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
+  canCast: 1
+  isCasting: 0
