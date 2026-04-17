@@ -15,6 +15,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [Header("prueba sonido")]
     [SerializeField] private AudioClip _audioClip;
     private IAudioService _audioService;
+    private Coroutine _coroutineCharge;
     void Start()
     {
         
@@ -42,6 +43,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
             case CastType.semi:
                 if (PlayerInputManager.Actions.Player.Attack.WasPressedThisFrame()) LanzarHechizo(ActualSpell);
                 break;
+            case CastType.charged:
+                if (PlayerInputManager.Actions.Player.Attack.WasPressedThisFrame()) CargarHechizo(ActualSpell);
+                if (PlayerInputManager.Actions.Player.Attack.WasReleasedThisFrame()) LanzarHechizo(ActualSpell);
+                break;
         }
     }
 
@@ -52,7 +57,19 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (_audioService != null) {
             _audioService.PlaySound(_audioClip, false);
         }
-        
+        if(_coroutineCharge != null) StopCoroutine(_coroutineCharge);
+        _coroutineCharge = null;
         ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
+    }
+
+    private void CargarHechizo(SpellBase ActualSpell)
+    {
+        if (_audioService != null)
+        {
+            _audioService.PlaySound(_audioClip, false);
+        }
+        if(_coroutineCharge != null) return;
+        _coroutineCharge = StartCoroutine(ActualSpell.CargarHechizo());
+
     }
 }

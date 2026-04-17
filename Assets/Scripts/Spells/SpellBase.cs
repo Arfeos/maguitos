@@ -15,7 +15,8 @@ public class SpellBase : MonoBehaviour
     public enum CastType
     {
         auto,
-        semi
+        semi,
+        charged
     }
 
     
@@ -24,6 +25,9 @@ public class SpellBase : MonoBehaviour
     [SerializeField] private CastType cast_Type;
     [SerializeField] private int ammoSpace = 1;
     [SerializeField] private int currentAmmo = 1;
+    [SerializeField] private int MaxCharge = 5;
+    [SerializeField] private int currentCharge = 0;
+    [SerializeField] private float ChargeTimePerUnit = 0.5f;
     [SerializeField] private float reloadTime = 1;
     [SerializeField] private float velocity = 1f;
     [SerializeField] private float damage = 1f;
@@ -64,6 +68,9 @@ public class SpellBase : MonoBehaviour
     public float SpreadIntensity { get => spreadIntensity; set => spreadIntensity = value; }
     public int CurrentAmmo { get => currentAmmo; set => currentAmmo = value; }
     public float ReloadTime { get => reloadTime; set => reloadTime = value; }
+    public int MaxCharge1 { get => MaxCharge; set => MaxCharge = value; }
+    public int CurrentCharge { get => currentCharge; set => currentCharge = value; }
+    public float ChargeTimePerUnit1 { get => ChargeTimePerUnit; set => ChargeTimePerUnit = value; }
 
     public void createLine(Vector3 posicionInicio, Ray ray, RaycastHit hit)
     {
@@ -92,29 +99,76 @@ public class SpellBase : MonoBehaviour
 
         if(canCast && !isCasting && CurrentAmmo > 0)
         {
-            CurrentAmmo--;
+            
             canCast = false;
             isCasting = true;
 
-            Ray ray = new Ray(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward));
-            SpellBase ActualSpell = spell.GetComponent<SpellBase>();
-
-            
-
-            RaycastHit hit;
-            Vector3 ShootDirection = CalculateDispersion(spellSpawn.transform.TransformDirection(Vector3.forward));
-
-            if (Physics.Raycast(spellSpawn.position, ShootDirection, out hit, ActualSpell.LifeTime, layersToHit))
+            switch (spell.spellType)
             {
-                Debug.DrawRay(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-
-                Debug.Log("ObjetoGolpeado");
+                case SpellType.ray:
+                    CastRaySpell(spellSpawn, spell, layersToHit);
+                    break;
+                case SpellType.ball:
+                    //TODO implement type of spell
+                    break;
+                case SpellType.buff:
+                    //TODO implement type of spell
+                    break;
+                case SpellType.structure:
+                    //TODO implement type of spell
+                    break;
             }
-            if (ActualSpell.ProducesLine) ActualSpell.createLine(spellSpawn.position, ray, hit);
 
             Invoke("ResetCast", shootDelay);
         }
         
+    }
+
+    public virtual IEnumerator CargarHechizo()
+    {
+        do
+        {
+            yield return new WaitForSeconds(ChargeTimePerUnit);
+            CurrentCharge++;
+        } while (MaxCharge > CurrentCharge);
+        Debug.Log("Carga maxima");
+    }
+    public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {   
+        if(spell.castType == CastType.charged)
+        {
+            if (CurrentCharge == MaxCharge)
+            {
+                CurrentAmmo--;
+                ShootRaySpell(spellSpawn, spell, layersToHit);
+                CurrentCharge = 0;
+            }
+            else CurrentCharge = 0;
+        }
+        else
+        {
+            CurrentAmmo--;
+            ShootRaySpell(spellSpawn, spell, layersToHit);
+        }
+            
+    }
+
+    private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {
+        Ray ray = new Ray(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward));
+        SpellBase ActualSpell = spell.GetComponent<SpellBase>();
+
+        RaycastHit hit;
+        Vector3 ShootDirection = CalculateDispersion(spellSpawn.transform.TransformDirection(Vector3.forward));
+
+        if (Physics.Raycast(spellSpawn.position, ShootDirection, out hit, ActualSpell.LifeTime, layersToHit))
+        {
+            Debug.DrawRay(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+
+            //TODO: Añadir hit a gameObjects
+            Debug.Log("ObjetoGolpeado");
+        }
+        if (ActualSpell.ProducesLine) ActualSpell.createLine(spellSpawn.position, ray, hit);
     }
 
     private Vector3 CalculateDispersion(Vector3 vector3)
@@ -128,7 +182,6 @@ public class SpellBase : MonoBehaviour
 
     public virtual void Reload()
     {
-        
         CurrentAmmo = AmmoSpace;
     }
 

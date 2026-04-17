@@ -48,6 +48,9 @@ MonoBehaviour:
   cast_Type: 0
   ammoSpace: 30
   currentAmmo: 30
+  MaxCharge: 5
+  currentCharge: 0
+  ChargeTimePerUnit: 0.5
   reloadTime: 1.1
   velocity: 1
   damage: 1
