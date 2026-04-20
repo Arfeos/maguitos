@@ -1,19 +1,36 @@
-using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 public class EventService : IEventService
 {
-    public void Publish()
+    private Dictionary<Type, List<Action<GameEventBase>>> _events = new Dictionary<Type, List<Action<GameEventBase>>>();
+
+    public void Publish(GameEventBase action)
     {
-        throw new System.NotImplementedException();
+        Type type = action.GetType();
+        if (this._events.ContainsKey(type))
+        {
+            foreach (var item in this._events[type])
+            {
+                item.Invoke(action);
+            }
+        }
     }
 
-    public void Subscribe()
+    public void Subscribe<T>(Action<GameEventBase> action)
     {
-        throw new System.NotImplementedException();
+        Type type = typeof(T);
+        if (!this._events.ContainsKey(type))
+            this._events[type] = new List<Action<GameEventBase>>();
+
+        this._events[type].Add(action);
     }
 
-    public void UnSubscribe()
+    public void Unsubscribe<T>(Action<GameEventBase> action)
     {
-        throw new System.NotImplementedException();
+        Type type = typeof(T);
+
+        if (this._events.ContainsKey(type))
+            this._events[type].Remove(action);
     }
 }

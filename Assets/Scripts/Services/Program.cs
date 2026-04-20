@@ -17,7 +17,6 @@ public static class Program
         AppContainer.Register<ISceneService>(() => new SceneService());
         AppContainer.Register<IScoreService>(() => new ScoreService());
         AppContainer.Register<ISpellService>(() => new SpellService());
-
     }
 }
   

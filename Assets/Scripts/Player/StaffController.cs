@@ -15,12 +15,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [Header("prueba sonido")]
     [SerializeField] private AudioClip _audioClip;
     private IAudioService _audioService;
+    private IEventService _eventService;
     private Coroutine _coroutineCharge;
     void Start()
     {
         
         PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
         _audioService = AppContainer.Get<IAudioService>();
+        _eventService = AppContainer.Get<IEventService>();
     }
 
     private void OnReloadStarted(InputAction.CallbackContext context)
@@ -53,7 +55,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
 
     private void LanzarHechizo(SpellBase ActualSpell)
-    {
+    {//esto es una prueba de evento, no se asusten
+        //TestEvent testEvent = new TestEvent();
+        //testEvent.Message = "coconut";
+
+        //this._eventService.Publish(testEvent);
         if (_audioService != null) {
             _audioService.PlaySound(_audioClip, false);
         }
