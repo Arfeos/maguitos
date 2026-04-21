@@ -5,7 +5,7 @@ public class AudioService : IAudioService
 {
     private readonly GameObject _audioRoot;
     private List<AudioSource> _audioSources = new List<AudioSource>();
-    private float _minInterval = 0.001f;
+    private float _minInterval = 0.01f;
     private Dictionary<AudioClip, float> _lastPlayTime = new();
     public AudioService()
     {

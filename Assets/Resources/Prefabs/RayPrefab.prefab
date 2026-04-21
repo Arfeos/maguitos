@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6160325588998970461}
   - component: {fileID: 1004042346209241242}
   m_Layer: 0
-  m_Name: LightLanceProyectilePrefab
+  m_Name: RayPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,8 +82,8 @@ LineRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Positions:
-  - {x: -1.3537211, y: 0.6334538, z: 0.6850028}
-  - {x: -940.0672, y: -161.00311, z: 300.58572}
+  - {x: 0.21913093, y: 0.7968943, z: 1.5476372}
+  - {x: 0.15387902, y: 0.8411895, z: 4.23}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

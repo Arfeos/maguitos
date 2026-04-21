@@ -72,29 +72,29 @@ public class SpellBase : MonoBehaviour
     public int CurrentCharge { get => currentCharge; set => currentCharge = value; }
     public float ChargeTimePerUnit1 { get => ChargeTimePerUnit; set => ChargeTimePerUnit = value; }
 
-    public void createLine(Vector3 posicionInicio, Ray ray, RaycastHit hit)
-    {
-        if (producedParticle == null) return;
+    //public void createLine(Vector3 posicionInicio, Ray ray, RaycastHit hit)
+    //{
+    //    if (producedParticle == null) return;
         
-        if (producedParticle.TryGetComponent<LineRenderer>(out var lineRendered) == false) return;
+    //    if (producedParticle.TryGetComponent<LineRenderer>(out var lineRendered) == false) return;
             
       
-        GameObject particula = Instantiate(producedParticle);
-        LineRenderer objectLineRenderer = producedParticle.GetComponent<LineRenderer>();
+    //    GameObject particula = Instantiate(producedParticle);
+    //    LineRenderer objectLineRenderer = producedParticle.GetComponent<LineRenderer>();
 
-        objectLineRenderer.SetPosition(0, posicionInicio);
-        if (hit.point != new Vector3(0, 0, 0))
-        {
-            // Si choca, el fin es el punto de impacto
-            objectLineRenderer.SetPosition(1, hit.point);
-        }
-        else
-        {
-            // Si no choca, el fin es la distancia máxima
-            objectLineRenderer.SetPosition(1, ray.direction * LifeTime);
-        }
-        Destroy(particula, 0.3f);
-    }
+    //    objectLineRenderer.SetPosition(0, posicionInicio);
+    //    if (hit.point != new Vector3(0, 0, 0))
+    //    {
+    //        // Si choca, el fin es el punto de impacto
+    //        objectLineRenderer.SetPosition(1, hit.point);
+    //    }
+    //    else
+    //    {
+    //        // Si no choca, el fin es la distancia máxima
+    //        objectLineRenderer.SetPosition(1, ray.direction * LifeTime);
+    //    }
+    //    Destroy(particula, 0.3f);
+    //}
     public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) {
 
         if(canCast && !isCasting && CurrentAmmo > 0)
@@ -155,21 +155,44 @@ public class SpellBase : MonoBehaviour
 
     private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
-        Ray ray = new Ray(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward));
-        SpellBase ActualSpell = spell.GetComponent<SpellBase>();
-
         RaycastHit hit;
-        Vector3 ShootDirection = CalculateDispersion(spellSpawn.transform.TransformDirection(Vector3.forward));
 
-        if (Physics.Raycast(spellSpawn.position, ShootDirection, out hit, ActualSpell.LifeTime, layersToHit))
+        Vector3 direction = CalculateDispersion(spellSpawn.forward);
+        Vector3 endPoint;
+
+        if (Physics.Raycast(spellSpawn.position, direction, out hit, LifeTime, layersToHit))
         {
-            Debug.DrawRay(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-
-            //TODO: Añadir hit a gameObjects
+            endPoint = hit.point;
             Debug.Log("ObjetoGolpeado");
         }
-        if (ActualSpell.ProducesLine) ActualSpell.createLine(spellSpawn.position, ray, hit);
+        else
+        {
+            endPoint = spellSpawn.position + direction * LifeTime;
+        }
+
+        if (ProducesLine)
+        {
+            var spellService = AppContainer.Get<ISpellService>();
+            spellService.ShootRay(spellSpawn.position, endPoint);
+        }
     }
+    //private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    //{
+    //    Ray ray = new Ray(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward));
+    //    SpellBase ActualSpell = spell.GetComponent<SpellBase>();
+
+    //    RaycastHit hit;
+    //    Vector3 ShootDirection = CalculateDispersion(spellSpawn.transform.TransformDirection(Vector3.forward));
+
+    //    if (Physics.Raycast(spellSpawn.position, ShootDirection, out hit, ActualSpell.LifeTime, layersToHit))
+    //    {
+    //        Debug.DrawRay(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+
+    //        //TODO: Añadir hit a gameObjects
+    //        Debug.Log("ObjetoGolpeado");
+    //    }
+    //    if (ActualSpell.ProducesLine) ActualSpell.createLine(spellSpawn.position, ray, hit);
+    //}
 
     private Vector3 CalculateDispersion(Vector3 vector3)
     {
