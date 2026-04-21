@@ -45,5 +45,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellLanzaDeLuz
   spell: {fileID: 11400000, guid: fd31860644e90c242b55b8d648080d08, type: 2}
-  canCast: 1
-  isCasting: 0

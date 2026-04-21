@@ -84,7 +84,7 @@ public partial class SpellBase : MonoBehaviour
 
             Invoke("ResetCast", spell.ShootDelay);
         }
-        
+        if (CurrentAmmo == 0) Debug.Log("No tenes munbicion pive");
     }
 
     public virtual IEnumerator CargarHechizo()
