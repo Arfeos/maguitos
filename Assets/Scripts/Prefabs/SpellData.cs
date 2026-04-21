@@ -47,7 +47,7 @@ public class SpellData : ScriptableObject
     public bool canCast = true;
     public bool isCasting = false;
 
-
+    
     Coroutine CastingSpellCoroutine;
     public SpellType spellType { get => spell_Type; set => spell_Type = value; }
     public CastType castType { get => cast_Type; set => cast_Type = value; }
@@ -56,6 +56,7 @@ public class SpellData : ScriptableObject
     public float LifeTime { get => lifeTime; set => lifeTime = value; }
     public float ShootDelay { get => shootDelay; set => shootDelay = value; }
     public bool ProducesLine { get => producesLine; set => producesLine = value; }
+    #nullable enable
     public GameObject? SpawnPrefab { get => spawnPrefab; set => spawnPrefab = value; }
     public GameObject? ProducedParticle { get => producedParticle; set => producedParticle = value; }
     public GameObject? HitParticle { get => hitParticle; set => hitParticle = value; }

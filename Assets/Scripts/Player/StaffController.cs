@@ -16,6 +16,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] private AudioClip _audioClip;
     private IAudioService _audioService;
     private IEventService _eventService;
+    private ISpellService _spellService;
     private Coroutine _coroutineCharge;
     void Start()
     {
@@ -23,6 +24,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
         _audioService = AppContainer.Get<IAudioService>();
         _eventService = AppContainer.Get<IEventService>();
+        _spellService = AppContainer.Get<ISpellService>();
     }
 
     private void OnReloadStarted(InputAction.CallbackContext context)

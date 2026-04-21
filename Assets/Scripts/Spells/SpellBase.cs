@@ -3,74 +3,37 @@ using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class SpellBase : MonoBehaviour
+public partial class SpellBase : MonoBehaviour
 {
-#nullable enable
-    public enum SpellType { 
-        ray,
-        ball,
-        buff,
-        structure
-    }
-    public enum CastType
-    {
-        auto,
-        semi,
-        charged
-    }
 
     
-    [Header("Spell options")]
-    [SerializeField] private SpellType spell_Type;
-    [SerializeField] private CastType cast_Type;
-    [SerializeField] private int ammoSpace = 1;
-    [SerializeField] private int currentAmmo = 1;
-    [SerializeField] private int MaxCharge = 5;
-    [SerializeField] private int currentCharge = 0;
-    [SerializeField] private float ChargeTimePerUnit = 0.5f;
-    [SerializeField] private float reloadTime = 1;
-    [SerializeField] private float velocity = 1f;
-    [SerializeField] private float damage = 1f;
-    [SerializeField] private float lifeTime = 1f;
-    [SerializeField] private float shootDelay = 1f;
-    [SerializeField] private float spreadIntensity = 0.1f;
-    [SerializeField] private bool producesLine = false;
+    public SpellBaseScriptable spell;
 
-    [Header("Spell particles")]
-    [SerializeField] private GameObject? spawnPrefab;
-    [SerializeField] private GameObject? producedParticle;
-    [SerializeField] private GameObject? hitParticle;
+    private bool canCast = true;
+    private bool isCasting = false;
 
-    [Header("Spell sound")]
-    [SerializeField] private AudioSource? spawnSound;
-    [SerializeField] private AudioSource? airSound;
-    [SerializeField] private AudioSource? hitSound;
-
-    public bool canCast = true;
-    public bool isCasting = false;
-
-
+#nullable enable
     Coroutine CastingSpellCoroutine;
-    public SpellType spellType { get => spell_Type; set => spell_Type = value; }
-    public CastType castType { get => cast_Type; set => cast_Type = value; }
-    public int AmmoSpace { get => ammoSpace; set => ammoSpace = value; }
-    public float Velocity { get => velocity; set => velocity = value; }
-    public float LifeTime { get => lifeTime; set => lifeTime = value; }
-    public float ShootDelay { get => shootDelay; set => shootDelay = value; }
-    public bool ProducesLine { get => producesLine; set => producesLine = value; }
-    public GameObject? SpawnPrefab { get => spawnPrefab; set => spawnPrefab = value; }
-    public GameObject? ProducedParticle { get => producedParticle; set => producedParticle = value; }
-    public GameObject? HitParticle { get => hitParticle; set => hitParticle = value; }
-    public AudioSource? SpawnSound { get => spawnSound; set => spawnSound = value; }
-    public AudioSource? AirSound { get => airSound; set => airSound = value; }
-    public AudioSource? HitSound { get => hitSound; set => hitSound = value; }
-    public float Damage { get => damage; set => damage = value; }
-    public float SpreadIntensity { get => spreadIntensity; set => spreadIntensity = value; }
-    public int CurrentAmmo { get => currentAmmo; set => currentAmmo = value; }
-    public float ReloadTime { get => reloadTime; set => reloadTime = value; }
-    public int MaxCharge1 { get => MaxCharge; set => MaxCharge = value; }
-    public int CurrentCharge { get => currentCharge; set => currentCharge = value; }
-    public float ChargeTimePerUnit1 { get => ChargeTimePerUnit; set => ChargeTimePerUnit = value; }
+    public SpellType spellType { get => spell.spell_Type; set => spell.spell_Type = value; }
+    public CastType castType { get => spell.cast_Type; set => spell.cast_Type = value; }
+    public int AmmoSpace { get => spell.ammoSpace; set => spell.ammoSpace = value; }
+    public float Velocity { get => spell.velocity; set => spell.velocity = value; }
+    public float LifeTime { get => spell.lifeTime; set => spell.lifeTime = value; }
+    public float ShootDelay { get => spell.shootDelay; set => spell.shootDelay = value; }
+    public bool ProducesLine { get => spell.producesLine; set => spell.producesLine = value; }
+    public GameObject? SpawnPrefab { get => spell.spawnPrefab; set => spell.spawnPrefab = value; }
+    public GameObject? ProducedParticle { get => spell.producedParticle; set => spell.producedParticle = value; }
+    public GameObject? HitParticle { get => spell.hitParticle; set => spell.hitParticle = value; }
+    public AudioSource? SpawnSound { get => spell.spawnSound; set => spell.spawnSound = value; }
+    public AudioSource? AirSound { get => spell.airSound; set => spell.airSound = value; }
+    public AudioSource? HitSound { get => spell.hitSound; set => spell.hitSound = value; }
+    public float Damage { get => spell.damage; set => spell.damage = value; }
+    public float SpreadIntensity { get => spell.spreadIntensity; set => spell.spreadIntensity = value; }
+    public int CurrentAmmo { get => spell.currentAmmo; set => spell.currentAmmo = value; }
+    public float ReloadTime { get => spell.reloadTime; set => spell.reloadTime = value; }
+    public int MaxCharge1 { get => spell.MaxCharge; set => spell.MaxCharge = value; }
+    public int CurrentCharge { get => spell.currentCharge; set => spell.currentCharge = value; }
+    public float ChargeTimePerUnit1 { get => spell.ChargeTimePerUnit; set => spell.ChargeTimePerUnit = value; }
 
     //public void createLine(Vector3 posicionInicio, Ray ray, RaycastHit hit)
     //{
@@ -119,7 +82,7 @@ public class SpellBase : MonoBehaviour
                     break;
             }
 
-            Invoke("ResetCast", shootDelay);
+            Invoke("ResetCast", spell.ShootDelay);
         }
         
     }
@@ -128,16 +91,16 @@ public class SpellBase : MonoBehaviour
     {
         do
         {
-            yield return new WaitForSeconds(ChargeTimePerUnit);
+            yield return new WaitForSeconds(spell.ChargeTimePerUnit);
             CurrentCharge++;
-        } while (MaxCharge > CurrentCharge);
+        } while (spell.MaxCharge > CurrentCharge);
         Debug.Log("Carga maxima");
     }
     public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {   
         if(spell.castType == CastType.charged)
         {
-            if (CurrentCharge == MaxCharge)
+            if (CurrentCharge == spell.MaxCharge1)
             {
                 CurrentAmmo--;
                 ShootRaySpell(spellSpawn, spell, layersToHit);
