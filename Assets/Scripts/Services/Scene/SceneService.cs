@@ -17,6 +17,7 @@ public class SceneService : MonoBehaviour, ISceneService
     }
     public void LoadScene(string name)
     {
+        // no tengo muy claro si se puede cargar una escena desde el nombre directamente
         SceneManager.LoadScene(name);
     }
     public void GoBack()
