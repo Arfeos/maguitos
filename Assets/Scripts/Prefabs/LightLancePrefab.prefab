@@ -47,7 +47,7 @@ MonoBehaviour:
   spell_Type: 0
   cast_Type: 0
   ammoSpace: 30
-  currentAmmo: 30
+  currentAmmo: 22
   MaxCharge: 5
   currentCharge: 0
   ChargeTimePerUnit: 0.5

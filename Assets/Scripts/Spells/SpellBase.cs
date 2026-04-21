@@ -95,8 +95,8 @@ public class SpellBase : MonoBehaviour
     //    }
     //    Destroy(particula, 0.3f);
     //}
-    public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) {
-
+    public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) 
+    {
         if(canCast && !isCasting && CurrentAmmo > 0)
         {
             
@@ -157,24 +157,24 @@ public class SpellBase : MonoBehaviour
     {
         RaycastHit hit;
 
-        Vector3 direction = CalculateDispersion(spellSpawn.forward);
-        Vector3 endPoint;
+    Vector3 direction = CalculateDispersion(spellSpawn.forward);
+    Vector3 endPoint;
 
-        if (Physics.Raycast(spellSpawn.position, direction, out hit, LifeTime, layersToHit))
-        {
-            endPoint = hit.point;
-            Debug.Log("ObjetoGolpeado");
-        }
-        else
-        {
-            endPoint = spellSpawn.position + direction * LifeTime;
-        }
+    if (Physics.Raycast(spellSpawn.position, direction, out hit, LifeTime, layersToHit))
+    {
+        endPoint = hit.point;
+        Debug.Log("ObjetoGolpeado");
+    }
+    else
+    {
+        endPoint = spellSpawn.position + direction * LifeTime;
+    }
 
-        if (ProducesLine)
-        {
-            var spellService = AppContainer.Get<ISpellService>();
-            spellService.ShootRay(spellSpawn.position, endPoint);
-        }
+    if (ProducesLine)
+    {
+        var spellService = AppContainer.Get<ISpellService>();
+        spellService.ShootRay(spellSpawn.position, endPoint);
+    }
     }
     //private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     //{

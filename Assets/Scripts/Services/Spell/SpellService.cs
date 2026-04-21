@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SpellService : ISpellService
 {
-    private readonly GameObject _rayObjectPrefab;
+    private readonly GameObject _SpellServiceFather;
     private List<GameObject> _rayList = new List<GameObject>();
     private readonly GameObject _rayPrefab;
 
     public SpellService(GameObject rayPrefab)
     {
-        _rayObjectPrefab = new GameObject("SpellService");
-        Object.DontDestroyOnLoad(_rayObjectPrefab);
+        _SpellServiceFather = new GameObject("SpellService");
+        Object.DontDestroyOnLoad(_SpellServiceFather);
         _rayPrefab = rayPrefab;
     }
     //public GameObject ShootRay(GameObject Ray)
@@ -41,7 +41,7 @@ public class SpellService : ISpellService
 
         if (Ray == null)
         {
-            Ray = Object.Instantiate(_rayObjectPrefab);
+            Ray = Object.Instantiate(_rayPrefab, _SpellServiceFather.transform);
             _rayList.Add(Ray);
         }
 
