@@ -29,7 +29,7 @@ public class CharacterService : ICharacterService
     }
     public bool addSpell(SpellBase spellToAdd)
     {
-        if(CheckSpellCapacity() < spellToAdd.SlotCost) return false;
+        if(CheckSpellCapacity() < spellToAdd.spell.CosteSlots) return false;
 
         listaHechizos.Add(spellToAdd);
         return true;
@@ -40,7 +40,7 @@ public class CharacterService : ICharacterService
         int costeActualHechizos = 0;
         foreach (SpellBase hechizoEnLista in listaHechizos)
         {
-            costeActualHechizos += hechizoEnLista.SlotCost;
+            costeActualHechizos += hechizoEnLista.spell.CosteSlots;
         }
         return slots - costeActualHechizos;
     }
@@ -52,7 +52,7 @@ public class CharacterService : ICharacterService
 
         foreach (SpellBase hechizoEnLista in listaHechizos)
         {
-            if(hechizoEnLista.Name.Equals(spellName)) return hechizoEnLista;
+            if(hechizoEnLista.spell.nombreHechizo.Equals(spellName)) return hechizoEnLista;
         }
 
         return null;
@@ -65,17 +65,6 @@ public class CharacterService : ICharacterService
         return listaHechizos[spellPosition];
     }
 
-    public SpellBase getSpell(SpellBase spell)
-    {
-        if (spell == null) return null;
-
-        foreach (SpellBase hechizoEnLista in listaHechizos)
-        {
-            if (hechizoEnLista.Name.Equals(spell.Name)) return hechizoEnLista;
-        }
-
-        return null ;
-    }
 
     public bool removeSpell(SpellBase spellToRemove)
     {
@@ -84,6 +73,30 @@ public class CharacterService : ICharacterService
         listaHechizos.Remove(spellToRemove);
         return true;
     }
+
+    public bool removeSpell(int spellToRemove)
+    {
+        if (spellToRemove < 0) return false;
+        if (spellToRemove + 1 > listaHechizos.Count) return false;
+        listaHechizos.RemoveAt(spellToRemove);
+        return true;
+    }
+
+    public bool removeSpell(string spellToRemove)
+    {
+        if (spellToRemove == null || spellToRemove.Equals("") || spellToRemove.Equals("Change Spell name")) return false;
+
+        for(int i = 0; listaHechizos.Count >= i ;i++){ 
+            if (listaHechizos[i].spell.nombreHechizo.Equals(spellToRemove))
+            {
+                listaHechizos.RemoveAt(i);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void Heal(int amountHealed)
     {
         if (Curretlife + amountHealed > life) Curretlife = life;
@@ -100,4 +113,5 @@ public class CharacterService : ICharacterService
         //TODO: Implemetar muerte real
         Debug.Log("Has muerto");
     }
+
 }

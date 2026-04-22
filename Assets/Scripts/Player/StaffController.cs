@@ -30,7 +30,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private void OnReloadStarted(InputAction.CallbackContext context)
     {
         SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
-        ActualSpell.Invoke( "Reload", ActualSpell.ReloadTime);
+        ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         //TODO: Esto es terrible, hacer un evento
         SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
 
-        switch (ActualSpell.castType)
+        switch (ActualSpell.spell.cast_Type)
         {
             case CastType.auto:
                 if (PlayerInputManager.Actions.Player.Attack.IsPressed()) LanzarHechizo(ActualSpell);

@@ -8,6 +8,7 @@ public class SpellBaseScriptable : ScriptableObject
     [Header("Spell options")]
     public SpellType spell_Type;
     public CastType cast_Type;
+    public Spellimportance spell_importance;
     public int ammoSpace = 1;
     public int currentAmmo = 1;
     public int MaxCharge = 5;
