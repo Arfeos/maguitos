@@ -99,8 +99,8 @@ public partial class SpellBase : MonoBehaviour
     {
         RaycastHit hit;
 
-    Vector3 direction = CalculateDispersion(spellSpawn.forward);
-    Vector3 endPoint;
+        Vector3 direction = CalculateDispersion(spellSpawn.forward);
+        Vector3 endPoint;
 
     if (Physics.Raycast(spellSpawn.position, direction, out hit, spell.spell.lifeTime, layersToHit))
     {

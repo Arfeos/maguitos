@@ -9,13 +9,10 @@ public class SpellBaseScriptable : ScriptableObject
     public SpellType spell_Type;
     public CastType cast_Type;
     public Spellimportance spell_importance;
-    //public int ammoSpace = 1;
-    //public int currentAmmo = 1;
     public int manaCost = 1;
     public int MaxCharge = 5;
     public int currentCharge = 0;
     public float ChargeTimePerUnit = 0.5f;
-    //public float reloadTime = 1;
     public float velocity = 1f;
     public float damage = 1f;
     public float lifeTime = 1f;
