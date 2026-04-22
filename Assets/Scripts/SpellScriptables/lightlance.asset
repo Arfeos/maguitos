@@ -22,8 +22,8 @@ MonoBehaviour:
   reloadTime: 1
   velocity: 1
   damage: 1
-  lifeTime: 1
-  shootDelay: 1
+  lifeTime: 100
+  shootDelay: 0.1
   spreadIntensity: 0.1
   producesLine: 1
   spawnPrefab: {fileID: 0}
@@ -32,3 +32,5 @@ MonoBehaviour:
   spawnSound: {fileID: 0}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
+  canCast: 1
+  isCasting: 0

@@ -8,6 +8,7 @@ public class SpellBaseScriptable : ScriptableObject
     [Header("Spell options")]
     public SpellType spell_Type;
     public CastType cast_Type;
+    public Spellimportance spell_importance;
     public int ammoSpace = 1;
     public int currentAmmo = 1;
     public int MaxCharge = 5;
@@ -20,6 +21,8 @@ public class SpellBaseScriptable : ScriptableObject
     public float shootDelay = 1f;
     public float spreadIntensity = 0.1f;
     public bool producesLine = false;
+    public int CosteSlots = 1;
+    public string nombreHechizo = "Change Spell name";
 
     [Header("Spell particles")]
      public GameObject? spawnPrefab;

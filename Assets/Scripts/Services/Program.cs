@@ -12,7 +12,7 @@ public static class Program
         AppContainer.Register<ICoconutService>(() => new CoconutService());
         AppContainer.Register<IEventService>(() => new EventService());
         AppContainer.Register<IHudService>(() => new HudService());
-        AppContainer.Register<IInventoryService>(() => new InventoryService());
+        AppContainer.Register<ICharacterService>(() => new CharacterService());
         AppContainer.Register<IProfileService>(() => new ProfileService());
         AppContainer.Register<ISceneService>(() => new SceneService());
         AppContainer.Register<IScoreService>(() => new ScoreService());
