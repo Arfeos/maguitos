@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using static SpellBase;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Header("Configuracion de hechizo")]
-    [SerializeField] private GameObject spell;
+    [SerializeField] private SpellBase[] spellList;
+    [SerializeField] private SpellBase Actualspell;
     [SerializeField] private Transform spellSpawn;
 
     [Header("Configuracion de Objetos")]
@@ -12,28 +15,69 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [Header("prueba sonido")]
     [SerializeField] private AudioClip _audioClip;
     private IAudioService _audioService;
+    private IEventService _eventService;
+    private ISpellService _spellService;
+    private Coroutine _coroutineCharge;
     void Start()
     {
-        _audioService =AppContainer.Get<IAudioService>();
+        
+        PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
+        _audioService = AppContainer.Get<IAudioService>();
+        _eventService = AppContainer.Get<IEventService>();
+        _spellService = AppContainer.Get<ISpellService>();
+    }
+
+    private void OnReloadStarted(InputAction.CallbackContext context)
+    {
+        SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
+        ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float isAtacking = PlayerInputManager.Actions.Player.Attack.ReadValue<float>();
-        if (isAtacking > 0.1)
+        //TODO: Esto es terrible, hacer un evento
+        SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
+
+        switch (ActualSpell.spell.cast_Type)
         {
-            Debug.Log("Atacando");
-            LanzarHechizo();
+            case CastType.auto:
+                if (PlayerInputManager.Actions.Player.Attack.IsPressed()) LanzarHechizo(ActualSpell);
+                break;
+            case CastType.semi:
+                if (PlayerInputManager.Actions.Player.Attack.WasPressedThisFrame()) LanzarHechizo(ActualSpell);
+                break;
+            case CastType.charged:
+                if (PlayerInputManager.Actions.Player.Attack.WasPressedThisFrame()) CargarHechizo(ActualSpell);
+                if (PlayerInputManager.Actions.Player.Attack.WasReleasedThisFrame()) LanzarHechizo(ActualSpell);
+                break;
         }
     }
 
-    private void LanzarHechizo()
-    {
+
+
+    private void LanzarHechizo(SpellBase ActualSpell)
+    {//esto es una prueba de evento, no se asusten
+        //TestEvent testEvent = new TestEvent();
+        //testEvent.Message = "coconut";
+
+        //this._eventService.Publish(testEvent);
         if (_audioService != null) {
             _audioService.PlaySound(_audioClip, false);
         }
-        SpellBase ActualSpell = spell.GetComponent<SpellBase>();
-        ActualSpell.LanzarHechizo(spellSpawn, spell, layersToHit);
+        if(_coroutineCharge != null) StopCoroutine(_coroutineCharge);
+        _coroutineCharge = null;
+        ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
+    }
+
+    private void CargarHechizo(SpellBase ActualSpell)
+    {
+        if (_audioService != null)
+        {
+            _audioService.PlaySound(_audioClip, false);
+        }
+        if(_coroutineCharge != null) return;
+        _coroutineCharge = StartCoroutine(ActualSpell.CargarHechizo());
+
     }
 }

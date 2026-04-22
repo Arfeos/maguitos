@@ -167,11 +167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d018dda50c13047bab1fbd08a32dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  spell: {fileID: 599475939959074545, guid: ff8312e53891e604bbf87980a064f553, type: 3}
+  spellList: []
+  Actualspell: {fileID: 539983392261889776, guid: ff8312e53891e604bbf87980a064f553, type: 3}
   spellSpawn: {fileID: 1418250264}
   layersToHit:
     serializedVersion: 2
     m_Bits: 4294967295
+  _audioClip: {fileID: 8300000, guid: 154b4ae6fa53c5744bfa6a040b4d088e, type: 3}
 --- !u!65 &84409771
 BoxCollider:
   m_ObjectHideFlags: 0

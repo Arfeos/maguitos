@@ -16,9 +16,9 @@ public class SlotsSpellBook : MonoBehaviour
 
     void Start()
     {
-        //foreach (var spell in typeof(SpellBase).GetMethods())
+        //foreach (var Actualspell in typeof(SpellBase).GetMethods())
         //{
-        //    spells.Add(spell);
+        //    spells.Add(Actualspell);
         //}
         //foreach (var campo in typeof(SpellBase).GetFields())
         //{
