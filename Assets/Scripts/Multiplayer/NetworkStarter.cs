@@ -28,10 +28,11 @@ public class NetworkStarter : NetworkBehaviour
     {
         //StartCoroutine(LoadSceneNextFrame());
         NetworkManager.Singleton.StartHost();
-        NetworkManager.Singleton.SceneManager.LoadScene(
-        "SampleScene",
-        LoadSceneMode.Single
-    );
+        //    NetworkManager.Singleton.SceneManager.LoadScene(
+        //    "SampleScene",
+        //    LoadSceneMode.Single
+        //);
+        sceneService.LoadScene("SampleScene");
 
 
     }
