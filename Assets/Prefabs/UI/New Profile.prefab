@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 9200013050318594105}
   - component: {fileID: 8908086121111544709}
   m_Layer: 5
-  m_Name: Username_txt
+  m_Name: txt_username
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9200013050318594105
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 4546733621560500428}
   - component: {fileID: 4701111355778131571}
   m_Layer: 5
-  m_Name: Image
+  m_Name: im_newProfile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,10 +246,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6593842368298433515}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -50, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4546733621560500428
 CanvasRenderer:
