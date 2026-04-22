@@ -9,7 +9,8 @@ public class CameraForwardController : NetworkBehaviour
 
     [Header("Mouse")]
     [SerializeField] private float mouseSensitivity = 100f;
-    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private GameObject cameraTransform;
+    [SerializeField] private Transform MManager;
 
     [Header("Crouch")]
     [SerializeField] private float standHeight = 1f;
@@ -25,8 +26,12 @@ public class CameraForwardController : NetworkBehaviour
 
     private float xRotation = 0f;
 
-    private void Awake()
+    private void Start()
     {
+        Debug.Log(IsOwner);
+        if (!IsOwner) return;
+        
+        //cameraTransform = this.gameObject.GetComponentInChildren<Camera>().transform;
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         characterController = GetComponent<CharacterController>();
 
@@ -36,10 +41,15 @@ public class CameraForwardController : NetworkBehaviour
 
     private void Update()
     {
-        if (!IsOwner) return;
+        if (!IsOwner)
+        {
+            cameraTransform.SetActive(false);
+            return;
+        } 
+            
 
-        LookMouse();   
-        Move();        
+        LookMouse();
+        Move();
         HandleCrouch();
     }
 
@@ -53,7 +63,7 @@ public class CameraForwardController : NetworkBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        MManager.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
     }
 
@@ -111,10 +121,10 @@ public class CameraForwardController : NetworkBehaviour
 
         characterController.height = Mathf.Lerp(characterController.height, targetHeight, Time.deltaTime * crouchSpeed);
 
-        Vector3 camPos = cameraTransform.localPosition;
+        Vector3 camPos = MManager.localPosition;
         float targetY = isCrouching ? (crouchHeight/2) - 0.2f : (standHeight/2) - 0.2f;
 
         camPos.y = Mathf.Lerp(camPos.y, targetY, Time.deltaTime * crouchSpeed);
-        cameraTransform.localPosition = camPos;
+        MManager.localPosition = camPos;
     }
 }

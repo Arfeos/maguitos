@@ -42,6 +42,7 @@ public class NetworkStarter : NetworkBehaviour
     //}
     public void Client()
     {
+        Debug.Log("Carga cliente");
         NetworkManager.Singleton.StartClient();
     }
     //void OnGUI()
