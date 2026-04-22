@@ -1,7 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using Unity.Netcode;
 
-public class CameraForwardController : MonoBehaviour
+public class CameraForwardController : NetworkBehaviour
 {
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;
@@ -35,6 +36,8 @@ public class CameraForwardController : MonoBehaviour
 
     private void Update()
     {
+        if (!IsOwner) return;
+
         LookMouse();   
         Move();        
         HandleCrouch();
