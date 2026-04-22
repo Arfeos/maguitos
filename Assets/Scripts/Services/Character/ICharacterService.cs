@@ -10,8 +10,9 @@ public interface ICharacterService
     public SpellBase getSpell(string spellName);
     public SpellBase getSpell(int spellPosition);
     public void AddMana(int mana);
-    public void RemoveMana(int mana);
+    public bool RemoveMana(int mana);
     public int CheckMana();
+    public int getMaxMana();
     public int CheckSpellCapacity();
     public void TakeDamage(int damageTaken);
     public void Heal(int amountHealed);

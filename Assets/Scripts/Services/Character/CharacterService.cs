@@ -13,19 +13,30 @@ public class CharacterService : ICharacterService
     private int manaActual = 100;
     public void AddMana(int manaAniadir)
     {
-        if (manaActual + manaAniadir > mana) return;
+        if (manaActual + manaAniadir > mana)
+        {
+            manaActual = mana;
+            return;
+        }
         this.manaActual += manaAniadir;
+    }
+    public int getMaxMana()
+    {
+        return mana;
     }
 
     public int CheckMana()
     {
         return manaActual;
     }
-    public void RemoveMana(int manaToRemove)
+    public bool RemoveMana(int manaToRemove)
     {
-        if (manaActual - manaToRemove < 0) return;
-        this.manaActual -= manaToRemove;
-
+        if (manaActual - manaToRemove < 0) return false;
+        else
+        {
+            this.manaActual -= manaToRemove;
+            return true;
+        }
     }
     public bool addSpell(SpellBase spellToAdd)
     {
