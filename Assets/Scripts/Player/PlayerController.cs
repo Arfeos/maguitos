@@ -1,18 +1,13 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using Unity.Netcode;
-
-<<<<<<< HEAD:Assets/Scripts/Player/CameraForwardController.cs
-public class CameraForwardController : NetworkBehaviour
-=======
-public class PlayerController : MonoBehaviour
->>>>>>> origin/main:Assets/Scripts/Player/PlayerController.cs
+public class PlayerController : NetworkBehaviour
 {
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;
 
     [Header("Mouse")]
-    [SerializeField] private float mouseSensitivity = 100f;
+    [SerializeField] private float mouseSensitivity = 1f;
     [SerializeField] private GameObject cameraTransform;
     [SerializeField] private Transform MManager;
 
@@ -61,8 +56,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 mouseInput = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
-        float mouseX = mouseInput.x * mouseSensitivity * Time.deltaTime;
-        float mouseY = mouseInput.y * mouseSensitivity * Time.deltaTime;
+        float mouseX = mouseInput.x * mouseSensitivity;
+        float mouseY = mouseInput.y * mouseSensitivity;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
