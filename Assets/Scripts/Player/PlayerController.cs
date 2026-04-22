@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CameraForwardController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;
