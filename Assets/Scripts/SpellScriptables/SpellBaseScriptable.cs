@@ -20,6 +20,8 @@ public class SpellBaseScriptable : ScriptableObject
     public float shootDelay = 1f;
     public float spreadIntensity = 0.1f;
     public bool producesLine = false;
+    public int CosteSlots = 1;
+    public string nombreHechizo = "Change Spell name";
 
     [Header("Spell particles")]
      public GameObject? spawnPrefab;

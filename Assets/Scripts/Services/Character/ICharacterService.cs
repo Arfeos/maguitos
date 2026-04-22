@@ -1,0 +1,20 @@
+using NUnit.Framework;
+using UnityEngine;
+
+public interface ICharacterService
+{
+    public bool addSpell(SpellBase spellToAdd);
+    public bool removeSpell(SpellBase spellToRemove);
+    public SpellBase getSpell(string spellName);
+    public SpellBase getSpell(int spellPosition);
+    public SpellBase getSpell(SpellBase spellPosition);
+    public void AddMana(int mana);
+    public void RemoveMana(int mana);
+    public int CheckMana();
+    public int CheckSpellCapacity();
+    public void TakeDamage(int damageTaken);
+    public void Heal(int amountHealed);
+
+    public void Die();
+
+}

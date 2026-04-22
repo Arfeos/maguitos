@@ -34,30 +34,15 @@ public partial class SpellBase : MonoBehaviour
     public int MaxCharge1 { get => spell.MaxCharge; set => spell.MaxCharge = value; }
     public int CurrentCharge { get => spell.currentCharge; set => spell.currentCharge = value; }
     public float ChargeTimePerUnit1 { get => spell.ChargeTimePerUnit; set => spell.ChargeTimePerUnit = value; }
+    public int SlotCost { get => spell.CosteSlots;set => spell.CosteSlots = value; }
+    public string Name { get => spell.nombreHechizo; set => spell.nombreHechizo = value; }
 
-    //public void createLine(Vector3 posicionInicio, Ray ray, RaycastHit hit)
-    //{
-    //    if (producedParticle == null) return;
-        
-    //    if (producedParticle.TryGetComponent<LineRenderer>(out var lineRendered) == false) return;
-            
-      
-    //    GameObject particula = Instantiate(producedParticle);
-    //    LineRenderer objectLineRenderer = producedParticle.GetComponent<LineRenderer>();
+    private ICharacterService _characterService;
+    private void Awake()
+    {
+        _characterService = AppContainer.Get<ICharacterService>();
+    }
 
-    //    objectLineRenderer.SetPosition(0, posicionInicio);
-    //    if (hit.point != new Vector3(0, 0, 0))
-    //    {
-    //        // Si choca, el fin es el punto de impacto
-    //        objectLineRenderer.SetPosition(1, hit.point);
-    //    }
-    //    else
-    //    {
-    //        // Si no choca, el fin es la distancia máxima
-    //        objectLineRenderer.SetPosition(1, ray.direction * LifeTime);
-    //    }
-    //    Destroy(particula, 0.3f);
-    //}
     public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) 
     {
         if(canCast && !isCasting && CurrentAmmo > 0)
