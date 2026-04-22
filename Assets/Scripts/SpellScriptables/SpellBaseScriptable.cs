@@ -15,7 +15,7 @@ public class SpellBaseScriptable : ScriptableObject
     public int MaxCharge = 5;
     public int currentCharge = 0;
     public float ChargeTimePerUnit = 0.5f;
-    public float reloadTime = 1;
+    //public float reloadTime = 1;
     public float velocity = 1f;
     public float damage = 1f;
     public float lifeTime = 1f;

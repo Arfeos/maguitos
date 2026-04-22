@@ -67,7 +67,7 @@ public partial class SpellBase : MonoBehaviour
         {
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
             spell.currentCharge++;
-        } while (spell.MaxCharge > spell.currentCharge++);
+        } while (spell.MaxCharge < spell.currentCharge++);
         Debug.Log("Carga maxima");
     }
     public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
@@ -77,7 +77,11 @@ public partial class SpellBase : MonoBehaviour
             if (spell.spell.currentCharge == spell.spell.MaxCharge)
             {
                 //spell.spell.currentAmmo--;
-                _characterService.RemoveMana(spell.spell.manaCost);
+                if (!_characterService.RemoveMana(spell.spell.manaCost))
+                {
+                    spell.spell.currentCharge = 0;
+                    return;
+                }
                 ShootRaySpell(spellSpawn, spell, layersToHit);
                 spell.spell.currentCharge = 0;
             }

@@ -13,19 +13,20 @@ MonoBehaviour:
   m_Name: lightlance
   m_EditorClassIdentifier: Assembly-CSharp::SpellBaseScriptable
   spell_Type: 0
-  cast_Type: 0
-  ammoSpace: 30
-  currentAmmo: 30
-  MaxCharge: 5
+  cast_Type: 1
+  spell_importance: 0
+  manaCost: 50
+  MaxCharge: 2
   currentCharge: 0
   ChargeTimePerUnit: 0.5
-  reloadTime: 1
   velocity: 1
   damage: 1
   lifeTime: 100
   shootDelay: 0.1
   spreadIntensity: 0.1
   producesLine: 1
+  CosteSlots: 1
+  nombreHechizo: Light lance
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
