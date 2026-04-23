@@ -52,7 +52,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
                 if (PlayerInputManager.Actions.Player.Attack.WasReleasedThisFrame()) LanzarHechizo(ActualSpell);
                 break;
         }
-    }
+            }
 
 
 
