@@ -1,6 +1,7 @@
-using Unity.VisualScripting;
-using UnityEngine;
 using Unity.Netcode;
+using Unity.VisualScripting;
+using UnityEditor.PackageManager;
+using UnityEngine;
 public class PlayerController : NetworkBehaviour
 {
     [Header("Movimiento")]
@@ -25,11 +26,20 @@ public class PlayerController : NetworkBehaviour
 
     private float xRotation = 0f;
 
+    public NetworkVariable<float> pitch = new(
+    0f,
+    NetworkVariableReadPermission.Everyone,
+    NetworkVariableWritePermission.Owner
+);
+
+
     private void Start()
     {
-        Debug.Log(IsOwner);
+        //SpawnWithOwnership(clientId);
+
         if (!IsOwner) return;
         
+
         //cameraTransform = this.gameObject.GetComponentInChildren<Camera>().transform;
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         characterController = GetComponent<CharacterController>();
@@ -40,18 +50,17 @@ public class PlayerController : NetworkBehaviour
 
     private void Update()
     {
-        if (!IsOwner)
+        if (IsOwner)
         {
-            cameraTransform.SetActive(false);
-            return;
-        } 
-            
-
-        LookMouse();
-        Move();
-        HandleCrouch();
+            LookMouse();
+            Move();
+            HandleCrouch();
+        }
+        else
+        {
+            ApplyRemoteRotation();
+        }
     }
-
     private void LookMouse()
     {
         Vector2 mouseInput = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
@@ -62,10 +71,11 @@ public class PlayerController : NetworkBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        MManager.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
-    }
 
+        MManager.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        pitch.Value = xRotation;
+}
     private void Move()
     {
         var inputPlayer = PlayerInputManager.Actions.Player.Move.ReadValue<Vector2>();
@@ -81,8 +91,6 @@ public class PlayerController : NetworkBehaviour
 
         if (inputPlayer.magnitude > 0.1f)
         {
-       
-
             move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
         }
 
@@ -125,5 +133,18 @@ public class PlayerController : NetworkBehaviour
 
         camPos.y = Mathf.Lerp(camPos.y, targetY, Time.deltaTime * crouchSpeed);
         MManager.localPosition = camPos;
+    }
+    public override void OnNetworkSpawn()
+    {
+        if (!IsOwner)
+        {
+            cameraTransform.SetActive(false);
+        }
+    }
+    private void ApplyRemoteRotation()
+    {
+        if (IsOwner) return;
+
+        MManager.localRotation = Quaternion.Euler(pitch.Value, 0, 0);
     }
 }

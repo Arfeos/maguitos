@@ -9,54 +9,18 @@ public class NetworkStarter : NetworkBehaviour
     private void Awake()
     {
         sceneService = AppContainer.Get<ISceneService>();
-        //if (NetworkManager.Singleton != null && NetworkManager.Singleton != GetComponent<NetworkManager>())
-        //{
-        //    Destroy(gameObject);
-        //    return;
-        //}
-
-        //DontDestroyOnLoad(NetworkManager.Singleton.gameObject);
-
-        //NetworkManager.Singleton.OnServerStarted += () =>
-        //{
-        //    sceneService.LoadScene("SampleScene");
-        //};
-    
-
-}
+    }
     public void Host()
     {
         //StartCoroutine(LoadSceneNextFrame());
         NetworkManager.Singleton.StartHost();
-        //    NetworkManager.Singleton.SceneManager.LoadScene(
-        //    "SampleScene",
-        //    LoadSceneMode.Single
-        //);
+        
         sceneService.LoadScene("SampleScene");
-
-
     }
-    //public override void OnNetworkSpawn()
-    //{
-    //    sceneService.LoadScene("SampleScene");
-    //}
     public void Client()
     {
-        Debug.Log("Carga cliente");
         NetworkManager.Singleton.StartClient();
     }
-    //void OnGUI()
-    //{
-    //    if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
-    //    {
-    //        if (GUI.Button(new Rect(10, 10, 100, 30), "Host"))
-    //            NetworkManager.Singleton.StartHost();
-
-    //        if (GUI.Button(new Rect(10, 50, 100, 30), "Client"))
-    //            NetworkManager.Singleton.StartClient();
-    //    }
-    //}
-
     IEnumerator LoadSceneNextFrame()
     {
         yield return null;
