@@ -23,7 +23,7 @@ public partial class SpellBase : MonoBehaviour
     {
         if(_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
 
-        if (canCast && !isCasting && _characterService.CheckMana() > 0)
+        if (canCast && !isCasting && _characterService.CheckMana() > spell.spell.manaCost)
         {
             
             canCast = false;
