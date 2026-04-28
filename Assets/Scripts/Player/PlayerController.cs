@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float Velocity = 10f;
 
     [Header("Mouse")]
-    [SerializeField] private float mouseSensitivity = 100f;
+    [SerializeField] private float mouseSensitivity = 0.5f;
     [SerializeField] private Transform cameraTransform;
 
     [Header("Crouch")]
@@ -44,13 +44,13 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 mouseInput = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
-        float mouseX = mouseInput.x * mouseSensitivity * Time.deltaTime;
-        float mouseY = mouseInput.y * mouseSensitivity * Time.deltaTime;
+        float mouseX = mouseInput.x * mouseSensitivity;
+        float mouseY = mouseInput.y * mouseSensitivity;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);    
         transform.Rotate(Vector3.up * mouseX);
     }
 

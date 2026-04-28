@@ -9,7 +9,6 @@ public static class Program
 
         //    
         AppContainer.Register<IAudioService>(() => new AudioService());
-        AppContainer.Register<ICoconutService>(() => new CoconutService());
         AppContainer.Register<IEventService>(() => new EventService());
         AppContainer.Register<IHudService>(() => new HudService());
         AppContainer.Register<ICharacterService>(() => new CharacterService());
