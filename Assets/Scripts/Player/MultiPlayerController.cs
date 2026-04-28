@@ -2,7 +2,7 @@ using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEditor.PackageManager;
 using UnityEngine;
-public class PlayerController : NetworkBehaviour
+public class MultiPlayerController : NetworkBehaviour
 {
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;
