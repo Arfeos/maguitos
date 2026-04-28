@@ -17,26 +17,29 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private IAudioService _audioService;
     private IEventService _eventService;
     private ISpellService _spellService;
+    private ICharacterService _characterService;
     private Coroutine _coroutineCharge;
+    private Coroutine _coroutineReload;
     void Start()
     {
-        
         PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
         _audioService = AppContainer.Get<IAudioService>();
         _eventService = AppContainer.Get<IEventService>();
         _spellService = AppContainer.Get<ISpellService>();
+        _characterService = AppContainer.Get<ICharacterService>();
     }
 
     private void OnReloadStarted(InputAction.CallbackContext context)
     {
-        SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
-        ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
+        //SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
+        //ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
+        if(_coroutineReload != null) return;
+        _coroutineReload = StartCoroutine(Actualspell.Reload());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //TODO: Esto es terrible, hacer un evento
+        
         SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
 
         switch (ActualSpell.spell.cast_Type)
@@ -57,16 +60,17 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
 
     private void LanzarHechizo(SpellBase ActualSpell)
-    {//esto es una prueba de evento, no se asusten
-        //TestEvent testEvent = new TestEvent();
-        //testEvent.Message = "coconut";
+    {
 
-        //this._eventService.Publish(testEvent);
         if (_audioService != null) {
             _audioService.PlaySound(_audioClip, false);
         }
         if(_coroutineCharge != null) StopCoroutine(_coroutineCharge);
         _coroutineCharge = null;
+
+        if (_coroutineReload != null) StopCoroutine(_coroutineReload);
+        _coroutineReload = null;
+
         ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
     }
 
