@@ -33,7 +33,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         //SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
         //ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
-
+        if(_coroutineReload != null) return;
         _coroutineReload = StartCoroutine(Actualspell.Reload());
     }
 
