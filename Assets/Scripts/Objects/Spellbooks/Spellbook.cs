@@ -1,20 +1,17 @@
+using System;
 using UnityEngine;
 
-public class Spellbook : MonoBehaviour
+public class Spellbook : MonoBehaviour, ICollectable
 {
     [SerializeField] private SpellBase Spell;
-    private void Awake()
+    private ICharacterService _characterService;
+    public void Collect()
     {
-        
-    }
-    void Start()
-    {
-        
+        _characterService.addSpell(Spell);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        _characterService = AppContainer.Get<CharacterService>();
     }
 }

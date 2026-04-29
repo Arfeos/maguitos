@@ -40,8 +40,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     void Update()
     {
         
-        SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
-
+        SpellBase ActualSpell = Actualspell?.GetComponent<SpellBase>();
+        if(ActualSpell == null) return;
         switch (ActualSpell.spell.cast_Type)
         {
             case CastType.auto:
