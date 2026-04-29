@@ -7,6 +7,8 @@ public class UIInitializer : MonoBehaviour
     [SerializeField] private Button[] foundButtons;
     void Start()
     {
+        //TODO: crear un comprobante para ver si el control ya esta en UI
+        PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
         uiService = AppContainer.Get<IUIService>();
         uiService.RegisterFirstButton(foundButtons);
     }

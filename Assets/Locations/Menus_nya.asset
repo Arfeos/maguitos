@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2724891234304
-    m_Localized: spawnishu
+    m_Localized: Spawnishu
     m_Metadata:
       m_Items: []
   - m_Id: 3337221869568
-    m_Localized: englishu
+    m_Localized: Englishu
     m_Metadata:
       m_Items: []
   - m_Id: 3176475168768
