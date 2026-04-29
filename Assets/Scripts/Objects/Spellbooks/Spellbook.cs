@@ -7,11 +7,7 @@ public class Spellbook : MonoBehaviour, ICollectable
     private ICharacterService _characterService;
     public void Collect()
     {
+        if(_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
         _characterService.addSpell(Spell);
-    }
-
-    private void Awake()
-    {
-        _characterService = AppContainer.Get<CharacterService>();
     }
 }

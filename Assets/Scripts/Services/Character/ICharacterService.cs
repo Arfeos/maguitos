@@ -3,6 +3,7 @@ using UnityEngine;
 
 public interface ICharacterService
 {
+    public int getIndex();
     public bool addSpell(SpellBase spellToAdd);
     public bool removeSpell(SpellBase spellToRemove);
     public bool removeSpell(int spellToRemove);

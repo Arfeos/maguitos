@@ -1330,7 +1330,7 @@ GameObject:
   - component: {fileID: 258874054}
   - component: {fileID: 258874053}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: LightSpearBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1345,7 +1345,7 @@ Transform:
   m_GameObject: {fileID: 258874051}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.046, y: 0.066, z: -0.9354}
+  m_LocalPosition: {x: -0.046, y: 0.115, z: -0.9354}
   m_LocalScale: {x: 0.90799737, y: 0.2101, z: 1.0572}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8b10658a249d2439a1c272b0617dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Spell: {fileID: 0}
+  Spell: {fileID: 539983392261889776, guid: ff8312e53891e604bbf87980a064f553, type: 3}
 --- !u!65 &258874054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7072,9 +7072,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6263766410763723718, guid: b6fa4249a5d2b454cbcf616df461718e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8633003143900936465, guid: b6fa4249a5d2b454cbcf616df461718e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.516452
+      value: -62
       objectReference: {fileID: 0}
     - target: {fileID: 8633003143900936465, guid: b6fa4249a5d2b454cbcf616df461718e, type: 3}
       propertyPath: m_LocalPosition.y

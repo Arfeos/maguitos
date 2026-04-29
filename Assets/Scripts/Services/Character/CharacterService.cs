@@ -6,7 +6,8 @@ using UnityEngine;
 public class CharacterService : ICharacterService
 {
     private List<SpellBase> listaHechizos = new List<SpellBase>();
-    private int slots = 1;
+    private int index = 0;
+    private int slots = 10;
     private int life = 100;
     private int Curretlife = 100;
     private int mana = 100;
@@ -24,7 +25,10 @@ public class CharacterService : ICharacterService
     {
         return mana;
     }
-
+    public int getIndex()
+    {
+        return index;
+    }
     public int CheckMana()
     {
         return manaActual;
@@ -40,7 +44,11 @@ public class CharacterService : ICharacterService
     }
     public bool addSpell(SpellBase spellToAdd)
     {
-        if(CheckSpellCapacity() < spellToAdd.spell.CosteSlots) return false;
+        if (CheckSpellCapacity() < spellToAdd.spell.CosteSlots)
+        {
+            Debug.Log("Lista de hechizos llena");
+            return false;
+        }
 
         listaHechizos.Add(spellToAdd);
         return true;

@@ -6,7 +6,7 @@ using static SpellBase;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Header("Configuracion de hechizo")]
-    [SerializeField] private SpellBase[] spellList;
+    //[SerializeField] private SpellBase[] spellList;
     [SerializeField] private SpellBase Actualspell;
     [SerializeField] private Transform spellSpawn;
 
@@ -34,13 +34,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
         //SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
         //ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
         if(_coroutineReload != null) return;
-        _coroutineReload = StartCoroutine(Actualspell.Reload());
+        _coroutineReload = StartCoroutine(_characterService.getSpell(_characterService.getIndex())?.Reload());
     }
 
     void Update()
     {
         
-        SpellBase ActualSpell = Actualspell?.GetComponent<SpellBase>();
+
+        SpellBase ActualSpell = _characterService.getSpell(_characterService.getIndex())?.GetComponent<SpellBase>();
         if(ActualSpell == null) return;
         switch (ActualSpell.spell.cast_Type)
         {

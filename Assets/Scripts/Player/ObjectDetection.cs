@@ -29,8 +29,14 @@ public class ObjectDetection : MonoBehaviour
 
         RaycastHit hit;
         if(Physics.Raycast(camara.transform.position, camara.transform.forward, out hit, rango)){
-            
 
+
+            if (hit.collider.TryGetComponent<ICollectable>(out ICollectable Collectable) && PlayerInputManager.Actions.Player.Interact.WasPressedThisFrame())
+            {
+                Marker.color = color;
+                //TODO: Cambiar a un color distinto para cada cosa
+                Collectable.Collect();
+            }
 
             if (hit.collider.TryGetComponent<DataShow>(out DataShow data))
             {
