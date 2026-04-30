@@ -10,23 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e147819f38806164d86100754dca5184, type: 3}
-  m_Name: lightlance
+  m_Name: Antimatter
   m_EditorClassIdentifier: Assembly-CSharp::SpellBaseScriptable
   spell_Type: 0
-  cast_Type: 0
-  spell_importance: 1
-  manaCost: 5
-  MaxCharge: 2
+  cast_Type: 2
+  spell_importance: 0
+  manaCost: 80
+  MaxCharge: 6
   currentCharge: 0
   ChargeTimePerUnit: 0.5
   velocity: 1
-  damage: 1
-  lifeTime: 100
-  shootDelay: 0.1
-  spreadIntensity: 0.1
+  damage: 100
+  lifeTime: 1000
+  shootDelay: 1
+  spreadIntensity: 0
   producesLine: 1
-  CosteSlots: 1
-  nombreHechizo: Light lance
+  CosteSlots: 10
+  nombreHechizo: Antimater
+  RayMaterial:
+  - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}

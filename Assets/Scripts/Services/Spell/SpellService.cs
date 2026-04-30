@@ -35,6 +35,21 @@ public class SpellService : ISpellService
 
         return ray;
     }
+
+    public GameObject ShootRay(Vector3 start, Vector3 end, List<Material> material)
+    {
+        var ray = GetOrCreateRay();
+
+        var line = ray.GetComponent<LineRenderer>();
+
+        line.SetPosition(0, start);
+        line.SetPosition(1, end);
+        
+        line.SetMaterials(material);
+        ray.SetActive(true);
+
+        return ray;
+    }
     private GameObject GetOrCreateRay()
     {
         GameObject Ray = _rayList.FirstOrDefault(r => !r.activeInHierarchy);

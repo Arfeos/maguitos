@@ -90,7 +90,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             _audioService.PlaySound(_audioClip, false);
         }
-        if(_coroutineCharge != null) return;
+        if (_coroutineReload != null) StopCoroutine(_coroutineReload);
+        _coroutineReload = null;
+        if (_coroutineCharge != null) return;
         _coroutineCharge = StartCoroutine(ActualSpell.CargarHechizo());
 
     }

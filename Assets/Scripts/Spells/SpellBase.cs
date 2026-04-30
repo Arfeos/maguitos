@@ -10,7 +10,6 @@ public partial class SpellBase : MonoBehaviour
     private bool canCast = true;
     private bool isCasting = false;
 
-    #nullable enable
     Coroutine CastingSpellCoroutine;
 
     private ICharacterService _characterService;
@@ -58,7 +57,7 @@ public partial class SpellBase : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             _characterService.AddMana(1);
             Debug.Log(_characterService.CheckMana());
-        } while (_characterService.CheckMana() < _characterService.getMaxMana());
+        } while (_characterService.CheckMana() <= _characterService.getMaxMana());
     }
 
     public virtual IEnumerator CargarHechizo()
@@ -67,7 +66,7 @@ public partial class SpellBase : MonoBehaviour
         {
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
             spell.currentCharge++;
-        } while (spell.MaxCharge < spell.currentCharge++);
+        } while (spell.MaxCharge > spell.currentCharge);
         Debug.Log("Carga maxima");
     }
     public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
@@ -76,16 +75,21 @@ public partial class SpellBase : MonoBehaviour
         {
             if (spell.spell.currentCharge == spell.spell.MaxCharge)
             {
-                //spell.spell.currentAmmo--;
                 if (!_characterService.RemoveMana(spell.spell.manaCost))
                 {
+                    //Si no se tiene suficiente mana para lanzar el hechizo
                     spell.spell.currentCharge = 0;
                     return;
                 }
+                //Lanzamos el hechizo
                 ShootRaySpell(spellSpawn, spell, layersToHit);
                 spell.spell.currentCharge = 0;
             }
-            else spell.spell.currentCharge = 0;
+            else
+            {
+                //Si el hechizo se lanza sin llegar a carga maxima
+                spell.spell.currentCharge = 0;
+            }
         }
         else
         {
@@ -115,8 +119,9 @@ public partial class SpellBase : MonoBehaviour
     if (spell.spell.producesLine)
     {
         var spellService = AppContainer.Get<ISpellService>();
-        spellService.ShootRay(spellSpawn.position, endPoint);
-    }
+        if(spell.spell.RayMaterial == null) spellService.ShootRay(spellSpawn.position, endPoint);
+            else spellService.ShootRay(spellSpawn.position, endPoint, spell.spell.RayMaterial);
+        }
     }
 
     private Vector3 CalculateDispersion(Vector3 vector3)
