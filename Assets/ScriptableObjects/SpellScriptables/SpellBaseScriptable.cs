@@ -21,6 +21,7 @@ public class SpellBaseScriptable : ScriptableObject
     public float spreadIntensity = 0.1f;
     public bool producesLine = false;
     public int CosteSlots = 1;
+    public float RayAliveTime = 0.3f;
     public string nombreHechizo = "Change Spell name";
 
     [Header("Spell particles")]

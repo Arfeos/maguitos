@@ -26,6 +26,7 @@ MonoBehaviour:
   spreadIntensity: 0.1
   producesLine: 1
   CosteSlots: 1
+  RayAliveTime: 2
   nombreHechizo: AcidBolt
   RayMaterial:
   - {fileID: 2100000, guid: 6b1d94e4d3563fe46b88a4b31db0237b, type: 2}
