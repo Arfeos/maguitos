@@ -30,7 +30,7 @@ public class ObjectDetection : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(camara.transform.position, camara.transform.forward, out hit, rango)){
 
-
+            //Busca objetos coleccionables
             if (hit.collider.TryGetComponent<ICollectable>(out ICollectable Collectable) && PlayerInputManager.Actions.Player.Interact.IsPressed())
             {
                 Marker.color = color;
@@ -39,6 +39,7 @@ public class ObjectDetection : MonoBehaviour
                 Debug.Log("Se ha recogido algo");
             }
 
+            //Busca objetos con datos visualizables
             if (hit.collider.TryGetComponent<DataShow>(out DataShow data))
             {
                 Marker.color = color;

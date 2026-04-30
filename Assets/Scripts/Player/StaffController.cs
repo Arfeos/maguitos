@@ -7,7 +7,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Header("Configuracion de hechizo")]
     //[SerializeField] private SpellBase[] spellList;
-    [SerializeField] private SpellBase Actualspell;
+    //[SerializeField] private SpellBase Actualspell;
     [SerializeField] private Transform spellSpawn;
 
     [Header("Configuracion de Objetos")]

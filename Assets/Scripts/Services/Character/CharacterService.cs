@@ -53,6 +53,7 @@ public class CharacterService : ICharacterService
     }
     public bool addSpell(SpellBase spellToAdd)
     {
+        spellToAdd.ResetSpellShot();
         if (CheckSpellCapacity() < spellToAdd.spell.CosteSlots)
         {
             Debug.Log("Lista de hechizos llena");

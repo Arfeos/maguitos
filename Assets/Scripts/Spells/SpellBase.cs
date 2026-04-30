@@ -17,7 +17,11 @@ public partial class SpellBase : MonoBehaviour
     {
         _characterService = AppContainer.Get<ICharacterService>();
     }
-
+    public void ResetSpellShot()
+    {
+        canCast = true;
+        isCasting = false;
+    }
     public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) 
     {
         if(_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
@@ -106,21 +110,26 @@ public partial class SpellBase : MonoBehaviour
         Vector3 direction = CalculateDispersion(spellSpawn.forward);
         Vector3 endPoint;
 
-    if (Physics.Raycast(spellSpawn.position, direction, out hit, spell.spell.lifeTime, layersToHit))
-    {
-        endPoint = hit.point;
-        Debug.Log("ObjetoGolpeado");
-    }
-    else
-    {
-        endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
-    }
+        if (Physics.Raycast(spellSpawn.position, direction, out hit, spell.spell.lifeTime, layersToHit))
+        {
+            endPoint = hit.point;
+            if(hit.collider.gameObject.GetComponent<IHittable>() != null)
+            {
+                hit.collider.gameObject.GetComponent<IHittable>().Hit();
+                Debug.Log("ObjetoGolpeado");
+            }
+            
+        }
+        else
+        {
+            endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
+        }
 
-    if (spell.spell.producesLine)
-    {
-        var spellService = AppContainer.Get<ISpellService>();
-        if(spell.spell.RayMaterial == null) spellService.ShootRay(spellSpawn.position, endPoint);
-            else spellService.ShootRay(spellSpawn.position, endPoint, spell.spell.RayMaterial);
+        if (spell.spell.producesLine)
+        {
+            var spellService = AppContainer.Get<ISpellService>();
+            if(spell.spell.RayMaterial == null) spellService.ShootRay(spellSpawn.position, endPoint);
+                else spellService.ShootRay(spellSpawn.position, endPoint, spell.spell.RayMaterial);
         }
     }
 

@@ -16,6 +16,7 @@ public static class Program
         AppContainer.Register<ISceneService>(() => new SceneService());
         AppContainer.Register<IScoreService>(() => new ScoreService());
         AppContainer.Register<IAlertService>(() => new AlertService());
+        AppContainer.Register<IAnimationService>(() => new AnimationService());
         AppContainer.Register<ISpellService>(() => new SpellService(Resources.Load<GameObject>("Prefabs/RayPrefab")));
     }
 }
