@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         Move();        
         HandleCrouch();
         handleReload();
+        handleChangeWeapon();
     }
 
     private void LookMouse()
@@ -127,6 +128,22 @@ public class PlayerController : MonoBehaviour
         if (PlayerInputManager.Actions.Player.Reload.WasPressedThisFrame())
         {
             ReloadEvent reloadEvent = new ReloadEvent();
+            _eventService.Publish(reloadEvent);
+        }
+    }
+
+    public void handleChangeWeapon()
+    {
+        if (PlayerInputManager.Actions.Player.Next.WasPressedThisFrame())
+        {
+            SpellChangeEvent reloadEvent = new SpellChangeEvent();
+            reloadEvent.cambio = 1;
+            _eventService.Publish(reloadEvent);
+        }
+        if (PlayerInputManager.Actions.Player.Previous.WasPressedThisFrame())
+        {
+            SpellChangeEvent reloadEvent = new SpellChangeEvent();
+            reloadEvent.cambio = -1;
             _eventService.Publish(reloadEvent);
         }
     }

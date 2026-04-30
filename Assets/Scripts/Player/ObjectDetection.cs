@@ -36,6 +36,7 @@ public class ObjectDetection : MonoBehaviour
                 Marker.color = color;
                 //TODO: Cambiar a un color distinto para cada cosa
                 Collectable.Collect();
+                Debug.Log("Se ha recogido algo");
             }
 
             if (hit.collider.TryGetComponent<DataShow>(out DataShow data))
@@ -43,7 +44,6 @@ public class ObjectDetection : MonoBehaviour
                 Marker.color = color;
                 //ShowMessage(data.getData());
                 _alertService.ShowAlertMessage(MessageBox,data.getData());
-                Debug.Log("Estas apuntando a cosas");
             }
             
 

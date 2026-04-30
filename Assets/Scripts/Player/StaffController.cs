@@ -32,10 +32,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private void OnEnable()
     {
         _eventService.Subscribe<ReloadEvent>(OnReloadStarted);
+        _eventService.Subscribe<SpellChangeEvent>(OnSpellChanged);
     }
     private void OnDisable()
     {
         _eventService.Unsubscribe<ReloadEvent>(OnReloadStarted);
+        _eventService.Unsubscribe<SpellChangeEvent>(OnSpellChanged);
     }
     private void OnReloadStarted(GameEventBase parameters)
     {
@@ -44,7 +46,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (_coroutineReload != null) return;
         _coroutineReload = StartCoroutine(_characterService.getSpell(_characterService.getIndex())?.Reload());
     }
-
+    private void OnSpellChanged(GameEventBase parameters)
+    {
+        SpellChangeEvent parametrosSpellChange = (SpellChangeEvent)parameters;
+        _characterService.setActualSpell(parametrosSpellChange.cambio);
+    }
 
     void Update()
     {

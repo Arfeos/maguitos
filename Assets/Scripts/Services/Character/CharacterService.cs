@@ -29,6 +29,15 @@ public class CharacterService : ICharacterService
     {
         return index;
     }
+    public void setActualSpell(int cambioDePosicion)
+    {
+
+        index += cambioDePosicion;
+        if (index < 0) index = listaHechizos.Count - 1;
+        if (index > listaHechizos.Count -1 ) index = 0;
+        Debug.Log("Hechizo actual: " + listaHechizos[index].name);
+    }
+
     public int CheckMana()
     {
         return manaActual;
@@ -49,7 +58,7 @@ public class CharacterService : ICharacterService
             Debug.Log("Lista de hechizos llena");
             return false;
         }
-
+        if (getSpell(spellToAdd.spell.nombreHechizo) != null) return false;
         listaHechizos.Add(spellToAdd);
         return true;
     }
