@@ -20,22 +20,31 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private ICharacterService _characterService;
     private Coroutine _coroutineCharge;
     private Coroutine _coroutineReload;
-    void Start()
+    void Awake()
     {
-        PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
+        //PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
         _audioService = AppContainer.Get<IAudioService>();
         _eventService = AppContainer.Get<IEventService>();
         _spellService = AppContainer.Get<ISpellService>();
         _characterService = AppContainer.Get<ICharacterService>();
     }
 
-    private void OnReloadStarted(InputAction.CallbackContext context)
+    private void OnEnable()
+    {
+        _eventService.Subscribe<ReloadEvent>(OnReloadStarted);
+    }
+    private void OnDisable()
+    {
+        _eventService.Unsubscribe<ReloadEvent>(OnReloadStarted);
+    }
+    private void OnReloadStarted(GameEventBase parameters)
     {
         //SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
         //ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
-        if(_coroutineReload != null) return;
+        if (_coroutineReload != null) return;
         _coroutineReload = StartCoroutine(_characterService.getSpell(_characterService.getIndex())?.Reload());
     }
+
 
     void Update()
     {

@@ -1,5 +1,7 @@
 using Unity.VisualScripting;
+using UnityEditor.MPE;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,11 +26,14 @@ public class PlayerController : MonoBehaviour
 
     private float xRotation = 0f;
 
+
+    private IEventService _eventService;
+
     private void Awake()
     {
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         characterController = GetComponent<CharacterController>();
-
+        _eventService = AppContainer.Get<IEventService>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour
         LookMouse();   
         Move();        
         HandleCrouch();
+        handleReload();
     }
 
     private void LookMouse()
@@ -113,5 +119,15 @@ public class PlayerController : MonoBehaviour
 
         camPos.y = Mathf.Lerp(camPos.y, targetY, Time.deltaTime * crouchSpeed);
         cameraTransform.localPosition = camPos;
+    }
+
+
+    public void handleReload()
+    {
+        if (PlayerInputManager.Actions.Player.Reload.WasPressedThisFrame())
+        {
+            ReloadEvent reloadEvent = new ReloadEvent();
+            _eventService.Publish(reloadEvent);
+        }
     }
 }
