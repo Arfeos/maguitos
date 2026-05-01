@@ -15,20 +15,16 @@ MonoBehaviour:
   m_TableCollectionName: Menus
   m_TableCollectionNameGuidString: d655bfbad0dbac847a7f03a920d98060
   m_Entries:
-  - m_Id: 2724891234304
-    m_Key: Initial_Language/Canvas/Inital_Language_Selection/Grid/Spanish/txt_ES
+  - m_Id: 141685848006656
+    m_Key: btn_spanish Variant/Canvas (Environment)/btn_spanish Variant/txt_spanish
     m_Metadata:
       m_Items: []
-  - m_Id: 3176475168768
+  - m_Id: 142379292286976
+    m_Key: btn_english Variant/Canvas (Environment)/btn_english Variant/txt_english
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142935314391040
     m_Key: Initial_Language/Canvas/Inital_Language_Selection/tit_language
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3337221869568
-    m_Key: Initial_Language/Canvas/Inital_Language_Selection/Grid/English/txt_EN
-    m_Metadata:
-      m_Items: []
-  - m_Id: 8633109483520
-    m_Key: Initial_Language/Canvas/Inital_Language_Selection/Grid/English/txt_NYA
     m_Metadata:
       m_Items: []
   m_Metadata:

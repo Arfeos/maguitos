@@ -4,9 +4,10 @@ using UnityEngine.UI;
 public class UIInitializer : MonoBehaviour
 {
     private IUIService uiService;
-    [SerializeField] private Button[] foundButtons;
+    private Button[] foundButtons;
     void Start()
     {
+        foundButtons= GameObject.FindObjectsByType<Button>(FindObjectsSortMode.None);
         //TODO: crear un comprobante para ver si el control ya esta en UI
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
         uiService = AppContainer.Get<IUIService>();

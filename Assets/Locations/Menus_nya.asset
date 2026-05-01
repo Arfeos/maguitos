@@ -18,20 +18,16 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 2724891234304
+  - m_Id: 141685848006656
     m_Localized: Spawnishu
     m_Metadata:
       m_Items: []
-  - m_Id: 3337221869568
-    m_Localized: Englishu
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3176475168768
+  - m_Id: 142935314391040
     m_Localized: LANGUWUAGE
     m_Metadata:
       m_Items: []
-  - m_Id: 8633109483520
-    m_Localized: Nya
+  - m_Id: 142379292286976
+    m_Localized: Englishu
     m_Metadata:
       m_Items: []
   references:

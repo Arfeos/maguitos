@@ -26,10 +26,8 @@ public class UIService: IUIService
     public void RegisterFirstButton(Button[] foundButtons)
     {
 
-        Debug.Log("entra");
         if (foundButtons.Length > 0)
         {
-            Debug.Log("hay botones");
             FirstButton = foundButtons[0];
             EventSystem.current.SetSelectedGameObject(FirstButton.gameObject);
         }
