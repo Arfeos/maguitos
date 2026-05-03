@@ -38,7 +38,8 @@ public partial class SpellBase : MonoBehaviour
                     CastRaySpell(spellSpawn, spell, layersToHit);
                     break;
                 case SpellType.ball:
-                    //TODO implement type of spell
+                    Debug.Log("Suck this ball");
+                    CastBallSpell(spellSpawn, spell, layersToHit);
                     break;
                 case SpellType.buff:
                     //TODO implement type of spell
@@ -101,6 +102,41 @@ public partial class SpellBase : MonoBehaviour
             ShootRaySpell(spellSpawn, spell, layersToHit);
         }
             
+    }
+
+    public virtual void CastBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {
+        if (spell.spell.cast_Type == CastType.charged)
+        {
+            if (spell.spell.currentCharge == spell.spell.MaxCharge)
+            {
+                if (!_characterService.RemoveMana(spell.spell.manaCost))
+                {
+                    //Si no se tiene suficiente mana para lanzar el hechizo
+                    spell.spell.currentCharge = 0;
+                    return;
+                }
+                //Lanzamos el hechizo
+                ShootBallSpell(spellSpawn, spell, layersToHit);
+                spell.spell.currentCharge = 0;
+            }
+            else
+            {
+                //Si el hechizo se lanza sin llegar a carga maxima
+                spell.spell.currentCharge = 0;
+            }
+        }
+        else
+        {
+            _characterService.RemoveMana(spell.spell.manaCost);
+            ShootBallSpell(spellSpawn, spell, layersToHit);
+        }
+
+    }
+    private void ShootBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {
+        var spellService = AppContainer.Get<ISpellService>();
+        spellService.ShootBall(spellSpawn.position, spellSpawn.transform.forward , _characterService.getSpell(_characterService.getIndex()).spell.velocity, spell.spell.RayMaterial);
     }
 
     private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
