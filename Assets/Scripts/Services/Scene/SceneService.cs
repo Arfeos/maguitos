@@ -24,6 +24,7 @@ public class SceneService : MonoBehaviour, ISceneService
         if (sceneHistory.Count > 0)
         {
             SceneManager.LoadScene(sceneHistory.Pop());
+            
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIService: IUIService
 {
-     public Button FirstButton { get; private set; }
+     public Selectable FirstButton { get; private set; }
 
     public void changeLanguage(Languages language)
     {
@@ -23,7 +23,7 @@ public class UIService: IUIService
         }
     }
 
-    public void RegisterFirstButton(Button[] foundButtons)
+    public void RegisterFirstButton(Selectable[] foundButtons)
     {
 
         if (foundButtons.Length > 0)

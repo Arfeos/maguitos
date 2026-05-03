@@ -8,12 +8,26 @@ public class CardUI : MonoBehaviour
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private Image icon;
     private String guid;
-    public void Setup(string name, string image, string guid)
+    UserProfile profile;
+    IProfileService _profileService;
+    ISceneService _sceneService;
+    public void Setup(UserProfile profile)
     {
-        nameText.text = name;
-        this.guid = guid;
+        nameText.text = profile.name;
+        this.guid = profile.guid;
+        this.profile = profile;
+        _profileService= AppContainer.Get<IProfileService>();
+        _sceneService= AppContainer.Get<ISceneService>();
         //icon.sprite = ;
-        // si luego cargas sprite:
-        // icon.sprite = data.sprite;
+
+    }
+    public void OnClick()
+    {
+        _profileService.SelectProfile(profile);
+
+        Debug.Log("Perfil seleccionado: " + profile.name);
+
+        
+        _sceneService.LoadScene(SceneNames.Main_menu);
     }
 }

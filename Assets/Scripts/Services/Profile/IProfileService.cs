@@ -9,7 +9,7 @@ public interface IProfileService
 
     void SelectProfile(UserProfile profile);
 
-    void CreateProfile(string name, string urlImage, Settings settings);
+    void CreateProfile(string name, Settings settings, string urlImage ="");
 
     void DeleteProfile(string guid);   
 

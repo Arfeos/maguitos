@@ -17,8 +17,8 @@ public class ProfileLoader : MonoBehaviour
         }
         foreach (UserProfile profiledata in profiles)
         {
-            var card = Instantiate(cardPrefab).GetComponent<CardUI>();
-            card.Setup(profiledata.name, profiledata.urlImage, profiledata.guid);
+            var card = Instantiate(cardPrefab, transform).GetComponent<CardUI>();
+            card.Setup(profiledata);
         }
        
     }

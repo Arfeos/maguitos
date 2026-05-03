@@ -41,7 +41,7 @@ public class ProfileService : IProfileService
         return profiles;
     }
 
-    public void CreateProfile(string name, string urlImage, Settings settings)
+    public void CreateProfile(string name, Settings settings, string urlImage = "")
     {
         string guid = System.Guid.NewGuid().ToString();
 
