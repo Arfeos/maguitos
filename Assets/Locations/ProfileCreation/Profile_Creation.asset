@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: Menus
+  m_Name: Profile_Creation
   m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
-  m_SharedTableData: {fileID: 11400000, guid: d655bfbad0dbac847a7f03a920d98060, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: fa718dd4126039046a00a3a2ee578b1f, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: b14ef90bc8da469439ba1cd446daa854, type: 2}
-  - {fileID: 11400000, guid: 5c46a9b118f76de47a2ac1cd6093a5cd, type: 2}
-  - {fileID: 11400000, guid: 0fb5f1612c8b4554f8a506f961131330, type: 2}
+  - {fileID: 11400000, guid: 174eacea316e9e040aae9a3bd45aa339, type: 2}
+  - {fileID: 11400000, guid: 92e362c71525e434a93e02ce31e705b3, type: 2}
+  - {fileID: 11400000, guid: 63d65116f6450ae40adcd94bdcb152f6, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:
