@@ -1,102 +1,187 @@
+using System;
 using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class SpellBase : MonoBehaviour
+public partial class SpellBase : MonoBehaviour
 {
-#nullable enable
-    public enum SpellType { 
-    ray,
-    ball,
-    buff,
-    structure}
-    public enum CastType
+    public SpellBaseScriptable spell;
+
+    private bool canCast = true;
+    private bool isCasting = false;
+
+    Coroutine CastingSpellCoroutine;
+
+    private ICharacterService _characterService;
+    private void Awake()
     {
-        auto,
-        semi
+        _characterService = AppContainer.Get<ICharacterService>();
+    }
+    public void ResetSpellShot()
+    {
+        canCast = true;
+        isCasting = false;
+    }
+    public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) 
+    {
+        if(_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
+
+        if (canCast && !isCasting && _characterService.CheckMana() > spell.spell.manaCost)
+        {
+            
+            canCast = false;
+            isCasting = true;
+
+            switch (spell.spell.spell_Type)
+            {
+                case SpellType.ray:
+                    CastRaySpell(spellSpawn, spell, layersToHit);
+                    break;
+                case SpellType.ball:
+                    Debug.Log("Suck this ball");
+                    CastBallSpell(spellSpawn, spell, layersToHit);
+                    break;
+                case SpellType.buff:
+                    //TODO implement type of spell
+                    break;
+                case SpellType.structure:
+                    //TODO implement type of spell
+                    break;
+            }
+
+            Invoke("ResetCast", spell.spell.shootDelay);
+        }
+        if (_characterService.CheckMana() == 0) Debug.Log("No tenes munbicion pive");
     }
 
-    
-    [Header("Spell options")]
-    [SerializeField] private SpellType spell_Type;
-    [SerializeField] private CastType cast_Type;
-    [SerializeField] private int ammoSpace = 1;
-    [SerializeField] private float velocity = 1f;
-    [SerializeField] private float lifeTime = 1f;
-    [SerializeField] private float shootDelay = 0.5f;
-    [SerializeField] private bool producesLine = false;
-
-    [Header("Spell particles")]
-    [SerializeField] private GameObject? spawnPrefab;
-    [SerializeField] private GameObject? producedParticle;
-    [SerializeField] private GameObject? hitParticle;
-
-    [Header("Spell sound")]
-    [SerializeField] private AudioSource? spawnSound;
-    [SerializeField] private AudioSource? airSound;
-    [SerializeField] private AudioSource? hitSound;
-
-    public bool canCast = true;
-    Coroutine CastingSpellCoroutine;
-    public SpellType spellType { get => spell_Type; set => spell_Type = value; }
-    public CastType castType { get => cast_Type; set => cast_Type = value; }
-    public int AmmoSpace { get => ammoSpace; set => ammoSpace = value; }
-    public float Velocity { get => velocity; set => velocity = value; }
-    public float LifeTime { get => lifeTime; set => lifeTime = value; }
-    public float ShootDelay { get => shootDelay; set => shootDelay = value; }
-    public bool ProducesLine { get => producesLine; set => producesLine = value; }
-    public GameObject? SpawnPrefab { get => spawnPrefab; set => spawnPrefab = value; }
-    public GameObject? ProducedParticle { get => producedParticle; set => producedParticle = value; }
-    public GameObject? HitParticle { get => hitParticle; set => hitParticle = value; }
-    public AudioSource? SpawnSound { get => spawnSound; set => spawnSound = value; }
-    public AudioSource? AirSound { get => airSound; set => airSound = value; }
-    public AudioSource? HitSound { get => hitSound; set => hitSound = value; }
-
-    public void createLine(Vector3 posicionInicio, Ray ray, RaycastHit hit)
+    public virtual IEnumerator Reload()
     {
-        if (producedParticle == null) return;
-        
-        if (producedParticle.TryGetComponent<LineRenderer>(out var lineRendered) == false) return;
-            
-      
-        GameObject particula = Instantiate(producedParticle);
-        LineRenderer objectLineRenderer = producedParticle.GetComponent<LineRenderer>();
-
-        objectLineRenderer.SetPosition(0, posicionInicio);
-        if (hit.point != new Vector3(0, 0, 0))
+        if (_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
+        do
         {
-            // Si choca, el fin es el punto de impacto
-            objectLineRenderer.SetPosition(1, hit.point);
+            yield return new WaitForSeconds(0.1f);
+            _characterService.AddMana(1);
+            Debug.Log(_characterService.CheckMana());
+        } while (_characterService.CheckMana() <= _characterService.getMaxMana());
+    }
+
+    public virtual IEnumerator CargarHechizo()
+    {
+        do
+        {
+            yield return new WaitForSeconds(spell.ChargeTimePerUnit);
+            spell.currentCharge++;
+        } while (spell.MaxCharge > spell.currentCharge);
+        Debug.Log("Carga maxima");
+    }
+    public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {   
+        if(spell.spell.cast_Type == CastType.charged)
+        {
+            if (spell.spell.currentCharge == spell.spell.MaxCharge)
+            {
+                if (!_characterService.RemoveMana(spell.spell.manaCost))
+                {
+                    //Si no se tiene suficiente mana para lanzar el hechizo
+                    spell.spell.currentCharge = 0;
+                    return;
+                }
+                //Lanzamos el hechizo
+                ShootRaySpell(spellSpawn, spell, layersToHit);
+                spell.spell.currentCharge = 0;
+            }
+            else
+            {
+                //Si el hechizo se lanza sin llegar a carga maxima
+                spell.spell.currentCharge = 0;
+            }
         }
         else
         {
-            // Si no choca, el fin es la distancia máxima
-            objectLineRenderer.SetPosition(1, ray.direction * LifeTime);
+            _characterService.RemoveMana(spell.spell.manaCost);
+            ShootRaySpell(spellSpawn, spell, layersToHit);
         }
-        Destroy(particula, 0.3f);
+            
     }
-    public virtual void LanzarHechizo(Transform spellSpawn,GameObject spell, LayerMask layersToHit) {
 
-        if (canCast == false) return;
+    public virtual void CastBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {
+        if (spell.spell.cast_Type == CastType.charged)
+        {
+            if (spell.spell.currentCharge == spell.spell.MaxCharge)
+            {
+                if (!_characterService.RemoveMana(spell.spell.manaCost))
+                {
+                    //Si no se tiene suficiente mana para lanzar el hechizo
+                    spell.spell.currentCharge = 0;
+                    return;
+                }
+                //Lanzamos el hechizo
+                ShootBallSpell(spellSpawn, spell, layersToHit);
+                spell.spell.currentCharge = 0;
+            }
+            else
+            {
+                //Si el hechizo se lanza sin llegar a carga maxima
+                spell.spell.currentCharge = 0;
+            }
+        }
+        else
+        {
+            _characterService.RemoveMana(spell.spell.manaCost);
+            ShootBallSpell(spellSpawn, spell, layersToHit);
+        }
 
-        
-        Ray ray = new Ray(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward));
-        SpellBase ActualSpell = spell.GetComponent<SpellBase>();
-        CastingSpellCoroutine = StartCoroutine(ActualSpell.CastingSpell());
+    }
+    private void ShootBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {
+        var spellService = AppContainer.Get<ISpellService>();
+        spellService.ShootBall(spellSpawn.position, spellSpawn.transform.forward , _characterService.getSpell(_characterService.getIndex()).spell.velocity, spell.spell.RayMaterial);
+    }
+
+    private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {
         RaycastHit hit;
 
-        if (Physics.Raycast(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward), out hit, ActualSpell.LifeTime, layersToHit))
-        {
-            Debug.DrawRay(spellSpawn.position, spellSpawn.transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+        Vector3 direction = CalculateDispersion(spellSpawn.forward);
+        Vector3 endPoint;
 
-            Debug.Log("ObjetoGolpeado");
+        if (Physics.Raycast(spellSpawn.position, direction, out hit, spell.spell.lifeTime, layersToHit))
+        {
+            endPoint = hit.point;
+            if(hit.collider.gameObject.GetComponent<IHittable>() != null)
+            {
+                hit.collider.gameObject.GetComponent<IHittable>().Hit();
+                Debug.Log("ObjetoGolpeado");
+            }
+            
         }
-        if (ActualSpell.ProducesLine) ActualSpell.createLine(spellSpawn.position, ray, hit);
+        else
+        {
+            endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
+        }
+
+        if (spell.spell.producesLine)
+        {
+            var spellService = AppContainer.Get<ISpellService>();
+            if(spell.spell.RayMaterial == null) spellService.ShootRay(spellSpawn.position, endPoint);
+                else spellService.ShootRay(spellSpawn.position, endPoint, spell.spell.RayMaterial);
+        }
     }
-    public virtual IEnumerator CastingSpell()
+
+    private Vector3 CalculateDispersion(Vector3 vector3)
     {
-        canCast = false;
-        yield return new WaitForSeconds(1);
+        float xDispersiom = UnityEngine.Random.Range(spell.spreadIntensity, -spell.spreadIntensity);
+        float yDispersiom = UnityEngine.Random.Range(spell.spreadIntensity, -spell.spreadIntensity);
+
+        Vector3 dispersion = new Vector3(xDispersiom, yDispersiom, 0);
+        return vector3 + dispersion;
+    }
+
+
+    public virtual void ResetCast()
+    {
+        isCasting = false;
         canCast = true;
     }
 }

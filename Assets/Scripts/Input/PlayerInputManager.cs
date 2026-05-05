@@ -14,6 +14,7 @@ public sealed class PlayerInputManager : MonoBehaviour
 
     // Asset generado por Unity Input System con todas las acciones.
     private static @InputSystem_Actions _actions;
+    
 
     /// <summary>
     /// Enumeracion de mapas de control soportados por el juego.
@@ -106,6 +107,7 @@ public sealed class PlayerInputManager : MonoBehaviour
         // Seguridad: no dejar mapas previos activos en paralelo.
         Actions.Disable();
         mapToEnable.Enable();
+        
     }
 
     /// <summary>

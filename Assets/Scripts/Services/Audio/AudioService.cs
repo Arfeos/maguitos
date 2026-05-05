@@ -5,14 +5,15 @@ public class AudioService : IAudioService
 {
     private readonly GameObject _audioRoot;
     private List<AudioSource> _audioSources = new List<AudioSource>();
-
+    private float _minInterval = 0.01f;
+    private Dictionary<AudioClip, float> _lastPlayTime = new();
     public AudioService()
     {
         _audioRoot = new GameObject("AudioService");
         Object.DontDestroyOnLoad(_audioRoot);
     }
 
-    public void PlaySound(AudioClip clip, bool loop = false)
+    public void PlaySound(AudioClip clip, bool loop = false, bool stopPrevious = false)
     {
         if (clip == null) return;
         AudioSource existingSource = _audioSources
@@ -20,9 +21,22 @@ public class AudioService : IAudioService
 
         if (existingSource != null)
         {
-            existingSource.Stop();
-            existingSource.loop = loop;
-            existingSource.Play();
+           
+            if (_lastPlayTime.TryGetValue(clip, out float lastTime))
+            {
+                if (Time.time - lastTime < _minInterval)
+                    return; 
+            }
+
+            _lastPlayTime[clip] = Time.time;
+
+            if (stopPrevious)
+            {
+                existingSource.Stop();
+                existingSource.loop = loop;
+                existingSource.Play();
+            }
+
             return;
         }
         var audioSource = GetOrCreateAudioSource();
