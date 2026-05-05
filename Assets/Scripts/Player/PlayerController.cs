@@ -1,5 +1,7 @@
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEditor.MPE;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 
@@ -24,10 +26,14 @@ public class PlayerController : MonoBehaviour
     private bool isRunning;
     private bool isCrouching;
 
+    private Vector3 move;
+
     private float xRotation = 0f;
 
 
     private IEventService _eventService;
+
+    private Animator _animator;
 
     private void Awake()
     {
@@ -36,6 +42,7 @@ public class PlayerController : MonoBehaviour
         _eventService = AppContainer.Get<IEventService>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        _animator = GetComponent<Animator>(); 
     }
 
     private void Update()
@@ -45,6 +52,7 @@ public class PlayerController : MonoBehaviour
         HandleCrouch();
         handleReload();
         handleChangeWeapon();
+        SetAnimation();
     }
 
     private void LookMouse()
@@ -72,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
         velocityY += gravity * Time.deltaTime;
 
-        Vector3 move = Vector3.zero;
+        move = Vector3.zero;
 
         if (inputPlayer.magnitude > 0.1f)
         {
@@ -146,5 +154,26 @@ public class PlayerController : MonoBehaviour
             reloadEvent.cambio = -1;
             _eventService.Publish(reloadEvent);
         }
+    }
+
+    private void SetAnimation()
+    {
+        
+        if (move == Vector3.zero)
+        {
+            _animator.SetBool("isIdle", true);
+        }
+        else
+        {
+            _animator.SetFloat("VelocityX", move.x);
+            _animator.SetFloat("VelocityY",move.y);
+        }
+        _animator.SetBool("isCrouching", isCrouching);
+        _animator.SetBool("isRunning", isRunning);
+        if (velocityY > 0.5)
+        {
+            _animator.SetBool("onAir", true);
+        }
+
     }
 }
