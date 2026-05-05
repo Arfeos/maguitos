@@ -47,7 +47,7 @@ public class Workflow
 
         _messageBox.SetActive(true);
         ObjectDataScriptable dataStep = new ObjectDataScriptable();
-        dataStep.name = _currentStep.Name;
+        dataStep.objectName = _currentStep.Name;
         dataStep.objetDescription = _currentStep.Description;
 
         _alertService.ShowAlertMessage(_messageBox, dataStep);
