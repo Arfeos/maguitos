@@ -10,7 +10,6 @@ public partial class SpellBase : MonoBehaviour
     private bool canCast = true;
     private bool isCasting = false;
 
-    #nullable enable
     Coroutine CastingSpellCoroutine;
 
     private ICharacterService _characterService;
@@ -18,7 +17,11 @@ public partial class SpellBase : MonoBehaviour
     {
         _characterService = AppContainer.Get<ICharacterService>();
     }
-
+    public void ResetSpellShot()
+    {
+        canCast = true;
+        isCasting = false;
+    }
     public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) 
     {
         if(_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
@@ -35,7 +38,8 @@ public partial class SpellBase : MonoBehaviour
                     CastRaySpell(spellSpawn, spell, layersToHit);
                     break;
                 case SpellType.ball:
-                    //TODO implement type of spell
+                    Debug.Log("Suck this ball");
+                    CastBallSpell(spellSpawn, spell, layersToHit);
                     break;
                 case SpellType.buff:
                     //TODO implement type of spell
@@ -58,7 +62,7 @@ public partial class SpellBase : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             _characterService.AddMana(1);
             Debug.Log(_characterService.CheckMana());
-        } while (_characterService.CheckMana() < _characterService.getMaxMana());
+        } while (_characterService.CheckMana() <= _characterService.getMaxMana());
     }
 
     public virtual IEnumerator CargarHechizo()
@@ -67,7 +71,7 @@ public partial class SpellBase : MonoBehaviour
         {
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
             spell.currentCharge++;
-        } while (spell.MaxCharge < spell.currentCharge++);
+        } while (spell.MaxCharge > spell.currentCharge);
         Debug.Log("Carga maxima");
     }
     public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
@@ -76,16 +80,21 @@ public partial class SpellBase : MonoBehaviour
         {
             if (spell.spell.currentCharge == spell.spell.MaxCharge)
             {
-                //spell.spell.currentAmmo--;
                 if (!_characterService.RemoveMana(spell.spell.manaCost))
                 {
+                    //Si no se tiene suficiente mana para lanzar el hechizo
                     spell.spell.currentCharge = 0;
                     return;
                 }
+                //Lanzamos el hechizo
                 ShootRaySpell(spellSpawn, spell, layersToHit);
                 spell.spell.currentCharge = 0;
             }
-            else spell.spell.currentCharge = 0;
+            else
+            {
+                //Si el hechizo se lanza sin llegar a carga maxima
+                spell.spell.currentCharge = 0;
+            }
         }
         else
         {
@@ -95,6 +104,41 @@ public partial class SpellBase : MonoBehaviour
             
     }
 
+    public virtual void CastBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {
+        if (spell.spell.cast_Type == CastType.charged)
+        {
+            if (spell.spell.currentCharge == spell.spell.MaxCharge)
+            {
+                if (!_characterService.RemoveMana(spell.spell.manaCost))
+                {
+                    //Si no se tiene suficiente mana para lanzar el hechizo
+                    spell.spell.currentCharge = 0;
+                    return;
+                }
+                //Lanzamos el hechizo
+                ShootBallSpell(spellSpawn, spell, layersToHit);
+                spell.spell.currentCharge = 0;
+            }
+            else
+            {
+                //Si el hechizo se lanza sin llegar a carga maxima
+                spell.spell.currentCharge = 0;
+            }
+        }
+        else
+        {
+            _characterService.RemoveMana(spell.spell.manaCost);
+            ShootBallSpell(spellSpawn, spell, layersToHit);
+        }
+
+    }
+    private void ShootBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
+    {
+        var spellService = AppContainer.Get<ISpellService>();
+        spellService.ShootBall(spellSpawn.position, spellSpawn.transform.forward , _characterService.getSpell(_characterService.getIndex()).spell.velocity, spell.spell.RayMaterial);
+    }
+
     private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
         RaycastHit hit;
@@ -102,21 +146,27 @@ public partial class SpellBase : MonoBehaviour
         Vector3 direction = CalculateDispersion(spellSpawn.forward);
         Vector3 endPoint;
 
-    if (Physics.Raycast(spellSpawn.position, direction, out hit, spell.spell.lifeTime, layersToHit))
-    {
-        endPoint = hit.point;
-        Debug.Log("ObjetoGolpeado");
-    }
-    else
-    {
-        endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
-    }
+        if (Physics.Raycast(spellSpawn.position, direction, out hit, spell.spell.lifeTime, layersToHit))
+        {
+            endPoint = hit.point;
+            if(hit.collider.gameObject.GetComponent<IHittable>() != null)
+            {
+                hit.collider.gameObject.GetComponent<IHittable>().Hit();
+                Debug.Log("ObjetoGolpeado");
+            }
+            
+        }
+        else
+        {
+            endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
+        }
 
-    if (spell.spell.producesLine)
-    {
-        var spellService = AppContainer.Get<ISpellService>();
-        spellService.ShootRay(spellSpawn.position, endPoint);
-    }
+        if (spell.spell.producesLine)
+        {
+            var spellService = AppContainer.Get<ISpellService>();
+            if(spell.spell.RayMaterial == null) spellService.ShootRay(spellSpawn.position, endPoint);
+                else spellService.ShootRay(spellSpawn.position, endPoint, spell.spell.RayMaterial);
+        }
     }
 
     private Vector3 CalculateDispersion(Vector3 vector3)

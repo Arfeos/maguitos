@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e147819f38806164d86100754dca5184, type: 3}
+  m_Name: SolarFlare
+  m_EditorClassIdentifier: Assembly-CSharp::SpellBaseScriptable
+  spell_Type: 0
+  cast_Type: 2
+  spell_importance: 0
+  manaCost: 20
+  MaxCharge: 3
+  currentCharge: 0
+  ChargeTimePerUnit: 0.5
+  velocity: 1
+  damage: 50
+  lifeTime: 100
+  shootDelay: 1
+  spreadIntensity: 0
+  producesLine: 1
+  CosteSlots: 5
+  RayAliveTime: 1
+  nombreHechizo: SolarFlare
+  RayMaterial:
+  - {fileID: 2100000, guid: 347ebdc114fb3e049878aac8d43a8e7f, type: 2}
+  spawnPrefab: {fileID: 0}
+  producedParticle: {fileID: 0}
+  hitParticle: {fileID: 0}
+  spawnSound: {fileID: 0}
+  airSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  canCast: 1
+  isCasting: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using static SpellBase;
 
@@ -20,12 +21,14 @@ public class SpellBaseScriptable : ScriptableObject
     public float spreadIntensity = 0.1f;
     public bool producesLine = false;
     public int CosteSlots = 1;
+    public float RayAliveTime = 0.3f;
     public string nombreHechizo = "Change Spell name";
 
     [Header("Spell particles")]
-     public GameObject? spawnPrefab;
-     public GameObject? producedParticle;
-     public GameObject? hitParticle;
+    public List<Material>? RayMaterial;
+    public GameObject? spawnPrefab;
+    public GameObject? producedParticle;
+    public GameObject? hitParticle;
 
     [Header("Spell sound")]
     public AudioSource? spawnSound;
