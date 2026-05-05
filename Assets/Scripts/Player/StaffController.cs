@@ -6,8 +6,8 @@ using static SpellBase;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Header("Configuracion de hechizo")]
-    [SerializeField] private SpellBase[] spellList;
-    [SerializeField] private SpellBase Actualspell;
+    //[SerializeField] private SpellBase[] spellList;
+    //[SerializeField] private SpellBase Actualspell;
     [SerializeField] private Transform spellSpawn;
 
     [Header("Configuracion de Objetos")]
@@ -20,28 +20,44 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private ICharacterService _characterService;
     private Coroutine _coroutineCharge;
     private Coroutine _coroutineReload;
-    void Start()
+    void Awake()
     {
-        PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
+        //PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
         _audioService = AppContainer.Get<IAudioService>();
         _eventService = AppContainer.Get<IEventService>();
         _spellService = AppContainer.Get<ISpellService>();
         _characterService = AppContainer.Get<ICharacterService>();
     }
 
-    private void OnReloadStarted(InputAction.CallbackContext context)
+    private void OnEnable()
+    {
+        _eventService.Subscribe<ReloadEvent>(OnReloadStarted);
+        _eventService.Subscribe<SpellChangeEvent>(OnSpellChanged);
+    }
+    private void OnDisable()
+    {
+        _eventService.Unsubscribe<ReloadEvent>(OnReloadStarted);
+        _eventService.Unsubscribe<SpellChangeEvent>(OnSpellChanged);
+    }
+    private void OnReloadStarted(GameEventBase parameters)
     {
         //SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
         //ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
-        if(_coroutineReload != null) return;
-        _coroutineReload = StartCoroutine(Actualspell.Reload());
+        if (_coroutineReload != null) return;
+        _coroutineReload = StartCoroutine(_characterService.getSpell(_characterService.getIndex())?.Reload());
+    }
+    private void OnSpellChanged(GameEventBase parameters)
+    {
+        SpellChangeEvent parametrosSpellChange = (SpellChangeEvent)parameters;
+        _characterService.setActualSpell(parametrosSpellChange.cambio);
     }
 
     void Update()
     {
         
-        SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
 
+        SpellBase ActualSpell = _characterService.getSpell(_characterService.getIndex())?.GetComponent<SpellBase>();
+        if(ActualSpell == null) return;
         switch (ActualSpell.spell.cast_Type)
         {
             case CastType.auto:
@@ -80,7 +96,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             _audioService.PlaySound(_audioClip, false);
         }
-        if(_coroutineCharge != null) return;
+        if (_coroutineReload != null) StopCoroutine(_coroutineReload);
+        _coroutineReload = null;
+        if (_coroutineCharge != null) return;
         _coroutineCharge = StartCoroutine(ActualSpell.CargarHechizo());
 
     }

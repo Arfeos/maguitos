@@ -3,6 +3,8 @@ using UnityEngine;
 
 public interface ICharacterService
 {
+    public int getIndex();
+    public void setActualSpell(int cambioDePosicion);
     public bool addSpell(SpellBase spellToAdd);
     public bool removeSpell(SpellBase spellToRemove);
     public bool removeSpell(int spellToRemove);
