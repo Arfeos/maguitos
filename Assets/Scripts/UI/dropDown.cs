@@ -9,16 +9,16 @@ public class dropDown : MonoBehaviour
 
     void Update()
     {
-        // Solo si este dropdown está seleccionado
-        if (EventSystem.current.currentSelectedGameObject == dropdown.gameObject)
-        {
-            if (UnityEngine.Input.GetKeyDown(KeyCode.Return) || UnityEngine.Input.GetKeyDown(KeyCode.KeypadEnter))
-            {
-                if (dropdown.IsExpanded)
-                    dropdown.Hide();
-                else
-                    dropdown.Show();
-            }
-        }
+        //// Solo si este dropdown está seleccionado
+        //if (EventSystem.current.currentSelectedGameObject == dropdown.gameObject)
+        //{
+        //    if (UnityEngine.Input.GetKeyDown(KeyCode.Return) || UnityEngine.Input.GetKeyDown(KeyCode.KeypadEnter))
+        //    {
+        //        if (dropdown.IsExpanded)
+        //            dropdown.Hide();
+        //        else
+        //            dropdown.Show();
+        //    }
+        //}
     }
 }

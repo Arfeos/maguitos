@@ -18,7 +18,8 @@ public class CardUI : MonoBehaviour
         this.profile = profile;
         _profileService= AppContainer.Get<IProfileService>();
         _sceneService= AppContainer.Get<ISceneService>();
-        //icon.sprite = ;
+        Debug.Log("Cargando imagen desde URL: " + profile.urlImage);
+        icon.sprite = Resources.Load<Sprite>(profile.urlImage);
 
     }
     public void OnClick()
