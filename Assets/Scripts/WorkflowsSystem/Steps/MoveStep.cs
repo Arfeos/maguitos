@@ -1,9 +1,10 @@
 
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PressAStep : IStep
+public class MoveStep : IStep
 {
 
     // --- Variables ---
@@ -11,12 +12,23 @@ public class PressAStep : IStep
 
 
     // --- IStep ---
-    public string Name => "Presiona A";
-    public string Description => "Presionando la tecla `A` superas el `step` del workflow";
+    public string Name => "Muevete";
+    public string Description
+    {
+        get
+        {
+            var moveAction = PlayerInputManager.Actions.Player.Move;
+            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
+
+            return $"Presionando las teclas {keyNames}";
+        }
+    }
+
+    //public string Description => "Presionando la tecla " + PlayerInputManager.Actions.Player.Move.controls.ToString() +  " superas el `step` del workflow";
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }
     public event Action OnComplete;
 
-    public PressAStep()
+    public MoveStep()
     {
     }
 
