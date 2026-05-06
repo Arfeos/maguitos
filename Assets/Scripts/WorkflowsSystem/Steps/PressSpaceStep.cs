@@ -1,8 +1,9 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PressSpaceFiveTimesStep : IStep
+public class PressSpaceStep : IStep
 {
 
     // --- Variables ---
@@ -10,12 +11,21 @@ public class PressSpaceFiveTimesStep : IStep
     private int _keyPressedTimes = 0;
 
     // --- IStep ---
-    public string Name => "Presiona SPACE";
-    public string Description => "Presionando la tecla `SPACE` 5 veces superas el `step` del workflow";
+    public string Name => "Salta por encima del pilar caido";
+    public string Description
+    {
+        get
+        {
+            var moveAction = PlayerInputManager.Actions.Player.Jump;
+            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
+
+            return $"Acercate al segundo pilar caido y mientras te mueves hacia delante presiona la tecla {keyNames}";
+        }
+    }
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }
     public event Action OnComplete;
 
-    public PressSpaceFiveTimesStep()
+    public PressSpaceStep()
     {
     }
 
@@ -34,15 +44,7 @@ public class PressSpaceFiveTimesStep : IStep
 
     private void HandleAction(InputAction.CallbackContext context)
     {
-        this._keyPressedTimes++;
-
-        Debug.Log($"Pulsada {this._keyPressedTimes}/5 veces");
-
-        if (this._keyPressedTimes >= 5)
-        {
-            this.IsComplete = true;
-            this.OnComplete?.Invoke();
-
-        }
+        this.IsComplete = true;
+        this.OnComplete?.Invoke();
     }
 }

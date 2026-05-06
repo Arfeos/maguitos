@@ -17,8 +17,8 @@ public class TutorialInicializer : MonoBehaviour
     {
         mainSceneWorkflow = new Workflow(new List<IStep>
         {
-            new PressAStep(),
-            new PressSpaceFiveTimesStep()
+            new MoveStep(),
+            new PressSpaceStep()
 
         }, MessageBox);
 

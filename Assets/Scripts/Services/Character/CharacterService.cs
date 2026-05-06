@@ -91,6 +91,7 @@ public class CharacterService : ICharacterService
     {
         if(spellPosition < 0) return null;
         if(spellPosition + 1 > listaHechizos.Count) return null;
+        if(listaHechizos.Count == 0) return null;
         return listaHechizos[spellPosition];
     }
 
