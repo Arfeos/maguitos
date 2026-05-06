@@ -261,6 +261,54 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8949708338751679542, guid: a2de260c90bda724480b3cdef54c1014, type: 3}
   m_PrefabInstance: {fileID: 613096897960483258}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &272380499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272380501}
+  - component: {fileID: 272380500}
+  m_Layer: 5
+  m_Name: Initializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &272380500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272380499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3537da53faa294eabb1db38e56fbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIInitializer
+--- !u!224 &272380501
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272380499}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 960, y: 539.94}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &339308230
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,10 +912,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 339308231}
     m_Modifications:
-    - target: {fileID: 6047550623570686408, guid: a2de260c90bda724480b3cdef54c1014, type: 3}
-      propertyPath: m_text
-      value: "ESPA\xD1OL"
-      objectReference: {fileID: 0}
     - target: {fileID: 8533855506948438826, guid: a2de260c90bda724480b3cdef54c1014, type: 3}
       propertyPath: m_Name
       value: btn_spanish
@@ -1049,10 +1093,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: btn_nya
       objectReference: {fileID: 0}
-    - target: {fileID: 7941284326148348362, guid: ebd301e270472d04da42c0edc56df3a0, type: 3}
-      propertyPath: m_text
-      value: NYA
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1066,10 +1106,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 339308231}
     m_Modifications:
-    - target: {fileID: 373174991544470229, guid: caa6ba5b0be03d34d8397eb64c20f6e7, type: 3}
-      propertyPath: m_text
-      value: ENGLISH
-      objectReference: {fileID: 0}
     - target: {fileID: 2355004045709672503, guid: caa6ba5b0be03d34d8397eb64c20f6e7, type: 3}
       propertyPath: m_Name
       value: btn_english
@@ -1166,4 +1202,5 @@ SceneRoots:
   - {fileID: 1868636480}
   - {fileID: 551615763}
   - {fileID: 822315330}
+  - {fileID: 272380501}
   - {fileID: 1921865909}

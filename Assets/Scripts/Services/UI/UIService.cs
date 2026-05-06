@@ -23,17 +23,9 @@ public class UIService: IUIService
         }
     }
 
-    public void RegisterFirstButton(Selectable[] foundButtons)
+    public void RegisterFirstButton(GameObject firstButton)
     {
+        EventSystem.current.SetSelectedGameObject(firstButton);
 
-        if (foundButtons.Length > 0)
-        {
-            FirstButton = foundButtons[0];
-            EventSystem.current.SetSelectedGameObject(FirstButton.gameObject);
-        }
-        else
-        {
-            FirstButton = null;
-        }
     }
 }
