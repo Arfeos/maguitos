@@ -1,5 +1,7 @@
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEditor.MPE;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 
@@ -17,6 +19,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float crouchHeight = 0.5f;
     [SerializeField] private float crouchSpeed = 8f;
 
+    [Header("Center")]
+    [SerializeField] private float crouchCenter = 0.5f;
+    [SerializeField] private float standCenter = 1f;
+
     private CharacterController characterController;
     private float gravity = -9.8f;
     private float velocityY;
@@ -24,10 +30,14 @@ public class PlayerController : MonoBehaviour
     private bool isRunning;
     private bool isCrouching;
 
+    private Vector2 dirAnimation;
+
     private float xRotation = 0f;
 
 
     private IEventService _eventService;
+
+    private Animator _animator;
 
     private void Awake()
     {
@@ -36,6 +46,7 @@ public class PlayerController : MonoBehaviour
         _eventService = AppContainer.Get<IEventService>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        _animator = GetComponent<Animator>(); 
     }
 
     private void Update()
@@ -45,6 +56,7 @@ public class PlayerController : MonoBehaviour
         HandleCrouch();
         handleReload();
         handleChangeWeapon();
+        SetAnimation();
     }
 
     private void LookMouse()
@@ -64,6 +76,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         var inputPlayer = PlayerInputManager.Actions.Player.Move.ReadValue<Vector2>();
+        dirAnimation = inputPlayer;
 
         if (characterController.isGrounded && velocityY < 0)
         {
@@ -72,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
         velocityY += gravity * Time.deltaTime;
 
-        Vector3 move = Vector3.zero;
+        var move = Vector3.zero;
 
         if (inputPlayer.magnitude > 0.1f)
         {
@@ -112,14 +125,19 @@ public class PlayerController : MonoBehaviour
         }
 
         float targetHeight = isCrouching ? crouchHeight : standHeight;
+        float targetCenter = isCrouching ? crouchCenter : standCenter;
 
         characterController.height = Mathf.Lerp(characterController.height, targetHeight, Time.deltaTime * crouchSpeed);
+        characterController.center = new Vector3(0, Mathf.Lerp(characterController.center.y, targetCenter, Time.deltaTime * crouchSpeed), 0);
+
 
         Vector3 camPos = cameraTransform.localPosition;
-        float targetY = isCrouching ? (crouchHeight/2) - 0.2f : (standHeight/2) - 0.2f;
+        float targetY = isCrouching ? (crouchHeight)+0.3f : (standHeight) - 0.3f;
+        
 
         camPos.y = Mathf.Lerp(camPos.y, targetY, Time.deltaTime * crouchSpeed);
         cameraTransform.localPosition = camPos;
+        
     }
 
 
@@ -146,5 +164,26 @@ public class PlayerController : MonoBehaviour
             reloadEvent.cambio = -1;
             _eventService.Publish(reloadEvent);
         }
+    }
+
+    private void SetAnimation()
+    {
+        if (dirAnimation == Vector2.zero)
+        {
+            _animator.SetBool("isIdle", true);
+        }
+        else
+        {
+            _animator.SetBool("isIdle", false);
+            _animator.SetFloat("VelocityX", dirAnimation.x);
+            _animator.SetFloat("VelocityY", dirAnimation.y);
+        }
+        _animator.SetBool("isCrouching", isCrouching);
+        _animator.SetBool("isRunning", isRunning);
+        if (velocityY > 0.5)
+        {
+            _animator.SetBool("onAir", true);
+        }
+
     }
 }
