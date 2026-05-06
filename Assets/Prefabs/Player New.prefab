@@ -2745,7 +2745,7 @@ MonoBehaviour:
   crouchSpeed: 8
   crouchCenter: 0.5
   standCenter: 1
-  jumpHeight: 1
+  jumpHeight: 0.1
 --- !u!143 &1634282104108998839
 CharacterController:
   m_ObjectHideFlags: 0
