@@ -6,6 +6,8 @@ using UnityEngine;
 public class TutorialInicializer : MonoBehaviour
 {
     Workflow mainSceneWorkflow;
+
+    [SerializeField] GameObject MessageBox;
     private void Awake()
     {
         InitWorkflow();
@@ -18,16 +20,18 @@ public class TutorialInicializer : MonoBehaviour
             new PressAStep(),
             new PressSpaceFiveTimesStep()
 
-        });
+        }, MessageBox);
 
         mainSceneWorkflow.OnComplete += WorkflowFinished;
 
         mainSceneWorkflow.Begin();
+
+        
     }
 
     private void WorkflowFinished()
     {
         Debug.Log($"Hemos finalizado el workflow");
-
+        MessageBox.SetActive(false);
     }
 }

@@ -1,17 +1,22 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Workflow
 {
     private List<IStep> _steps = new List<IStep>();
     private IStep _currentStep = null;
-    
-    public event Action OnComplete;
 
-    public Workflow(List<IStep> workflowSteps)
+    IAlertService _alertService;
+    public event Action OnComplete;
+    private GameObject _messageBox;
+    public Workflow(List<IStep> workflowSteps, GameObject MessageBox)
     {
         this._steps = workflowSteps;
+        _messageBox = MessageBox;
+
+        _alertService = AppContainer.Get<IAlertService>();
     }
 
     public void Begin()
@@ -39,6 +44,13 @@ public class Workflow
         this._currentStep.Activate();
 
         this._currentStep.OnComplete += StepComplete;
+
+        _messageBox.SetActive(true);
+        ObjectDataScriptable dataStep = new ObjectDataScriptable();
+        dataStep.objectName = _currentStep.Name;
+        dataStep.objetDescription = _currentStep.Description;
+
+        _alertService.ShowAlertMessage(_messageBox, dataStep);
     }
 
     private  void DeactivateCurrentStep()
@@ -73,5 +85,10 @@ public class Workflow
 
         // Activamos el siguiente step
         this.ActivateStep(nextStep);
+    }
+
+    public IStep getCurrentStep()
+    {
+        return this._currentStep;
     }
 }

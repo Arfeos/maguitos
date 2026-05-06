@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 73079553}
   - component: {fileID: 73079555}
   - component: {fileID: 73079554}
-  - component: {fileID: 73079556}
   m_Layer: 5
   m_Name: txt_language
   m_TagString: Untagged
@@ -258,64 +257,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73079552}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
 --- !u!1 &156244732
-=======
---- !u!114 &73079556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73079552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.PropertyVariants.GameObjectLocalizer
-  m_TrackedObjects:
-  - rid: 950125511458947207
-  references:
-    version: 2
-    RefIds:
-    - rid: 950125511458947207
-      type: {class: TrackedUGuiGraphic, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
-      data:
-        m_Target: {fileID: 73079554}
-        m_TrackedProperties:
-          items:
-          - rid: 950125511458947208
-          - rid: 950125511458947209
-        m_UpdateType: 0
-    - rid: 950125511458947208
-      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_Localized:
-          m_TableReference:
-            m_TableCollectionName: GUID:fa718dd4126039046a00a3a2ee578b1f
-          m_TableEntryReference:
-            m_KeyId: 108332490752
-            m_Key: 
-          m_FallbackState: 0
-          m_WaitForCompletion: 0
-          m_LocalVariables: []
-        m_PropertyPath: m_text
-    - rid: 950125511458947209
-      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_fontSize
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 72
-        - localeIdentifier:
-            m_Code: es
-          value: 72
-        - localeIdentifier:
-            m_Code: nya
-          value: 72
---- !u!1 &76245817
->>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
