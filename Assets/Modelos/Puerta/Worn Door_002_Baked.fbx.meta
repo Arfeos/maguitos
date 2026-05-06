@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: db8462b942c2c91438248dea5a5d1662
+guid: 6740b02e06f91f74d8a377c3071bf501
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Worn Door_002_Baked_Baked.001
+    second: {fileID: 2100000, guid: 5aea04d9751091b48a4912e2a358348c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
