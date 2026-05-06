@@ -17,6 +17,10 @@ public static class Program
         AppContainer.Register<IScoreService>(() => new ScoreService());
         AppContainer.Register<IAlertService>(() => new AlertService());
         AppContainer.Register<ISpellService>(() => new SpellService(Resources.Load<GameObject>("Prefabs/RayPrefab")));
+
+        var networkService = new NetworkService();
+        AppContainer.Register<INetworkService>(() => networkService);
+        _ = networkService.InitializeAsync();
     }
 }
   

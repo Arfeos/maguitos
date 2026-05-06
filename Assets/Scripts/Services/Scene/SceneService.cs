@@ -33,17 +33,10 @@ public class SceneService : NetworkBehaviour, ISceneService
         {
             NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
-        //else
-        //{
-        //    if (IsServer)
-        //    {
-        //        LoadSceneInternal(sceneName);
-        //    }
-        //    else
-        //    {
-        //        RequestLoadSceneServerRpc(sceneName);
-        //    }
-        //}
+        if (NetworkManager.Singleton.IsClient)
+        {
+            NetworkManager.Singleton.StartClient();
+        }
     }
 
 

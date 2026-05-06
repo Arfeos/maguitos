@@ -32,22 +32,22 @@ public class PlayButton : MonoBehaviour
     public async Task Play()
     {
 
-        var ownPlayer = new List<Player>
-        {
-            new Player(
-            id: AuthenticationService.Instance.PlayerId,
-            customData: new Dictionary<string, object>
-            {
-                { "region", "EU" }
-            }
-        )};
+        //var ownPlayer = new List<Player>
+        //{
+        //    new Player(
+        //    id: AuthenticationService.Instance.PlayerId,
+        //    customData: new Dictionary<string, object>
+        //    {
+        //        { "region", "EU" }
+        //    }
+        //)};
 
-        var ticket = await MatchmakerService.Instance.CreateTicketAsync(
-            ownPlayer,
-            new CreateTicketOptions { QueueName = "default" }
-        );
+        //var ticket = await MatchmakerService.Instance.CreateTicketAsync(
+        //    ownPlayer,
+        //    new CreateTicketOptions { QueueName = "default" }
+        //);
 
-        StartCoroutine(PollTicket(ticket.Id));
+        //StartCoroutine(PollTicket(ticket.Id));
     }
 
     private IEnumerator PollTicket(string ticketId)
@@ -155,23 +155,29 @@ public class PlayButton : MonoBehaviour
         // 4. Start Client
         NetworkManager.Singleton.StartClient();
 
-        var joinAllocation =
-        await RelayService.Instance.JoinAllocationAsync(joinCode);
+        var joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
 
         //var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
         //transport.SetRelayServerData(new RelayServerData(joinAllocation, "dtls", RelayServerData.ConnectionType.UDP));
 
-        var relayServerData = new RelayServerData(
-    joinAllocation.RelayServer.IpV4,
-    (ushort)joinAllocation.RelayServer.Port,
-    joinAllocation.AllocationIdBytes,
-    joinAllocation.ConnectionData,
-    joinAllocation.Key,
-    true
-);
+        
 
         NetworkManager.Singleton.StartClient();
 
+    }
+
+
+
+
+
+
+
+
+
+    public async Task<List<Lobby>> QueryLobbiesAsync()
+    {
+        var response = await LobbyService.Instance.QueryLobbiesAsync();
+        return response.Results;
     }
 
 }
