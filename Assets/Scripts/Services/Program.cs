@@ -19,7 +19,6 @@ public static class Program
 	    AppContainer.Register<IUIService>(() => new UIService());
         AppContainer.Register<IAnimationService>(() => new AnimationService());
         AppContainer.Register<ISpellService>(() => new SpellService(Resources.Load<GameObject>("Prefabs/RayPrefab"), Resources.Load<GameObject>("Prefabs/SpherePrefab")));
-        AppContainer.Register<ISpellService>(() => new SpellService(Resources.Load<GameObject>("Prefabs/RayPrefab")));
 
         var networkService = new NetworkService();
         AppContainer.Register<INetworkService>(() => networkService);

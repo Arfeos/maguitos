@@ -1513,7 +1513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
       propertyPath: m_Name
-      value: Player New
+      value: Player New network
       objectReference: {fileID: 0}
     - target: {fileID: 1092408308860062549, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1828,6 +1828,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 566688448814440683}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5169903558563134243}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
       insertIndex: -1
@@ -1843,6 +1846,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
   m_PrefabInstance: {fileID: 2569530138594702057}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &566688448814440683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3416446363902529464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 83490155
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 1
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &5169903558563134243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,14 +1883,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7337cb36982771e448d373c91b5beec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraForwardController
+  ShowTopMostFoldoutHeaderGroup: 1
   Velocity: 10
   mouseSensitivity: 1
   cameraTransform: {fileID: 3727561427997138886}
+  MManager: {fileID: 0}
   standHeight: 2
   crouchHeight: 1
   crouchSpeed: 8
-  crouchCenter: 0.5
-  standCenter: 1
+  pitch:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
 --- !u!143 &1634282104108998839
 CharacterController:
   m_ObjectHideFlags: 0

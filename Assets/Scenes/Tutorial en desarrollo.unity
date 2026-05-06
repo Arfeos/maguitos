@@ -12126,6 +12126,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -6.4371076
       objectReference: {fileID: 0}
+    - target: {fileID: 8589567525097303110, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      propertyPath: jumpHeight
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589567525097303110, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      propertyPath: standHeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589567525097303110, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      propertyPath: crouchHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589567525097303110, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 1862157684}
     - target: {fileID: 8671570486513869494, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -4.6607294
@@ -12216,6 +12232,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+--- !u!4 &1862157684 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3727561427997138886, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+  m_PrefabInstance: {fileID: 1862157683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1863179414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5613218020918453169, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
