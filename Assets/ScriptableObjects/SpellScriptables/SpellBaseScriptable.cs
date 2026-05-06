@@ -29,6 +29,7 @@ public class SpellBaseScriptable : ScriptableObject
     public GameObject? spawnPrefab;
     public GameObject? producedParticle;
     public GameObject? hitParticle;
+    public GameObject? trailParticle;
 
     [Header("Spell sound")]
     public AudioSource? spawnSound;
