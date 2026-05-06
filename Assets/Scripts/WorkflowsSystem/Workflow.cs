@@ -74,6 +74,8 @@ public class Workflow
         if (indexOfCurrentStep == this._steps.Count - 1)
         {
             this.OnComplete?.Invoke();
+            this.DeactivateCurrentStep();
+
             return;
         }
 
