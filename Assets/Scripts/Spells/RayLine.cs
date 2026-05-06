@@ -4,20 +4,22 @@ using UnityEngine;
 public class RayLine : MonoBehaviour
 {
     private ISpellService _spellService;
-
+    private ICharacterService _characterService;
     void Awake()
     {
         _spellService = AppContainer.Get<ISpellService>();
+        _characterService = AppContainer.Get<ICharacterService>();
     }
 
     void OnEnable()
     {
-        StartCoroutine(DisableAfterTime());
+        float time = _characterService.getSpell(_characterService.getIndex()).spell.RayAliveTime;
+        StartCoroutine(DisableAfterTime(time));
     }
 
-    private IEnumerator DisableAfterTime()
+    private IEnumerator DisableAfterTime(float time)
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(time);
         _spellService.ReturnRay(gameObject);
     }
 }

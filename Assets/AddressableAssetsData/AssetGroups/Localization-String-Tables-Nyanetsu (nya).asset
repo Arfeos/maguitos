@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Nyanetsu (nya)
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-String-Tables-Nyanetsu (nya)
+  m_GUID: e7570bf44af39094a8507af1421abfb9
+  m_SerializeEntries:
+  - m_GUID: 5c46a9b118f76de47a2ac1cd6093a5cd
+    m_Address: Settings_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63d65116f6450ae40adcd94bdcb152f6
+    m_Address: Profile_Creation_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: f91e43a097a877947aefcad09323eb8b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: da3387cfb07a6fe48869fdf971bca2be, type: 2}
+    - {fileID: 11400000, guid: 2ede2007f75916b459e9c8c023da7a3b, type: 2}
