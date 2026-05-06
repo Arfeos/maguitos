@@ -32,8 +32,6 @@ public class RelayManager : MonoBehaviour
 
         var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
 
-        // 4 argumentos: host, port, allocationIdBytes, connectionData, hostConnectionData, key, isSecure
-        // Usa el endpoint DTLS del allocation
         var endpoint = allocation.ServerEndpoints
             .First(e => e.Secure && e.Network == RelayServerEndpoint.NetworkOptions.Udp);
 
@@ -64,10 +62,10 @@ public class RelayManager : MonoBehaviour
             join.AllocationIdBytes,
             join.Key,
             join.ConnectionData,
-            join.HostConnectionData, // datos del host (diferente al cliente)
+            join.HostConnectionData,
             true
         );
 
-        sceneService.LoadScene("NoNeed");
+        sceneService.LoadScene("");
     }
 }

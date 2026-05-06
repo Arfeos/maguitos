@@ -33,7 +33,7 @@ public class SceneService : NetworkBehaviour, ISceneService
         {
             NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
-        if (NetworkManager.Singleton.IsClient)
+        if (NetworkManager.Singleton.IsClient || sceneName == "")
         {
             NetworkManager.Singleton.StartClient();
         }

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Unity.Services.Matchmaker.Models;
 
-public class NetworkStarter : NetworkBehaviour
+public class LocalGame : NetworkBehaviour
 {
     private ISceneService sceneService;
     private async void Awake()

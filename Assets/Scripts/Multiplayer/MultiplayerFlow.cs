@@ -36,8 +36,7 @@ public class MultiplayerFlow : MonoBehaviour
                 }
             });
 
-        // El host carga la escena — los clientes la recibirán automáticamente
-        sceneService.LoadScene("GameScene");
+        sceneService.LoadScene("SampleScene");
         //NetworkManager.Singleton.SceneManager
         //    .LoadScene("GameScene", LoadSceneMode.Single);
     }
@@ -47,6 +46,5 @@ public class MultiplayerFlow : MonoBehaviour
         var lobby = await lobbyManager.JoinByCodeAsync(lobbyCode);
         string relayCode = lobby.Data["RelayJoinCode"].Value;
         await relayManager.StartClientWithRelayAsync(relayCode);
-        // No cargas escena: Netcode la sincroniza desde el host
     }
 }
