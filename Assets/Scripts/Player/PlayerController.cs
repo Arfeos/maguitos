@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Jump")]
     [SerializeField]   private float jumpHeight = 1f;
+    private bool isJumping;
 
     private CharacterController characterController;
     private float gravity = -9.8f;
@@ -176,7 +177,18 @@ public class PlayerController : MonoBehaviour
     }
 
     private void SetAnimation()
-    {
+    {if (!characterController.isGrounded)
+        {
+            if(!isJumping)
+                _animator.SetBool("onAir", true);
+            isJumping = true;
+        }
+        else
+        {
+            isJumping = false;
+                _animator.SetBool("onAir", false);
+        }
+        
         if (dirAnimation == Vector2.zero)
         {
             _animator.SetBool("isIdle", true);
