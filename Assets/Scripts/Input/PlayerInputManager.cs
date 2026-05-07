@@ -12,7 +12,7 @@ public sealed class PlayerInputManager : MonoBehaviour
     // Instancia unica del manager.
     private static PlayerInputManager _instance;
 
-    // Asset generado por Unity Input System con todas las acciones.
+    // Asset generado por Unity SubmitUser System con todas las acciones.
     private static @InputSystem_Actions _actions;
     
 
@@ -129,7 +129,7 @@ public sealed class PlayerInputManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Al desactivar la instancia principal, libera recursos de Input System.
+    /// Al desactivar la instancia principal, libera recursos de SubmitUser System.
     /// </summary>
     private void OnDisable()
     {
