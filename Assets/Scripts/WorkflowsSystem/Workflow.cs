@@ -8,6 +8,7 @@ public class Workflow
     private List<IStep> _steps = new List<IStep>();
     private IStep _currentStep = null;
 
+    IAnimationService _animation;
     IAlertService _alertService;
     public event Action OnComplete;
     private GameObject _messageBox;
@@ -17,6 +18,8 @@ public class Workflow
         _messageBox = MessageBox;
 
         _alertService = AppContainer.Get<IAlertService>();
+
+        _animation = AppContainer.Get<IAnimationService>();
     }
 
     public void Begin()
@@ -45,7 +48,9 @@ public class Workflow
 
         this._currentStep.OnComplete += StepComplete;
 
-        _messageBox.SetActive(true);
+        //_animation.FadeOutUIAnimation(_messageBox, 1);
+        _animation.FadeInUIAnimation(_messageBox, 1);
+        //_messageBox.SetActive(true);
         ObjectDataScriptable dataStep = ScriptableObject.CreateInstance<ObjectDataScriptable>();
         dataStep.objectName = _currentStep.Name;
         dataStep.objetDescription = _currentStep.Description;

@@ -39,8 +39,7 @@ public class BallSpellType : MonoBehaviour
         if(corutinaCrecer == null) corutinaCrecer = StartCoroutine(ShowExplosionSphere(impactPoint, radius));
         foreach (Collider hit in hits)
         {
-            Debug.Log($"Impactado: {hit.gameObject.name}");
-            // Aquí aplica daño, knockback, etc.
+            if (hit.GetComponent<IHittable>() != null) hit.GetComponent<IHittable>().Hit();
         }
 
         

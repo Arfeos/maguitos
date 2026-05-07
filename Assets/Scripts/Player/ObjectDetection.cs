@@ -11,11 +11,14 @@ public class ObjectDetection : MonoBehaviour
     [SerializeField] GameObject MessageBox;
 
     IAlertService _alertService;
+    IAnimationService _animationService;
+
     public Color color = Color.white;
     private Color colorBase = Color.white;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _animationService = AppContainer.Get<IAnimationService>();
         _alertService = AppContainer.Get<IAlertService>();
         colorBase = Marker.color;
     }
@@ -43,6 +46,7 @@ public class ObjectDetection : MonoBehaviour
             {
                 Marker.color = color;
                 _alertService.ShowAlertMessage(MessageBox, data.getData());
+                
             }
         }
     }
