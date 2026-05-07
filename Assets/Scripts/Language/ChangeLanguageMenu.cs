@@ -13,6 +13,9 @@ public class ChangeLanguage : MonoBehaviour
     public void Change()
     {
         uiService.changeLanguage(language);
-        sceneService.LoadScene(SceneNames.Profile_selection);
+    }
+    public void changeByInt(int index) { 
+        language = (Languages)index;
+            Change();
     }
 }

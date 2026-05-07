@@ -26,7 +26,7 @@ public class CardUI : MonoBehaviour
     {
         _profileService.SelectProfile(profile);
 
-        Debug.Log("Perfil seleccionado: " + profile.name);
+        Debug.Log("Perfil seleccionado: " + _profileService.getSelectedProfile().name+" GUID:"+_profileService.getSelectedProfile().guid);
 
         
         _sceneService.LoadScene(SceneNames.Main_menu);

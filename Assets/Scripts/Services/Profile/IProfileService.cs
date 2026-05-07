@@ -11,7 +11,8 @@ public interface IProfileService
 
     void CreateProfile(string name, Settings settings, string urlImage ="");
 
-    void DeleteProfile(string guid);   
+    void DeleteProfile(string guid);
 
     void UpdateProfile(UserProfile profile);
+    public UserProfile getSelectedProfile();
 }

@@ -6,7 +6,7 @@ public class Settings
     public int axisXDirection;
     public int axisYDirection;
     public float musicVolume;
-    public float MasterVolume;
+    public float masterVolume;
     public float sensibility;
     public Settings()
     {
@@ -14,16 +14,16 @@ public class Settings
         axisXDirection = 1;
         axisYDirection = 1;
         musicVolume = 1f;
-        MasterVolume = 1f;
+        masterVolume = 1f;
         sensibility = 1f;
     }
-    public Settings(Languages language, int axisXDirection, int axisYDirection, float musicVolume, float MasterVolume, float sensibility)
+    public Settings(Languages language, int axisXDirection, int axisYDirection, float musicVolume, float masterVolume, float sensibility)
     {
         this.language = language;
         this.axisXDirection = axisXDirection;
         this.axisYDirection = axisYDirection;
         this.musicVolume = musicVolume;
-        this.MasterVolume = MasterVolume;
+        this.masterVolume = masterVolume;
         this.sensibility = sensibility;
     }
 }

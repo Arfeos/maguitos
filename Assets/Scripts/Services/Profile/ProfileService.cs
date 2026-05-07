@@ -6,7 +6,7 @@ public class ProfileService : IProfileService
 {
     private List<UserProfile> profiles = new List<UserProfile>();
     private UserProfile selectedProfile;
-
+    IUIService uiService;
     private string folderPath => Application.persistentDataPath + "/profiles";
 
     public void LoadProfiles()
@@ -75,7 +75,11 @@ public class ProfileService : IProfileService
 
     public void SelectProfile(UserProfile profile)
     {
+        if(uiService == null)
+            uiService = AppContainer.Get<IUIService>();
         selectedProfile = profile;
+        Languages lang= (Languages) selectedProfile.settings.language;
+        uiService.changeLanguage(lang);
     }
 
 
@@ -90,4 +94,5 @@ public class ProfileService : IProfileService
 
         File.WriteAllText(path, json);
     }
+    public UserProfile getSelectedProfile() => selectedProfile;
 }
