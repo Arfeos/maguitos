@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float standCenter = 1f;
 
     [Header("Jump")]
-    [SerializeField]   private float jumpHeight = 1f;
+    [SerializeField] private float jumpHeight = 1f;
     private bool isJumping;
 
     private CharacterController characterController;
@@ -50,13 +50,13 @@ public class PlayerController : MonoBehaviour
         _eventService = AppContainer.Get<IEventService>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        _animator = GetComponent<Animator>(); 
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        LookMouse();   
-        Move();        
+        LookMouse();
+        Move();
         HandleCrouch();
         handleReload();
         handleChangeWeapon();
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);    
+        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
     }
 
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
         if (inputPlayer.magnitude > 0.1f)
         {
-       
+
 
             move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
         }
@@ -142,12 +142,12 @@ public class PlayerController : MonoBehaviour
 
 
         Vector3 camPos = cameraTransform.localPosition;
-        float targetY = isCrouching ? (crouchHeight)+0.3f : (standHeight) - 0.3f;
-        
+        float targetY = isCrouching ? (crouchHeight) + 0.3f : (standHeight) - 0.3f;
+
 
         camPos.y = Mathf.Lerp(camPos.y, targetY, Time.deltaTime * crouchSpeed);
         cameraTransform.localPosition = camPos;
-        
+
     }
 
 
@@ -177,34 +177,27 @@ public class PlayerController : MonoBehaviour
     }
 
     private void SetAnimation()
-    {if (!characterController.isGrounded)
+    {
+        if (!characterController.isGrounded)
         {
-            if(!isJumping)
+            if (!isJumping)
                 _animator.SetBool("onAir", true);
             isJumping = true;
         }
         else
         {
             isJumping = false;
-                _animator.SetBool("onAir", false);
+            _animator.SetBool("onAir", false);
         }
+
         
-        if (dirAnimation == Vector2.zero)
-        {
-            _animator.SetBool("isIdle", true);
-        }
-        else
-        {
-            _animator.SetBool("isIdle", false);
+        
+            
             _animator.SetFloat("VelocityX", dirAnimation.x);
             _animator.SetFloat("VelocityY", dirAnimation.y);
-        }
+        
         _animator.SetBool("isCrouching", isCrouching);
         _animator.SetBool("isRunning", isRunning);
-        if (velocityY > 0.5)
-        {
-            _animator.SetBool("onAir", true);
-        }
 
     }
 }
