@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static SpellBase;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class NewObjectDebugger : MonoBehaviour
 {
     [Header("Configuracion de hechizo")]
     //[SerializeField] private SpellBase[] spellList;

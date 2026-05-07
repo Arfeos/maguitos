@@ -4,17 +4,20 @@ using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class SceneService : NetworkBehaviour, ISceneService
+public class SceneService : ISceneService
 {
     private static Stack<string> sceneHistory = new Stack<string>();
     private HashSet<ulong> readyPlayers = new HashSet<ulong>();
-    private void OnEnable()
+    public SceneService()
     {
         SceneManager.activeSceneChanged += SaveScene;
+        Application.quitting += Cleanup;
     }
-    private void OnDisable()
+
+    private void Cleanup()
     {
         SceneManager.activeSceneChanged -= SaveScene;
+        Application.quitting -= Cleanup;
     }
 
 
@@ -27,15 +30,14 @@ public class SceneService : NetworkBehaviour, ISceneService
         {
             // offline
             SceneManager.LoadScene(sceneName);
+            return;
         }
 
         if (NetworkManager.Singleton.IsServer)
         {
+            //online
             NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-        }
-        if (NetworkManager.Singleton.IsClient || sceneName == "")
-        {
-            NetworkManager.Singleton.StartClient();
+            return;
         }
     }
 

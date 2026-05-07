@@ -9,8 +9,8 @@ public class MultiPlayerController : NetworkBehaviour
 
     [Header("Mouse")]
     [SerializeField] private float mouseSensitivity = 1f;
-    [SerializeField] private GameObject cameraTransform;
-    [SerializeField] private Transform MManager;
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private Transform BodyTransform;
 
     [Header("Crouch")]
     [SerializeField] private float standHeight = 1f;
@@ -29,24 +29,31 @@ public class MultiPlayerController : NetworkBehaviour
     public NetworkVariable<float> pitch = new(
     0f,
     NetworkVariableReadPermission.Everyone,
-    NetworkVariableWritePermission.Owner
-);
+    NetworkVariableWritePermission.Owner);
 
+    public NetworkVariable<float> yaw = new(0f,
+    NetworkVariableReadPermission.Everyone,
+    NetworkVariableWritePermission.Owner);
 
-    private void Start()
+    public override void OnNetworkSpawn()
     {
-        //SpawnWithOwnership(clientId);
-
-        if (!IsOwner) return;
-        
-
-        //cameraTransform = this.gameObject.GetComponentInChildren<Camera>().transform;
-        PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         characterController = GetComponent<CharacterController>();
+        Debug.Log($"[Player] OnNetworkSpawn - IsOwner: {IsOwner} - Position: {transform.position}");
 
+        if (!IsOwner)
+        {
+            playerCamera.enabled = false;
+            characterController.enabled = false;
+            var audioListener = playerCamera.GetComponent<AudioListener>();
+            if (audioListener != null) audioListener.enabled = false;
+            return;
+        }
+
+        PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
 
     private void Update()
     {
@@ -61,21 +68,20 @@ public class MultiPlayerController : NetworkBehaviour
             ApplyRemoteRotation();
         }
     }
+
     private void LookMouse()
     {
         Vector2 mouseInput = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
-        float mouseX = mouseInput.x * mouseSensitivity;
-        float mouseY = mouseInput.y * mouseSensitivity;
-
-        xRotation -= mouseY;
+        xRotation -= mouseInput.y * mouseSensitivity;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.Rotate(Vector3.up * mouseX);
+        transform.Rotate(Vector3.up * mouseInput.x * mouseSensitivity);
+        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        MManager.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         pitch.Value = xRotation;
-}
+        yaw.Value = transform.eulerAngles.y;
+    }
     private void Move()
     {
         var inputPlayer = PlayerInputManager.Actions.Player.Move.ReadValue<Vector2>();
@@ -128,23 +134,17 @@ public class MultiPlayerController : NetworkBehaviour
 
         characterController.height = Mathf.Lerp(characterController.height, targetHeight, Time.deltaTime * crouchSpeed);
 
-        Vector3 camPos = MManager.localPosition;
+        Vector3 camPos = playerCamera.transform.localPosition;
         float targetY = isCrouching ? (crouchHeight/2) - 0.2f : (standHeight/2) - 0.2f;
 
         camPos.y = Mathf.Lerp(camPos.y, targetY, Time.deltaTime * crouchSpeed);
-        MManager.localPosition = camPos;
-    }
-    public override void OnNetworkSpawn()
-    {
-        if (!IsOwner)
-        {
-            cameraTransform.SetActive(false);
-        }
+        playerCamera.transform.localPosition = camPos;
     }
     private void ApplyRemoteRotation()
     {
-        if (IsOwner) return;
-
-        MManager.localRotation = Quaternion.Euler(pitch.Value, 0, 0);
+        // Aplica yaw (horizontal) al cuerpo
+        transform.rotation = Quaternion.Euler(pitch.Value, yaw.Value, 0f);
+        // No aplicamos pitch aquí porque la cámara remota está desactivada
+        // Si tuvieras un hueso de cabeza o cuello podrías rotarlo aquí
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
@@ -14,7 +15,13 @@ public class NetworkService : INetworkService
     {
         try
         {
-            await UnityServices.InitializeAsync();
+            var options = new InitializationOptions();
+
+            #if UNITY_EDITOR
+                options.SetProfile($"Player_{Guid.NewGuid().ToString()[..8]}");
+            #endif
+
+            await UnityServices.InitializeAsync(options);
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
             PlayerId = AuthenticationService.Instance.PlayerId;
             IsReady = true;

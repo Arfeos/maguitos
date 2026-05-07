@@ -24,6 +24,14 @@ public class RelayManager : MonoBehaviour
 
     public async Task<string> StartHostWithRelayAsync(int maxConnections = 4)
     {
+        NetworkManager.Singleton.NetworkConfig.PlayerPrefab = null;
+        NetworkManager.Singleton.NetworkConfig.ConnectionApproval = true;
+        NetworkManager.Singleton.ConnectionApprovalCallback = (request, response) =>
+        {
+            response.CreatePlayerObject = false;
+            response.Approved = true;
+            response.Pending = false;
+        };
         Allocation allocation = await RelayService.Instance
             .CreateAllocationAsync(maxConnections);
 
@@ -44,13 +52,31 @@ public class RelayManager : MonoBehaviour
             allocation.ConnectionData,
             true                       
         );
+
+        NetworkManager.Singleton.NetworkConfig.ConnectionApproval = true;
+        NetworkManager.Singleton.ConnectionApprovalCallback = (request, response) =>
+        {
+            response.CreatePlayerObject = false;
+            response.Approved = true;
+            response.Pending = false;
+        };
         NetworkManager.Singleton.StartHost();
+        sceneService.LoadScene("SampleScene");
         return joinCode;
     }
     public async Task StartClientWithRelayAsync(string joinCode)
     {
-        JoinAllocation join = await RelayService.Instance.JoinAllocationAsync(joinCode);
+        NetworkManager.Singleton.NetworkConfig.PlayerPrefab = null;
+        NetworkManager.Singleton.NetworkConfig.ConnectionApproval = true;
 
+        if (NetworkManager.Singleton.IsListening)
+        {
+            NetworkManager.Singleton.Shutdown();
+            // Espera un frame para que el shutdown complete
+            await Task.Yield();
+        }
+
+        JoinAllocation join = await RelayService.Instance.JoinAllocationAsync(joinCode);
         var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
 
         var endpoint = join.ServerEndpoints
@@ -65,7 +91,7 @@ public class RelayManager : MonoBehaviour
             join.HostConnectionData,
             true
         );
-
-        sceneService.LoadScene("");
+        
+        NetworkManager.Singleton.StartClient();
     }
 }

@@ -281,9 +281,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1017840125}
-        m_TargetAssemblyTypeName: NetworkStarter, Assembly-CSharp
-        m_MethodName: Host
+      - m_Target: {fileID: 1017840131}
+        m_TargetAssemblyTypeName: MatchmakingManager, Assembly-CSharp
+        m_MethodName: FindMatch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -618,6 +618,8 @@ GameObject:
   - component: {fileID: 1017840127}
   - component: {fileID: 1017840126}
   - component: {fileID: 1017840125}
+  - component: {fileID: 1017840131}
+  - component: {fileID: 1017840132}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -632,7 +634,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017840124}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eebc12e53956779458fa9089fe2b4e16, type: 3}
   m_Name: 
@@ -722,6 +724,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1017840131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017840124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2654b77ef88d55240a7ccf725d029851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MatchmakingManager
+  relayManager: {fileID: 1017840132}
+--- !u!114 &1017840132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017840124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5660c98b75a6a434f95b31af2b7d0e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RelayManager
 --- !u!1 &1493100203
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,9 +832,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1017840125}
-        m_TargetAssemblyTypeName: NetworkStarter, Assembly-CSharp
-        m_MethodName: Client
+      - m_Target: {fileID: 1017840131}
+        m_TargetAssemblyTypeName: MatchmakingManager, Assembly-CSharp
+        m_MethodName: CancelSearch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -920,7 +947,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 1626871910}
-    PlayerPrefab: {fileID: 0}
+    PlayerPrefab: {fileID: 3416446363902529464, guid: 2d869b8e66e72f14ab56a262e40223b6, type: 3}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: 0aff54f401a06154587b6f243e7bd221, type: 2}

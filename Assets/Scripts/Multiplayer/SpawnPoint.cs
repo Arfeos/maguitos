@@ -4,64 +4,52 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SpawnPoint : NetworkBehaviour
+public class SpawnPoint : MonoBehaviour
 {
+    //Este es el prefab
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform[] spawnPoint;
     private int index = 0;
-    public override void OnNetworkSpawn()
+    private bool sceneReady = false;
+    private void Start()
     {
+        Debug.Log($"[SpawnPoint] Start - IsServer: {NetworkManager.Singleton.IsServer}");
+        if (!NetworkManager.Singleton.IsServer) return;
 
-        if (!IsServer) return;
-
-        var sceneManager = NetworkManager.Singleton.SceneManager;
-
-        sceneManager.OnLoadEventCompleted += OnSceneLoaded;
+        Debug.Log("[SpawnPoint] Suscribiendo eventos");
+        //NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += OnSceneLoaded;
         NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+
+        sceneReady = true;
+        Debug.Log($"[SpawnPoint] Clientes conectados: {NetworkManager.Singleton.ConnectedClientsList.Count}");
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+        {
+            Debug.Log($"[SpawnPoint] Spawneando cliente: {client.ClientId}");
+            SpawnPlayer(client.ClientId);
+        }
+
+
+        Debug.Log("Prueba");
     }
 
-    private void OnSceneLoaded(string sceneName, LoadSceneMode mode,
-    List<ulong> clientsCompleted,
-    List<ulong> clientsTimedOut)
+
+    private void OnClientConnected(ulong clientId)
     {
-        if (sceneName != "SampleScene") return;
+        if (!NetworkManager.Singleton.IsServer) return;
 
-        SpawnPlayers();
+        if (sceneReady)
+            SpawnPlayer(clientId);
     }
-
+    
     private void SpawnPlayer(ulong clientId)
     {
-        if (!IsServer) return;
+        if (!NetworkManager.Singleton.IsServer) return;
 
         Transform spawn = spawnPoint[index % spawnPoint.Length];
         index++;
-
+        Debug.Log($"[SpawnPoint] Spawneando {clientId} en {spawn.position}");
         GameObject player = Instantiate(playerPrefab, spawn.position, spawn.rotation);
 
-        player.GetComponent<NetworkObject>()
-              .SpawnWithOwnership(clientId);
-    }
-
-    private void SpawnPlayers()
-    {
-        var clients = NetworkManager.Singleton.ConnectedClientsList;
-
-        for (int i = 0; i < clients.Count; i++)
-        {
-            ulong clientId = clients[i].ClientId;
-            index++;
-            Transform spawn = spawnPoint[i % spawnPoint.Length];
-
-            GameObject player = Instantiate(playerPrefab, spawn.position, spawn.rotation);
-
-            player.GetComponent<NetworkObject>()
-                  .SpawnWithOwnership(clientId);
-        }
-    }
-    private void OnClientConnected(ulong clientId)
-    {
-        if (!IsServer) return;
-
-        SpawnPlayer(clientId);
+        player.GetComponent<NetworkObject>().SpawnWithOwnership(clientId);
     }
 }
