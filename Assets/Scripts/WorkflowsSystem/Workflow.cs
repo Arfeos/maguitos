@@ -46,7 +46,7 @@ public class Workflow
         this._currentStep.OnComplete += StepComplete;
 
         _messageBox.SetActive(true);
-        ObjectDataScriptable dataStep = new ObjectDataScriptable();
+        ObjectDataScriptable dataStep = ScriptableObject.CreateInstance<ObjectDataScriptable>();
         dataStep.objectName = _currentStep.Name;
         dataStep.objetDescription = _currentStep.Description;
 

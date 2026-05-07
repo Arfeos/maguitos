@@ -8,6 +8,7 @@ public class TutorialInicializer : MonoBehaviour
     Workflow mainSceneWorkflow;
 
     [SerializeField] GameObject MessageBox;
+    [SerializeField] GameObject door;
     private void Awake()
     {
         InitWorkflow();
@@ -17,8 +18,12 @@ public class TutorialInicializer : MonoBehaviour
     {
         mainSceneWorkflow = new Workflow(new List<IStep>
         {
+            new CameraMoveStep(),
             new MoveStep(),
             new PickUpSpellStep(),
+            new ShootStep(),
+            new OpenDoorStep(door),
+            new CrouchStep(),
             new PressSpaceStep()
 
         }, MessageBox);
