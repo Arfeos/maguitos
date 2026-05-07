@@ -29,7 +29,7 @@ MonoBehaviour:
   RayAliveTime: 2
   nombreHechizo: AcidBolt
   RayMaterial:
-  - {fileID: 2100000, guid: 6b1d94e4d3563fe46b88a4b31db0237b, type: 2}
+  - {fileID: 2100000, guid: 8ce7988fdeb8cdd49939c63633fd5f5e, type: 2}
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}

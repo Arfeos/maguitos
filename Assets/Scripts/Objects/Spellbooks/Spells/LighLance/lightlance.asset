@@ -29,7 +29,7 @@ MonoBehaviour:
   RayAliveTime: 0.3
   nombreHechizo: Light lance
   RayMaterial:
-  - {fileID: 2100000, guid: e2f7bc262a96b1a4ba0a6fb00f061a8c, type: 2}
+  - {fileID: 2100000, guid: 41f057012fe98bf40a0772b17f0dc130, type: 2}
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
