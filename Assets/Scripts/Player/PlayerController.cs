@@ -192,7 +192,7 @@ public class PlayerController : MonoBehaviour
 
         
         
-            _animator.SetBool("isIdle", false);
+            
             _animator.SetFloat("VelocityX", dirAnimation.x);
             _animator.SetFloat("VelocityY", dirAnimation.y);
         
