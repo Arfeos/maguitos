@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEditor.MPE;
@@ -11,8 +12,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float Velocity = 10f;
 
     [Header("Mouse")]
-    [SerializeField] private float mouseSensitivity = 0.5f;
+    
     [SerializeField] private Transform cameraTransform;
+    [SerializeField] private float mouseSensitivity = 0.5f;
+    [SerializeField] private float xDirection = 1;
+    [SerializeField] private float yDirection = 1;
+
 
     [Header("Crouch")]
     [SerializeField] private float standHeight = 1f;
@@ -37,9 +42,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 dirAnimation;
 
     private float xRotation = 0f;
+    IProfileService _profileService  ;
+    IEventService _eventService;
 
 
-    private IEventService _eventService;
 
     private Animator _animator;
 
@@ -47,12 +53,25 @@ public class PlayerController : MonoBehaviour
     {
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         characterController = GetComponent<CharacterController>();
-        _eventService = AppContainer.Get<IEventService>();
+       
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        _animator = GetComponent<Animator>(); 
+        _animator = GetComponent<Animator>();
+        updatePrefrences();
     }
+    private void OnEnable()
+    {
+        _eventService = AppContainer.Get<IEventService>();
+        _profileService = AppContainer.Get<IProfileService>();
+        _eventService.Subscribe<PreferenceChageEvent>(updatePrefrences);
+    }
+    private void OnDisable()
+    {
+        _eventService.Unsubscribe<PreferenceChageEvent>(updatePrefrences);
+        _eventService = null;
+        _profileService = null;
 
+    }
     private void Update()
     {
         LookMouse();   
@@ -67,8 +86,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 mouseInput = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
-        float mouseX = mouseInput.x * mouseSensitivity;
-        float mouseY = mouseInput.y * mouseSensitivity;
+        float mouseX = mouseInput.x * mouseSensitivity * xDirection;
+        float mouseY = mouseInput.y * mouseSensitivity * yDirection;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
@@ -177,18 +196,19 @@ public class PlayerController : MonoBehaviour
     }
 
     private void SetAnimation()
-    {if (!characterController.isGrounded)
+    {
+        if (!characterController.isGrounded)
         {
-            if(!isJumping)
+            if (!isJumping)
                 _animator.SetBool("onAir", true);
             isJumping = true;
         }
         else
         {
             isJumping = false;
-                _animator.SetBool("onAir", false);
+            _animator.SetBool("onAir", false);
         }
-        
+
         if (dirAnimation == Vector2.zero)
         {
             _animator.SetBool("isIdle", true);
@@ -207,4 +227,19 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    /// <summary>
+    /// actualiza las preferencias del jugador en base a su perfil
+    /// </summary>
+    private void updatePrefrences(GameEventBase game = null)
+    {
+        if(_profileService == null) return;
+        UserProfile profile = _profileService.getSelectedProfile();
+        if (profile != null)
+        {
+            mouseSensitivity = profile.settings.sensibility;
+            xDirection = profile.settings.axisXDirection;
+            yDirection = profile.settings.axisYDirection;
+        }
+    }
+
 }

@@ -1433,7 +1433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22420835, y: 0.16600001}
   m_AnchorMax: {x: 0.781, y: 0.6253695}
-  m_AnchoredPosition: {x: 0.5, y: -0.13650513}
+  m_AnchoredPosition: {x: 0.5, y: -0.13647461}
   m_SizeDelta: {x: 19.330002, y: 18.655296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527253521
@@ -3438,7 +3438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.23900001, y: 0.19100001}
   m_AnchorMax: {x: 0.7672293, y: 0.60044324}
-  m_AnchoredPosition: {x: -1.1340942, y: -0.9918823}
+  m_AnchoredPosition: {x: -1.1341553, y: -0.9918823}
   m_SizeDelta: {x: 175.16028, y: 176.26129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271488606
@@ -3808,7 +3808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.74711114}
   m_AnchorMax: {x: 1, y: 0.95014817}
-  m_AnchoredPosition: {x: 0.25720215, y: 55.484314}
+  m_AnchoredPosition: {x: 0.25732422, y: 55.484375}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1516114868
@@ -4249,6 +4249,7 @@ GameObject:
   - component: {fileID: 1634156690}
   - component: {fileID: 1634156689}
   - component: {fileID: 1634156688}
+  - component: {fileID: 1634156691}
   m_Layer: 5
   m_Name: btn_back
   m_TagString: Untagged
@@ -4319,7 +4320,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1634156689}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1634156691}
+        m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
+        m_MethodName: back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1634156689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4358,6 +4371,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634156686}
   m_CullTransparentMesh: 1
+--- !u!114 &1634156691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634156686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d977c04a545161244a1e2b8ac1a71f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackButton
 --- !u!1 &1868636477
 GameObject:
   m_ObjectHideFlags: 0
@@ -4645,7 +4670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.74711114}
   m_AnchorMax: {x: 1, y: 0.95014817}
-  m_AnchoredPosition: {x: 0.25720215, y: -15.791779}
+  m_AnchoredPosition: {x: 0.25732422, y: -15.791748}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2026947947
