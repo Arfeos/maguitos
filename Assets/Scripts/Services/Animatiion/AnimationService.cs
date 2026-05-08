@@ -24,7 +24,7 @@ public class AnimationService : IAnimationService
 
         _originalScale = objectToMove.transform.localScale;
         _originalRotation = objectToMove.transform.localRotation;
-        _audioService.PlaySound(_audioClip, false);
+        _audioService.PlaySound(_audioClip);
         _wobbleCoroutine = CoroutineRunner.Instance.StartCoroutine(WobbleRoutine(objectToMove, AnguloDeRebote, DuracionDeRebote, CantidadDeRebote));
     }
     public void WobbleAnimation(GameObject objectToMove,  float AnguloDeRebote = 20f, float DuracionDeRebote = 0.8f, int CantidadDeRebote = 4)
