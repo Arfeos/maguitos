@@ -27,7 +27,7 @@ public class AudioService : IAudioService
     private void CreateMusicSource()
     {
         _musicSource = _audioRoot.AddComponent<AudioSource>();
-
+        Object.DontDestroyOnLoad(_musicSource);
         _musicSource.loop = true;
         _musicSource.volume = _musicVolume;
     }
