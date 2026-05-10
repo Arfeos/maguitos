@@ -4,31 +4,21 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneService : MonoBehaviour, ISceneService
+public class SceneService :ISceneService
 {
-    private static Stack<string> sceneHistory = new Stack<string>();
-    private void OnEnable()
+    private string lastScene;
+    public void LoadScene(SceneNames scene)
     {
-        SceneManager.activeSceneChanged += SaveScene;
-    }
-    private void OnDisable()
-    {
-        SceneManager.activeSceneChanged -= SaveScene;
-    }
-    public void LoadScene(string name)
-    {
-        SceneManager.LoadScene(name);
+        lastScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(scene.ToString());
     }
     public void GoBack()
     {
-        if (sceneHistory.Count > 0)
-        {
-            SceneManager.LoadScene(sceneHistory.Pop());
-        }
+        if(!string.IsNullOrEmpty(lastScene))
+            SceneManager.LoadScene(lastScene);
+            
+        
     }
 
-    public void SaveScene(Scene oldScene, Scene newScene)
-    {
-        sceneHistory.Push(oldScene.name);
-    }
+
 }

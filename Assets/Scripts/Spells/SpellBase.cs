@@ -61,7 +61,7 @@ public partial class SpellBase : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
             _characterService.AddMana(1);
-            Debug.Log(_characterService.CheckMana());
+            //Debug.Log(_characterService.CheckMana());
         } while (_characterService.CheckMana() <= _characterService.getMaxMana());
     }
 
@@ -72,6 +72,8 @@ public partial class SpellBase : MonoBehaviour
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
             spell.currentCharge++;
         } while (spell.MaxCharge > spell.currentCharge);
+        //TODO añadir sonido de carga maxima
+
         Debug.Log("Carga maxima");
     }
     public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)

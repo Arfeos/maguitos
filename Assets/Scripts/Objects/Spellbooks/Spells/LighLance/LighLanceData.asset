@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LighLanceData
   m_EditorClassIdentifier: Assembly-CSharp::ObjectDataScriptable
   objectName: Lanza de luz
-  objetDescription: "Dispara un rayo de luz con algo de dispesi\xF3n de manera automatica"
+  objetDescription: "Dispara un rayo de luz con poca dispesi\xF3n de manera automatica"
   objectSprite: {fileID: 0}

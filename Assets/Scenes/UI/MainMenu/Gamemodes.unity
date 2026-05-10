@@ -723,6 +723,7 @@ GameObject:
   - component: {fileID: 800608799}
   - component: {fileID: 800608798}
   - component: {fileID: 800608797}
+  - component: {fileID: 800608800}
   m_Layer: 5
   m_Name: btn_back
   m_TagString: Untagged
@@ -793,7 +794,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 800608798}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 800608800}
+        m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
+        m_MethodName: back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &800608798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -832,6 +845,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800608795}
   m_CullTransparentMesh: 1
+--- !u!114 &800608800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800608795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d977c04a545161244a1e2b8ac1a71f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackButton
 --- !u!1 &822315326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,6 +1511,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525179085}
   m_CullTransparentMesh: 1
+--- !u!1 &1623315480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1623315482}
+  - component: {fileID: 1623315481}
+  m_Layer: 0
+  m_Name: UIInitializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1623315481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623315480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3537da53faa294eabb1db38e56fbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIInitializer
+  firstButton: {fileID: 1947177051}
+--- !u!4 &1623315482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623315480}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 843.4749, y: 162.12683, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1868636477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,6 +1784,7 @@ GameObject:
   - component: {fileID: 1947177055}
   - component: {fileID: 1947177054}
   - component: {fileID: 1947177053}
+  - component: {fileID: 1947177056}
   m_Layer: 5
   m_Name: btn_tuto
   m_TagString: Untagged
@@ -1785,7 +1856,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1947177054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947177056}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1947177054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1824,6 +1907,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947177051}
   m_CullTransparentMesh: 1
+--- !u!114 &1947177056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947177051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34f0786b0f4a844c8caaa0680f088f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  sceneName: 6
 --- !u!1 &2026947945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,3 +2382,4 @@ SceneRoots:
   - {fileID: 551615763}
   - {fileID: 822315330}
   - {fileID: 1921865909}
+  - {fileID: 1623315482}

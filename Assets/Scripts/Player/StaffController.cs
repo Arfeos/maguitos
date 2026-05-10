@@ -44,6 +44,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         //SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
         //ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
         if (_coroutineReload != null) return;
+        if (_characterService.getSpell(_characterService.getIndex()) == null) return;
         _coroutineReload = StartCoroutine(_characterService.getSpell(_characterService.getIndex())?.Reload());
     }
     private void OnSpellChanged(GameEventBase parameters)
@@ -79,7 +80,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
 
         if (_audioService != null) {
-            _audioService.PlaySound(_audioClip, false);
+            _audioService.PlaySound(_audioClip);
         }
         if(_coroutineCharge != null) StopCoroutine(_coroutineCharge);
         _coroutineCharge = null;
@@ -94,7 +95,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (_audioService != null)
         {
-            _audioService.PlaySound(_audioClip, false);
+            _audioService.PlaySound(_audioClip);
         }
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;
