@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 330b8c8262647924fbd8a55a41a3ce6c
+    m_Address: LookForRooms_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b14ef90bc8da469439ba1cd446daa854
     m_Address: Settings_en
     m_ReadOnly: 1
