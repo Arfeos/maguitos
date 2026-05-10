@@ -63,11 +63,11 @@ public class PlayerController : MonoBehaviour
     {
         _eventService = AppContainer.Get<IEventService>();
         _profileService = AppContainer.Get<IProfileService>();
-        _eventService.Subscribe<PreferenceChageEvent>(updatePrefrences);
+        _eventService.Subscribe<PreferenceChangeEvent>(updatePrefrences);
     }
     private void OnDisable()
     {
-        _eventService.Unsubscribe<PreferenceChageEvent>(updatePrefrences);
+        _eventService.Unsubscribe<PreferenceChangeEvent>(updatePrefrences);
         _eventService = null;
         _profileService = null;
 

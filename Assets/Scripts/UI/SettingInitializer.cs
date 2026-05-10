@@ -13,7 +13,8 @@ public class SettingInitializer : MonoBehaviour
     [SerializeField] private Toggle invertX;
     [SerializeField] private Toggle invertY;
     [SerializeField] private Slider MusicSound;
-    [SerializeField] private Slider MasterSound;
+    [SerializeField] private Slider sfxSound;
+    [SerializeField] private Slider sensibility;
      IProfileService profileService;
     private UserProfile profile;
      private void Awake()
@@ -37,7 +38,8 @@ public class SettingInitializer : MonoBehaviour
         invertX.onValueChanged.RemoveListener(OnInvertXChanged);
         invertY.onValueChanged.RemoveListener(OnInvertYChanged);
         MusicSound.onValueChanged.RemoveListener(OnMusicVolumeChanged);
-        MasterSound.onValueChanged.RemoveListener(OnSFXVolumeChanged);
+        sfxSound.onValueChanged.RemoveListener(OnSFXVolumeChanged);
+        sensibility.onValueChanged.RemoveListener(OnSensibilityChanged);
     }
 
     private void AddListeners()
@@ -46,7 +48,9 @@ public class SettingInitializer : MonoBehaviour
         invertX.onValueChanged.AddListener(OnInvertXChanged);
         invertY.onValueChanged.AddListener(OnInvertYChanged);
         MusicSound.onValueChanged.AddListener(OnMusicVolumeChanged);
-        MasterSound.onValueChanged.AddListener(OnSFXVolumeChanged);
+        sfxSound.onValueChanged.AddListener(OnSFXVolumeChanged);
+        sensibility.onValueChanged.AddListener(OnSensibilityChanged);
+
     }
 
 
@@ -56,7 +60,8 @@ public class SettingInitializer : MonoBehaviour
         invertX.isOn = profile.settings.axisXDirection == -1;
         invertY.isOn = profile.settings.axisYDirection == -1;
         MusicSound.value = profile.settings.musicVolume;
-        MasterSound.value = profile.settings.masterVolume;
+        sfxSound.value = profile.settings.masterVolume;
+        sensibility.value = profile.settings.sensibility;
     }
     private void OnSFXVolumeChanged(float value)
     {
@@ -87,7 +92,11 @@ public class SettingInitializer : MonoBehaviour
         profile.settings.language = (Languages)language;
         save();
     }
-
+    private void OnSensibilityChanged(float value)
+    {
+        profile.settings.sensibility = value;
+        save();
+    }
     private void save()
     {
         profileService.UpdateProfile(profile);
