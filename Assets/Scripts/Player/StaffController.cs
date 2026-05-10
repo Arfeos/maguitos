@@ -44,6 +44,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         //SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
         //ActualSpell.Invoke( "Reload", ActualSpell.spell.reloadTime);
         if (_coroutineReload != null) return;
+        if (_characterService.getSpell(_characterService.getIndex()) == null) return;
         _coroutineReload = StartCoroutine(_characterService.getSpell(_characterService.getIndex())?.Reload());
     }
     private void OnSpellChanged(GameEventBase parameters)
