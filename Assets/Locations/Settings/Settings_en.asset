@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2320214102286336
-    m_Localized: RESUME
+    m_Localized: PLAY
     m_Metadata:
       m_Items: []
   - m_Id: 2320475113824256
@@ -63,7 +63,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2320638414856192
-    m_Localized: MAIN MENU
+    m_Localized: EXIT
     m_Metadata:
       m_Items: []
   - m_Id: 2321040044630016

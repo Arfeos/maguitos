@@ -1243,7 +1243,7 @@ MonoBehaviour:
   layersToHit:
     serializedVersion: 2
     m_Bits: 72
-  _audioClip: {fileID: 8300000, guid: 154b4ae6fa53c5744bfa6a040b4d088e, type: 3}
+  _audioClip: {fileID: 8300000, guid: 87a2e502ddd174591af0e35f76e448a2, type: 3}
 --- !u!1 &5613218020918453169
 GameObject:
   m_ObjectHideFlags: 0
