@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using static SpellBase;
 
 public class NewMonoBehaviourScript : MonoBehaviour
