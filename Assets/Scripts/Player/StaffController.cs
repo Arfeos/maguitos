@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
 using static SpellBase;
+using System.Net;
 
-public class NewObjectDebugger : MonoBehaviour
+public class StaffController : NetworkBehaviour
 {
     [Header("Configuracion de hechizo")]
     //[SerializeField] private SpellBase[] spellList;
@@ -39,6 +41,10 @@ public class NewObjectDebugger : MonoBehaviour
         _eventService.Unsubscribe<ReloadEvent>(OnReloadStarted);
         _eventService.Unsubscribe<SpellChangeEvent>(OnSpellChanged);
     }
+    public override void OnNetworkSpawn()
+    {
+        if (!IsOwner) enabled = false;
+    }
     private void OnReloadStarted(GameEventBase parameters)
     {
         //SpellBase ActualSpell = Actualspell.GetComponent<SpellBase>();
@@ -58,7 +64,10 @@ public class NewObjectDebugger : MonoBehaviour
         
 
         SpellBase ActualSpell = _characterService.getSpell(_characterService.getIndex())?.GetComponent<SpellBase>();
-        if(ActualSpell == null) return;
+
+        Debug.Log($"[Update] IsOwner: {IsOwner} ActualSpell: {ActualSpell}");
+
+        if (ActualSpell == null) return;
         switch (ActualSpell.spell.cast_Type)
         {
             case CastType.auto:
@@ -78,6 +87,10 @@ public class NewObjectDebugger : MonoBehaviour
 
     private void LanzarHechizo(SpellBase ActualSpell)
     {
+        Debug.Log($"[LanzarHechizo] CanCast: {ActualSpell.canCast} IsCasting: {ActualSpell.isCasting} Mana: {_characterService.CheckMana()} ManaCost: {ActualSpell.spell.manaCost}");
+
+        if (!ActualSpell.canCast || ActualSpell.isCasting) return;
+        if (_characterService.CheckMana() <= ActualSpell.spell.manaCost) return;
 
         if (_audioService != null) {
             _audioService.PlaySound(_audioClip, false);
@@ -88,8 +101,53 @@ public class NewObjectDebugger : MonoBehaviour
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;
 
+
         ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
+
+        DibujarEfectoServerRpc(
+        spellSpawn.position,
+        spellSpawn.rotation,
+        _characterService.getIndex()
+        );
+
+
+        //ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
     }
+    
+    [ServerRpc]
+    private void DibujarEfectoServerRpc(Vector3 position, Quaternion rotation, int spellIndex)
+    {
+        Debug.Log($"[ServerRpc] Dibujando efecto");
+
+        SpellBase ActualSpell = _characterService.getSpell(spellIndex)?.GetComponent<SpellBase>();
+        if (ActualSpell == null) return;
+
+        Vector3 direction = rotation * Vector3.forward;
+        Vector3 endPoint;
+
+        if (Physics.Raycast(position, direction, out RaycastHit hit,
+            ActualSpell.spell.lifeTime, layersToHit))
+        {
+            endPoint = hit.point;
+            if (hit.collider.gameObject.GetComponent<IHittable>() != null)
+                hit.collider.gameObject.GetComponent<IHittable>().Hit();
+        }
+        else
+        {
+            endPoint = position + direction * ActualSpell.spell.lifeTime;
+        }
+
+        DrawRayClientRpc(position, endPoint);
+    }
+
+    [ClientRpc]
+    private void DrawRayClientRpc(Vector3 start, Vector3 end)
+    {
+        Debug.Log($"[ClientRpc] Dibujando rayo");
+        var spellService = AppContainer.Get<ISpellService>();
+        spellService.ShootRay(start, end);
+    }
+
 
     private void CargarHechizo(SpellBase ActualSpell)
     {
@@ -101,6 +159,5 @@ public class NewObjectDebugger : MonoBehaviour
         _coroutineReload = null;
         if (_coroutineCharge != null) return;
         _coroutineCharge = StartCoroutine(ActualSpell.CargarHechizo());
-
     }
 }

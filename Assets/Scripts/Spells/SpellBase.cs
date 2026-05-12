@@ -7,8 +7,8 @@ public partial class SpellBase : MonoBehaviour
 {
     public SpellBaseScriptable spell;
 
-    private bool canCast = true;
-    private bool isCasting = false;
+    public bool canCast { get; private set; } = true; 
+    public bool isCasting { get; private set; } = false;
 
     Coroutine CastingSpellCoroutine;
 
