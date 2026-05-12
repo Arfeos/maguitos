@@ -33,6 +33,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-nya
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d16c88bcb95a7b4ca40f8bdd4639f6d
+    m_Address: Steps_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: f91e43a097a877947aefcad09323eb8b, type: 2}
   m_SchemaSet:
