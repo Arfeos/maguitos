@@ -29,7 +29,7 @@ MonoBehaviour:
   RayAliveTime: 0
   nombreHechizo: Fireball
   RayMaterial:
-  - {fileID: 2100000, guid: 347ebdc114fb3e049878aac8d43a8e7f, type: 2}
+  - {fileID: 2100000, guid: a5f92524f4c034849bf5254de6f76e03, type: 2}
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}

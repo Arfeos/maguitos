@@ -15,15 +15,16 @@ public class SceneService : MonoBehaviour, ISceneService
     {
         SceneManager.activeSceneChanged -= SaveScene;
     }
-    public void LoadScene(string name)
+    public void LoadScene(SceneNames scene)
     {
-        SceneManager.LoadScene(name);
+        SceneManager.LoadScene(scene.ToString());
     }
     public void GoBack()
     {
         if (sceneHistory.Count > 0)
         {
             SceneManager.LoadScene(sceneHistory.Pop());
+            
         }
     }
 
