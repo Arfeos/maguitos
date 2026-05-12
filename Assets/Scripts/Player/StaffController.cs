@@ -13,7 +13,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [Header("Configuracion de Objetos")]
     [SerializeField] private LayerMask layersToHit;
     [Header("prueba sonido")]
-    [SerializeField] private AudioClip _audioClip;
     private IAudioService _audioService;
     private IEventService _eventService;
     private ISpellService _spellService;
@@ -78,10 +77,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void LanzarHechizo(SpellBase ActualSpell)
     {
-
-        if (_audioService != null) {
-            _audioService.PlaySound(_audioClip);
-        }
         if(_coroutineCharge != null) StopCoroutine(_coroutineCharge);
         _coroutineCharge = null;
 
@@ -93,10 +88,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void CargarHechizo(SpellBase ActualSpell)
     {
-        if (_audioService != null)
-        {
-            _audioService.PlaySound(_audioClip);
-        }
+
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;
         if (_coroutineCharge != null) return;

@@ -23,7 +23,6 @@ public class SceneService :ISceneService
     }
     private IEnumerator LoadSceneRutine(string sceneName)
     {
-        lastScene = SceneManager.GetActiveScene().name;
         GameObject canvasObj = new GameObject("LoadingCanvas");
         Object.DontDestroyOnLoad(canvasObj);
         Canvas canvas = canvasObj.AddComponent<Canvas>();
@@ -40,8 +39,11 @@ public class SceneService :ISceneService
             canvasGroup = loadingScreen.AddComponent<CanvasGroup>();
         yield return Fade(canvasGroup, 0, 1, 0.5f);
         AsyncOperation operation =SceneManager.LoadSceneAsync(sceneName);
-        while (!operation.isDone)
+        operation.allowSceneActivation = false;
+        while (operation.progress < 0.9f)
             yield return null;
+        operation.allowSceneActivation = true;
+        yield return null;
         yield return Fade(canvasGroup, 1, 0, 0.5f);
         Object.Destroy(canvasObj);
     }
