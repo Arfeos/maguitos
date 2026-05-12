@@ -200,4 +200,21 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("isRunning", isRunning);
 
     }
+
+    /// <summary>
+    /// actualiza las preferencias del jugador en base a su perfil
+    /// </summary>
+    private void updatePrefrences(GameEventBase game = null)
+    {
+        if(_profileService == null) return;
+        UserProfile profile = _profileService.getSelectedProfile();
+        if (profile != null)
+        {
+            mouseSensitivity = profile.settings.sensibility;
+            xDirection = profile.settings.axisXDirection;
+            yDirection = profile.settings.axisYDirection;
+        }
+    }
+    //TODO: alo pulsar al escape, bloquear el tiempo, volver a mostrar el cursor y mostrar un menu de pausa, con opciones para volver al menu principal, salir del juego o volver a jugar y si se vuelve a pulsar, bloquear el curso y hacerlo invisible
+
 }
