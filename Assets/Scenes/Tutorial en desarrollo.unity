@@ -15234,6 +15234,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4448549695739750310, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 4654026600715146292, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -82.983635
@@ -15260,15 +15264,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756135489967229772, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4756135489967229772, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4756135489967229772, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5007877882601196560, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15446,6 +15450,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -32.472446
       objectReference: {fileID: 0}
+    - target: {fileID: 7658180367219243812, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 7789780856844944901, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 14.592764
@@ -15611,10 +15619,21 @@ PrefabInstance:
       value: 2.2793908
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5713235025695715511, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2430847954730026534, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 965288077684688009, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8263593851773993747, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7458571514840077513, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
 --- !u!1 &1863179414 stripped
 GameObject:
