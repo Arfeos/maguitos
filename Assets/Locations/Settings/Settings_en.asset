@@ -63,9 +63,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2320638414856192
-    m_Localized: 'EXIT
-
-'
+    m_Localized: EXIT
     m_Metadata:
       m_Items: []
   - m_Id: 2321040044630016
@@ -73,11 +71,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2321553762983936
-    m_Localized: TUTORIAL
+    m_Localized: CREATE A ROOM
     m_Metadata:
       m_Items: []
   - m_Id: 2321836542959616
-    m_Localized: NAH, LET'S FIGHT
+    m_Localized: JOIN A ROOM
     m_Metadata:
       m_Items: []
   - m_Id: 2322310096658432

@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-nya
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 662331c51b4c64c40aa1a4a4d745d995
+    m_Address: LookForRooms_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: f91e43a097a877947aefcad09323eb8b, type: 2}
   m_SchemaSet:

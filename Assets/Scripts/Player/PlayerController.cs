@@ -1,4 +1,3 @@
-using System;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEditor.MPE;
@@ -12,12 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float Velocity = 10f;
 
     [Header("Mouse")]
-    
-    [SerializeField] private Transform cameraTransform;
     [SerializeField] private float mouseSensitivity = 0.5f;
-    [SerializeField] private float xDirection = 1;
-    [SerializeField] private float yDirection = 1;
-
+    [SerializeField] private Transform cameraTransform;
 
     [Header("Crouch")]
     [SerializeField] private float standHeight = 1f;
@@ -29,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float standCenter = 1f;
 
     [Header("Jump")]
-    [SerializeField]   private float jumpHeight = 1f;
+    [SerializeField] private float jumpHeight = 1f;
     private bool isJumping;
 
     private CharacterController characterController;
@@ -42,10 +37,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 dirAnimation;
 
     private float xRotation = 0f;
-    IProfileService _profileService  ;
-    IEventService _eventService;
 
 
+    private IEventService _eventService;
 
     private Animator _animator;
 
@@ -53,29 +47,16 @@ public class PlayerController : MonoBehaviour
     {
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         characterController = GetComponent<CharacterController>();
-       
+        _eventService = AppContainer.Get<IEventService>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _animator = GetComponent<Animator>();
-        updatePrefrences();
     }
-    private void OnEnable()
-    {
-        _eventService = AppContainer.Get<IEventService>();
-        _profileService = AppContainer.Get<IProfileService>();
-        _eventService.Subscribe<PreferenceChangeEvent>(updatePrefrences);
-    }
-    private void OnDisable()
-    {
-        _eventService.Unsubscribe<PreferenceChangeEvent>(updatePrefrences);
-        _eventService = null;
-        _profileService = null;
 
-    }
     private void Update()
     {
-        LookMouse();   
-        Move();        
+        LookMouse();
+        Move();
         HandleCrouch();
         handleReload();
         handleChangeWeapon();
@@ -86,13 +67,13 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 mouseInput = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
-        float mouseX = mouseInput.x * mouseSensitivity * xDirection;
-        float mouseY = mouseInput.y * mouseSensitivity * yDirection;
+        float mouseX = mouseInput.x * mouseSensitivity;
+        float mouseY = mouseInput.y * mouseSensitivity;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);    
+        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
     }
 
@@ -118,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
         if (inputPlayer.magnitude > 0.1f)
         {
-       
+
 
             move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
         }
@@ -161,12 +142,12 @@ public class PlayerController : MonoBehaviour
 
 
         Vector3 camPos = cameraTransform.localPosition;
-        float targetY = isCrouching ? (crouchHeight)+0.3f : (standHeight) - 0.3f;
-        
+        float targetY = isCrouching ? (crouchHeight) + 0.3f : (standHeight) - 0.3f;
+
 
         camPos.y = Mathf.Lerp(camPos.y, targetY, Time.deltaTime * crouchSpeed);
         cameraTransform.localPosition = camPos;
-        
+
     }
 
 
@@ -209,37 +190,14 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("onAir", false);
         }
 
-        if (dirAnimation == Vector2.zero)
-        {
-            _animator.SetBool("isIdle", true);
-        }
-        else
-        {
-            _animator.SetBool("isIdle", false);
+        
+        
+            
             _animator.SetFloat("VelocityX", dirAnimation.x);
             _animator.SetFloat("VelocityY", dirAnimation.y);
-        }
+        
         _animator.SetBool("isCrouching", isCrouching);
         _animator.SetBool("isRunning", isRunning);
-        if (velocityY > 0.5)
-        {
-            _animator.SetBool("onAir", true);
-        }
 
     }
-    /// <summary>
-    /// actualiza las preferencias del jugador en base a su perfil
-    /// </summary>
-    private void updatePrefrences(GameEventBase game = null)
-    {
-        if(_profileService == null) return;
-        UserProfile profile = _profileService.getSelectedProfile();
-        if (profile != null)
-        {
-            mouseSensitivity = profile.settings.sensibility;
-            xDirection = profile.settings.axisXDirection;
-            yDirection = profile.settings.axisYDirection;
-        }
-    }
-
 }

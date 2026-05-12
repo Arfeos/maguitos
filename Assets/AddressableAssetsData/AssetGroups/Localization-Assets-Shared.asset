@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 1865c5920df0cd54a83c1a8cd2b4c668
   m_SerializeEntries:
+  - m_GUID: a090f144d3ef39745b71795c6755124b
+    m_Address: Assets/Locations/LookForRooms/LookForRooms Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d655bfbad0dbac847a7f03a920d98060
     m_Address: Assets/Locations/Menus Shared Data.asset
     m_ReadOnly: 1

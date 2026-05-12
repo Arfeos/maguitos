@@ -29,7 +29,7 @@ MonoBehaviour:
   RayAliveTime: 1
   nombreHechizo: SolarFlare
   RayMaterial:
-  - {fileID: 2100000, guid: 347ebdc114fb3e049878aac8d43a8e7f, type: 2}
+  - {fileID: 2100000, guid: dbc6c4bb9076c2946a269fa6b95843c9, type: 2}
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
