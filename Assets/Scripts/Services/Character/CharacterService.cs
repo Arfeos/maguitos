@@ -1,10 +1,9 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CharacterService : ICharacterService
 {
+    private IEventService _eventService;
     private List<SpellBase> listaHechizos = new List<SpellBase>();
     private int index = 0;
     private int slots = 10;
@@ -20,6 +19,12 @@ public class CharacterService : ICharacterService
             return;
         }
         this.manaActual += manaAniadir;
+        if(_eventService == null) _eventService = AppContainer.Get<IEventService>();
+        
+        ManaEvent ManaEvent = new ManaEvent();
+        ManaEvent.ManaToChange = manaActual;
+        _eventService.Publish(ManaEvent);
+
     }
     public int getMaxMana()
     {
@@ -44,12 +49,18 @@ public class CharacterService : ICharacterService
     }
     public bool RemoveMana(int manaToRemove)
     {
+        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
         if (manaActual - manaToRemove < 0) return false;
         else
         {
             this.manaActual -= manaToRemove;
+            ManaEvent ManaEvent = new ManaEvent();
+            ManaEvent.ManaToChange = manaActual;
+            _eventService.Publish(ManaEvent);
             return true;
         }
+
+
     }
     public bool addSpell(SpellBase spellToAdd)
     {
@@ -129,12 +140,20 @@ public class CharacterService : ICharacterService
 
     public void Heal(int amountHealed)
     {
+        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
         if (Curretlife + amountHealed > life) Curretlife = life;
         else Curretlife += amountHealed;
+        HPEvent hpEvent = new HPEvent();
+        hpEvent.HPToChange = Curretlife;
+        _eventService.Publish(hpEvent);
     }
     public void TakeDamage(int damageTaken)
     {
+        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
         this.Curretlife -= damageTaken;
+        HPEvent hpEvent = new HPEvent();
+        hpEvent.HPToChange = Curretlife;
+        _eventService.Publish(hpEvent);
         if (this.Curretlife < 0) Die();
     }
 

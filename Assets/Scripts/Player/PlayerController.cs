@@ -1,9 +1,4 @@
-using Unity.VisualScripting;
-using UnityEditor.Animations;
-using UnityEditor.MPE;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerController : MonoBehaviour
 {

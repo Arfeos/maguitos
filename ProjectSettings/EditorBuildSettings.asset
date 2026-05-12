@@ -6,26 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/UI/Initials/Initial_Language.unity
-    guid: 789678e49c158d8489aab9a43766ab55
-  - enabled: 1
-    path: Assets/Scenes/UI/Initials/Profile_Creation.unity
-    guid: 94e98912a6347964c8a9b335072d06b8
-  - enabled: 1
-    path: Assets/Scenes/UI/Initials/Profile_Selection.unity
-    guid: 8a80fa56bf5c9524ea7922479284fe3a
-  - enabled: 1
-    path: Assets/Scenes/UI/MainMenu/Gamemodes.unity
-    guid: 02a4119d19e33a146a7fadba6be17907
-  - enabled: 1
-    path: Assets/Scenes/UI/MainMenu/Main_menu.unity
-    guid: e53e02e1a895c424499d017830a37601
-  - enabled: 1
-    path: Assets/Scenes/UI/MainMenu/Settings.unity
-    guid: faaeeb11d05e79a4fb8ceaffa3c80391
+    path: Assets/Scenes/Tutorial en desarrollo.unity
+    guid: f2d78445af8d40f42af85cc96265541c
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 092e0341c4b2b464daa1bcc08ae390ae, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -2,7 +2,7 @@ using UnityEngine;
 /// <summary>
 /// Esta clase sirve para controlar los botones de las puertas
 /// </summary>
-public class RuneController : MonoBehaviour, IHittable
+public class Opendoor : MonoBehaviour, IHittable
 {
     /// <summary>
     /// El valor del estado de la puerta se almacena en el boton y al ser golpeada cambia de estado

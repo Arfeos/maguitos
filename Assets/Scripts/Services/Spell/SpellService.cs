@@ -59,8 +59,6 @@ public class SpellService : ISpellService
         var ball = GetOrCreateBall();
         Rigidbody rb = ball.GetComponent<Rigidbody>();
 
-        Debug.Log($"Ball: {ball.name} | Active: {ball.activeSelf} | RB null: {rb == null}");
-
         ball.transform.SetPositionAndRotation(start, Quaternion.identity);
         ball.SetActive(true);
         //Los objetos inactivos no tienen fisicas, quien lo diria verdad, el sergio de la ultima hora desde luego no
