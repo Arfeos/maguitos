@@ -32,9 +32,9 @@ public class SpellBaseScriptable : ScriptableObject
 
 
     [Header("Spell sound")]
-    public AudioSource? spawnSound;
-    public AudioSource? airSound;
-    public AudioSource? hitSound;
+    public AudioClip? spawnSound;
+    public AudioClip? airSound;
+    public AudioClip? hitSound;
 
 
     public bool canCast = true;

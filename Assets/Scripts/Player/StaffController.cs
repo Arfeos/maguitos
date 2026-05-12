@@ -13,7 +13,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [Header("Configuracion de Objetos")]
     [SerializeField] private LayerMask layersToHit;
     [Header("prueba sonido")]
-    private IAudioService _audioService;
+    //private IAudioService _audioService;
     private IEventService _eventService;
     private ISpellService _spellService;
     private ICharacterService _characterService;
@@ -22,7 +22,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     void Awake()
     {
         //PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
-        _audioService = AppContainer.Get<IAudioService>();
+        //_audioService = AppContainer.Get<IAudioService>();
         _eventService = AppContainer.Get<IEventService>();
         _spellService = AppContainer.Get<ISpellService>();
         _characterService = AppContainer.Get<ICharacterService>();
