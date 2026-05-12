@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIService: IUIService
 {
-     public Button FirstButton { get; private set; }
+     public Selectable FirstButton { get; private set; }
 
     public void changeLanguage(Languages language)
     {
@@ -23,19 +23,9 @@ public class UIService: IUIService
         }
     }
 
-    public void RegisterFirstButton(Button[] foundButtons)
+    public void RegisterFirstButton(GameObject firstButton)
     {
+        EventSystem.current.SetSelectedGameObject(firstButton);
 
-        Debug.Log("entra");
-        if (foundButtons.Length > 0)
-        {
-            Debug.Log("hay botones");
-            FirstButton = foundButtons[0];
-            EventSystem.current.SetSelectedGameObject(FirstButton.gameObject);
-        }
-        else
-        {
-            FirstButton = null;
-        }
     }
 }

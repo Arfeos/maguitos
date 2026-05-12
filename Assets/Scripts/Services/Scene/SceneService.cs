@@ -24,19 +24,19 @@ public class SceneService : ISceneService
 
     #region Scene charger (InGame & Lobby)
 
-    public void LoadScene(string sceneName)
+    public void LoadScene(SceneNames scene)
     {
         if (!NetworkManager.Singleton.IsListening)
         {
             // offline
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(scene.ToString());
             return;
         }
 
         if (NetworkManager.Singleton.IsServer)
         {
             //online
-            NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            NetworkManager.Singleton.SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Single);
             return;
         }
     }
@@ -71,6 +71,7 @@ public class SceneService : ISceneService
         if (sceneHistory.Count > 0)
         {
             SceneManager.LoadScene(sceneHistory.Pop());
+            
         }
     }
     public void SaveScene(Scene oldScene, Scene newScene)
