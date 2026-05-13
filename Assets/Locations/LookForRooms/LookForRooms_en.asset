@@ -30,6 +30,26 @@ MonoBehaviour:
     m_Localized: Back
     m_Metadata:
       m_Items: []
+  - m_Id: 1318350609809408
+    m_Localized: LOOK FOR A GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319185666375680
+    m_Localized: 'ROOM''S CODE:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319506123784192
+    m_Localized: 'PLAYERS:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319729394974720
+    m_Localized: 'ENTER ROOM''S CODE:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1320067158081536
+    m_Localized: Enter code...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
