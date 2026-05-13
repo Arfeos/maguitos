@@ -24,7 +24,7 @@ public class Workflow
 
     public void Begin()
     {
-        // Comprobamos que el workflow no esté iniciado
+        // Comprobamos que el workflow no estï¿½ iniciado
         if (this._currentStep != null)
             return;
 
@@ -65,7 +65,7 @@ public class Workflow
 
     private void StepComplete()
     {
-        // Obtenemos la posición del step actual en la lista
+        // Obtenemos la posiciï¿½n del step actual en la lista
         var indexOfCurrentStep = this._steps.IndexOf(this._currentStep);
 
         // Si no encontramos el step salimos

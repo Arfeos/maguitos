@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class PickUpSpellStep : IStep
 {
@@ -10,16 +11,16 @@ public class PickUpSpellStep : IStep
     private ICharacterService _characterService;
 
     // --- IStep ---
-    public string Name => "Recoge el hechizo";
-    public string Description
+    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };}
+    public LocalizedString Description
     {
-        get
-        {
+        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };
+        /* {
             var moveAction = PlayerInputManager.Actions.Player.Interact;
             var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
 
             return $"Acercate a la mesa y manten pulsado {keyNames} sobre el libro para obtener el hechizo";
-        }
+        } */
     }
 
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }

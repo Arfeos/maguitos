@@ -1,22 +1,23 @@
 using System;
+using UnityEngine.Localization;
 
 public interface IStep
 {
     // Nombre del Step
-    public string Name { get; }
+    public LocalizedString Name { get; }
 
-    // Descripción del Step
-    public string Description { get; }
+    // Descripciï¿½n del Step
+    public LocalizedString Description { get; }
 
-    // Indicador para ver si está completo o no
+    // Indicador para ver si estï¿½ completo o no
     public bool IsComplete { get; set; }
 
-    // Método para activar el step
+    // Mï¿½todo para activar el step
     public void Activate();
 
-    // Método para desactivar el step
+    // Mï¿½todo para desactivar el step
     public void Deactivate();
 
-    // Evento invocado cuando se completa la acción
+    // Evento invocado cuando se completa la acciï¿½n
     public event Action OnComplete;
 }

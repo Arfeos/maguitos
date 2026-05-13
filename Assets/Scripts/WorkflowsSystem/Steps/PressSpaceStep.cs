@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class PressSpaceStep : IStep
 {
@@ -11,16 +12,16 @@ public class PressSpaceStep : IStep
     private int _keyPressedTimes = 0;
 
     // --- IStep ---
-    public string Name => "Salta por encima del pilar caido";
-    public string Description
+    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };}
+    public LocalizedString Description
     {
-        get
-        {
+        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };
+        /* {
             var moveAction = PlayerInputManager.Actions.Player.Jump;
             var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
 
             return $"Acercate al segundo pilar caido y mientras te mueves hacia delante presiona la tecla {keyNames}";
-        }
+        } */
     }
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }
     public event Action OnComplete;

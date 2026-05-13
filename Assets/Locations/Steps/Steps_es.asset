@@ -19,7 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 33875656704
-    m_Localized: Hola
+    m_Localized: "Mueve la c\xE1mara"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361430210150400
+    m_Localized: "Mueve la camara usando {keyNames} para mover la c\xE1mara"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 364499266273280
+    m_Localized: step
+    m_Metadata:
+      m_Items: []
+  - m_Id: 364576881868800
+    m_Localized: step
     m_Metadata:
       m_Items: []
   references:

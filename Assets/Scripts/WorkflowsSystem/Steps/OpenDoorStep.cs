@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class OpenDoorStep : IStep
 {
@@ -12,16 +13,16 @@ public class OpenDoorStep : IStep
     private GameObject _door;
 
     // --- IStep ---
-    public string Name => "Abre la puerta";
-    public string Description
+    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };}
+    public LocalizedString Description
     {
-        get
-        {
+        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };
+        /* {
             var moveAction = PlayerInputManager.Actions.Player.Attack;
             var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
 
-            return $"Apunta a la runa al lado de la puerta y dispara usando el botón {keyNames}";
-        }
+            return $"Apunta a la runa al lado de la puerta y dispara usando el botï¿½n {keyNames}";
+        } */
     }
 
     //public string Description => "Presionando la tecla " + PlayerInputManager.Actions.Player.Move.controls.ToString() +  " superas el `step` del workflow";
