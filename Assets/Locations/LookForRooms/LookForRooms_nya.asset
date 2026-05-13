@@ -30,6 +30,26 @@ MonoBehaviour:
     m_Localized: Bwacku
     m_Metadata:
       m_Items: []
+  - m_Id: 1318350609809408
+    m_Localized: LOOKU FOWU A GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319185666375680
+    m_Localized: 'WOOM''SU CODE:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319506123784192
+    m_Localized: 'PLAYERSU:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319729394974720
+    m_Localized: 'ENTEWU WOOM''SU CODE:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1320067158081536
+    m_Localized: Entewu code...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

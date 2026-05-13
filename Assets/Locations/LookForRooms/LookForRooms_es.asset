@@ -30,6 +30,26 @@ MonoBehaviour:
     m_Localized: Volver
     m_Metadata:
       m_Items: []
+  - m_Id: 1318350609809408
+    m_Localized: BUSCAR PARTIDA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319185666375680
+    m_Localized: "C\xD3DIGO DE SALA:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319506123784192
+    m_Localized: 'JUGADORES:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319729394974720
+    m_Localized: "INTRODUCE EL C\xD3DIGO DE SALA:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1320067158081536
+    m_Localized: "Introduce el c\xF3digo..."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
