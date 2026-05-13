@@ -9,6 +9,7 @@ using Unity.Services.Matchmaker.Models;
 public class LocalGame : NetworkBehaviour
 {
     private ISceneService sceneService;
+    [SerializeField] private SceneNames scene;
     private async void Awake()
     {
         sceneService = AppContainer.Get<ISceneService>();
@@ -25,7 +26,7 @@ public class LocalGame : NetworkBehaviour
         var ticket = MatchmakerService.Instance.GetTicketAsync("10100100");
         Debug.Log(ticket.GetType());
 
-        sceneService.LoadScene("SampleScene");
+        sceneService.LoadScene(scene);
     }
     public void Client()
     {
@@ -36,7 +37,7 @@ public class LocalGame : NetworkBehaviour
         yield return null;
 
         NetworkManager.Singleton.StartHost();
-        sceneService.LoadScene("SampleScene");
+        sceneService.LoadScene(scene);
     }
 
 }

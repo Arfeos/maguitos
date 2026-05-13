@@ -11,6 +11,10 @@ using System.Linq;
 public class RelayManager : MonoBehaviour
 {
     private ISceneService sceneService;
+
+    [SerializeField] private SceneNames scene;
+    [SerializeField] private SceneNames scene1;
+    [SerializeField] private SceneNames scene2;
     void Start()
     {
         sceneService = AppContainer.Get<ISceneService>();
@@ -61,7 +65,7 @@ public class RelayManager : MonoBehaviour
             response.Pending = false;
         };
         NetworkManager.Singleton.StartHost();
-        sceneService.LoadScene("SampleScene");
+        sceneService.LoadScene(scene);
         return joinCode;
     }
     public async Task StartClientWithRelayAsync(string joinCode)
