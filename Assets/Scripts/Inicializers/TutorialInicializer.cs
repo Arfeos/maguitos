@@ -27,7 +27,9 @@ public class TutorialInicializer : MonoBehaviour
             new ShootStep(),
             new OpenDoorStep(door),
             new CrouchStep(),
-            new PressSpaceStep()
+            new PressSpaceStep(),
+            new ReloadStep(),
+            new ShootingRangeStep(MessageBox)
 
         }, MessageBox);
 
