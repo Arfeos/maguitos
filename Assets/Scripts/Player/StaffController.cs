@@ -93,7 +93,7 @@ public class StaffController : NetworkBehaviour
         if (_characterService.CheckMana() <= ActualSpell.spell.manaCost) return;
 
         if (_audioService != null) {
-            _audioService.PlaySound(_audioClip, false);
+            _audioService.PlaySound(_audioClip);
         }
         if(_coroutineCharge != null) StopCoroutine(_coroutineCharge);
         _coroutineCharge = null;
@@ -153,7 +153,7 @@ public class StaffController : NetworkBehaviour
     {
         if (_audioService != null)
         {
-            _audioService.PlaySound(_audioClip, false);
+            _audioService.PlaySound(_audioClip);
         }
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;

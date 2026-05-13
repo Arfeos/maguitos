@@ -15,8 +15,38 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 1865c5920df0cd54a83c1a8cd2b4c668
   m_SerializeEntries:
+  - m_GUID: 3818846376611c8498585d4739f2e3e9
+    m_Address: Assets/Locations/Steps/Steps Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 731e1c1d21b1b864caf6f3a9705bd106
+    m_Address: Assets/Locations/Gamemodes/Gamemodes Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a090f144d3ef39745b71795c6755124b
+    m_Address: Assets/Locations/LookForRooms/LookForRooms Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5b741b1152a6a34398d585ad2529022
+    m_Address: Assets/Locations/ProfileSelection/ProfileSelection Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c780298e4fa86254eb4b268982100a50
+    m_Address: Assets/Locations/MainMenu/MainMenu Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d655bfbad0dbac847a7f03a920d98060
     m_Address: Assets/Locations/Menus Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8cf77bbd98ccd14b963f2246a358acf
+    m_Address: Assets/Locations/InitialLanguage/InitialLanguage Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

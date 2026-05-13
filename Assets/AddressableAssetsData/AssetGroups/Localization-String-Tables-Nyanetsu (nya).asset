@@ -22,7 +22,43 @@ MonoBehaviour:
     - Locale-nya
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 63d65116f6450ae40adcd94bdcb152f6
-    m_Address: Profile_Creation_nya
+    m_Address: ProfileCreation_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64143ffe4810ba343940541d7299a8e9
+    m_Address: InitialLanguage_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 662331c51b4c64c40aa1a4a4d745d995
+    m_Address: LookForRooms_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7dbf98ca171db6f4a8fcd6c7b0dc3821
+    m_Address: Gamemodes_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d16c88bcb95a7b4ca40f8bdd4639f6d
+    m_Address: Steps_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bffa1701627d093498011751260a720b
+    m_Address: ProfileSelection_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c26b7147e14ffde448a291b2c6a58b9c
+    m_Address: MainMenu_nya
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-nya

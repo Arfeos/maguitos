@@ -7,6 +7,7 @@ public enum SceneNames
    Profile_selection,
    Main_menu,
    Gamemodes,
-   Settings
+   Settings,
+   Tutorial
 
 }

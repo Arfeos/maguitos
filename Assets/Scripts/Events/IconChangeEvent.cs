@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class IconChangeEvent : GameEventBase
 {
     public string newIconUrl;
