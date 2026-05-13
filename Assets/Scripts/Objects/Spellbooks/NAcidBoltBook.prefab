@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 5191526307411417438}
   - component: {fileID: 5941018716596534953}
   m_Layer: 0
-  m_Name: AcidBoltBook
+  m_Name: NAcidBoltBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
