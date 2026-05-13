@@ -15,14 +15,50 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_GUID: a4983769be38be94ab00dea17b47083e
   m_SerializeEntries:
+  - m_GUID: 03793a0a2a88cda49b4e1c516a6fbaf7
+    m_Address: MainMenu_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 174eacea316e9e040aae9a3bd45aa339
-    m_Address: Profile_Creation_en
+    m_Address: ProfileCreation_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 207c332840602494eaebcdc430c08fca
+    m_Address: Gamemodes_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 330b8c8262647924fbd8a55a41a3ce6c
+    m_Address: LookForRooms_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a06c1b28746b6544a2fcf1c4a87632d
+    m_Address: InitialLanguage_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ced6d8cae040af4ca9a4bdc109c62d0
+    m_Address: ProfileSelection_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b14ef90bc8da469439ba1cd446daa854
     m_Address: Settings_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f50201283ab54454182e8cd4330e4b00
+    m_Address: Steps_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

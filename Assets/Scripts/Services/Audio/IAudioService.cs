@@ -2,6 +2,8 @@ using UnityEngine;
 
 public interface IAudioService 
 {
-    void PlaySound(AudioClip clip, bool loop = false, bool stopPrevious = false);
+    void PlayMusic(AudioClip clip);
+    void StopMusic();
+    void PlaySound(AudioClip clip);
     void DestroyAudioSources();
 }

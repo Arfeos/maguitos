@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Steps
+  m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
+  m_SharedTableData: {fileID: 11400000, guid: 3818846376611c8498585d4739f2e3e9, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: f50201283ab54454182e8cd4330e4b00, type: 2}
+  - {fileID: 11400000, guid: 0af68350e9cbffc47934a9e3ec70e8ca, type: 2}
+  - {fileID: 11400000, guid: 8d16c88bcb95a7b4ca40f8bdd4639f6d, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

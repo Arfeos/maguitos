@@ -15,72 +15,44 @@ MonoBehaviour:
   m_TableCollectionName: Settings
   m_TableCollectionNameGuidString: d655bfbad0dbac847a7f03a920d98060
   m_Entries:
-  - m_Id: 3176475168768
-    m_Key: Initial_Language/Canvas/Inital_Language_Selection/tit_language
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2316504529805312
-    m_Key: Settings/Canvas/Settings/Grid/txt_language
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2317011122036736
-    m_Key: Settings/Canvas/Settings/Grid/txt_reverse_axis
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2317523343024128
-    m_Key: Settings/Canvas/Settings/Grid/txt_music
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2318202543448064
-    m_Key: Settings/Canvas/Settings/Grid/txt_sounds
-    m_Metadata:
-      m_Items: []
   - m_Id: 2319291816779776
-    m_Key: Settings/Canvas/Settings/tit_settings_sentence
+    m_Key: tit_settings
     m_Metadata:
       m_Items: []
   - m_Id: 2319626849394688
-    m_Key: Settings/Canvas/Settings/tit_settings
+    m_Key: tit_settings_sentence
     m_Metadata:
       m_Items: []
-  - m_Id: 2320214102286336
-    m_Key: Main_menu/Canvas/Main_Menu/Grid/btn_play/txt_play
+  - m_Id: 4979649732579328
+    m_Key: subtit_main_menu
     m_Metadata:
       m_Items: []
-  - m_Id: 2320475113824256
-    m_Key: Main_menu/Canvas/Main_Menu/Grid/btn_settings/txt_settings
+  - m_Id: 2317011122036736
+    m_Key: txt_reverse_axis
     m_Metadata:
       m_Items: []
-  - m_Id: 2320638414856192
-    m_Key: Main_menu/Canvas/Main_Menu/Grid/btn_exit/txt_exit
+  - m_Id: 2317523343024128
+    m_Key: txt_music
     m_Metadata:
       m_Items: []
-  - m_Id: 2321040044630016
-    m_Key: Main_menu/Canvas/Main_Menu/subtit_main_menu
+  - m_Id: 4977370015109120
+    m_Key: txt_sounds
     m_Metadata:
       m_Items: []
-  - m_Id: 2321553762983936
-    m_Key: Gamemodes/Canvas/Gamemodes/Grid/btn_tuto/txt_tuto
+  - m_Id: 4977735129272320
+    m_Key: txt_sensibility
     m_Metadata:
       m_Items: []
-  - m_Id: 2321836542959616
-    m_Key: Gamemodes/Canvas/Gamemodes/Grid/btn_fight/txt_fight
+  - m_Id: 4998683811287040
+    m_Key: txt_resume
     m_Metadata:
       m_Items: []
-  - m_Id: 2322310096658432
-    m_Key: Gamemodes/Canvas/Gamemodes/tit_gamemodes
+  - m_Id: 4999119737884672
+    m_Key: txt_mainmenu
     m_Metadata:
       m_Items: []
-  - m_Id: 2322462039515136
-    m_Key: Gamemodes/Canvas/Gamemodes/tit_gamemodes_sentence
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2326980672266240
-    m_Key: Profile_Creation/Canvas/Profile_Creation/Grid/txt_username
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2327149912432640
-    m_Key: Profile_Creation/Canvas/Profile_Creation/tit_profile_creation
+  - m_Id: 5193839032238080
+    m_Key: txt_restart
     m_Metadata:
       m_Items: []
   m_Metadata:
