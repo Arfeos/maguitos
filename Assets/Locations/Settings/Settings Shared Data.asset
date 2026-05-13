@@ -48,7 +48,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4999119737884672
-    m_Key: panel_pause/Prefab Mode in Context/panel_pause/Grid/btn_mainmenu/txt_mainmenu
+    m_Key: txt_mainmenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5193839032238080
+    m_Key: txt_restart
     m_Metadata:
       m_Items: []
   m_Metadata:

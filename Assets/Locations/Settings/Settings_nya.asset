@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: MAINU MENYU
     m_Metadata:
       m_Items: []
+  - m_Id: 5193839032238080
+    m_Localized: WESTARTU
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

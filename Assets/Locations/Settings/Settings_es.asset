@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: "MEN\xDA PRINCIPAL"
     m_Metadata:
       m_Items: []
+  - m_Id: 5193839032238080
+    m_Localized: REINICIAR
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
