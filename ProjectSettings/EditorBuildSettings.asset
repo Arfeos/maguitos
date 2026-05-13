@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial en desarrollo.unity
     guid: f2d78445af8d40f42af85cc96265541c
+  - enabled: 1
+    path: Assets/Scenes/UI/MainMenu/Look_For_Game.unity
+    guid: 948a3c93a23b45b40a73dfb911fce0ee
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 092e0341c4b2b464daa1bcc08ae390ae, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

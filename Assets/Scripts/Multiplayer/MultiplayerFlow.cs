@@ -9,7 +9,10 @@ public class MultiplayerFlow : MonoBehaviour
 {
     [SerializeField] private LobbyManager lobbyManager;
     [SerializeField] private RelayManager relayManager;
-    [SerializeField] private SceneNames scene;
+    [SerializeField] private SceneNames GameScene;
+    [SerializeField] private SceneNames LobbyScene;
+
+
     private ISceneService sceneService;
 
     async void Start()
@@ -37,7 +40,7 @@ public class MultiplayerFlow : MonoBehaviour
                 }
             });
 
-        sceneService.LoadScene(scene);
+        sceneService.LoadScene(GameScene);
         //NetworkManager.Singleton.SceneManager
         //    .LoadScene("GameScene", LoadSceneMode.Single);
     }

@@ -119,63 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &185553528
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.120995
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.6949496
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.704568
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926038303166538032, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002026135341559527, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
-      propertyPath: m_Name
-      value: LightSpearBook
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1d9eb766243f0344881bc4a405d2e2d7, type: 3}
 --- !u!1 &289598292
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +184,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fece9240beb7fe2468847adfc9895882, type: 2}
+  - {fileID: 2100000, guid: 548d112443aeb034fa444c56e1800957, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -670,6 +613,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -120, z: 0}
+--- !u!1001 &1526880190
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.3069396
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7729714
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.470495
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978234290406821021, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433550039768479063, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
+      propertyPath: m_Name
+      value: LightSpearBook
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a0f8919e3ab2b540a0e5133862a6e75, type: 3}
 --- !u!1 &1566148319
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,4 +764,4 @@ SceneRoots:
   - {fileID: 1477524481}
   - {fileID: 1566148320}
   - {fileID: 1173938510}
-  - {fileID: 185553528}
+  - {fileID: 1526880190}

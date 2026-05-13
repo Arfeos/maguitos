@@ -8,6 +8,8 @@ public class LobbyManager : MonoBehaviour
 {
     private Lobby _currentLobby;
     private float _heartbeatTimer;
+    private bool _isHost;
+    private float _pollTimer;
 
     // ?? CREAR LOBBY (Host) ??????????????????????????????????????????
     public async Task<Lobby> CreateLobbyAsync(string lobbyName, int maxPlayers)
@@ -17,16 +19,18 @@ public class LobbyManager : MonoBehaviour
             IsPrivate = false,
             Data = new Dictionary<string, DataObject>
             {
-                // El JoinCode de Relay se guarda aquí para que otros lo lean
                 { "RelayJoinCode", new DataObject(
-                    visibility: DataObject.VisibilityOptions.Member,
-                    value: "") }
+                    DataObject.VisibilityOptions.Member, "") },
+                // Estado del lobby: "waiting" o "starting"
+                { "State", new DataObject(
+                    DataObject.VisibilityOptions.Member, "waiting") }
             }
         };
 
         _currentLobby = await LobbyService.Instance.CreateLobbyAsync(
             lobbyName, maxPlayers, options);
 
+        _isHost = true;
         Debug.Log($"Lobby creado: {_currentLobby.LobbyCode}");
         return _currentLobby;
     }
@@ -45,15 +49,79 @@ public class LobbyManager : MonoBehaviour
         return _currentLobby;
     }
 
-    // ?? HEARTBEAT (evita que el lobby expire) ??????????????????????
+    public async Task StartGameAsync(string relayJoinCode)
+    {
+        if (!_isHost) return;
+
+        await LobbyService.Instance.UpdateLobbyAsync(_currentLobby.Id,
+            new UpdateLobbyOptions
+            {
+                Data = new Dictionary<string, DataObject>
+                {
+                    { "RelayJoinCode", new DataObject(
+                        DataObject.VisibilityOptions.Member, relayJoinCode) },
+                    { "State", new DataObject(
+                        DataObject.VisibilityOptions.Member, "starting") }
+                }
+            });
+
+        Debug.Log($"[LobbyManager] Partida iniciada con code: {relayJoinCode}");
+    }
+
+    // Evento que se dispara cuando el lobby pasa a "starting"
+    public System.Action<string> OnGameStarted;
+
     void Update()
     {
         if (_currentLobby == null) return;
-        _heartbeatTimer += Time.deltaTime;
-        if (_heartbeatTimer >= 15f)
+
+        // Heartbeat solo el host
+        if (_isHost)
         {
-            _heartbeatTimer = 0f;
-            _ = LobbyService.Instance.SendHeartbeatPingAsync(_currentLobby.Id);
+            _heartbeatTimer += Time.deltaTime;
+            if (_heartbeatTimer >= 15f)
+            {
+                _heartbeatTimer = 0f;
+                _ = LobbyService.Instance.SendHeartbeatPingAsync(_currentLobby.Id);
+            }
         }
+
+        // Polling solo el cliente para detectar cuando el host inicia
+        if (!_isHost)
+        {
+            _pollTimer += Time.deltaTime;
+            if (_pollTimer >= 2f)
+            {
+                _pollTimer = 0f;
+                _ = PollLobbyAsync();
+            }
+        }
+    }
+
+    private async Task PollLobbyAsync()
+    {
+        _currentLobby = await LobbyService.Instance.GetLobbyAsync(_currentLobby.Id);
+
+        var state = _currentLobby.Data["State"].Value;
+        if (state == "starting")
+        {
+            var relayJoinCode = _currentLobby.Data["RelayJoinCode"].Value;
+            Debug.Log($"[LobbyManager] Partida detectada, joinCode: {relayJoinCode}");
+            OnGameStarted?.Invoke(relayJoinCode);
+        }
+    }
+
+    public async Task LeaveLobbyAsync()
+    {
+        if (_currentLobby == null) return;
+
+        if (_isHost)
+            await LobbyService.Instance.DeleteLobbyAsync(_currentLobby.Id);
+        else
+            await LobbyService.Instance.RemovePlayerAsync(
+                _currentLobby.Id,
+                Unity.Services.Authentication.AuthenticationService.Instance.PlayerId);
+
+        _currentLobby = null;
     }
 }

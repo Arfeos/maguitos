@@ -65,7 +65,6 @@ public class StaffController : NetworkBehaviour
 
         SpellBase ActualSpell = _characterService.getSpell(_characterService.getIndex())?.GetComponent<SpellBase>();
 
-        Debug.Log($"[Update] IsOwner: {IsOwner} ActualSpell: {ActualSpell}");
 
         if (ActualSpell == null) return;
         switch (ActualSpell.spell.cast_Type)
