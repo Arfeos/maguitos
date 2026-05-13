@@ -32,8 +32,7 @@ public class LanternCollect : MonoBehaviour, ICollectable
     {
         Quaternion offset = Quaternion.Euler(rotationOffset);
 
-        // Igualar la rotación GLOBAL de la cámara
-        // aunque la linterna tenga otro padre (hueso cabeza)
+        // Iguala rotacion linternaa conforma a la camara
         transform.rotation = cameraTransform.rotation * offset;
     }
 
