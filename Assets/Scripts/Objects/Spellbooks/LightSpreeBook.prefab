@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8b10658a249d2439a1c272b0617dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Spell: {fileID: 539983392261889776, guid: ff8312e53891e604bbf87980a064f553, type: 3}
+  Spell: {fileID: 539983392261889776, guid: 635a16f89af0b7a45b0c61559fc96b42, type: 3}
 --- !u!114 &3160357362277302488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,4 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72183ffb897e7a45888cbebdc888d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataShow
-  data: {fileID: 11400000, guid: 2a97f03cc78e74d40b725cb337d165a0, type: 2}
+  data: {fileID: 11400000, guid: 457447362831a4649beae916dd566a74, type: 2}

@@ -63,8 +63,8 @@ public class ShootingRangeStep : IStep
             $"Intenta conseguir 500 puntos disparando a las dianas con tus hechizos, puedes cambiar de hechizos en la mesa de atrás" +
             $" {puntos}/500";
         ObjectDataScriptable data = new ObjectDataScriptable();
-        data.objectName = Name;
-        data.objetDescription = Description;
+        //data.objectName = Name;
+        //data.objetDescription = Description;
         _alertService.ShowAlertMessage(_messageBox, data);
         if (puntos >= 500)
         {

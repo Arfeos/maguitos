@@ -52,8 +52,8 @@ public class Workflow
         _animation.FadeInUIAnimation(_messageBox, 1);
         //_messageBox.SetActive(true);
         ObjectDataScriptable dataStep = ScriptableObject.CreateInstance<ObjectDataScriptable>();
-        dataStep.objectName = _currentStep.Name;
-        dataStep.objetDescription = _currentStep.Description;
+        //dataStep.objectName = _currentStep.Name;
+        //dataStep.objetDescription = _currentStep.Description;
 
         _alertService.ShowAlertMessage(_messageBox, dataStep);
     }
