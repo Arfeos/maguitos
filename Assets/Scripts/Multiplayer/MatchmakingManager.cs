@@ -20,6 +20,10 @@ public class MatchmakingManager : MonoBehaviour
     private string _lobbyId;
     private Lobby _currentLobby;
 
+    public string LobbyCode { get; private set; }
+    public string LobbyId { get; private set; }
+    public System.Action<string> OnLobbyCreated;
+
 
     public async Task FindMatchAsync()
     {
@@ -41,7 +45,7 @@ public class MatchmakingManager : MonoBehaviour
         }
     }
 
-    private async Task StartAsHostAsync()
+    public async Task StartAsHostAsync()
     {
         string joinCode = await relayManager.StartHostWithRelayAsync(maxConnections: 4);
 
@@ -63,7 +67,7 @@ public class MatchmakingManager : MonoBehaviour
         Debug.Log($"Host iniciado. Join code: {joinCode}");
     }
 
-    private async Task JoinAsClientAsync(string lobbyId)
+    public async Task JoinAsClientAsync(string lobbyId)
     {
         // Unirse al lobby
         _currentLobby = await LobbyService.Instance.JoinLobbyByIdAsync(lobbyId);
@@ -97,6 +101,55 @@ public class MatchmakingManager : MonoBehaviour
                 Debug.LogError($"Error en matchmaking: {t.Exception}");
         }, TaskScheduler.FromCurrentSynchronizationContext());
     }
+
+    public void StartHost()
+    {
+        StartAsHostAsync().ContinueWith(t =>
+        {
+            if (t.IsFaulted)
+                Debug.LogError($"Error en matchmaking: {t.Exception}");
+        }, TaskScheduler.FromCurrentSynchronizationContext());
+    }
+
+    public async Task CreateLobbyAsync()
+    {
+        _currentLobby = await LobbyService.Instance.CreateLobbyAsync(
+            "Partida",
+            maxPlayers: 4,
+            new CreateLobbyOptions { IsPrivate = false });
+
+        _lobbyId = _currentLobby.Id;
+        LobbyCode = _currentLobby.LobbyCode;
+        LobbyId = _currentLobby.Id;
+
+        OnLobbyCreated?.Invoke(LobbyCode);
+    }
+
+    public void CreateLobby() =>
+    CreateLobbyAsync().ContinueWith(t =>
+    {
+        if (t.IsFaulted) Debug.LogError($"Error: {t.Exception}");
+    }, TaskScheduler.FromCurrentSynchronizationContext());
+
+    public async Task StartGameAsync()
+    {
+        string joinCode = await relayManager.StartHostWithRelayAsync(maxConnections: 4);
+
+        await LobbyService.Instance.UpdateLobbyAsync(_lobbyId, new UpdateLobbyOptions
+        {
+            Data = new Dictionary<string, DataObject>
+        {
+            { "joinCode", new DataObject(DataObject.VisibilityOptions.Public, joinCode) },
+            { "state", new DataObject(DataObject.VisibilityOptions.Public, "starting") }
+        }
+        });
+    }
+    public void StartGame() =>
+    StartGameAsync().ContinueWith(t =>
+    {
+        if (t.IsFaulted) Debug.LogError($"Error: {t.Exception}");
+    }, TaskScheduler.FromCurrentSynchronizationContext());
+
 
     public void CancelSearch()
     {

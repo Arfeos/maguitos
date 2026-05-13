@@ -1,11 +1,16 @@
 using Unity.Netcode;
 using Unity.VisualScripting;
+using UnityEditor.MPE;
 using UnityEditor.PackageManager;
 using UnityEngine;
 public class MultiPlayerController : NetworkBehaviour
 {
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;
+
+    [Header("Jump")]
+    [SerializeField] private float jumpHeight = 1f;
+    private bool isJumping;
 
     [Header("Mouse")]
     [SerializeField] private float mouseSensitivity = 1f;
@@ -25,6 +30,7 @@ public class MultiPlayerController : NetworkBehaviour
     private bool isCrouching;
 
     private float xRotation = 0f;
+    private Vector2 dirAnimation;
 
     public NetworkVariable<float> pitch = new(
     0f,
@@ -35,10 +41,16 @@ public class MultiPlayerController : NetworkBehaviour
     NetworkVariableReadPermission.Everyone,
     NetworkVariableWritePermission.Owner);
 
+    private IEventService _eventService;
+    private Animator _animator;
+
     public override void OnNetworkSpawn()
     {
         characterController = GetComponent<CharacterController>();
         Debug.Log($"[Player] OnNetworkSpawn - IsOwner: {IsOwner} - Position: {transform.position}");
+
+        _eventService = AppContainer.Get<IEventService>();
+        _animator = GetComponent<Animator>();
 
         if (!IsOwner)
         {
@@ -62,6 +74,9 @@ public class MultiPlayerController : NetworkBehaviour
             LookMouse();
             Move();
             HandleCrouch();
+            handleReload();
+            handleChangeWeapon();
+            SetAnimation();
         }
         else
         {
@@ -140,6 +155,57 @@ public class MultiPlayerController : NetworkBehaviour
         camPos.y = Mathf.Lerp(camPos.y, targetY, Time.deltaTime * crouchSpeed);
         playerCamera.transform.localPosition = camPos;
     }
+
+    public void handleReload()
+    {
+        if (PlayerInputManager.Actions.Player.Reload.WasPressedThisFrame())
+        {
+            ReloadEvent reloadEvent = new ReloadEvent();
+            _eventService.Publish(reloadEvent);
+        }
+    }
+
+    public void handleChangeWeapon()
+    {
+        if (PlayerInputManager.Actions.Player.Next.WasPressedThisFrame())
+        {
+            SpellChangeEvent reloadEvent = new SpellChangeEvent();
+            reloadEvent.cambio = 1;
+            _eventService.Publish(reloadEvent);
+        }
+        if (PlayerInputManager.Actions.Player.Previous.WasPressedThisFrame())
+        {
+            SpellChangeEvent reloadEvent = new SpellChangeEvent();
+            reloadEvent.cambio = -1;
+            _eventService.Publish(reloadEvent);
+        }
+    }
+
+    private void SetAnimation()
+    {
+        if (!characterController.isGrounded)
+        {
+            if (!isJumping)
+                _animator.SetBool("onAir", true);
+            isJumping = true;
+        }
+        else
+        {
+            isJumping = false;
+            _animator.SetBool("onAir", false);
+        }
+
+
+
+
+        _animator.SetFloat("VelocityX", dirAnimation.x);
+        _animator.SetFloat("VelocityY", dirAnimation.y);
+
+        _animator.SetBool("isCrouching", isCrouching);
+        _animator.SetBool("isRunning", isRunning);
+
+    }
+
     private void ApplyRemoteRotation()
     {
         // Aplica yaw (horizontal) al cuerpo
