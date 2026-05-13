@@ -10,16 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Profile_Creation_es
+  m_Name: ProfileCreation_en
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
   m_LocaleId:
-    m_Code: es
+    m_Code: en
   m_SharedData: {fileID: 11400000, guid: fa718dd4126039046a00a3a2ee578b1f, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 108332490752
-    m_Localized: IDIOMA
+  - m_Id: 2654096140701696
+    m_Localized: PROFILE CREATION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2654918270423040
+    m_Localized: USERNAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2655282210181120
+    m_Localized: AVATAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2655640990945280
+    m_Localized: DONE
     m_Metadata:
       m_Items: []
   references:

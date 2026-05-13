@@ -18,32 +18,20 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 2327149912432640
-    m_Localized: NEUWU PROFILU
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3176475168768
-    m_Localized: LANGUWUAGE
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2326980672266240
-    m_Localized: UWUSERNAME
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2316504529805312
-    m_Localized: LANGUWUAGE
+  - m_Id: 4998683811287040
+    m_Localized: WESUME
     m_Metadata:
       m_Items: []
   - m_Id: 2317011122036736
-    m_Localized: WEVEWSE AXISU
+    m_Localized: WEVERSE AXISU
     m_Metadata:
       m_Items: []
   - m_Id: 2317523343024128
     m_Localized: MUSICU
     m_Metadata:
       m_Items: []
-  - m_Id: 2318202543448064
-    m_Localized: SOUNDU EFFECTSU
+  - m_Id: 4977370015109120
+    m_Localized: SOUNDSU
     m_Metadata:
       m_Items: []
   - m_Id: 2319291816779776
@@ -54,36 +42,16 @@ MonoBehaviour:
     m_Localized: WANNYA FIXU SOMETHINGU HERE DESU?
     m_Metadata:
       m_Items: []
-  - m_Id: 2320214102286336
-    m_Localized: PLAYSU
+  - m_Id: 4977735129272320
+    m_Localized: SENSIBILITYTSU
     m_Metadata:
       m_Items: []
-  - m_Id: 2320475113824256
-    m_Localized: SETTINGSU
+  - m_Id: 4979649732579328
+    m_Localized: Maybe nyow yuwu willu play bettew...
     m_Metadata:
       m_Items: []
-  - m_Id: 2320638414856192
-    m_Localized: EXITU
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2321040044630016
-    m_Localized: Ye desu, we knyow itu desu :)
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2321553762983936
-    m_Localized: CREATE A WOOMU
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2321836542959616
-    m_Localized: JOINU A WOOMU
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2322310096658432
-    m_Localized: GAMEMODESU
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2322462039515136
-    m_Localized: NANI KINDU OWOF MAGICU WE WILDU DO TODAY DESU?
+  - m_Id: 4999119737884672
+    m_Localized: MAINU MENYU
     m_Metadata:
       m_Items: []
   references:

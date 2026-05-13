@@ -10,23 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Profile_Creation Shared Data
+  m_Name: InitialLanguage Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
-  m_TableCollectionName: Profile_Creation
-  m_TableCollectionNameGuidString: fa718dd4126039046a00a3a2ee578b1f
+  m_TableCollectionName: InitialLanguage
+  m_TableCollectionNameGuidString: d8cf77bbd98ccd14b963f2246a358acf
   m_Entries:
-  - m_Id: 108332490752
-    m_Key: Profile_Creation/Canvas/Profile_Creation/Grid/txt_language
+  - m_Id: 1007940177920
+    m_Key: tit_language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1196243456000
+    m_Key: txt_spanish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1484069179392
+    m_Key: txt_english
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 950125511458947206
+    rid: 2871841105795088516
   references:
     version: 2
     RefIds:
-    - rid: 950125511458947206
+    - rid: 2871841105795088516
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1778008010368
+        m_CustomEpoch: 1778641298726

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.LocalizationProjectSettings
   m_StringTable:
     m_TableReference:
-      m_TableCollectionName: GUID:a090f144d3ef39745b71795c6755124b
+      m_TableCollectionName: GUID:d655bfbad0dbac847a7f03a920d98060
   m_AssetTable:
     m_TableReference:
       m_TableCollectionName: 

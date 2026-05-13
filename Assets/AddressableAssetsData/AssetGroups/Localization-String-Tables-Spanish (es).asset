@@ -15,6 +15,18 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Spanish (es)
   m_GUID: 56b9367e486f0264282e158a1a1ce5ab
   m_SerializeEntries:
+  - m_GUID: 0618d6d9d3054f542bcbc42beb98ed81
+    m_Address: MainMenu_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06c9688eff6c8c844a8f3876e8a6c949
+    m_Address: Gamemodes_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0af68350e9cbffc47934a9e3ec70e8ca
     m_Address: Steps_es
     m_ReadOnly: 1
@@ -27,8 +39,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4467eec941fcd8247809221c52939a95
+    m_Address: InitialLanguage_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5221a20dc4659344296b8ff5953f3738
+    m_Address: ProfileSelection_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 92e362c71525e434a93e02ce31e705b3
-    m_Address: Profile_Creation_es
+    m_Address: ProfileCreation_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Gamemodes
+  m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
+  m_SharedTableData: {fileID: 11400000, guid: 731e1c1d21b1b864caf6f3a9705bd106, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 207c332840602494eaebcdc430c08fca, type: 2}
+  - {fileID: 11400000, guid: 06c9688eff6c8c844a8f3876e8a6c949, type: 2}
+  - {fileID: 11400000, guid: 7dbf98ca171db6f4a8fcd6c7b0dc3821, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []
