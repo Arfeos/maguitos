@@ -16,20 +16,38 @@ MonoBehaviour:
     m_Code: nya
   m_SharedData: {fileID: 11400000, guid: 3818846376611c8498585d4739f2e3e9, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 7192529311357993058
   m_TableData:
   - m_Id: 33875656704
-    m_Localized: nyacaragua
+    m_Localized: Movu the camewa
     m_Metadata:
       m_Items: []
   - m_Id: 364499266273280
-    m_Localized: stepo
+    m_Localized: Movu youwsewf
     m_Metadata:
       m_Items: []
   - m_Id: 364576881868800
-    m_Localized: saew
+    m_Localized: Walku awoundu uwusingu {0} owow {0}
+    m_Metadata:
+      m_Items:
+      - rid: 7192529311357993058
+  - m_Id: 361430210150400
+    m_Localized: Movu the mouse uwusingu {0} to movu the camewa
+    m_Metadata:
+      m_Items:
+      - rid: 7192529311357993058
+  - m_Id: 689214962892800
+    m_Localized: the mouse
     m_Metadata:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7192529311357993058
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 361430210150400
+        - id: 364576881868800
