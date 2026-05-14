@@ -33,6 +33,7 @@ public class SpellBaseScriptable : ScriptableObject
 
     [Header("Spell sound")]
     public AudioClip? spawnSound;
+    public AudioClip? chargeSound;
     public AudioClip? airSound;
     public AudioClip? hitSound;
 

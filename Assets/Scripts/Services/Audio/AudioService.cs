@@ -80,6 +80,28 @@ public class AudioService : IAudioService
 
         source.Play();
     }
+    public void PlayLoopSound(AudioClip clip, float pitch = 1f)
+    {
+        if (clip == null)
+            return;
+
+        foreach (var sound in _sfxSources)
+        {
+            if (sound.clip == clip && sound.isPlaying)
+            {
+                sound.pitch = pitch;
+                return;
+            }
+        }
+
+        AudioSource source = GetOrCreateSFXSource();
+
+        source.clip = clip;
+        source.pitch = pitch;
+        source.loop = true;
+
+        source.Play();
+    }
 
     private AudioSource GetOrCreateSFXSource()
     {
@@ -115,5 +137,19 @@ public class AudioService : IAudioService
         _sfxSources.Clear();
 
         Object.Destroy(_musicSource);
+    }
+
+    public void StopSound(AudioClip clip)
+    {
+        if (clip == null)
+            return;
+
+        foreach (var source in _sfxSources)
+        {
+            if (source.clip == clip && source.isPlaying)
+            {
+                source.Stop();
+            }
+        }
     }
 }

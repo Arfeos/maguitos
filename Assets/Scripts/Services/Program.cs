@@ -13,7 +13,7 @@ public static class Program
         AppContainer.Register<IHudService>(() => new HudService());
         AppContainer.Register<ICharacterService>(() => new CharacterService());
         AppContainer.Register<IProfileService>(() => new ProfileService());
-        AppContainer.Register<ISceneService>(() => new SceneService());
+        AppContainer.Register<ISceneService>(() => new SceneService(Resources.Load<PanelConfigurationScriptable>("Configuration/LoadingConfiguration")));
         AppContainer.Register<IScoreService>(() => new ScoreService());
         AppContainer.Register<IAlertService>(() => new AlertService());
 	    AppContainer.Register<IUIService>(() => new UIService());

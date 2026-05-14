@@ -71,6 +71,10 @@ public partial class SpellBase : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
+            if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+            if (spell.chargeSound != null)
+
+                _audioService.PlaySound(spell.chargeSound);
             spell.currentCharge++;
         } while (spell.MaxCharge > spell.currentCharge);
         //TODO añadir sonido de carga maxima
@@ -186,5 +190,10 @@ public partial class SpellBase : MonoBehaviour
     {
         isCasting = false;
         canCast = true;
+    }
+    public void stopCharginSound() { 
+        if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+        if (spell.chargeSound != null)
+            _audioService.StopSound(spell.chargeSound);
     }
 }

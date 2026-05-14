@@ -75,9 +75,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void LanzarHechizo(SpellBase ActualSpell)
     {
-        if(_coroutineCharge != null) StopCoroutine(_coroutineCharge);
+        if (_coroutineCharge != null) { 
+        StopCoroutine(_coroutineCharge);
         _coroutineCharge = null;
-
+          ActualSpell.stopCharginSound();
+        }
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;
 

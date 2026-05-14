@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;
+    [SerializeField] private AudioClip WalkSound;
 
     [Header("Mouse")]
     [SerializeField] private float mouseSensitivity = 0.5f;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private IEventService _eventService;
     private IProfileService _profileService;
+    private IAudioService _audioService;
     private Animator _animator;
 
     private void Awake()
@@ -45,9 +47,11 @@ public class PlayerController : MonoBehaviour
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         characterController = GetComponent<CharacterController>();
         _eventService = AppContainer.Get<IEventService>();
+        _audioService = AppContainer.Get<IAudioService>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _animator = GetComponent<Animator>();
+        updatePreferences();
     }
 
     private void Update()
@@ -78,50 +82,63 @@ public class PlayerController : MonoBehaviour
     {
         var inputPlayer = PlayerInputManager.Actions.Player.Move.ReadValue<Vector2>();
         dirAnimation = inputPlayer;
+        bool isWalking = inputPlayer.magnitude > 0.1f && characterController.isGrounded;
 
-        if (characterController.isGrounded && velocityY < 0)
-        {
-            velocityY = -2f;
-        }
-        if (PlayerInputManager.Actions.Player.Jump.WasPressedThisFrame() && characterController.isGrounded)
-        {
-            velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-        else if (!characterController.isGrounded)
-        {
-            velocityY += gravity * Time.deltaTime;
-        }
-
-        var move = Vector3.zero;
-
-        if (inputPlayer.magnitude > 0.1f)
+        if (isWalking)
         {
 
 
-            move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
+            _audioService.PlayLoopSound(WalkSound, isRunning ? 1.5f : 1f);
         }
 
-        move.y = velocityY;
-
-        if (PlayerInputManager.Actions.Player.Sprint.IsPressed())
-        {
-            if (!isRunning)
-            {
-                previusVelocity = Velocity;
-                Velocity *= 2;
-                isRunning = true;
-            }
-        }
         else
         {
-            if (isRunning)
-            {
-                Velocity = previusVelocity;
-                isRunning = false;
-            }
+            _audioService.StopSound(WalkSound);
         }
+            if (characterController.isGrounded && velocityY < 0)
+            {
+                velocityY = -2f;
+            }
+            if (PlayerInputManager.Actions.Player.Jump.WasPressedThisFrame() && characterController.isGrounded)
+            {
+                velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+            else if (!characterController.isGrounded)
+            {
+                velocityY += gravity * Time.deltaTime;
+            }
 
-        characterController.Move(move * Velocity * Time.deltaTime);
+            var move = Vector3.zero;
+
+            if (inputPlayer.magnitude > 0.1f)
+            {
+
+
+                move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
+            }
+
+            move.y = velocityY;
+
+            if (PlayerInputManager.Actions.Player.Sprint.IsPressed())
+            {
+                if (!isRunning)
+                {
+                    previusVelocity = Velocity;
+                    Velocity *= 2;
+                    isRunning = true;
+                }
+            }
+            else
+            {
+                if (isRunning)
+                {
+                    Velocity = previusVelocity;
+                    isRunning = false;
+                }
+            }
+
+            characterController.Move(move * Velocity * Time.deltaTime);
+        
     }
 
     private void HandleCrouch()
@@ -201,7 +218,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// actualiza las preferencias del jugador en base a su perfil
     /// </summary>
-    private void updatePrefrences(GameEventBase game = null)
+    private void updatePreferences(GameEventBase game = null)
     {
         if (_profileService == null) return;
         UserProfile profile = _profileService.getSelectedProfile();

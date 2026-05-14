@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SceneService :ISceneService
 {
     private string lastScene;
+    GameObject prefab;
     public void LoadScene(SceneNames scene)
     {
         lastScene = SceneManager.GetActiveScene().name;
@@ -15,6 +16,10 @@ public class SceneService :ISceneService
 
         CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(scene.ToString()));
     }
+    public SceneService(PanelConfigurationScriptable so)
+    {
+        this.prefab = so.Panel;
+    }   
     public void GoBack()
     {
         //lo siento por esto pero estoy cansado jefe
@@ -32,7 +37,7 @@ public class SceneService :ISceneService
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         scaler.referenceResolution = new Vector2(1920, 1080);
         canvasObj.AddComponent<GraphicRaycaster>();
-        GameObject prefab = Resources.Load<GameObject>("Prefabs/LoginPanel");
+        
         GameObject loadingScreen = Object.Instantiate(prefab, canvas.transform);
         CanvasGroup canvasGroup = loadingScreen.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
