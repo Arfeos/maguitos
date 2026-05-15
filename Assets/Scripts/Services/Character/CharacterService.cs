@@ -65,13 +65,53 @@ public class CharacterService : ICharacterService
     public bool addSpell(SpellBase spellToAdd)
     {
         spellToAdd.ResetSpellShot();
-        if (CheckSpellCapacity() < spellToAdd.spell.CosteSlots)
-        {
-            Debug.Log("Lista de hechizos llena");
-            return false;
-        }
+        //Esto seria para un sistema futuro de spell slots
+        //if (CheckSpellCapacity() < spellToAdd.spell.CosteSlots)
+        //{
+        //    Debug.Log("Lista de hechizos llena");
+        //    return false;
+        //}
         if (getSpell(spellToAdd.spell.nombreHechizo) != null) return false;
-        listaHechizos.Add(spellToAdd);
+        if (spellToAdd.spell.spell_importance == Spellimportance.primary)
+        {
+            List<SpellBase> listaDeHechizosPrimarios = getPrimarySpell();
+            if(listaDeHechizosPrimarios.Count == 0)
+            {
+                listaHechizos.Add(spellToAdd);
+            }
+            else
+            {
+                foreach (SpellBase spell in listaDeHechizosPrimarios)
+                {
+                    removeSpell(spell);
+                }
+                listaHechizos.Add(spellToAdd);
+            }
+                
+        }
+        else
+        {
+            List<SpellBase> listaDeHechizosSecundarios = getSecundarySpell();
+            if (listaDeHechizosSecundarios.Count == 0)
+            {
+                listaHechizos.Add(spellToAdd);
+            }
+            else
+            {
+                foreach (SpellBase spell in listaDeHechizosSecundarios)
+                {
+                    removeSpell(spell);
+                }
+                listaHechizos.Add(spellToAdd);
+            }
+                
+        }
+        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
+        SpellChangeOnPageEvent _eventSpellChangeOnPageEvent = new SpellChangeOnPageEvent();
+        _eventSpellChangeOnPageEvent.nombre = spellToAdd.spell.name;
+        _eventSpellChangeOnPageEvent.mana = spellToAdd.spell.manaCost;
+        _eventSpellChangeOnPageEvent.importance = spellToAdd.spell.spell_importance;
+        _eventService.Publish(_eventSpellChangeOnPageEvent);
         return true;
     }
 
@@ -85,7 +125,29 @@ public class CharacterService : ICharacterService
         return slots - costeActualHechizos;
     }
 
+    public List<SpellBase> getPrimarySpell()
+    {
+        List<SpellBase> listaDeHechizosPrimarios = new List<SpellBase>();
+        if (listaHechizos.Count == 0) return listaDeHechizosPrimarios;
+        foreach (SpellBase hechizoEnLista in listaHechizos)
+        {
+            if (hechizoEnLista.spell.spell_importance == Spellimportance.primary)  listaDeHechizosPrimarios.Add(hechizoEnLista);
+        }
 
+        return listaDeHechizosPrimarios;
+    }
+
+    public List<SpellBase> getSecundarySpell()
+    {
+        List<SpellBase> listaDeHechizosSecundarios = new();
+        if (listaHechizos.Count == 0) return listaDeHechizosSecundarios;
+        foreach (SpellBase hechizoEnLista in listaHechizos)
+        {
+            if (hechizoEnLista.spell.spell_importance == Spellimportance.secundary) listaDeHechizosSecundarios.Add(hechizoEnLista);
+        }
+
+        return listaDeHechizosSecundarios;
+    }
     public SpellBase getSpell(string spellName)
     {
         if(spellName == null || spellName.Equals("") || spellName.Equals("Change Spell name")) return null;

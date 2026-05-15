@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public interface ICharacterService
@@ -11,6 +12,8 @@ public interface ICharacterService
     public bool removeSpell(string spellToRemove);
     public SpellBase getSpell(string spellName);
     public SpellBase getSpell(int spellPosition);
+    public List<SpellBase> getPrimarySpell();
+    public List<SpellBase> getSecundarySpell();
     public void AddMana(int mana);
     public bool RemoveMana(int mana);
     public int CheckMana();

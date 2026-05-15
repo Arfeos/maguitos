@@ -22,6 +22,6 @@ public class changeStaffMaterial : MonoBehaviour
                 _materialRenderer.material = ActualSpell.spell.RayMaterial[0];
             
         }
-        else Debug.Log("HExa has no renderer puta");
+        //else Debug.Log("HExa has no renderer puta");
     }
 }
