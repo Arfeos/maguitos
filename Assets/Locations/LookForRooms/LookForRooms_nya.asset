@@ -17,7 +17,39 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: a090f144d3ef39745b71795c6755124b, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1126457156472832
+    m_Localized: CREATE A WOOMU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1126713554276352
+    m_Localized: JOINU A WOOMU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1126937106485248
+    m_Localized: Bwacku
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1318350609809408
+    m_Localized: LOOKU FOWU A GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319185666375680
+    m_Localized: 'WOOM''SU CODE:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319506123784192
+    m_Localized: 'PLAYERSU:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319729394974720
+    m_Localized: 'ENTEWU WOOM''SU CODE:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1320067158081536
+    m_Localized: Entewu code...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

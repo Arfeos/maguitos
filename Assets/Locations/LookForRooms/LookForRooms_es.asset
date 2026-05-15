@@ -17,7 +17,39 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: a090f144d3ef39745b71795c6755124b, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1126457156472832
+    m_Localized: CREAR UNA SALA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1126713554276352
+    m_Localized: UNIRSE A UNA SALA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1126937106485248
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1318350609809408
+    m_Localized: BUSCAR PARTIDA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319185666375680
+    m_Localized: "C\xD3DIGO DE SALA:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319506123784192
+    m_Localized: 'JUGADORES:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319729394974720
+    m_Localized: "INTRODUCE EL C\xD3DIGO DE SALA:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1320067158081536
+    m_Localized: "Introduce el c\xF3digo..."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

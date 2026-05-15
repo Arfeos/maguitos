@@ -18,32 +18,20 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 3176475168768
-    m_Localized: IDIOMA
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2327149912432640
-    m_Localized: NUEVO PERFIL
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2326980672266240
-    m_Localized: NOMBRE DE USUARIO
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2316504529805312
-    m_Localized: IDIOMA
+  - m_Id: 4998683811287040
+    m_Localized: REANUDAR
     m_Metadata:
       m_Items: []
   - m_Id: 2317011122036736
-    m_Localized: INVERTIR EJES
+    m_Localized: INVERTIR EJE
     m_Metadata:
       m_Items: []
   - m_Id: 2317523343024128
-    m_Localized: MUSICA
+    m_Localized: "M\xDASICA"
     m_Metadata:
       m_Items: []
-  - m_Id: 2318202543448064
-    m_Localized: EFECTOS DE SONIDO
+  - m_Id: 4977735129272320
+    m_Localized: SENSIBILIDAD
     m_Metadata:
       m_Items: []
   - m_Id: 2319291816779776
@@ -51,39 +39,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2319626849394688
-    m_Localized: "\xBFQUIERES CAMBIAR ALGO DE AQU\xCD?"
+    m_Localized: "\xBFQUIERES ARREGLAR ALGO AQU\xCD?"
     m_Metadata:
       m_Items: []
-  - m_Id: 2320214102286336
-    m_Localized: JUGAR
+  - m_Id: 4977370015109120
+    m_Localized: SONIDOS
     m_Metadata:
       m_Items: []
-  - m_Id: 2320475113824256
-    m_Localized: AJUSTES
+  - m_Id: 4979649732579328
+    m_Localized: "Quiz\xE1s ahora juegues mejor..."
     m_Metadata:
       m_Items: []
-  - m_Id: 2320638414856192
-    m_Localized: SALIR
+  - m_Id: 4999119737884672
+    m_Localized: "MEN\xDA PRINCIPAL"
     m_Metadata:
       m_Items: []
-  - m_Id: 2321040044630016
-    m_Localized: Sep, lo sabemos :)
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2321553762983936
-    m_Localized: CREAR UNA SALA
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2321836542959616
-    m_Localized: UNIRSE A UNA SALA
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2322310096658432
-    m_Localized: MODOS DE JUEGO
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2322462039515136
-    m_Localized: "\xBFQU\xC9 TIPO DE MAGIA TIENES PENSADO HACER HOY?"
+  - m_Id: 5193839032238080
+    m_Localized: REINICIAR
     m_Metadata:
       m_Items: []
   references:

@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
+using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization.Tables;
 
 public class CameraMoveStep : IStep
 {
@@ -18,7 +20,7 @@ public class CameraMoveStep : IStep
         {
             var moveAction = PlayerInputManager.Actions.Player.Look;
             var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
-            if (keyNames.Contains("Delta")) keyNames = "el ratón";
+            if (keyNames.Contains("Delta")) keyNames = "el ratï¿½n";
             return $"Mueve la camara usando {keyNames}";
         }
     }
@@ -35,7 +37,6 @@ public class CameraMoveStep : IStep
         Debug.Log($"Activamos {this.Name}");
         Debug.Log($"{this.Description}");
         PlayerInputManager.Actions.Player.Look.performed += HandleAction;
-
     }
 
     public void Deactivate()
