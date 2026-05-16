@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization.Tables;

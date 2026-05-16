@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour,IHittable
     [SerializeField] private float Velocity = 10f;
     [SerializeField] private AudioClip WalkSound;
 
-    [Header("Mouse")]
-    [SerializeField] private float mouseSensitivity = 0.5f;
+    [Header(" ")]
+    [SerializeField] private float Sensitivity = 0.5f;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private int xDirection = 1;
     [SerializeField] private int yDirection = 1;
@@ -54,15 +54,19 @@ public class PlayerController : MonoBehaviour,IHittable
         _audioService = AppContainer.Get<IAudioService>();
         _profileService = AppContainer.Get<IProfileService>();
         _pauseService = AppContainer.Get<IPauseService>();
+        _eventService.Subscribe<PreferenceChangeEvent>(updatePreferences);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _animator = GetComponent<Animator>();
         updatePreferences();
     }
-
+    private void OnDestroy()
+    {
+        _eventService.Unsubscribe<PreferenceChangeEvent>(updatePreferences);
+    }
     private void Update()
     {
-        LookMouse();
+        Look ();
         Move();
         HandleCrouch();
         handleReload();
@@ -73,18 +77,18 @@ public class PlayerController : MonoBehaviour,IHittable
 
 
 
-    private void LookMouse()
+    private void Look ()
     {
-        Vector2 mouseInput = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
+        Vector2  Input = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
-        float mouseX = mouseInput.x * mouseSensitivity * xDirection;
-        float mouseY = mouseInput.y * mouseSensitivity * yDirection;
+        float  X =  Input.x * Sensitivity * xDirection;
+        float  Y =  Input.y * Sensitivity * yDirection;
 
-        yRotation -= mouseY;
+        yRotation -=  Y;
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
 
         cameraTransform.localRotation = Quaternion.Euler(yRotation , 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+        transform.Rotate(Vector3.up *  X);
     }
 
     private void Move()
@@ -242,7 +246,7 @@ public class PlayerController : MonoBehaviour,IHittable
         UserProfile profile = _profileService.getSelectedProfile();
         if (profile != null)
         {
-            mouseSensitivity = profile.settings.sensibility;
+            Sensitivity = profile.settings.sensibility;
             xDirection = profile.settings.axisXDirection;
             yDirection = profile.settings.axisYDirection;
         }

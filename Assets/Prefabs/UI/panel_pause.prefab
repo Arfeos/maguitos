@@ -495,7 +495,6 @@ GameObject:
   - component: {fileID: 8813226332574729336}
   - component: {fileID: 7716649795321082402}
   - component: {fileID: 2084293254244794938}
-  - component: {fileID: 8509097415321475820}
   m_Layer: 5
   m_Name: btn_mainmenu
   m_TagString: Untagged
@@ -605,9 +604,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2084293254244794938}
-        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1137244949287806706}
+        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
+        m_MethodName: mainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -630,22 +629,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneButton
   sceneName: 3
---- !u!114 &8509097415321475820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3087892444294482681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.PropertyVariants.GameObjectLocalizer
-  m_TrackedObjects: []
-  references:
-    version: 2
-    RefIds: []
 --- !u!1 &4938274752020754502
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +882,6 @@ GameObject:
   - component: {fileID: 4401272548449438869}
   - component: {fileID: 104769234239722218}
   - component: {fileID: 2343498857766502954}
-  - component: {fileID: 6598043429678756169}
   m_Layer: 5
   m_Name: btn_restart
   m_TagString: Untagged
@@ -1034,101 +1016,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6598043429678756169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6524400402501929798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.PropertyVariants.GameObjectLocalizer
-  m_TrackedObjects:
-  - rid: 5372237264894820535
-  references:
-    version: 2
-    RefIds:
-    - rid: 5372237264894820535
-      type: {class: TrackedRectTransform, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
-      data:
-        m_Target: {fileID: 6469281620452548472}
-        m_TrackedProperties:
-          items:
-          - rid: 5372237264894820536
-          - rid: 5372237264894820537
-          - rid: 5372237264894820538
-          - rid: 5372237264894820539
-          - rid: 5372237264894820540
-          - rid: 5372237264894820541
-    - rid: 5372237264894820536
-      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_AnchorMin.y
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: es
-          value: 1
-    - rid: 5372237264894820537
-      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_AnchorMax.y
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: es
-          value: 1
-    - rid: 5372237264894820538
-      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_AnchoredPosition.x
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: es
-          value: 19033600
-    - rid: 5372237264894820539
-      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_AnchoredPosition.y
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: es
-          value: -23927708
-    - rid: 5372237264894820540
-      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_SizeDelta.x
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: es
-          value: 300
-    - rid: 5372237264894820541
-      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_SizeDelta.y
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: es
-          value: 100
 --- !u!1 &6761634347183227887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1028,6 @@ GameObject:
   - component: {fileID: 2561192977232912468}
   - component: {fileID: 4456138949628509217}
   - component: {fileID: 4935844912755804886}
-  - component: {fileID: 7369203936544511644}
   m_Layer: 5
   m_Name: btn_resume
   m_TagString: Untagged
@@ -1263,22 +1149,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7369203936544511644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6761634347183227887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.PropertyVariants.GameObjectLocalizer
-  m_TrackedObjects: []
-  references:
-    version: 2
-    RefIds: []
 --- !u!1 &7120354006191606766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1161,6 @@ GameObject:
   - component: {fileID: 4570436501121061936}
   - component: {fileID: 8376736091899509175}
   - component: {fileID: 7798312689804943523}
-  - component: {fileID: 3065508412068380049}
   m_Layer: 5
   m_Name: btn_settings
   m_TagString: Untagged
@@ -1401,10 +1270,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2995229940552740535}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1137244949287806706}
+        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
+        m_MethodName: Settings
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1413,155 +1282,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7120354006191606766}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &3065508412068380049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7120354006191606766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.PropertyVariants.GameObjectLocalizer
-  m_TrackedObjects:
-  - rid: -2
-  - rid: -2
-  - rid: -2
-  - rid: -2
-  - rid: 5372237264894820615
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 5372237264894820615
-      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
-      data:
-        m_Target: {fileID: 7798312689804943523}
-        m_TrackedProperties:
-          items:
-          - rid: 5372237264894820616
-          - rid: 5372237264894820617
-          - rid: 5372237264894820618
-          - rid: 5372237264894820619
-          - rid: 5372237264894820620
-          - rid: 5372237264894820621
-          - rid: 5372237264894820622
-          - rid: 5372237264894820738
-        m_UpdateType: 1
-        m_Changed:
-          m_PersistentCalls:
-            m_Calls: []
-    - rid: 5372237264894820616
-      type: {class: EnumTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: es
-          value: 2
-    - rid: 5372237264894820617
-      type: {class: UnityObjectProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-        m_TypeString: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: {fileID: 0}
-        - localeIdentifier:
-            m_Code: es
-          value: {fileID: 0}
-    - rid: 5372237264894820618
-      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_Localized:
-          m_TableReference:
-            m_TableCollectionName: GUID:c780298e4fa86254eb4b268982100a50
-          m_TableEntryReference:
-            m_KeyId: 1079838279331840
-            m_Key: 
-          m_FallbackState: 0
-          m_WaitForCompletion: 0
-          m_LocalVariables: []
-        m_PropertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-    - rid: 5372237264894820619
-      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_Localized:
-          m_TableReference:
-            m_TableCollectionName: GUID:c780298e4fa86254eb4b268982100a50
-          m_TableEntryReference:
-            m_KeyId: 1079838304497664
-            m_Key: 
-          m_FallbackState: 0
-          m_WaitForCompletion: 0
-          m_LocalVariables: []
-        m_PropertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-    - rid: 5372237264894820620
-      type: {class: EnumTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: es
-          value: 6
-    - rid: 5372237264894820621
-      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_Localized:
-          m_TableReference:
-            m_TableCollectionName: GUID:c780298e4fa86254eb4b268982100a50
-          m_TableEntryReference:
-            m_KeyId: 1079838308691968
-            m_Key: 
-          m_FallbackState: 0
-          m_WaitForCompletion: 0
-          m_LocalVariables: []
-        m_PropertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-    - rid: 5372237264894820622
-      type: {class: BoolTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: es
-          value: 1
-    - rid: 5372237264894820738
-      type: {class: BoolTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 1
-        - localeIdentifier:
-            m_Code: es
-          value: 0
 --- !u!1 &7834519674069636352
 GameObject:
   m_ObjectHideFlags: 0
