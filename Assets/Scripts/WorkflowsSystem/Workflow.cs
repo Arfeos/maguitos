@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using static UnityEngine.Rendering.DebugUI;
 
 public class Workflow
@@ -24,7 +26,7 @@ public class Workflow
 
     public void Begin()
     {
-        // Comprobamos que el workflow no esté iniciado
+        // Comprobamos que el workflow no estÃ¡ iniciado
         if (this._currentStep != null)
             return;
 
@@ -32,12 +34,27 @@ public class Workflow
         if (this._steps.Count == 0)
             return;
 
+        // Nos suscribimos al cambio de idioma
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+
         this.ActivateStep(this._steps[0]);
+    }
+
+    private void OnLocaleChanged(Locale locale)
+    {
+        // Si hay un step activo, refrescamos el MessageBox con el nuevo idioma
+        if (_currentStep == null) return;
+
+        ObjectDataScriptable dataStep = ScriptableObject.CreateInstance<ObjectDataScriptable>();
+        dataStep.objectName = _currentStep.Name;
+        dataStep.objetDescription = _currentStep.Description;
+
+        _alertService.ShowAlertMessage(_messageBox, dataStep);
     }
 
     private void ActivateStep(IStep step)
     {
-        if (step == null) 
+        if (step == null)
             return;
 
         // Establecemos cual es el step actual
@@ -58,14 +75,14 @@ public class Workflow
         _alertService.ShowAlertMessage(_messageBox, dataStep);
     }
 
-    private  void DeactivateCurrentStep()
+    private void DeactivateCurrentStep()
     {
         this._currentStep.OnComplete -= StepComplete;
     }
 
     private void StepComplete()
     {
-        // Obtenemos la posición del step actual en la lista
+        // Obtenemos la posiciï¿½n del step actual en la lista
         var indexOfCurrentStep = this._steps.IndexOf(this._currentStep);
 
         // Si no encontramos el step salimos
@@ -78,6 +95,8 @@ public class Workflow
         // Si no hay mas steps, workflow completado
         if (indexOfCurrentStep == this._steps.Count - 1)
         {
+            LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+
             this.OnComplete?.Invoke();
             this.DeactivateCurrentStep();
 

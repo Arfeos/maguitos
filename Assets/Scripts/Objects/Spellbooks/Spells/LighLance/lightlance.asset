@@ -33,7 +33,7 @@ MonoBehaviour:
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
-  spawnSound: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: f1cb5d83282f2904a85f73111d068616, type: 3}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
   canCast: 1

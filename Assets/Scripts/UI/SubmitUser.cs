@@ -1,6 +1,5 @@
 using System;
 using TMPro;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 
 public class SubmitUser : MonoBehaviour

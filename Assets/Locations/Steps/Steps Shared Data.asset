@@ -16,7 +16,95 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 3818846376611c8498585d4739f2e3e9
   m_Entries:
   - m_Id: 33875656704
-    m_Key: mouseMove
+    m_Key: cameraMoveName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361430210150400
+    m_Key: cameraMoveDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 689214962892800
+    m_Key: cameraControl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 364499266273280
+    m_Key: playerMoveName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 364576881868800
+    m_Key: playerMoveDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1370566798512128
+    m_Key: takeLanternName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1370568841138176
+    m_Key: takeLanternDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340396674912256
+    m_Key: pickUpSpellName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340509220671488
+    m_Key: pickUpSpellDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1351319712075776
+    m_Key: shootName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1351368143704064
+    m_Key: shootDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1352913207857152
+    m_Key: openDoorName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1352963912798208
+    m_Key: openDoorDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1354179195604992
+    m_Key: crouchName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1354202859868160
+    m_Key: crouchDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1355788466163712
+    m_Key: jumpName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1355825178906624
+    m_Key: jumpDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1356984790716416
+    m_Key: reloadName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1357016910696448
+    m_Key: reloadDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1343465630371840
+    m_Key: shootingRangeName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1343483867205632
+    m_Key: shootingRangeDesc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1430493265387520
+    m_Key: LeaveTutorialName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1430559640248320
+    m_Key: LeaveTutorialDesc
     m_Metadata:
       m_Items: []
   m_Metadata:

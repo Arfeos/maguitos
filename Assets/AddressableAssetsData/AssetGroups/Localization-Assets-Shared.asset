@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 1865c5920df0cd54a83c1a8cd2b4c668
   m_SerializeEntries:
+  - m_GUID: 34e054a403d3ddb46ae8210e30cddf6d
+    m_Address: Assets/Locations/InfoPanel/InfoPanel Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3818846376611c8498585d4739f2e3e9
     m_Address: Assets/Locations/Steps/Steps Shared Data.asset
     m_ReadOnly: 1

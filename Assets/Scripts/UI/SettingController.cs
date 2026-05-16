@@ -1,13 +1,10 @@
-using Newtonsoft.Json.Linq;
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.AddressableAssets.Build.Layout.BuildLayout;
 using static UnityEngine.Rendering.DebugUI;
 
-public class SettingInitializer : MonoBehaviour
+public class SettingController : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown Language;
     [SerializeField] private Toggle invertX;
@@ -15,17 +12,25 @@ public class SettingInitializer : MonoBehaviour
     [SerializeField] private Slider MusicSound;
     [SerializeField] private Slider sfxSound;
     [SerializeField] private Slider sensibility;
-     IProfileService profileService;
+    IEventService _eventService;
+    IProfileService profileService;
+    IPauseService pauseService;
+    IAudioService audioService;
     private UserProfile profile;
      private void Awake()
      {
          profileService = AppContainer.Get<IProfileService>();
+        pauseService = AppContainer.Get<IPauseService>();
+        _eventService = AppContainer.Get<IEventService>();
+        audioService = AppContainer.Get<IAudioService>();
+
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     IEnumerator Start()
     {
      yield return null;
         profile = profileService.getSelectedProfile();
+        
         if (profile == null)
             yield break;
         LoadSettings();
@@ -66,12 +71,14 @@ public class SettingInitializer : MonoBehaviour
     private void OnSFXVolumeChanged(float value)
     {
         profile.settings.masterVolume = value;
+        audioService.SetSFXVolume(value);
         save();
     }
 
     private void OnMusicVolumeChanged(float value)
     {
         profile.settings.musicVolume = value;
+        audioService.SetMusicVolume(value);
         save();
     }
 
@@ -100,5 +107,10 @@ public class SettingInitializer : MonoBehaviour
     private void save()
     {
         profileService.UpdateProfile(profile);
+        _eventService.Publish(new PreferenceChangeEvent());
+       
+    }
+    public void ReOpenPause() { 
+        pauseService.ToggleSettings();
     }
 }

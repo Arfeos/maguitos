@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class PickUpSpellStep : IStep
 {
@@ -10,15 +11,21 @@ public class PickUpSpellStep : IStep
     private ICharacterService _characterService;
 
     // --- IStep ---
-    public string Name => "Recoge el hechizo";
-    public string Description
+    public LocalizedString Name { get => new LocalizedString { TableReference = "Steps", TableEntryReference = "pickUpSpellName" }; }
+    public LocalizedString Description
     {
         get
         {
-            var moveAction = PlayerInputManager.Actions.Player.Interact;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
+            var pickUpAction = PlayerInputManager.Actions.Player.Interact;
+            var keyNames = string.Join(" ", pickUpAction.controls.Select(c => c.displayName));
 
-            return $"Acercate a la mesa y manten pulsado {keyNames} sobre el libro para obtener el hechizo";
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "pickUpSpellDesc",
+                    Arguments = new object[] { keyNames }
+                };
         }
     }
 
@@ -32,13 +39,13 @@ public class PickUpSpellStep : IStep
 
     public void Deactivate()
     {
-        PlayerInputManager.Actions.Player.Interact.performed -= HandleAction;
+        PlayerInputManager.Actions.Player.Interact.started -= HandleAction;
     }
 
     public void Activate()
     {
         var action = PlayerInputManager.Actions.Player.Interact;
-        action.performed += HandleAction;
+        action.started += HandleAction;
         Debug.Log($"Suscrito. Listeners: {action.GetType()}");
     }
 
