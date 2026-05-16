@@ -29,7 +29,7 @@ MonoBehaviour:
   RayAliveTime: 0.3
   nombreHechizo: Light spread
   RayMaterial:
-  - {fileID: 2100000, guid: e2f7bc262a96b1a4ba0a6fb00f061a8c, type: 2}
+  - {fileID: 2100000, guid: 971be97d9923ad3408615ce0973e7278, type: 2}
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
