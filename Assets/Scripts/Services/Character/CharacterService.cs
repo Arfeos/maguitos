@@ -216,7 +216,7 @@ public class CharacterService : ICharacterService
         HPEvent hpEvent = new HPEvent();
         hpEvent.HPToChange = Curretlife;
         _eventService.Publish(hpEvent);
-        if (this.Curretlife < 0) Die();
+        if (this.Curretlife < 1) Die();
     }
 
     public void Die()

@@ -71,6 +71,6 @@ public class ShootingRangeStep : IStep
             this.IsComplete = true;
             this.OnComplete?.Invoke();
         }
-        
+
     }
 }
