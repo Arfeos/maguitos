@@ -12,7 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b01d6957868a8418e2160118928192, type: 3}
   m_Name: LighSpreadData
   m_EditorClassIdentifier: Assembly-CSharp::ObjectDataScriptable
-  objectName: "Dispersi\xF3n de luz"
-  objetDescription: "Dispara un rayo de luz con algo de dispesi\xF3n de manera automatica
-    con cadencia r\xE1pida"
+  objectName:
+    m_TableReference:
+      m_TableCollectionName: GUID:34e054a403d3ddb46ae8210e30cddf6d
+    m_TableEntryReference:
+      m_KeyId: 14283710906368
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  objetDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:34e054a403d3ddb46ae8210e30cddf6d
+    m_TableEntryReference:
+      m_KeyId: 14334810112000
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   objectSprite: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

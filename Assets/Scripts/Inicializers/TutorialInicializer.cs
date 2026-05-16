@@ -11,6 +11,7 @@ public class TutorialInicializer : MonoBehaviour
 
     [SerializeField] GameObject MessageBox;
     [SerializeField] GameObject door;
+    [SerializeField] Portal_Controller Portal;
     private void Awake()
     {
         InitWorkflow();
@@ -30,7 +31,8 @@ public class TutorialInicializer : MonoBehaviour
             new CrouchStep(),
             new PressSpaceStep(),
             new ReloadStep(),
-            new ShootingRangeStep(MessageBox)
+            new ShootingRangeStep(MessageBox),
+            new LeaveTutorialStep(Portal),
 
         }, MessageBox);
 

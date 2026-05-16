@@ -34,6 +34,7 @@ MonoBehaviour:
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
   spawnSound: {fileID: 0}
+  chargeSound: {fileID: 8300000, guid: a27ae245f760b4bf191c0234d3b43918, type: 3}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
   canCast: 1

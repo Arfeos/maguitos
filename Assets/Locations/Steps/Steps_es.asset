@@ -114,6 +114,14 @@ MonoBehaviour:
       {0} para equip\xE1rtelo y {1} para encender o apagar la luz"
     m_Metadata:
       m_Items: []
+  - m_Id: 1430493265387520
+    m_Localized: Sal del tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1430559640248320
+    m_Localized: Entra al portal y abandona el tutorial
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

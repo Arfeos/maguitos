@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: InfoPanel
+  m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
+  m_SharedTableData: {fileID: 11400000, guid: 34e054a403d3ddb46ae8210e30cddf6d, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: b856cba7272b2c84495a3412d912d97f, type: 2}
+  - {fileID: 11400000, guid: eb4ca77e622d6ad4e83f0d030725b833, type: 2}
+  - {fileID: 11400000, guid: 4c3bd443c1196414bbbe58e6da64e255, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

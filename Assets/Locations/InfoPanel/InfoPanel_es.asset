@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: InfoPanel_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 34e054a403d3ddb46ae8210e30cddf6d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 17595351040
+    m_Localized: Lanza de luz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2435162816512
+    m_Localized: "Da\xF1o medio, alcance medio, bajo consumo de man\xE1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12032988659712
+    m_Localized: Amuleto de linterna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12043411505152
+    m_Localized: Cogelo para poder ver mejor en la oscuridad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14283710906368
+    m_Localized: "Dispersi\xF3n de luz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14334810112000
+    m_Localized: "Bajo da\xF1o,bajo alcance,alta tasa de disparo, muy bajo consumo
+      de man\xE1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16811232051200
+    m_Localized: "R\xE1faga solar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16816097443840
+    m_Localized: "Hechizo cargado, alto da\xF1o, alto alcance, baja velocidad de
+      disparo, alto consumo de man\xE1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17727062523904
+    m_Localized: Bola de fuego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17750185721856
+    m_Localized: "Explosivo, Altos da\xF1o, rango variable, baja tasa de disparo,
+      alto consumo de man\xE1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18415301672960
+    m_Localized: "Baja precisi\xF3n, alto da\xF1o, alcance medio, velocidad de fuego
+      media, bajo consumo de man\xE1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18405604442112
+    m_Localized: "Rayo \xE1cido"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20018129780736
+    m_Localized: Rayo de antimateria
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20031387975680
+    m_Localized: 'Highest damage, very high range, very slow firerate, very high
+      mana consumption '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1137674088865792
+    m_Localized: Iniciar tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1137679147196416
+    m_Localized: Buena suerte
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
