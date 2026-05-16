@@ -11,16 +11,22 @@ public class CrouchStep : IStep
     private int _keyPressedTimes = 0;
 
     // --- IStep ---
-    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };}
+    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "crouchName" };}
     public LocalizedString Description
     {
-        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };
-        /* {
-            var moveAction = PlayerInputManager.Actions.Player.Crouch;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
+        get
+        {
+            var crouchAction = PlayerInputManager.Actions.Player.Crouch;
+            var keyNames = string.Join(", ", crouchAction.controls.Select(c => c.displayName));
 
-            return $"Acercate al primer pilar caido y mientras te mueves hacia delante presiona la tecla {keyNames}";
-        } */
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "crouchDesc",
+                    Arguments = new object[] { keyNames }
+                };
+        }
     }
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }
     public event Action OnComplete;

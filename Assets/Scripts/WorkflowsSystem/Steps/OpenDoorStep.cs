@@ -13,16 +13,22 @@ public class OpenDoorStep : IStep
     private GameObject _door;
 
     // --- IStep ---
-    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };}
+    public LocalizedString Name { get => new LocalizedString { TableReference = "Steps", TableEntryReference = "openDoorName" }; }
     public LocalizedString Description
     {
-        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };
-        /* {
-            var moveAction = PlayerInputManager.Actions.Player.Attack;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
+        get
+        {
+            var openAction = PlayerInputManager.Actions.Player.Attack;
+            var keyNames = string.Join(", ", openAction.controls.Select(c => c.displayName));
 
-            return $"Apunta a la runa al lado de la puerta y dispara usando el bot�n {keyNames}";
-        } */
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "openDoorDesc",
+                    Arguments = new object[] { keyNames }
+                };
+        }
     }
 
     //public string Description => "Presionando la tecla " + PlayerInputManager.Actions.Player.Move.controls.ToString() +  " superas el `step` del workflow";
@@ -50,7 +56,7 @@ public class OpenDoorStep : IStep
     private void HandleAction(InputAction.CallbackContext context)
     {
         CoroutineRunner.Instance.StartCoroutine(CheckforDoorOpen());
-        
+
     }
 
     private IEnumerator CheckforDoorOpen()

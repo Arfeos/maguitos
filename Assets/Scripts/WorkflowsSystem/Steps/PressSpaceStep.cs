@@ -12,16 +12,22 @@ public class PressSpaceStep : IStep
     private int _keyPressedTimes = 0;
 
     // --- IStep ---
-    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };}
+    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "jumpName" };}
     public LocalizedString Description
     {
-        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };
-        /* {
-            var moveAction = PlayerInputManager.Actions.Player.Jump;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
+        get
+        {
+            var jumpAction = PlayerInputManager.Actions.Player.Jump;
+            var keyNames = string.Join(", ", jumpAction.controls.Select(c => c.displayName));
 
-            return $"Acercate al segundo pilar caido y mientras te mueves hacia delante presiona la tecla {keyNames}";
-        } */
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "jumpDesc",
+                    Arguments = new object[] { keyNames }
+                };
+        }
     }
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }
     public event Action OnComplete;

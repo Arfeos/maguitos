@@ -23,6 +23,7 @@ public class TutorialInicializer : MonoBehaviour
         {
             new CameraMoveStep(),
             new MoveStep(),
+            new TakeLanternStep(),
             new PickUpSpellStep(),
             new ShootStep(),
             new OpenDoorStep(door),

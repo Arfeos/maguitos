@@ -11,16 +11,22 @@ public class ShootStep : IStep
 
 
     // --- IStep ---
-    public LocalizedString Name { get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" }; }
+    public LocalizedString Name { get => new LocalizedString { TableReference = "Steps", TableEntryReference = "shootName" }; }
     public LocalizedString Description
     {
-        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };
-        /* {
-            var moveAction = PlayerInputManager.Actions.Player.Attack;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
-            if (keyNames.Contains("Delta")) keyNames = "el rat�n";
-            return $"Pulsa la tecla {keyNames} para disparar";
-        } */
+        get
+        {
+            var shootAction = PlayerInputManager.Actions.Player.Attack;
+            var keyNames = string.Join(", ", shootAction.controls.Select(c => c.displayName));
+
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "shootDesc",
+                    Arguments = new object[] { keyNames }
+                };
+        }
     }
 
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }

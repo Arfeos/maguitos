@@ -11,15 +11,22 @@ public class ReloadStep : IStep
 
 
     // --- IStep ---
-    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };}
+    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "reloadName" };}
     public LocalizedString Description
     {
-        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };
-        /* {
-            var moveAction = PlayerInputManager.Actions.Player.Reload;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
-            return $"Pulsa la tecla {keyNames} para recargar tu mana";
-        } */
+        get
+        {
+            var reloadAction = PlayerInputManager.Actions.Player.Reload;
+            var keyNames = string.Join(", ", reloadAction.controls.Select(c => c.displayName));
+
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "reloadDesc",
+                    Arguments = new object[] { keyNames }
+                };
+        }
     }
 
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }

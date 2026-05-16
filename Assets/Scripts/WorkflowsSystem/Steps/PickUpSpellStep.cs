@@ -11,16 +11,22 @@ public class PickUpSpellStep : IStep
     private ICharacterService _characterService;
 
     // --- IStep ---
-    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };}
+    public LocalizedString Name { get => new LocalizedString { TableReference = "Steps", TableEntryReference = "pickUpSpellName" }; }
     public LocalizedString Description
     {
-        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "mouseMove" };
-        /* {
-            var moveAction = PlayerInputManager.Actions.Player.Interact;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
+        get
+        {
+            var pickUpAction = PlayerInputManager.Actions.Player.Interact;
+            var keyNames = string.Join(", ", pickUpAction.controls.Select(c => c.displayName));
 
-            return $"Acercate a la mesa y manten pulsado {keyNames} sobre el libro para obtener el hechizo";
-        } */
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "pickUpSpellDesc",
+                    Arguments = new object[] { keyNames }
+                };
+        }
     }
 
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }
