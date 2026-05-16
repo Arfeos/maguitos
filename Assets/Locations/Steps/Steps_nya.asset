@@ -114,6 +114,14 @@ MonoBehaviour:
     m_Localized: Take the lantewnu
     m_Metadata:
       m_Items: []
+  - m_Id: 1430493265387520
+    m_Localized: Leavu tutowialu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1430559640248320
+    m_Localized: Entew the powtalu ando leavu the tutowialu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

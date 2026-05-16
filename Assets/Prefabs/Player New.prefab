@@ -3022,6 +3022,10 @@ PrefabInstance:
       value: Player New
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -3370,7 +3374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraForwardController
   Velocity: 10
   WalkSound: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
-  mouseSensitivity: 1
+  Sensitivity: 0.5
   cameraTransform: {fileID: 3727561427997138886}
   xDirection: 1
   yDirection: 1

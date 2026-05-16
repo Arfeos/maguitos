@@ -15,6 +15,7 @@ public class Portal_Controller : MonoBehaviour
     [SerializeField] private ParticleSystem[] effectsParticles;
     [SerializeField] private Light portalLight;
     [SerializeField] private AudioSource orbAudio, flashAudio, portalAudio;
+    [SerializeField] private SceneNames sceneNames;
 
     private float maxVolOrb = 0.08f, maxVolportal = 0.8f, maxIntPortalLight = 4;
     private float transitionSpeed = 0.3f;
@@ -25,10 +26,20 @@ public class Portal_Controller : MonoBehaviour
     private float fadeFloat;
 
     private Coroutine transitionCor;
+    private ISceneService _sceneService;
+    private bool _isActivated = false;
 
     private void Awake()
     {
         Setup();
+        _sceneService = GetComponent<ISceneService>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(!other.gameObject.tag.Equals("Player"))return;
+        if( !_isActivated )return;
+        _sceneService.LoadScene(sceneNames);
     }
 
     //Call this function to activate or deactivate the effects
@@ -51,6 +62,7 @@ public class Portal_Controller : MonoBehaviour
 
             transitionCor = StartCoroutine(TransitionSequence());
         }
+        _isActivated = _activate;
     }
 
     private IEnumerator PreActivate()
