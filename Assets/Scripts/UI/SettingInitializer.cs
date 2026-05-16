@@ -1,11 +1,7 @@
-using Newtonsoft.Json.Linq;
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.AddressableAssets.Build.Layout.BuildLayout;
-using static UnityEngine.Rendering.DebugUI;
 
 public class SettingInitializer : MonoBehaviour
 {

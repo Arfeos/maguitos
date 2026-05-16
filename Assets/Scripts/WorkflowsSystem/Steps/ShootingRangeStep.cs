@@ -9,6 +9,7 @@ public class ShootingRangeStep : IStep
     private GameObject _messageBox;
     private IScoreService _scoreService;
     private IAlertService _alertService;
+    private IEventService _eventService;
     // --- Variables ---
     private bool _isComplete = false;
     public int puntos = 0;
@@ -48,7 +49,8 @@ public class ShootingRangeStep : IStep
 
         _scoreService = AppContainer.Get<IScoreService>();
         _alertService = AppContainer.Get<IAlertService>();
-
+        _eventService = AppContainer.Get<IEventService>();
+        _eventService.Subscribe<ScoreChangeEvent>(actualizarPuntos);
         puntos = _scoreService.GetPoints("TutorialPlayer");
         PlayerInputManager.Actions.Player.Attack.performed += HandleAction;
 
@@ -59,15 +61,9 @@ public class ShootingRangeStep : IStep
         PlayerInputManager.Actions.Player.Attack.performed -= HandleAction;
     }
 
-    private void HandleAction(InputAction.CallbackContext context)
+    public void actualizarPuntos(GameEventBase parameters)
     {
-        //TODO revisar lo del player aqui tambien, esto habra que cambiarlo cuando mas de 1 jugador pueda jugar
         puntos = _scoreService.GetPoints("TutorialPlayer");
-        var moveAction = PlayerInputManager.Actions.Player.Attack;
-        /* var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
-        Description = $"Dispara al glifo del cartel usando {keyNames} para iniciar el minujuego de campo de tiro." +
-            $"Intenta conseguir 500 puntos disparando a las dianas con tus hechizos, puedes cambiar de hechizos en la mesa de atrás" +
-            $" {puntos}/500"; */
         ObjectDataScriptable data = new ObjectDataScriptable();
         data.objectName = Name;
         data.objetDescription = Description;
@@ -77,6 +73,10 @@ public class ShootingRangeStep : IStep
             this.IsComplete = true;
             this.OnComplete?.Invoke();
         }
+    }
+
+    private void HandleAction(InputAction.CallbackContext context)
+    {
 
     }
 }
