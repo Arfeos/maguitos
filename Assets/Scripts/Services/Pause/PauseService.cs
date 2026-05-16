@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseService : IPauseService
 {
@@ -13,7 +14,7 @@ public class PauseService : IPauseService
 
     public void TogglePause()
     {
-        panelInstance = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.name == panelPrefab.name);
+        panelInstance = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.name == panelPrefab.name && g.scene == SceneManager.GetActiveScene());
         Debug.Log(panelInstance);
         if (panelInstance == null) {
             Canvas canvas = GameObject.FindFirstObjectByType<Canvas>();

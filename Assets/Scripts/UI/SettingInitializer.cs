@@ -15,7 +15,8 @@ public class SettingInitializer : MonoBehaviour
     [SerializeField] private Slider MusicSound;
     [SerializeField] private Slider sfxSound;
     [SerializeField] private Slider sensibility;
-     IProfileService profileService;
+    IEventService _eventService;
+    IProfileService profileService;
     private UserProfile profile;
      private void Awake()
      {
