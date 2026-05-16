@@ -5,27 +5,31 @@ using UnityEngine.SceneManagement;
 public class PauseService : IPauseService
 {
 
-    private GameObject panelPrefab;
-    private GameObject panelInstance;
-    public PauseService(PanelConfigurationScriptable config)
+    private GameObject PausepanelPrefab;
+    private GameObject PausepanelInstance;
+    private GameObject SettingpanelPrefab;
+    private GameObject SettingpanelInstance;
+    public PauseService(PanelConfigurationScriptable PauseConfig, PanelConfigurationScriptable SettingConfig)
+
     {       
-        this.panelPrefab= config.Panel;
+        this.PausepanelPrefab= PauseConfig.Panel;
+        this.SettingpanelPrefab = SettingConfig.Panel;
     }
 
     public void TogglePause()
     {
-        panelInstance = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.name == panelPrefab.name && g.scene == SceneManager.GetActiveScene());
-        Debug.Log(panelInstance);
-        if (panelInstance == null) {
+        PausepanelInstance = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => (g.name == PausepanelPrefab.name && g.scene == SceneManager.GetActiveScene()) || (g.name == PausepanelPrefab.name+"(Clone)" && g.scene == SceneManager.GetActiveScene()) );
+        Debug.Log(PausepanelInstance);
+        if (PausepanelInstance == null) {
             Canvas canvas = GameObject.FindFirstObjectByType<Canvas>();
-            panelInstance = GameObject.Instantiate(panelPrefab, canvas.transform);
+            PausepanelInstance = GameObject.Instantiate(PausepanelPrefab, canvas.transform);
         }
-        if (panelInstance != null) {
-            if (!panelInstance.activeInHierarchy)
+        if (PausepanelInstance != null) {
+            if (!PausepanelInstance.activeInHierarchy)
             {
                 //if (tipo == GameType.offline) Time.timeScale = 0;
                 Time.timeScale = 0;
-                panelInstance.SetActive(true);
+                PausepanelInstance.SetActive(true);
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
                 PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
@@ -33,12 +37,34 @@ public class PauseService : IPauseService
             else {
                 //if (tipo == GameType.offline) Time.timeScale = 1;
                 Time.timeScale = 1;
-                panelInstance.SetActive(false);
+                PausepanelInstance.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
             }
         }
        
+    }
+    public void ToggleSettings() {
+        SettingpanelInstance = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.name == SettingpanelPrefab.name+"(Clone)" && g.scene == SceneManager.GetActiveScene());
+        Debug.Log(SettingpanelInstance);
+        if (SettingpanelInstance == null)
+        {
+            Canvas canvas = GameObject.FindFirstObjectByType<Canvas>();
+            SettingpanelInstance = GameObject.Instantiate(SettingpanelPrefab, canvas.transform);
+        }
+        if (SettingpanelInstance != null)
+        {
+            if (!SettingpanelInstance.activeInHierarchy)
+            {
+                SettingpanelInstance.SetActive(true);
+                PausepanelInstance.SetActive(false);
+            }
+            else
+            {
+                SettingpanelInstance.SetActive(false);
+                PausepanelInstance.SetActive(true);
+            }
+        }
     }
 }

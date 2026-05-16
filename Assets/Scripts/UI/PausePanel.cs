@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,5 +30,14 @@ public class PausePanel : MonoBehaviour
             Time.timeScale = 1;
         }
         else Debug.Log("enum no valido");
+    }
+    public void Settings() { 
+        _pauseService.ToggleSettings();
+    }
+    public void mainMenu() {
+
+            _sceneService.LoadScene(SceneNames.Main_menu);
+            Time.timeScale = 1;
+       
     }
 }
