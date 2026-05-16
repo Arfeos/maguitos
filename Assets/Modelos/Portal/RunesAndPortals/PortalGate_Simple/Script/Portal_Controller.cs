@@ -32,7 +32,7 @@ public class Portal_Controller : MonoBehaviour
     private void Awake()
     {
         Setup();
-        _sceneService = GetComponent<ISceneService>();
+        _sceneService = AppContainer.Get<ISceneService>();
     }
 
     private void OnTriggerEnter(Collider other)

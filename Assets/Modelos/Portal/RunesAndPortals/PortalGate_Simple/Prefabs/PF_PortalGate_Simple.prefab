@@ -58,6 +58,7 @@ MonoBehaviour:
   orbAudio: {fileID: 7195420096784790840}
   flashAudio: {fileID: 2958186054623612298}
   portalAudio: {fileID: 1911755966106310700}
+  sceneNames: 3
 --- !u!65 &7085721438014375755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73,12 +74,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.26198578, y: 5.116056, z: 5.235585}
-  m_Center: {x: -0.6309929, y: 2.058028, z: -0.045502782}
+  m_Center: {x: 0.36, y: 2.058028, z: -0.045502782}
 --- !u!1 &3468674793562794399
 GameObject:
   m_ObjectHideFlags: 0
