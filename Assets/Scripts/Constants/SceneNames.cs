@@ -8,6 +8,7 @@ public enum SceneNames
    Main_menu,
    Gamemodes,
    Settings,
-   Tutorial
+   Tutorial,
+   Hordes
 
 }
