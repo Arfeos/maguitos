@@ -45,8 +45,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1340509220671488
-    m_Localized: Approach the table again and hold down {0} on the book to obtain
-      the spell
+    m_Localized: Approach the table again and press {0} on the book to obtain the
+      spell
     m_Metadata:
       m_Items: []
   - m_Id: 1351319712075776

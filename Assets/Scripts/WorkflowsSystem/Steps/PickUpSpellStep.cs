@@ -39,13 +39,13 @@ public class PickUpSpellStep : IStep
 
     public void Deactivate()
     {
-        PlayerInputManager.Actions.Player.Interact.performed -= HandleAction;
+        PlayerInputManager.Actions.Player.Interact.started -= HandleAction;
     }
 
     public void Activate()
     {
         var action = PlayerInputManager.Actions.Player.Interact;
-        action.performed += HandleAction;
+        action.started += HandleAction;
         Debug.Log($"Suscrito. Listeners: {action.GetType()}");
     }
 

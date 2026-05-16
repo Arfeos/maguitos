@@ -41,8 +41,8 @@ public class TakeLanternStep : IStep
 
     public void Deactivate()
     {
-        PlayerInputManager.Actions.Player.Interact.performed -= HandleAction1;
-        PlayerInputManager.Actions.Player.Lantern.performed -= HandleAction2;
+        PlayerInputManager.Actions.Player.Interact.started -= HandleAction1;
+        PlayerInputManager.Actions.Player.Lantern.started -= HandleAction2;
     }
 
     public void Activate()
@@ -50,8 +50,8 @@ public class TakeLanternStep : IStep
         var action1 = PlayerInputManager.Actions.Player.Interact;
         var action2 = PlayerInputManager.Actions.Player.Lantern;
 
-        action1.performed += HandleAction1;
-        action2.performed += HandleAction2;
+        action1.started += HandleAction1;
+        action2.started += HandleAction2;
 
         Debug.Log($"Suscrito. Listeners: {action1.GetType()} y {action2.GetType()}");
     }

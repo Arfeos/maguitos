@@ -42,8 +42,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1340509220671488
-    m_Localized: "Ac\xE9rcate a la mesa de nuevo y mant\xE9n pulsado {0} sobre el
-      libro para obtener el hechizo"
+    m_Localized: "Ac\xE9rcate a la mesa de nuevo y pulsa {0} sobre el libro para
+      obtener el hechizo"
     m_Metadata:
       m_Items: []
   - m_Id: 1340396674912256
