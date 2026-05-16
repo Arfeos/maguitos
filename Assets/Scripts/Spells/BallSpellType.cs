@@ -27,8 +27,7 @@ public class BallSpellType : MonoBehaviour
         // (1 << objectLayer) crea una máscara con un solo bit activado
         int objectLayer = collision.gameObject.layer;
         if ((layersToHit.value & (1 << objectLayer)) == 0) return;
-        //TODO hacer la explosion
-        Debug.Log("PUM");
+        
 
         // SphereCast desde el punto de impacto
         Vector3 impactPoint = collision.contacts[0].point;
@@ -39,7 +38,7 @@ public class BallSpellType : MonoBehaviour
         if(corutinaCrecer == null) corutinaCrecer = StartCoroutine(ShowExplosionSphere(impactPoint, radius));
         foreach (Collider hit in hits)
         {
-            if (hit.GetComponent<IHittable>() != null) hit.GetComponent<IHittable>().Hit();
+            if (hit.GetComponent<IHittable>() != null) hit.GetComponent<IHittable>().Hit(_characterService.getSpell(_characterService.getIndex()).spell.damage);
         }
 
         

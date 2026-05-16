@@ -185,7 +185,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Lantern"",
                     ""type"": ""Button"",
-                    ""id"": ""4cf5fb9e-1188-4079-8577-e071a796f440"",
+                    ""id"": ""9cb648c8-f2e9-4cfd-8ac7-8e05d2c3a344"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -558,19 +558,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0ed60cf6-344e-44a4-8f0e-a9db4082f984"",
+                    ""id"": ""10b1b8f0-c462-4f08-8f60-60224bf381c4"",
                     ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Lantern"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a450f07f-d721-48d9-8c32-995b588118ac"",
-                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

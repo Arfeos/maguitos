@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour,IHittable
 {
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
 
     private IEventService _eventService;
+    private ICharacterService _characterService;
 
     private Animator _animator;
 
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         characterController = GetComponent<CharacterController>();
         _eventService = AppContainer.Get<IEventService>();
+        _characterService = AppContainer.Get<ICharacterService>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _animator = GetComponent<Animator>();
@@ -194,5 +196,10 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("isCrouching", isCrouching);
         _animator.SetBool("isRunning", isRunning);
 
+    }
+
+    public void Hit(float damage)
+    {
+        _characterService.TakeDamage((int)damage);
     }
 }

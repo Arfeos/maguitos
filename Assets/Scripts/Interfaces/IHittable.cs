@@ -2,5 +2,5 @@
 
 internal interface IHittable
 {
-    public void Hit();
+    public void Hit(float damage);
 }
