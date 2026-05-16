@@ -35,6 +35,18 @@ MonoBehaviour:
     m_Key: txt_exit
     m_Metadata:
       m_Items: []
+  - m_Id: 1079838279331840
+    m_Key: Tutorial/Player New/Main Camera/Canvas/panel_pause/Grid/btn_settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1079838304497664
+    m_Key: Tutorial/Player New/Main Camera/Canvas/panel_pause/Grid/btn_settings 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1079838308691968
+    m_Key: Tutorial/Player New/Main Camera/Canvas/panel_pause/Grid/btn_settings 2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

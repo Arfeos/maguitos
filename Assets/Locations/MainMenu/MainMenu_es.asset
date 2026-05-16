@@ -38,6 +38,18 @@ MonoBehaviour:
     m_Localized: SALIR
     m_Metadata:
       m_Items: []
+  - m_Id: 1079838279331840
+    m_Localized: UnityEngine.GameObject, UnityEngine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1079838304497664
+    m_Localized: SetActive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1079838308691968
+    m_Localized: UnityEngine.Object, UnityEngine
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

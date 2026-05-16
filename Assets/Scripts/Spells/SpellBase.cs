@@ -7,13 +7,14 @@ public partial class SpellBase : MonoBehaviour
 
     private bool canCast = true;
     private bool isCasting = false;
-
+    IAudioService _audioService;
     Coroutine CastingSpellCoroutine;
 
     private ICharacterService _characterService;
     private void Awake()
     {
         _characterService = AppContainer.Get<ICharacterService>();
+        _audioService = AppContainer.Get<IAudioService>();
     }
     public void ResetSpellShot()
     {
@@ -46,7 +47,9 @@ public partial class SpellBase : MonoBehaviour
                     //TODO implement type of spell
                     break;
             }
-
+            if(_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+            if (spell.spell.spawnSound != null)
+                _audioService.PlaySound(spell.spell.spawnSound);
             Invoke("ResetCast", spell.spell.shootDelay);
         }
         if (_characterService.CheckMana() == 0) Debug.Log("No tenes munbicion pive");
@@ -68,6 +71,10 @@ public partial class SpellBase : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
+            if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+            if (spell.chargeSound != null)
+
+                _audioService.PlaySound(spell.chargeSound);
             spell.currentCharge++;
         } while (spell.MaxCharge > spell.currentCharge);
         //TODO añadir sonido de carga maxima
@@ -183,5 +190,10 @@ public partial class SpellBase : MonoBehaviour
     {
         isCasting = false;
         canCast = true;
+    }
+    public void stopCharginSound() { 
+        if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+        if (spell.chargeSound != null)
+            _audioService.StopSound(spell.chargeSound);
     }
 }
