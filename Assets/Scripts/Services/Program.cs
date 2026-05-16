@@ -19,6 +19,7 @@ public static class Program
 	    AppContainer.Register<IUIService>(() => new UIService());
         AppContainer.Register<IAnimationService>(() => new AnimationService());
         AppContainer.Register<ISpellService>(() => new SpellService(Resources.Load<GameObject>("Prefabs/RayPrefab"), Resources.Load<GameObject>("Prefabs/SpherePrefab")));
+        AppContainer.Register<IPauseService>(() => new PauseService(Resources.Load<PanelConfigurationScriptable>("Configuration/PauseConfiguration")));
     }
 }
   

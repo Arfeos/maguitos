@@ -114,7 +114,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -186,6 +186,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Lantern"",
                     ""type"": ""Button"",
                     ""id"": ""9cb648c8-f2e9-4cfd-8ac7-8e05d2c3a344"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""1dd90ecb-ceae-42a2-b4c6-8e742a439498"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -360,17 +369,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -416,10 +414,21 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b3c1c7f0-bd20-4ee7-a0f1-899b24bca6d7"",
-                    ""path"": ""<Mouse>/press"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7b1f015-c141-4339-bd1f-e67bc56b56a2"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -610,6 +619,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Lantern"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9fbf3e51-e2c4-4b5c-9c78-9d5f4ed005c8"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""719922d2-6ddf-42d1-ae15-98fb5a08f341"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -622,6 +653,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""c95b2375-e6d9-4b88-9c4c-c5e76515df4b"",
                     ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""1862968e-d3e0-40f4-b757-1f09ba525752"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -975,6 +1015,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""9d54bf69-7ec6-450c-a899-0b4dead298a5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7cf072f6-9dbe-4b06-aace-cb0782a29b8a"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc"",
                     ""path"": ""*/{Submit}"",
                     ""interactions"": """",
@@ -1206,9 +1268,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_Lantern = m_Player.FindAction("Lantern", throwIfNotFound: true);
+        m_Player_pause = m_Player.FindAction("pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
+        m_UI_pause = m_UI.FindAction("pause", throwIfNotFound: true);
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
         m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
@@ -1310,6 +1374,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Reload;
     private readonly InputAction m_Player_Lantern;
+    private readonly InputAction m_Player_pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1365,6 +1430,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Lantern".
         /// </summary>
         public InputAction @Lantern => m_Wrapper.m_Player_Lantern;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/pause".
+        /// </summary>
+        public InputAction @pause => m_Wrapper.m_Player_pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1424,6 +1493,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Lantern.started += instance.OnLantern;
             @Lantern.performed += instance.OnLantern;
             @Lantern.canceled += instance.OnLantern;
+            @pause.started += instance.OnPause;
+            @pause.performed += instance.OnPause;
+            @pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -1468,6 +1540,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Lantern.started -= instance.OnLantern;
             @Lantern.performed -= instance.OnLantern;
             @Lantern.canceled -= instance.OnLantern;
+            @pause.started -= instance.OnPause;
+            @pause.performed -= instance.OnPause;
+            @pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -1506,6 +1581,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_Navigate;
+    private readonly InputAction m_UI_pause;
     private readonly InputAction m_UI_Submit;
     private readonly InputAction m_UI_Cancel;
     private readonly InputAction m_UI_Point;
@@ -1530,6 +1606,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/Navigate".
         /// </summary>
         public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/pause".
+        /// </summary>
+        public InputAction @pause => m_Wrapper.m_UI_pause;
         /// <summary>
         /// Provides access to the underlying input action "UI/Submit".
         /// </summary>
@@ -1595,6 +1675,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Navigate.started += instance.OnNavigate;
             @Navigate.performed += instance.OnNavigate;
             @Navigate.canceled += instance.OnNavigate;
+            @pause.started += instance.OnPause;
+            @pause.performed += instance.OnPause;
+            @pause.canceled += instance.OnPause;
             @Submit.started += instance.OnSubmit;
             @Submit.performed += instance.OnSubmit;
             @Submit.canceled += instance.OnSubmit;
@@ -1636,6 +1719,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Navigate.started -= instance.OnNavigate;
             @Navigate.performed -= instance.OnNavigate;
             @Navigate.canceled -= instance.OnNavigate;
+            @pause.started -= instance.OnPause;
+            @pause.performed -= instance.OnPause;
+            @pause.canceled -= instance.OnPause;
             @Submit.started -= instance.OnSubmit;
             @Submit.performed -= instance.OnSubmit;
             @Submit.canceled -= instance.OnSubmit;
@@ -1845,6 +1931,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLantern(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
@@ -1860,6 +1953,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnNavigate(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Submit" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

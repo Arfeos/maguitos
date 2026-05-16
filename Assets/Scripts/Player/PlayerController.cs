@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     private float yRotation = 0f;
 
-
+    private IPauseService _pauseService;
     private IEventService _eventService;
     private IProfileService _profileService;
     private IAudioService _audioService;
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         _eventService = AppContainer.Get<IEventService>();
         _audioService = AppContainer.Get<IAudioService>();
+        _profileService = AppContainer.Get<IProfileService>();
+        _pauseService = AppContainer.Get<IPauseService>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _animator = GetComponent<Animator>();
@@ -61,8 +64,11 @@ public class PlayerController : MonoBehaviour
         HandleCrouch();
         handleReload();
         handleChangeWeapon();
+        handlePause();
         SetAnimation();
     }
+
+
 
     private void LookMouse()
     {
@@ -189,7 +195,12 @@ public class PlayerController : MonoBehaviour
             _eventService.Publish(reloadEvent);
         }
     }
-
+    private void handlePause()
+    {
+        if (PlayerInputManager.Actions.Player.pause.WasPressedThisFrame()) {
+            _pauseService.TogglePause();
+        }
+    }
     private void SetAnimation()
     {
         if (!characterController.isGrounded)

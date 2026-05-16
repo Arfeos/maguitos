@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989065e333ab01a43bc0fee259fa372e, type: 3}
   m_Name: PauseConfiguration
   m_EditorClassIdentifier: Assembly-CSharp::PanelConfigurationScriptable
-  Panel: {fileID: 0}
+  Panel: {fileID: 2995229940552740535, guid: 2dcc3762dce592a40ad0dcb5cfbf288d, type: 3}
