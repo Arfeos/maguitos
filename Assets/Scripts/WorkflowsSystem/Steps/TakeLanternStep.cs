@@ -17,9 +17,9 @@ public class TakeLanternStep : IStep
         get
         {
             var takeAction = PlayerInputManager.Actions.Player.Interact;
-            var interactKeyName = string.Join(", ", takeAction.controls.Select(c => c.displayName));
+            var interactKeyName = string.Join(" ", takeAction.controls.Select(c => c.displayName));
             var onOffAction = PlayerInputManager.Actions.Player.Lantern;
-            var onOffKeyName = string.Join(", ", onOffAction.controls.Select(c => c.displayName));
+            var onOffKeyName = string.Join(" ", onOffAction.controls.Select(c => c.displayName));
 
             return
                 new LocalizedString

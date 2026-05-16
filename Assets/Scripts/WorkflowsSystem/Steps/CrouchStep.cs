@@ -17,7 +17,7 @@ public class CrouchStep : IStep
         get
         {
             var crouchAction = PlayerInputManager.Actions.Player.Crouch;
-            var keyNames = string.Join(", ", crouchAction.controls.Select(c => c.displayName));
+            var keyNames = string.Join(" ", crouchAction.controls.Select(c => c.displayName));
 
             return
                 new LocalizedString

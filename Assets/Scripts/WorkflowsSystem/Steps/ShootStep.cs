@@ -17,7 +17,7 @@ public class ShootStep : IStep
         get
         {
             var shootAction = PlayerInputManager.Actions.Player.Attack;
-            var keyNames = string.Join(", ", shootAction.controls.Select(c => c.displayName));
+            var keyNames = string.Join(" ", shootAction.controls.Select(c => c.displayName));
 
             return
                 new LocalizedString

@@ -17,7 +17,7 @@ public class ReloadStep : IStep
         get
         {
             var reloadAction = PlayerInputManager.Actions.Player.Reload;
-            var keyNames = string.Join(", ", reloadAction.controls.Select(c => c.displayName));
+            var keyNames = string.Join(" ", reloadAction.controls.Select(c => c.displayName));
 
             return
                 new LocalizedString

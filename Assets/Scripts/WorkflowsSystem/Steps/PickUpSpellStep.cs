@@ -17,7 +17,7 @@ public class PickUpSpellStep : IStep
         get
         {
             var pickUpAction = PlayerInputManager.Actions.Player.Interact;
-            var keyNames = string.Join(", ", pickUpAction.controls.Select(c => c.displayName));
+            var keyNames = string.Join(" ", pickUpAction.controls.Select(c => c.displayName));
 
             return
                 new LocalizedString

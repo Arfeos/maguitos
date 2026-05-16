@@ -21,7 +21,7 @@ public class ShootingRangeStep : IStep
         get
         {
             var attackAction = PlayerInputManager.Actions.Player.Attack;
-            var keyNames = string.Join(", ", attackAction.controls.Select(c => c.displayName));
+            var keyNames = string.Join(" ", attackAction.controls.Select(c => c.displayName));
 
             return
                 new LocalizedString

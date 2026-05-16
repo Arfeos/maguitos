@@ -18,7 +18,7 @@ public class PressSpaceStep : IStep
         get
         {
             var jumpAction = PlayerInputManager.Actions.Player.Jump;
-            var keyNames = string.Join(", ", jumpAction.controls.Select(c => c.displayName));
+            var keyNames = string.Join(" ", jumpAction.controls.Select(c => c.displayName));
 
             return
                 new LocalizedString

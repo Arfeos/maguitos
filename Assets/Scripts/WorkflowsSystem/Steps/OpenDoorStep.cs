@@ -19,7 +19,7 @@ public class OpenDoorStep : IStep
         get
         {
             var openAction = PlayerInputManager.Actions.Player.Attack;
-            var keyNames = string.Join(", ", openAction.controls.Select(c => c.displayName));
+            var keyNames = string.Join(" ", openAction.controls.Select(c => c.displayName));
 
             return
                 new LocalizedString
