@@ -16,12 +16,109 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 3818846376611c8498585d4739f2e3e9, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 7192529311357993054
   m_TableData:
   - m_Id: 33875656704
-    m_Localized: Move the mous
+    m_Localized: Move the camera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361430210150400
+    m_Localized: Move the camera using the mouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 364499266273280
+    m_Localized: Move yourself
+    m_Metadata:
+      m_Items: []
+  - m_Id: 364576881868800
+    m_Localized: Walk around using {0}
+    m_Metadata:
+      m_Items:
+      - rid: 7192529311357993054
+  - m_Id: 689214962892800
+    m_Localized: the mouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340396674912256
+    m_Localized: Pick up an spell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340509220671488
+    m_Localized: Approach the table again and press {0} on the book to obtain the
+      spell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1351319712075776
+    m_Localized: Cast spell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1351368143704064
+    m_Localized: Press the {0} key to cast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1352913207857152
+    m_Localized: Open doors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1352963912798208
+    m_Localized: Aim at the rune next to the door and fire using the {0} button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1354179195604992
+    m_Localized: Crouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1354202859868160
+    m_Localized: Approach the first fallen pillar, press the {0} key to crouch and,
+      while moving forward, pass under the widest part
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1355788466163712
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1355825178906624
+    m_Localized: Approach the second fallen pillar and, while moving forward, press
+      the {0} key to jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1356984790716416
+    m_Localized: Recharge mana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1357016910696448
+    m_Localized: Press the {0} key to recharge your mana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1343483867205632
+    m_Localized: 'Shoot the glyph on the sign using {0} to start the shooting range
+      minigame. Try to score 500 points by shooting the targets with your spells.
+      You can pick up spells from the table in the background and switch between
+      them by pressing 1 or 2
+
+      {1}/500'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1343465630371840
+    m_Localized: Changing spells and shots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1370568841138176
+    m_Localized: Approach the table and with the pointer over the lantern, press
+      {0} to equip it and {1} to turn the light on or off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1370566798512128
+    m_Localized: Take the lantern
     m_Metadata:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7192529311357993054
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 364576881868800

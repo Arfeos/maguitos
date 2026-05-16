@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class ReloadStep : IStep
 {
@@ -10,14 +11,21 @@ public class ReloadStep : IStep
 
 
     // --- IStep ---
-    public string Name => "Recarga";
-    public string Description
+    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "reloadName" };}
+    public LocalizedString Description
     {
         get
         {
-            var moveAction = PlayerInputManager.Actions.Player.Reload;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
-            return $"Pulsa la tecla {keyNames} para recargar tu mana";
+            var reloadAction = PlayerInputManager.Actions.Player.Reload;
+            var keyNames = string.Join(" ", reloadAction.controls.Select(c => c.displayName));
+
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "reloadDesc",
+                    Arguments = new object[] { keyNames }
+                };
         }
     }
 

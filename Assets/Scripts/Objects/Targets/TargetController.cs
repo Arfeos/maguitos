@@ -20,7 +20,9 @@ public class TargetController : MonoBehaviour, IHittable
         if (_isGameStarted)
         {
             _scoreService.addPoints("TutorialPlayer", puntos);
-            Debug.Log("Has ganado " + puntos + " puntos");
+            ScoreChangeEvent score = new ScoreChangeEvent();
+            score.points = puntos;
+            _eventService.Publish(score);
         }
     }
     private void Awake()

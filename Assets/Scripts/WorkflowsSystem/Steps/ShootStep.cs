@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class ShootStep : IStep
 {
@@ -10,15 +11,21 @@ public class ShootStep : IStep
 
 
     // --- IStep ---
-    public string Name => "Dispara";
-    public string Description
+    public LocalizedString Name { get => new LocalizedString { TableReference = "Steps", TableEntryReference = "shootName" }; }
+    public LocalizedString Description
     {
         get
         {
-            var moveAction = PlayerInputManager.Actions.Player.Attack;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
-            if (keyNames.Contains("Delta")) keyNames = "el ratón";
-            return $"Pulsa la tecla {keyNames} para disparar";
+            var shootAction = PlayerInputManager.Actions.Player.Attack;
+            var keyNames = string.Join(" ", shootAction.controls.Select(c => c.displayName));
+
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "shootDesc",
+                    Arguments = new object[] { keyNames }
+                };
         }
     }
 

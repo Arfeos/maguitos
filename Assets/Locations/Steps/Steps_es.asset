@@ -16,12 +16,111 @@ MonoBehaviour:
     m_Code: es
   m_SharedData: {fileID: 11400000, guid: 3818846376611c8498585d4739f2e3e9, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 7192529311357993057
   m_TableData:
   - m_Id: 33875656704
-    m_Localized: Hola
+    m_Localized: "Mueve la c\xE1mara"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361430210150400
+    m_Localized: "Mueve la c\xE1mara usando el rat\xF3n"
+    m_Metadata:
+      m_Items:
+      - rid: 7192529311357993057
+  - m_Id: 364499266273280
+    m_Localized: "Mu\xE9vete"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 364576881868800
+    m_Localized: "Mu\xE9vete por la zona usando {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 7192529311357993057
+  - m_Id: 689214962892800
+    m_Localized: "el rat\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340509220671488
+    m_Localized: "Ac\xE9rcate a la mesa de nuevo y pulsa {0} sobre el libro para
+      obtener el hechizo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340396674912256
+    m_Localized: Coger un hechizo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1351319712075776
+    m_Localized: Lanzar hechizo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1351368143704064
+    m_Localized: Pulsa la tecla {0} para disparar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1352913207857152
+    m_Localized: Abrir puertas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1352963912798208
+    m_Localized: "Apunta a la runa al lado de la puerta y dispara usando el bot\xF3n
+      {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1354179195604992
+    m_Localized: Agacharse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1354202859868160
+    m_Localized: "Ac\xE9rcate al primer pilar ca\xEDdo, presiona la tecla {0} para
+      agacharte y, mientras te mueves hacia delante, cruza por debajo de la parte
+      m\xE1s ancha"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1355788466163712
+    m_Localized: Saltar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1355825178906624
+    m_Localized: "Ac\xE9rcate al segundo pilar ca\xEDdo y mientras te mueves hacia
+      delante presiona la tecla {0} para saltar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1357016910696448
+    m_Localized: "Pulsa la tecla {0} para recargar tu man\xE1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1356984790716416
+    m_Localized: "Recargar man\xE1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1343483867205632
+    m_Localized: "Dispara al glifo del cartel usando {0} para iniciar el minijuego
+      de campo de tiro. Intenta conseguir 500 puntos disparando a las dianas con
+      tus hechizos. Puedes coger hechizos en la mesa de atr\xE1s y cambiar entre
+      ellos pulsando la teclas 1 o 2\r\n{1}/500"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1343465630371840
+    m_Localized: Cambio de hechizos y disparos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1370566798512128
+    m_Localized: Coger el farol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1370568841138176
+    m_Localized: "Ac\xE9rcate a la mesa y con el puntero sobre el farol presiona
+      {0} para equip\xE1rtelo y {1} para encender o apagar la luz"
     m_Metadata:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7192529311357993057
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 361430210150400
+        - id: 364576881868800

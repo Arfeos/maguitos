@@ -1,5 +1,3 @@
-using Newtonsoft.Json.Linq;
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;

@@ -10,18 +10,39 @@ public class AlertService : MonoBehaviour, IAlertService
     /// <param name="MessageBox">Un PausepanelPrefab, con 2 al menos 2 TextMeshProUGUI sobre el que se va a escribir </param>
     /// <param name="message">Data de un scriptable object del tipo ObjectDataScriptable</param>
     public void ShowAlertMessage(GameObject MessageBox, ObjectDataScriptable message)
+{
+    if (MessageBox == null) return;
+
+    TextMeshProUGUI[] todosLosTextos = MessageBox.GetComponentsInChildren<TextMeshProUGUI>(true);
+
+    if (todosLosTextos != null && todosLosTextos.Length >= 2)
     {
-        if(MessageBox.gameObject == null) return;
-        TextMeshProUGUI[] todosLosTextos = MessageBox.GetComponentsInChildren<TextMeshProUGUI>(true);
-        if (todosLosTextos != null)
+        TextMeshProUGUI textoNombre = todosLosTextos[0];
+        TextMeshProUGUI textoDescripcion = todosLosTextos[1];
+
+        // GetLocalizedStringAsync obtiene el string traducido al idioma activo
+        message.objectName.GetLocalizedStringAsync().Completed += handle =>
         {
-            todosLosTextos[0].text = message.objectName;
-            todosLosTextos[1].text = message.objetDescription;
+            textoNombre.text = handle.Result;
+        };
 
-            MessageBox.gameObject.SetActive(true); // Mostrar UI
-        }
+        message.objetDescription.GetLocalizedStringAsync().Completed += handle =>
+        {
+            textoDescripcion.text = handle.Result;
+        };
 
+        MessageBox.SetActive(true);
     }
+
+    //if (todosLosTextos != null)
+    //{
+    //    todosLosTextos[0].text = message.objectName;
+    //    todosLosTextos[1].text = message.objetDescription;
+
+    //    MessageBox.gameObject.SetActive(true); // Mostrar UI
+    //}
+
+}
 
     /// <summary>
     /// Oculta el Panel seleccionado
