@@ -254,5 +254,12 @@ public class SlimeController : MonoBehaviour, IHittable
         Debug.Log("DEath");
         _animator.SetTrigger("Death");
         _isDeath = true;
+        StartCoroutine("waitToDestroy");
+    }
+
+    IEnumerator waitToDestroy()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        Destroy(gameObject);
     }
 }
