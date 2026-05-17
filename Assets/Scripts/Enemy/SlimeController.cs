@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class SlimeController : MonoBehaviour, IHittable
@@ -14,7 +15,9 @@ public class SlimeController : MonoBehaviour, IHittable
     [SerializeField] private float distanceToAttack = 1.5f;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private float damage = 20;
-    [SerializeField] private float Life = 100f;
+    [SerializeField] private float Life;
+    [SerializeField] private float maxLife = 100f;
+    [SerializeField] private Slider _lifeBar;
     [SerializeField] private LayerMask AttackLayer;
 
 
@@ -57,6 +60,11 @@ public class SlimeController : MonoBehaviour, IHittable
 
         _rigidbodySlime = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+
+        _lifeBar = GetComponentInChildren<Slider>();
+        _lifeBar.maxValue = maxLife;
+        _lifeBar.value = maxLife;
+        Life = maxLife;
     }
 
     void Update()
@@ -181,7 +189,7 @@ public class SlimeController : MonoBehaviour, IHittable
 
         Vector3 start = transform.position;
 
-        // Dirección horizontal
+        // Direcciï¿½n horizontal
         Vector3 direction =
             (_playerController.transform.position - start);
 
@@ -195,7 +203,7 @@ public class SlimeController : MonoBehaviour, IHittable
         Vector3 endPoint =
             start + direction * distanceToJump;
 
-        // Física del salto
+        // Fï¿½sica del salto
         float gravity = Mathf.Abs(Physics.gravity.y);
 
         // Velocidad vertical
@@ -233,10 +241,10 @@ public class SlimeController : MonoBehaviour, IHittable
         // Detener movimiento residual
         _rigidbodySlime.linearVelocity = Vector3.zero;
 
-        // Animación squash / recover
+        // Animaciï¿½n squash / recover
         _animator.SetTrigger("Landing");
 
-        // Esperar mientras está aplastado
+        // Esperar mientras estï¿½ aplastado
         yield return new WaitForSeconds(recoverTime);
 
         // Puede volver a actuar
@@ -261,6 +269,7 @@ public class SlimeController : MonoBehaviour, IHittable
     {
         if (_isDeath) return;
         Life -= damage;
+        _lifeBar.value = Life;
 
         if (Life <= 0)
         {
