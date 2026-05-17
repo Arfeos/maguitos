@@ -167,6 +167,12 @@ public partial class SpellBase : MonoBehaviour
             }
             foreach(RaycastHit _hit in hits)
             {
+                //Habria que arreglar esto si queremos que pare al chocar con una parez, ahora mismo me reconoce todo como una pared, de momento estas hechizos atraviesan todo
+                //if (_hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                //{
+                //    endPoint = _hit.point;
+                //    break;
+                //}
                 if (_hit.collider.gameObject.GetComponent<IHittable>() != null)
                 {
                     _hit.collider.gameObject.GetComponent<IHittable>().Hit(spell.spell.damage);
