@@ -1,48 +1,56 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
 /// Clase base para todos los slimes del juego.
-/// Gestiona vida, barra de vida, disoluci�n al morir y el ciclo de acciones.
-/// Las subclases implementan Attack() y Move() con su comportamiento espec�fico.
+/// Gestiona vida, barra de vida, disolución al morir y el ciclo de acciones.
+/// Las subclases implementan Attack() y Move() con su comportamiento específico.
 /// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public abstract class SlimeBase : MonoBehaviour, IHittable
 {
-    // ?? Referencias ?????????????????????????????????????????????????????????
+    // ── Referencias ─────────────────────────────────────────────────────────
     protected PlayerController _playerController;
     protected Rigidbody _rigidbody;
     protected Animator _animator;
 
-    // ?? Combat ???????????????????????????????????????????????????????????????
+    // ── Combat ───────────────────────────────────────────────────────────────
     [Header("Combat")]
-    [SerializeField] protected float distanceToAttack = 1.5f;
+    [SerializeField] protected float distanceToAttack = 2.5f;
     [SerializeField] protected float attackCooldown = 2f;
     [SerializeField] protected float damage = 20f;
     [SerializeField] protected float maxLife = 100f;
     [SerializeField] protected LayerMask attackLayer;
 
-    // ?? Life bar ?????????????????????????????????????????????????????????????
+    // ── Life bar ─────────────────────────────────────────────────────────────
     [Header("UI")]
-    [SerializeField] private Slider _lifeBar;
+    [SerializeField] protected Slider _lifeBar;
 
-    // ?? Dissolve ?????????????????????????????????????????????????????????????
+    // ── Dissolve ─────────────────────────────────────────────────────────────
     [Header("Dissolve")]
-    [SerializeField] private Texture2D dissolveTexture;
-    [SerializeField] private Color dissolveColor = Color.red;
-    [SerializeField] private float delayBeforeStart = 3f;
-    [SerializeField] private float dissolveTime = 2f;
-
-    // ?? Estado interno ???????????????????????????????????????????????????????
+    [SerializeField] protected Texture2D dissolveTexture;
+    [SerializeField] protected Color dissolveColor = Color.red;
+    [SerializeField] protected float delayBeforeStart = 3f;
+    [SerializeField] protected float dissolveTime = 2f;
+    // ── Sonidos ─────────────────────────────────────────────────────────────
+    [Header("Sounds")]
+    [SerializeField] protected AudioClip TakeDamageSound;
+    [SerializeField] protected AudioClip JumpSound;
+    [SerializeField] protected AudioClip AttackSound;
+    // ── Estado interno ───────────────────────────────────────────────────────
     protected float Life;
     protected bool _isDeath;
     protected bool _nextActionTime = true;
 
-    private float dissolveProgress;
-    private Coroutine _actionCoroutine;
-
-    // ?? Unity Lifecycle ??????????????????????????????????????????????????????
+    protected float dissolveProgress;
+    protected Coroutine _actionCoroutine;
+    protected IAudioService _audioService;
+    // ── Unity Lifecycle ──────────────────────────────────────────────────────
+    private void Awake()
+    {
+        _audioService = AppContainer.Get<IAudioService>();
+    }
     protected virtual void Start()
     {
         _playerController = FindFirstObjectByType<PlayerController>();
@@ -52,8 +60,9 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         _lifeBar = GetComponentInChildren<Slider>();
         _lifeBar.maxValue = maxLife;
         _lifeBar.value = maxLife;
-        _lifeBar.gameObject.SetActive(true);
 
+
+        _lifeBar.gameObject.SetActive(false);
         Life = maxLife;
         dissolveProgress = 0f;
     }
@@ -74,19 +83,28 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
             _actionCoroutine = StartCoroutine(ActionCooldownRoutine());
     }
 
-    // ?? M�todos abstractos que cada enemigo debe implementar ?????????????????
+    // ── Métodos abstractos que cada enemigo debe implementar ─────────────────
 
-    /// <summary>L�gica de ataque espec�fica del enemigo.</summary>
-    protected abstract void Attack();
+    /// <summary>Lógica de ataque específica del enemigo.</summary>
+    protected virtual void Attack() {
+        if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+        if (AttackSound != null)
 
-    /// <summary>L�gica de movimiento espec�fica del enemigo.</summary>
-    protected abstract void Move(float distanceToPlayer);
+            _audioService.PlaySound(AttackSound);
+    }
 
-    // ?? M�todos virtuales sobreescribibles ???????????????????????????????????
+
+    /// <summary>Lógica de movimiento específica del enemigo.</summary>
+    protected virtual void Move(float distanceToPlayer) {
+        if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+        if (JumpSound != null) _audioService.PlaySound(JumpSound);
+    }
+
+    // ── Métodos virtuales sobreescribibles ───────────────────────────────────
 
     /// <summary>
     /// Se llama cada Update (ya filtrado por null y muerte).
-    /// Sobreescribe para a�adir l�gica extra (ej: CheckGrounded, DetectLanding).
+    /// Sobreescribe para añadir lógica extra (ej: CheckGrounded, DetectLanding).
     /// La base ya llama a CheckState().
     /// </summary>
     protected virtual void OnUpdate()
@@ -94,10 +112,10 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         CheckState();
     }
 
-    /// <summary>Se llama justo antes de destruir el objeto. Sobreescribe para l�gica extra al morir.</summary>
+    /// <summary>Se llama justo antes de destruir el objeto. Sobreescribe para lógica extra al morir.</summary>
     protected virtual void OnDeath() { }
 
-    // ?? L�gica com�n ?????????????????????????????????????????????????????????
+    // ── Lógica común ─────────────────────────────────────────────────────────
 
     protected void CheckState()
     {
@@ -122,12 +140,17 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         return Vector3.Distance(origin, target);
     }
 
-    // ?? IHittable ????????????????????????????????????????????????????????????
+    // ── IHittable ────────────────────────────────────────────────────────────
 
     public virtual void Hit(float damage)
     {
+        if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+        if (TakeDamageSound != null)
+
+            _audioService.PlaySound(TakeDamageSound);
         if (_isDeath) return;
 
+        _lifeBar.gameObject.SetActive(true);
         Life -= damage;
         _lifeBar.value = Life;
 
@@ -135,10 +158,12 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
             Die();
     }
 
-    // ?? Muerte y disoluci�n ??????????????????????????????????????????????????
+    // ── Muerte y disolución ──────────────────────────────────────────────────
 
     protected virtual void Die()
     {
+        
+
         StopAllCoroutines();
         _isDeath = true;
 
@@ -167,7 +192,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
             }
         }
 
-        // Animar la disoluci�n
+        // Animar la disolución
         while (dissolveProgress < 1f)
         {
             dissolveProgress += Time.deltaTime / dissolveTime;
@@ -182,7 +207,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         Destroy(gameObject);
     }
 
-    // ?? Cooldown de acciones ?????????????????????????????????????????????????
+    // ── Cooldown de acciones ─────────────────────────────────────────────────
 
     private IEnumerator ActionCooldownRoutine()
     {
