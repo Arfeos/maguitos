@@ -17,6 +17,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private ICharacterService _characterService;
     private Coroutine _coroutineCharge;
     private Coroutine _coroutineReload;
+    
     void Awake()
     {
         //PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
@@ -24,6 +25,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
         _eventService = AppContainer.Get<IEventService>();
         _spellService = AppContainer.Get<ISpellService>();
         _characterService = AppContainer.Get<ICharacterService>();
+
+        
     }
 
     private void OnEnable()
@@ -52,7 +55,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        
+  
 
         SpellBase ActualSpell = _characterService.getSpell(_characterService.getIndex())?.GetComponent<SpellBase>();
         if(ActualSpell == null) return;
@@ -71,6 +74,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         }
     }
 
+ 
 
 
     private void LanzarHechizo(SpellBase ActualSpell)

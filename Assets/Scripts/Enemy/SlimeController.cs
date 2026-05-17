@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class SlimeController : MonoBehaviour, IHittable
@@ -14,19 +15,29 @@ public class SlimeController : MonoBehaviour, IHittable
     [SerializeField] private float distanceToAttack = 1.5f;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private float damage = 20;
-    [SerializeField] private float Life = 100f;
-    
+    [SerializeField] private float Life;
+    [SerializeField] private float maxLife = 100f;
+    [SerializeField] private Slider _lifeBar;
+    [SerializeField] private LayerMask AttackLayer;
+
 
     [Header("Landing")]
     [SerializeField] private float recoverTime = 2f;
 
     [Header("Ground Check")]
-    [SerializeField] private Transform groundCheck;
+    
     [SerializeField] private float groundRadius = 0.25f;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("Dissolve")]
+    [SerializeField] private Texture2D dissolveTexture;
+    [SerializeField] private Color dissolveColor = Color.red;
+    [SerializeField] private float delayBeforeStart = 3f;
+    [SerializeField] private float dissolveTime = 2f;
 
-    
+
+    [SerializeField] private float dissolveProgress = 0.3f;
+
     
 
     Rigidbody _rigidbodySlime;
@@ -49,6 +60,11 @@ public class SlimeController : MonoBehaviour, IHittable
 
         _rigidbodySlime = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+
+        _lifeBar = GetComponentInChildren<Slider>();
+        _lifeBar.maxValue = maxLife;
+        _lifeBar.value = maxLife;
+        Life = maxLife;
     }
 
     void Update()
@@ -67,11 +83,22 @@ public class SlimeController : MonoBehaviour, IHittable
 
     void CheckGrounded()
     {
-        _isGrounded = Physics.CheckSphere(
-            groundCheck.position,
-            groundRadius,
-            groundLayer
-        );
+        Collider[] hits = Physics.OverlapSphere(
+      transform.position,
+      groundRadius,
+      groundLayer
+  );
+
+        _isGrounded = false;
+
+        foreach (Collider c in hits)
+        {
+            if (c.transform != transform)
+            {
+                _isGrounded = true;
+                break;
+            }
+        }
     }
 
     void DetectLanding()
@@ -121,15 +148,15 @@ public class SlimeController : MonoBehaviour, IHittable
         _isAttacking = true;
 
 
-        var CollisionAttack = Physics.OverlapSphere(transform.position, distanceToAttack+0.5f, LayerMask.NameToLayer("Hittable"));
-        foreach(Collider hit in CollisionAttack)
+        var CollisionAttack = Physics.OverlapSphere(transform.position, distanceToAttack + 0.5f, AttackLayer);
+        foreach (Collider hit in CollisionAttack)
         {
             if (hit.CompareTag("Player") && hit.GetComponent<IHittable>() != null)
             {
                 hit.GetComponent<IHittable>().Hit(20);
             }
         }
-        
+
         StartCoroutine(AttackCooldown());
     }
 
@@ -152,15 +179,17 @@ public class SlimeController : MonoBehaviour, IHittable
         // Evitar acercarse demasiado al player
         if (distance < jumpDistance)
         {
-            distanceToJump = Mathf.Max(
-                distance - distanceToAttack,
-                0.5f
-            );
+            distanceToJump = distance - distanceToAttack - 0.5f
+            ;
+        }
+        if (distanceToJump <= 0)
+        {
+            distanceToJump = 0.1f;
         }
 
         Vector3 start = transform.position;
 
-        // Dirección horizontal
+        // Direcciï¿½n horizontal
         Vector3 direction =
             (_playerController.transform.position - start);
 
@@ -174,7 +203,7 @@ public class SlimeController : MonoBehaviour, IHittable
         Vector3 endPoint =
             start + direction * distanceToJump;
 
-        // Física del salto
+        // Fï¿½sica del salto
         float gravity = Mathf.Abs(Physics.gravity.y);
 
         // Velocidad vertical
@@ -212,10 +241,10 @@ public class SlimeController : MonoBehaviour, IHittable
         // Detener movimiento residual
         _rigidbodySlime.linearVelocity = Vector3.zero;
 
-        // Animación squash / recover
+        // Animaciï¿½n squash / recover
         _animator.SetTrigger("Landing");
 
-        // Esperar mientras está aplastado
+        // Esperar mientras estï¿½ aplastado
         yield return new WaitForSeconds(recoverTime);
 
         // Puede volver a actuar
@@ -224,23 +253,23 @@ public class SlimeController : MonoBehaviour, IHittable
 
     void OnDrawGizmosSelected()
     {
-        if (groundCheck == null)
-            return;
+       
 
         Gizmos.color = Color.green;
 
         Gizmos.DrawWireSphere(
-            groundCheck.position,
+            transform.position,
             groundRadius
         );
 
-        
+
     }
 
-    public  void Hit(float damage)
+    public void Hit(float damage)
     {
         if (_isDeath) return;
         Life -= damage;
+        _lifeBar.value = Life;
 
         if (Life <= 0)
         {
@@ -254,12 +283,46 @@ public class SlimeController : MonoBehaviour, IHittable
         Debug.Log("DEath");
         _animator.SetTrigger("Death");
         _isDeath = true;
-        StartCoroutine("waitToDestroy");
+        StartCoroutine("DissolveAfterDelay");
     }
 
-    IEnumerator waitToDestroy()
+
+
+    private IEnumerator DissolveAfterDelay()
     {
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSeconds(delayBeforeStart);
+
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
+        foreach (Renderer r in renderers)
+        {
+            Material[] mats = r.materials;
+
+            for (int i = 0; i < mats.Length; i++)
+            {
+                mats[i].shader = Shader.Find("Custom/Dissolve");
+                mats[i].SetTexture("_DissolveTex", dissolveTexture);
+                mats[i].SetColor("_DissolveColor", dissolveColor);
+            }
+        }
+
+        while (dissolveProgress < 1f)
+        {
+            dissolveProgress += Time.deltaTime / dissolveTime;
+
+            foreach (Renderer r in renderers)
+            {
+                Material[] mats = r.materials;
+
+                for (int i = 0; i < mats.Length; i++)
+                {
+                    mats[i].SetFloat("_DissolveThreshold", dissolveProgress);
+                }
+            }
+
+            yield return null;
+        }
+
         Destroy(gameObject);
     }
 }
