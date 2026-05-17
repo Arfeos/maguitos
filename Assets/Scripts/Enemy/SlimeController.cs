@@ -47,9 +47,11 @@ public class SlimeController : MonoBehaviour, IHittable
 
     bool _isJumping;
 
-    bool _isAttacking;
+    
 
     bool _isDeath;
+
+    private Coroutine nextAction;
 
     void Start()
     {
@@ -64,6 +66,7 @@ public class SlimeController : MonoBehaviour, IHittable
         if (_playerController == null)
             return;
         if (_isDeath) return;
+
         CheckGrounded();
 
         DetectLanding();
@@ -71,6 +74,11 @@ public class SlimeController : MonoBehaviour, IHittable
         CheckState();
 
         _wasGrounded = _isGrounded;
+
+        if (nextAction == null )
+        {
+            nextAction = StartCoroutine(waitToNextAction());
+        }
     }
 
     void CheckGrounded()
@@ -119,6 +127,8 @@ public class SlimeController : MonoBehaviour, IHittable
         {
             Move(distance);
         }
+
+
     }
 
     float CalculateDistance()
@@ -134,10 +144,10 @@ public class SlimeController : MonoBehaviour, IHittable
 
     void Attack()
     {
-        _nextActionTime = false;
+        
 
         _animator.SetTrigger("Attack");
-        _isAttacking = true;
+        
 
 
         var CollisionAttack = Physics.OverlapSphere(transform.position, distanceToAttack + 0.5f, AttackLayer);
@@ -149,20 +159,13 @@ public class SlimeController : MonoBehaviour, IHittable
             }
         }
 
-        StartCoroutine(AttackCooldown());
+        
     }
 
-    IEnumerator AttackCooldown()
-    {
-        yield return new WaitForSeconds(attackCooldown);
-
-        _nextActionTime = true;
-        _isAttacking = false;
-    }
-
+ 
     void Move(float distance)
     {
-        _nextActionTime = false;
+        
 
         _animator.SetTrigger("Jump");
 
@@ -239,8 +242,6 @@ public class SlimeController : MonoBehaviour, IHittable
         // Esperar mientras está aplastado
         yield return new WaitForSeconds(recoverTime);
 
-        // Puede volver a actuar
-        _nextActionTime = true;
     }
 
     void OnDrawGizmosSelected()
@@ -315,5 +316,13 @@ public class SlimeController : MonoBehaviour, IHittable
         }
 
         Destroy(gameObject);
+    }
+
+    private IEnumerator waitToNextAction()
+    {
+        _nextActionTime = false;
+        yield return new WaitForSecondsRealtime(2);
+        _nextActionTime = true;
+        nextAction = null;
     }
 }
