@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6581506467944658431}
   - component: {fileID: 8550865144527236268}
   - component: {fileID: 5535067059755614422}
-  - component: {fileID: 1156588195234217396}
   - component: {fileID: 1627110680731991025}
   m_Layer: 0
   m_Name: Runa
@@ -252,28 +251,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825257541650654306}
-  m_Mesh: {fileID: 0}
---- !u!64 &1156588195234217396
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825257541650654306}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!95 &1627110680731991025
 Animator:
@@ -5153,7 +5130,7 @@ GameObject:
   - component: {fileID: 7635591887834411652}
   - component: {fileID: 3205983648885769279}
   - component: {fileID: 5960667943782215272}
-  - component: {fileID: 3892611168401556024}
+  - component: {fileID: 2276652584388431104}
   m_Layer: 0
   m_Name: Runa
   m_TagString: Untagged
@@ -5421,8 +5398,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8438288512406693989}
   m_Mesh: {fileID: 0}
---- !u!64 &3892611168401556024
-MeshCollider:
+--- !u!65 &2276652584388431104
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5439,7 +5416,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 2, y: 1, z: 1.9999999}
+  m_Center: {x: 0, y: 0.18, z: 0}
