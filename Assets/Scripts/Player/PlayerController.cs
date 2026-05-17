@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour,IHittable
     private IAudioService _audioService;
     private Animator _animator;
 
+    
+
     private void Awake()
     {
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);

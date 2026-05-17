@@ -15,7 +15,7 @@ public class SlimeController : MonoBehaviour, IHittable
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private float damage = 20;
     [SerializeField] private float Life = 100f;
-    
+
 
     [Header("Landing")]
     [SerializeField] private float recoverTime = 2f;
@@ -25,9 +25,16 @@ public class SlimeController : MonoBehaviour, IHittable
     [SerializeField] private float groundRadius = 0.25f;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("Dissolve")]
+    [SerializeField] private Texture2D dissolveTexture;
+    [SerializeField] private Color dissolveColor = Color.red;
+    [SerializeField] private float delayBeforeStart = 3f;
+    [SerializeField] private float dissolveTime = 2f;
 
-    
-    
+
+    [SerializeField] private float dissolveProgress = 0.3f;
+
+
 
     Rigidbody _rigidbodySlime;
     Animator _animator;
@@ -121,15 +128,15 @@ public class SlimeController : MonoBehaviour, IHittable
         _isAttacking = true;
 
 
-        var CollisionAttack = Physics.OverlapSphere(transform.position, distanceToAttack+0.5f, LayerMask.NameToLayer("Hittable"));
-        foreach(Collider hit in CollisionAttack)
+        var CollisionAttack = Physics.OverlapSphere(transform.position, distanceToAttack + 0.5f, LayerMask.NameToLayer("Hittable"));
+        foreach (Collider hit in CollisionAttack)
         {
             if (hit.CompareTag("Player") && hit.GetComponent<IHittable>() != null)
             {
                 hit.GetComponent<IHittable>().Hit(20);
             }
         }
-        
+
         StartCoroutine(AttackCooldown());
     }
 
@@ -234,10 +241,10 @@ public class SlimeController : MonoBehaviour, IHittable
             groundRadius
         );
 
-        
+
     }
 
-    public  void Hit(float damage)
+    public void Hit(float damage)
     {
         if (_isDeath) return;
         Life -= damage;
@@ -254,12 +261,46 @@ public class SlimeController : MonoBehaviour, IHittable
         Debug.Log("DEath");
         _animator.SetTrigger("Death");
         _isDeath = true;
-        StartCoroutine("waitToDestroy");
+        StartCoroutine("DissolveAfterDelay");
     }
 
-    IEnumerator waitToDestroy()
+
+
+    private IEnumerator DissolveAfterDelay()
     {
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSeconds(delayBeforeStart);
+
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
+        foreach (Renderer r in renderers)
+        {
+            Material[] mats = r.materials;
+
+            for (int i = 0; i < mats.Length; i++)
+            {
+                mats[i].shader = Shader.Find("Custom/Dissolve");
+                mats[i].SetTexture("_DissolveTex", dissolveTexture);
+                mats[i].SetColor("_DissolveColor", dissolveColor);
+            }
+        }
+
+        while (dissolveProgress < 1f)
+        {
+            dissolveProgress += Time.deltaTime / dissolveTime;
+
+            foreach (Renderer r in renderers)
+            {
+                Material[] mats = r.materials;
+
+                for (int i = 0; i < mats.Length; i++)
+                {
+                    mats[i].SetFloat("_DissolveThreshold", dissolveProgress);
+                }
+            }
+
+            yield return null;
+        }
+
         Destroy(gameObject);
     }
 }
