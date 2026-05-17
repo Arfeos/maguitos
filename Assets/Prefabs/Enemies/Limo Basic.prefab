@@ -145,15 +145,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38b47f4acb95918429506e0c66e31fa1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.97181
+      value: 257.71237
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38b47f4acb95918429506e0c66e31fa1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 68.642006
+      value: -19.727013
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38b47f4acb95918429506e0c66e31fa1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.372162
+      value: 9.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38b47f4acb95918429506e0c66e31fa1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -379,16 +379,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlimeController
   jumpDistance: 3
   jumpHeight: 2
-  distanceToAttack: 4
+  distanceToAttack: 2.5
   attackCooldown: 2
   damage: 20
   Life: 100
+  AttackLayer:
+    serializedVersion: 2
+    m_Bits: 64
   recoverTime: 2
-  groundCheck: {fileID: 5759887356437249405}
-  groundRadius: 0.25
+  groundRadius: 0.82
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
+  dissolveTexture: {fileID: 0}
+  dissolveColor: {r: 0, g: 1, b: 0.86911154, a: 1}
+  delayBeforeStart: 3
+  dissolveTime: 2
+  dissolveProgress: 0.3
 --- !u!65 &8648367549180710118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -408,7 +415,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Size: {x: 1.5, y: 0.8, z: 1.5}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!4 &5759887356437249405 stripped
 Transform:

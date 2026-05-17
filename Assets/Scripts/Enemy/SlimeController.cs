@@ -15,13 +15,14 @@ public class SlimeController : MonoBehaviour, IHittable
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private float damage = 20;
     [SerializeField] private float Life = 100f;
+    [SerializeField] private LayerMask AttackLayer;
 
 
     [Header("Landing")]
     [SerializeField] private float recoverTime = 2f;
 
     [Header("Ground Check")]
-    [SerializeField] private Transform groundCheck;
+    
     [SerializeField] private float groundRadius = 0.25f;
     [SerializeField] private LayerMask groundLayer;
 
@@ -34,7 +35,7 @@ public class SlimeController : MonoBehaviour, IHittable
 
     [SerializeField] private float dissolveProgress = 0.3f;
 
-
+    
 
     Rigidbody _rigidbodySlime;
     Animator _animator;
@@ -74,11 +75,22 @@ public class SlimeController : MonoBehaviour, IHittable
 
     void CheckGrounded()
     {
-        _isGrounded = Physics.CheckSphere(
-            groundCheck.position,
-            groundRadius,
-            groundLayer
-        );
+        Collider[] hits = Physics.OverlapSphere(
+      transform.position,
+      groundRadius,
+      groundLayer
+  );
+
+        _isGrounded = false;
+
+        foreach (Collider c in hits)
+        {
+            if (c.transform != transform)
+            {
+                _isGrounded = true;
+                break;
+            }
+        }
     }
 
     void DetectLanding()
@@ -128,7 +140,7 @@ public class SlimeController : MonoBehaviour, IHittable
         _isAttacking = true;
 
 
-        var CollisionAttack = Physics.OverlapSphere(transform.position, distanceToAttack + 0.5f, LayerMask.NameToLayer("Hittable"));
+        var CollisionAttack = Physics.OverlapSphere(transform.position, distanceToAttack + 0.5f, AttackLayer);
         foreach (Collider hit in CollisionAttack)
         {
             if (hit.CompareTag("Player") && hit.GetComponent<IHittable>() != null)
@@ -159,10 +171,12 @@ public class SlimeController : MonoBehaviour, IHittable
         // Evitar acercarse demasiado al player
         if (distance < jumpDistance)
         {
-            distanceToJump = Mathf.Max(
-                distance - distanceToAttack,
-                0.5f
-            );
+            distanceToJump = distance - distanceToAttack - 0.5f
+            ;
+        }
+        if (distanceToJump <= 0)
+        {
+            distanceToJump = 0.1f;
         }
 
         Vector3 start = transform.position;
@@ -231,13 +245,12 @@ public class SlimeController : MonoBehaviour, IHittable
 
     void OnDrawGizmosSelected()
     {
-        if (groundCheck == null)
-            return;
+       
 
         Gizmos.color = Color.green;
 
         Gizmos.DrawWireSphere(
-            groundCheck.position,
+            transform.position,
             groundRadius
         );
 
