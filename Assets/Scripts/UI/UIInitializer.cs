@@ -13,7 +13,7 @@ public class UIInitializer : MonoBehaviour
         //TODO: crear un comprobante para ver si el control ya esta en UI
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
         uiService = AppContainer.Get<IUIService>();
-        //uiService.RegisterFirstButton(firstButton);
+        uiService.RegisterFirstButton(firstButton);
     }
 
     // Update is called once per frame
