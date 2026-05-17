@@ -23,6 +23,9 @@ public class teleporter_controller : MonoBehaviour
     [Header("Sonido de teletransporte")]
     [SerializeField] private AudioClip sonidoTeletransporte;
 
+    [Header("Manager de hordas")]
+    [SerializeField] WaveManager WaveManger;
+
     // ── Estado interno ──────────────────────────────────────────────────────
     private bool is_inside = false;
     private Coroutine teleportCoroutine;
@@ -107,6 +110,7 @@ public class teleporter_controller : MonoBehaviour
 
         // Si el fade estaba a medias, vuelve a transparente
         StartCoroutine(FadeRoutine(to: 0f));
+        
     }
 
     // ── Coroutina principal ─────────────────────────────────────────────────
@@ -137,7 +141,7 @@ public class teleporter_controller : MonoBehaviour
 
         //Fade de vuelta a transparente
         yield return StartCoroutine(FadeRoutine(to: 0f));
-
+        WaveManger.beginHorde();
         teleportCoroutine = null;
     }
 
