@@ -16,17 +16,19 @@ MonoBehaviour:
   cast_Type: 2
   spell_importance: 0
   manaCost: 20
-  MaxCharge: 3
+  MaxCharge: 2
   currentCharge: 0
   ChargeTimePerUnit: 0.5
   velocity: 1
   damage: 50
-  lifeTime: 100
+  lifeTime: 200
   shootDelay: 1
   spreadIntensity: 0
   producesLine: 1
+  penetrates: 1
+  penetrationlevel: 3
   CosteSlots: 5
-  RayAliveTime: 1
+  RayAliveTime: 0.5
   nombreHechizo: SolarFlare
   RayMaterial:
   - {fileID: 2100000, guid: dbc6c4bb9076c2946a269fa6b95843c9, type: 2}

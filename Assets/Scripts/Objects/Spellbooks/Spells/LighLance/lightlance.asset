@@ -20,11 +20,13 @@ MonoBehaviour:
   currentCharge: 0
   ChargeTimePerUnit: 0
   velocity: 1
-  damage: 15
-  lifeTime: 10
+  damage: 25
+  lifeTime: 20
   shootDelay: 0.5
   spreadIntensity: 0.01
   producesLine: 1
+  penetrates: 0
+  penetrationlevel: 1
   CosteSlots: 2
   RayAliveTime: 0.5
   nombreHechizo: Light lance
@@ -34,6 +36,7 @@ MonoBehaviour:
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
   spawnSound: {fileID: 8300000, guid: f1cb5d83282f2904a85f73111d068616, type: 3}
+  chargeSound: {fileID: 0}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
   canCast: 1

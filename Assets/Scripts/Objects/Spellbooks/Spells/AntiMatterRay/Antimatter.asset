@@ -25,6 +25,8 @@ MonoBehaviour:
   shootDelay: 1
   spreadIntensity: 0
   producesLine: 1
+  penetrates: 1
+  penetrationlevel: 10
   CosteSlots: 10
   RayAliveTime: 2
   nombreHechizo: Antimater
@@ -35,6 +37,7 @@ MonoBehaviour:
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
   spawnSound: {fileID: 0}
+  chargeSound: {fileID: 0}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
   canCast: 1

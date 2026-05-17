@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public partial class SpellBase : MonoBehaviour
@@ -149,25 +150,53 @@ public partial class SpellBase : MonoBehaviour
     private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
         RaycastHit hit;
-
+        int nivelDePenetracion = spell.spell.penetrationlevel;
         Vector3 direction = CalculateDispersion(spellSpawn.forward);
         Vector3 endPoint;
-
-        if (Physics.Raycast(spellSpawn.position, direction, out hit, spell.spell.lifeTime, layersToHit))
+        if (spell.spell.penetrates)
         {
-            endPoint = hit.point;
-            if(hit.collider.gameObject.GetComponent<IHittable>() != null)
+            //Raycast con penetración
+            RaycastHit[] hits = Physics.RaycastAll(spellSpawn.position, direction, spell.spell.lifeTime, layersToHit);
+            if(hits.Count() >= nivelDePenetracion)
             {
-                hit.collider.gameObject.GetComponent<IHittable>().Hit(spell.spell.damage);
-                Debug.Log("ObjetoGolpeado");
+                endPoint = hits[nivelDePenetracion - 1].point;
             }
-            
+            else
+            {
+                endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
+            }
+            foreach(RaycastHit _hit in hits)
+            {
+                if (_hit.collider.gameObject.GetComponent<IHittable>() != null)
+                {
+                    _hit.collider.gameObject.GetComponent<IHittable>().Hit(spell.spell.damage);
+                    Debug.Log("ObjetoGolpeado");
+                }
+            }
         }
         else
         {
-            endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
-        }
+            //Raycast sin penetracion
+            if (Physics.Raycast(spellSpawn.position, direction, out hit, spell.spell.lifeTime, layersToHit))
+            {
+                endPoint = hit.point;
+                if (hit.collider.gameObject.GetComponent<IHittable>() != null)
+                {
+                    hit.collider.gameObject.GetComponent<IHittable>().Hit(spell.spell.damage);
+                    Debug.Log("ObjetoGolpeado");
+                }
 
+            }
+            else
+            {
+                endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
+            }
+        }
+        
+        
+
+
+        //Producir la linea
         if (spell.spell.producesLine)
         {
             var spellService = AppContainer.Get<ISpellService>();
