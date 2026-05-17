@@ -10,7 +10,7 @@ public class AudioService : IAudioService
 
     private List<AudioSource> _sfxSources = new();
 
-    private float _minInterval = 0.01f;
+    private float _minInterval = 0.3f;
 
     private Dictionary<AudioClip, float> _lastPlayTime = new();
     private float _musicVolume = 1f;
