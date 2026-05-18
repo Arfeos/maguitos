@@ -45926,6 +45926,14 @@ PrefabInstance:
       propertyPath: Mapcenter
       value: 
       objectReference: {fileID: 1594526121}
+    - target: {fileID: 3743467397682995237, guid: 7f2d5b691e31a964db9192f5b5824752, type: 3}
+      propertyPath: enemy.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743467397682995237, guid: 7f2d5b691e31a964db9192f5b5824752, type: 3}
+      propertyPath: 'enemy.Array.data[2]'
+      value: 
+      objectReference: {fileID: 4946337380501350343, guid: fc1c5fb8c3ead2b4385c836001b3a515, type: 3}
     - target: {fileID: 4209381590544508780, guid: 7f2d5b691e31a964db9192f5b5824752, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
