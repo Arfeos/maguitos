@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Net;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Unity.Netcode;
 using static SpellBase;
-using System.Net;
 
 public class StaffController : NetworkBehaviour
 {
@@ -131,7 +132,17 @@ public class StaffController : NetworkBehaviour
             endPoint = position + direction * ActualSpell.spell.lifeTime;
         }
 
-        DrawRayClientRpc(position, endPoint);
+
+        if (ActualSpell.spell.spell_Type.ToString() == "ray")
+        {
+            DrawRayClientRpc(position, endPoint);
+        }
+        //else if(ActualSpell.spell.spell_Type.ToString() == "ball")
+        //{
+            
+        //    DrawBallClientRpc(spellSpawn.position, spellSpawn.forward, _characterService.getSpell(_characterService.getIndex()).spell.velocity, MaterialNames.fire);
+        //}
+        
     }
 
     [ClientRpc]
@@ -142,8 +153,34 @@ public class StaffController : NetworkBehaviour
         spellService.ShootRay(start, end);
     }
 
+    //[ClientRpc]
+    //private void DrawBallClientRpc(Vector3 start, Vector3 direction, float velocity, MaterialNames material)
+    //{
+    //    var spellService = AppContainer.Get<ISpellService>();
+    //    spellService.ShootBall(start, direction, velocity, material.ToString());
+    //}
 
-    private void CargarHechizo(SpellBase ActualSpell)
+    //public void ApplyMaterial(MaterialNames materials)
+    //{
+    //    int index = (int)currentType;
+
+    //    // Seguridad
+    //    if (materials == null || materials.Lenght <= index)
+    //    {
+    //        return;
+    //    }
+
+    //    if (targetRenderer == null)
+    //    {
+    //        Debug.LogWarning("No hay Renderer asignado");
+    //        return;
+    //    }
+
+    //    targetRenderer.material = materials[index];
+    //}
+
+
+private void CargarHechizo(SpellBase ActualSpell)
     {
 
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);

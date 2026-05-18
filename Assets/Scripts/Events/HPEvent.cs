@@ -1,4 +1,4 @@
 public class HPEvent : GameEventBase
 {
-    public int HPToChange;    
+    public int HPToChange;
 }

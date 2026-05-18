@@ -11,6 +11,80 @@ public class CharacterService : ICharacterService
     private int Curretlife = 100;
     private int mana = 100;
     private int manaActual = 100;
+
+    private PlayerNetworkHealth _networkHealth;
+
+    private PlayerNetworkHealth GetNetworkHealth()
+    {
+        if (_networkHealth == null)
+            _networkHealth = GameObject.FindFirstObjectByType<PlayerNetworkHealth>();
+        return _networkHealth;
+    }
+
+    public void TakeDamage(int damageTaken)
+    {
+        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
+
+        var networkHealth = GetNetworkHealth();
+        if (networkHealth != null)
+        {
+            networkHealth.TakeDamageRpc(damageTaken);
+            return;
+        }
+        Curretlife -= damageTaken;
+        PublishHPEvent();
+        if (Curretlife < 1) Die();
+    }
+
+    public void Heal(int amountHealed)
+    {
+        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
+
+        var networkHealth = GetNetworkHealth();
+        if (networkHealth != null)
+        {
+            networkHealth.HealRpc(amountHealed);
+            return;
+        }
+
+        if (Curretlife + amountHealed > life) Curretlife = life;
+        else Curretlife += amountHealed;
+        PublishHPEvent();
+    }
+
+    public void SyncHealth(int newHealth)
+    {
+        Curretlife = newHealth;
+        PublishHPEvent();
+        if (Curretlife < 1) Die();
+    }
+
+    private void PublishHPEvent()
+    {
+        HPEvent hpEvent = new HPEvent();
+        hpEvent.HPToChange = Curretlife;
+        _eventService.Publish(hpEvent);
+    }
+
+    //public void Heal(int amountHealed)
+    //{
+    //    if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
+    //    if (Curretlife + amountHealed > life) Curretlife = life;
+    //    else Curretlife += amountHealed;
+    //    HPEvent hpEvent = new HPEvent();
+    //    hpEvent.HPToChange = Curretlife;
+    //    _eventService.Publish(hpEvent);
+    //}
+    //public void TakeDamage(int damageTaken)
+    //{
+    //    if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
+    //    this.Curretlife -= damageTaken;
+    //    HPEvent hpEvent = new HPEvent();
+    //    hpEvent.HPToChange = Curretlife;
+    //    _eventService.Publish(hpEvent);
+    //    if (this.Curretlife < 1) Die();
+    //}
+
     public void AddMana(int manaAniadir)
     {
         if (manaActual + manaAniadir > mana)
@@ -198,25 +272,6 @@ public class CharacterService : ICharacterService
         }
 
         return false;
-    }
-
-    public void Heal(int amountHealed)
-    {
-        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
-        if (Curretlife + amountHealed > life) Curretlife = life;
-        else Curretlife += amountHealed;
-        HPEvent hpEvent = new HPEvent();
-        hpEvent.HPToChange = Curretlife;
-        _eventService.Publish(hpEvent);
-    }
-    public void TakeDamage(int damageTaken)
-    {
-        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
-        this.Curretlife -= damageTaken;
-        HPEvent hpEvent = new HPEvent();
-        hpEvent.HPToChange = Curretlife;
-        _eventService.Publish(hpEvent);
-        if (this.Curretlife < 1) Die();
     }
 
     public void Die()

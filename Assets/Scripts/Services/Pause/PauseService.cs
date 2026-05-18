@@ -1,4 +1,5 @@
 using System.Linq;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,14 +33,15 @@ public class PauseService : IPauseService
         if (PausepanelInstance != null) {
             if (!PausepanelInstance.activeInHierarchy)
             {
-                //if (tipo == GameType.offline) Time.timeScale = 0;
-                Time.timeScale = 0;
+                if (NetworkManager.Singleton.IsListening) Time.timeScale = 1;
+                    else Time.timeScale = 0;
+
                 PausepanelInstance.SetActive(true);
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
                 PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
             }
-            else {
+            else{
                 //if (tipo == GameType.offline) Time.timeScale = 1;
                 Time.timeScale = 1;
                 PausepanelInstance.SetActive(false);

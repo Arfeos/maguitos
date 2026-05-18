@@ -1,0 +1,43 @@
+using Unity.Netcode;
+using UnityEditor.MPE;
+using UnityEngine;
+
+public class PlayerNetworkHealth : NetworkBehaviour
+{
+    public NetworkVariable<int> health = new(100,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server);
+
+    private CharacterService _characterService;
+    private int maxLife = 100;
+
+    public override void OnNetworkSpawn()
+    {
+        _characterService = AppContainer.Get<CharacterService>();
+        health.OnValueChanged += OnHealthChanged;
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        health.OnValueChanged -= OnHealthChanged;
+    }
+
+    private void OnHealthChanged(int oldValue, int newValue)
+    {
+        if (!IsOwner) return;
+
+        _characterService.SyncHealth(newValue);
+    }
+
+    [Rpc(SendTo.Server)]
+    public void TakeDamageRpc(int damage, RpcParams rpcParams = default)
+    {
+        health.Value -= damage;
+    }
+    [Rpc(SendTo.Server)]
+    public void HealRpc(int amountHealed)
+    {
+        if (health.Value + amountHealed > maxLife) health.Value = maxLife;
+        else health.Value += amountHealed;
+    }
+}

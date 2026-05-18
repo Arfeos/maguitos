@@ -21,6 +21,7 @@ public interface ICharacterService
     public int CheckSpellCapacity();
     public void TakeDamage(int damageTaken);
     public void Heal(int amountHealed);
+    public void SyncHealth(int newHealth);
 
     public void Die();
 

@@ -1,4 +1,7 @@
+using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public partial class SpellBase : MonoBehaviour
@@ -8,6 +11,8 @@ public partial class SpellBase : MonoBehaviour
 
     public bool canCast { get; private set; } = true; 
     public bool isCasting { get; private set; } = false;
+
+    [SerializeField] private List<Material> materials;
 
     Coroutine CastingSpellCoroutine;
 

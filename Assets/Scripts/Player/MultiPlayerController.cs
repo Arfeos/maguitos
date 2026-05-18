@@ -1,16 +1,28 @@
 using Unity.Netcode;
+using Unity.Netcode.Components;
 using Unity.VisualScripting;
 using UnityEditor.MPE;
 using UnityEditor.PackageManager;
 using UnityEngine;
-public class MultiPlayerController : NetworkBehaviour
+public class MultiPlayerController : NetworkBehaviour, IHittable
 {
+    public NetworkVariable<float> health = new(100f,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server);
+
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;
+    [SerializeField] private AudioClip WalkSound;
 
     [Header("Jump")]
     [SerializeField] private float jumpHeight = 1f;
     private bool isJumping;
+
+    [Header(" ")]
+    [SerializeField] private float Sensitivity = 0.5f;
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private int xDirection = 1;
+    [SerializeField] private int yDirection = 1;
 
     [Header("Mouse")]
     [SerializeField] private float mouseSensitivity = 1f;
@@ -22,12 +34,22 @@ public class MultiPlayerController : NetworkBehaviour
     [SerializeField] private float crouchHeight = 0.5f;
     [SerializeField] private float crouchSpeed = 8f;
 
+    [Header("Center")]
+    [SerializeField] private float crouchCenter = 0.5f;
+    [SerializeField] private float standCenter = 1f;
+
     private CharacterController characterController;
     private float gravity = -9.8f;
     private float velocityY;
     private float previusVelocity;
     private bool isRunning;
     private bool isCrouching;
+
+    public NetworkVariable<Vector2> NetVelocity = new();
+    public NetworkVariable<bool> IsRunning = new();
+    public NetworkVariable<bool> IsCrouching = new();
+    public NetworkVariable<bool> OnAir = new();
+
 
     private float xRotation = 0f;
     private Vector2 dirAnimation;
@@ -41,21 +63,38 @@ public class MultiPlayerController : NetworkBehaviour
     NetworkVariableReadPermission.Everyone,
     NetworkVariableWritePermission.Owner);
 
+    private IPauseService _pauseService;
     private IEventService _eventService;
+    private ICharacterService _characterService;
+
+    private IProfileService _profileService;
+    private IAudioService _audioService;
     private Animator _animator;
+    private NetworkAnimator _networkAnimator;
     [SerializeField] private GameObject bodyModel;
+
+
 
     public override void OnNetworkSpawn()
     {
         characterController = GetComponent<CharacterController>();
         Debug.Log($"[Player] OnNetworkSpawn - IsOwner: {IsOwner} - Position: {transform.position}");
 
+        PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
+        characterController = GetComponent<CharacterController>();
         _eventService = AppContainer.Get<IEventService>();
+        _characterService = AppContainer.Get<ICharacterService>();
+        _audioService = AppContainer.Get<IAudioService>();
+        _profileService = AppContainer.Get<IProfileService>();
+        _pauseService = AppContainer.Get<IPauseService>();
+        _eventService.Subscribe<PreferenceChangeEvent>(updatePreferences);
         _animator = GetComponent<Animator>();
+        _networkAnimator = GetComponent<NetworkAnimator>();
         if (IsOwner)
         {
             foreach (var renderer in bodyModel.GetComponentsInChildren<Renderer>())
                 renderer.enabled = false;
+            updatePreferences();
         }
         
 
@@ -78,11 +117,13 @@ public class MultiPlayerController : NetworkBehaviour
     {
         if (IsOwner)
         {
-            LookMouse();
+            Look();
             Move();
             HandleCrouch();
             handleReload();
             handleChangeWeapon();
+            handlePause();
+            SendAnimationDataToServer();
             SetAnimation();
         }
         else
@@ -91,7 +132,7 @@ public class MultiPlayerController : NetworkBehaviour
         }
     }
 
-    private void LookMouse()
+    private void Look()
     {
         Vector2 mouseInput = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
@@ -107,18 +148,39 @@ public class MultiPlayerController : NetworkBehaviour
     private void Move()
     {
         var inputPlayer = PlayerInputManager.Actions.Player.Move.ReadValue<Vector2>();
+        dirAnimation = inputPlayer;
+        bool isWalking = inputPlayer.magnitude > 0.1f && characterController.isGrounded;
 
+        if (isWalking)
+        {
+
+
+            _audioService.PlayLoopSound(WalkSound, isRunning ? 1.5f : 1f);
+        }
+
+        else
+        {
+            _audioService.StopSound(WalkSound);
+        }
         if (characterController.isGrounded && velocityY < 0)
         {
             velocityY = -2f;
         }
+        if (PlayerInputManager.Actions.Player.Jump.WasPressedThisFrame() && characterController.isGrounded)
+        {
+            velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+        else if (!characterController.isGrounded)
+        {
+            velocityY += gravity * Time.deltaTime;
+        }
 
-        velocityY += gravity * Time.deltaTime;
-
-        Vector3 move = Vector3.zero;
+        var move = Vector3.zero;
 
         if (inputPlayer.magnitude > 0.1f)
         {
+
+
             move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
         }
 
@@ -153,8 +215,10 @@ public class MultiPlayerController : NetworkBehaviour
         }
 
         float targetHeight = isCrouching ? crouchHeight : standHeight;
+        float targetCenter = isCrouching ? crouchCenter : standCenter;
 
         characterController.height = Mathf.Lerp(characterController.height, targetHeight, Time.deltaTime * crouchSpeed);
+        characterController.center = new Vector3(0, Mathf.Lerp(characterController.center.y, targetCenter, Time.deltaTime * crouchSpeed), 0);
 
         Vector3 camPos = playerCamera.transform.localPosition;
         float targetY = isCrouching ? (crouchHeight/2) - 0.2f : (standHeight/2) - 0.2f;
@@ -168,6 +232,12 @@ public class MultiPlayerController : NetworkBehaviour
         if (PlayerInputManager.Actions.Player.Reload.WasPressedThisFrame())
         {
             ReloadEvent reloadEvent = new ReloadEvent();
+            _eventService.Publish(reloadEvent);
+        }
+        if (PlayerInputManager.Actions.Player.Previous.WasPressedThisFrame())
+        {
+            SpellChangeEvent reloadEvent = new SpellChangeEvent();
+            reloadEvent.cambio = -1;
             _eventService.Publish(reloadEvent);
         }
     }
@@ -188,6 +258,14 @@ public class MultiPlayerController : NetworkBehaviour
         }
     }
 
+    private void SendAnimationDataToServer()
+    {
+        NetVelocity.Value = dirAnimation;
+        IsRunning.Value = isRunning;
+        IsCrouching.Value = isCrouching;
+        OnAir.Value = !characterController.isGrounded;
+    }
+
     private void SetAnimation()
     {
         if (!characterController.isGrounded)
@@ -205,16 +283,43 @@ public class MultiPlayerController : NetworkBehaviour
 
 
 
-        _animator.SetFloat("VelocityX", dirAnimation.x);
-        _animator.SetFloat("VelocityY", dirAnimation.y);
+        _animator.SetFloat("VelocityX", NetVelocity.Value.x);
+        _animator.SetFloat("VelocityY", NetVelocity.Value.y);
 
-        _animator.SetBool("isCrouching", isCrouching);
-        _animator.SetBool("isRunning", isRunning);
+        _animator.SetBool("isRunning", IsRunning.Value);
+        _animator.SetBool("isCrouching", IsCrouching.Value);
+        _animator.SetBool("onAir", OnAir.Value);
 
     }
 
     private void ApplyRemoteRotation()
     {
         transform.rotation = Quaternion.Euler(0f, yaw.Value, 0f);
+    }
+
+    private void updatePreferences(GameEventBase game = null)
+    {
+        if (_profileService == null) return;
+        UserProfile profile = _profileService.getSelectedProfile();
+        if (profile != null)
+        {
+            Sensitivity = profile.settings.sensibility;
+            xDirection = profile.settings.axisXDirection;
+            yDirection = profile.settings.axisYDirection;
+        }
+    }
+
+    private void handlePause()
+    {
+        if (PlayerInputManager.Actions.Player.pause.WasPressedThisFrame() && !NetworkManager.Singleton.IsListening)
+        {
+            _pauseService.TogglePause();
+        }
+    }
+
+    public void Hit(float damage)
+    {
+        if (!IsServer) return;
+        _characterService.TakeDamage((int)damage);
     }
 }
