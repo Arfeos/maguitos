@@ -10,7 +10,7 @@ public class AudioService : IAudioService
 
     private List<AudioSource> _sfxSources = new();
 
-    private float _minInterval = 0.01f;
+    private float _minInterval = 0.3f;
 
     private Dictionary<AudioClip, float> _lastPlayTime = new();
     private float _musicVolume = 1f;
@@ -27,7 +27,7 @@ public class AudioService : IAudioService
     private void CreateMusicSource()
     {
         _musicSource = _audioRoot.AddComponent<AudioSource>();
-
+        Object.DontDestroyOnLoad(_musicSource);
         _musicSource.loop = true;
         _musicSource.volume = _musicVolume;
     }
@@ -80,6 +80,28 @@ public class AudioService : IAudioService
 
         source.Play();
     }
+    public void PlayLoopSound(AudioClip clip, float pitch = 1f)
+    {
+        if (clip == null)
+            return;
+
+        foreach (var sound in _sfxSources)
+        {
+            if (sound.clip == clip && sound.isPlaying)
+            {
+                sound.pitch = pitch;
+                return;
+            }
+        }
+
+        AudioSource source = GetOrCreateSFXSource();
+
+        source.clip = clip;
+        source.pitch = pitch;
+        source.loop = true;
+
+        source.Play();
+    }
 
     private AudioSource GetOrCreateSFXSource()
     {
@@ -115,5 +137,19 @@ public class AudioService : IAudioService
         _sfxSources.Clear();
 
         Object.Destroy(_musicSource);
+    }
+
+    public void StopSound(AudioClip clip)
+    {
+        if (clip == null)
+            return;
+
+        foreach (var source in _sfxSources)
+        {
+            if (source.clip == clip && source.isPlaying)
+            {
+                source.Stop();
+            }
+        }
     }
 }

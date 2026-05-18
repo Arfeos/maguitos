@@ -20,6 +20,8 @@ public class SpellBaseScriptable : ScriptableObject
     public float shootDelay = 1f;
     public float spreadIntensity = 0.1f;
     public bool producesLine = false;
+    public bool penetrates = false;
+    public int penetrationlevel = 1;
     public int CosteSlots = 1;
     public float RayAliveTime = 0.3f;
     public string nombreHechizo = "Change Spell name";
@@ -32,9 +34,10 @@ public class SpellBaseScriptable : ScriptableObject
 
 
     [Header("Spell sound")]
-    public AudioSource? spawnSound;
-    public AudioSource? airSound;
-    public AudioSource? hitSound;
+    public AudioClip? spawnSound;
+    public AudioClip? chargeSound;
+    public AudioClip? airSound;
+    public AudioClip? hitSound;
 
 
     public bool canCast = true;

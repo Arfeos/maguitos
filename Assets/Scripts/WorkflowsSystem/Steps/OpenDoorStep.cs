@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class OpenDoorStep : IStep
 {
@@ -12,15 +13,21 @@ public class OpenDoorStep : IStep
     private GameObject _door;
 
     // --- IStep ---
-    public string Name => "Abre la puerta";
-    public string Description
+    public LocalizedString Name { get => new LocalizedString { TableReference = "Steps", TableEntryReference = "openDoorName" }; }
+    public LocalizedString Description
     {
         get
         {
-            var moveAction = PlayerInputManager.Actions.Player.Attack;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
+            var openAction = PlayerInputManager.Actions.Player.Attack;
+            var keyNames = string.Join(" ", openAction.controls.Select(c => c.displayName));
 
-            return $"Apunta a la runa al lado de la puerta y dispara usando el botón {keyNames}";
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "openDoorDesc",
+                    Arguments = new object[] { keyNames }
+                };
         }
     }
 
@@ -49,7 +56,7 @@ public class OpenDoorStep : IStep
     private void HandleAction(InputAction.CallbackContext context)
     {
         CoroutineRunner.Instance.StartCoroutine(CheckforDoorOpen());
-        
+
     }
 
     private IEnumerator CheckforDoorOpen()

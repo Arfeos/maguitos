@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1955604468253139086}
   - component: {fileID: 8734875672837596798}
   - component: {fileID: 8339491485299988158}
+  - component: {fileID: 5050026144720134755}
   m_Layer: 0
   m_Name: Buton RUnicp
   m_TagString: Untagged
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 433
+  m_VersionIndex: 436
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -320,6 +321,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6, y: 1, z: 1.6}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5050026144720134755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784430889548098568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058004a76ab76624595acffac1cde7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Opendoor
+  PuertaAAbrir: {fileID: 0}
 --- !u!1 &9165258939849561442
 GameObject:
   m_ObjectHideFlags: 0

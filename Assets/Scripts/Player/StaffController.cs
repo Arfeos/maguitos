@@ -15,20 +15,22 @@ public class StaffController : NetworkBehaviour
     [Header("Configuracion de Objetos")]
     [SerializeField] private LayerMask layersToHit;
     [Header("prueba sonido")]
-    [SerializeField] private AudioClip _audioClip;
-    private IAudioService _audioService;
+    //private IAudioService _audioService;
     private IEventService _eventService;
     private ISpellService _spellService;
     private ICharacterService _characterService;
     private Coroutine _coroutineCharge;
     private Coroutine _coroutineReload;
+    
     void Awake()
     {
         //PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
-        _audioService = AppContainer.Get<IAudioService>();
+        //_audioService = AppContainer.Get<IAudioService>();
         _eventService = AppContainer.Get<IEventService>();
         _spellService = AppContainer.Get<ISpellService>();
         _characterService = AppContainer.Get<ICharacterService>();
+
+        
     }
 
     private void OnEnable()
@@ -80,21 +82,16 @@ public class StaffController : NetworkBehaviour
         }
             }
 
+ 
 
 
     private void LanzarHechizo(SpellBase ActualSpell)
     {
-        Debug.Log($"[LanzarHechizo] CanCast: {ActualSpell.canCast} IsCasting: {ActualSpell.isCasting} Mana: {_characterService.CheckMana()} ManaCost: {ActualSpell.spell.manaCost}");
-
-        if (!ActualSpell.canCast || ActualSpell.isCasting) return;
-        if (_characterService.CheckMana() <= ActualSpell.spell.manaCost) return;
-
-        if (_audioService != null) {
-            _audioService.PlaySound(_audioClip);
-        }
-        if(_coroutineCharge != null) StopCoroutine(_coroutineCharge);
+        if (_coroutineCharge != null) { 
+        StopCoroutine(_coroutineCharge);
         _coroutineCharge = null;
-
+          ActualSpell.stopCharginSound();
+        }
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;
 
@@ -148,10 +145,7 @@ public class StaffController : NetworkBehaviour
 
     private void CargarHechizo(SpellBase ActualSpell)
     {
-        if (_audioService != null)
-        {
-            _audioService.PlaySound(_audioClip);
-        }
+
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;
         if (_coroutineCharge != null) return;

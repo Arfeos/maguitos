@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class CrouchStep : IStep
 {
@@ -10,15 +11,21 @@ public class CrouchStep : IStep
     private int _keyPressedTimes = 0;
 
     // --- IStep ---
-    public string Name => "Paso por debajo del pilar caido";
-    public string Description
+    public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "crouchName" };}
+    public LocalizedString Description
     {
         get
         {
-            var moveAction = PlayerInputManager.Actions.Player.Crouch;
-            var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
+            var crouchAction = PlayerInputManager.Actions.Player.Crouch;
+            var keyNames = string.Join(" ", crouchAction.controls.Select(c => c.displayName));
 
-            return $"Acercate al primer pilar caido y mientras te mueves hacia delante presiona la tecla {keyNames}";
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "crouchDesc",
+                    Arguments = new object[] { keyNames }
+                };
         }
     }
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }

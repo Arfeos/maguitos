@@ -1,0 +1,138 @@
+﻿using UnityEngine;
+
+public class ballController : MonoBehaviour
+{
+    [Header("Flotación")]
+    [Tooltip("Altura máxima del movimiento de flotación")]
+    public float alturaFlotacion = 0.3f;
+
+    [Tooltip("Velocidad de la animación flotante")]
+    public float velocidadFlotacion = 2f;
+
+    [Header("Detección del jugador")]
+    [Tooltip("Tag del jugador en la escena")]
+    public string tagJugador = "Player";
+
+    [Tooltip("Distancia a la que el objeto empieza a perseguir al jugador")]
+    public float radioDeteccion = 5f;
+
+    [Tooltip("Distancia a la que el objeto se destruye (recogida)")]
+    public float radioRecogida = 0.5f;
+
+    [Header("Movimiento de persecución")]
+    [Tooltip("Velocidad a la que el objeto se mueve hacia el jugador")]
+    public float velocidadPersecucion = 4f;
+
+    [Tooltip("Altura a la que vuela el objeto mientras persigue al jugador")]
+    public float alturaVuelo = 1f;
+
+    [Tooltip("Velocidad de interpolación para subir a alturaVuelo")]
+    public float suavizadoAltura = 5f;
+
+    [Header("Efectos (opcional)")]
+    [Tooltip("Partículas que se reproducen al recogerse (puede dejarse vacío)")]
+    public GameObject efectoRecogida;
+
+    [Header("Valores de recogida")]
+    [Tooltip("Efectos que se añaden al jugador al hacer contacto")]
+    public int mana;
+    public int vida;
+    // ── Estado interno ──────────────────────────────────────────────────────
+    private Transform jugador;
+    private Vector3 posicionInicial;
+    private bool persiguiendo = false;
+    private ICharacterService _characterService;
+
+    // ── Unity Lifecycle ─────────────────────────────────────────────────────
+    private void Awake()
+    {
+        _characterService = AppContainer.Get<ICharacterService>();
+
+
+    }
+    void Start()
+    {
+        posicionInicial = transform.position;
+
+        // Buscar al jugador por tag
+        GameObject objJugador = GameObject.FindGameObjectWithTag(tagJugador);
+        if (objJugador != null)
+        {
+            jugador = objJugador.transform;
+        }
+        else
+        {
+            Debug.LogWarning($"[ObjetoFlotante] No se encontró ningún objeto con el tag '{tagJugador}'. " +
+                             "Asegúrate de que el jugador tiene ese tag asignado.");
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (jugador == null) return;
+
+        float distancia = Vector3.Distance(transform.position, jugador.position);
+
+        if (!persiguiendo)
+        {
+            AnimarFlotacion();
+
+            // ¿El jugador ya está dentro del radio de detección?
+            if (distancia <= radioDeteccion)
+            {
+                persiguiendo = true;
+            }
+        }
+        else
+        {
+            PerseguirJugador();
+
+            // ¿Llegó al jugador?
+            if (distancia <= radioRecogida)
+            {
+                Recoger();
+            }
+        }
+    }
+
+    // ── Métodos privados ────────────────────────────────────────────────────
+
+    /// <summary>Animación senoidal de flotación sobre el punto inicial.</summary>
+    void AnimarFlotacion()
+    {
+        float nuevaY = posicionInicial.y + Mathf.Sin(Time.time * velocidadFlotacion) * alturaFlotacion;
+        transform.position = new Vector3(posicionInicial.x, nuevaY, posicionInicial.z);
+    }
+
+    /// <summary>Mueve el objeto hacia el jugador, elevándose a alturaVuelo.</summary>
+    void PerseguirJugador()
+    {
+        // Objetivo: posición del jugador + altura de vuelo
+        Vector3 objetivo = new Vector3(
+            jugador.position.x,
+            jugador.position.y + alturaVuelo,
+            jugador.position.z
+        );
+
+        // Movimiento suavizado
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            objetivo,
+            velocidadPersecucion * Time.deltaTime
+        );
+
+    }
+
+    /// <summary>Instancia el efecto y destruye el objeto.</summary>
+    void Recoger()
+    {
+        if (efectoRecogida != null)
+        {
+            Instantiate(efectoRecogida, transform.position, Quaternion.identity);
+        }
+        _characterService.AddMana(mana);
+        _characterService.Heal(vida);
+
+        Destroy(gameObject);
+    }
+}

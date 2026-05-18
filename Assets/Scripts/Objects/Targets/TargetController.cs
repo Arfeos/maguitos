@@ -13,14 +13,16 @@ public class TargetController : MonoBehaviour, IHittable
     private int direction = 1;
     private Vector3 InitialPosition;
     private bool _isGameStarted = false;
-    public void Hit()
+    public void Hit(float damage)
     {
         _animationService.WobbleAnimationWithSound(this.gameObject, audioWhenHit);
         //TODO: esto no es taki taki rumba pero pensando en un multiplayter futuro se queda asi, darle una revision cuando se pueda
         if (_isGameStarted)
         {
             _scoreService.addPoints("TutorialPlayer", puntos);
-            Debug.Log("Has ganado " + puntos + " puntos");
+            ScoreChangeEvent score = new ScoreChangeEvent();
+            score.points = puntos;
+            _eventService.Publish(score);
         }
     }
     private void Awake()

@@ -191,7 +191,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 397
+  m_VersionIndex: 400
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5153,8 +5153,8 @@ GameObject:
   - component: {fileID: 7211964632607565338}
   - component: {fileID: 4674973196190160094}
   - component: {fileID: 107425715085779165}
-  - component: {fileID: 2698344391230772345}
   - component: {fileID: 311675466973576112}
+  - component: {fileID: 7541218245964992722}
   m_Layer: 6
   m_Name: Boton de Puerta
   m_TagString: Untagged
@@ -5334,7 +5334,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 397
+  m_VersionIndex: 400
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5422,8 +5422,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7576931131384172347}
   m_Mesh: {fileID: 0}
---- !u!64 &2698344391230772345
-MeshCollider:
+--- !u!114 &311675466973576112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7576931131384172347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058004a76ab76624595acffac1cde7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  PuertaAAbrir: {fileID: 0}
+--- !u!65 &7541218245964992722
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5440,20 +5453,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!114 &311675466973576112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7576931131384172347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 058004a76ab76624595acffac1cde7d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  PuertaAAbrir: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 2.0000005, y: 0.19194697, z: 2}
+  m_Center: {x: -2.2716047e-17, y: 0.014026497, z: 0}

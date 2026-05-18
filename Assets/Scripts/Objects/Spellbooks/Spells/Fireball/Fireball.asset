@@ -15,14 +15,14 @@ MonoBehaviour:
   spell_Type: 1
   cast_Type: 0
   spell_importance: 0
-  manaCost: 1
+  manaCost: 25
   MaxCharge: 0
   currentCharge: 0
   ChargeTimePerUnit: 0
   velocity: 20
   damage: 50
   lifeTime: 0
-  shootDelay: 0.5
+  shootDelay: 3
   spreadIntensity: 0
   producesLine: 0
   CosteSlots: 1
@@ -34,6 +34,7 @@ MonoBehaviour:
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
   spawnSound: {fileID: 0}
+  chargeSound: {fileID: 0}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
   canCast: 1

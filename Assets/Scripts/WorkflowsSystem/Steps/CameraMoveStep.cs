@@ -1,8 +1,8 @@
 using System;
 using System.Linq;
-using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
 
 public class CameraMoveStep : IStep
@@ -13,16 +13,23 @@ public class CameraMoveStep : IStep
 
 
     // --- IStep ---
-    public string Name => "Mueve la camara";
-    public string Description
+    public LocalizedString Name { get => new LocalizedString { TableReference = "Steps", TableEntryReference = "cameraMoveName" }; }
+    public LocalizedString Description
     {
-        get
-        {
+        get => new LocalizedString { TableReference = "Steps", TableEntryReference = "cameraMoveDesc" };
+        /* {
             var moveAction = PlayerInputManager.Actions.Player.Look;
             var keyNames = string.Join(", ", moveAction.controls.Select(c => c.displayName));
-            if (keyNames.Contains("Delta")) keyNames = "el rat�n";
-            return $"Mueve la camara usando {keyNames}";
-        }
+            if (keyNames.Contains("Delta")) keyNames = "el ratón";
+            
+            return
+                new LocalizedString
+                {
+                    TableReference = "Steps",
+                    TableEntryReference = "cameraMoveDesc",
+                    Arguments = new object[] { keyNames }
+                };
+        } */
     }
 
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }

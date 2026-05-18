@@ -1,81 +1,74 @@
-using System;
-using System.Collections.Generic;
-using Unity.Netcode;
-using Unity.VisualScripting;
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class SceneService : ISceneService
+using UnityEngine.UI;
+
+public class SceneService :ISceneService
 {
-    private static Stack<string> sceneHistory = new Stack<string>();
-    private HashSet<ulong> readyPlayers = new HashSet<ulong>();
-    public SceneService()
-    {
-        SceneManager.activeSceneChanged += SaveScene;
-        Application.quitting += Cleanup;
-    }
-
-    private void Cleanup()
-    {
-        SceneManager.activeSceneChanged -= SaveScene;
-        Application.quitting -= Cleanup;
-    }
-
-
-
-    #region Scene charger (InGame & Lobby)
-
+    private string lastScene;
+    GameObject prefab;
     public void LoadScene(SceneNames scene)
     {
-        if (!NetworkManager.Singleton.IsListening)
-        {
-            // offline
-            SceneManager.LoadScene(scene.ToString());
-            return;
-        }
+        lastScene = SceneManager.GetActiveScene().name;
+        //he visto el atentado contra natura hecho por mi compañero Sergio y dada la situacion, me veo en la necesidad de utilizarlo, asi que,
+        //ahora es nuestra aberracion, una disculpa de antemano.
 
-        if (NetworkManager.Singleton.IsServer)
-        {
-            //online
-            NetworkManager.Singleton.SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Single);
-            return;
-        }
+        CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(scene.ToString()));
     }
-
-
-    [ServerRpc]
-    private void RequestLoadSceneServerRpc(string sceneName, ServerRpcParams rpcParams = default)
+    public SceneService(PanelConfigurationScriptable so)
     {
-        ulong senderId = rpcParams.Receive.SenderClientId;
-
-        if (!CanRequestSceneChange(senderId))
-            return;
-
-        LoadSceneInternal(sceneName);
-    }
-    private bool CanRequestSceneChange(ulong clientId)
-    {
-        return clientId == NetworkManager.ServerClientId;
-        //return readyPlayers.Count == NetworkManager.ConnectedClients.Count;
-    }
-
-    private void LoadSceneInternal(string sceneName)
-    {
-        NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-    }
-    #endregion
-
-
-
+        this.prefab = so.Panel;
+    }   
     public void GoBack()
     {
-        if (sceneHistory.Count > 0)
-        {
-            SceneManager.LoadScene(sceneHistory.Pop());
-            
-        }
+        //lo siento por esto pero estoy cansado jefe
+        if (!string.IsNullOrEmpty(lastScene))
+        CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(lastScene));
     }
-    public void SaveScene(Scene oldScene, Scene newScene)
+    private IEnumerator LoadSceneRutine(string sceneName)
     {
-        sceneHistory.Push(oldScene.name);
+        GameObject canvasObj = new GameObject("LoadingCanvas");
+        Object.DontDestroyOnLoad(canvasObj);
+        Canvas canvas = canvasObj.AddComponent<Canvas>();
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        canvas.sortingOrder = 9999;
+        CanvasScaler scaler = canvasObj.AddComponent<CanvasScaler>();
+        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+        scaler.referenceResolution = new Vector2(1920, 1080);
+        canvasObj.AddComponent<GraphicRaycaster>();
+        
+        GameObject loadingScreen = Object.Instantiate(prefab, canvas.transform);
+        CanvasGroup canvasGroup = loadingScreen.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+            canvasGroup = loadingScreen.AddComponent<CanvasGroup>();
+        yield return Fade(canvasGroup, 0, 1, 0.5f);
+        AsyncOperation operation =SceneManager.LoadSceneAsync(sceneName);
+        operation.allowSceneActivation = false;
+        while (operation.progress < 0.9f)
+            yield return null;
+        operation.allowSceneActivation = true;
+        yield return null;
+        yield return Fade(canvasGroup, 1, 0, 0.5f);
+        Object.Destroy(canvasObj);
     }
+
+
+    private IEnumerator Fade(CanvasGroup canvasGroup, float start, float end, float duration) {
+        float time = 0;
+
+        while (time < duration+0.2f)
+        {
+            time += Time.deltaTime;
+
+            float t = time / duration;
+
+            canvasGroup.alpha = Mathf.Lerp(start, end, t);
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = end;
+    }
+
 }

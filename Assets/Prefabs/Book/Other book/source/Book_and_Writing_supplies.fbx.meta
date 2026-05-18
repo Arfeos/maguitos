@@ -3,7 +3,12 @@ guid: ab43af18d4da32142802e0c0db85ac23
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book_Inkwell_Ink
+    second: {fileID: 2100000, guid: 0cef218c7a1a9924f8cebe2ddcdf6665, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

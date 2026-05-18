@@ -12,6 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b01d6957868a8418e2160118928192, type: 3}
   m_Name: LanternData
   m_EditorClassIdentifier: Assembly-CSharp::ObjectDataScriptable
-  objectName: Lantern
-  objetDescription: Pick Up Lantern
+  objectName:
+    m_TableReference:
+      m_TableCollectionName: GUID:34e054a403d3ddb46ae8210e30cddf6d
+    m_TableEntryReference:
+      m_KeyId: 12032988659712
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  objetDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:34e054a403d3ddb46ae8210e30cddf6d
+    m_TableEntryReference:
+      m_KeyId: 12043411505152
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   objectSprite: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

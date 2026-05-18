@@ -1,13 +1,17 @@
+using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour,IHittable
 {
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;
+    [SerializeField] private AudioClip WalkSound;
 
-    [Header("Mouse")]
-    [SerializeField] private float mouseSensitivity = 0.5f;
+    [Header(" ")]
+    [SerializeField] private float Sensitivity = 0.5f;
     [SerializeField] private Transform cameraTransform;
+    [SerializeField] private int xDirection = 1;
+    [SerializeField] private int yDirection = 1;
 
     [Header("Crouch")]
     [SerializeField] private float standHeight = 1f;
@@ -31,95 +35,125 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 dirAnimation;
 
-    private float xRotation = 0f;
+    private float yRotation = 0f;
 
-
+    private IPauseService _pauseService;
     private IEventService _eventService;
+    private ICharacterService _characterService;
 
+    private IProfileService _profileService;
+    private IAudioService _audioService;
     private Animator _animator;
+
+    
 
     private void Awake()
     {
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
         characterController = GetComponent<CharacterController>();
         _eventService = AppContainer.Get<IEventService>();
+        _characterService = AppContainer.Get<ICharacterService>();
+        _audioService = AppContainer.Get<IAudioService>();
+        _profileService = AppContainer.Get<IProfileService>();
+        _pauseService = AppContainer.Get<IPauseService>();
+        _eventService.Subscribe<PreferenceChangeEvent>(updatePreferences);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _animator = GetComponent<Animator>();
+        updatePreferences();
     }
-
+    private void OnDestroy()
+    {
+        _eventService.Unsubscribe<PreferenceChangeEvent>(updatePreferences);
+    }
     private void Update()
     {
-        LookMouse();
+        Look ();
         Move();
         HandleCrouch();
         handleReload();
         handleChangeWeapon();
+        handlePause();
         SetAnimation();
     }
 
-    private void LookMouse()
+
+
+    private void Look ()
     {
-        Vector2 mouseInput = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
+        Vector2  Input = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
-        float mouseX = mouseInput.x * mouseSensitivity;
-        float mouseY = mouseInput.y * mouseSensitivity;
+        float  X =  Input.x * Sensitivity * xDirection;
+        float  Y =  Input.y * Sensitivity * yDirection;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        yRotation -=  Y;
+        yRotation = Mathf.Clamp(yRotation, -90f, 90f);
 
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+        cameraTransform.localRotation = Quaternion.Euler(yRotation , 0f, 0f);
+        transform.Rotate(Vector3.up *  X);
     }
 
     private void Move()
     {
         var inputPlayer = PlayerInputManager.Actions.Player.Move.ReadValue<Vector2>();
         dirAnimation = inputPlayer;
+        bool isWalking = inputPlayer.magnitude > 0.1f && characterController.isGrounded;
 
-        if (characterController.isGrounded && velocityY < 0)
-        {
-            velocityY = -2f;
-        }
-        if (PlayerInputManager.Actions.Player.Jump.WasPressedThisFrame() && characterController.isGrounded)
-        {
-            velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-        else if (!characterController.isGrounded)
-        {
-            velocityY += gravity * Time.deltaTime;
-        }
-
-        var move = Vector3.zero;
-
-        if (inputPlayer.magnitude > 0.1f)
+        if (isWalking)
         {
 
 
-            move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
+            _audioService.PlayLoopSound(WalkSound, isRunning ? 1.5f : 1f);
         }
 
-        move.y = velocityY;
-
-        if (PlayerInputManager.Actions.Player.Sprint.IsPressed())
-        {
-            if (!isRunning)
-            {
-                previusVelocity = Velocity;
-                Velocity *= 2;
-                isRunning = true;
-            }
-        }
         else
         {
-            if (isRunning)
-            {
-                Velocity = previusVelocity;
-                isRunning = false;
-            }
+            _audioService.StopSound(WalkSound);
         }
+            if (characterController.isGrounded && velocityY < 0)
+            {
+                velocityY = -2f;
+            }
+            if (PlayerInputManager.Actions.Player.Jump.WasPressedThisFrame() && characterController.isGrounded)
+            {
+                velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+            else if (!characterController.isGrounded)
+            {
+                velocityY += gravity * Time.deltaTime;
+            }
 
-        characterController.Move(move * Velocity * Time.deltaTime);
+            var move = Vector3.zero;
+
+            if (inputPlayer.magnitude > 0.1f)
+            {
+
+
+                move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
+            }
+
+            move.y = velocityY;
+
+            if (PlayerInputManager.Actions.Player.Sprint.IsPressed())
+            {
+                if (!isRunning)
+                {
+                    previusVelocity = Velocity;
+                    Velocity *= 2;
+                    isRunning = true;
+                }
+            }
+            else
+            {
+                if (isRunning)
+                {
+                    Velocity = previusVelocity;
+                    isRunning = false;
+                }
+            }
+
+            characterController.Move(move * Velocity * Time.deltaTime);
+        
     }
 
     private void HandleCrouch()
@@ -170,7 +204,12 @@ public class PlayerController : MonoBehaviour
             _eventService.Publish(reloadEvent);
         }
     }
-
+    private void handlePause()
+    {
+        if (PlayerInputManager.Actions.Player.pause.WasPressedThisFrame()) {
+            _pauseService.TogglePause();
+        }
+    }
     private void SetAnimation()
     {
         if (!characterController.isGrounded)
@@ -185,14 +224,35 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("onAir", false);
         }
 
-        
-        
-            
-            _animator.SetFloat("VelocityX", dirAnimation.x);
-            _animator.SetFloat("VelocityY", dirAnimation.y);
-        
+
+
+
+        _animator.SetFloat("VelocityX", dirAnimation.x);
+        _animator.SetFloat("VelocityY", dirAnimation.y);
+
         _animator.SetBool("isCrouching", isCrouching);
         _animator.SetBool("isRunning", isRunning);
 
     }
+
+    public void Hit(float damage)
+    {
+        _characterService.TakeDamage((int)damage);
+    }
+    /// <summary>
+    /// actualiza las preferencias del jugador en base a su perfil
+    /// </summary>
+    private void updatePreferences(GameEventBase game = null)
+    {
+        if (_profileService == null) return;
+        UserProfile profile = _profileService.getSelectedProfile();
+        if (profile != null)
+        {
+            Sensitivity = profile.settings.sensibility;
+            xDirection = profile.settings.axisXDirection;
+            yDirection = profile.settings.axisYDirection;
+        }
+    }
+    //TODO: alo pulsar al escape, bloquear el tiempo, volver a mostrar el cursor y mostrar un menu de pausa, con opciones para volver al menu principal, salir del juego o volver a jugar y si se vuelve a pulsar, bloquear el curso y hacerlo invisible
+
 }

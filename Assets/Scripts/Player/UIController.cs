@@ -11,12 +11,12 @@ public class UIController : MonoBehaviour
     private IEventService _EventService;
     private void OnEnable()
     {
-        _EventService.Subscribe<HPEvent>(ChangeManaUi);
+        _EventService.Subscribe<HPEvent>(ChangeHPUi);
         _EventService.Subscribe<ManaEvent>(ChangeManaUi);
     }
     private void OnDisable()
     {
-        _EventService.Unsubscribe<HPEvent>(ChangeManaUi);
+        _EventService.Unsubscribe<HPEvent>(ChangeHPUi);
         _EventService.Unsubscribe<ManaEvent>(ChangeManaUi);
     }
     private void Awake()

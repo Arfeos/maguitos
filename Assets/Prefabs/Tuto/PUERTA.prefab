@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6740b02e06f91f74d8a377c3071bf501, type: 3}
       propertyPath: m_Name
-      value: Worn Door_002_Baked
+      value: PUERTA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -67,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6740b02e06f91f74d8a377c3071bf501, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8193924089008001964}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6740b02e06f91f74d8a377c3071bf501, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7334868889247259276}
   m_SourcePrefab: {fileID: 100100000, guid: 6740b02e06f91f74d8a377c3071bf501, type: 3}
 --- !u!1 &8955362774347625582 stripped
 GameObject:
@@ -95,3 +98,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &7334868889247259276
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8955362774347625582}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0075577646, y: 0.0008566172, z: 0.018060165}
+  m_Center: {x: 0.0037788823, y: 0, z: -9.313226e-10}

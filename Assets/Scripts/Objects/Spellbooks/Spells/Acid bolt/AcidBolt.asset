@@ -20,11 +20,13 @@ MonoBehaviour:
   currentCharge: 0
   ChargeTimePerUnit: 0
   velocity: 1
-  damage: 20
+  damage: 40
   lifeTime: 10
   shootDelay: 0.2
   spreadIntensity: 0.1
   producesLine: 1
+  penetrates: 0
+  penetrationlevel: 1
   CosteSlots: 1
   RayAliveTime: 2
   nombreHechizo: AcidBolt
@@ -34,6 +36,7 @@ MonoBehaviour:
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
   spawnSound: {fileID: 0}
+  chargeSound: {fileID: 0}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
   canCast: 1

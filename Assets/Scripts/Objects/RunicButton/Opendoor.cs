@@ -12,7 +12,7 @@ public class Opendoor : MonoBehaviour, IHittable
     private bool _estatusPuerta = false;
     
     
-    public void Hit()
+    public void Hit(float damage)
     {
         _estatusPuerta = !_estatusPuerta;
         _animatorPuerta.SetBool("Open", _estatusPuerta);

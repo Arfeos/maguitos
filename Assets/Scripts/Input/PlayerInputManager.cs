@@ -148,11 +148,11 @@ public sealed class PlayerInputManager : MonoBehaviour
     /// <summary>
     /// Limpia la referencia singleton cuando se destruye la instancia activa.
     /// </summary>
-    private void OnDestroy()
-    {
-        if (_instance == this)
-        {
-            _instance = null;
-        }
-    }
+    //private void OnDestroy()
+    //{
+    //    if (_instance == this)
+    //    {
+    //        _instance = null;
+    //    }
+    //}
 }

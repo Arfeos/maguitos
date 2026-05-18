@@ -9,6 +9,6 @@ public enum SceneNames
    Gamemodes,
    Settings,
    Tutorial,
-   SampleScene
+   Hordes
 
 }
