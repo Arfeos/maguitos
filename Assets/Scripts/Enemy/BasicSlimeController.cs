@@ -50,6 +50,7 @@ public class BasicSlimeController : SlimeBase
             if (hit.transform == transform) continue;
             IHittable hittable = hit.GetComponent<IHittable>();
             if (hittable != null)
+            if (!hit.GetComponent<SlimeBase>())
                 hittable.Hit(damage);
         }
     }

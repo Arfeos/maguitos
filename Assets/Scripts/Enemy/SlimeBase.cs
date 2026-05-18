@@ -121,7 +121,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     /// <summary>Se llama justo antes de destruir el objeto. Sobreescribe para lógica extra al morir.</summary>
     protected virtual void OnDeath() 
     {
-        _scoreService.addPoints("Horde", puntuación);
+        //_scoreService.addPoints("Horde", puntuación);
     }
 
     // ── Lógica común ─────────────────────────────────────────────────────────
