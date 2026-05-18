@@ -18,9 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/UI/MainMenu/Gamemodes.unity
     guid: 02a4119d19e33a146a7fadba6be17907
   - enabled: 1
-    path: Assets/Scenes/UI/MainMenu/Look_For_Game.unity
-    guid: 948a3c93a23b45b40a73dfb911fce0ee
-  - enabled: 1
     path: Assets/Scenes/UI/MainMenu/Settings.unity
     guid: faaeeb11d05e79a4fb8ceaffa3c80391
   - enabled: 1
@@ -29,27 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: f2d78445af8d40f42af85cc96265541c
-  - enabled: 0
-    path: Assets/Scenes/UI/MainMenu/Look_For_Game.unity
-    guid: 948a3c93a23b45b40a73dfb911fce0ee
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/UI/MainMenu/Look_For_Game.unity
-    guid: 948a3c93a23b45b40a73dfb911fce0ee
-  - enabled: 0
-    path: Assets/Scenes/UI/MainMenu/Look_For_Game.unity
-    guid: 948a3c93a23b45b40a73dfb911fce0ee
-  - enabled: 0
-    path: Assets/Scenes/UI/MainMenu/Look_For_Game.unity
-    guid: 948a3c93a23b45b40a73dfb911fce0ee
-  - enabled: 0
-    path: Assets/Scenes/UI/MainMenu/Look_For_Game.unity
-    guid: 948a3c93a23b45b40a73dfb911fce0ee
-  - enabled: 1
-    path: Assets/Scenes/UI/MainMenu/Look_For_Game.unity
-    guid: 948a3c93a23b45b40a73dfb911fce0ee
   - enabled: 1
     path: Assets/Scenes/UI/MainMenu/Look_For_Game.unity
     guid: 948a3c93a23b45b40a73dfb911fce0ee

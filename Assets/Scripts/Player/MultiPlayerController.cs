@@ -221,7 +221,7 @@ public class MultiPlayerController : NetworkBehaviour, IHittable
         characterController.center = new Vector3(0, Mathf.Lerp(characterController.center.y, targetCenter, Time.deltaTime * crouchSpeed), 0);
 
         Vector3 camPos = playerCamera.transform.localPosition;
-        float targetY = isCrouching ? (crouchHeight/2) - 0.2f : (standHeight/2) - 0.2f;
+        float targetY = isCrouching ? (crouchHeight) + 0.3f : (standHeight) - 0.3f;
 
         camPos.y = Mathf.Lerp(camPos.y, targetY, Time.deltaTime * crouchSpeed);
         playerCamera.transform.localPosition = camPos;
@@ -260,10 +260,21 @@ public class MultiPlayerController : NetworkBehaviour, IHittable
 
     private void SendAnimationDataToServer()
     {
-        NetVelocity.Value = dirAnimation;
-        IsRunning.Value = isRunning;
-        IsCrouching.Value = isCrouching;
-        OnAir.Value = !characterController.isGrounded;
+        SendAnimationServerRpc(
+            dirAnimation,
+            isRunning,
+            isCrouching,
+            !characterController.isGrounded
+        );
+    }
+
+    [Rpc(SendTo.Server)]
+    private void SendAnimationServerRpc(Vector2 dir,bool running,bool crouching,bool onAir)
+    {
+        NetVelocity.Value = dir;
+        IsRunning.Value = running;
+        IsCrouching.Value = crouching;
+        OnAir.Value = onAir;
     }
 
     private void SetAnimation()

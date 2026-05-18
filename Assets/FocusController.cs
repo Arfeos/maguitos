@@ -19,7 +19,6 @@ public class FocusController : MonoBehaviour
         cameraIgnoreLayer = LayerMask.NameToLayer("CameraIgnore");
     }
 
-    // Update is called once per frame
     void Update()
     {
         Focus();
