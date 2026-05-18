@@ -15,16 +15,18 @@ MonoBehaviour:
   spell_Type: 0
   cast_Type: 0
   spell_importance: 1
-  manaCost: 2
+  manaCost: 4
   MaxCharge: 0
   currentCharge: 0
   ChargeTimePerUnit: 0
   velocity: 1
-  damage: 5
+  damage: 10
   lifeTime: 5
-  shootDelay: 0.1
+  shootDelay: 0.15
   spreadIntensity: 0.05
   producesLine: 1
+  penetrates: 0
+  penetrationlevel: 1
   CosteSlots: 1
   RayAliveTime: 0.3
   nombreHechizo: Light spread

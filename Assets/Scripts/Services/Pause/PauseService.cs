@@ -1,4 +1,5 @@
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,7 +22,11 @@ public class PauseService : IPauseService
         PausepanelInstance = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => (g.name == PausepanelPrefab.name && g.scene == SceneManager.GetActiveScene()) || (g.name == PausepanelPrefab.name+"(Clone)" && g.scene == SceneManager.GetActiveScene()) );
         Debug.Log(PausepanelInstance);
         if (PausepanelInstance == null) {
-            Canvas canvas = GameObject.FindFirstObjectByType<Canvas>();
+
+            //No queremos que encuentre canvas 3d la distincion entre un canvas 2d y uno 3d es RenderMode.WorldSpace 
+            Canvas canvas = Resources.FindObjectsOfTypeAll<Canvas>()
+                        .FirstOrDefault(c => c.renderMode != RenderMode.WorldSpace
+                            && c.gameObject.scene == SceneManager.GetActiveScene());
             PausepanelInstance = GameObject.Instantiate(PausepanelPrefab, canvas.transform);
         }
         if (PausepanelInstance != null) {

@@ -25,6 +25,8 @@ MonoBehaviour:
   shootDelay: 1
   spreadIntensity: 0
   producesLine: 1
+  penetrates: 1
+  penetrationlevel: 10
   CosteSlots: 10
   RayAliveTime: 2
   nombreHechizo: Antimater

@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject[] enemy;
     [SerializeField] GameObject counterPrefab;
     [SerializeField] GameObject player;
     [SerializeField] GameObject Mapcenter;
@@ -75,7 +75,7 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < enemiesPerHorde; i++)
         {
             Vector3 randosPos = player.transform.position + new Vector3(UnityEngine.Random.Range(-25, 25), 0, UnityEngine.Random.Range(-25, 25));
-            GameObject.Instantiate(enemy, randosPos, Quaternion.identity, enemiesParent.transform);
+            GameObject.Instantiate(enemy[UnityEngine.Random.Range(0, enemy.Length)], randosPos, Quaternion.identity, enemiesParent.transform);
         }
     }
     private void NextHorde()
