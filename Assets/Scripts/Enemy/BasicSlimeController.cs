@@ -6,20 +6,20 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class BasicSlimeController : SlimeBase
 {
     [Header("Jump")]
-    [SerializeField] private float jumpDistance = 3f;
-    [SerializeField] private float jumpHeight = 2f;
+    [SerializeField] protected float jumpDistance = 3f;
+    [SerializeField] protected float jumpHeight = 2f;
 
     [Header("Landing")]
-    [SerializeField] private float recoverTime = 2f;
+    [SerializeField] protected float recoverTime = 2f;
 
     [Header("Ground Check")]
-    [SerializeField] private float groundRadius = 0.25f;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] protected float groundRadius = 0.25f;
+    [SerializeField] protected LayerMask groundLayer;
 
     // ── Estado interno ───────────────────────────────────────────────────────
-    private bool _isGrounded;
-    private bool _wasGrounded;
-    private bool _isJumping;
+    protected bool _isGrounded;
+    protected bool _wasGrounded;
+    protected bool _isJumping;
 
     // ── Override lifecycle ───────────────────────────────────────────────────
 
@@ -91,7 +91,7 @@ public class BasicSlimeController : SlimeBase
 
     // ── Ground check ─────────────────────────────────────────────────────────
 
-    private void CheckGrounded()
+    protected void CheckGrounded()
     {
         _isGrounded = false;
         foreach (Collider c in Physics.OverlapSphere(transform.position, groundRadius, groundLayer))
@@ -102,7 +102,7 @@ public class BasicSlimeController : SlimeBase
         }
     }
 
-    private void DetectLanding()
+    protected void DetectLanding()
     {
         if (!_wasGrounded && _isGrounded && _isJumping)
         {
@@ -111,7 +111,7 @@ public class BasicSlimeController : SlimeBase
         }
     }
 
-    private IEnumerator LandingRoutine()
+    protected IEnumerator LandingRoutine()
     {
         _rigidbody.linearVelocity = Vector3.zero;
         _animator.SetTrigger("Landing");
