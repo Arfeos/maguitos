@@ -23,6 +23,9 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     [SerializeField] protected float maxLife = 100f;
     [SerializeField] protected LayerMask attackLayer;
 
+    [Header("Puntuacion")]
+    [SerializeField] protected int puntuación = 20;
+
     // ── Life bar ─────────────────────────────────────────────────────────────
     [Header("UI")]
     [SerializeField] protected Slider _lifeBar;
@@ -46,10 +49,13 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     protected float dissolveProgress;
     protected Coroutine _actionCoroutine;
     protected IAudioService _audioService;
+
+    protected IScoreService _scoreService;
     // ── Unity Lifecycle ──────────────────────────────────────────────────────
     private void Awake()
     {
         _audioService = AppContainer.Get<IAudioService>();
+        _scoreService = AppContainer.Get<IScoreService>();
     }
     protected virtual void Start()
     {
@@ -113,7 +119,10 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     }
 
     /// <summary>Se llama justo antes de destruir el objeto. Sobreescribe para lógica extra al morir.</summary>
-    protected virtual void OnDeath() { }
+    protected virtual void OnDeath() 
+    {
+        _scoreService.addPoints("Horde", puntuación);
+    }
 
     // ── Lógica común ─────────────────────────────────────────────────────────
 
