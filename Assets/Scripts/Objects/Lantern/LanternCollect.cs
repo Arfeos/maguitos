@@ -1,13 +1,99 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LanternCollect : MonoBehaviour, ICollectable
 {
+    private bool equipped = false;
+
+    private Light lanternLight;
+
+    private Transform cameraTransform;
+
+    // Rotación visual de la linterna respecto a la cámara
+    [SerializeField]
+    private Vector3 rotationOffset = new Vector3(75f, 0f, 0f);
+
+    private void Start()
+    {
+        lanternLight = GetComponentInChildren<Light>();
+
+        PlayerInputManager.Actions.Player.Lantern.performed += TurnLantern;
+    }
+
+    private void LateUpdate()
+    {
+        if (!equipped || cameraTransform == null)
+            return;
+
+        SetRotation();
+    }
+
+    private void SetRotation()
+    {
+        Quaternion offset = Quaternion.Euler(rotationOffset);
+
+        // Iguala rotacion linternaa conforma a la camara
+        transform.rotation = cameraTransform.rotation * offset;
+    }
+
+    private void TurnLantern(InputAction.CallbackContext ctx)
+    {
+        if (!equipped || lanternLight == null)
+            return;
+
+        lanternLight.enabled = !lanternLight.enabled;
+    }
+
     public void Collect()
     {
-        var Player = FindAnyObjectByType<PlayerController>();
-        if (Player != null)
+        PlayerController player = FindAnyObjectByType<PlayerController>();
+
+        if (player == null)
+            return;
+
+        cameraTransform = player.GetComponentInChildren<Camera>().transform;
+
+        SetPosition(player.transform);
+
+        DisableRender();
+
+        equipped = true;
+    }
+
+    private void SetPosition(Transform player)
+    {
+        lanternSocket socket =
+            player.GetComponentInChildren<lanternSocket>();
+
+        if (socket == null)
+            return;
+
+        transform.SetParent(socket.transform);
+
+        transform.localPosition = Vector3.zero;
+
+        // La rotación la controla LateUpdate()
+        transform.localRotation = Quaternion.identity;
+
+        Collider col = GetComponent<Collider>();
+
+        if (col != null)
+            col.enabled = false;
+    }
+
+    private void DisableRender()
+    {
+        MeshRenderer[] renderers =
+            GetComponentsInChildren<MeshRenderer>();
+
+        foreach (MeshRenderer r in renderers)
         {
-            gameObject.transform.parent = Player.transform;
+            r.enabled = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        PlayerInputManager.Actions.Player.Lantern.performed -= TurnLantern;
     }
 }
