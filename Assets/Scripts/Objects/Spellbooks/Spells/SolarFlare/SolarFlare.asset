@@ -28,6 +28,7 @@ MonoBehaviour:
   CosteSlots: 5
   RayAliveTime: 1
   nombreHechizo: SolarFlare
+  spellImage: {fileID: 21300000, guid: 35fb40b83c8cd3847aa066057e614075, type: 3}
   RayMaterial:
   - {fileID: 2100000, guid: dbc6c4bb9076c2946a269fa6b95843c9, type: 2}
   spawnPrefab: {fileID: 0}

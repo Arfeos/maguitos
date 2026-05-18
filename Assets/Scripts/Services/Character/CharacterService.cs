@@ -110,6 +110,7 @@ public class CharacterService : ICharacterService
         SpellChangeOnPageEvent _eventSpellChangeOnPageEvent = new SpellChangeOnPageEvent();
         _eventSpellChangeOnPageEvent.nombre = spellToAdd.spell.name;
         _eventSpellChangeOnPageEvent.mana = spellToAdd.spell.manaCost;
+        _eventSpellChangeOnPageEvent.spellSprite = spellToAdd.spell.spellImage;
         _eventSpellChangeOnPageEvent.importance = spellToAdd.spell.spell_importance;
         _eventService.Publish(_eventSpellChangeOnPageEvent);
         return true;

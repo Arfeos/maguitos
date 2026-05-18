@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 
 public class AlertService : MonoBehaviour, IAlertService
@@ -10,39 +11,48 @@ public class AlertService : MonoBehaviour, IAlertService
     /// <param name="MessageBox">Un PausepanelPrefab, con 2 al menos 2 TextMeshProUGUI sobre el que se va a escribir </param>
     /// <param name="message">Data de un scriptable object del tipo ObjectDataScriptable</param>
     public void ShowAlertMessage(GameObject MessageBox, ObjectDataScriptable message)
-{
-    if (MessageBox == null) return;
-
-    TextMeshProUGUI[] todosLosTextos = MessageBox.GetComponentsInChildren<TextMeshProUGUI>(true);
-
-    if (todosLosTextos != null && todosLosTextos.Length >= 2)
     {
-        TextMeshProUGUI textoNombre = todosLosTextos[0];
-        TextMeshProUGUI textoDescripcion = todosLosTextos[1];
+        if (MessageBox == null) return;
 
-        // GetLocalizedStringAsync obtiene el string traducido al idioma activo
-        message.objectName.GetLocalizedStringAsync().Completed += handle =>
+        TextMeshProUGUI[] todosLosTextos = MessageBox.GetComponentsInChildren<TextMeshProUGUI>(true);
+        Image genImage = null;
+        foreach (Transform child in MessageBox.transform)
         {
-            textoNombre.text = handle.Result;
-        };
+            genImage = child.GetComponentInChildren<Image>(true);
+            if (genImage != null) break;
+        }
 
-        message.objetDescription.GetLocalizedStringAsync().Completed += handle =>
+        if (todosLosTextos != null && todosLosTextos.Length >= 2)
         {
-            textoDescripcion.text = handle.Result;
-        };
+            TextMeshProUGUI textoNombre = todosLosTextos[0];
+            TextMeshProUGUI textoDescripcion = todosLosTextos[1];
 
-        MessageBox.SetActive(true);
+            message.objectName.GetLocalizedStringAsync().Completed += handle =>
+            {
+                textoNombre.text = handle.Result;
+            };
+
+            // Usa stats si hay spellData, sino la descripción normal
+            message.GetStatsDescription().GetLocalizedStringAsync().Completed += handle =>
+            {
+                textoDescripcion.text = handle.Result;
+            };
+
+            MessageBox.SetActive(true);
+        }
+
+        if (genImage != null && message.objectSprite != null)
+            genImage.sprite = message.objectSprite;
+
+        //if (todosLosTextos != null)
+        //{
+        //    todosLosTextos[0].text = message.objectName;
+        //    todosLosTextos[1].text = message.objetDescription;
+
+        //    MessageBox.gameObject.SetActive(true); // Mostrar UI
+        //}
+
     }
-
-    //if (todosLosTextos != null)
-    //{
-    //    todosLosTextos[0].text = message.objectName;
-    //    todosLosTextos[1].text = message.objetDescription;
-
-    //    MessageBox.gameObject.SetActive(true); // Mostrar UI
-    //}
-
-}
 
     /// <summary>
     /// Oculta el Panel seleccionado

@@ -87,6 +87,10 @@ MonoBehaviour:
     m_Localized: Buena suerte
     m_Metadata:
       m_Items: []
+  - m_Id: 1897266120658944
+    m_Localized: "Da\xF1o: {0}\nMana: {1}\nAlcance: {2}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

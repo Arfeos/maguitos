@@ -28,12 +28,14 @@ MonoBehaviour:
   CosteSlots: 1
   RayAliveTime: 0.3
   nombreHechizo: Light spread
+  spellImage: {fileID: 21300000, guid: 442a2550420883a488b57629e3117c92, type: 3}
   RayMaterial:
   - {fileID: 2100000, guid: 971be97d9923ad3408615ce0973e7278, type: 2}
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
   spawnSound: {fileID: 8300000, guid: f1cb5d83282f2904a85f73111d068616, type: 3}
+  chargeSound: {fileID: 0}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
   canCast: 1

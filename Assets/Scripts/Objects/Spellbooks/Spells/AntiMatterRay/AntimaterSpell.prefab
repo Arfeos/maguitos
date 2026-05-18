@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2526924536872901347}
   - component: {fileID: 1124230915765452823}
+  - component: {fileID: 7658733854292934092}
   m_Layer: 0
   m_Name: AntimaterSpell
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellAntimatter
   spell: {fileID: 11400000, guid: 83480a22ba598e242b3255dcbf38f468, type: 2}
+--- !u!114 &7658733854292934092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670190454421445552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72183ffb897e7a45888cbebdc888d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataShow
+  data: {fileID: 11400000, guid: cd0a4a07186ba9d4bbdcf28e33d5dcb8, type: 2}

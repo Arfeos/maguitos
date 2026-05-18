@@ -28,12 +28,14 @@ MonoBehaviour:
   CosteSlots: 2
   RayAliveTime: 0.5
   nombreHechizo: Light lance
+  spellImage: {fileID: 21300000, guid: eaa4e3aeede96d64da31ccdb2bc866fd, type: 3}
   RayMaterial:
   - {fileID: 2100000, guid: 41f057012fe98bf40a0772b17f0dc130, type: 2}
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
   spawnSound: {fileID: 8300000, guid: f1cb5d83282f2904a85f73111d068616, type: 3}
+  chargeSound: {fileID: 0}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
   canCast: 1

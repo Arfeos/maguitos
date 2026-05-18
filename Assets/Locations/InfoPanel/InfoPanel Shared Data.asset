@@ -79,6 +79,10 @@ MonoBehaviour:
     m_Key: ShootingBoardDesc
     m_Metadata:
       m_Items: []
+  - m_Id: 1897266120658944
+    m_Key: spellStats
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
