@@ -90,7 +90,7 @@ public class StaffController : NetworkBehaviour
         if (_coroutineCharge != null) { 
         StopCoroutine(_coroutineCharge);
         _coroutineCharge = null;
-          ActualSpell.stopCharginSound();
+          //ActualSpell.stopCharginSound();
         }
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;
@@ -124,7 +124,7 @@ public class StaffController : NetworkBehaviour
         {
             endPoint = hit.point;
             if (hit.collider.gameObject.GetComponent<IHittable>() != null)
-                hit.collider.gameObject.GetComponent<IHittable>().Hit();
+                hit.collider.gameObject.GetComponent<IHittable>().Hit(25f);
         }
         else
         {

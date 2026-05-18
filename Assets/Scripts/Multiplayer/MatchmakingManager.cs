@@ -24,7 +24,6 @@ public class MatchmakingManager : MonoBehaviour
     public string LobbyId { get; private set; }
     public System.Action<string> OnLobbyCreated;
 
-
     public async Task FindMatchAsync()
     {
         var lobbies = await LobbyService.Instance.QueryLobbiesAsync(new QueryLobbiesOptions
@@ -63,20 +62,17 @@ public class MatchmakingManager : MonoBehaviour
 
         _lobbyId = _currentLobby.Id;
 
-        //NetworkManager.Singleton.StartHost();
+        NetworkManager.Singleton.StartHost();
         Debug.Log($"Host iniciado. Join code: {joinCode}");
     }
 
     public async Task JoinAsClientAsync(string lobbyId)
     {
-        // Unirse al lobby
         _currentLobby = await LobbyService.Instance.JoinLobbyByIdAsync(lobbyId);
         _lobbyId = _currentLobby.Id;
 
-        // Obtener el join code guardado en el lobby
         string joinCode = _currentLobby.Data["joinCode"].Value;
 
-        // Unirse a la asignación Relay con el join code
         await relayManager.StartClientWithRelayAsync(joinCode);
 
         Debug.Log($"Cliente conectado via join code: {joinCode}");

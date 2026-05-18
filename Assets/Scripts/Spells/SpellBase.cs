@@ -158,7 +158,7 @@ public partial class SpellBase : MonoBehaviour
             endPoint = hit.point;
             if(hit.collider.gameObject.GetComponent<IHittable>() != null)
             {
-                hit.collider.gameObject.GetComponent<IHittable>().Hit();
+                hit.collider.gameObject.GetComponent<IHittable>().Hit(25f);
                 Debug.Log("ObjetoGolpeado");
             }
             

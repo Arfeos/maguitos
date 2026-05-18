@@ -215,9 +215,6 @@ public class MultiPlayerController : NetworkBehaviour
 
     private void ApplyRemoteRotation()
     {
-        // Aplica yaw (horizontal) al cuerpo
-        transform.rotation = Quaternion.Euler(pitch.Value, yaw.Value, 0f);
-        // No aplicamos pitch aquí porque la cámara remota está desactivada
-        // Si tuvieras un hueso de cabeza o cuello podrías rotarlo aquí
+        transform.rotation = Quaternion.Euler(0f, yaw.Value, 0f);
     }
 }

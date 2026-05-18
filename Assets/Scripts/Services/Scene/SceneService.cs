@@ -1,5 +1,6 @@
 
 using System.Collections;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -43,11 +44,24 @@ public class SceneService :ISceneService
         if (canvasGroup == null)
             canvasGroup = loadingScreen.AddComponent<CanvasGroup>();
         yield return Fade(canvasGroup, 0, 1, 0.5f);
-        AsyncOperation operation =SceneManager.LoadSceneAsync(sceneName);
-        operation.allowSceneActivation = false;
-        while (operation.progress < 0.9f)
-            yield return null;
-        operation.allowSceneActivation = true;
+
+        if (NetworkManager.Singleton.IsServer)
+        {
+            NetworkManager.Singleton.SceneManager.LoadScene(
+                sceneName,
+                LoadSceneMode.Single
+            );
+        }
+        else
+        {
+            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+            operation.allowSceneActivation = false;
+            while (operation.progress < 0.9f)
+                yield return null;
+            operation.allowSceneActivation = true;
+        }
+        
+        
         yield return null;
         yield return Fade(canvasGroup, 1, 0, 0.5f);
         Object.Destroy(canvasObj);
