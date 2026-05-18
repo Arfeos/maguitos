@@ -30,7 +30,6 @@ public class FocusController : MonoBehaviour
         pointAnimator.SetBool("Focus", pI);
         cameraAnimator.SetBool("Focus", pI);
 
-
         if (PlayerInputManager.Actions.Player.Focus.IsPressed())
         {
             if (currentRoutine == null)

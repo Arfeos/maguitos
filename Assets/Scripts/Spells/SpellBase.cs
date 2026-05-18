@@ -3,6 +3,7 @@ using UnityEngine;
 
 public partial class SpellBase : MonoBehaviour
 {
+    private IAudioService _audioService;
     public SpellBaseScriptable spell;
 
     public bool canCast { get; private set; } = true; 
@@ -158,7 +159,7 @@ public partial class SpellBase : MonoBehaviour
             endPoint = hit.point;
             if(hit.collider.gameObject.GetComponent<IHittable>() != null)
             {
-                hit.collider.gameObject.GetComponent<IHittable>().Hit(25f);
+                hit.collider.gameObject.GetComponent<IHittable>().Hit(spell.spell.damage);
                 Debug.Log("ObjetoGolpeado");
             }
             
@@ -190,5 +191,11 @@ public partial class SpellBase : MonoBehaviour
     {
         isCasting = false;
         canCast = true;
+    }
+    public void stopCharginSound()
+    {
+        if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+        if (spell.chargeSound != null)
+            _audioService.StopSound(spell.chargeSound);
     }
 }
