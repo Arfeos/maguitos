@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using Unity.Netcode;
@@ -12,6 +13,8 @@ public class StaffController : NetworkBehaviour
     //[SerializeField] private SpellBase[] spellList;
     //[SerializeField] private SpellBase Actualspell;
     [SerializeField] private Transform spellSpawn;
+    [SerializeField] private GameObject ballPrefab;
+
 
     [Header("Configuracion de Objetos")]
     [SerializeField] private LayerMask layersToHit;
@@ -20,9 +23,12 @@ public class StaffController : NetworkBehaviour
     private IEventService _eventService;
     private ISpellService _spellService;
     private ICharacterService _characterService;
+    private IAudioService _audioService;
     private Coroutine _coroutineCharge;
     private Coroutine _coroutineReload;
-    
+
+    private SpellBase _currentCastingSpell;
+
     void Awake()
     {
         //PlayerInputManager.Actions.Player.Reload.started += OnReloadStarted;
@@ -81,36 +87,71 @@ public class StaffController : NetworkBehaviour
                 if (PlayerInputManager.Actions.Player.Attack.WasReleasedThisFrame()) LanzarHechizo(ActualSpell);
                 break;
         }
-            }
-
- 
+    }
 
 
+    //private void LanzarHechizo(SpellBase ActualSpell)
+    //{
+    //    if (_coroutineCharge != null) { 
+    //    StopCoroutine(_coroutineCharge);
+    //    _coroutineCharge = null;
+    //        ActualSpell.stopCharginSound();
+    //    }
+    //    if (_coroutineReload != null) StopCoroutine(_coroutineReload);
+    //    _coroutineReload = null;
+
+
+    //    ActualSpell.LanzarHechizoBase(spellSpawn, ActualSpell, layersToHit);
+
+    //    DibujarEfectoServerRpc(
+    //    spellSpawn.position,
+    //    spellSpawn.rotation,
+    //    _characterService.getIndex()
+    //    );
+
+
+    //    //ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
+    //}
+
+
+    //ACORDARSE DE MODIFICARLO PARA HACERLO EN LA NETWORK Y NO EN EL CLIENTE
     private void LanzarHechizo(SpellBase ActualSpell)
     {
-        if (_coroutineCharge != null) { 
-        StopCoroutine(_coroutineCharge);
+        if (!ActualSpell.canCast || ActualSpell.isCasting) return;
+        if (_characterService.CheckMana() < ActualSpell.spell.manaCost) return;
+
+        //if (_audioService != null)
+        //    _audioService.PlaySound(_audioClip);
+
+        if (_coroutineCharge != null) StopCoroutine(_coroutineCharge);
         _coroutineCharge = null;
-            ActualSpell.stopCharginSound();
-        }
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;
 
+        _characterService.RemoveMana(ActualSpell.spell.manaCost);
+        //ActualSpell.ResetSpellShot();
+        //StartCoroutine(ResetCastAfterDelay(ActualSpell, ActualSpell.spell.shootDelay));
 
-        ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
+        //ActualSpell.isCasting = true;
+        ActualSpell.canCast = false;
+        ActualSpell.isCasting = true;
+        _currentCastingSpell = ActualSpell;
+        Invoke("ResetLocalCast", ActualSpell.spell.shootDelay);
 
-        DibujarEfectoServerRpc(
-        spellSpawn.position,
-        spellSpawn.rotation,
-        _characterService.getIndex()
-        );
-
-
-        //ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
+        switch (ActualSpell.spell.spell_Type)
+        {
+            case SpellType.ray:
+                DrawRayEffectRpc(spellSpawn.position, spellSpawn.rotation, _characterService.getIndex());
+                break;
+            case SpellType.ball:
+                DrawBallRpc(spellSpawn.position,spellSpawn.forward,ActualSpell.spell.velocity,_characterService.getIndex()
+            );
+                break;
+        }
     }
-    
-    [ServerRpc]
-    private void DibujarEfectoServerRpc(Vector3 position, Quaternion rotation, int spellIndex)
+
+    [Rpc(SendTo.Server)]
+    private void DrawRayEffectRpc(Vector3 position, Quaternion rotation, int spellIndex)
     {
         Debug.Log($"[ServerRpc] Dibujando efecto");
 
@@ -131,26 +172,33 @@ public class StaffController : NetworkBehaviour
         {
             endPoint = position + direction * ActualSpell.spell.lifeTime;
         }
+            DrawRayRpc(position, endPoint);
 
-
-        if (ActualSpell.spell.spell_Type.ToString() == "ray")
-        {
-            DrawRayClientRpc(position, endPoint);
-        }
-        //else if(ActualSpell.spell.spell_Type.ToString() == "ball")
+        //else if (ActualSpell.spell.spell_Type.ToString() == "ball")
         //{
             
-        //    DrawBallClientRpc(spellSpawn.position, spellSpawn.forward, _characterService.getSpell(_characterService.getIndex()).spell.velocity, MaterialNames.fire);
         //}
-        
     }
 
-    [ClientRpc]
-    private void DrawRayClientRpc(Vector3 start, Vector3 end)
+    [Rpc(SendTo.ClientsAndHost)]
+    private void DrawRayRpc(Vector3 start, Vector3 end)
     {
         Debug.Log($"[ClientRpc] Dibujando rayo");
         var spellService = AppContainer.Get<ISpellService>();
         spellService.ShootRay(start, end);
+    }
+
+    [Rpc(SendTo.Server)]
+    private void DrawBallRpc(Vector3 position, Vector3 direction, float velocity, int spellIndex)
+    {
+        GameObject ball = Instantiate(ballPrefab, position, Quaternion.identity);
+        ball.GetComponent<NetworkObject>().Spawn();
+
+        Rigidbody rb = ball.GetComponent<Rigidbody>();
+        if (rb != null)
+            rb.AddForce(direction.normalized * velocity, ForceMode.Impulse);
+
+        ApplyMaterialRpc(ball.GetComponent<NetworkObject>().NetworkObjectId, spellIndex);
     }
 
     //[ClientRpc]
@@ -159,28 +207,23 @@ public class StaffController : NetworkBehaviour
     //    var spellService = AppContainer.Get<ISpellService>();
     //    spellService.ShootBall(start, direction, velocity, material.ToString());
     //}
+    [Rpc(SendTo.ClientsAndHost)]
+    public void ApplyMaterialRpc(ulong ballNetworkId, int spellIndex)
+    {
+        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects
+            .TryGetValue(ballNetworkId, out NetworkObject ballObject))
+        {
+            SpellBase spell = _characterService.getSpell(spellIndex)?.GetComponent<SpellBase>();
+            if (spell == null) return;
 
-    //public void ApplyMaterial(MaterialNames materials)
-    //{
-    //    int index = (int)currentType;
-
-    //    // Seguridad
-    //    if (materials == null || materials.Lenght <= index)
-    //    {
-    //        return;
-    //    }
-
-    //    if (targetRenderer == null)
-    //    {
-    //        Debug.LogWarning("No hay Renderer asignado");
-    //        return;
-    //    }
-
-    //    targetRenderer.material = materials[index];
-    //}
+            var renderer = ballObject.GetComponent<MeshRenderer>();
+            if (renderer != null)
+                renderer.materials = spell.spell.RayMaterial.ToArray();
+        }
+    }
 
 
-private void CargarHechizo(SpellBase ActualSpell)
+    private void CargarHechizo(SpellBase ActualSpell)
     {
 
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
@@ -188,4 +231,16 @@ private void CargarHechizo(SpellBase ActualSpell)
         if (_coroutineCharge != null) return;
         _coroutineCharge = StartCoroutine(ActualSpell.CargarHechizo());
     }
+
+    private void ResetLocalCast()
+    {
+        if (_currentCastingSpell != null)
+            _currentCastingSpell.ResetCast();
+    }
+
+    //private IEnumerator ResetCastAfterDelay(SpellBase spell, float delay)
+    //{
+    //    yield return new WaitForSeconds(delay);
+    //    spell.ResetCast();
+    //}
 }

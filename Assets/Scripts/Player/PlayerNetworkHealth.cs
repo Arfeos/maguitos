@@ -8,12 +8,12 @@ public class PlayerNetworkHealth : NetworkBehaviour
         NetworkVariableReadPermission.Everyone,
         NetworkVariableWritePermission.Server);
 
-    private CharacterService _characterService;
+    private ICharacterService _characterService;
     private int maxLife = 100;
 
     public override void OnNetworkSpawn()
     {
-        _characterService = AppContainer.Get<CharacterService>();
+        _characterService = AppContainer.Get<ICharacterService>();
         health.OnValueChanged += OnHealthChanged;
     }
 

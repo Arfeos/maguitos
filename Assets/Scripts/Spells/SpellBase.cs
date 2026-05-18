@@ -9,8 +9,8 @@ public partial class SpellBase : MonoBehaviour
     private IAudioService _audioService;
     public SpellBaseScriptable spell;
 
-    public bool canCast { get; private set; } = true; 
-    public bool isCasting { get; private set; } = false;
+    public bool canCast { get; set; } = true; 
+    public bool isCasting { get; set; } = false;
 
     [SerializeField] private List<Material> materials;
 
@@ -26,7 +26,7 @@ public partial class SpellBase : MonoBehaviour
         canCast = true;
         isCasting = false;
     }
-    public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) 
+    public virtual void LanzarHechizoBase(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) 
     {
         if(_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
 
@@ -63,6 +63,14 @@ public partial class SpellBase : MonoBehaviour
             Invoke("ResetCast", spell.spell.shootDelay);
         }
         if (_characterService.CheckMana() == 0) Debug.Log("No tenes munbicion pive");
+    }
+
+    
+
+    private void ResetLocalCast()
+    {
+        SpellBase ActualSpell = _characterService.getSpell(_characterService.getIndex())?.GetComponent<SpellBase>();
+        if (ActualSpell != null) ActualSpell.ResetCast();
     }
 
     public virtual IEnumerator Reload()
