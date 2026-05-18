@@ -796,6 +796,7 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 64
+  "puntuaci\xF3n": 40
   _lifeBar: {fileID: 3596623963974359872}
   dissolveTexture: {fileID: 2800000, guid: 36784ad47b90e9f4098216540808b296, type: 3}
   dissolveColor: {r: 1, g: 0, b: 0.80507374, a: 1}
