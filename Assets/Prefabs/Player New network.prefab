@@ -558,6 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d018dda50c13047bab1fbd08a32dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  ShowTopMostFoldoutHeaderGroup: 1
   spellSpawn: {fileID: 3831466246694357859}
   layersToHit:
     serializedVersion: 2
@@ -844,6 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d018dda50c13047bab1fbd08a32dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  ShowTopMostFoldoutHeaderGroup: 1
   spellSpawn: {fileID: 747311904294102877}
   layersToHit:
     serializedVersion: 2
@@ -1479,6 +1481,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -20.245674
       objectReference: {fileID: 0}
+    - target: {fileID: -346142337343115430, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -104578136787704052, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -24.940672
@@ -1865,7 +1871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 83490155
+  GlobalObjectIdHash: 2220228892
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -1892,6 +1898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraForwardController
   ShowTopMostFoldoutHeaderGroup: 1
   Velocity: 10
+  jumpHeight: 1
   mouseSensitivity: 1
   playerCamera: {fileID: 8900648514455226740}
   BodyTransform: {fileID: 2603774863670088962}
@@ -1908,6 +1915,7 @@ MonoBehaviour:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
+  bodyModel: {fileID: 6384573119031958963}
 --- !u!143 &1634282104108998839
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1979,3 +1987,8 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!1 &6384573119031958963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -346142337343115430, guid: 0302d970c1f3fb648b3af19b9f3e4220, type: 3}
+  m_PrefabInstance: {fileID: 2569530138594702057}
+  m_PrefabAsset: {fileID: 0}

@@ -76,6 +76,28 @@ public class SpellService : ISpellService
         
         return ball;
     }
+    //[ServerRpc]
+    //private void ShootBallServerRpc(Vector3 position, Vector3 direction, float velocity, int spellIndex)
+    //{
+    //    SpellBase ActualSpell = _characterService.getSpell(spellIndex)?.GetComponent<SpellBase>();
+    //    if (ActualSpell == null) return;
+
+    //    GameObject ball = Instantiate(
+    //        ActualSpell.spell.ballPrefab,
+    //        position,
+    //        Quaternion.identity
+    //    );
+
+    //    ball.GetComponent<NetworkObject>().Spawn();
+
+    //    Rigidbody rb = ball.GetComponent<Rigidbody>();
+    //    if (rb != null)
+    //    {
+    //        rb.linearVelocity = Vector3.zero;
+    //        rb.AddForce(direction.normalized * velocity, ForceMode.Impulse);
+    //    }
+    //}
+
     private GameObject GetOrCreateRay()
     {
         GameObject Ray = _rayList.FirstOrDefault(r => !r.activeInHierarchy);

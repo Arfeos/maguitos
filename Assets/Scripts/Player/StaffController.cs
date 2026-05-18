@@ -61,8 +61,6 @@ public class StaffController : NetworkBehaviour
 
     void Update()
     {
-        
-
         SpellBase ActualSpell = _characterService.getSpell(_characterService.getIndex())?.GetComponent<SpellBase>();
 
 

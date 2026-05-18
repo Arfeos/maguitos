@@ -37,7 +37,14 @@ public partial class SpellBase : MonoBehaviour
                     break;
                 case SpellType.ball:
                     Debug.Log("Suck this ball");
-                    CastBallSpell(spellSpawn, spell, layersToHit);
+                //case SpellType.ball:
+                //    ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
+                //    LanzarBolaServerRpc(
+                //        spellSpawn.position,
+                //        spellSpawn.forward,
+                //        ActualSpell.spell.velocity,
+                //        _characterService.getIndex()
+                //    );
                     break;
                 case SpellType.buff:
                     //TODO implement type of spell

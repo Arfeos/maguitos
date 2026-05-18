@@ -43,6 +43,7 @@ public class MultiPlayerController : NetworkBehaviour
 
     private IEventService _eventService;
     private Animator _animator;
+    [SerializeField] private GameObject bodyModel;
 
     public override void OnNetworkSpawn()
     {
@@ -51,6 +52,12 @@ public class MultiPlayerController : NetworkBehaviour
 
         _eventService = AppContainer.Get<IEventService>();
         _animator = GetComponent<Animator>();
+        if (IsOwner)
+        {
+            foreach (var renderer in bodyModel.GetComponentsInChildren<Renderer>())
+                renderer.enabled = false;
+        }
+        
 
         if (!IsOwner)
         {
