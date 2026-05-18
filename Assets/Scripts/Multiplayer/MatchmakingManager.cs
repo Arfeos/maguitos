@@ -62,7 +62,7 @@ public class MatchmakingManager : MonoBehaviour
 
         _lobbyId = _currentLobby.Id;
 
-        NetworkManager.Singleton.StartHost();
+        //NetworkManager.Singleton.StartHost();
         Debug.Log($"Host iniciado. Join code: {joinCode}");
     }
 
