@@ -28,6 +28,7 @@ public class SpellBaseScriptable : ScriptableObject
     public Sprite spellImage;
     public ObjectDataScriptable objectData;
 	
+
     [Header("Spell particles")]
     public List<Material>? RayMaterial;
     public GameObject? spawnPrefab;
