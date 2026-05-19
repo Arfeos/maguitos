@@ -11,7 +11,7 @@ using static UnityEngine.EventSystems.EventTrigger;
 public class DisplayScoreTable : MonoBehaviour
 {
     
-    public ScoreManager scoreManager;           
+    private IScoreService _scoreService;           
     public Transform container;                
     public GameObject rowPrefab;
 
@@ -20,10 +20,14 @@ public class DisplayScoreTable : MonoBehaviour
     private List<GameObject> _rows = new List<GameObject>();
     public int currentPage = 0;
 
-    
-    
+    [SerializeField] TextMeshPro textoPagina;
+
     [SerializeField] bool _RefreshAtStart = false;
 
+    private void Awake()
+    {
+        _scoreService = AppContainer.Get<IScoreService>();
+    }
     private void Start()
     {
         if (_RefreshAtStart) RefreshTable();
@@ -40,7 +44,7 @@ public class DisplayScoreTable : MonoBehaviour
         }
         _rows.Clear();
 
-        var sortedScores = scoreManager.scoreTable.scores
+        var sortedScores = _scoreService.getScoreTable().scores
            .OrderByDescending(s => s.score);
 
         var pageScores = sortedScores
@@ -62,7 +66,8 @@ public class DisplayScoreTable : MonoBehaviour
             }
         }
         int maxPage = Mathf.CeilToInt((float)sortedScores.Count() / pageSize);
-        
+        if (textoPagina != null)
+        textoPagina.text = ((currentPage + 1) + "/" + maxPage);
     }
 
     /// <summary>
@@ -71,7 +76,7 @@ public class DisplayScoreTable : MonoBehaviour
     public void NextPage()
     {
        
-        int maxPage = Mathf.CeilToInt((float)scoreManager.scoreTable.scores.Count / pageSize) - 1;
+        int maxPage = Mathf.CeilToInt((float)_scoreService.getScoreTable().scores.Count / pageSize) - 1;
         if (currentPage < maxPage)
         { 
             
