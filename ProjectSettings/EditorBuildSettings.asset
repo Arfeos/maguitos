@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: f2d78445af8d40f42af85cc96265541c
+  - enabled: 1
+    path: Assets/Scenes/Hordes.unity
+    guid: cfc97657fc7adc2498c4a508a97e4510
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 092e0341c4b2b464daa1bcc08ae390ae, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

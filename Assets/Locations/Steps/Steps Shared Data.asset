@@ -107,6 +107,14 @@ MonoBehaviour:
     m_Key: LeaveTutorialDesc
     m_Metadata:
       m_Items: []
+  - m_Id: 2534170576535552
+    m_Key: TakeOrbName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2534173395107840
+    m_Key: TakeOrbDesc
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -819,6 +819,10 @@ MonoBehaviour:
   dissolveColor: {r: 0, g: 0, b: 0, a: 1}
   delayBeforeStart: 3
   dissolveTime: 2
+  orbVida: {fileID: 5454809812003398470, guid: d9c2a4384634c504ab25164edeaa5689, type: 3}
+  orbMana: {fileID: 5423546751311833199, guid: c5ae8f89468c5924b8a8e983c16a4754, type: 3}
+  percentSpawnLife: 2
+  percentSpawnMana: 1
   TakeDamageSound: {fileID: 8300000, guid: a09f486db9e7c414eb4575c456d234bc, type: 3}
   JumpSound: {fileID: 8300000, guid: 53a21ba8e4cac1a4db31d468ad449ffa, type: 3}
   AttackSound: {fileID: 8300000, guid: 35b16ee02380268498fb76d9c4860e9e, type: 3}

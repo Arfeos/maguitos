@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,6 +37,13 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     [SerializeField] protected Color dissolveColor = Color.red;
     [SerializeField] protected float delayBeforeStart = 3f;
     [SerializeField] protected float dissolveTime = 2f;
+
+    // ── Orbes ───────────────────────────────────────────────────────────────
+
+    [SerializeField] protected GameObject orbVida;
+    [SerializeField] protected GameObject orbMana;
+    [SerializeField, Range(0f, 100f)] protected float percentSpawnLife;
+    [SerializeField, Range(0f, 100f)] protected float percentSpawnMana;
     // ── Sonidos ─────────────────────────────────────────────────────────────
     [Header("Sounds")]
     [SerializeField] protected AudioClip TakeDamageSound;
@@ -117,6 +125,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     protected virtual void OnUpdate()
     {
         CheckState();
+        
     }
 
     /// <summary>Se llama justo antes de destruir el objeto. Sobreescribe para lógica extra al morir.</summary>
@@ -125,6 +134,9 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         //_scoreService.addPoints(_profileService.getSelectedProfile().guid, puntuación);
         if (_scoreService == null) _scoreService = AppContainer.Get<IScoreService>();
         _scoreService.addPoints("Pepe", puntuación);
+
+        CreateOrbsByPercent(percentSpawnMana, orbMana);
+        CreateOrbsByPercent(percentSpawnLife, orbVida);
     }
 
     // ── Lógica común ─────────────────────────────────────────────────────────
@@ -219,12 +231,36 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         Destroy(gameObject);
     }
 
+    private void CreateOrbsByPercent(float Percent, GameObject Orb)
+    {
+        if (checkPercentSpawn(Percent))
+        {
+            InstantiateOrb(Orb);
+        }
+    }
+
+    private bool checkPercentSpawn(float percentToCheck)
+    {
+        float percentValue = UnityEngine.Random.Range(0, 100);
+
+        if (percentValue <= percentToCheck)
+            return true;
+        return false;
+    }
+    
+    private void InstantiateOrb(GameObject Orb)
+    {
+        Vector3 randomPos = transform.position + UnityEngine.Random.insideUnitSphere * 1f;
+
+        Instantiate(orbMana, randomPos, quaternion.identity);
+    }
+
     // ── Cooldown de acciones ─────────────────────────────────────────────────
 
     private IEnumerator ActionCooldownRoutine()
     {
         _nextActionTime = false;
-        yield return new WaitForSecondsRealtime(attackCooldown);
+        yield return new WaitForSeconds(attackCooldown);
         _nextActionTime = true;
         _actionCoroutine = null;
     }
