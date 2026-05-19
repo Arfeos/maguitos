@@ -322,7 +322,7 @@ public class MultiPlayerController : NetworkBehaviour, IHittable
 
     private void handlePause()
     {
-        if (PlayerInputManager.Actions.Player.pause.WasPressedThisFrame() && !NetworkManager.Singleton.IsListening)
+        if (PlayerInputManager.Actions.Player.pause.WasPressedThisFrame())
         {
             _pauseService.TogglePause();
         }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public partial class SpellBase : MonoBehaviour
 {
@@ -26,46 +27,45 @@ public partial class SpellBase : MonoBehaviour
         canCast = true;
         isCasting = false;
     }
-    public virtual void LanzarHechizoBase(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) 
+
+    public virtual Vector3 ExecuteSpell(Transform spellSpawn,SpellBase spell,LayerMask layersToHit)
     {
-        if(_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
+        Vector3 direction = spellSpawn.forward;
+        Vector3 endPoint;
 
-        if (canCast && !isCasting && _characterService.CheckMana() > spell.spell.manaCost)
+        RaycastHit hit;
+
+        if (Physics.Raycast(
+            spellSpawn.position,
+            direction,
+            out hit,
+            spell.spell.lifeTime,
+            layersToHit))
         {
-            
-            canCast = false;
-            isCasting = true;
+            endPoint = hit.point;
 
-            switch (spell.spell.spell_Type)
+            IHittable hittable =
+                hit.collider.GetComponent<IHittable>();
+
+            if (hittable != null)
             {
-                case SpellType.ray:
-                    CastRaySpell(spellSpawn, spell, layersToHit);
-                    break;
-                case SpellType.ball:
-                    Debug.Log("Suck this ball");
-                //case SpellType.ball:
-                //    ActualSpell.LanzarHechizo(spellSpawn, ActualSpell, layersToHit);
-                //    LanzarBolaServerRpc(
-                //        spellSpawn.position,
-                //        spellSpawn.forward,
-                //        ActualSpell.spell.velocity,
-                //        _characterService.getIndex()
-                //    );
-                    break;
-                case SpellType.buff:
-                    //TODO implement type of spell
-                    break;
-                case SpellType.structure:
-                    //TODO implement type of spell
-                    break;
+                hittable.Hit(spell.spell.damage);
             }
-
-            Invoke("ResetCast", spell.spell.shootDelay);
         }
-        if (_characterService.CheckMana() == 0) Debug.Log("No tenes munbicion pive");
+        else
+        {
+            endPoint =
+                spellSpawn.position +
+                direction * spell.spell.lifeTime;
+        }
+
+        return endPoint;
     }
 
-    
+    public virtual void LanzarHechizoBase(Transform spellSpawn,SpellBase spell,LayerMask layersToHit)
+    {
+        ExecuteSpell(spellSpawn, spell, layersToHit);
+    }
 
     private void ResetLocalCast()
     {

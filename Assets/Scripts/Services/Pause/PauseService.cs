@@ -33,7 +33,8 @@ public class PauseService : IPauseService
         if (PausepanelInstance != null) {
             if (!PausepanelInstance.activeInHierarchy)
             {
-                if (NetworkManager.Singleton.IsListening) Time.timeScale = 1;
+                if (NetworkManager.Singleton != null)
+                    if(NetworkManager.Singleton.IsListening) Time.timeScale = 1;
                     else Time.timeScale = 0;
 
                 PausepanelInstance.SetActive(true);

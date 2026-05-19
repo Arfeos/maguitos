@@ -10,6 +10,7 @@ public enum SceneNames
    Settings,
    Tutorial,
    Hordes,
-   SampleScene
+   SampleScene,
+    Look_For_Game
 
 }

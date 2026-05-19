@@ -1,4 +1,3 @@
-
 using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
@@ -45,12 +44,15 @@ public class SceneService :ISceneService
             canvasGroup = loadingScreen.AddComponent<CanvasGroup>();
         yield return Fade(canvasGroup, 0, 1, 0.5f);
 
-        if (NetworkManager.Singleton.IsServer)
+        if (NetworkManager.Singleton != null)
         {
-            NetworkManager.Singleton.SceneManager.LoadScene(
-                sceneName,
-                LoadSceneMode.Single
-            );
+            if (NetworkManager.Singleton.IsListening)
+            {
+                NetworkManager.Singleton.SceneManager.LoadScene(
+                    sceneName,
+                    LoadSceneMode.Single
+                );
+            }
         }
         else
         {

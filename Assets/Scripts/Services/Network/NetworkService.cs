@@ -26,7 +26,6 @@ public class NetworkService : INetworkService
             PlayerId = AuthenticationService.Instance.PlayerId;
             IsReady = true;
             _readyTcs.SetResult(true);
-            Debug.Log($"[NetworkService] Listo. PlayerId: {PlayerId}");
         }
         catch (System.Exception e)
         {
