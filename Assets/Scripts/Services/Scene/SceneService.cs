@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,10 +7,11 @@ using UnityEngine.UI;
 
 public class SceneService :ISceneService
 {
-    private Stack lastScene;
+    private Stack<string> lastScene= new Stack<string>();
     GameObject prefab;
     public void LoadScene(SceneNames scene)
     {
+
         lastScene.Push(SceneManager.GetActiveScene().name) ;
         //he visto el atentado contra natura hecho por mi compañero Sergio y dada la situacion, me veo en la necesidad de utilizarlo, asi que,
         //ahora es nuestra aberracion, una disculpa de antemano.
