@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/UI/MainMenu/Main_menu.unity
     guid: e53e02e1a895c424499d017830a37601
   - enabled: 1
+    path: Assets/Scenes/Hordes.unity
+    guid: cfc97657fc7adc2498c4a508a97e4510
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: f2d78445af8d40f42af85cc96265541c
   m_configObjects:

@@ -19,7 +19,9 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1126457156472832
-    m_Localized: CREAR UNA SALA
+    m_Localized: 'MULTIPLAYER:
+
+      ARENA'
     m_Metadata:
       m_Items: []
   - m_Id: 1126713554276352
@@ -31,7 +33,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1318350609809408
-    m_Localized: BUSCAR PARTIDA
+    m_Localized: 'SINGLEPLAYER:
+
+      HORDES'
     m_Metadata:
       m_Items: []
   - m_Id: 1319185666375680
