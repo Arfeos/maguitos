@@ -115,7 +115,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         if (JumpSound != null) _audioService.PlaySound(JumpSound);
     }
 
-    // ── Métodos virtuales sobreescribibles ───────────────────────────────────
+    // ── Métodos virtuales sobreescribibles ───────────────────────────────────s
 
     /// <summary>
     /// Se llama cada Update (ya filtrado por null y muerte).
@@ -132,6 +132,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     protected virtual void OnDeath() 
     {
         //_scoreService.addPoints(_profileService.getSelectedProfile().guid, puntuación);
+        if (_scoreService == null) _scoreService = AppContainer.Get<IScoreService>();
         _scoreService.addPoints("Pepe", puntuación);
 
         CreateOrbsByPercent(percentSpawnMana, orbMana);

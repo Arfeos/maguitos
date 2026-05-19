@@ -15,12 +15,12 @@ MonoBehaviour:
   spell_Type: 0
   cast_Type: 2
   spell_importance: 0
-  manaCost: 80
-  MaxCharge: 6
+  manaCost: 60
+  MaxCharge: 4
   currentCharge: 0
   ChargeTimePerUnit: 0.5
   velocity: 1
-  damage: 100
+  damage: 500
   lifeTime: 1000
   shootDelay: 1
   spreadIntensity: 0
@@ -36,8 +36,8 @@ MonoBehaviour:
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
-  spawnSound: {fileID: 0}
-  chargeSound: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: b43f0797910202f42ba0c0c6aa0ad631, type: 3}
+  chargeSound: {fileID: 8300000, guid: d1afd3f4d23c24f418ffc315afb04965, type: 3}
   airSound: {fileID: 0}
   hitSound: {fileID: 0}
   canCast: 1
