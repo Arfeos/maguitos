@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class SceneService :ISceneService
 {
-    private string lastScene;
+    private Stack lastScene;
     GameObject prefab;
     public void LoadScene(SceneNames scene)
     {
-        lastScene = SceneManager.GetActiveScene().name;
+        lastScene.Push(SceneManager.GetActiveScene().name) ;
         //he visto el atentado contra natura hecho por mi compañero Sergio y dada la situacion, me veo en la necesidad de utilizarlo, asi que,
         //ahora es nuestra aberracion, una disculpa de antemano.
 
@@ -23,8 +23,8 @@ public class SceneService :ISceneService
     public void GoBack()
     {
         //lo siento por esto pero estoy cansado jefe
-        if (!string.IsNullOrEmpty(lastScene))
-        CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(lastScene));
+        if (lastScene.Count!=0)
+        CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(lastScene.Pop().ToString()));
     }
     private IEnumerator LoadSceneRutine(string sceneName)
     {

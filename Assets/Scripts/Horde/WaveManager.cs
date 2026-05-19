@@ -6,7 +6,7 @@ public class WaveManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] GameObject[] enemy;
-    [SerializeField] GameObject counterPrefab;
+    [SerializeField] GameObject HordeInfoPrefab;
     [SerializeField] GameObject player;
     [SerializeField] GameObject Mapcenter;
     [SerializeField] GameObject DeathPanel;
@@ -66,7 +66,7 @@ public class WaveManager : MonoBehaviour
             return;
         }
 
-        GameObject counterObj = Instantiate(counterPrefab, canvas.transform);
+        GameObject counterObj = Instantiate(HordeInfoPrefab, canvas.transform);
 
         counter = counterObj.GetComponent<TextMeshProUGUI>();
         enemiesParent = new GameObject("Enemies");
