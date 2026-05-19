@@ -1,16 +1,21 @@
+using System;
 using UnityEngine;
 
 public class HordeInitializer : MonoBehaviour
 {
-    
-    void Start()
+    private IAudioService _audioService;
+
+    [SerializeField] private AudioClip _audioClip;
+    private void Awake()
     {
-        
+        _audioService = AppContainer.Get<IAudioService>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
         
+        
+        _audioService.PlayMusic(_audioClip);
+        _audioService.SetMusicVolume(0.05f);
     }
 }
