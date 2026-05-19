@@ -24,4 +24,5 @@ public interface ICharacterService
 
     public void Die();
 
+    public void ResetCharacter();
 }

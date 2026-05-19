@@ -40,7 +40,7 @@ public class CharacterService : ICharacterService
     }
     public void setActualSpell(int cambioDePosicion)
     {
-
+        if (listaHechizos.Count <=0) return;
         index += cambioDePosicion;
         if (index < 0) index = listaHechizos.Count - 1;
         if (index > listaHechizos.Count - 1) index = 0;
