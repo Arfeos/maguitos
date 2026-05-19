@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -33,10 +34,39 @@ public class AlertService : MonoBehaviour, IAlertService
             };
 
             // Usa stats si hay spellData, sino la descripción normal
-            message.GetStatsDescription().GetLocalizedStringAsync().Completed += handle =>
+            if (message.spellData != null)
             {
-                textoDescripcion.text = handle.Result;
-            };
+                var typeLocalized = new LocalizedString { TableReference = "InfoPanel", TableEntryReference = message.GetTypeKey() };
+                var importanceLocalized = new LocalizedString { TableReference = "InfoPanel", TableEntryReference = message.GetImportanceKey() };
+
+                typeLocalized.GetLocalizedStringAsync().Completed += typeHandle =>
+                {
+                    importanceLocalized.GetLocalizedStringAsync().Completed += importanceHandle =>
+                    {
+                        string statsEntry = message.spellData.penetrates ? "spellStatsPenetration" : "spellStats";
+                        var statsLocalized = new LocalizedString
+                        {
+                            TableReference = "InfoPanel",
+                            TableEntryReference = statsEntry,
+                            Arguments = message.spellData.penetrates
+                                ? new object[] { importanceHandle.Result, typeHandle.Result, message.spellData.damage, message.spellData.manaCost, message.spellData.lifeTime, message.spellData.penetrationlevel }
+                                : new object[] { importanceHandle.Result, typeHandle.Result, message.spellData.damage, message.spellData.manaCost, message.spellData.lifeTime }
+                        };
+
+                        statsLocalized.GetLocalizedStringAsync().Completed += statsHandle =>
+                        {
+                            textoDescripcion.text = statsHandle.Result;
+                        };
+                    };
+                };
+            }
+            else
+            {
+                message.objetDescription.GetLocalizedStringAsync().Completed += handle =>
+                {
+                    textoDescripcion.text = handle.Result;
+                };
+            }
 
             MessageBox.SetActive(true);
         }

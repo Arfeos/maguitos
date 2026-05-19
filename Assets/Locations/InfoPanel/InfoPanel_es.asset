@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: es
   m_SharedData: {fileID: 11400000, guid: 34e054a403d3ddb46ae8210e30cddf6d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 2871841239173693550
   m_TableData:
   - m_Id: 17595351040
     m_Localized: Lanza de luz
@@ -31,7 +32,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12043411505152
-    m_Localized: Cogelo para poder ver mejor en la oscuridad
+    m_Localized: "C\xF3gelo para poder ver mejor en la oscuridad"
     m_Metadata:
       m_Items: []
   - m_Id: 14283710906368
@@ -39,7 +40,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14334810112000
-    m_Localized: "Bajo da\xF1o,bajo alcance,alta tasa de disparo, muy bajo consumo
+    m_Localized: "Bajo da\xF1o, bajo alcance, alta tasa de disparo, muy bajo consumo
       de man\xE1"
     m_Metadata:
       m_Items: []
@@ -57,7 +58,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17750185721856
-    m_Localized: "Explosivo, Altos da\xF1o, rango variable, baja tasa de disparo,
+    m_Localized: "Explosivo, alto da\xF1o, rango variable, baja tasa de disparo,
       alto consumo de man\xE1"
     m_Metadata:
       m_Items: []
@@ -75,8 +76,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 20031387975680
-    m_Localized: 'Highest damage, very high range, very slow firerate, very high
-      mana consumption '
+    m_Localized: "M\xE1ximo da\xF1o, alcance muy amplio, cadencia de disparo muy
+      lenta, consumo de man\xE1 muy elevado."
     m_Metadata:
       m_Items: []
   - m_Id: 1137674088865792
@@ -88,9 +89,47 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1897266120658944
-    m_Localized: "Da\xF1o: {0}\nMana: {1}\nAlcance: {2}"
+    m_Localized: "{0}\n{1}\nDa\xF1o: {2}\nMana: {3}\nAlcance: {4}"
+    m_Metadata:
+      m_Items:
+      - rid: 2871841239173693550
+  - m_Id: 1909716706562048
+    m_Localized: Rayo
     m_Metadata:
       m_Items: []
+  - m_Id: 1909805999099904
+    m_Localized: Bola
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909828086304768
+    m_Localized: Mejora
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909852690092032
+    m_Localized: Estructura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910337513885696
+    m_Localized: Principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910359190048768
+    m_Localized: Secundario
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1912051050647552
+    m_Localized: "{0}\n{1}\nDa\xF1o: {2}\nMana: {3}\nAlcance: {4}\nPenetraci\xF3n:
+      {5}"
+    m_Metadata:
+      m_Items:
+      - rid: 2871841239173693550
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2871841239173693550
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 1897266120658944
+        - id: 1912051050647552

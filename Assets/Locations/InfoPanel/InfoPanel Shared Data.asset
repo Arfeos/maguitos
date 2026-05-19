@@ -15,6 +15,14 @@ MonoBehaviour:
   m_TableCollectionName: InfoPanel
   m_TableCollectionNameGuidString: 34e054a403d3ddb46ae8210e30cddf6d
   m_Entries:
+  - m_Id: 1897266120658944
+    m_Key: spellStats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1912051050647552
+    m_Key: spellStatsPenetration
+    m_Metadata:
+      m_Items: []
   - m_Id: 17595351040
     m_Key: LightLanceName
     m_Metadata:
@@ -79,8 +87,28 @@ MonoBehaviour:
     m_Key: ShootingBoardDesc
     m_Metadata:
       m_Items: []
-  - m_Id: 1897266120658944
-    m_Key: spellStats
+  - m_Id: 1910337513885696
+    m_Key: importance1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910359190048768
+    m_Key: importance2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909716706562048
+    m_Key: typeRay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909805999099904
+    m_Key: typeBall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909828086304768
+    m_Key: typeBuff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909852690092032
+    m_Key: typeStructure
     m_Metadata:
       m_Items: []
   m_Metadata:

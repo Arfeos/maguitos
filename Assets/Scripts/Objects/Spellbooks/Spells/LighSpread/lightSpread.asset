@@ -31,6 +31,7 @@ MonoBehaviour:
   RayAliveTime: 0.3
   nombreHechizo: Light spread
   spellImage: {fileID: 21300000, guid: 442a2550420883a488b57629e3117c92, type: 3}
+  objectData: {fileID: 11400000, guid: 457447362831a4649beae916dd566a74, type: 2}
   RayMaterial:
   - {fileID: 2100000, guid: 971be97d9923ad3408615ce0973e7278, type: 2}
   spawnPrefab: {fileID: 0}

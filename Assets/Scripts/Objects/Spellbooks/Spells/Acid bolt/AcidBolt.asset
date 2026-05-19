@@ -31,6 +31,7 @@ MonoBehaviour:
   RayAliveTime: 2
   nombreHechizo: AcidBolt
   spellImage: {fileID: 21300000, guid: d4445f45979203e4f98eae5e5c5b88a6, type: 3}
+  objectData: {fileID: 11400000, guid: 9c76fdcb807826243923a1b6e241f90d, type: 2}
   RayMaterial:
   - {fileID: 2100000, guid: 8ce7988fdeb8cdd49939c63633fd5f5e, type: 2}
   spawnPrefab: {fileID: 0}

@@ -30,12 +30,18 @@ public class SpellBookPageController : MonoBehaviour
     {
 
         SpellChangeOnPageEvent param = (SpellChangeOnPageEvent)parameters;
-        if(param.importance == importance)
+        if (param.importance == importance)
         {
-            textoNombre.text = param.nombre;
+            param.nombre.GetLocalizedStringAsync().Completed += handle =>
+                    {
+                        textoNombre.text = handle.Result;
+                    };
+
             textoMana.text = param.mana.ToString();
-            spellImage.sprite = param.spellSprite;
+
+            if (param.spellSprite != null)
+                spellImage.sprite = param.spellSprite;
         }
-        
+
     }
 }

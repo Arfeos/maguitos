@@ -16,15 +16,15 @@ MonoBehaviour:
     m_Code: nya
   m_SharedData: {fileID: 11400000, guid: 34e054a403d3ddb46ae8210e30cddf6d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 2871841239173693551
   m_TableData:
   - m_Id: 17595351040
     m_Localized: Light lance nya!
     m_Metadata:
       m_Items: []
   - m_Id: 2435162816512
-    m_Localized: "Meowdium damage nya, meowdium range nya, low mana consumption nya~
-      purrfect balance for a kitty battlerrr~ (=^\uFF65\u03C9\uFF65^=)\u2728"
+    m_Localized: Mediumu damage, mediumu wange, mediumu fiwewate, low meownya consumptionu
     m_Metadata:
       m_Items: []
   - m_Id: 12032988659712
@@ -32,8 +32,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12043411505152
-    m_Localized: "Take it nyan~ so you can see betteerrr in the dark, meow~ (=^\uFF65\u03C9\uFF65^=)
-      nyaaa, like a sneaky night kitty~ purr~"
+    m_Localized: Take itu to see bettew inu the dawku
     m_Metadata:
       m_Items: []
   - m_Id: 14283710906368
@@ -41,7 +40,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14334810112000
-    m_Localized: 'low damage, low range,high firerate,very low mana consumption '
+    m_Localized: Low damage, low wange, highu fiwewate, vewy low meownya consumptionu
     m_Metadata:
       m_Items: []
   - m_Id: 16811232051200
@@ -49,7 +48,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16816097443840
-    m_Localized: 'low damage, low range,high firerate,very low mana consumption '
+    m_Localized: Low damage, low wange, highu fiwewate, vewy low meownya consumptionu
     m_Metadata:
       m_Items: []
   - m_Id: 17727062523904
@@ -57,13 +56,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17750185721856
-    m_Localized: "Explosive,High damage, variable range,low firerate,high mana consumption
-      \n"
+    m_Localized: 'Explosivu, highu damage, vawiable wange, low fiwewate, highu meownya
+      consumptionu '
     m_Metadata:
       m_Items: []
   - m_Id: 18415301672960
-    m_Localized: 'Low accuracy, High damage, medium range, medium firerate, low mana
-      consumption '
+    m_Localized: Low accuwacy, highu damage, mediumu wange, mediumu fiwewate, low
+      meownya consumptionu
     m_Metadata:
       m_Items: []
   - m_Id: 18405604442112
@@ -75,8 +74,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 20031387975680
-    m_Localized: 'Highest damage, very high range, very slow firerate, very high
-      mana consumption '
+    m_Localized: Highestu damage, vewy highu wange, vewy slow fiwewate, vewy highu
+      meownya consumptionu
     m_Metadata:
       m_Items: []
   - m_Id: 1137674088865792
@@ -88,13 +87,66 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1897266120658944
-    m_Localized: 'Damage: {0}
+    m_Localized: '{0}
 
-      Meownya: {1}
+      {1}
 
-      Wange: {2}'
+      Damage: {2}
+
+      Meownya: {3}
+
+      Wange:
+      {4}'
+    m_Metadata:
+      m_Items:
+      - rid: 2871841239173693551
+  - m_Id: 1909716706562048
+    m_Localized: Way
     m_Metadata:
       m_Items: []
+  - m_Id: 1909805999099904
+    m_Localized: Ballu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909828086304768
+    m_Localized: Buff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909852690092032
+    m_Localized: Stwuctuwe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910337513885696
+    m_Localized: Pwimawy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910359190048768
+    m_Localized: Secondawy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1912051050647552
+    m_Localized: '{0}
+
+      {1}
+
+      Damage: {2}
+
+      Meownya: {3}
+
+      Wange:
+      {4}
+
+      Penetwationu: {5}'
+    m_Metadata:
+      m_Items:
+      - rid: 2871841239173693551
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2871841239173693551
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 1897266120658944
+        - id: 1912051050647552

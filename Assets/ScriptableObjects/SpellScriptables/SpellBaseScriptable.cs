@@ -26,6 +26,7 @@ public class SpellBaseScriptable : ScriptableObject
     public float RayAliveTime = 0.3f;
     public string nombreHechizo = "Change Spell name";
     public Sprite spellImage;
+    public ObjectDataScriptable objectData;
 
     [Header("Spell particles")]
     public List<Material>? RayMaterial;

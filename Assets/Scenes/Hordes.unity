@@ -18135,34 +18135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player New (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4756135489967229772, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4756135489967229772, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4756135489967229772, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5613218020918453169, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8121617940016955564, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8121617940016955564, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227007965201074097, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

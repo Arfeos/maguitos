@@ -12,21 +12,19 @@ public class ObjectDataScriptable : ScriptableObject
     // Referencia al hechizo para mostrar sus stats
     public SpellBaseScriptable spellData;
 
-    // Contructor para la LocalizedString de stats si hay hechizo asignado
-    public LocalizedString GetStatsDescription()
+    public string GetTypeKey() => spellData.spell_Type switch
     {
-        if (spellData == null) return objetDescription;
+        SpellBase.SpellType.ray => "typeRay",
+        SpellBase.SpellType.ball => "typeBall",
+        SpellBase.SpellType.buff => "typeBuff",
+        SpellBase.SpellType.structure => "typeStructure",
+        _ => "typeRay"
+    };
 
-        return new LocalizedString
-        {
-            TableReference = "InfoPanel",
-            TableEntryReference = "spellStats",
-            Arguments = new object[]
-            {
-                spellData.damage,
-                spellData.manaCost,
-                spellData.lifeTime
-            }
-        };
-    }
+    public string GetImportanceKey() => spellData.spell_importance switch
+    {
+        Spellimportance.primary => "importance1",
+        Spellimportance.secundary => "importance2",
+        _ => "importance1"
+    };
 }

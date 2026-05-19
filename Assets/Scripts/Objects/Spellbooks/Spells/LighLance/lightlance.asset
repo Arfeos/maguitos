@@ -31,6 +31,7 @@ MonoBehaviour:
   RayAliveTime: 0.5
   nombreHechizo: Light lance
   spellImage: {fileID: 21300000, guid: eaa4e3aeede96d64da31ccdb2bc866fd, type: 3}
+  objectData: {fileID: 11400000, guid: 2a97f03cc78e74d40b725cb337d165a0, type: 2}
   RayMaterial:
   - {fileID: 2100000, guid: 41f057012fe98bf40a0772b17f0dc130, type: 2}
   spawnPrefab: {fileID: 0}

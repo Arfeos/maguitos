@@ -19,8 +19,8 @@ public class CharacterService : ICharacterService
             return;
         }
         this.manaActual += manaAniadir;
-        if(_eventService == null) _eventService = AppContainer.Get<IEventService>();
-        
+        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
+
         ManaEvent ManaEvent = new ManaEvent();
         ManaEvent.ManaToChange = manaActual;
         _eventService.Publish(ManaEvent);
@@ -39,7 +39,7 @@ public class CharacterService : ICharacterService
 
         index += cambioDePosicion;
         if (index < 0) index = listaHechizos.Count - 1;
-        if (index > listaHechizos.Count -1 ) index = 0;
+        if (index > listaHechizos.Count - 1) index = 0;
         Debug.Log("Hechizo actual: " + listaHechizos[index].name);
     }
 
@@ -75,7 +75,7 @@ public class CharacterService : ICharacterService
         if (spellToAdd.spell.spell_importance == Spellimportance.primary)
         {
             List<SpellBase> listaDeHechizosPrimarios = getPrimarySpell();
-            if(listaDeHechizosPrimarios.Count == 0)
+            if (listaDeHechizosPrimarios.Count == 0)
             {
                 listaHechizos.Add(spellToAdd);
             }
@@ -87,7 +87,7 @@ public class CharacterService : ICharacterService
                 }
                 listaHechizos.Add(spellToAdd);
             }
-                
+
         }
         else
         {
@@ -104,11 +104,11 @@ public class CharacterService : ICharacterService
                 }
                 listaHechizos.Add(spellToAdd);
             }
-                
+
         }
         if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
         SpellChangeOnPageEvent _eventSpellChangeOnPageEvent = new SpellChangeOnPageEvent();
-        _eventSpellChangeOnPageEvent.nombre = spellToAdd.spell.name;
+        _eventSpellChangeOnPageEvent.nombre = spellToAdd.spell.objectData.objectName;
         _eventSpellChangeOnPageEvent.mana = spellToAdd.spell.manaCost;
         _eventSpellChangeOnPageEvent.spellSprite = spellToAdd.spell.spellImage;
         _eventSpellChangeOnPageEvent.importance = spellToAdd.spell.spell_importance;
@@ -132,7 +132,7 @@ public class CharacterService : ICharacterService
         if (listaHechizos.Count == 0) return listaDeHechizosPrimarios;
         foreach (SpellBase hechizoEnLista in listaHechizos)
         {
-            if (hechizoEnLista.spell.spell_importance == Spellimportance.primary)  listaDeHechizosPrimarios.Add(hechizoEnLista);
+            if (hechizoEnLista.spell.spell_importance == Spellimportance.primary) listaDeHechizosPrimarios.Add(hechizoEnLista);
         }
 
         return listaDeHechizosPrimarios;
@@ -151,11 +151,11 @@ public class CharacterService : ICharacterService
     }
     public SpellBase getSpell(string spellName)
     {
-        if(spellName == null || spellName.Equals("") || spellName.Equals("Change Spell name")) return null;
+        if (spellName == null || spellName.Equals("") || spellName.Equals("Change Spell name")) return null;
 
         foreach (SpellBase hechizoEnLista in listaHechizos)
         {
-            if(hechizoEnLista.spell.nombreHechizo.Equals(spellName)) return hechizoEnLista;
+            if (hechizoEnLista.spell.nombreHechizo.Equals(spellName)) return hechizoEnLista;
         }
 
         return null;
@@ -163,9 +163,9 @@ public class CharacterService : ICharacterService
 
     public SpellBase getSpell(int spellPosition)
     {
-        if(spellPosition < 0) return null;
-        if(spellPosition + 1 > listaHechizos.Count) return null;
-        if(listaHechizos.Count == 0) return null;
+        if (spellPosition < 0) return null;
+        if (spellPosition + 1 > listaHechizos.Count) return null;
+        if (listaHechizos.Count == 0) return null;
         return listaHechizos[spellPosition];
     }
 
@@ -173,7 +173,7 @@ public class CharacterService : ICharacterService
     public bool removeSpell(SpellBase spellToRemove)
     {
         if (spellToRemove == null) return false;
-        if(!listaHechizos.Contains(spellToRemove)) return false;
+        if (!listaHechizos.Contains(spellToRemove)) return false;
         listaHechizos.Remove(spellToRemove);
         return true;
     }
@@ -190,7 +190,8 @@ public class CharacterService : ICharacterService
     {
         if (spellToRemove == null || spellToRemove.Equals("") || spellToRemove.Equals("Change Spell name")) return false;
 
-        for(int i = 0; listaHechizos.Count >= i ;i++){ 
+        for (int i = 0; listaHechizos.Count >= i; i++)
+        {
             if (listaHechizos[i].spell.nombreHechizo.Equals(spellToRemove))
             {
                 listaHechizos.RemoveAt(i);
