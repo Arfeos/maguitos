@@ -133,6 +133,6 @@ MonoBehaviour:
   velocidadPersecucion: 4
   alturaVuelo: 1
   suavizadoAltura: 5
-  efectoRecogida: {fileID: 0}
+  efectoRecogida: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
   mana: 0
   vida: 25

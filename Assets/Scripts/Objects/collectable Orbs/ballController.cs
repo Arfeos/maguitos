@@ -30,8 +30,8 @@ public class ballController : MonoBehaviour
     public float suavizadoAltura = 5f;
 
     [Header("Efectos (opcional)")]
-    [Tooltip("Partículas que se reproducen al recogerse (puede dejarse vacío)")]
-    public GameObject efectoRecogida;
+    [Tooltip("Sonido que se reproduce al ser cogido")]
+    public AudioClip efectoRecogida;
 
     [Header("Valores de recogida")]
     [Tooltip("Efectos que se añaden al jugador al hacer contacto")]
@@ -43,12 +43,14 @@ public class ballController : MonoBehaviour
     private bool persiguiendo = false;
     private ICharacterService _characterService;
 
+    private IAudioService _audioService;
+
     // ── Unity Lifecycle ─────────────────────────────────────────────────────
     private void Awake()
     {
         _characterService = AppContainer.Get<ICharacterService>();
 
-
+        _audioService = AppContainer.Get<IAudioService>();
     }
     void Start()
     {
@@ -128,7 +130,7 @@ public class ballController : MonoBehaviour
     {
         if (efectoRecogida != null)
         {
-            Instantiate(efectoRecogida, transform.position, Quaternion.identity);
+            _audioService.PlaySound(efectoRecogida);
         }
         _characterService.AddMana(mana);
         _characterService.Heal(vida);

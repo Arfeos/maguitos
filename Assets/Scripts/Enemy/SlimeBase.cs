@@ -199,7 +199,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         StartCoroutine(DissolveAfterDelay());
     }
 
-    private IEnumerator DissolveAfterDelay()
+    protected virtual IEnumerator DissolveAfterDelay()
     {
         yield return new WaitForSeconds(delayBeforeStart);
 

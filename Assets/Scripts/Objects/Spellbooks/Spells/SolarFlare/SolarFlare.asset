@@ -15,7 +15,7 @@ MonoBehaviour:
   spell_Type: 0
   cast_Type: 2
   spell_importance: 0
-  manaCost: 20
+  manaCost: 10
   MaxCharge: 2
   currentCharge: 0
   ChargeTimePerUnit: 0.5

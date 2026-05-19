@@ -1,6 +1,9 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
+using UnityEngine.Localization;
+
 
 public class WaveManager : MonoBehaviour
 {
@@ -20,7 +23,8 @@ public class WaveManager : MonoBehaviour
     private float timer;
     private int horde = 1;
     private bool isInHorde = false;
-    private TextMeshProUGUI counter;
+    private TextMeshProUGUI hordeCounter;
+    private LocalizeStringEvent counter;
     private GameObject enemiesParent;
 
     // Update is called once per frame
@@ -67,9 +71,10 @@ public class WaveManager : MonoBehaviour
         }
 
         GameObject counterObj = Instantiate(HordeInfoPrefab, canvas.transform);
-
-        counter = counterObj.GetComponent<TextMeshProUGUI>();
-        GameObject[] sonsList= counterObj.GetComponentsInChildren<GameObject>();
+        hordeCounter = counterObj.GetComponentsInChildren<TextMeshProUGUI>()[0];
+        Transform txtTime = counterObj.transform.Find("CounterNext/txt_Time");
+        counter = txtTime.GetComponent<LocalizeStringEvent>();
+        hordeCounter.text = horde.ToString();
         enemiesParent = new GameObject("Enemies");
         spawnEnemies();
         updateCounter();
@@ -82,8 +87,13 @@ public class WaveManager : MonoBehaviour
     {
         if (counter == null)
             return;
+        counter.StringReference.Arguments = new object[]
+{
+    Mathf.CeilToInt(timer)
+};
 
-        counter.text = "Tiempo: " + Mathf.CeilToInt(timer);
+        counter.RefreshString();
+        //counter.StringReference.Arguments = new object[] {Mathf.CeilToInt(timer) };
     }
 
     private void spawnEnemies()
@@ -103,6 +113,7 @@ public class WaveManager : MonoBehaviour
         //_scoreService.addPoints(_profileService.getSelectedProfile().guid, pointsPerHorde);
         pointsPerHorde = Mathf.CeilToInt(pointsPerHorde * 1.5f);
         spawnEnemies();
+        hordeCounter.text = horde.ToString();
         Debug.Log("Siguiente horda: " + horde);
     }
     private void OnPlayerDeath(GameEventBase @base)

@@ -14,8 +14,8 @@ public class PauseService : IPauseService
     public PauseService(PanelConfigurationScriptable PauseConfig, PanelConfigurationScriptable SettingConfig)
 
     {       
-        this.PausepanelPrefab= PauseConfig.Panel;
         this.SettingpanelPrefab = SettingConfig.Panel;
+        this.PausepanelPrefab= PauseConfig.Panel;
     }
 
     public void TogglePause()
@@ -52,15 +52,15 @@ public class PauseService : IPauseService
         }
        
     }
-    public void ToggleSettings() {
-        SettingpanelInstance = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.name == SettingpanelPrefab.name+"(Clone)" && g.scene == SceneManager.GetActiveScene());
-        Debug.Log(SettingpanelInstance);
+    public void ToggleSettings()
+    {
         if (SettingpanelInstance == null)
         {
-            Canvas canvas = GameObject.FindFirstObjectByType<Canvas>();
-            SettingpanelInstance = GameObject.Instantiate(SettingpanelPrefab, canvas.transform);
+            SettingpanelInstance = GameObject.Instantiate(SettingpanelPrefab);
+            SettingpanelInstance.SetActive(true);
+            PausepanelInstance.SetActive(false);
         }
-        if (SettingpanelInstance != null)
+        else
         {
             if (!SettingpanelInstance.activeInHierarchy)
             {
@@ -73,5 +73,8 @@ public class PauseService : IPauseService
                 PausepanelInstance.SetActive(true);
             }
         }
-    }
+
+
+
+    }  
 }
