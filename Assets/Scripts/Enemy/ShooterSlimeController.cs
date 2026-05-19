@@ -122,18 +122,12 @@ public class ShooterSlimeController : SlimeBase
         {
             // Retroceder (dirección contraria al jugador)
             targetVelocity = -dirToPlayer * moveSpeed;
-            _animator.SetBool("IsMoving", true);
         }
         else if (distanceToPlayer > tooFarDistance)
         {
             // Avanzar hacia el jugador
             targetVelocity = dirToPlayer * moveSpeed;
-            _animator.SetBool("IsMoving", true);
-        }
-        else
-        {
-            // Rango óptimo: parar
-            _animator.SetBool("IsMoving", false);
+            
         }
 
         targetVelocity.y = _rigidbody.linearVelocity.y; // Conservar gravedad
