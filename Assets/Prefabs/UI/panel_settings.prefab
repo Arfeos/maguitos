@@ -2800,9 +2800,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4569512739606224413}
-        m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
-        m_MethodName: back
+      - m_Target: {fileID: 4400295563398363287}
+        m_TargetAssemblyTypeName: SettingController, Assembly-CSharp
+        m_MethodName: ReOpenPause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
