@@ -122,6 +122,14 @@ MonoBehaviour:
     m_Localized: Entew the powtalu ando leavu the tutowialu
     m_Metadata:
       m_Items: []
+  - m_Id: 2534170576535552
+    m_Localized: Take NYAHE orbs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2534173395107840
+    m_Localized: Get close to NYAHE orbs to collect NYEM
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
