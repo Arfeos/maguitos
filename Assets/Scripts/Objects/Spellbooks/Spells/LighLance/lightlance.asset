@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lightlance
   m_EditorClassIdentifier: Assembly-CSharp::SpellBaseScriptable
   spell_Type: 0
-  cast_Type: 0
+  cast_Type: 1
   spell_importance: 1
   manaCost: 5
   MaxCharge: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   damage: 25
   lifeTime: 20
   shootDelay: 0.5
-  spreadIntensity: 0.01
+  spreadIntensity: 0
   producesLine: 1
   penetrates: 0
   penetrationlevel: 1

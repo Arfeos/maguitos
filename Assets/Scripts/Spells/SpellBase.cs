@@ -79,6 +79,7 @@ public partial class SpellBase : MonoBehaviour
             spell.currentCharge++;
         } while (spell.MaxCharge > spell.currentCharge);
         //TODO añadir sonido de carga maxima
+        stopCharginSound();
 
         Debug.Log("Carga maxima");
     }
@@ -94,6 +95,7 @@ public partial class SpellBase : MonoBehaviour
                     spell.spell.currentCharge = 0;
                     return;
                 }
+
                 //Lanzamos el hechizo
                 ShootRaySpell(spellSpawn, spell, layersToHit);
                 spell.spell.currentCharge = 0;

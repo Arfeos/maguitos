@@ -17,10 +17,10 @@ MonoBehaviour:
   spell_importance: 0
   manaCost: 50
   MaxCharge: 4
-  currentCharge: 0
+  currentCharge: 4
   ChargeTimePerUnit: 0.5
   velocity: 1
-  damage: 500
+  damage: 1000
   lifeTime: 1000
   shootDelay: 1
   spreadIntensity: 0

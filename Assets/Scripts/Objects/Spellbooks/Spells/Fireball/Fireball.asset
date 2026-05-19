@@ -15,14 +15,14 @@ MonoBehaviour:
   spell_Type: 1
   cast_Type: 0
   spell_importance: 0
-  manaCost: 25
+  manaCost: 20
   MaxCharge: 0
   currentCharge: 0
   ChargeTimePerUnit: 0
   velocity: 20
   damage: 50
   lifeTime: 0
-  shootDelay: 2
+  shootDelay: 1.5
   spreadIntensity: 0
   producesLine: 0
   penetrates: 0
