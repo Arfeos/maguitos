@@ -8,15 +8,14 @@ public class PausePanel : MonoBehaviour
 {
     private ISceneService _sceneService;
     private IPauseService _pauseService;
-    private IScoreService _scoreService;    
     private ICharacterService _characterService;
-
+    private IScoreService _scoreService;
     private void Start()
     {
         _sceneService = AppContainer.Get<ISceneService>();
         _pauseService = AppContainer.Get<IPauseService>();
+        _characterService = AppContainer.Get<ICharacterService>();
         _scoreService = AppContainer.Get<IScoreService>();
-        _characterService = AppContainer.Get<ICharacterService>();  
     }
     void Update()
     {
@@ -29,6 +28,7 @@ public class PausePanel : MonoBehaviour
     }
     public void RestartLevel()
     {
+
         if (Enum.TryParse<SceneNames>(SceneManager.GetActiveScene().name, out SceneNames actualScene)) {
             _characterService.ResetCharacter();
             _scoreService.resetScore();
