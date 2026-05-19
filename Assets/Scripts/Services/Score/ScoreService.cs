@@ -11,10 +11,12 @@ public class ScoreService : IScoreService
         {
             playerPoints += points;
             PlayerList[player] = playerPoints;
+            Debug.Log("Player: " + player + " has now " + playerPoints + " points.");
         }
         else
         {
             PlayerList.Add(player, points);
+            Debug.Log("Player: " + player + " has now " + playerPoints + " points.");
         }
     }
 

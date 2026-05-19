@@ -9,10 +9,14 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject counterPrefab;
     [SerializeField] GameObject player;
     [SerializeField] GameObject Mapcenter;
-
+    [SerializeField] GameObject DeathPanel;
+    IEventService _eventService;
+    IScoreService _scoreService;
+    IProfileService _profileService;
     [Header("Wave Settings")]
     [SerializeField] private int maxCount = 30;
     [SerializeField] private int enemiesPerHorde = 2;
+    [SerializeField] private int pointsPerHorde=1000;
     private float timer;
     private int horde = 1;
     private bool isInHorde = false;
@@ -20,6 +24,13 @@ public class WaveManager : MonoBehaviour
     private GameObject enemiesParent;
 
     // Update is called once per frame
+    private void Awake()
+    {
+        _profileService = AppContainer.Get<IProfileService>();
+        _scoreService = AppContainer.Get<IScoreService>();
+        _eventService = AppContainer.Get<IEventService>();
+        _eventService.Subscribe<DieEvent>(OnPlayerDeath);   
+    }
     void Update()
     {
         if (!isInHorde) return;
@@ -29,6 +40,10 @@ public class WaveManager : MonoBehaviour
         checkEnemies();
     }
 
+    private void OnDestroy()
+    {
+        _eventService.Unsubscribe<DieEvent>(OnPlayerDeath);
+    }
 
     private void checkEnemies()
     {
@@ -82,9 +97,18 @@ public class WaveManager : MonoBehaviour
     {
         timer = maxCount;
         horde++;
-        enemiesPerHorde += 2;
+        enemiesPerHorde = Mathf.CeilToInt(enemiesPerHorde*1.5f);
+        _scoreService.addPoints("Pepe", pointsPerHorde);
+        //_scoreService.addPoints(_profileService.getSelectedProfile().guid, pointsPerHorde);
+        pointsPerHorde = Mathf.CeilToInt(pointsPerHorde * 1.5f);
         spawnEnemies();
         Debug.Log("Siguiente horda: " + horde);
     }
+    private void OnPlayerDeath(GameEventBase @base)
+    {
+        Time.timeScale = 0;
+        DeathPanel.SetActive(true);
+    }
+
 
 }

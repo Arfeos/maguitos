@@ -25,7 +25,6 @@ public class SpellBaseScriptable : ScriptableObject
     public int CosteSlots = 1;
     public float RayAliveTime = 0.3f;
     public string nombreHechizo = "Change Spell name";
-
     [Header("Spell particles")]
     public List<Material>? RayMaterial;
     public GameObject? spawnPrefab;

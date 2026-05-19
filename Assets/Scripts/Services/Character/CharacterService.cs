@@ -11,6 +11,10 @@ public class CharacterService : ICharacterService
     private int Curretlife = 100;
     private int mana = 100;
     private int manaActual = 100;
+    public CharacterService()
+    {
+        _eventService = AppContainer.Get<IEventService>();
+    }
     public void AddMana(int manaAniadir)
     {
         if (manaActual + manaAniadir > mana)
@@ -19,7 +23,6 @@ public class CharacterService : ICharacterService
             return;
         }
         this.manaActual += manaAniadir;
-        if(_eventService == null) _eventService = AppContainer.Get<IEventService>();
         
         ManaEvent ManaEvent = new ManaEvent();
         ManaEvent.ManaToChange = manaActual;
@@ -49,7 +52,6 @@ public class CharacterService : ICharacterService
     }
     public bool RemoveMana(int manaToRemove)
     {
-        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
         if (manaActual - manaToRemove < 0) return false;
         else
         {
@@ -106,7 +108,6 @@ public class CharacterService : ICharacterService
             }
                 
         }
-        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
         SpellChangeOnPageEvent _eventSpellChangeOnPageEvent = new SpellChangeOnPageEvent();
         _eventSpellChangeOnPageEvent.nombre = spellToAdd.spell.name;
         _eventSpellChangeOnPageEvent.mana = spellToAdd.spell.manaCost;
@@ -202,7 +203,6 @@ public class CharacterService : ICharacterService
 
     public void Heal(int amountHealed)
     {
-        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
         if (Curretlife + amountHealed > life) Curretlife = life;
         else Curretlife += amountHealed;
         HPEvent hpEvent = new HPEvent();
@@ -211,7 +211,6 @@ public class CharacterService : ICharacterService
     }
     public void TakeDamage(int damageTaken)
     {
-        if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
         this.Curretlife -= damageTaken;
         HPEvent hpEvent = new HPEvent();
         hpEvent.HPToChange = Curretlife;
@@ -221,8 +220,20 @@ public class CharacterService : ICharacterService
 
     public void Die()
     {
-        //TODO: Implemetar muerte real
-        Debug.Log("Has muerto");
-    }
+        _eventService.Publish(new DieEvent());
 
+    }
+    public void ResetCharacter()
+    {
+        Curretlife = life;
+        manaActual = mana;
+        listaHechizos = new List<SpellBase>();
+        index = 0;
+        HPEvent hpEvent = new HPEvent();
+        hpEvent.HPToChange = Curretlife;
+        _eventService.Publish(hpEvent);
+        ManaEvent ManaEvent = new ManaEvent();
+        ManaEvent.ManaToChange = manaActual;
+        _eventService.Publish(ManaEvent);
+    }
 }
