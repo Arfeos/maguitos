@@ -9,6 +9,7 @@ public interface ICharacterService
     public bool addSpell(SpellBase spellToAdd);
     public bool removeSpell(SpellBase spellToRemove);
     public bool removeSpell(int spellToRemove);
+    public void ResetCharacter();
     public bool removeSpell(string spellToRemove);
     public SpellBase getSpell(string spellName);
     public SpellBase getSpell(int spellPosition);

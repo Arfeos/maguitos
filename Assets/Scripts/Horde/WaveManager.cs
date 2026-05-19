@@ -69,7 +69,7 @@ public class WaveManager : MonoBehaviour
         GameObject counterObj = Instantiate(HordeInfoPrefab, canvas.transform);
 
         counter = counterObj.GetComponent<TextMeshProUGUI>();
-        GameObject[] sonsList= counterObj.GetComponentsInChildren<GameObject>();
+        //GameObject[] sonsList= counterObj.GetComponentsInChildren<GameObject>();
         enemiesParent = new GameObject("Enemies");
         spawnEnemies();
         updateCounter();

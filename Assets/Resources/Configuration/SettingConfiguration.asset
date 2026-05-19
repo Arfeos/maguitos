@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989065e333ab01a43bc0fee259fa372e, type: 3}
   m_Name: SettingConfiguration
   m_EditorClassIdentifier: Assembly-CSharp::PanelConfigurationScriptable
-  Panel: {fileID: 3171576006544528980, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+  Panel: {fileID: 7764172238749511998, guid: 63884ace50d49de4e9065aef10213d6a, type: 3}
