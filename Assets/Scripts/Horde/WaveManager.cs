@@ -107,7 +107,7 @@ public class WaveManager : MonoBehaviour
     private void OnPlayerDeath(GameEventBase @base)
     {
         Time.timeScale = 0;
-        DeathPanel.SetActive(true);
+        //DeathPanel.SetActive(true);
     }
 
 

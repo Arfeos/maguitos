@@ -35,6 +35,10 @@ MonoBehaviour:
     m_Key: txt_tuto
     m_Metadata:
       m_Items: []
+  - m_Id: 2406041790955520
+    m_Key: txt_Hordes
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

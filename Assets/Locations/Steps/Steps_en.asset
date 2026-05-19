@@ -121,6 +121,14 @@ MonoBehaviour:
     m_Localized: Enter the portal and leave the tutorial
     m_Metadata:
       m_Items: []
+  - m_Id: 2534170576535552
+    m_Localized: Take the orbs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2534173395107840
+    m_Localized: Get close to the orbs to collect them
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
