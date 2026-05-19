@@ -10,6 +10,7 @@ public class PauseService : IPauseService
     private GameObject PausepanelInstance;
     private GameObject SettingpanelPrefab;
     private GameObject SettingpanelInstance;
+    
     public PauseService(PanelConfigurationScriptable PauseConfig, PanelConfigurationScriptable SettingConfig)
 
     {       
@@ -33,6 +34,7 @@ public class PauseService : IPauseService
             if (!PausepanelInstance.activeInHierarchy)
             {
                 //if (tipo == GameType.offline) Time.timeScale = 0;
+                
                 Time.timeScale = 0;
                 PausepanelInstance.SetActive(true);
                 Cursor.lockState = CursorLockMode.Confined;
