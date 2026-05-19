@@ -10,12 +10,11 @@ using static UnityEngine.EventSystems.EventTrigger;
 /// </summary>
 public class DisplayScoreTable : MonoBehaviour
 {
-    
     private IScoreService _scoreService;           
     public Transform container;                
     public GameObject rowPrefab;
 
-    public int pageSize = 5;
+    public int pageSize = 8;
 
     private List<GameObject> _rows = new List<GameObject>();
     public int currentPage = 0;
@@ -52,7 +51,7 @@ public class DisplayScoreTable : MonoBehaviour
           .Take(pageSize);
 
         //Crear filas nuevas
-        foreach (var entri in pageScores)
+        foreach (var entry in pageScores)
         {
             GameObject newRow = Instantiate(rowPrefab, container);
             _rows.Add(newRow);
@@ -60,9 +59,9 @@ public class DisplayScoreTable : MonoBehaviour
             TextMeshProUGUI[] texts = newRow.GetComponentsInChildren<TextMeshProUGUI>();
             if (texts.Length >= 3)
             {
-                texts[0].text = entri.playerName;
-                texts[1].text = entri.score.ToString();
-                texts[2].text = entri.pacifist.ToString();
+                texts[0].text = entry.playerName;
+                texts[1].text = entry.score.ToString();
+                texts[2].text = entry.pacifist.ToString();
             }
         }
         int maxPage = Mathf.CeilToInt((float)sortedScores.Count() / pageSize);
@@ -71,7 +70,7 @@ public class DisplayScoreTable : MonoBehaviour
     }
 
     /// <summary>
-    /// Pasa a la siguiente página
+    /// Pasa a la siguiente pÃ¡gina
     /// </summary>
     public void NextPage()
     {
@@ -85,7 +84,7 @@ public class DisplayScoreTable : MonoBehaviour
         }
     }
     /// <summary>
-    /// Vuelve a la página anterior
+    /// Vuelve a la pï¿½gina anterior
     /// </summary>
 
     public void PreviousPage()

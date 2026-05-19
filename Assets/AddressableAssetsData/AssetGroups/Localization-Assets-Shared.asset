@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27f3742dba72b844e87a25160abe4f8f
+    m_Address: Assets/Locations/ScoreTable/ScoreTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 34e054a403d3ddb46ae8210e30cddf6d
     m_Address: Assets/Locations/InfoPanel/InfoPanel Shared Data.asset
     m_ReadOnly: 1
