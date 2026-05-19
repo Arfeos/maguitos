@@ -14,7 +14,7 @@ public class DisplayScoreTable : MonoBehaviour
     public Transform container;                
     public GameObject rowPrefab;
 
-    public int pageSize = 8;
+    public int pageSize = 5;
 
     private List<GameObject> _rows = new List<GameObject>();
     public int currentPage = 0;
