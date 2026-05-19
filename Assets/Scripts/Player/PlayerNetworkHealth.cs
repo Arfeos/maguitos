@@ -24,6 +24,7 @@ public class PlayerNetworkHealth : NetworkBehaviour
 
     private void OnHealthChanged(int oldValue, int newValue)
     {
+        Debug.Log($"[OnHealthChanged] IsOwner: {IsOwner} | IsServer: {IsServer} | {oldValue} -> {newValue}");
         if (!IsOwner) return;
 
         _characterService.SyncHealth(newValue);
@@ -32,6 +33,7 @@ public class PlayerNetworkHealth : NetworkBehaviour
     [Rpc(SendTo.Server)]
     public void TakeDamageRpc(int damage, RpcParams rpcParams = default)
     {
+        Debug.Log($"[TakeDamage] IsServer: {IsServer} | health actual: {health.Value} | damage: {damage}");
         health.Value -= damage;
     }
     [Rpc(SendTo.Server)]

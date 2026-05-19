@@ -101,7 +101,7 @@ public class MultiPlayerController : NetworkBehaviour, IHittable
         if (!IsOwner)
         {
             playerCamera.enabled = false;
-            characterController.enabled = false;
+            //characterController.enabled = false;
             var audioListener = playerCamera.GetComponent<AudioListener>();
             if (audioListener != null) audioListener.enabled = false;
             return;
@@ -330,7 +330,14 @@ public class MultiPlayerController : NetworkBehaviour, IHittable
 
     public void Hit(float damage)
     {
-        if (!IsServer) return;
-        _characterService.TakeDamage((int)damage);
+        Debug.Log($"[Hit] IsServer: {IsServer} | objeto golpeado: {gameObject.name} | NetworkObjectId: {NetworkObjectId}");
+        if (NetworkManager.Singleton.IsListening)
+        {
+            var networkHealth = GetComponent<PlayerNetworkHealth>();
+            Debug.Log($"[Hit] networkHealth encontrado: {networkHealth != null}");
+            if (networkHealth != null)
+                networkHealth.TakeDamageRpc((int)damage);
+        }
+        
     }
 }

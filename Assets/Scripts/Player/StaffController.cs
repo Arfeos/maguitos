@@ -153,37 +153,31 @@ public class StaffController : NetworkBehaviour
     [Rpc(SendTo.Server)]
     private void DrawRayEffectRpc(Vector3 position, Quaternion rotation, int spellIndex)
     {
-        Debug.Log($"[ServerRpc] Dibujando efecto");
-
         SpellBase ActualSpell = _characterService.getSpell(spellIndex)?.GetComponent<SpellBase>();
         if (ActualSpell == null) return;
 
         Vector3 direction = rotation * Vector3.forward;
         Vector3 endPoint;
 
-        if (Physics.Raycast(position, direction, out RaycastHit hit,
-            ActualSpell.spell.lifeTime, layersToHit))
+        if (Physics.Raycast(position, direction, out RaycastHit hit,ActualSpell.spell.lifeTime, layersToHit))
         {
             endPoint = hit.point;
             if (hit.collider.gameObject.GetComponent<IHittable>() != null)
-                hit.collider.gameObject.GetComponent<IHittable>().Hit(ActualSpell.spell.damage);
+            {
+                var hittable = hit.collider.gameObject.GetComponent<IHittable>();
+                hittable.Hit(ActualSpell.spell.damage);
+            }
         }
         else
         {
             endPoint = position + direction * ActualSpell.spell.lifeTime;
         }
-            DrawRayRpc(position, endPoint);
-
-        //else if (ActualSpell.spell.spell_Type.ToString() == "ball")
-        //{
-            
-        //}
+        DrawRayRpc(position, endPoint);
     }
 
     [Rpc(SendTo.ClientsAndHost)]
     private void DrawRayRpc(Vector3 start, Vector3 end)
     {
-        Debug.Log($"[ClientRpc] Dibujando rayo");
         var spellService = AppContainer.Get<ISpellService>();
         spellService.ShootRay(start, end);
     }

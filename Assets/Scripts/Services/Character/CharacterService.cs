@@ -66,25 +66,6 @@ public class CharacterService : ICharacterService
         _eventService.Publish(hpEvent);
     }
 
-    //public void Heal(int amountHealed)
-    //{
-    //    if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
-    //    if (Curretlife + amountHealed > life) Curretlife = life;
-    //    else Curretlife += amountHealed;
-    //    HPEvent hpEvent = new HPEvent();
-    //    hpEvent.HPToChange = Curretlife;
-    //    _eventService.Publish(hpEvent);
-    //}
-    //public void TakeDamage(int damageTaken)
-    //{
-    //    if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
-    //    this.Curretlife -= damageTaken;
-    //    HPEvent hpEvent = new HPEvent();
-    //    hpEvent.HPToChange = Curretlife;
-    //    _eventService.Publish(hpEvent);
-    //    if (this.Curretlife < 1) Die();
-    //}
-
     public void AddMana(int manaAniadir)
     {
         if (manaActual + manaAniadir > mana)
