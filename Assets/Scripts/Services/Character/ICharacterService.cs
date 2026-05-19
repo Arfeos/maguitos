@@ -24,6 +24,4 @@ public interface ICharacterService
     public void Heal(int amountHealed);
 
     public void Die();
-
-    public void ResetCharacter();
 }
