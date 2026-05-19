@@ -16,14 +16,15 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 34e054a403d3ddb46ae8210e30cddf6d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 2871841239173693549
   m_TableData:
   - m_Id: 17595351040
     m_Localized: Light lance
     m_Metadata:
       m_Items: []
   - m_Id: 2435162816512
-    m_Localized: 'Medium damage, medium range,medium firerate, low mana consumption '
+    m_Localized: Medium damage, medium range, medium firerate, low mana consumption
     m_Metadata:
       m_Items: []
   - m_Id: 12032988659712
@@ -39,7 +40,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14334810112000
-    m_Localized: 'low damage, low range,high firerate,very low mana consumption '
+    m_Localized: Low damage, low range, high firerate, very low mana consumption
     m_Metadata:
       m_Items: []
   - m_Id: 16811232051200
@@ -47,7 +48,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16816097443840
-    m_Localized: 'low damage, low range,high firerate,very low mana consumption '
+    m_Localized: Low damage, low range, high firerate, very low mana consumption
     m_Metadata:
       m_Items: []
   - m_Id: 17727062523904
@@ -55,13 +56,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17750185721856
-    m_Localized: "Explosive,High damage, variable range,low firerate,high mana consumption
-      \r\n"
+    m_Localized: Explosive, high damage, variable range, low firerate, high mana
+      consumption
     m_Metadata:
       m_Items: []
   - m_Id: 18415301672960
-    m_Localized: 'Low accuracy, High damage, medium range, medium firerate, low mana
-      consumption '
+    m_Localized: Low accuracy, high damage, medium range, medium firerate, low mana
+      consumption
     m_Metadata:
       m_Items: []
   - m_Id: 18405604442112
@@ -85,6 +86,67 @@ MonoBehaviour:
     m_Localized: Good luck
     m_Metadata:
       m_Items: []
+  - m_Id: 1897266120658944
+    m_Localized: '{0}
+
+      {1}
+
+      Damage: {2}
+
+      Mana: {3}
+
+      Range:
+      {4}'
+    m_Metadata:
+      m_Items:
+      - rid: 2871841239173693549
+  - m_Id: 1909716706562048
+    m_Localized: Ray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909805999099904
+    m_Localized: Ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909828086304768
+    m_Localized: Buff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909852690092032
+    m_Localized: Structure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910337513885696
+    m_Localized: Primary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910359190048768
+    m_Localized: Secondary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1912051050647552
+    m_Localized: '{0}
+
+      {1}
+
+      Damage: {2}
+
+      Mana: {3}
+
+      Range:
+      {4}
+
+      Penetration: {5}'
+    m_Metadata:
+      m_Items:
+      - rid: 2871841239173693549
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2871841239173693549
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 1897266120658944
+        - id: 1912051050647552

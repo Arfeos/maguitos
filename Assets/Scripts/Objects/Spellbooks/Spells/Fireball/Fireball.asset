@@ -25,9 +25,13 @@ MonoBehaviour:
   shootDelay: 3
   spreadIntensity: 0
   producesLine: 0
+  penetrates: 0
+  penetrationlevel: 1
   CosteSlots: 1
   RayAliveTime: 0
   nombreHechizo: Fireball
+  spellImage: {fileID: 21300000, guid: 262ab9e6bd98be647a81e81f8d5fac14, type: 3}
+  objectData: {fileID: 11400000, guid: 0f58a6185917ab34a844090661918c16, type: 2}
   RayMaterial:
   - {fileID: 2100000, guid: a5f92524f4c034849bf5254de6f76e03, type: 2}
   spawnPrefab: {fileID: 0}

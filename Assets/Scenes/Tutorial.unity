@@ -14679,7 +14679,7 @@ PrefabInstance:
     - target: {fileID: 4242680582676552400, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: managedReferences[7192529290003480794].m_Target
       value: 
-      objectReference: {fileID: 11507466}
+      objectReference: {fileID: 0}
     - target: {fileID: 4242680582676552400, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: managedReferences[7192529290003480794].m_UpdateType
       value: 0
@@ -15332,8 +15332,6 @@ PrefabInstance:
     - {fileID: 3444955402667739369, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5713235025695715511, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5087149112597168379, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
@@ -16142,10 +16140,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 2035644770206660227, guid: 2557b316da33b034986a4b68ca98a463, type: 3}
-      propertyPath: sceneNames
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3468674793562794399, guid: 2557b316da33b034986a4b68ca98a463, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -16289,6 +16283,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5303846970860061371, guid: 2557b316da33b034986a4b68ca98a463, type: 3}
   m_PrefabInstance: {fileID: 1947846199}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1947846203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2035644770206660227, guid: 2557b316da33b034986a4b68ca98a463, type: 3}
+  m_PrefabInstance: {fileID: 1947846199}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9fd621af8828045a7cc40cdbf1c91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1948438827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18359,6 +18364,10 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 585422275}
+    - target: {fileID: 6336402989998961031, guid: 5f57d6868a942074aaffc6d95ff0580f, type: 3}
+      propertyPath: Portal
+      value: 
+      objectReference: {fileID: 1947846203}
     - target: {fileID: 6336402989998961031, guid: 5f57d6868a942074aaffc6d95ff0580f, type: 3}
       propertyPath: MessageBox
       value: 

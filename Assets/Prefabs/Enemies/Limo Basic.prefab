@@ -689,7 +689,7 @@ PrefabInstance:
       addedObject: {fileID: 8648367549180710118}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38b47f4acb95918429506e0c66e31fa1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 310665610041119}
+      addedObject: {fileID: 6835811645034962488}
   m_SourcePrefab: {fileID: 100100000, guid: 38b47f4acb95918429506e0c66e31fa1, type: 3}
 --- !u!1 &4946337380501350343 stripped
 GameObject:
@@ -766,7 +766,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5, y: 0.8, z: 1.5}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &310665610041119
+--- !u!114 &6835811645034962488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -775,30 +775,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 4946337380501350343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f77d0d6eb3f3b142a0bbd402723e6d1, type: 3}
+  m_Script: {fileID: 11500000, guid: cb57824b9d072224da3fc868f7589161, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlimeController
-  jumpDistance: 3
-  jumpHeight: 2
-  distanceToAttack: 2.5
+  m_EditorClassIdentifier: Assembly-CSharp::BasicSlimeController
+  distanceToAttack: 3.5
   attackCooldown: 2
   damage: 20
-  Life: 100
   maxLife: 100
-  _lifeBar: {fileID: 0}
-  AttackLayer:
+  attackLayer:
     serializedVersion: 2
     m_Bits: 64
+  _lifeBar: {fileID: 3596623963974359872}
+  dissolveTexture: {fileID: 2800000, guid: 9c390a1d1ad391d4eaac57018d9c2fc5, type: 3}
+  dissolveColor: {r: 0.14438558, g: 1, b: 0, a: 1}
+  delayBeforeStart: 3
+  dissolveTime: 2
+  TakeDamageSound: {fileID: 8300000, guid: a09f486db9e7c414eb4575c456d234bc, type: 3}
+  JumpSound: {fileID: 8300000, guid: 53a21ba8e4cac1a4db31d468ad449ffa, type: 3}
+  AttackSound: {fileID: 8300000, guid: 35b16ee02380268498fb76d9c4860e9e, type: 3}
+  jumpDistance: 5
+  jumpHeight: 3
   recoverTime: 2
-  groundRadius: 0.82
+  groundRadius: 0.25
   groundLayer:
     serializedVersion: 2
     m_Bits: 72
-  dissolveTexture: {fileID: 0}
-  dissolveColor: {r: 0, g: 1, b: 0.86911154, a: 1}
-  delayBeforeStart: 3
-  dissolveTime: 2
-  dissolveProgress: 0.3
 --- !u!4 &5759887356437249405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 38b47f4acb95918429506e0c66e31fa1, type: 3}

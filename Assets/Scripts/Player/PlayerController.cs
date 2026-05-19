@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour,IHittable
+public class PlayerController : MonoBehaviour, IHittable
 {
     [Header("Movimiento")]
     [SerializeField] private float Velocity = 10f;

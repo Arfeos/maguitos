@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6160325588998970461}
   - component: {fileID: 539983392261889776}
+  - component: {fileID: -535848377504649301}
   m_Layer: 0
   m_Name: LightSpreadPrefab
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellLanzaDeLuz
   spell: {fileID: 11400000, guid: 848a66d66f0869542ba0853206ece895, type: 2}
+--- !u!114 &-535848377504649301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599475939959074545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72183ffb897e7a45888cbebdc888d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataShow
+  data: {fileID: 11400000, guid: 457447362831a4649beae916dd566a74, type: 2}

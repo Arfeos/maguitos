@@ -13,7 +13,7 @@ public class ObjectDetection : MonoBehaviour
     IAlertService _alertService;
     IAnimationService _animationService;
 
-    public Color color = Color.white;
+    public Color color = Color.yellow;
     private Color colorBase = Color.white;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

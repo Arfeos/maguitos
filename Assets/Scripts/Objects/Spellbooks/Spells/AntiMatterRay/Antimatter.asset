@@ -30,6 +30,8 @@ MonoBehaviour:
   CosteSlots: 10
   RayAliveTime: 2
   nombreHechizo: Antimater
+  spellImage: {fileID: 21300000, guid: 70d62144be0fb8a44a4857114ccd66ed, type: 3}
+  objectData: {fileID: 11400000, guid: cd0a4a07186ba9d4bbdcf28e33d5dcb8, type: 2}
   RayMaterial:
   - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
   - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
