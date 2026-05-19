@@ -195,12 +195,6 @@ public class StaffController : NetworkBehaviour
         ApplyMaterialRpc(ball.GetComponent<NetworkObject>().NetworkObjectId, spellIndex);
     }
 
-    //[ClientRpc]
-    //private void DrawBallClientRpc(Vector3 start, Vector3 direction, float velocity, MaterialNames material)
-    //{
-    //    var spellService = AppContainer.Get<ISpellService>();
-    //    spellService.ShootBall(start, direction, velocity, material.ToString());
-    //}
     [Rpc(SendTo.ClientsAndHost)]
     public void ApplyMaterialRpc(ulong ballNetworkId, int spellIndex)
     {
@@ -216,7 +210,6 @@ public class StaffController : NetworkBehaviour
         }
     }
 
-
     private void CargarHechizo(SpellBase ActualSpell)
     {
 
@@ -231,10 +224,4 @@ public class StaffController : NetworkBehaviour
         if (_currentCastingSpell != null)
             _currentCastingSpell.ResetCast();
     }
-
-    //private IEnumerator ResetCastAfterDelay(SpellBase spell, float delay)
-    //{
-    //    yield return new WaitForSeconds(delay);
-    //    spell.ResetCast();
-    //}
 }
