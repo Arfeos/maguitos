@@ -8,17 +8,11 @@ public class UIInitializer : MonoBehaviour
 
     [SerializeField] GameObject firstButton;
     void Start()
-    {
-        
+    { 
         //TODO: crear un comprobante para ver si el control ya esta en UI
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
         uiService = AppContainer.Get<IUIService>();
         uiService.RegisterFirstButton(firstButton);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
