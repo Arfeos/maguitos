@@ -58,4 +58,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72183ffb897e7a45888cbebdc888d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataShow
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: bcecc94e1241e8241aee6a03d022c40b, type: 2}

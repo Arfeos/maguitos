@@ -18091,26 +18091,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 273163072300012385, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: managedReferences[5372237264894820746].m_VariantData.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 273163072300012385, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: managedReferences[5372237264894820747].m_VariantData.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 273163072300012385, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: managedReferences[5372237264894820748].m_VariantData.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 757853650960629117, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 757853650960629117, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2603774863670088962, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 252.4
@@ -18154,34 +18134,6 @@ PrefabInstance:
     - target: {fileID: 3416446363902529464, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
       propertyPath: m_Name
       value: Player New (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4756135489967229772, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4756135489967229772, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4756135489967229772, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5613218020918453169, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8121617940016955564, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8121617940016955564, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227007965201074097, guid: dbdd578613aac24498f7e23ed4d253cd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -30,7 +30,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  objectSprite: {fileID: 0}
+  objectSprite: {fileID: 21300000, guid: 442a2550420883a488b57629e3117c92, type: 3}
+  spellData: {fileID: 11400000, guid: 848a66d66f0869542ba0853206ece895, type: 2}
   references:
     version: 2
     RefIds: []

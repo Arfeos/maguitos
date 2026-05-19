@@ -25,12 +25,13 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:34e054a403d3ddb46ae8210e30cddf6d
     m_TableEntryReference:
-      m_KeyId: 18415301672960
+      m_KeyId: 1897266120658944
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  objectSprite: {fileID: 0}
+  objectSprite: {fileID: 21300000, guid: d4445f45979203e4f98eae5e5c5b88a6, type: 3}
+  spellData: {fileID: 11400000, guid: 57700f5238e7fae4db70c654103993cd, type: 2}
   references:
     version: 2
     RefIds: []

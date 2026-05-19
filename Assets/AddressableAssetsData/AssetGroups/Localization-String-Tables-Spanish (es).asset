@@ -51,8 +51,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 655d94dcd446b7b4984f28c6e05589a2
+    m_Address: DeathPanel_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 92e362c71525e434a93e02ce31e705b3
     m_Address: ProfileCreation_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9a85efe83fe4784b8cdf419c0cab76e
+    m_Address: Hordes_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es

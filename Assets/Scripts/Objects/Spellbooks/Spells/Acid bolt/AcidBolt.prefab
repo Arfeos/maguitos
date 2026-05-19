@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8087521606302485649}
   - component: {fileID: 7467640785192529255}
+  - component: {fileID: 500608674950035909}
   m_Layer: 0
   m_Name: AcidBolt
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AcidBolt
   spell: {fileID: 11400000, guid: 57700f5238e7fae4db70c654103993cd, type: 2}
+--- !u!114 &500608674950035909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135253796614911527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72183ffb897e7a45888cbebdc888d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataShow
+  data: {fileID: 11400000, guid: 9c76fdcb807826243923a1b6e241f90d, type: 2}
