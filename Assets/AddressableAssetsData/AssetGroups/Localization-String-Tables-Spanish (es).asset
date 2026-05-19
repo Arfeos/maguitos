@@ -33,6 +33,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c42aaf9436b0f84889bf41b11e568df
+    m_Address: ScoreTable_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0fb5f1612c8b4554f8a506f961131330
     m_Address: Settings_es
     m_ReadOnly: 1

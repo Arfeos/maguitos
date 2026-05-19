@@ -33,6 +33,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e22f866985d667409a01ab512f299b3
+    m_Address: ScoreTable_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 330b8c8262647924fbd8a55a41a3ce6c
     m_Address: LookForRooms_en
     m_ReadOnly: 1
