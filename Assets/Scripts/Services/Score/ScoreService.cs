@@ -48,4 +48,9 @@ public class ScoreService : IScoreService
     {
         PlayerList = new Dictionary<string, int>();
     }
+
+    public void getScores()
+    {
+
+    }
 }
