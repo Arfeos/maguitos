@@ -15,10 +15,6 @@ MonoBehaviour:
   m_TableCollectionName: Hordes
   m_TableCollectionNameGuidString: 4909cb0152a1ea943bf4b8c9c15f28ac
   m_Entries:
-  - m_Id: 3715667427328
-    m_Key: txtWaveN
-    m_Metadata:
-      m_Items: []
   - m_Id: 3880260304896
     m_Key: txtNext
     m_Metadata:

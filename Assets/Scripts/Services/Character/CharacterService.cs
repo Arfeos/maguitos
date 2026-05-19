@@ -24,6 +24,7 @@ public class CharacterService : ICharacterService
         }
         this.manaActual += manaAniadir;
         if (_eventService == null) _eventService = AppContainer.Get<IEventService>();
+        
         ManaEvent ManaEvent = new ManaEvent();
         ManaEvent.ManaToChange = manaActual;
         _eventService.Publish(ManaEvent);
@@ -222,7 +223,7 @@ public class CharacterService : ICharacterService
 
     public void Die()
     {
-        _eventService.Publish(new DieEvent());
+        //_eventService.Publish(new DieEvent());
 
     }
     public void ResetCharacter()

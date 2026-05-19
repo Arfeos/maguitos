@@ -9,6 +9,7 @@ public enum SceneNames
    Gamemodes,
    Settings,
    Tutorial,
-   Hordes
+   Hordes,
+   Look_For_Game
 
 }
