@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: NAH, LET'S FIGHT
     m_Metadata:
       m_Items: []
+  - m_Id: 2406041790955520
+    m_Localized: "Let\xB4s kill slimes"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -4584,6 +4584,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 458728, guid: 344e4116cf98b4643a88a1d956cf10e0, type: 3}
   m_PrefabInstance: {fileID: 590747564}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &591824981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5454809812003398470, guid: d9c2a4384634c504ab25164edeaa5689, type: 3}
+  m_PrefabInstance: {fileID: 3507148417859842240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &601584217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9968,6 +9973,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1327018217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5423546751311833199, guid: c5ae8f89468c5924b8a8e983c16a4754, type: 3}
+  m_PrefabInstance: {fileID: 7066714928978074075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1330960270
 GameObject:
   m_ObjectHideFlags: 0
@@ -13595,7 +13605,7 @@ Transform:
   m_GameObject: {fileID: 1737061574}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -59.283928, y: -7.38026, z: 18.88198}
+  m_LocalPosition: {x: -59.283928, y: -7.38026, z: 56.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18365,9 +18375,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585422275}
     - target: {fileID: 6336402989998961031, guid: 5f57d6868a942074aaffc6d95ff0580f, type: 3}
+      propertyPath: HPOrb
+      value: 
+      objectReference: {fileID: 591824981}
+    - target: {fileID: 6336402989998961031, guid: 5f57d6868a942074aaffc6d95ff0580f, type: 3}
       propertyPath: Portal
       value: 
       objectReference: {fileID: 1947846203}
+    - target: {fileID: 6336402989998961031, guid: 5f57d6868a942074aaffc6d95ff0580f, type: 3}
+      propertyPath: ManaOrb
+      value: 
+      objectReference: {fileID: 1327018217}
     - target: {fileID: 6336402989998961031, guid: 5f57d6868a942074aaffc6d95ff0580f, type: 3}
       propertyPath: MessageBox
       value: 
