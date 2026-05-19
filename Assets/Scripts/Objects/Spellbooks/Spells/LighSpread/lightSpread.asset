@@ -20,8 +20,8 @@ MonoBehaviour:
   currentCharge: 0
   ChargeTimePerUnit: 0
   velocity: 1
-  damage: 10
-  lifeTime: 5
+  damage: 15
+  lifeTime: 8
   shootDelay: 0.15
   spreadIntensity: 0.05
   producesLine: 1

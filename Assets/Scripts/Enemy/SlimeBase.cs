@@ -49,13 +49,14 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     protected float dissolveProgress;
     protected Coroutine _actionCoroutine;
     protected IAudioService _audioService;
-
+    protected IProfileService _profileService;
     protected IScoreService _scoreService;
     // ── Unity Lifecycle ──────────────────────────────────────────────────────
     private void Awake()
     {
         _audioService = AppContainer.Get<IAudioService>();
         _scoreService = AppContainer.Get<IScoreService>();
+        _profileService = AppContainer.Get<IProfileService>();
     }
     protected virtual void Start()
     {
@@ -106,7 +107,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         if (JumpSound != null) _audioService.PlaySound(JumpSound);
     }
 
-    // ── Métodos virtuales sobreescribibles ───────────────────────────────────
+    // ── Métodos virtuales sobreescribibles ───────────────────────────────────s
 
     /// <summary>
     /// Se llama cada Update (ya filtrado por null y muerte).
@@ -121,7 +122,9 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     /// <summary>Se llama justo antes de destruir el objeto. Sobreescribe para lógica extra al morir.</summary>
     protected virtual void OnDeath() 
     {
-        //_scoreService.addPoints("Horde", puntuación);
+        //_scoreService.addPoints(_profileService.getSelectedProfile().guid, puntuación);
+        if (_scoreService == null) _scoreService = AppContainer.Get<IScoreService>();
+        _scoreService.addPoints("Pepe", puntuación);
     }
 
     // ── Lógica común ─────────────────────────────────────────────────────────

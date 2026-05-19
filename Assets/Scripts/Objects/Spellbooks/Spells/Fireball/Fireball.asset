@@ -22,7 +22,7 @@ MonoBehaviour:
   velocity: 20
   damage: 50
   lifeTime: 0
-  shootDelay: 3
+  shootDelay: 2
   spreadIntensity: 0
   producesLine: 0
   penetrates: 0
@@ -37,9 +37,9 @@ MonoBehaviour:
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
-  spawnSound: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
   chargeSound: {fileID: 0}
   airSound: {fileID: 0}
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
   canCast: 1
   isCasting: 0
