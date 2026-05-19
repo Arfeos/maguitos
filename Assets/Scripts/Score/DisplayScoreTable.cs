@@ -54,10 +54,11 @@ public class DisplayScoreTable : MonoBehaviour
             _rows.Add(newRow);
 
             TextMeshProUGUI[] texts = newRow.GetComponentsInChildren<TextMeshProUGUI>();
-            if (texts.Length >= 2)
+            if (texts.Length >= 3)
             {
                 texts[0].text = entri.playerName;
                 texts[1].text = entri.score.ToString();
+                texts[2].text = entri.pacifist.ToString();
             }
         }
         int maxPage = Mathf.CeilToInt((float)sortedScores.Count() / pageSize);
