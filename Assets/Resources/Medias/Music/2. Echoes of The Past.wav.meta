@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: 7e0099c185a88dd43b22595228ae8f07
 AudioImporter:
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 8
   defaultSettings:
     serializedVersion: 2
     loadType: 0
@@ -21,10 +21,3 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 376464
-  packageName: Free 12 JRPG Stylized Tracks Music Pack
-  packageVersion: 1.0
-  assetPath: Assets/12 Stylized JRPG Tracks Music Pack/Tracks/2. Echoes of The Past.wav
-  uploadId: 906478

@@ -1,16 +1,12 @@
+using System;
 using UnityEngine;
 
-public class HordeInitializer : MonoBehaviour
+public class HordeInitializer : MusicInitializer
 {
-    
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Start()
     {
-        
+        base.Start();
+        _audioService.SetMusicVolume(0.05f);
     }
 }

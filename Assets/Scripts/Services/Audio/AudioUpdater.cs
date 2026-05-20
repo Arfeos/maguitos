@@ -11,6 +11,6 @@ public class AudioUpdater : MonoBehaviour
 
     private void Update()
     {
-        //_audioService.UpdateMusicPlaylist();
+        _audioService.UpdateMusicPlaylist();
     }
 }

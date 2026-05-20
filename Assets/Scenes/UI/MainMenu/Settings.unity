@@ -1265,6 +1265,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 661936839336194529, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1474,6 +1498,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+--- !u!114 &6891630813550357192 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4569512739606224413, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+  m_PrefabInstance: {fileID: 6891630813550357191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d977c04a545161244a1e2b8ac1a71f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackButton
 --- !u!1 &6891630813550357194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4742803773321443357, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
