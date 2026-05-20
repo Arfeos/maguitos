@@ -68,6 +68,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
                 if (PlayerInputManager.Actions.Player.Attack.WasPressedThisFrame()) LanzarHechizo(ActualSpell);
                 break;
             case CastType.charged:
+                if (_characterService.CheckMana() < ActualSpell.spell.manaCost) break;
                 if (PlayerInputManager.Actions.Player.Attack.WasPressedThisFrame()) CargarHechizo(ActualSpell);
                 if (PlayerInputManager.Actions.Player.Attack.WasReleasedThisFrame()) LanzarHechizo(ActualSpell);
                 break;

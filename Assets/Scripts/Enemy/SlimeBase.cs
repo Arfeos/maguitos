@@ -25,7 +25,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     [SerializeField] protected LayerMask attackLayer;
 
     [Header("Puntuacion")]
-    [SerializeField] protected int puntuación = 20;
+    [SerializeField] protected int puntuacion = 20;
 
     // ── Life bar ─────────────────────────────────────────────────────────────
     [Header("UI")]
@@ -60,7 +60,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     protected IProfileService _profileService;
     protected IScoreService _scoreService;
     // ── Unity Lifecycle ──────────────────────────────────────────────────────
-    private void Awake()
+    protected virtual void Awake()
     {
         _audioService = AppContainer.Get<IAudioService>();
         _scoreService = AppContainer.Get<IScoreService>();
@@ -132,7 +132,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     protected virtual void OnDeath() 
     {
         if (_scoreService == null) _scoreService = AppContainer.Get<IScoreService>();
-        _scoreService.addPoints(_profileService.getSelectedProfile().guid, puntuación);
+        _scoreService.addPoints(_profileService.getSelectedProfile().guid, puntuacion);
         //_scoreService.addPoints("Pepe", puntuación);
 
         CreateOrbsByPercent(percentSpawnMana, orbMana);
@@ -231,7 +231,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         Destroy(gameObject);
     }
 
-    private void CreateOrbsByPercent(float Percent, GameObject Orb)
+    protected void CreateOrbsByPercent(float Percent, GameObject Orb)
     {
         if (checkPercentSpawn(Percent))
         {
@@ -239,7 +239,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         }
     }
 
-    private bool checkPercentSpawn(float percentToCheck)
+    protected bool checkPercentSpawn(float percentToCheck)
     {
         float percentValue = UnityEngine.Random.Range(0, 100);
 
@@ -248,7 +248,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         return false;
     }
     
-    private void InstantiateOrb(GameObject Orb)
+    protected void InstantiateOrb(GameObject Orb)
     {
         Vector3 randomPos = transform.position + UnityEngine.Random.insideUnitSphere * 1f;
 
@@ -257,7 +257,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
 
     // ── Cooldown de acciones ─────────────────────────────────────────────────
 
-    private IEnumerator ActionCooldownRoutine()
+    protected IEnumerator ActionCooldownRoutine()
     {
         _nextActionTime = false;
         yield return new WaitForSeconds(attackCooldown);

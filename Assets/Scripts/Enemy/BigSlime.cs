@@ -17,8 +17,9 @@ public class BigSlime : BasicSlimeController
     
     private Collider myCollider;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         myCollider = GetComponent<Collider>();
     }
 

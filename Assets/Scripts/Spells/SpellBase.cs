@@ -26,9 +26,9 @@ public partial class SpellBase : MonoBehaviour
     {
         if(_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
 
-        if (canCast && !isCasting && _characterService.CheckMana() > spell.spell.manaCost)
+        if (canCast && !isCasting && _characterService.CheckMana() >= spell.spell.manaCost)
         {
-            
+            if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
             canCast = false;
             isCasting = true;
 
@@ -48,7 +48,7 @@ public partial class SpellBase : MonoBehaviour
                     //TODO implement type of spell
                     break;
             }
-            if(_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+            
             if (spell.spell.spawnSound != null)
                 _audioService.PlaySound(spell.spell.spawnSound);
             Invoke("ResetCast", spell.spell.shootDelay);
@@ -72,10 +72,10 @@ public partial class SpellBase : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
-            if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+            
             if (spell.chargeSound != null)
-
-                _audioService.PlaySound(spell.chargeSound);
+                if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
+            _audioService.PlaySound(spell.chargeSound);
             spell.currentCharge++;
         } while (spell.MaxCharge > spell.currentCharge);
         //TODO añadir sonido de carga maxima
@@ -87,14 +87,9 @@ public partial class SpellBase : MonoBehaviour
     {   
         if(spell.spell.cast_Type == CastType.charged)
         {
-            if (spell.spell.currentCharge == spell.spell.MaxCharge)
+            if (spell.spell.currentCharge >= spell.spell.MaxCharge)
             {
-                if (!_characterService.RemoveMana(spell.spell.manaCost))
-                {
-                    //Si no se tiene suficiente mana para lanzar el hechizo
-                    spell.spell.currentCharge = 0;
-                    return;
-                }
+               
 
                 //Lanzamos el hechizo
                 ShootRaySpell(spellSpawn, spell, layersToHit);
