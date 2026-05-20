@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: nya
   m_SharedData: {fileID: 11400000, guid: 0326180adde814b479b7686d6d563fab, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 2537881105323786337
   m_TableData:
   - m_Id: 172701089792
     m_Localized: Yuwu'we deadu :)
@@ -25,15 +26,24 @@ MonoBehaviour:
   - m_Id: 354364784640
     m_Localized: 'Wavu: {0}'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 2537881105323786337
   - m_Id: 598636855296
     m_Localized: 'Scowe: {0}'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 2537881105323786337
   - m_Id: 1654099902464
     m_Localized: Pwessu any key to exitu desu, bwo =D
     m_Metadata:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2537881105323786337
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 354364784640
+        - id: 598636855296

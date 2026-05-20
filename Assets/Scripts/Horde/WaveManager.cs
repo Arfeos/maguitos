@@ -2,7 +2,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Components;
-using UnityEngine.Localization;
 
 
 public class WaveManager : MonoBehaviour
@@ -150,8 +149,13 @@ public class WaveManager : MonoBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+        PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
         _scoreService.AddScore(false);
-        GameObject.Instantiate(DeathPanel);
+        GameObject canvas= GameObject.Instantiate(DeathPanel);
+        LocalizeStringEvent txtwave = canvas.transform.GetComponentsInChildren<LocalizeStringEvent>()[0];
+        txtwave.StringReference.Arguments = new object[] { horde };
+        LocalizeStringEvent txtscore = canvas.transform.GetComponentsInChildren<LocalizeStringEvent>()[1];
+        txtscore.StringReference.Arguments = new object[] { _scoreService.GetPoints(_profileService.getSelectedProfile().guid)};
         Destroy(FindAnyObjectByType<PlayerController>().GetComponent<PlayerController>());
         DeathPanel.SetActive(true);
     }

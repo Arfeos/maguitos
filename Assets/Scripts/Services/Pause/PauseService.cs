@@ -29,6 +29,25 @@ public class PauseService : IPauseService
                         .FirstOrDefault(c => c.renderMode != RenderMode.WorldSpace
                             && c.gameObject.scene == SceneManager.GetActiveScene());
             PausepanelInstance = GameObject.Instantiate(PausepanelPrefab, canvas.transform);
+            if (!PausepanelInstance.activeInHierarchy)
+            {
+                //if (tipo == GameType.offline) Time.timeScale = 0;
+
+                Time.timeScale = 0;
+                PausepanelInstance.SetActive(true);
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+                PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
+            }
+            else
+            {
+                //if (tipo == GameType.offline) Time.timeScale = 1;
+                Time.timeScale = 1;
+                PausepanelInstance.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
+            }
         }
         if (PausepanelInstance != null) {
             if (!PausepanelInstance.activeInHierarchy)
