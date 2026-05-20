@@ -1,21 +1,12 @@
 using System;
 using UnityEngine;
 
-public class HordeInitializer : MonoBehaviour
+public class HordeInitializer : MusicInitializer
 {
-    private IAudioService _audioService;
 
-    [SerializeField] private AudioClip _audioClip;
-    private void Awake()
+    protected override void Start()
     {
-        _audioService = AppContainer.Get<IAudioService>();
-    }
-
-    private void Start()
-    {
-        
-        
-        _audioService.PlayMusic(_audioClip);
+        base.Start();
         _audioService.SetMusicVolume(0.05f);
     }
 }
