@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2534173395107840
-    m_Localized: Acercate a los orbes para recogerlos
+    m_Localized: "Ac\xE9rcate a los orbes para recogerlos"
     m_Metadata:
       m_Items: []
   references:
