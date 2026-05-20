@@ -50,6 +50,18 @@ MonoBehaviour:
     m_Localized: Enter code...
     m_Metadata:
       m_Items: []
+  - m_Id: 3531710315200512
+    m_Localized: 'SINGLEPLAYER:
+
+      HORDES'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3532141107970048
+    m_Localized: 'MULTIPLAYER:
+
+      ARENA'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

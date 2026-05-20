@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5711971838206386165, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
       propertyPath: m_text
-      value: "Espa\xF1ol\n"
+      value: "Espa\xF1ol \n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6961429291467391499, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
       propertyPath: m_Pivot.x
@@ -105,9 +105,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7693959064037938455, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 8984946152725776057}
+    - targetCorrespondingSourceObject: {fileID: 7693959064037938455, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 374696296662332488}
+    - targetCorrespondingSourceObject: {fileID: 7693959064037938455, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2234166735616173231}
+    - targetCorrespondingSourceObject: {fileID: 691585335754499143, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7974178672226903138}
   m_SourcePrefab: {fileID: 100100000, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
+--- !u!1 &1527061592410737274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 691585335754499143, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
+  m_PrefabInstance: {fileID: 2064961313134407229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7974178672226903138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527061592410737274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.PropertyVariants.GameObjectLocalizer
+  m_TrackedObjects:
+  - rid: 2871841105795088529
+  references:
+    version: 2
+    RefIds:
+    - rid: 2871841105795088529
+      type: {class: TrackedUGuiGraphic, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 6047550623570686408}
+        m_TrackedProperties:
+          items:
+          - rid: 2871841105795088530
+        m_UpdateType: 0
+    - rid: 2871841105795088530
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:d8cf77bbd98ccd14b963f2246a358acf
+          m_TableEntryReference:
+            m_KeyId: 1196243456000
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: m_text
+--- !u!114 &6047550623570686408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5711971838206386165, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
+  m_PrefabInstance: {fileID: 2064961313134407229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527061592410737274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &8274305215653055485 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7961251016905942464, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
@@ -124,6 +187,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7693959064037938455, guid: c9a423f471cdf5545b88cf0fcfe8d20f, type: 3}
   m_PrefabInstance: {fileID: 2064961313134407229}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8984946152725776057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533855506948438826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: debf17048fe4d1749b71aaeb6c484b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeLanguage
+  language: 1
 --- !u!114 &374696296662332488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,9 +222,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.34488294, g: 0.14568162, b: 0.97735846, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.9917957, b: 0.50628924, a: 1}
+    m_PressedColor: {r: 0.25542894, g: 0.3553953, b: 0.3962264, a: 1}
+    m_SelectedColor: {r: 0.26830423, g: 0.53121114, b: 0.7169812, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -167,4 +243,54 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8274305215653055485}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8984946152725776057}
+        m_TargetAssemblyTypeName: ChangeLanguage, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2234166735616173231}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2234166735616173231}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2234166735616173231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533855506948438826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34f0786b0f4a844c8caaa0680f088f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  _audioClip: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
+  sceneName: 2

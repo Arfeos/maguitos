@@ -39,6 +39,8 @@ public class Portal_Controller : MonoBehaviour
     {
         if(!other.gameObject.tag.Equals("Player"))return;
         if( !_isActivated )return;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         _sceneService.LoadScene(sceneNames);
     }
 

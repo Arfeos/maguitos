@@ -9,6 +9,11 @@ public class ProfileLoader : MonoBehaviour
     [SerializeField]GameObject cardPrefab;
     void Start()
     {
+        SetupProfiles();
+    }
+
+    public void SetupProfiles()
+    {
         profileService= AppContainer.Get<IProfileService>();
         profiles = profileService.GetProfiles();
         if (profiles.Count <= 0) {
@@ -20,7 +25,6 @@ public class ProfileLoader : MonoBehaviour
             var card = Instantiate(cardPrefab, transform).GetComponent<CardUI>();
             card.Setup(profiledata);
         }
-       
     }
 
 }

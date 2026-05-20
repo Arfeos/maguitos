@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 /// <summary>
 /// Esta clase sirve para controlar los botones de las puertas
@@ -10,12 +12,23 @@ public class Opendoor : MonoBehaviour, IHittable
     [SerializeField] private GameObject PuertaAAbrir;
     private Animator _animatorPuerta;
     private bool _estatusPuerta = false;
-    
-    
+    private bool isOpening = false;
+
+
     public void Hit(float damage)
     {
-        _estatusPuerta = !_estatusPuerta;
-        _animatorPuerta.SetBool("Open", _estatusPuerta);
+        if (!isOpening) { 
+            _estatusPuerta = !_estatusPuerta;
+            _animatorPuerta.SetBool("Open", _estatusPuerta);
+            isOpening = true;
+            StartCoroutine(ResetOpening());
+        }
+    }
+
+    private IEnumerator ResetOpening()
+    {
+        yield return new WaitForSeconds(1f);
+        isOpening = false;
     }
 
     private void Awake()

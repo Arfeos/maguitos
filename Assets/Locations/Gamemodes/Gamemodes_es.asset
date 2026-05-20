@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: NAH, A LUCHAR
     m_Metadata:
       m_Items: []
+  - m_Id: 2406041790955520
+    m_Localized: Matemos slimes
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

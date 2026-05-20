@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class QuitButton : MonoBehaviour
+public class QuitButton : BaseButton
 {
     public void Quit()
     {

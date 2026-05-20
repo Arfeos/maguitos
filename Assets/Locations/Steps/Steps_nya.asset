@@ -122,6 +122,14 @@ MonoBehaviour:
     m_Localized: Entew the powtalu ando leavu the tutowialu
     m_Metadata:
       m_Items: []
+  - m_Id: 2534170576535552
+    m_Localized: Take the owowbsu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2534173395107840
+    m_Localized: Getu close to the owowbsu to collectu themu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

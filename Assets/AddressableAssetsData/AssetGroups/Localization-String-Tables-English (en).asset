@@ -33,8 +33,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e22f866985d667409a01ab512f299b3
+    m_Address: ScoreTable_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 330b8c8262647924fbd8a55a41a3ce6c
     m_Address: LookForRooms_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60418fe39811fe94ebd4740413429cfc
+    m_Address: DeathPanel_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
@@ -44,6 +56,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9ced6d8cae040af4ca9a4bdc109c62d0
     m_Address: ProfileSelection_en
@@ -59,6 +72,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b856cba7272b2c84495a3412d912d97f
     m_Address: InfoPanel_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5ada26912a76c2449851f8d3a57ed6b
+    m_Address: Hordes_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

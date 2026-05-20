@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 591947409636811566}
   - component: {fileID: 3606716957610984801}
   - component: {fileID: 533828101782806020}
+  - component: {fileID: 7356392182830177826}
   m_Layer: 5
   m_Name: btn_avatar
   m_TagString: Untagged
@@ -98,9 +99,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+    m_HighlightedColor: {r: 0.97947985, g: 1, b: 0.49999988, a: 1}
+    m_PressedColor: {r: 0.25542894, g: 0.34583545, b: 0.3962264, a: 1}
+    m_SelectedColor: {r: 0.31039107, g: 0.5807031, b: 0.74213827, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -119,4 +120,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3606716957610984801}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7356392182830177826}
+        m_TargetAssemblyTypeName: BaseButton, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7356392182830177826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066965787333304320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233523cbbd87cd64d8ce7b1cb24ff0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseButton
+  _audioClip: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}

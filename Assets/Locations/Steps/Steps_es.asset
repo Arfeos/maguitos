@@ -122,6 +122,14 @@ MonoBehaviour:
     m_Localized: Entra al portal y abandona el tutorial
     m_Metadata:
       m_Items: []
+  - m_Id: 2534170576535552
+    m_Localized: Coge los orbes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2534173395107840
+    m_Localized: "Ac\xE9rcate a los orbes para recogerlos"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SceneButton : MonoBehaviour
+public class SceneButton : BaseButton
 {
     [SerializeField] private SceneNames sceneName;
 

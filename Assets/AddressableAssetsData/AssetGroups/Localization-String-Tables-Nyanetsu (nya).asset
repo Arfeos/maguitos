@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Nyanetsu (nya)
   m_GUID: e7570bf44af39094a8507af1421abfb9
   m_SerializeEntries:
+  - m_GUID: 26329d09ee2b5f34b8cb84dd50d3f755
+    m_Address: Hordes_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4c3bd443c1196414bbbe58e6da64e255
     m_Address: InfoPanel_nya
     m_ReadOnly: 1
@@ -38,9 +44,16 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-nya
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 662331c51b4c64c40aa1a4a4d745d995
     m_Address: LookForRooms_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7230239928a75b54198d950dbc4fd284
+    m_Address: DeathPanel_nya
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-nya
@@ -53,6 +66,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8d16c88bcb95a7b4ca40f8bdd4639f6d
     m_Address: Steps_nya
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nya
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a76fb58f14db37040b2aa718e73e3afa
+    m_Address: ScoreTable_nya
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-nya

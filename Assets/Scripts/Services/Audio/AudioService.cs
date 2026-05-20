@@ -15,12 +15,15 @@ public class AudioService : IAudioService
     private Dictionary<AudioClip, float> _lastPlayTime = new();
     private float _musicVolume = 1f;
     private float _sfxVolume = 1f;
+    private AudioClip[] _musicPlaylist;
+    private int _currentTrackIndex = 0;
     public AudioService()
     {
         _audioRoot = new GameObject("AudioService");
 
         Object.DontDestroyOnLoad(_audioRoot);
-
+        AudioUpdater updater = _audioRoot.AddComponent<AudioUpdater>();
+        updater.Initialize(this);
         CreateMusicSource();
     }
     //Musica
@@ -28,20 +31,25 @@ public class AudioService : IAudioService
     {
         _musicSource = _audioRoot.AddComponent<AudioSource>();
         Object.DontDestroyOnLoad(_musicSource);
-        _musicSource.loop = true;
+        _musicSource.loop = false;
         _musicSource.volume = _musicVolume;
     }
 
 
-    public void PlayMusic(AudioClip clip)
+    public void PlayMusic(AudioClip[] clips)
     {
-        if (clip == null)
+        if (clips == null || clips.Length == 0)
             return;
-
+        _musicPlaylist = clips;
+        _currentTrackIndex = 0;
+        PlayCurrentTrack();
+    }
+    private void PlayCurrentTrack()
+    {
+        if (_musicPlaylist == null || _musicPlaylist.Length == 0)
+            return;
         _musicSource.Stop();
-
-        _musicSource.clip = clip;
-
+        _musicSource.clip = _musicPlaylist[_currentTrackIndex];
         _musicSource.Play();
     }
 
@@ -56,7 +64,23 @@ public class AudioService : IAudioService
         _musicSource.volume = volume;
     }
 
+    public void UpdateMusicPlaylist()
+    {
+        if (_musicPlaylist == null || _musicPlaylist.Length == 0)
+            return;
 
+        if (_musicSource.isPlaying)
+            return;
+
+        _currentTrackIndex++;
+
+        if (_currentTrackIndex >= _musicPlaylist.Length)
+        {
+            _currentTrackIndex = 0;
+        }
+
+        PlayCurrentTrack();
+    }
 
     //efectos de sonido
     public void PlaySound(AudioClip clip)

@@ -610,8 +610,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1481840671}
   m_HandleRect: {fileID: 1481840670}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.73333335
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -767,6 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d977c04a545161244a1e2b8ac1a71f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackButton
+  _audioClip: {fileID: 8300000, guid: e58d8bd078f188a4ba314e933b98528b, type: 3}
 --- !u!114 &517946306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,6 +815,18 @@ MonoBehaviour:
       - m_Target: {fileID: 517946305}
         m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
         m_MethodName: back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 517946305}
+        m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1038,7 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.628056, g: 0.5294118, b: 0.7372549, a: 0}
+  m_Color: {r: 0.628056, g: 0.5294118, b: 0.7372549, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1451,9 +1464,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.97837156, g: 0.99371064, b: 0.5218543, a: 1}
+    m_PressedColor: {r: 0.264942, g: 0.3581098, b: 0.42767292, a: 1}
+    m_SelectedColor: {r: 0.25453886, g: 0.4727465, b: 0.69182384, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1632,9 +1645,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0, g: 0.38030577, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9987585, g: 1, b: 0.5251572, a: 1}
+    m_PressedColor: {r: 0.23798503, g: 0.3327614, b: 0.3962264, a: 1}
+    m_SelectedColor: {r: 0.23404916, g: 0.53427255, b: 0.76729554, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2493,6 +2506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34f0786b0f4a844c8caaa0680f088f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  _audioClip: {fileID: 0}
   sceneName: 2
 --- !u!1 &1130448140
 GameObject:
@@ -3180,7 +3194,7 @@ RectTransform:
   m_Father: {fileID: 1746161136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0.73333335}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 11.5739, y: -32.2421}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4145,9 +4159,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.85660374, g: 0, b: 0.31616068, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.023529412, a: 1}
+    m_HighlightedColor: {r: 0.9827833, g: 1, b: 0.50628924, a: 1}
+    m_PressedColor: {r: 0.2901981, g: 0.37705514, b: 0.42138356, a: 1}
+    m_SelectedColor: {r: 0.27044013, g: 0.5420754, b: 0.66666657, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4341,8 +4355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.403717, y: 0}
-  m_SizeDelta: {x: -12.8074, y: 40}
+  m_AnchoredPosition: {x: 0.5000305, y: 0}
+  m_SizeDelta: {x: -8, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

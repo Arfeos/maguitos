@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1126457156472832
-    m_Localized: CREAR UNA SALA
+    m_Localized: CREAR SALA
     m_Metadata:
       m_Items: []
   - m_Id: 1126713554276352
@@ -48,6 +48,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1320067158081536
     m_Localized: "Introduce el c\xF3digo..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3531710315200512
+    m_Localized: 'SOLITARIO:
+
+      HORDAS'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3532141107970048
+    m_Localized: 'MULTIJUGADOR:
+
+      ARENA'
     m_Metadata:
       m_Items: []
   references:

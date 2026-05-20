@@ -15,20 +15,20 @@ MonoBehaviour:
   spell_Type: 0
   cast_Type: 1
   spell_importance: 0
-  manaCost: 10
+  manaCost: 7
   MaxCharge: 0
   currentCharge: 0
   ChargeTimePerUnit: 0
   velocity: 1
-  damage: 40
-  lifeTime: 10
+  damage: 45
+  lifeTime: 25
   shootDelay: 0.2
-  spreadIntensity: 0.1
+  spreadIntensity: 0.05
   producesLine: 1
   penetrates: 0
   penetrationlevel: 1
   CosteSlots: 1
-  RayAliveTime: 2
+  RayAliveTime: 0.5
   nombreHechizo: AcidBolt
   spellImage: {fileID: 21300000, guid: d4445f45979203e4f98eae5e5c5b88a6, type: 3}
   objectData: {fileID: 11400000, guid: 9c76fdcb807826243923a1b6e241f90d, type: 2}
@@ -37,9 +37,9 @@ MonoBehaviour:
   spawnPrefab: {fileID: 0}
   producedParticle: {fileID: 0}
   hitParticle: {fileID: 0}
-  spawnSound: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: 83829ff414f47a048b5387e4ab33571c, type: 3}
   chargeSound: {fileID: 0}
   airSound: {fileID: 0}
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
   canCast: 1
   isCasting: 0

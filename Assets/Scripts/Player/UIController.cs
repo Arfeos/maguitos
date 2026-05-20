@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor.MPE;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,7 @@ public class UIController : MonoBehaviour
     {
         _EventService = AppContainer.Get<IEventService>();
     }
+
     public void ChangeManaUi(GameEventBase evento)
     {
         ManaEvent manaEvent = (ManaEvent)evento;
@@ -37,4 +39,6 @@ public class UIController : MonoBehaviour
         HP_text.text = hpEvent.HPToChange.ToString();
         HP_Slider.GetComponent<Slider>().value = hpEvent.HPToChange;
     }
+
+  
 }

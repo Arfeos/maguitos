@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BigSlime : BasicSlimeController
@@ -16,15 +17,43 @@ public class BigSlime : BasicSlimeController
     
     private Collider myCollider;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         myCollider = GetComponent<Collider>();
     }
 
-    private void OnDestroy()
+        protected override IEnumerator DissolveAfterDelay()
     {
-        int numberOfChilds = Random.Range(minNumberOfChilds, maxNumberOfChilds+1);
+        yield return new WaitForSeconds(delayBeforeStart);
+
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
+        // Cambiar shader en todos los materiales
+        foreach (Renderer r in renderers)
+        {
+            foreach (Material mat in r.materials)
+            {
+                mat.shader = Shader.Find("Custom/Dissolve");
+                mat.SetTexture("_DissolveTex", dissolveTexture);
+                mat.SetColor("_DissolveColor", dissolveColor);
+            }
+        }
+
+        // Animar la disolución
+        while (dissolveProgress < 1f)
+        {
+            dissolveProgress += Time.deltaTime / dissolveTime;
+
+            foreach (Renderer r in renderers)
+                foreach (Material mat in r.materials)
+                    mat.SetFloat("_DissolveThreshold", dissolveProgress);
+
+            yield return null;
+        }
+        int numberOfChilds = Random.Range(minNumberOfChilds, maxNumberOfChilds + 1);
         SpawnChilds(numberOfChilds);
+        Destroy(gameObject);
     }
 
     private void SpawnChilds(int numberOfChilds)

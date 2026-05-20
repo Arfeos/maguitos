@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface IAudioService 
 {
-    void PlayMusic(AudioClip clip);
+    void PlayMusic(AudioClip[] clip);
 
     void StopMusic();
     public void SetMusicVolume(float volume);

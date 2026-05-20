@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +25,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     [SerializeField] protected LayerMask attackLayer;
 
     [Header("Puntuacion")]
-    [SerializeField] protected int puntuación = 20;
+    [SerializeField] protected int puntuacion = 20;
 
     // ── Life bar ─────────────────────────────────────────────────────────────
     [Header("UI")]
@@ -36,6 +37,13 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     [SerializeField] protected Color dissolveColor = Color.red;
     [SerializeField] protected float delayBeforeStart = 3f;
     [SerializeField] protected float dissolveTime = 2f;
+
+    // ── Orbes ───────────────────────────────────────────────────────────────
+
+    [SerializeField] protected GameObject orbVida;
+    [SerializeField] protected GameObject orbMana;
+    [SerializeField, Range(0f, 100f)] protected float percentSpawnLife;
+    [SerializeField, Range(0f, 100f)] protected float percentSpawnMana;
     // ── Sonidos ─────────────────────────────────────────────────────────────
     [Header("Sounds")]
     [SerializeField] protected AudioClip TakeDamageSound;
@@ -49,13 +57,14 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     protected float dissolveProgress;
     protected Coroutine _actionCoroutine;
     protected IAudioService _audioService;
-
+    protected IProfileService _profileService;
     protected IScoreService _scoreService;
     // ── Unity Lifecycle ──────────────────────────────────────────────────────
-    private void Awake()
+    protected virtual void Awake()
     {
         _audioService = AppContainer.Get<IAudioService>();
         _scoreService = AppContainer.Get<IScoreService>();
+        _profileService = AppContainer.Get<IProfileService>();
     }
     protected virtual void Start()
     {
@@ -106,7 +115,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         if (JumpSound != null) _audioService.PlaySound(JumpSound);
     }
 
-    // ── Métodos virtuales sobreescribibles ───────────────────────────────────
+    // ── Métodos virtuales sobreescribibles ───────────────────────────────────s
 
     /// <summary>
     /// Se llama cada Update (ya filtrado por null y muerte).
@@ -116,12 +125,18 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     protected virtual void OnUpdate()
     {
         CheckState();
+        
     }
 
     /// <summary>Se llama justo antes de destruir el objeto. Sobreescribe para lógica extra al morir.</summary>
     protected virtual void OnDeath() 
     {
-        //_scoreService.addPoints("Horde", puntuación);
+        if (_scoreService == null) _scoreService = AppContainer.Get<IScoreService>();
+        _scoreService.addPoints(_profileService.getSelectedProfile().guid, puntuacion);
+        //_scoreService.addPoints("Pepe", puntuación);
+
+        CreateOrbsByPercent(percentSpawnMana, orbMana);
+        CreateOrbsByPercent(percentSpawnLife, orbVida);
     }
 
     // ── Lógica común ─────────────────────────────────────────────────────────
@@ -184,7 +199,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         StartCoroutine(DissolveAfterDelay());
     }
 
-    private IEnumerator DissolveAfterDelay()
+    protected virtual IEnumerator DissolveAfterDelay()
     {
         yield return new WaitForSeconds(delayBeforeStart);
 
@@ -216,12 +231,36 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
         Destroy(gameObject);
     }
 
+    protected void CreateOrbsByPercent(float Percent, GameObject Orb)
+    {
+        if (checkPercentSpawn(Percent))
+        {
+            InstantiateOrb(Orb);
+        }
+    }
+
+    protected bool checkPercentSpawn(float percentToCheck)
+    {
+        float percentValue = UnityEngine.Random.Range(0, 100);
+
+        if (percentValue <= percentToCheck)
+            return true;
+        return false;
+    }
+    
+    protected void InstantiateOrb(GameObject Orb)
+    {
+        Vector3 randomPos = transform.position + UnityEngine.Random.insideUnitSphere * 1f;
+
+        Instantiate(Orb, randomPos, quaternion.identity);
+    }
+
     // ── Cooldown de acciones ─────────────────────────────────────────────────
 
-    private IEnumerator ActionCooldownRoutine()
+    protected IEnumerator ActionCooldownRoutine()
     {
         _nextActionTime = false;
-        yield return new WaitForSecondsRealtime(attackCooldown);
+        yield return new WaitForSeconds(attackCooldown);
         _nextActionTime = true;
         _actionCoroutine = null;
     }

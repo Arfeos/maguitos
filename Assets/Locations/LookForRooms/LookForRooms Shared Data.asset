@@ -47,6 +47,14 @@ MonoBehaviour:
     m_Key: Placeholder
     m_Metadata:
       m_Items: []
+  - m_Id: 3531710315200512
+    m_Key: txtSingle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3532141107970048
+    m_Key: txtMulti
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

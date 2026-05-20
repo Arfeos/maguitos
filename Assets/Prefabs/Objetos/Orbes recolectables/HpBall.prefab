@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4459fff084dd84526ab8fd5082d2eacb, type: 2}
+  - {fileID: 2100000, guid: ba0cc2afd47abf841830c93f041f2cec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -133,6 +133,6 @@ MonoBehaviour:
   velocidadPersecucion: 4
   alturaVuelo: 1
   suavizadoAltura: 5
-  efectoRecogida: {fileID: 0}
+  efectoRecogida: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
   mana: 0
   vida: 25
