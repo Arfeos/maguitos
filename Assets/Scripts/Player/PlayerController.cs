@@ -116,7 +116,10 @@ public class PlayerController : MonoBehaviour, IHittable
             }
             if (PlayerInputManager.Actions.Player.Jump.WasPressedThisFrame() && characterController.isGrounded)
             {
+            isCrouching = false;
+            HandleCrouch();
                 velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                
             }
             else if (!characterController.isGrounded)
             {
