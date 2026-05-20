@@ -68,6 +68,7 @@ public class StaffController : NetworkBehaviour
 
     private void SuscribirEventos()
     {
+        
         _eventService.Subscribe<ReloadEvent>(OnReloadStarted);
         _eventService.Subscribe<SpellChangeEvent>(OnSpellChanged);
     }

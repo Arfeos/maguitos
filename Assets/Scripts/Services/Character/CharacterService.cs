@@ -260,6 +260,7 @@ public class CharacterService : ICharacterService
 
     public void Die()
     {
+        Debug.Log("Moristes");
         _eventService.Publish(new DieEvent());
     }
 
