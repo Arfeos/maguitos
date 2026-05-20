@@ -1265,30 +1265,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 661936839336194529, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1320,6 +1296,18 @@ PrefabInstance:
     - target: {fileID: 2441366320870490848, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6891630813550357192}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: back
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BackButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3171576006544528980, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_Name
@@ -1496,24 +1484,44 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5631962856572014929, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6891630813550357195}
   m_SourcePrefab: {fileID: 100100000, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
 --- !u!114 &6891630813550357192 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4569512739606224413, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
   m_PrefabInstance: {fileID: 6891630813550357191}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6891630813550357193}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d977c04a545161244a1e2b8ac1a71f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackButton
+--- !u!1 &6891630813550357193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5631962856572014929, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+  m_PrefabInstance: {fileID: 6891630813550357191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6891630813550357194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4742803773321443357, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
   m_PrefabInstance: {fileID: 6891630813550357191}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6891630813550357195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891630813550357193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d977c04a545161244a1e2b8ac1a71f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackButton
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
