@@ -1,4 +1,4 @@
-using System;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Components;
@@ -13,10 +13,15 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject Mapcenter;
     [SerializeField] GameObject DeathPanel;
+    [SerializeField] private Vector2 mapMinBounds;
+    [SerializeField] private Vector2 mapMaxBounds;
+    
+    [SerializeField] private LayerMask obstacleMask;
     IEventService _eventService;
     IScoreService _scoreService;
     IProfileService _profileService;
     [Header("Wave Settings")]
+    [SerializeField] private float minSpawnDistance = 2f;
     [SerializeField] private int maxCount = 30;
     [SerializeField] private int enemiesPerHorde = 2;
     [SerializeField] private int pointsPerHorde=1000;
@@ -100,10 +105,34 @@ public class WaveManager : MonoBehaviour
     {
         for (int i = 0; i < enemiesPerHorde; i++)
         {
-            Vector3 randosPos = player.transform.position + new Vector3(UnityEngine.Random.Range(-25, 25), 0, UnityEngine.Random.Range(-25, 25));
-            GameObject.Instantiate(enemy[UnityEngine.Random.Range(0, enemy.Length)], randosPos, Quaternion.identity, enemiesParent.transform);
+            Vector3 spawnPos;
+            if(TryGetPosition(out spawnPos))
+            GameObject.Instantiate(enemy[UnityEngine.Random.Range(0, enemy.Length)], spawnPos, Quaternion.identity, enemiesParent.transform);
         }
     }
+
+    private bool TryGetPosition(out Vector3 spawnPos)
+    {
+        int maxAtempts = 20;
+        for (int i = 0; i < maxAtempts; i++) {
+            float randomX = Random.Range(mapMinBounds.x, mapMaxBounds.x);
+            float randomZ = Random.Range(mapMinBounds.y, mapMaxBounds.y);
+            Vector3 randomPos = new Vector3(Mapcenter.transform.position.x + randomX, Mapcenter.transform.position.y, Mapcenter.transform.position.z + randomZ);
+            Debug.Log("Intento " + i + ": Posición aleatoria generada: " + randomPos);
+            //checkea la distancia con el jugador
+            if (Vector3.Distance(player.transform.position, randomPos) < minSpawnDistance)
+              continue;
+            //compureba si choca con algun obstaculo
+            bool blocked = Physics.CheckSphere(randomPos, 1f, obstacleMask);
+            Debug.Log("Intento " + i + ": ¿Posición bloqueada por obstáculos? " + blocked);
+            if (blocked) continue;
+            spawnPos= randomPos;
+            return true;
+        }
+        spawnPos = Vector3.zero;
+        return false;
+    }
+
     private void NextHorde()
     {
         timer = maxCount;

@@ -131,9 +131,9 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     /// <summary>Se llama justo antes de destruir el objeto. Sobreescribe para lógica extra al morir.</summary>
     protected virtual void OnDeath() 
     {
-        //_scoreService.addPoints(_profileService.getSelectedProfile().guid, puntuación);
         if (_scoreService == null) _scoreService = AppContainer.Get<IScoreService>();
-        _scoreService.addPoints("Pepe", puntuación);
+        _scoreService.addPoints(_profileService.getSelectedProfile().guid, puntuación);
+        //_scoreService.addPoints("Pepe", puntuación);
 
         CreateOrbsByPercent(percentSpawnMana, orbMana);
         CreateOrbsByPercent(percentSpawnLife, orbVida);
