@@ -56,6 +56,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9ced6d8cae040af4ca9a4bdc109c62d0
     m_Address: ProfileSelection_en

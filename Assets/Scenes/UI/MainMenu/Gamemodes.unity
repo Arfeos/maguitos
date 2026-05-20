@@ -831,6 +831,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 800608800}
+        m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &800608798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,6 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d977c04a545161244a1e2b8ac1a71f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackButton
+  _audioClip: {fileID: 8300000, guid: e58d8bd078f188a4ba314e933b98528b, type: 3}
 --- !u!1 &822315326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +1457,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1379633102}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1379633100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,6 +1519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34f0786b0f4a844c8caaa0680f088f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  _audioClip: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
   sceneName: 8
 --- !u!1 &1482861981
 GameObject:
@@ -2009,6 +2035,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1947177056}
+        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1947177054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,6 +2097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34f0786b0f4a844c8caaa0680f088f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneButton
+  _audioClip: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
   sceneName: 6
 --- !u!1 &2026947945
 GameObject:

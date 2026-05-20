@@ -1265,30 +1265,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 661936839336194529, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1321,6 +1297,46 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6891630813550357192}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6891630813550357192}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: back
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BackButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BackButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3171576006544528980, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_Name
       value: container_settings
@@ -1329,6 +1345,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4569512739606224413, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: _audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e58d8bd078f188a4ba314e933b98528b, type: 3}
     - target: {fileID: 4626065053907326843, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

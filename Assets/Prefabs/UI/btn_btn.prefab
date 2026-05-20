@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4708646476522344121}
   - component: {fileID: 8352783584022672553}
   - component: {fileID: 3022039121885103248}
+  - component: {fileID: 8598975470574679909}
   m_Layer: 5
   m_Name: btn_btn
   m_TagString: Untagged
@@ -120,7 +121,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8352783584022672553}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8598975470574679909}
+        m_TargetAssemblyTypeName: BaseButton, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8598975470574679909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854253348137632509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233523cbbd87cd64d8ce7b1cb24ff0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseButton
+  _audioClip: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
 --- !u!1 &5649849361733090967
 GameObject:
   m_ObjectHideFlags: 0
