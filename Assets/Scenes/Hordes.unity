@@ -45930,7 +45930,7 @@ PrefabInstance:
       objectReference: {fileID: 6502885931249821474, guid: 83f7fcef08935494eb9e3a5af486e79c, type: 3}
     - target: {fileID: 3743467397682995237, guid: 7f2d5b691e31a964db9192f5b5824752, type: 3}
       propertyPath: enemiesPerHorde
-      value: 100
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3743467397682995237, guid: 7f2d5b691e31a964db9192f5b5824752, type: 3}
       propertyPath: enemy.Array.size

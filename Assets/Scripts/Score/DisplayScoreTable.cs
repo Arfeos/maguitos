@@ -125,7 +125,7 @@ public class DisplayScoreTable : MonoBehaviour
     }
     public IEnumerator lockCoroutine() {
         _isInputLocked = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         _isInputLocked = false;
     }
 }

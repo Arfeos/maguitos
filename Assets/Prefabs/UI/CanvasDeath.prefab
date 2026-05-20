@@ -244,6 +244,10 @@ PrefabInstance:
       propertyPath: textoPagina
       value: 
       objectReference: {fileID: 425656756211876300}
+    - target: {fileID: 1193722598268539230, guid: a1fe83043d895414083811841864a511, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2596666050686374928, guid: a1fe83043d895414083811841864a511, type: 3}
       propertyPath: m_fontSize
       value: 72
