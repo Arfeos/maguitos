@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CardUI : MonoBehaviour
@@ -22,6 +23,7 @@ public class CardUI : MonoBehaviour
         icon.sprite = Resources.Load<Sprite>(profile.urlImage);
 
     }
+    
     public void OnClick()
     {
         _profileService.SelectProfile(profile);
@@ -30,5 +32,12 @@ public class CardUI : MonoBehaviour
 
         
         _sceneService.LoadScene(SceneNames.Main_menu);
+    }
+
+    public void DeleteProfile()
+    {
+        _profileService.DeleteProfile(guid);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

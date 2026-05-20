@@ -23,6 +23,10 @@ MonoBehaviour:
     m_Key: txt_username
     m_Metadata:
       m_Items: []
+  - m_Id: 2685102000345088
+    m_Key: deleteProfile
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
