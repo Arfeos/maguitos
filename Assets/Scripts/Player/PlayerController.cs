@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour, IHittable
     private Vector2 dirAnimation;
 
     private float yRotation = 0f;
+    private float xRotation = 0f;
 
     private IPauseService _pauseService;
     private IEventService _eventService;
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour, IHittable
     }
     private void Update()
     {
-        Look ();
+        Look();
         Move();
         HandleCrouch();
         handleReload();
@@ -79,17 +80,18 @@ public class PlayerController : MonoBehaviour, IHittable
 
 
 
-    private void Look ()
+    private void Look()
     {
         Vector2  Input = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
         float  X =  Input.x * Sensitivity * xDirection;
         float  Y =  Input.y * Sensitivity * yDirection;
 
-        yRotation -=  Y;
+        yRotation -= Y; 
+        xRotation += X;
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
 
-        cameraTransform.localRotation = Quaternion.Euler(yRotation , 0f, 0f);
+        cameraTransform.localRotation = Quaternion.Euler(yRotation , xRotation, 0f);
         transform.Rotate(Vector3.up *  X);
     }
 
