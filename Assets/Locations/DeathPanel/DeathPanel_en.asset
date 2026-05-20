@@ -34,7 +34,7 @@ MonoBehaviour:
       m_Items:
       - rid: 2537881105323786335
   - m_Id: 1654099902464
-    m_Localized: Press any key to exit, bro =D
+    m_Localized: Press the esc key or gamepad start button to exit, bro =D
     m_Metadata:
       m_Items: []
   references:
