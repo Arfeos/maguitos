@@ -34,7 +34,7 @@ MonoBehaviour:
       m_Items:
       - rid: 2537881105323786336
   - m_Id: 1654099902464
-    m_Localized: Pulsa cualquier tecla para salir, bro =D
+    m_Localized: Pulsa la tecla esc o start del mando para salir, bro =D
     m_Metadata:
       m_Items: []
   references:
