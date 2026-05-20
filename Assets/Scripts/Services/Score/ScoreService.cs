@@ -111,6 +111,7 @@ public class ScoreService : IScoreService
 
     public ScoreTable getScoreTable()
     {
+        if (scoreTable == null) LoadScores();
         return scoreTable;
     }
 }
