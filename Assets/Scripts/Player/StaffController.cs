@@ -142,7 +142,6 @@ public class StaffController : NetworkBehaviour
                     CastRaySpellRpc(spellSpawn.position, spellSpawn.forward, layersToHit);
                     break;
                 case SpellType.ball:
-                    Debug.Log($"[CLIENT {NetworkManager.Singleton.LocalClientId}] Enviando CastBallSpellRpc — IsSpawned: {IsSpawned}");
                     CastBallSpellRpc(spellSpawn.position, spellSpawn.forward, spell.spell.velocity);
                     break;
             }
@@ -191,8 +190,6 @@ public class StaffController : NetworkBehaviour
     [Rpc(SendTo.Server)]
     private void CastBallSpellRpc(Vector3 spawnPos, Vector3 spawnForward, float velocity)
     {
-        Debug.Log($"[SERVIDOR] CastBallSpellRpc recibido");
-
         var spellService = AppContainer.Get<ISpellService>();
         spellService.ShootBall(spawnPos, spawnForward, velocity, null);
         VisualBallEffectRpc(spawnPos, spawnForward, velocity);
@@ -201,8 +198,6 @@ public class StaffController : NetworkBehaviour
     [Rpc(SendTo.NotServer)]
     private void VisualBallEffectRpc(Vector3 spawnPos, Vector3 spawnForward, float velocity)
     {
-        Debug.Log($"[CLIENT {NetworkManager.Singleton.LocalClientId}] VisualBallEffectRpc recibido — IsServer: {IsServer}");
-
         var spellService = AppContainer.Get<ISpellService>();
         spellService.ShootBall(spawnPos, spawnForward, velocity, new List<Material>());
     }
