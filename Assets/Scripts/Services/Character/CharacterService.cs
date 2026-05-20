@@ -12,6 +12,7 @@ public class CharacterService : ICharacterService
     private int Curretlife = 100;
     private int mana = 100;
     private int manaActual = 100;
+    private bool _pacifista = true;
     public CharacterService()
     {
         _eventService = AppContainer.Get<IEventService>();
@@ -233,6 +234,7 @@ public class CharacterService : ICharacterService
     {
         Curretlife = life;
         manaActual = mana;
+        _pacifista = true;
         listaHechizos = new List<SpellBase>();
         index = 0;
         HPEvent hpEvent = new HPEvent();
@@ -241,5 +243,14 @@ public class CharacterService : ICharacterService
         ManaEvent ManaEvent = new ManaEvent();
         ManaEvent.ManaToChange = manaActual;
         _eventService.Publish(ManaEvent);
+    }
+
+    public void Genocide()
+    {
+        _pacifista = false;
+    }
+    public bool getPacifist()
+    {
+        return _pacifista;
     }
 }
