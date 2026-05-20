@@ -1,9 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Net;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 /// <summary>
 /// Slime a distancia: mantiene un rango óptimo con el jugador
