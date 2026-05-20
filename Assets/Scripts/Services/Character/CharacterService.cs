@@ -14,9 +14,8 @@ public class CharacterService : ICharacterService
 
     private PlayerNetworkHealth _networkHealth;
 
-    private PlayerNetworkHealth GetNetworkHealth()
     private bool _pacifista = true;
-    public CharacterService()
+    private PlayerNetworkHealth GetNetworkHealth()
     {
         if (_networkHealth == null)
             _networkHealth = GameObject.FindFirstObjectByType<PlayerNetworkHealth>();
@@ -261,8 +260,7 @@ public class CharacterService : ICharacterService
 
     public void Die()
     {
-        //TODO: Implemetar muerte real
-        Debug.Log("Has muerto");
+        _eventService.Publish(new DieEvent());
     }
 
     public void ResetCharacter()
