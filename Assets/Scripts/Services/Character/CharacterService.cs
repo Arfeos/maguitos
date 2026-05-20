@@ -223,7 +223,7 @@ public class CharacterService : ICharacterService
 
     public void Die()
     {
-        //_eventService.Publish(new DieEvent());
+        _eventService.Publish(new DieEvent());
 
     }
     public void ResetCharacter()

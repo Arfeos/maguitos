@@ -45836,7 +45836,7 @@ PrefabInstance:
     - target: {fileID: 3743467397682995237, guid: 7f2d5b691e31a964db9192f5b5824752, type: 3}
       propertyPath: DeathPanel
       value: 
-      objectReference: {fileID: 7304943128162433810, guid: a1fe83043d895414083811841864a511, type: 3}
+      objectReference: {fileID: 7661195762345459578, guid: 07a97de12cc6c844ba99df5bdbb542ee, type: 3}
     - target: {fileID: 3743467397682995237, guid: 7f2d5b691e31a964db9192f5b5824752, type: 3}
       propertyPath: HordeInfoPrefab
       value: 

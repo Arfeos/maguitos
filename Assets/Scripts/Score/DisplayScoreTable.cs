@@ -19,7 +19,7 @@ public class DisplayScoreTable : MonoBehaviour
     private List<GameObject> _rows = new List<GameObject>();
     public int currentPage = 0;
 
-    [SerializeField] TextMeshPro textoPagina;
+    [SerializeField] TextMeshProUGUI textoPagina;
 
     [SerializeField] bool _RefreshAtStart = false;
 

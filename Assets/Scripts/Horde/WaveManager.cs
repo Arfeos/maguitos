@@ -109,8 +109,8 @@ public class WaveManager : MonoBehaviour
         timer = maxCount;
         horde++;
         enemiesPerHorde = Mathf.CeilToInt(enemiesPerHorde*1.5f);
-        _scoreService.addPoints("Pepe", pointsPerHorde);
-        //_scoreService.addPoints(_profileService.getSelectedProfile().guid, pointsPerHorde);
+        //_scoreService.addPoints("Pepe", pointsPerHorde);
+         _scoreService.addPoints(_profileService.getSelectedProfile().guid, pointsPerHorde);
         pointsPerHorde = Mathf.CeilToInt(pointsPerHorde * 1.5f);
         spawnEnemies();
         hordeCounter.text = horde.ToString();
@@ -119,7 +119,11 @@ public class WaveManager : MonoBehaviour
     private void OnPlayerDeath(GameEventBase @base)
     {
         Time.timeScale = 0;
-        //DeathPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        _scoreService.AddScore(false);
+        GameObject.Instantiate(DeathPanel);
+        DeathPanel.SetActive(true);
     }
 
 
