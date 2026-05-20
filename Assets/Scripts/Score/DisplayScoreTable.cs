@@ -34,6 +34,25 @@ public class DisplayScoreTable : MonoBehaviour
     /// <summary>
     /// Actualiza la tabla
     /// </summary>
+    private void Update()
+    {
+        Vector2 navigate= PlayerInputManager.Actions.UI.Navigate.ReadValue<Vector2>();
+        if (navigate.x > 0.5f)
+            {
+                Debug.Log("Has pulsado derecha");
+                NextPage();
+            }
+
+            // Izquierda
+            if (navigate.x < -0.5f)
+            {
+                Debug.Log("Has pulsado izquierda");
+                PreviousPage();
+            }
+
+
+        
+    }
     public void RefreshTable()
     {
         //Limpiar filas existentes

@@ -7,7 +7,7 @@ public class UIInitializer : MonoBehaviour
     private IUIService uiService;
 
     [SerializeField] GameObject firstButton;
-    void Start()
+    void OnEnable()
     { 
         //TODO: crear un comprobante para ver si el control ya esta en UI
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
