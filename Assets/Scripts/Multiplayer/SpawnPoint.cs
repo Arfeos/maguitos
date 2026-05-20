@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class SpawnPoint : MonoBehaviour
 {
-    //Este es el prefab
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform[] spawnPoint;
     private int index = 0;
     private bool sceneReady = false;
     private void Start()
     {
-        if (!NetworkManager.Singleton.IsServer) return;
+        if (NetworkManager.Singleton != null) 
+            if(!NetworkManager.Singleton.IsServer)
+                return;
 
         //NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += OnSceneLoaded;
         NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
@@ -42,6 +43,7 @@ public class SpawnPoint : MonoBehaviour
         index++;
         GameObject player = Instantiate(playerPrefab, spawn.position, spawn.rotation);
 
+        player.SetActive(true);
         player.GetComponent<NetworkObject>().SpawnWithOwnership(clientId);
     }
 }

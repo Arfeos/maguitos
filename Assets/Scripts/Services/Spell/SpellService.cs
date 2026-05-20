@@ -17,15 +17,6 @@ public class SpellService : ISpellService
         _BallPrefab = ballPrefab;
     }
 
-    //public GameObject ShootRay(GameObject Ball)
-    //{
-    //    if (Ball == null) return null;
-    //    //no hace falta comprobar si el rayo ya existe, porque cada rayo es único y se inactiva al finalizar su animación
-    //    var RayObject = GetOrCreateRay();
-    //    RayObject = Ball;
-    //    return RayObject;
-    //}
-
     public GameObject ShootRay(Vector3 start, Vector3 end)
     {
         var ray = GetOrCreateRay();
@@ -72,32 +63,16 @@ public class SpellService : ISpellService
 
         }
 
-        ball.GetComponent<MeshRenderer>().materials = material.ToArray();
-        
+        if (material != null && material.Count > 0)
+        {
+            MeshRenderer renderer = ball.GetComponent<MeshRenderer>();
+            if (renderer != null)
+                renderer.materials = material.ToArray();
+        }
+
         return ball;
     }
-    //[ServerRpc]
-    //private void ShootBallServerRpc(Vector3 position, Vector3 direction, float velocity, int spellIndex)
-    //{
-    //    SpellBase ActualSpell = _characterService.getSpell(spellIndex)?.GetComponent<SpellBase>();
-    //    if (ActualSpell == null) return;
-
-    //    GameObject ball = Instantiate(
-    //        ActualSpell.spell.ballPrefab,
-    //        position,
-    //        Quaternion.identity
-    //    );
-
-    //    ball.GetComponent<NetworkObject>().Spawn();
-
-    //    Rigidbody rb = ball.GetComponent<Rigidbody>();
-    //    if (rb != null)
-    //    {
-    //        rb.linearVelocity = Vector3.zero;
-    //        rb.AddForce(direction.normalized * velocity, ForceMode.Impulse);
-    //    }
-    //}
-
+    
     private GameObject GetOrCreateRay()
     {
         GameObject Ray = _rayList.FirstOrDefault(r => !r.activeInHierarchy);

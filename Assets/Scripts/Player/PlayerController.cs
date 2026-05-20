@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour, IHittable
     private IAudioService _audioService;
     private Animator _animator;
 
-    
+
 
     private void Awake()
     {
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour, IHittable
     }
     private void Update()
     {
-        Look ();
+        Look();
         Move();
         HandleCrouch();
         handleReload();
@@ -79,18 +79,18 @@ public class PlayerController : MonoBehaviour, IHittable
 
 
 
-    private void Look ()
+    private void Look()
     {
-        Vector2  Input = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
+        Vector2 Input = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
-        float  X =  Input.x * Sensitivity * xDirection;
-        float  Y =  Input.y * Sensitivity * yDirection;
+        float X = Input.x * Sensitivity * xDirection;
+        float Y = Input.y * Sensitivity * yDirection;
 
-        yRotation -=  Y;
+        yRotation -= Y;
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
 
-        cameraTransform.localRotation = Quaternion.Euler(yRotation , 0f, 0f);
-        transform.Rotate(Vector3.up *  X);
+        cameraTransform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+        transform.Rotate(Vector3.up * X);
     }
 
     private void Move()
@@ -110,50 +110,50 @@ public class PlayerController : MonoBehaviour, IHittable
         {
             _audioService.StopSound(WalkSound);
         }
-            if (characterController.isGrounded && velocityY < 0)
+        if (characterController.isGrounded && velocityY < 0)
+        {
+            velocityY = -2f;
+        }
+        if (PlayerInputManager.Actions.Player.Jump.WasPressedThisFrame() && characterController.isGrounded)
+        {
+            velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+        else if (!characterController.isGrounded)
+        {
+            velocityY += gravity * Time.deltaTime;
+        }
+
+        var move = Vector3.zero;
+
+        if (inputPlayer.magnitude > 0.1f)
+        {
+
+
+            move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
+        }
+
+        move.y = velocityY;
+
+        if (PlayerInputManager.Actions.Player.Sprint.IsPressed())
+        {
+            if (!isRunning)
             {
-                velocityY = -2f;
+                previusVelocity = Velocity;
+                Velocity *= 2;
+                isRunning = true;
             }
-            if (PlayerInputManager.Actions.Player.Jump.WasPressedThisFrame() && characterController.isGrounded)
+        }
+        else
+        {
+            if (isRunning)
             {
-                velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                Velocity = previusVelocity;
+                isRunning = false;
             }
-            else if (!characterController.isGrounded)
-            {
-                velocityY += gravity * Time.deltaTime;
-            }
+        }
 
-            var move = Vector3.zero;
+        characterController.Move(move * Velocity * Time.deltaTime);
 
-            if (inputPlayer.magnitude > 0.1f)
-            {
-
-
-                move = transform.forward * inputPlayer.y + transform.right * inputPlayer.x;
-            }
-
-            move.y = velocityY;
-
-            if (PlayerInputManager.Actions.Player.Sprint.IsPressed())
-            {
-                if (!isRunning)
-                {
-                    previusVelocity = Velocity;
-                    Velocity *= 2;
-                    isRunning = true;
-                }
-            }
-            else
-            {
-                if (isRunning)
-                {
-                    Velocity = previusVelocity;
-                    isRunning = false;
-                }
-            }
-
-            characterController.Move(move * Velocity * Time.deltaTime);
-        
     }
 
     private void HandleCrouch()
@@ -206,7 +206,8 @@ public class PlayerController : MonoBehaviour, IHittable
     }
     private void handlePause()
     {
-        if (PlayerInputManager.Actions.Player.pause.WasPressedThisFrame()) {
+        if (PlayerInputManager.Actions.Player.pause.WasPressedThisFrame())
+        {
             _pauseService.TogglePause();
         }
     }
