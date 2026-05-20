@@ -17,6 +17,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private ICharacterService _characterService;
     private Coroutine _coroutineCharge;
     private Coroutine _coroutineReload;
+
+    
     
     void Awake()
     {
@@ -80,6 +82,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void LanzarHechizo(SpellBase ActualSpell)
     {
+      if (_characterService.getPacifist())
+        {
+            _characterService.Genocide();
+        }
         if (_coroutineCharge != null) { 
         StopCoroutine(_coroutineCharge);
         _coroutineCharge = null;
