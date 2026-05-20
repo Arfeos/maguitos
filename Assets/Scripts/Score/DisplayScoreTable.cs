@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ public class DisplayScoreTable : MonoBehaviour
     private IScoreService _scoreService;           
     public Transform container;                
     public GameObject rowPrefab;
-
+    private bool _isInputLocked = false;
     public int pageSize = 5;
 
     private List<GameObject> _rows = new List<GameObject>();
@@ -34,6 +35,31 @@ public class DisplayScoreTable : MonoBehaviour
     /// <summary>
     /// Actualiza la tabla
     /// </summary>
+    private void Update()
+    {
+        if (_isInputLocked) return;
+        Vector2 navigate= PlayerInputManager.Actions.UI.Navigate.ReadValue<Vector2>();
+        if (navigate.x > 0.5f)
+            {
+                
+                Debug.Log("Has pulsado derecha");
+                NextPage();
+            StartCoroutine(lockCoroutine());
+        }
+
+
+        if (navigate.x < -0.5f)
+            {
+                Debug.Log("Has pulsado izquierda");
+            PreviousPage();
+            StartCoroutine(lockCoroutine());
+        }
+
+
+
+    }
+
+
     public void RefreshTable()
     {
         //Limpiar filas existentes
@@ -96,5 +122,10 @@ public class DisplayScoreTable : MonoBehaviour
             currentPage--;
             RefreshTable();
         }
+    }
+    public IEnumerator lockCoroutine() {
+        _isInputLocked = true;
+        yield return new WaitForSeconds(0.5f);
+        _isInputLocked = false;
     }
 }

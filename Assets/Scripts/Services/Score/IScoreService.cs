@@ -9,5 +9,5 @@ public interface IScoreService
     public void addPoints(string player, int points);
     public void resetScore();
 
-    public void AddScore(bool pacifist);
+    public void AddScore();
 }

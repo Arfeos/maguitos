@@ -9,6 +9,8 @@ public class ScoreService : IScoreService
     
     public ScoreTable scoreTable;
 
+    
+
     /// <summary>
     /// Agrega los puntos indicados al jugador designado
     /// </summary>
@@ -69,11 +71,11 @@ public class ScoreService : IScoreService
    /// <summary>
     /// Agrega la puntuacion a la lista de puntuaciones y la ordena, después guarda la lista en el json.
     /// </summary>
-    public void AddScore(bool pacifist)
+    public void AddScore()
     {
         LoadScores();
         string profile = AppContainer.Get<IProfileService>().getSelectedProfile().name;
-        scoreTable.scores.Add(new ScoreEntry(profile, GetPoints(AppContainer.Get<IProfileService>().getSelectedProfile().guid), pacifist));
+        scoreTable.scores.Add(new ScoreEntry(profile, GetPoints(AppContainer.Get<IProfileService>().getSelectedProfile().guid), AppContainer.Get<ICharacterService>().getPacifist()));
 
         scoreTable.scores = scoreTable.scores.OrderByDescending(s => s.score).ToList();
 
@@ -109,6 +111,7 @@ public class ScoreService : IScoreService
 
     public ScoreTable getScoreTable()
     {
+        if (scoreTable == null) LoadScores();
         return scoreTable;
     }
 }

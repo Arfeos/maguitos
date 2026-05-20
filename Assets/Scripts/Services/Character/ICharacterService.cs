@@ -25,4 +25,8 @@ public interface ICharacterService
     public void SyncHealth(int newHealth);
 
     public void Die();
+
+    public void Genocide();
+
+        public bool getPacifist();
 }

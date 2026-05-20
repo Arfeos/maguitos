@@ -15,6 +15,8 @@ public class CharacterService : ICharacterService
     private PlayerNetworkHealth _networkHealth;
 
     private PlayerNetworkHealth GetNetworkHealth()
+    private bool _pacifista = true;
+    public CharacterService()
     {
         if (_networkHealth == null)
             _networkHealth = GameObject.FindFirstObjectByType<PlayerNetworkHealth>();
@@ -265,6 +267,25 @@ public class CharacterService : ICharacterService
 
     public void ResetCharacter()
     {
-        throw new System.NotImplementedException();
+        Curretlife = life;
+        manaActual = mana;
+        _pacifista = true;
+        listaHechizos = new List<SpellBase>();
+        index = 0;
+        HPEvent hpEvent = new HPEvent();
+        hpEvent.HPToChange = Curretlife;
+        _eventService.Publish(hpEvent);
+        ManaEvent ManaEvent = new ManaEvent();
+        ManaEvent.ManaToChange = manaActual;
+        _eventService.Publish(ManaEvent);
+    }
+
+    public void Genocide()
+    {
+        _pacifista = false;
+    }
+    public bool getPacifist()
+    {
+        return _pacifista;
     }
 }

@@ -30,6 +30,7 @@ public class WaveManager : MonoBehaviour
     private TextMeshProUGUI hordeCounter;
     private LocalizeStringEvent counter;
     private GameObject enemiesParent;
+    private bool death = false;
 
     // Update is called once per frame
     private void Awake()
@@ -146,11 +147,12 @@ public class WaveManager : MonoBehaviour
     }
     private void OnPlayerDeath(GameEventBase @base)
     {
+        if (!death) { 
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.UI);
-        _scoreService.AddScore(false);
+        _scoreService.AddScore();
         GameObject canvas= GameObject.Instantiate(DeathPanel);
         LocalizeStringEvent txtwave = canvas.transform.GetComponentsInChildren<LocalizeStringEvent>()[0];
         txtwave.StringReference.Arguments = new object[] { horde };
@@ -158,6 +160,8 @@ public class WaveManager : MonoBehaviour
         txtscore.StringReference.Arguments = new object[] { _scoreService.GetPoints(_profileService.getSelectedProfile().guid)};
         Destroy(FindAnyObjectByType<PlayerController>().GetComponent<PlayerController>());
         DeathPanel.SetActive(true);
+            death = true;
+        } 
     }
 
 
