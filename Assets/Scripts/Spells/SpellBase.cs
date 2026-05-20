@@ -22,9 +22,9 @@ public partial class SpellBase : MonoBehaviour
         canCast = true;
         isCasting = false;
     }
-    public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit) 
+    public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
-        if(_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
+        if (_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
 
         if (canCast && !isCasting && _characterService.CheckMana() >= spell.spell.manaCost)
         {
@@ -48,7 +48,7 @@ public partial class SpellBase : MonoBehaviour
                     //TODO implement type of spell
                     break;
             }
-            
+
             if (spell.spell.spawnSound != null)
                 _audioService.PlaySound(spell.spell.spawnSound);
             Invoke("ResetCast", spell.spell.shootDelay);
@@ -69,31 +69,34 @@ public partial class SpellBase : MonoBehaviour
 
     public virtual IEnumerator CargarHechizo()
     {
+        spell.currentCharge = 0;
         if (spell.chargeSound != null)
         {
-             _audioService = AppContainer.Get<IAudioService>();
+            _audioService = AppContainer.Get<IAudioService>();
             if (_audioService != null)
                 _audioService.PlayLoopSound(spell.chargeSound);
+            Debug.Log("CHEQUANDO");
+
         }
-        while (spell.MaxCharge > spell.currentCharge) 
+        while (spell.MaxCharge > spell.currentCharge)
         {
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
-            
-            
+
+
             spell.currentCharge++;
-        } 
+        }
         //TODO añadir sonido de carga maxima
         stopCharginSound();
 
         Debug.Log("Carga maxima");
     }
     public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
-    {   
-        if(spell.spell.cast_Type == CastType.charged)
+    {
+        if (spell.spell.cast_Type == CastType.charged)
         {
             if (spell.spell.currentCharge >= spell.spell.MaxCharge)
             {
-               
+
 
                 //Lanzamos el hechizo
                 ShootRaySpell(spellSpawn, spell, layersToHit);
@@ -111,7 +114,7 @@ public partial class SpellBase : MonoBehaviour
             _characterService.RemoveMana(spell.spell.manaCost);
             ShootRaySpell(spellSpawn, spell, layersToHit);
         }
-            
+
     }
 
     public virtual void CastBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
@@ -146,7 +149,7 @@ public partial class SpellBase : MonoBehaviour
     private void ShootBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
         var spellService = AppContainer.Get<ISpellService>();
-        spellService.ShootBall(spellSpawn.position, spellSpawn.transform.forward , _characterService.getSpell(_characterService.getIndex()).spell.velocity, spell.spell.RayMaterial);
+        spellService.ShootBall(spellSpawn.position, spellSpawn.transform.forward, _characterService.getSpell(_characterService.getIndex()).spell.velocity, spell.spell.RayMaterial);
     }
 
     private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
@@ -159,7 +162,7 @@ public partial class SpellBase : MonoBehaviour
         {
             //Raycast con penetración
             RaycastHit[] hits = Physics.RaycastAll(spellSpawn.position, direction, spell.spell.lifeTime, layersToHit);
-            if(hits.Count() >= nivelDePenetracion)
+            if (hits.Count() >= nivelDePenetracion)
             {
                 endPoint = hits[nivelDePenetracion - 1].point;
             }
@@ -167,7 +170,7 @@ public partial class SpellBase : MonoBehaviour
             {
                 endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
             }
-            foreach(RaycastHit _hit in hits)
+            foreach (RaycastHit _hit in hits)
             {
                 //Habria que arreglar esto si queremos que pare al chocar con una parez, ahora mismo me reconoce todo como una pared, de momento estas hechizos atraviesan todo
                 //if (_hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
@@ -200,16 +203,16 @@ public partial class SpellBase : MonoBehaviour
                 endPoint = spellSpawn.position + direction * spell.spell.lifeTime;
             }
         }
-        
-        
+
+
 
 
         //Producir la linea
         if (spell.spell.producesLine)
         {
             var spellService = AppContainer.Get<ISpellService>();
-            if(spell.spell.RayMaterial == null) spellService.ShootRay(spellSpawn.position, endPoint);
-                else spellService.ShootRay(spellSpawn.position, endPoint, spell.spell.RayMaterial);
+            if (spell.spell.RayMaterial == null) spellService.ShootRay(spellSpawn.position, endPoint);
+            else spellService.ShootRay(spellSpawn.position, endPoint, spell.spell.RayMaterial);
         }
     }
 
@@ -228,7 +231,8 @@ public partial class SpellBase : MonoBehaviour
         isCasting = false;
         canCast = true;
     }
-    public void stopCharginSound() { 
+    public void stopCharginSound()
+    {
         if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
         if (spell.chargeSound != null)
             _audioService.StopSound(spell.chargeSound);
