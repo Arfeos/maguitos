@@ -41,8 +41,9 @@ public class PausePanel : MonoBehaviour
         _pauseService.ToggleSettings();
     }
     public void mainMenu() {
-
-            _sceneService.LoadScene(SceneNames.Main_menu);
+        _characterService.ResetCharacter();
+        _scoreService.resetScore();
+        _sceneService.LoadScene(SceneNames.Main_menu);
             Time.timeScale = 1;
        
     }

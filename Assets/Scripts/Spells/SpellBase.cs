@@ -69,15 +69,19 @@ public partial class SpellBase : MonoBehaviour
 
     public virtual IEnumerator CargarHechizo()
     {
-        do
+        if (spell.chargeSound != null)
+        {
+             _audioService = AppContainer.Get<IAudioService>();
+            if (_audioService != null)
+                _audioService.PlayLoopSound(spell.chargeSound);
+        }
+        while (spell.MaxCharge > spell.currentCharge) 
         {
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
             
-            if (spell.chargeSound != null)
-                if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
-            _audioService.PlaySound(spell.chargeSound);
+            
             spell.currentCharge++;
-        } while (spell.MaxCharge > spell.currentCharge);
+        } 
         //TODO añadir sonido de carga maxima
         stopCharginSound();
 
@@ -94,6 +98,7 @@ public partial class SpellBase : MonoBehaviour
                 //Lanzamos el hechizo
                 ShootRaySpell(spellSpawn, spell, layersToHit);
                 spell.spell.currentCharge = 0;
+                _characterService.RemoveMana(spell.spell.manaCost);
             }
             else
             {

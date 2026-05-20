@@ -93,7 +93,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void CargarHechizo(SpellBase ActualSpell)
     {
-
+      
         if (_coroutineReload != null) StopCoroutine(_coroutineReload);
         _coroutineReload = null;
         if (_coroutineCharge != null) return;

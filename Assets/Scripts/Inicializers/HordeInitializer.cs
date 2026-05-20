@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class HordeInitializer : MusicInitializer
 {
-
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
+        
+    }
+    protected  void Start()
+    {
+        
         _audioService.SetMusicVolume(0.05f);
     }
 }
