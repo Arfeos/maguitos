@@ -1265,6 +1265,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549563321949197913, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 661936839336194529, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1296,18 +1320,6 @@ PrefabInstance:
     - target: {fileID: 2441366320870490848, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6891630813550357192}
-    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: back
-      objectReference: {fileID: 0}
-    - target: {fileID: 2562131557492934563, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BackButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3171576006544528980, guid: 9d3977a39ce1e974fbcfd703828e9548, type: 3}
       propertyPath: m_Name

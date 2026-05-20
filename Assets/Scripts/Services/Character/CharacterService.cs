@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterService : ICharacterService
@@ -15,6 +16,8 @@ public class CharacterService : ICharacterService
     {
         _eventService = AppContainer.Get<IEventService>();
     }
+
+    
     public void AddMana(int manaAniadir)
     {
         if (manaActual + manaAniadir > mana)

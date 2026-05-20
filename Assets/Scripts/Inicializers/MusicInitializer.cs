@@ -2,18 +2,14 @@ using UnityEngine;
 
 public class MusicInitializer : MonoBehaviour
 {
-    [SerializeField] AudioClip[] musiclist;
-    IAudioService _audioService;
+    [SerializeField] protected AudioClip[] musiclist;
+    protected IAudioService _audioService;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         _audioService = AppContainer.Get<IAudioService>();
         _audioService.PlayMusic(musiclist);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
