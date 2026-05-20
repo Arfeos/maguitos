@@ -23,7 +23,7 @@ public class ScoreService : IScoreService
         else
         {
             PlayerList.Add(player, points);
-            Debug.Log("Player: " + player + " has now " + playerPoints + " points.");
+            Debug.Log("Player: " + player + " has now " + PlayerList[player] + " points.");
         }
     }
 
@@ -73,7 +73,7 @@ public class ScoreService : IScoreService
     {
         LoadScores();
         string profile = AppContainer.Get<IProfileService>().getSelectedProfile().name;
-        scoreTable.scores.Add(new ScoreEntry(profile, GetPoints(profile), pacifist));
+        scoreTable.scores.Add(new ScoreEntry(profile, GetPoints(AppContainer.Get<IProfileService>().getSelectedProfile().guid), pacifist));
 
         scoreTable.scores = scoreTable.scores.OrderByDescending(s => s.score).ToList();
 
