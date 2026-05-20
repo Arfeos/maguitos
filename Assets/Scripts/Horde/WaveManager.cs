@@ -123,6 +123,7 @@ public class WaveManager : MonoBehaviour
         Cursor.visible = true;
         _scoreService.AddScore(false);
         GameObject.Instantiate(DeathPanel);
+        Destroy(FindAnyObjectByType<PlayerController>().GetComponent<PlayerController>());
         DeathPanel.SetActive(true);
     }
 

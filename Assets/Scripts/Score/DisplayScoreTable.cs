@@ -57,7 +57,7 @@ public class DisplayScoreTable : MonoBehaviour
             _rows.Add(newRow);
 
             TextMeshProUGUI[] texts = newRow.GetComponentsInChildren<TextMeshProUGUI>();
-            if (texts.Length >= 3)
+            if (texts.Length >= 2)
             {
                 texts[0].text = entry.playerName;
                 texts[1].text = entry.score.ToString();

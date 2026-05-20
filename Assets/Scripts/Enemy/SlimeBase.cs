@@ -252,7 +252,7 @@ public abstract class SlimeBase : MonoBehaviour, IHittable
     {
         Vector3 randomPos = transform.position + UnityEngine.Random.insideUnitSphere * 1f;
 
-        Instantiate(orbMana, randomPos, quaternion.identity);
+        Instantiate(Orb, randomPos, quaternion.identity);
     }
 
     // ── Cooldown de acciones ─────────────────────────────────────────────────

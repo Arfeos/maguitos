@@ -86,7 +86,8 @@ public class ScoreService : IScoreService
     private void SaveScores()
     {
         string filePath = Path.Combine(Application.persistentDataPath, "Scores.json");
-    string json = JsonUtility.ToJson(scoreTable,true);
+        Debug.Log(Path.Combine(Application.persistentDataPath, "Scores.json"));
+        string json = JsonUtility.ToJson(scoreTable,true);
         File.WriteAllText(filePath, json);
     }
 

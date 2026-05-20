@@ -442,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DisplayScoreTable
   container: {fileID: 113475806877441142}
   rowPrefab: {fileID: 2848666393416573880, guid: 571523064ced28a40a5603fef30418d6, type: 3}
-  pageSize: 5
+  pageSize: 4
   currentPage: 0
   textoPagina: {fileID: 0}
   _RefreshAtStart: 1
@@ -893,7 +893,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2659981815629425625}
         m_TargetAssemblyTypeName: DisplayScoreTable, Assembly-CSharp
         m_MethodName: PreviousPage
         m_Mode: 1
@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2659981815629425625}
         m_TargetAssemblyTypeName: DisplayScoreTable, Assembly-CSharp
         m_MethodName: NextPage
         m_Mode: 1
