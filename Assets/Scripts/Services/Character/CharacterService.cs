@@ -263,4 +263,8 @@ public class CharacterService : ICharacterService
         Debug.Log("Has muerto");
     }
 
+    public void ResetCharacter()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,11 +7,11 @@ using UnityEngine.UI;
 
 public class SceneService :ISceneService
 {
-    private string lastScene;
+    private Stack<string> lastScene = new Stack<string>();
     GameObject prefab;
     public void LoadScene(SceneNames scene)
     {
-        lastScene = SceneManager.GetActiveScene().name;
+        lastScene.Push(SceneManager.GetActiveScene().name);
         //he visto el atentado contra natura hecho por mi compañero Sergio y dada la situacion, me veo en la necesidad de utilizarlo, asi que,
         //ahora es nuestra aberracion, una disculpa de antemano.
 
@@ -23,8 +24,8 @@ public class SceneService :ISceneService
     public void GoBack()
     {
         //lo siento por esto pero estoy cansado jefe
-        if (!string.IsNullOrEmpty(lastScene))
-        CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(lastScene));
+        if (lastScene.Count != 0)
+            CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(lastScene.Pop().ToString()));
     }
     private IEnumerator LoadSceneRutine(string sceneName)
     {
@@ -37,7 +38,7 @@ public class SceneService :ISceneService
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         scaler.referenceResolution = new Vector2(1920, 1080);
         canvasObj.AddComponent<GraphicRaycaster>();
-        
+
         GameObject loadingScreen = Object.Instantiate(prefab, canvas.transform);
         CanvasGroup canvasGroup = loadingScreen.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
@@ -48,6 +49,7 @@ public class SceneService :ISceneService
         {
             if (NetworkManager.Singleton.IsListening)
             {
+                Debug.Log("entra aquí");
                 NetworkManager.Singleton.SceneManager.LoadScene(
                     sceneName,
                     LoadSceneMode.Single
@@ -70,21 +72,16 @@ public class SceneService :ISceneService
     }
 
 
-    private IEnumerator Fade(CanvasGroup canvasGroup, float start, float end, float duration) {
+    private IEnumerator Fade(CanvasGroup canvasGroup, float start, float end, float duration)
+    {
         float time = 0;
-
-        while (time < duration+0.2f)
+        while (time < duration + 0.2f)
         {
             time += Time.deltaTime;
-
             float t = time / duration;
-
             canvasGroup.alpha = Mathf.Lerp(start, end, t);
-
             yield return null;
         }
-
         canvasGroup.alpha = end;
     }
-
 }

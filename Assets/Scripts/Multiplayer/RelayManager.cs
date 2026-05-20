@@ -15,7 +15,8 @@ public class RelayManager : MonoBehaviour
     [SerializeField] private SceneNames scene;
     [SerializeField] private SceneNames scene1;
     [SerializeField] private SceneNames scene2;
-    void Start()
+
+    private void Awake()
     {
         sceneService = AppContainer.Get<ISceneService>();
     }

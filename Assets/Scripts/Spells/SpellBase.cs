@@ -33,7 +33,7 @@ public partial class SpellBase : MonoBehaviour
     public bool CanLaunch()
     {
         if (_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
-        return canCast && !isCasting && _characterService.CheckMana() > spell.manaCost;
+        return canCast && !isCasting && _characterService.CheckMana() >= spell.manaCost;
     }
 
     public void ConsumeAndCooldown()
@@ -62,16 +62,21 @@ public partial class SpellBase : MonoBehaviour
 
     public virtual IEnumerator CargarHechizo()
     {
-        do
+        spell.currentCharge = 0;
+        if (spell.chargeSound != null)
+        {
+            _audioService = AppContainer.Get<IAudioService>();
+            if (_audioService != null)
+                _audioService.PlayLoopSound(spell.chargeSound);
+            Debug.Log("CHEQUANDO");
+
+        }
+        while (spell.MaxCharge > spell.currentCharge)
         {
             yield return new WaitForSeconds(spell.ChargeTimePerUnit);
-            if (_audioService == null) _audioService = AppContainer.Get<IAudioService>();
-            if (spell.chargeSound != null)
-                _audioService.PlaySound(spell.chargeSound);
             spell.currentCharge++;
-        } while (spell.MaxCharge > spell.currentCharge);
-
-        Debug.Log("Carga maxima");
+        }
+        stopCharginSound();
     }
 
     public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
@@ -80,11 +85,6 @@ public partial class SpellBase : MonoBehaviour
         {
             if (spell.spell.currentCharge == spell.spell.MaxCharge)
             {
-                if (!_characterService.RemoveMana(spell.spell.manaCost))
-                {
-                    spell.spell.currentCharge = 0;
-                    return;
-                }
                 ExecuteRaySpellLogic(spellSpawn.position, spellSpawn.forward, layersToHit);
                 spell.spell.currentCharge = 0;
             }
@@ -106,11 +106,6 @@ public partial class SpellBase : MonoBehaviour
         {
             if (spell.spell.currentCharge == spell.spell.MaxCharge)
             {
-                if (!_characterService.RemoveMana(spell.spell.manaCost))
-                {
-                    spell.spell.currentCharge = 0;
-                    return;
-                }
                 ExecuteBallSpellLogic(spellSpawn.position, spellSpawn.forward);
                 spell.spell.currentCharge = 0;
             }
@@ -165,8 +160,8 @@ public partial class SpellBase : MonoBehaviour
             }
         }
 
-        //CMPROBAR OFFLINE
-        //VisualRayEffect(spawnPos, endPoint);
+        //COMPROBAR OFFLINE
+        VisualRayEffect(spawnPos, endPoint);
     }
 
     public void VisualRayEffect(Vector3 from, Vector3 to)

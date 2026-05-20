@@ -4,6 +4,7 @@ using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
 using Unity.Services.Authentication;
+using Unity.Services.Core;
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using Unity.Services.Matchmaker;
@@ -11,6 +12,7 @@ using Unity.Services.Matchmaker.Models;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
+using System;
 
 public class MatchmakingManager : MonoBehaviour
 {
@@ -23,6 +25,11 @@ public class MatchmakingManager : MonoBehaviour
     public string LobbyCode { get; private set; }
     public string LobbyId { get; private set; }
     public System.Action<string> OnLobbyCreated;
+
+    private async void Awake()
+    {
+        await InitializeAsync();
+    }
 
     public async Task FindMatchAsync()
     {
@@ -47,10 +54,10 @@ public class MatchmakingManager : MonoBehaviour
     public async Task StartAsHostAsync()
     {
         string joinCode = await relayManager.StartHostWithRelayAsync(maxConnections: 4);
-
+        
         _currentLobby = await LobbyService.Instance.CreateLobbyAsync(
             "Partida",
-            maxPlayers: 2,
+            maxPlayers: 4,
             new CreateLobbyOptions
             {
                 IsPrivate = false,
@@ -59,9 +66,9 @@ public class MatchmakingManager : MonoBehaviour
                     { "joinCode", new DataObject(DataObject.VisibilityOptions.Public, joinCode) }
                 }
             });
-
+        //print(_currentLobby);
         _lobbyId = _currentLobby.Id;
-
+        print($"LobbyID: {_lobbyId}");
         //NetworkManager.Singleton.StartHost();
         Debug.Log($"Host iniciado. Join code: {joinCode}");
     }
@@ -80,10 +87,11 @@ public class MatchmakingManager : MonoBehaviour
 
     public async Task CancelSearchAsync()
     {
-        if (!string.IsNullOrEmpty(_ticketId)) {
+        if (!string.IsNullOrEmpty(_ticketId))
+        {
             await MatchmakerService.Instance.DeleteTicketAsync(_ticketId);
-        _lobbyId = null;
-    }
+            _lobbyId = null;
+        }
 
         if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
             NetworkManager.Singleton.Shutdown();
@@ -129,6 +137,8 @@ public class MatchmakingManager : MonoBehaviour
 
     public async Task StartGameAsync()
     {
+        Debug.Log("LOBBY ID EN MATCHMAKING: " + _lobbyId);
+
         string joinCode = await relayManager.StartHostWithRelayAsync(maxConnections: 4);
 
         await LobbyService.Instance.UpdateLobbyAsync(_lobbyId, new UpdateLobbyOptions
@@ -156,4 +166,25 @@ public class MatchmakingManager : MonoBehaviour
         }, TaskScheduler.FromCurrentSynchronizationContext());
     }
 
+    private async Task InitializeAsync()
+    {
+        try
+        {
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+                await UnityServices.InitializeAsync();
+
+            if (!AuthenticationService.Instance.IsSignedIn)
+                await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        }
+        catch (AuthenticationException e) when (e.Message.Contains("already signing in"))
+        {
+            // Otra instancia ya está haciendo sign in, esperar hasta que termine
+            while (!AuthenticationService.Instance.IsSignedIn)
+                await Task.Yield();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error inicializando Unity Services: {e.Message}");
+        }
+    }
 }

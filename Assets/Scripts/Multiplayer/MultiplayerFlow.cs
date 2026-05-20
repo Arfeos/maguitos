@@ -12,6 +12,7 @@ public class MultiplayerFlow : MonoBehaviour
     [SerializeField] private SceneNames GameScene;
     [SerializeField] private SceneNames LobbyScene;
 
+    private string _lobbyId;
 
     private ISceneService sceneService;
 
@@ -27,10 +28,11 @@ public class MultiplayerFlow : MonoBehaviour
     public async Task HostGameAsync(string lobbyName)
     {
         var lobby = await lobbyManager.CreateLobbyAsync(lobbyName, maxPlayers: 4);
+        _lobbyId = lobby.Id;
+
         string relayCode = await relayManager.StartHostWithRelayAsync(3);
 
-        // Guarda el relayCode en el lobby para que los clientes lo lean
-        await LobbyService.Instance.UpdateLobbyAsync(lobby.Id,
+        await LobbyService.Instance.UpdateLobbyAsync(_lobbyId,
             new UpdateLobbyOptions
             {
                 Data = new Dictionary<string, DataObject>
