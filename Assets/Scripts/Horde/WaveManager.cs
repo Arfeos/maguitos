@@ -156,9 +156,11 @@ public class WaveManager : MonoBehaviour
         GameObject canvas= GameObject.Instantiate(DeathPanel);
         LocalizeStringEvent txtwave = canvas.transform.GetComponentsInChildren<LocalizeStringEvent>()[0];
         txtwave.StringReference.Arguments = new object[] { horde };
+            txtwave.RefreshString();
         LocalizeStringEvent txtscore = canvas.transform.GetComponentsInChildren<LocalizeStringEvent>()[1];
-        txtscore.StringReference.Arguments = new object[] { _scoreService.GetPoints(_profileService.getSelectedProfile().guid)};
-        Destroy(FindAnyObjectByType<PlayerController>().GetComponent<PlayerController>());
+            txtscore.StringReference.Arguments = new object[] { _scoreService.GetPoints(_profileService.getSelectedProfile().guid) };
+            txtscore.RefreshString();
+            Destroy(FindAnyObjectByType<PlayerController>().GetComponent<PlayerController>());
         DeathPanel.SetActive(true);
             death = true;
         } 
