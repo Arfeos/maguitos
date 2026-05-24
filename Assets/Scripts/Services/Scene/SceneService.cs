@@ -5,10 +5,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Servicio encargado de gestionar la carga y navegación entre escenas del juego.
+/// Soporta transiciones con efecto de fade y navegación hacia la escena anterior.
+/// </summary>
 public class SceneService :ISceneService
 {
+    /// <summary>
+    /// Pila que almacena el historial de escenas visitadas para permitir la navegación hacia atrás.
+    /// </summary>
     private Stack<string> lastScene= new Stack<string>();
+
+    /// <summary>
+    /// Prefab del panel de carga que se muestra durante las transiciones entre escenas.
+    /// </summary>
     GameObject prefab;
+
+    /// <summary>
+    /// Carga la escena indicada, guardando la escena actual en el historial para poder volver a ella.
+    /// </summary>
+    /// <param name="scene">Nombre de la escena destino definido en el enum <see cref="SceneNames"/>.</param>
     public void LoadScene(SceneNames scene)
     {
 
@@ -18,16 +34,33 @@ public class SceneService :ISceneService
 
         CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(scene.ToString()));
     }
+
+    /// <summary>
+    /// Inicializa el servicio de escenas con la configuración del panel de carga.
+    /// </summary>
+    /// <param name="so">Scriptable Object que contiene el prefab del panel de transición.</param>
     public SceneService(PanelConfigurationScriptable so)
     {
         this.prefab = so.Panel;
-    }   
+    }
+
+    /// <summary>
+    /// Navega a la última escena visitada, extrayéndola del historial.
+    /// Si no hay escenas en el historial, no realiza ninguna acción.
+    /// </summary>
     public void GoBack()
     {
         //lo siento por esto pero estoy cansado jefe
         if (lastScene.Count!=0)
         CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(lastScene.Pop().ToString()));
     }
+
+    /// <summary>
+    /// Corrutina que gestiona la carga asíncrona de una escena con transición de fade de entrada y salida.
+    /// Crea un canvas temporal con el panel de carga, realiza el fade in, espera a que la escena
+    /// cargue, activa la escena y finalmente hace fade out antes de destruir el canvas.
+    /// </summary>
+    /// <param name="sceneName">Nombre de la escena a cargar como string.</param>
     private IEnumerator LoadSceneRutine(string sceneName)
     {
         GameObject canvasObj = new GameObject("LoadingCanvas");
@@ -55,7 +88,13 @@ public class SceneService :ISceneService
         Object.Destroy(canvasObj);
     }
 
-
+    /// <summary>
+    /// Corrutina que realiza una transición de alpha (fade) sobre un <see cref="CanvasGroup"/>.
+    /// </summary>
+    /// <param name="canvasGroup">El <see cref="CanvasGroup"/> cuyo alpha se va a interpolar.</param>
+    /// <param name="start">Valor de alpha inicial (0 = transparente, 1 = opaco).</param>
+    /// <param name="end">Valor de alpha final.</param>
+    /// <param name="duration">Duración de la transición en segundos.</param>
     private IEnumerator Fade(CanvasGroup canvasGroup, float start, float end, float duration) {
         float time = 0;
 
