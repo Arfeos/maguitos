@@ -2,42 +2,19 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-
+/// <summary>
+/// Componente de Unity encargado de gestionar la lógica relacionada con los espacios o slots disponibles dentro de un libro de hechizos. En este fragmento incluye una enumeración interna utilizada para definir distintos modos de juego disponibles.
+/// </summary>
 public class SlotsSpellBook : MonoBehaviour
 {
+    /// <summary>
+    /// Enumeración interna utilizada para representar los distintos modos de juego disponibles dentro del sistema de <see cref="SlotsSpellBook"/>
+    /// </summary>
     private enum GameMode
     {
         allvsall,
         knowledgerun,
         friendly
     }
-    //private List<MethodInfo> spells = new List<MethodInfo>();
-    //private List<FieldInfo> spellsInfo = new List<FieldInfo>();
-
-    void Start()
-    {
-        //foreach (var Actualspell in typeof(SpellBase).GetMethods())
-        //{
-        //    spells.Add(Actualspell);
-        //}
-        //foreach (var campo in typeof(SpellBase).GetFields())
-        //{
-        //    spellsInfo.Add(campo);
-        //}  
-    }
-
-    void Update()
-    {
-        
-    }
-
-    //private void spellWindow()
-    //{
-    //    GameObject Window = null;
-    //    //Window = gameObject.GetComponent<Canvas>();
-    //    if (Window != null)
-    //    {
-    //        Window.SetActive(true);
-    //    }
-    //}
+    
 }
