@@ -23,7 +23,9 @@ public class Workflow
 
         _animation = AppContainer.Get<IAnimationService>();
     }
-
+    /// <summary>
+    /// Iniciamos el workflow
+    /// </summary>
     public void Begin()
     {
         // Comprobamos que el workflow no está iniciado
@@ -40,6 +42,10 @@ public class Workflow
         this.ActivateStep(this._steps[0]);
     }
 
+    /// <summary>
+    /// Cambia el texto del step actual para que se ponga en el idiama actual
+    /// </summary>
+    /// <param name="locale"></param>
     private void OnLocaleChanged(Locale locale)
     {
         // Si hay un step activo, refrescamos el MessageBox con el nuevo idioma
@@ -52,6 +58,10 @@ public class Workflow
         _alertService.ShowAlertMessage(_messageBox, dataStep);
     }
 
+    /// <summary>
+    /// Activamos un paso
+    /// </summary>
+    /// <param name="step">Paso a activar</param>
     private void ActivateStep(IStep step)
     {
         if (step == null)
@@ -74,12 +84,18 @@ public class Workflow
 
         _alertService.ShowAlertMessage(_messageBox, dataStep);
     }
-
+    /// <summary>
+    /// Desactiva el paso actual
+    /// </summary>
     private void DeactivateCurrentStep()
     {
         this._currentStep.OnComplete -= StepComplete;
     }
 
+
+    /// <summary>
+    /// Cuando el paso se completa busca el siguiente paso y si no hay mas pasos se completa el workflow
+    /// </summary>
     private void StepComplete()
     {
         // Obtenemos la posici�n del step actual en la lista
@@ -112,7 +128,10 @@ public class Workflow
         // Activamos el siguiente step
         this.ActivateStep(nextStep);
     }
-
+    /// <summary>
+    /// Recupera el step actual
+    /// </summary>
+    /// <returns></returns>
     public IStep getCurrentStep()
     {
         return this._currentStep;

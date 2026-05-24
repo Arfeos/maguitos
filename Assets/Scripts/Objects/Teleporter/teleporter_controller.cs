@@ -3,6 +3,9 @@ using UnityEngine;
 
 /// <summary>
 /// Teletransportador con fade al color que queramos.
+/// Al entrar el jugador en el trigger, inicia un fade de pantalla,
+/// espera el retardo configurado y mueve al jugador al punto de destino.
+/// Al salir del trigger, cancela la secuencia y restaura el fade.
 /// </summary>
 public class teleporter_controller : MonoBehaviour
 {
@@ -37,6 +40,11 @@ public class teleporter_controller : MonoBehaviour
         _audioService = AppContainer.Get<IAudioService>();
     }
     // ── Unity Lifecycle ─────────────────────────────────────────────────────
+    /// <summary>
+    /// Crea e inicializa el material de fade utilizado para superponer
+    /// el color de pantalla completa durante el teletransporte.
+    /// Configura blending con transparencia, sin culling ni depth write.
+    /// </summary>
     void Start()
     {
         // Material que dibuja color plano con transparencia, sin texturas ni luces
@@ -55,8 +63,11 @@ public class teleporter_controller : MonoBehaviour
             Destroy(fadeMaterial);
     }
 
-    // OnRenderObject se llama después de que la cámara termina de renderizar,
-    // ideal para superponer cosas sobre toda la escena sin usar UI.
+    /// <summary>
+    /// Dibuja el quad de color de pantalla completa usando GL inmediato,
+    /// superponiéndolo sobre toda la escena tras el renderizado de la cámara.
+    /// Solo se ejecuta cuando <see cref="currentAlpha"/> es mayor que cero.
+    /// </summary>
     void OnRenderObject()
     {
         if (currentAlpha <= 0f) return;
@@ -78,6 +89,11 @@ public class teleporter_controller : MonoBehaviour
     }
 
     // ── Trigger ─────────────────────────────────────────────────────────────
+    /// <summary>
+    /// Detecta la entrada del jugador en el trigger.
+    /// Reproduce el sonido de teletransporte e inicia la corrutina de teletransporte.
+    /// Ignora cualquier colisionador que no tenga la etiqueta "Player".
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
@@ -90,7 +106,12 @@ public class teleporter_controller : MonoBehaviour
         is_inside = true;
         teleportCoroutine = StartCoroutine(TeleportRoutine(other.gameObject));
     }
-
+    /// <summary>
+    /// Detecta la salida del jugador del trigger.
+    /// Detiene el sonido de teletransporte, cancela la corrutina activa
+    /// y lanza un fade de vuelta a transparente si el fade estaba en curso.
+    /// Ignora cualquier colisionador que no tenga la etiqueta "Player".
+    /// </summary>
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
@@ -113,6 +134,18 @@ public class teleporter_controller : MonoBehaviour
     }
 
     // ── Coroutina principal ─────────────────────────────────────────────────
+    /// <summary>
+    /// Secuencia principal del teletransporte:
+    /// <list type="number">
+    ///   <item>Fade a opaco.</item>
+    ///   <item>Espera <see cref="delayTeleport"/> segundos comprobando que el jugador sigue dentro.</item>
+    ///   <item>Mueve al jugador al punto de destino (<see cref="playerSpawn"/>).</item>
+    ///   <item>Fade de vuelta a transparente.</item>
+    ///   <item>Inicia la horda a través de <see cref="WaveManger"/>.</item>
+    /// </list>
+    /// Se cancela automáticamente si el jugador abandona el trigger en cualquier momento.
+    /// </summary>
+    /// <param name="player">GameObject del jugador a teletransportar.</param>
     private IEnumerator TeleportRoutine(GameObject player)
     {
         yield return StartCoroutine(FadeRoutine(to: 1f));
@@ -145,6 +178,11 @@ public class teleporter_controller : MonoBehaviour
     }
 
     // ── Fade ─────────────────────────────────────────────────────────────────
+    /// <summary>
+    /// Interpola <see cref="currentAlpha"/> desde su valor actual hasta <paramref name="to"/>
+    /// a lo largo de <see cref="fadeDuration"/> segundos.
+    /// </summary>
+    /// <param name="to">Valor de alpha objetivo (0 = transparente, 1 = opaco).</param>
     private IEnumerator FadeRoutine(float to)
     {
         float from = currentAlpha;
@@ -161,6 +199,12 @@ public class teleporter_controller : MonoBehaviour
     }
 
     // ── Teletransporte ───────────────────────────────────────────────────────
+    /// <summary>
+    /// Mueve físicamente al jugador a la posición y rotación de <see cref="playerSpawn"/>.
+    /// Desactiva el <see cref="CharacterController"/> antes de mover y lo reactiva después,
+    /// y pone a cero la velocidad del <see cref="Rigidbody"/> si existe.
+    /// </summary>
+    /// <param name="player">GameObject del jugador a reubicar.</param>
     private void MoverJugador(GameObject player)
     {
         if (playerSpawn == null)
