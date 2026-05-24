@@ -1,7 +1,9 @@
 using System;
 using UnityEngine;
 using UnityEngine.Localization;
-
+/// <summary>
+/// Paso que se activa solo al iniciarse para que salte el aviso de que ha terminado el tutorial
+/// </summary>
 public class LeaveTutorialStep : IStep
 {
 

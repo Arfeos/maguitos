@@ -2,7 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
-
+/// <summary>
+/// Paso que se completa cuando se recoge un orbve de mana y otro de vida
+/// </summary>
 public class TakeOrbsStep : IStep
 {
     // --- Variables ---

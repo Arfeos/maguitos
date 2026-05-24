@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
 
+/// <summary>
+/// Step que se completa cuando se cambia la posicion de una puerta determinada
+/// </summary>
 public class OpenDoorStep : IStep
 {
 
