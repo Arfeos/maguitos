@@ -1,5 +1,5 @@
 <map id="Gráfico de jerarquía de clases" name="Gráfico de jerarquía de clases">
-<area shape="rect" id="Node000000" href="$interface_i_character_service.html" title="Define el contrato para gestionar el estado del personaje jugador: hechizos equipados,..." alt="" coords="5,5,132,32"/>
-<area shape="rect" id="Node000001" href="$class_character_service.html" title="Servicio encargado de gestionar toda la lógica relacionada con el personaje, incluyendo salud,..." alt="" coords="180,5,302,32"/>
+<area shape="rect" id="Node000000" href="$db/dd8/interface_i_character_service.html" title="Define el contrato para gestionar el estado del personaje jugador: hechizos equipados,..." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="Node000001" href="$d4/d4d/class_character_service.html" title="Servicio encargado de gestionar toda la lógica relacionada con el personaje, incluyendo salud,..." alt="" coords="180,5,302,32"/>
 <area shape="poly" id="edge71_Node000000_Node000001" title=" " alt="" coords="147,16,182,19,177,19,147,21"/>
 </map>

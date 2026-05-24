@@ -1,7 +1,0 @@
-<map id="IAudioService.PlaySound" name="IAudioService.PlaySound">
-<area shape="rect" id="Node000001" title="Reproduce un efecto de sonido una sola vez. Incluye una restricción temporal para evitar reproducir r..." alt="" coords="282,35,451,61"/>
-<area shape="rect" id="Node000002" href="$class_spell_base.html#a818606033556b4d510bb25c0217362f6" title="Intenta lanzar un hechizo si hay mana suficiente y no se está casteando. Delega en el método correspo..." alt="" coords="34,5,205,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="264,37,206,32,206,26,269,36"/>
-<area shape="rect" id="Node000003" href="$class_animation_service.html#ac00c2184970b6a2d6a8ba48329e7d1be" title="Inicia una animación de rebote sobre un objeto y reproduce un sonido mediante IAudioService." alt="" coords="5,56,234,99"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="263,60,235,66,234,61,269,60"/>
-</map>

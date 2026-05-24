@@ -1,0 +1,5 @@
+<map id="SpellBase.CastRaySpell" name="SpellBase.CastRaySpell">
+<area shape="rect" id="Node000001" title="Gestiona el lanzamiento de un hechizo de tipo rayo. Si es de tipo cargado, verifica que se haya alcan..." alt="" coords="225,5,390,32"/>
+<area shape="rect" id="Node000002" href="$d2/d63/class_spell_base.html#a818606033556b4d510bb25c0217362f6" title="Intenta lanzar un hechizo si hay mana suficiente y no se está casteando. Delega en el método correspo..." alt="" coords="5,5,177,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,19,177,21,177,16,211,19"/>
+</map>

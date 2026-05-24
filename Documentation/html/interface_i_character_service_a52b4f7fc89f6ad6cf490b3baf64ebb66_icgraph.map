@@ -1,5 +1,0 @@
-<map id="ICharacterService.addSpell" name="ICharacterService.addSpell">
-<area shape="rect" id="Node000001" title="Añade un hechizo al inventario del personaje." alt="" coords="177,5,357,32"/>
-<area shape="rect" id="Node000002" href="$class_spellbook.html#a5d37511afa4487802501584662fd5157" title="Método ejecutado cuando el objeto es recogido. Obtiene una referencia a ICharacterService mediante Ap..." alt="" coords="5,5,129,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,19,129,21,129,16,163,18"/>
-</map>

@@ -1,0 +1,23 @@
+<map id="GameEventBase" name="GameEventBase">
+<area shape="rect" id="Node000001" title="Clase abstracta utilizada como base para todos los eventos del sistema de eventos gestionado mediante..." alt="" coords="5,233,126,260"/>
+<area shape="rect" id="Node000002" href="$d4/d74/class_die_event.html" title="Evento que se ejecuta cuando el personaje muere." alt="" coords="224,5,300,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,217,85,178,105,131,134,83,172,42,197,28,226,21,222,25,199,33,175,46,138,86,110,133,90,180,77,219"/>
+<area shape="rect" id="Node000003" href="$d0/d22/class_h_p_event.html" title="Evento que se ejecuta cuando la vida del personaje cambia." alt="" coords="225,56,299,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="77,218,113,155,140,121,172,92,197,79,226,72,222,76,199,84,175,97,144,125,118,158,81,220"/>
+<area shape="rect" id="Node000004" href="$dc/dfa/class_icon_change_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con un icono ..." alt="" coords="199,107,324,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="85,220,123,180,172,143,201,132,197,136,175,148,127,184,90,223"/>
+<area shape="rect" id="Node000005" href="$d0/de2/class_mana_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con el maná d..." alt="" coords="218,157,306,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="105,224,173,194,220,180,216,183,175,198,108,228"/>
+<area shape="rect" id="Node000006" href="$de/da4/class_preference_change_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con las prefe..." alt="" coords="180,208,344,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="140,235,182,230,177,234,142,239"/>
+<area shape="rect" id="Node000007" href="$dd/d13/class_reload_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar una acción de recarga dentro del s..." alt="" coords="214,259,310,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="140,254,216,264,211,267,142,259"/>
+<area shape="rect" id="Node000008" href="$d7/db2/class_score_change_event.html" title="Evento que se lanza cuando la puntuación del jugador cambia. Contiene la cantidad de puntos involucra..." alt="" coords="195,309,329,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="106,265,175,295,210,308,205,310,173,300,107,270"/>
+<area shape="rect" id="Node000009" href="$d3/df1/class_spell_change_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con la selecc..." alt="" coords="197,360,326,387"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="88,270,127,309,175,346,202,359,197,360,172,350,123,313,87,275"/>
+<area shape="rect" id="Node000010" href="$dd/dbc/class_spell_change_on_page_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con la visual..." alt="" coords="174,411,350,437"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="80,272,118,336,144,369,175,396,197,410,192,410,172,401,140,372,113,339,78,277"/>
+<area shape="rect" id="Node000011" href="$da/d69/class_tutorial_game_event.html" title="Evento que se lanza para notificar que se ha producido un avance o cambio de estado relevante durante..." alt="" coords="195,461,328,488"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="74,272,90,313,110,360,138,407,175,447,197,462,192,461,172,451,134,410,105,363,85,315,74,278"/>
+</map>

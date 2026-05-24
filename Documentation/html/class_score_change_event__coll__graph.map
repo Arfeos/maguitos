@@ -1,5 +1,0 @@
-<map id="ScoreChangeEvent" name="ScoreChangeEvent">
-<area shape="rect" id="Node000001" title="Evento que se lanza cuando la puntuación del jugador cambia. Contiene la cantidad de puntos involucra..." alt="" coords="5,80,140,107"/>
-<area shape="rect" id="Node000002" href="$class_game_event_base.html" title="Clase abstracta utilizada como base para todos los eventos del sistema de eventos gestionado mediante..." alt="" coords="12,5,133,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,46,75,80,70,79,71,50"/>
-</map>

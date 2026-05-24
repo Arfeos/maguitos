@@ -1,5 +1,0 @@
-<map id="SpellBase.stopCharginSound" name="SpellBase.stopCharginSound">
-<area shape="rect" id="Node000001" title="Detiene el sonido de carga del hechizo si estaba reproduciéndose." alt="" coords="5,5,197,32"/>
-<area shape="rect" id="Node000002" href="$interface_i_audio_service.html#aa49023d2d537957c3bdc24f7f0feadf8" title="Detiene la reproducción de un efecto de sonido específico." alt="" coords="245,5,415,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,16,232,19,227,19,197,21"/>
-</map>

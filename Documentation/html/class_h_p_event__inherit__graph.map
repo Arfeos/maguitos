@@ -1,5 +1,0 @@
-<map id="HPEvent" name="HPEvent">
-<area shape="rect" id="Node000001" title="Evento que se ejecuta cuando la vida del personaje cambia." alt="" coords="28,80,103,107"/>
-<area shape="rect" id="Node000002" href="$class_game_event_base.html" title="Clase abstracta utilizada como base para todos los eventos del sistema de eventos gestionado mediante..." alt="" coords="5,5,126,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,46,68,80,63,79,64,50"/>
-</map>

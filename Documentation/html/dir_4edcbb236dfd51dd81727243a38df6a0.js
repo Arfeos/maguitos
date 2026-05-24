@@ -17,6 +17,6 @@ var dir_4edcbb236dfd51dd81727243a38df6a0 =
     [ "Spells", "dir_1cb2ebe7e18b0a932c7e3e03617df754.html", "dir_1cb2ebe7e18b0a932c7e3e03617df754" ],
     [ "UI", "dir_cf3cba7cb859b249fb665d794c791dc5.html", "dir_cf3cba7cb859b249fb665d794c791dc5" ],
     [ "WorkflowsSystem", "dir_20e862f5435d137ebcdc4334b916fa37.html", "dir_20e862f5435d137ebcdc4334b916fa37" ],
-    [ "DestroyZone.cs", "_destroy_zone_8cs.html", "_destroy_zone_8cs" ],
-    [ "ProfileLoader.cs", "_profile_loader_8cs.html", "_profile_loader_8cs" ]
+    [ "DestroyZone.cs", "dc/da5/_destroy_zone_8cs.html", "dc/da5/_destroy_zone_8cs" ],
+    [ "ProfileLoader.cs", "d7/daa/_profile_loader_8cs.html", "d7/daa/_profile_loader_8cs" ]
 ];

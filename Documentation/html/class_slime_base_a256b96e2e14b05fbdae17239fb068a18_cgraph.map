@@ -1,9 +1,0 @@
-<map id="SlimeBase.OnDeath" name="SlimeBase.OnDeath">
-<area shape="rect" id="Node000001" title="Se llama justo antes de iniciar la disolución del objeto. La base suma puntuación e intenta spawnear ..." alt="" coords="5,31,146,57"/>
-<area shape="rect" id="Node000002" href="$class_slime_base.html#a7f91278aa183c7700efb878dc625f30d" title="Comprueba la probabilidad y, si se cumple, instancia el orbe indicado cerca del slime." alt="" coords="194,31,410,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,41,181,44,175,44,146,47"/>
-<area shape="rect" id="Node000003" href="$class_slime_base.html#a1841a199a78d1cc87c845c9dba619fc4" title="Genera un número aleatorio entre 0 y 100 y lo compara con percentToCheck ." alt="" coords="458,5,669,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,31,445,30,440,31,411,36"/>
-<area shape="rect" id="Node000004" href="$class_slime_base.html#a8b397ee1b9149c29b04667b1734b2177" title=" " alt="" coords="478,56,649,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="411,52,466,60,460,60,410,57"/>
-</map>

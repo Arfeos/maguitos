@@ -1,0 +1,5 @@
+<map id="IconChangeEvent" name="IconChangeEvent">
+<area shape="rect" id="Node000001" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con un icono ..." alt="" coords="5,80,131,107"/>
+<area shape="rect" id="Node000002" href="$d7/d8d/class_game_event_base.html" title="Clase abstracta utilizada como base para todos los eventos del sistema de eventos gestionado mediante..." alt="" coords="8,5,128,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,46,71,80,65,79,66,50"/>
+</map>

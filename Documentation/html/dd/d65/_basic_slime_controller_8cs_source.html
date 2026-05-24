@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente Scripts/Enemy/BasicSlimeController.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('dd/d65/_basic_slime_controller_8cs_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BasicSlimeController.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/d65/_basic_slime_controller_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>static UnityEngine.RuleTile.TilingRuleOutput;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html">   10</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="../../df/dd9/class_basic_slime_controller.html">BasicSlimeController</a> : <a class="code hl_class" href="../../d8/d52/class_slime_base.html">SlimeBase</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// ── Salto ────────────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    [Header(<span class="stringliteral">&quot;Jump&quot;</span>)]</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#afb5499bfd7dad05223d80689c686749a">   15</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#afb5499bfd7dad05223d80689c686749a">jumpDistance</a> = 3f;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#a7dc4793d565b466563ec5156799affb8">   17</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#a7dc4793d565b466563ec5156799affb8">jumpHeight</a> = 2f;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// ── Aterrizaje ───────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    [Header(<span class="stringliteral">&quot;Landing&quot;</span>)]</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#a47cb0ff000d3c8d5b6a97208e3f94ad9">   23</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#a47cb0ff000d3c8d5b6a97208e3f94ad9">recoverTime</a> = 2f;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// ── Detección de suelo ───────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    [Header(<span class="stringliteral">&quot;Ground Check&quot;</span>)]</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#a969e0333545a7fc80a1814f6d7405d05">   28</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#a969e0333545a7fc80a1814f6d7405d05">groundRadius</a> = 0.25f;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#aba11b8cbcabce8b637296a20b7f5c9d0">   30</a></span>    [SerializeField] <span class="keyword">protected</span> LayerMask <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#aba11b8cbcabce8b637296a20b7f5c9d0">groundLayer</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// ── Estado interno ───────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#af0e7268ce5eba473715d32abe974584f">   34</a></span>    <span class="keyword">protected</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#af0e7268ce5eba473715d32abe974584f">_isGrounded</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#a97e3918850dbcf37623c1a277b5ba94b">   36</a></span>    <span class="keyword">protected</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#a97e3918850dbcf37623c1a277b5ba94b">_wasGrounded</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#af3e9feeddc4e772ea4d3fe1b38d08c8b">   38</a></span>    <span class="keyword">protected</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#af3e9feeddc4e772ea4d3fe1b38d08c8b">_isJumping</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// ── Override lifecycle ───────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#a1f116d6e557d40243d5cf92093cfa6a9">   45</a></span>    <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../df/dd9/class_basic_slime_controller.html#a1f116d6e557d40243d5cf92093cfa6a9">OnUpdate</a>()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_function" href="../../df/dd9/class_basic_slime_controller.html#af9604b80f1092ffe70911d9e86cb56e0">CheckGrounded</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_function" href="../../df/dd9/class_basic_slime_controller.html#a6c3a037d8b212bc9f973385836f03357">DetectLanding</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        base.OnUpdate(); <span class="comment">// Llama a CheckState()</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#a97e3918850dbcf37623c1a277b5ba94b">_wasGrounded</a> = <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#af0e7268ce5eba473715d32abe974584f">_isGrounded</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// ── Implementación obligatoria ───────────────────────────────────────────</span></div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#af8b3174a8ef58e97ceca94414af60a58">   58</a></span>    <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../df/dd9/class_basic_slime_controller.html#af8b3174a8ef58e97ceca94414af60a58">Attack</a>()</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        base.Attack();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a096cb37d1bcdda5268aceb5284da1839">_animator</a>.SetTrigger(<span class="stringliteral">&quot;Attack&quot;</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        Collider[] hits = Physics.OverlapSphere(transform.position, <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ad403c4b06e6ff4fe758a0e5528c84daf">distanceToAttack</a> + 0.5f, <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#aa6f1d7c0f8e408dd57fc75de7bdb6706">attackLayer</a>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">foreach</span> (Collider hit <span class="keywordflow">in</span> hits)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">if</span> (hit.transform == transform) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            IHittable hittable = hit.GetComponent&lt;IHittable&gt;();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">if</span> (hittable != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="keywordflow">if</span> (!hit.GetComponent&lt;<a class="code hl_class" href="../../d8/d52/class_slime_base.html">SlimeBase</a>&gt;())</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                    hittable.Hit(<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af0f835163fa1ba2ecc31dee976dbd2b3">damage</a>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#aad752ca4c8a4afa149971cca0d5a874d">   80</a></span>    <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../df/dd9/class_basic_slime_controller.html#aad752ca4c8a4afa149971cca0d5a874d">Move</a>(<span class="keywordtype">float</span> distanceToPlayer)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        base.Move(distanceToPlayer);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a096cb37d1bcdda5268aceb5284da1839">_animator</a>.SetTrigger(<span class="stringliteral">&quot;Jump&quot;</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordtype">float</span> distanceToJump = <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#afb5499bfd7dad05223d80689c686749a">jumpDistance</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">if</span> (distanceToPlayer &lt; <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#afb5499bfd7dad05223d80689c686749a">jumpDistance</a>)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            distanceToJump = distanceToPlayer - <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ad403c4b06e6ff4fe758a0e5528c84daf">distanceToAttack</a> - 0.5f;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">if</span> (distanceToJump &lt;= 0f)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            distanceToJump = 0.1f;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        Vector3 start = transform.position;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        Vector3 direction = (_playerController.transform.position - start);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        direction.y = 0f;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        direction.Normalize();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        transform.forward = direction;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        Vector3 endPoint = start + direction * distanceToJump;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordtype">float</span> gravity = Mathf.Abs(Physics.gravity.y);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordtype">float</span> verticalVelocity = Mathf.Sqrt(2f * gravity * <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#a7dc4793d565b466563ec5156799affb8">jumpHeight</a>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordtype">float</span> totalTime = (verticalVelocity / gravity) * 2f;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        Vector3 horizontalVelocity = (endPoint - start) / totalTime;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        horizontalVelocity.y = 0f;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        _rigidbody.linearVelocity = Vector3.zero;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        _rigidbody.linearVelocity = horizontalVelocity + Vector3.up * verticalVelocity;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#af3e9feeddc4e772ea4d3fe1b38d08c8b">_isJumping</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">// ── Ground check ─────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#af9604b80f1092ffe70911d9e86cb56e0">  121</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../df/dd9/class_basic_slime_controller.html#af9604b80f1092ffe70911d9e86cb56e0">CheckGrounded</a>()</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#af0e7268ce5eba473715d32abe974584f">_isGrounded</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">foreach</span> (Collider c <span class="keywordflow">in</span> Physics.OverlapSphere(transform.position, <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#a969e0333545a7fc80a1814f6d7405d05">groundRadius</a>, <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#aba11b8cbcabce8b637296a20b7f5c9d0">groundLayer</a>))</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">if</span> (c.transform == transform) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#af0e7268ce5eba473715d32abe974584f">_isGrounded</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#a6c3a037d8b212bc9f973385836f03357">  136</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../df/dd9/class_basic_slime_controller.html#a6c3a037d8b212bc9f973385836f03357">DetectLanding</a>()</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#a97e3918850dbcf37623c1a277b5ba94b">_wasGrounded</a> &amp;&amp; <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#af0e7268ce5eba473715d32abe974584f">_isGrounded</a> &amp;&amp; <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#af3e9feeddc4e772ea4d3fe1b38d08c8b">_isJumping</a>)</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#af3e9feeddc4e772ea4d3fe1b38d08c8b">_isJumping</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            StartCoroutine(<a class="code hl_function" href="../../df/dd9/class_basic_slime_controller.html#abab94e330af0e82221d1cf7bc73d9b55">LandingRoutine</a>());</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    }</div>
+</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="../../df/dd9/class_basic_slime_controller.html#abab94e330af0e82221d1cf7bc73d9b55">  149</a></span>    <span class="keyword">protected</span> IEnumerator <a class="code hl_function" href="../../df/dd9/class_basic_slime_controller.html#abab94e330af0e82221d1cf7bc73d9b55">LandingRoutine</a>()</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        _rigidbody.linearVelocity = Vector3.zero;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a096cb37d1bcdda5268aceb5284da1839">_animator</a>.SetTrigger(<span class="stringliteral">&quot;Landing&quot;</span>);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="../../df/dd9/class_basic_slime_controller.html#a47cb0ff000d3c8d5b6a97208e3f94ad9">recoverTime</a>);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
+</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
+</div>
+<div class="ttc" id="aclass_basic_slime_controller_html"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html">BasicSlimeController</a></div><div class="ttdoc">Slime básico que se mueve saltando hacia el jugador y ataca por proximidad con un OverlapSphere....</div><div class="ttdef"><b>Definition</b> <a href="#l00010">BasicSlimeController.cs:11</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_a1f116d6e557d40243d5cf92093cfa6a9"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#a1f116d6e557d40243d5cf92093cfa6a9">BasicSlimeController.OnUpdate</a></div><div class="ttdeci">override void OnUpdate()</div><div class="ttdoc">Extiende el update base añadiendo detección de suelo y aterrizaje antes de evaluar el estado.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">BasicSlimeController.cs:45</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_a47cb0ff000d3c8d5b6a97208e3f94ad9"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#a47cb0ff000d3c8d5b6a97208e3f94ad9">BasicSlimeController.recoverTime</a></div><div class="ttdeci">float recoverTime</div><div class="ttdoc">Segundos que el slime permanece inmóvil tras aterrizar antes de poder actuar de nuevo.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">BasicSlimeController.cs:23</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_a6c3a037d8b212bc9f973385836f03357"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#a6c3a037d8b212bc9f973385836f03357">BasicSlimeController.DetectLanding</a></div><div class="ttdeci">void DetectLanding()</div><div class="ttdoc">Detecta el momento exacto de aterrizaje comparando _wasGrounded con _isGrounded. Solo actúa si el sli...</div><div class="ttdef"><b>Definition</b> <a href="#l00136">BasicSlimeController.cs:136</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_a7dc4793d565b466563ec5156799affb8"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#a7dc4793d565b466563ec5156799affb8">BasicSlimeController.jumpHeight</a></div><div class="ttdeci">float jumpHeight</div><div class="ttdoc">Altura máxima que alcanza el arco del salto.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">BasicSlimeController.cs:17</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_a969e0333545a7fc80a1814f6d7405d05"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#a969e0333545a7fc80a1814f6d7405d05">BasicSlimeController.groundRadius</a></div><div class="ttdeci">float groundRadius</div><div class="ttdoc">Radio de la esfera usada para detectar si el slime está en el suelo.</div><div class="ttdef"><b>Definition</b> <a href="#l00028">BasicSlimeController.cs:28</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_a97e3918850dbcf37623c1a277b5ba94b"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#a97e3918850dbcf37623c1a277b5ba94b">BasicSlimeController._wasGrounded</a></div><div class="ttdeci">bool _wasGrounded</div><div class="ttdoc">Estado de _isGrounded en el frame anterior, usado para detectar el aterrizaje.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">BasicSlimeController.cs:36</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_aad752ca4c8a4afa149971cca0d5a874d"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#aad752ca4c8a4afa149971cca0d5a874d">BasicSlimeController.Move</a></div><div class="ttdeci">override void Move(float distanceToPlayer)</div><div class="ttdoc">Lanza el slime hacia el jugador con una trayectoria parabólica calculada a partir de jumpHeight y la ...</div><div class="ttdef"><b>Definition</b> <a href="#l00080">BasicSlimeController.cs:80</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_aba11b8cbcabce8b637296a20b7f5c9d0"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#aba11b8cbcabce8b637296a20b7f5c9d0">BasicSlimeController.groundLayer</a></div><div class="ttdeci">LayerMask groundLayer</div><div class="ttdoc">Capas que se consideran suelo para la detección de aterrizaje.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">BasicSlimeController.cs:30</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_abab94e330af0e82221d1cf7bc73d9b55"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#abab94e330af0e82221d1cf7bc73d9b55">BasicSlimeController.LandingRoutine</a></div><div class="ttdeci">IEnumerator LandingRoutine()</div><div class="ttdoc">Corrutina de aterrizaje: detiene la velocidad del rigidbody, activa la animación de aterrizaje y espe...</div><div class="ttdef"><b>Definition</b> <a href="#l00149">BasicSlimeController.cs:149</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_af0e7268ce5eba473715d32abe974584f"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#af0e7268ce5eba473715d32abe974584f">BasicSlimeController._isGrounded</a></div><div class="ttdeci">bool _isGrounded</div><div class="ttdoc">Indica si el slime está tocando el suelo en el frame actual.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">BasicSlimeController.cs:34</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_af3e9feeddc4e772ea4d3fe1b38d08c8b"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#af3e9feeddc4e772ea4d3fe1b38d08c8b">BasicSlimeController._isJumping</a></div><div class="ttdeci">bool _isJumping</div><div class="ttdoc">Indica si el slime está en el aire tras haber saltado.</div><div class="ttdef"><b>Definition</b> <a href="#l00038">BasicSlimeController.cs:38</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_af8b3174a8ef58e97ceca94414af60a58"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#af8b3174a8ef58e97ceca94414af60a58">BasicSlimeController.Attack</a></div><div class="ttdeci">override void Attack()</div><div class="ttdoc">Activa la animación de ataque y aplica daño a todos los IHittable dentro del rango,...</div><div class="ttdef"><b>Definition</b> <a href="#l00058">BasicSlimeController.cs:58</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_af9604b80f1092ffe70911d9e86cb56e0"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#af9604b80f1092ffe70911d9e86cb56e0">BasicSlimeController.CheckGrounded</a></div><div class="ttdeci">void CheckGrounded()</div><div class="ttdoc">Comprueba si algún collider de groundLayer toca la esfera de radio groundRadius centrada en el slime,...</div><div class="ttdef"><b>Definition</b> <a href="#l00121">BasicSlimeController.cs:121</a></div></div>
+<div class="ttc" id="aclass_basic_slime_controller_html_afb5499bfd7dad05223d80689c686749a"><div class="ttname"><a href="../../df/dd9/class_basic_slime_controller.html#afb5499bfd7dad05223d80689c686749a">BasicSlimeController.jumpDistance</a></div><div class="ttdeci">float jumpDistance</div><div class="ttdoc">Distancia horizontal máxima que el slime recorre en cada salto.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">BasicSlimeController.cs:15</a></div></div>
+<div class="ttc" id="aclass_slime_base_html"><div class="ttname"><a href="../../d8/d52/class_slime_base.html">SlimeBase</a></div><div class="ttdoc">Clase base para todos los slimes del juego. Gestiona vida, barra de vida, disolución al morir y el ci...</div><div class="ttdef"><b>Definition</b> <a href="../../da/d76/_slime_base_8cs_source.html#l00012">SlimeBase.cs:13</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a096cb37d1bcdda5268aceb5284da1839"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a096cb37d1bcdda5268aceb5284da1839">SlimeBase._animator</a></div><div class="ttdeci">Animator _animator</div><div class="ttdoc">Animator del slime, controla las transiciones de animación.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d76/_slime_base_8cs_source.html#l00020">SlimeBase.cs:20</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_aa6f1d7c0f8e408dd57fc75de7bdb6706"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#aa6f1d7c0f8e408dd57fc75de7bdb6706">SlimeBase.attackLayer</a></div><div class="ttdeci">LayerMask attackLayer</div><div class="ttdoc">Máscara de capas que el slime puede impactar con su ataque.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d76/_slime_base_8cs_source.html#l00033">SlimeBase.cs:33</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_ad403c4b06e6ff4fe758a0e5528c84daf"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#ad403c4b06e6ff4fe758a0e5528c84daf">SlimeBase.distanceToAttack</a></div><div class="ttdeci">float distanceToAttack</div><div class="ttdoc">Distancia máxima al jugador para activar el ataque en lugar del movimiento.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d76/_slime_base_8cs_source.html#l00025">SlimeBase.cs:25</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_af0f835163fa1ba2ecc31dee976dbd2b3"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#af0f835163fa1ba2ecc31dee976dbd2b3">SlimeBase.damage</a></div><div class="ttdeci">float damage</div><div class="ttdoc">Daño que inflige el slime al jugador por ataque.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d76/_slime_base_8cs_source.html#l00029">SlimeBase.cs:29</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_4edcbb236dfd51dd81727243a38df6a0.html">Scripts</a></li><li class="navelem"><a href="../../dir_688c4ae6a1dfa8d0313260c50be64643.html">Enemy</a></li><li class="navelem"><a href="../../dd/d65/_basic_slime_controller_8cs.html">BasicSlimeController.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

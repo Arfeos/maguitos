@@ -1,0 +1,21 @@
+<map id="BigSlime" name="BigSlime">
+<area shape="rect" id="Node000001" title="Variante grande del slime básico que, al morir, genera un número aleatorio de slimes hijos en posicio..." alt="" coords="211,332,284,359"/>
+<area shape="rect" id="Node000002" href="$df/dd9/class_basic_slime_controller.html" title="Slime básico que se mueve saltando hacia el jugador y ataca por proximidad con un OverlapSphere...." alt="" coords="176,256,319,283"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,296,250,333,245,330,246,300"/>
+<area shape="rect" id="Node000003" href="$d8/d52/class_slime_base.html" title="Clase base para todos los slimes del juego. Gestiona vida, barra de vida, disolución al morir y el ci..." alt="" coords="206,180,290,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="249,220,250,257,245,254,246,224"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="49,49,42,82,40,105,44,123,53,139,71,154,103,171,138,182,207,191,203,194,137,187,101,176,67,158,49,142,39,125,35,105,37,81,50,44"/>
+<area shape="rect" id="Node000006" href="$dc/dde/class_player_controller.html" title="Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento,..." alt="" coords="52,81,166,108"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="77,42,104,80,98,82,77,47"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="155,5,226,32"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="201,44,246,180,241,180,198,49"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="164,45,125,83,121,79,167,40"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="84,122,78,139,78,147,81,154,100,166,132,175,207,187,203,190,131,181,98,171,77,158,72,148,73,138,86,117"/>
+<area shape="rect" id="Node000007" href="$de/d33/interface_i_audio_service.html" title="Servicio encargado de gestionar la reproducción de música y efectos de sonido del juego mediante el c..." alt="" coords="240,81,343,108"/>
+<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="282,120,255,181,251,178,278,124"/>
+<area shape="rect" id="Node000008" href="$d1/df4/interface_i_profile_service.html" title="Implementación de IProfileService que persiste los perfiles de usuario como archivos JSON en Applicat..." alt="" coords="366,81,473,108"/>
+<area shape="poly" id="edge9_Node000003_Node000008" title=" " alt="" coords="406,119,391,142,372,158,331,178,291,188,289,184,330,173,369,154,387,138,402,123"/>
+<area shape="rect" id="Node000009" href="$de/df6/interface_i_score_service.html" title=" " alt="" coords="497,81,601,108"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="535,119,518,142,496,158,457,171,403,180,291,192,290,187,402,175,456,166,493,154,514,138,531,122"/>
+</map>

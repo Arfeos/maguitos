@@ -1,9 +1,9 @@
 <map id="Gráfico de jerarquía de clases" name="Gráfico de jerarquía de clases">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,56,123,83"/>
-<area shape="rect" id="Node000001" href="$class_object_data_scriptable.html" title=" " alt="" coords="193,5,338,32"/>
+<area shape="rect" id="Node000001" href="$d5/d14/class_object_data_scriptable.html" title=" " alt="" coords="193,5,338,32"/>
 <area shape="poly" id="edge94_Node000000_Node000001" title=" " alt="" coords="134,49,212,31,207,34,136,54"/>
-<area shape="rect" id="Node000002" href="$class_panel_configuration_scriptable.html" title=" " alt="" coords="171,56,360,83"/>
+<area shape="rect" id="Node000002" href="$de/d6a/class_panel_configuration_scriptable.html" title=" " alt="" coords="171,56,360,83"/>
 <area shape="poly" id="edge95_Node000000_Node000002" title=" " alt="" coords="138,67,173,69,167,70,139,72"/>
-<area shape="rect" id="Node000003" href="$class_spell_base_scriptable.html" title=" " alt="" coords="196,107,334,133"/>
+<area shape="rect" id="Node000003" href="$d1/d08/class_spell_base_scriptable.html" title=" " alt="" coords="196,107,334,133"/>
 <area shape="poly" id="edge96_Node000000_Node000003" title=" " alt="" coords="135,84,212,105,207,107,135,90"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="BasicSlimeController.DetectLanding" name="BasicSlimeController.DetectLanding">
+<area shape="rect" id="Node000001" title="Detecta el momento exacto de aterrizaje comparando _wasGrounded con _isGrounded. Solo actúa si el sli..." alt="" coords="5,5,192,48"/>
+<area shape="rect" id="Node000002" href="$df/dd9/class_basic_slime_controller.html#abab94e330af0e82221d1cf7bc73d9b55" title="Corrutina de aterrizaje: detiene la velocidad del rigidbody, activa la animación de aterrizaje y espe..." alt="" coords="240,5,432,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,24,227,26,221,27,192,29"/>
+</map>

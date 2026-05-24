@@ -1,7 +1,0 @@
-<map id="ScoreManager" name="ScoreManager">
-<area shape="rect" id="Node000001" title="MonoBehaviour encargado de gestionar el registro de puntuaciones en un archivo JSON...." alt="" coords="70,104,175,131"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,43,117,103,112,104,75,47"/>
-<area shape="rect" id="Node000003" href="$class_score_table.html" title="Contenedor serializable que agrupa la lista de entradas de puntuaciones. Se usa para serializar y des..." alt="" coords="140,5,227,32"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,44,132,106,128,102,165,46"/>
-</map>

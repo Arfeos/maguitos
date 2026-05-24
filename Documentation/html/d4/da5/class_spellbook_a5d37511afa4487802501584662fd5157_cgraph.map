@@ -1,0 +1,5 @@
+<map id="Spellbook.Collect" name="Spellbook.Collect">
+<area shape="rect" id="Node000001" title="Método ejecutado cuando el objeto es recogido. Obtiene una referencia a ICharacterService mediante Ap..." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="Node000002" href="$db/dd8/interface_i_character_service.html#a52b4f7fc89f6ad6cf490b3baf64ebb66" title="Añade un hechizo al inventario del personaje." alt="" coords="177,5,357,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,16,164,18,159,19,129,21"/>
+</map>

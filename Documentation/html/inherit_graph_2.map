@@ -1,5 +1,5 @@
 <map id="Gráfico de jerarquía de clases" name="Gráfico de jerarquía de clases">
-<area shape="rect" id="Node000000" href="$interface_i_animation_service.html" title="Define el contrato para animaciones de UI reutilizables: wobble y fade." alt="" coords="5,5,133,32"/>
-<area shape="rect" id="Node000001" href="$class_animation_service.html" title="Servicio encargado de gestionar distintas animaciones y efectos visuales mediante corrutinas...." alt="" coords="181,5,304,32"/>
+<area shape="rect" id="Node000000" href="$d6/da7/interface_i_animation_service.html" title="Define el contrato para animaciones de UI reutilizables: wobble y fade." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="Node000001" href="$d6/da2/class_animation_service.html" title="Servicio encargado de gestionar distintas animaciones y efectos visuales mediante corrutinas...." alt="" coords="181,5,304,32"/>
 <area shape="poly" id="edge69_Node000000_Node000001" title=" " alt="" coords="148,16,183,19,177,19,148,21"/>
 </map>

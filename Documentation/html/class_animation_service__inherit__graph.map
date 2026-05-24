@@ -1,5 +1,0 @@
-<map id="AnimationService" name="AnimationService">
-<area shape="rect" id="Node000001" title="Servicio encargado de gestionar distintas animaciones y efectos visuales mediante corrutinas...." alt="" coords="7,80,131,107"/>
-<area shape="rect" id="Node000002" href="$interface_i_animation_service.html" title="Define el contrato para animaciones de UI reutilizables: wobble y fade." alt="" coords="5,5,133,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,46,72,80,66,79,67,50"/>
-</map>

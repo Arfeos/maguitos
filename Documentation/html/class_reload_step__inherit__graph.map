@@ -1,5 +1,0 @@
-<map id="ReloadStep" name="ReloadStep">
-<area shape="rect" id="Node000001" title="Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep...." alt="" coords="5,80,95,107"/>
-<area shape="rect" id="Node000002" href="$interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="24,5,76,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,46,53,80,47,79,48,50"/>
-</map>

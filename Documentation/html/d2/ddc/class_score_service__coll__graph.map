@@ -1,0 +1,7 @@
+<map id="ScoreService" name="ScoreService">
+<area shape="rect" id="Node000001" title="Servicio encargado de gestionar la puntuación de los jugadores durante la partida,..." alt="" coords="66,104,165,131"/>
+<area shape="rect" id="Node000002" href="$de/df6/interface_i_score_service.html" title=" " alt="" coords="5,5,109,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,43,111,103,106,104,71,48"/>
+<area shape="rect" id="Node000003" href="$d5/d5d/class_score_table.html" title="Contenedor serializable que agrupa la lista de entradas de puntuaciones. Se usa para serializar y des..." alt="" coords="132,5,219,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,45,125,106,121,102,157,46"/>
+</map>

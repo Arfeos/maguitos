@@ -1,0 +1,5 @@
+<map id="ProfileService.GetProfiles" name="ProfileService.GetProfiles">
+<area shape="rect" id="Node000001" title="Recarga los perfiles desde disco y devuelve la lista actualizada." alt="" coords="5,5,177,32"/>
+<area shape="rect" id="Node000002" href="$da/d18/class_profile_service.html#a5d1a119b2e5e44d160be512f7fe8e89c" title="Lee todos los archivos JSON de la carpeta de perfiles y los carga en memoria. Asigna el GUID a cada p..." alt="" coords="225,5,403,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,16,212,19,206,19,177,21"/>
+</map>

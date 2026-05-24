@@ -1,5 +1,0 @@
-<map id="PressSpaceStep" name="PressSpaceStep">
-<area shape="rect" id="Node000001" title="Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep...." alt="" coords="5,80,125,107"/>
-<area shape="rect" id="Node000002" href="$interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="39,5,91,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,46,68,80,62,79,63,50"/>
-</map>

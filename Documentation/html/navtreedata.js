@@ -50,11 +50,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_alert_service_8cs.html",
-"_u_i_service_8cs.html",
-"class_profile_service.html#a26ee2d22f1f178e4e6ad3787d5c66e59",
-"class_workflow.html#a977d54b99e99413e35c7df8a50473325",
-"struct_input_system___actions_1_1_player_actions.html#aa05e9dcee22245c5c70747415e644400"
+"annotated.html",
+"d3/df1/class_spell_change_event.html",
+"d8/d52/class_slime_base.html#a1841a199a78d1cc87c845c9dba619fc4",
+"db/de1/class_pause_panel.html",
+"functions_func_o.html"
 ];
 
 const SYNCONMSG = 'pulsar para deshabilitar sincronización';

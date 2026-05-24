@@ -1,5 +1,0 @@
-<map id="ICharacterService" name="ICharacterService">
-<area shape="rect" id="Node000001" title="Define el contrato para gestionar el estado del personaje jugador: hechizos equipados,..." alt="" coords="5,5,132,32"/>
-<area shape="rect" id="Node000002" href="$class_character_service.html" title="Servicio encargado de gestionar toda la lógica relacionada con el personaje, incluyendo salud,..." alt="" coords="7,80,130,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,46,71,80,66,79,67,50"/>
-</map>

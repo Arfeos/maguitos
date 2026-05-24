@@ -1,5 +1,0 @@
-<map id="CameraMoveStep" name="CameraMoveStep">
-<area shape="rect" id="Node000001" title="Clase encargada de implementar un paso dentro de un sistema de tutorial o guía interactiva mediante l..." alt="" coords="5,80,132,107"/>
-<area shape="rect" id="Node000002" href="$interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="42,5,95,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,46,71,80,66,79,67,50"/>
-</map>

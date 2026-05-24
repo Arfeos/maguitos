@@ -1,5 +1,0 @@
-<map id="ChangeLanguage.Change" name="ChangeLanguage.Change">
-<area shape="rect" id="Node000001" title="Aplica el idioma configurado en language. Llamar desde el evento OnClick de un botón en el Inspector." alt="" coords="256,5,427,32"/>
-<area shape="rect" id="Node000002" href="$class_change_language.html#a444780bacb5f3bef9956050461a4678b" title="Convierte un índice entero al enum Languages correspondiente y aplica el cambio. Útil para enlazar di..." alt="" coords="5,5,208,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,19,208,21,208,16,243,19"/>
-</map>

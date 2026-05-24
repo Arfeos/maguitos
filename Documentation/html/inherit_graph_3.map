@@ -1,5 +1,5 @@
 <map id="Gráfico de jerarquía de clases" name="Gráfico de jerarquía de clases">
-<area shape="rect" id="Node000000" href="$interface_i_audio_service.html" title="Servicio encargado de gestionar la reproducción de música y efectos de sonido del juego mediante el c..." alt="" coords="5,5,108,32"/>
-<area shape="rect" id="Node000001" href="$class_audio_service.html" title="Servicio encargado de gestionar la reproducción de música y efectos de sonido del juego mediante el c..." alt="" coords="156,5,254,32"/>
+<area shape="rect" id="Node000000" href="$de/d33/interface_i_audio_service.html" title="Servicio encargado de gestionar la reproducción de música y efectos de sonido del juego mediante el c..." alt="" coords="5,5,108,32"/>
+<area shape="rect" id="Node000001" href="$d4/d6c/class_audio_service.html" title="Servicio encargado de gestionar la reproducción de música y efectos de sonido del juego mediante el c..." alt="" coords="156,5,254,32"/>
 <area shape="poly" id="edge70_Node000000_Node000001" title=" " alt="" coords="123,16,158,18,153,19,123,21"/>
 </map>

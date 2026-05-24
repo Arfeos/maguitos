@@ -1,0 +1,5 @@
+<map id="DisplayScoreTable.NextPage" name="DisplayScoreTable.NextPage">
+<area shape="rect" id="Node000001" title="Avanza a la página siguiente si no se ha llegado a la última y refresca la tabla. Llamar desde el eve..." alt="" coords="5,13,198,40"/>
+<area shape="rect" id="Node000002" href="$d6/d50/class_display_score_table.html#ad898569563d6f49ccf35ba6a205cbd52" title="Destruye las filas existentes y genera las correspondientes a currentPage, ordenando las puntuaciones..." alt="" coords="246,5,426,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,24,233,26,228,27,198,29"/>
+</map>

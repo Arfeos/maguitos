@@ -1,7 +1,0 @@
-<map id="InputSystem_Actions.PlayerActions.operator InputActionMap" name="InputSystem_Actions.PlayerActions.operator InputActionMap">
-<area shape="rect" id="Node000001" title="Implicitly converts an &#160;to an &#160;instance." alt="" coords="5,5,217,48"/>
-<area shape="rect" id="Node000002" href="$struct_input_system___actions_1_1_player_actions.html#abd8a679d073686875777d2cdf4cd4e41" title="Construct a new instance of the input action map wrapper class." alt="" coords="265,5,452,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,24,252,27,247,27,217,29"/>
-<area shape="rect" id="Node000003" href="$class_input_system___actions.html#a61685bf23c9929ed79a3f35740d27e3e" title="Constructs a new instance." alt="" coords="500,5,679,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,24,487,27,482,27,452,29"/>
-</map>

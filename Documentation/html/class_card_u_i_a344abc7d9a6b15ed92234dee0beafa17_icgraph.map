@@ -1,5 +1,0 @@
-<map id="CardUI.Setup" name="CardUI.Setup">
-<area shape="rect" id="Node000001" title="Inicializa la tarjeta con los datos del perfil: asigna nombre, guid, icono y resuelve servicios...." alt="" coords="233,5,334,32"/>
-<area shape="rect" id="Node000002" href="$class_profile_loader.html#ab641ba8b9efe6626138c8f1f222817b2" title="Obtiene la lista de perfiles a través del servicio inyectado desde . Si no hay perfiles,..." alt="" coords="5,5,185,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,19,185,21,185,16,220,19"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="OpenDoorStep" name="OpenDoorStep">
-<area shape="rect" id="Node000001" title="Step que se completa cuando se cambia la posicion de una puerta determinada." alt="" coords="5,80,113,107"/>
-<area shape="rect" id="Node000002" href="$interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="33,5,85,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,46,62,80,56,79,57,50"/>
-</map>

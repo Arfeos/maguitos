@@ -1,0 +1,762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la clase InputSystem_Actions</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/d69/class_input_system___actions.html','../../','d2/d45/class_input_system___actions-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase InputSystem_Actions</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Provides programmatic access to InputActionAsset, InputActionMap, InputAction and InputControlScheme instances defined in asset "Assets/Scripts/Input/InputSystem_Actions.inputactions".  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de InputSystem_Actions</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/dcd/class_input_system___actions__inherit__graph.png" border="0" usemap="#a_input_system___actions_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_input_system___actions_inherit__map" id="a_input_system___actions_inherit__map">
+<area shape="rect" title="Provides programmatic access to InputActionAsset, InputActionMap, InputAction and InputControlScheme ..." alt="" coords="84,80,230,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,162,32"/>
+<area shape="poly" title=" " alt="" coords="108,41,147,79,142,80,106,46"/>
+<area shape="rect" title=" " alt="" coords="186,5,277,32"/>
+<area shape="poly" title=" " alt="" coords="210,42,171,82,168,77,205,44"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración de InputSystem_Actions:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d0e/class_input_system___actions__coll__graph.png" border="0" usemap="#a_input_system___actions_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_input_system___actions_coll__map" id="a_input_system___actions_coll__map">
+<area shape="rect" title="Provides programmatic access to InputActionAsset, InputActionMap, InputAction and InputControlScheme ..." alt="" coords="84,80,230,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,162,32"/>
+<area shape="poly" title=" " alt="" coords="108,41,147,79,142,80,106,46"/>
+<area shape="rect" title=" " alt="" coords="186,5,277,32"/>
+<area shape="poly" title=" " alt="" coords="210,42,171,82,168,77,205,44"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr class="memitem:PlayerActions" id="r_PlayerActions"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../d4/de4/struct_input_system___actions_1_1_player_actions.html">PlayerActions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to input actions defined in input action map "Player".  <a href="../../d4/de4/struct_input_system___actions_1_1_player_actions.html#details">Más...</a><br /></td></tr>
+<tr class="memitem:UIActions" id="r_UIActions"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="../../db/d80/struct_input_system___actions_1_1_u_i_actions.html">UIActions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to input actions defined in input action map "UI".  <a href="../../db/d80/struct_input_system___actions_1_1_u_i_actions.html#details">Más...</a><br /></td></tr>
+<tr class="memitem:IPlayerActions" id="r_IPlayerActions"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d7/d2f/interface_input_system___actions_1_1_i_player_actions.html">IPlayerActions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player" which allows adding and removing callbacks.  <a href="../../d7/d2f/interface_input_system___actions_1_1_i_player_actions.html#details">Más...</a><br /></td></tr>
+<tr class="memitem:IUIActions" id="r_IUIActions"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="../../d4/d74/interface_input_system___actions_1_1_i_u_i_actions.html">IUIActions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.  <a href="../../d4/d74/interface_input_system___actions_1_1_i_u_i_actions.html#details">Más...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a61685bf23c9929ed79a3f35740d27e3e" id="r_a61685bf23c9929ed79a3f35740d27e3e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a61685bf23c9929ed79a3f35740d27e3e">InputSystem_Actions</a> ()</td></tr>
+<tr class="memdesc:a61685bf23c9929ed79a3f35740d27e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new instance.  <br /></td></tr>
+<tr class="memitem:a2a0f0750b4e4917ef46652f206a8a917" id="r_a2a0f0750b4e4917ef46652f206a8a917"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2a0f0750b4e4917ef46652f206a8a917">Dispose</a> ()</td></tr>
+<tr class="memdesc:a2a0f0750b4e4917ef46652f206a8a917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this asset and all associated InputAction instances.  <br /></td></tr>
+<tr class="memitem:ace5e42998b0480fea1dc647b76a90c72" id="r_ace5e42998b0480fea1dc647b76a90c72"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ace5e42998b0480fea1dc647b76a90c72">Contains</a> (InputAction action)</td></tr>
+<tr class="memitem:a84a19f8ac0699ae462677928ad87f115" id="r_a84a19f8ac0699ae462677928ad87f115"><td class="memItemLeft">IEnumerator&lt; InputAction &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a84a19f8ac0699ae462677928ad87f115">GetEnumerator</a> ()</td></tr>
+<tr class="memitem:ad67c2eb183b87cdd13a5e447a93c6dda" id="r_ad67c2eb183b87cdd13a5e447a93c6dda"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad67c2eb183b87cdd13a5e447a93c6dda">Enable</a> ()</td></tr>
+<tr class="memitem:acf08c125a9632fc8f90fa0afb42b7780" id="r_acf08c125a9632fc8f90fa0afb42b7780"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acf08c125a9632fc8f90fa0afb42b7780">Disable</a> ()</td></tr>
+<tr class="memitem:a75fa1066891b6ee600e87459b7cb9bcf" id="r_a75fa1066891b6ee600e87459b7cb9bcf"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a75fa1066891b6ee600e87459b7cb9bcf">FindAction</a> (string actionNameOrId, bool throwIfNotFound=false)</td></tr>
+<tr class="memitem:a0f3d66e8ab2b691309ab6e41bf98dd84" id="r_a0f3d66e8ab2b691309ab6e41bf98dd84"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0f3d66e8ab2b691309ab6e41bf98dd84">FindBinding</a> (InputBinding bindingMask, out InputAction action)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Propiedades</h2></td></tr>
+<tr class="memitem:a3efb45eb88773efcd1380348c301f432" id="r_a3efb45eb88773efcd1380348c301f432"><td class="memItemLeft">InputActionAsset&#160;</td><td class="memItemRight"><a class="el" href="#a3efb45eb88773efcd1380348c301f432">asset</a><code> [get]</code></td></tr>
+<tr class="memdesc:a3efb45eb88773efcd1380348c301f432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying asset instance.  <br /></td></tr>
+<tr class="memitem:aca7eb231b35ef3bcf2adea625b1a36a9" id="r_aca7eb231b35ef3bcf2adea625b1a36a9"><td class="memItemLeft">InputBinding?&#160;</td><td class="memItemRight"><a class="el" href="#aca7eb231b35ef3bcf2adea625b1a36a9">bindingMask</a><code> [get, set]</code></td></tr>
+<tr class="memitem:ae4e07340febc1e2c0e899d86c9961db4" id="r_ae4e07340febc1e2c0e899d86c9961db4"><td class="memItemLeft">ReadOnlyArray&lt; InputDevice &gt;?&#160;</td><td class="memItemRight"><a class="el" href="#ae4e07340febc1e2c0e899d86c9961db4">devices</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a3676db858bdde9d09feaabe73b5fea05" id="r_a3676db858bdde9d09feaabe73b5fea05"><td class="memItemLeft">ReadOnlyArray&lt; InputControlScheme &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3676db858bdde9d09feaabe73b5fea05">controlSchemes</a><code> [get]</code></td></tr>
+<tr class="memitem:a2287fb6c4b7f3da732a7957616231e04" id="r_a2287fb6c4b7f3da732a7957616231e04"><td class="memItemLeft">IEnumerable&lt; InputBinding &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a2287fb6c4b7f3da732a7957616231e04">bindings</a><code> [get]</code></td></tr>
+<tr class="memitem:a20a11f2c906449516e76165274a386e3" id="r_a20a11f2c906449516e76165274a386e3"><td class="memItemLeft"><a class="el" href="../../d4/de4/struct_input_system___actions_1_1_player_actions.html">PlayerActions</a>&#160;</td><td class="memItemRight"><a class="el" href="#a20a11f2c906449516e76165274a386e3">Player</a><code> [get]</code></td></tr>
+<tr class="memdesc:a20a11f2c906449516e76165274a386e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a new PlayerActions instance referencing this action map.  <br /></td></tr>
+<tr class="memitem:a96b4c890dc28186270b2fdcc8993bf45" id="r_a96b4c890dc28186270b2fdcc8993bf45"><td class="memItemLeft"><a class="el" href="../../db/d80/struct_input_system___actions_1_1_u_i_actions.html">UIActions</a>&#160;</td><td class="memItemRight"><a class="el" href="#a96b4c890dc28186270b2fdcc8993bf45">UI</a><code> [get]</code></td></tr>
+<tr class="memdesc:a96b4c890dc28186270b2fdcc8993bf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a new UIActions instance referencing this action map.  <br /></td></tr>
+<tr class="memitem:a0a319d1f8048d61a94c33db03bf97f7b" id="r_a0a319d1f8048d61a94c33db03bf97f7b"><td class="memItemLeft">InputControlScheme&#160;</td><td class="memItemRight"><a class="el" href="#a0a319d1f8048d61a94c33db03bf97f7b">KeyboardMouseScheme</a><code> [get]</code></td></tr>
+<tr class="memdesc:a0a319d1f8048d61a94c33db03bf97f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the input control scheme.  <br /></td></tr>
+<tr class="memitem:a59c074693bfa09385e92d8602d12d3ca" id="r_a59c074693bfa09385e92d8602d12d3ca"><td class="memItemLeft">InputControlScheme&#160;</td><td class="memItemRight"><a class="el" href="#a59c074693bfa09385e92d8602d12d3ca">GamepadScheme</a><code> [get]</code></td></tr>
+<tr class="memdesc:a59c074693bfa09385e92d8602d12d3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the input control scheme.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Provides programmatic access to InputActionAsset, InputActionMap, InputAction and InputControlScheme instances defined in asset "Assets/Scripts/Input/InputSystem_Actions.inputactions". </p>
+<p>This class is source generated and any manual edits will be discarded if the associated asset is reimported or modified. </p>
+<div class="fragment"><div class="line"><span class="keyword">using namespace </span>UnityEngine;</div>
+<div class="line"><span class="keyword">using </span>UnityEngine.InputSystem;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Example of using an InputActionMap named &quot;Player&quot; from a UnityEngine.MonoBehaviour implementing callback interface.</span></div>
+<div class="line"><span class="keyword">public</span> <span class="keyword">class </span>Example : MonoBehaviour, MyActions.<a class="code hl_interface" href="../../d7/d2f/interface_input_system___actions_1_1_i_player_actions.html">IPlayerActions</a></div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">private</span> MyActions_Actions m_Actions;                  <span class="comment">// Source code representation of asset.</span></div>
+<div class="line">    <span class="keyword">private</span> MyActions_Actions.PlayerActions m_Player;     <span class="comment">// Source code representation of action map.</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> Awake()</div>
+<div class="line">    {</div>
+<div class="line">        m_Actions = <span class="keyword">new</span> MyActions_Actions();              <span class="comment">// Create asset object.</span></div>
+<div class="line">        m_Player = m_Actions.Player;                      <span class="comment">// Extract action map object.</span></div>
+<div class="line">        m_Player.AddCallbacks(<span class="keyword">this</span>);                      <span class="comment">// Register callback interface IPlayerActions.</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> OnDestroy()</div>
+<div class="line">    {</div>
+<div class="line">        m_Actions.Dispose();                              <span class="comment">// Destroy asset object.</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> OnEnable()</div>
+<div class="line">    {</div>
+<div class="line">        m_Player.Enable();                                <span class="comment">// Enable all actions within map.</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> OnDisable()</div>
+<div class="line">    {</div>
+<div class="line">        m_Player.Disable();                               <span class="comment">// Disable all actions within map.</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">    #region Interface implementation of MyActions.IPlayerActions</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Invoked when &quot;Move&quot; action is either started, performed or canceled.</span></div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d2f/interface_input_system___actions_1_1_i_player_actions.html#ab3366dfc3e68c0bf3ea3ceacd9c3a3d4">OnMove</a>(InputAction.CallbackContext context)</div>
+<div class="line">    {</div>
+<div class="line">        Debug.Log($<span class="stringliteral">&quot;OnMove: {context.ReadValue&lt;Vector2&gt;()}&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Invoked when &quot;Attack&quot; action is either started, performed or canceled.</span></div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d2f/interface_input_system___actions_1_1_i_player_actions.html#a39b0cb0611d50c6896516dfd238e8b6b">OnAttack</a>(InputAction.CallbackContext context)</div>
+<div class="line">    {</div>
+<div class="line">        Debug.Log($<span class="stringliteral">&quot;OnAttack: {context.ReadValue&lt;float&gt;()}&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">    #endregion</span></div>
+<div class="line">}</div>
+<div class="ttc" id="ainterface_input_system___actions_1_1_i_player_actions_html"><div class="ttname"><a href="../../d7/d2f/interface_input_system___actions_1_1_i_player_actions.html">InputSystem_Actions.IPlayerActions</a></div><div class="ttdoc">Interface to implement callback methods for all input action callbacks associated with input actions ...</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d08/_input_system___actions_8cs_source.html#l01749">InputSystem_Actions.cs:1750</a></div></div>
+<div class="ttc" id="ainterface_input_system___actions_1_1_i_player_actions_html_a39b0cb0611d50c6896516dfd238e8b6b"><div class="ttname"><a href="../../d7/d2f/interface_input_system___actions_1_1_i_player_actions.html#a39b0cb0611d50c6896516dfd238e8b6b">InputSystem_Actions.IPlayerActions.OnAttack</a></div><div class="ttdeci">void OnAttack(InputAction.CallbackContext context)</div><div class="ttdoc">Method invoked when associated input action &quot;Attack&quot; is either UnityEngine.InputSystem....</div></div>
+<div class="ttc" id="ainterface_input_system___actions_1_1_i_player_actions_html_ab3366dfc3e68c0bf3ea3ceacd9c3a3d4"><div class="ttname"><a href="../../d7/d2f/interface_input_system___actions_1_1_i_player_actions.html#ab3366dfc3e68c0bf3ea3ceacd9c3a3d4">InputSystem_Actions.IPlayerActions.OnMove</a></div><div class="ttdeci">void OnMove(InputAction.CallbackContext context)</div><div class="ttdoc">Method invoked when associated input action &quot;Move&quot; is either UnityEngine.InputSystem....</div></div>
+</div><!-- fragment --> 
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l00075">75</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="a61685bf23c9929ed79a3f35740d27e3e" name="a61685bf23c9929ed79a3f35740d27e3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61685bf23c9929ed79a3f35740d27e3e">&#9670;&#160;</a></span>InputSystem_Actions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputSystem_Actions.InputSystem_Actions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a new instance. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l00085">85</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d69/class_input_system___actions_a61685bf23c9929ed79a3f35740d27e3e_icgraph.png" border="0" usemap="#ad1/d69/class_input_system___actions_a61685bf23c9929ed79a3f35740d27e3e_icgraph" loading="lazy" alt=""/></div>
+<map name="ad1/d69/class_input_system___actions_a61685bf23c9929ed79a3f35740d27e3e_icgraph" id="ad1/d69/class_input_system___actions_a61685bf23c9929ed79a3f35740d27e3e_icgraph">
+<area shape="rect" title="Constructs a new instance." alt="" coords="573,39,752,81"/>
+<area shape="rect" href="../../d4/de4/struct_input_system___actions_1_1_player_actions.html#abd8a679d073686875777d2cdf4cd4e41" title="Construct a new instance of the input action map wrapper class." alt="" coords="325,5,512,48"/>
+<area shape="poly" title=" " alt="" coords="555,46,513,42,513,37,560,46"/>
+<area shape="rect" href="../../db/d80/struct_input_system___actions_1_1_u_i_actions.html#a645c07fe90deb3c7b625cd4d3801da1c" title="Construct a new instance of the input action map wrapper class." alt="" coords="313,72,525,115"/>
+<area shape="poly" title=" " alt="" coords="560,74,526,81,525,76,555,75"/>
+<area shape="rect" href="../../d4/de4/struct_input_system___actions_1_1_player_actions.html#a8dd5ab45c6bc121318e5f53beaca6574" title="Implicitly converts an &#160;to an &#160;instance." alt="" coords="29,5,241,48"/>
+<area shape="poly" title=" " alt="" coords="307,27,242,29,241,24,312,26"/>
+<area shape="rect" href="../../db/d80/struct_input_system___actions_1_1_u_i_actions.html#a42fff9f6b880c8c2c3411a434950ee81" title="Implicitly converts an &#160;to an &#160;instance." alt="" coords="5,72,265,115"/>
+<area shape="poly" title=" " alt="" coords="294,93,265,96,265,91,299,93"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="ace5e42998b0480fea1dc647b76a90c72" name="ace5e42998b0480fea1dc647b76a90c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace5e42998b0480fea1dc647b76a90c72">&#9670;&#160;</a></span>Contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InputSystem_Actions.Contains </td>
+          <td>(</td>
+          <td class="paramtype">InputAction</td>          <td class="paramname"><span class="paramname"><em>action</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01241">1241</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="acf08c125a9632fc8f90fa0afb42b7780" name="acf08c125a9632fc8f90fa0afb42b7780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf08c125a9632fc8f90fa0afb42b7780">&#9670;&#160;</a></span>Disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.Disable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01265">1265</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2a0f0750b4e4917ef46652f206a8a917" name="a2a0f0750b4e4917ef46652f206a8a917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a0f0750b4e4917ef46652f206a8a917">&#9670;&#160;</a></span>Dispose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.Dispose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys this asset and all associated InputAction instances. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01218">1218</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad67c2eb183b87cdd13a5e447a93c6dda" name="ad67c2eb183b87cdd13a5e447a93c6dda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad67c2eb183b87cdd13a5e447a93c6dda">&#9670;&#160;</a></span>Enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.Enable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01259">1259</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a75fa1066891b6ee600e87459b7cb9bcf" name="a75fa1066891b6ee600e87459b7cb9bcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75fa1066891b6ee600e87459b7cb9bcf">&#9670;&#160;</a></span>FindAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.FindAction </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>actionNameOrId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>throwIfNotFound</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01274">1274</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0f3d66e8ab2b691309ab6e41bf98dd84" name="a0f3d66e8ab2b691309ab6e41bf98dd84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f3d66e8ab2b691309ab6e41bf98dd84">&#9670;&#160;</a></span>FindBinding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int InputSystem_Actions.FindBinding </td>
+          <td>(</td>
+          <td class="paramtype">InputBinding</td>          <td class="paramname"><span class="paramname"><em>bindingMask</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out InputAction</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01280">1280</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a84a19f8ac0699ae462677928ad87f115" name="a84a19f8ac0699ae462677928ad87f115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84a19f8ac0699ae462677928ad87f115">&#9670;&#160;</a></span>GetEnumerator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator&lt; InputAction &gt; InputSystem_Actions.GetEnumerator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01247">1247</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Documentación de propiedades</h2>
+<a id="a3efb45eb88773efcd1380348c301f432" name="a3efb45eb88773efcd1380348c301f432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3efb45eb88773efcd1380348c301f432">&#9670;&#160;</a></span>asset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputActionAsset InputSystem_Actions.asset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying asset instance. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l00080">80</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="aca7eb231b35ef3bcf2adea625b1a36a9" name="aca7eb231b35ef3bcf2adea625b1a36a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca7eb231b35ef3bcf2adea625b1a36a9">&#9670;&#160;</a></span>bindingMask</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputBinding? InputSystem_Actions.bindingMask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01224">1224</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2287fb6c4b7f3da732a7957616231e04" name="a2287fb6c4b7f3da732a7957616231e04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2287fb6c4b7f3da732a7957616231e04">&#9670;&#160;</a></span>bindings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;InputBinding&gt; InputSystem_Actions.bindings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01271">1271</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3676db858bdde9d09feaabe73b5fea05" name="a3676db858bdde9d09feaabe73b5fea05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3676db858bdde9d09feaabe73b5fea05">&#9670;&#160;</a></span>controlSchemes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReadOnlyArray&lt;InputControlScheme&gt; InputSystem_Actions.controlSchemes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01238">1238</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae4e07340febc1e2c0e899d86c9961db4" name="ae4e07340febc1e2c0e899d86c9961db4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e07340febc1e2c0e899d86c9961db4">&#9670;&#160;</a></span>devices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReadOnlyArray&lt;InputDevice&gt;? InputSystem_Actions.devices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01231">1231</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a59c074693bfa09385e92d8602d12d3ca" name="a59c074693bfa09385e92d8602d12d3ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59c074693bfa09385e92d8602d12d3ca">&#9670;&#160;</a></span>GamepadScheme</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputControlScheme InputSystem_Actions.GamepadScheme</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the input control scheme. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputControlScheme</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01736">1736</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0a319d1f8048d61a94c33db03bf97f7b" name="a0a319d1f8048d61a94c33db03bf97f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a319d1f8048d61a94c33db03bf97f7b">&#9670;&#160;</a></span>KeyboardMouseScheme</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputControlScheme InputSystem_Actions.KeyboardMouseScheme</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the input control scheme. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputControlScheme</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01723">1723</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a20a11f2c906449516e76165274a386e3" name="a20a11f2c906449516e76165274a386e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a11f2c906449516e76165274a386e3">&#9670;&#160;</a></span>Player</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/de4/struct_input_system___actions_1_1_player_actions.html">PlayerActions</a> InputSystem_Actions.Player</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides a new PlayerActions instance referencing this action map. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01511">1511</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a96b4c890dc28186270b2fdcc8993bf45" name="a96b4c890dc28186270b2fdcc8993bf45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96b4c890dc28186270b2fdcc8993bf45">&#9670;&#160;</a></span>UI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d80/struct_input_system___actions_1_1_u_i_actions.html">UIActions</a> InputSystem_Actions.UI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides a new UIActions instance referencing this action map. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html#l01717">1717</a> del archivo <a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>Scripts/Input/<a class="el" href="../../d5/d08/_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../d1/d69/class_input_system___actions.html">InputSystem_Actions</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

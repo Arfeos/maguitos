@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la interface IStep</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('da/d8b/interface_i_step.html','../../','df/d70/interface_i_step-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la interface IStep</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interfaz que gestiona los pasos que se pueden meter dentro de un workflow.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de IStep</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/deb/interface_i_step__inherit__graph.png" border="0" usemap="#a_i_step_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_i_step_inherit__map" id="a_i_step_inherit__map">
+<area shape="rect" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="5,284,58,311"/>
+<area shape="rect" href="../../de/da3/class_camera_move_step.html" title="Clase encargada de implementar un paso dentro de un sistema de tutorial o guía interactiva mediante l..." alt="" coords="111,5,238,32"/>
+<area shape="poly" title=" " alt="" coords="30,268,34,220,45,160,67,98,83,68,104,42,122,30,119,35,108,46,88,71,72,100,51,162,40,221,36,269"/>
+<area shape="rect" href="../../d0/d1a/class_crouch_step.html" title="Paso que se activa cuando el jugador pulsa el boton de agacharse." alt="" coords="129,56,220,83"/>
+<area shape="poly" title=" " alt="" coords="33,268,40,229,52,183,73,135,104,93,130,77,127,82,107,97,78,137,57,184,45,230,38,269"/>
+<area shape="rect" href="../../da/dfc/class_leave_tutorial_step.html" title="Paso que se activa solo al iniciarse para que salte el aviso de que ha terminado el tutorial." alt="" coords="111,107,238,133"/>
+<area shape="poly" title=" " alt="" coords="37,268,60,206,79,173,104,143,124,132,121,136,107,147,83,176,65,208,42,270"/>
+<area shape="rect" href="../../d1/d23/class_move_step.html" title="Paso que se completa cuando el jugador se mueve." alt="" coords="134,157,214,184"/>
+<area shape="poly" title=" " alt="" coords="44,269,69,230,104,194,135,179,132,183,107,198,73,234,49,271"/>
+<area shape="rect" href="../../d6/d67/class_open_door_step.html" title="Step que se completa cuando se cambia la posicion de una puerta determinada." alt="" coords="121,208,228,235"/>
+<area shape="poly" title=" " alt="" coords="60,273,104,244,133,233,129,237,107,249,64,276"/>
+<area shape="rect" href="../../d5/db8/class_pick_up_spell_step.html" title="Paso que se completa cuando el jugador tiene un hechizo en el inventario." alt="" coords="114,259,234,285"/>
+<area shape="poly" title=" " alt="" coords="71,288,116,281,112,285,75,292"/>
+<area shape="rect" href="../../d1/dcd/class_press_space_step.html" title="Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep...." alt="" coords="115,309,234,336"/>
+<area shape="poly" title=" " alt="" coords="72,302,117,310,112,314,74,307"/>
+<area shape="rect" href="../../d6/d5c/class_reload_step.html" title="Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep...." alt="" coords="130,360,219,387"/>
+<area shape="poly" title=" " alt="" coords="61,317,107,346,133,358,129,360,104,350,62,323"/>
+<area shape="rect" href="../../db/dad/class_shoot_step.html" title="Paso que se completa cuando el jugador dispara." alt="" coords="133,411,216,437"/>
+<area shape="poly" title=" " alt="" coords="46,322,73,361,107,397,135,412,130,414,104,401,69,364,47,327"/>
+<area shape="rect" href="../../d0/df9/class_shooting_range_step.html" title="Paso que se activa cuando se dispara a un cartel." alt="" coords="106,461,243,488"/>
+<area shape="poly" title=" " alt="" coords="40,323,65,387,83,419,107,447,125,460,120,461,104,451,79,422,60,389,39,328"/>
+<area shape="rect" href="../../dc/db4/class_take_lantern_step.html" title="Paso del tutorial que enseña al jugador a recoger y encender la linterna. Se completa en dos fases: p..." alt="" coords="115,512,234,539"/>
+<area shape="poly" title=" " alt="" coords="36,324,45,364,57,410,78,457,108,498,124,511,119,512,104,502,73,460,52,412,40,366,36,329"/>
+<area shape="rect" href="../../d2/d5d/class_take_orbs_step.html" title="Paso que se completa cuando se recoge un orbve de mana y otro de vida." alt="" coords="122,563,226,589"/>
+<area shape="poly" title=" " alt="" coords="33,323,40,374,51,433,72,495,88,523,108,549,124,563,119,563,104,553,83,526,67,497,45,434,34,374,33,329"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a2043df04b8d352e62c6a5a1bb7ee6154" id="r_a2043df04b8d352e62c6a5a1bb7ee6154"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2043df04b8d352e62c6a5a1bb7ee6154">Activate</a> ()</td></tr>
+<tr class="memitem:abeb097adb31c927ffce952cb2cb172d2" id="r_abeb097adb31c927ffce952cb2cb172d2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abeb097adb31c927ffce952cb2cb172d2">Deactivate</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Propiedades</h2></td></tr>
+<tr class="memitem:a610ba12ed7a6127863cb9d1da214d645" id="r_a610ba12ed7a6127863cb9d1da214d645"><td class="memItemLeft">LocalizedString&#160;</td><td class="memItemRight"><a class="el" href="#a610ba12ed7a6127863cb9d1da214d645">Name</a><code> [get]</code></td></tr>
+<tr class="memitem:ab5e21ff9790e0aa30204bf456ce03867" id="r_ab5e21ff9790e0aa30204bf456ce03867"><td class="memItemLeft">LocalizedString&#160;</td><td class="memItemRight"><a class="el" href="#ab5e21ff9790e0aa30204bf456ce03867">Description</a><code> [get]</code></td></tr>
+<tr class="memitem:ae93fb7f7464e3b1ab0b3ce6a03a6ebae" id="r_ae93fb7f7464e3b1ab0b3ce6a03a6ebae"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae93fb7f7464e3b1ab0b3ce6a03a6ebae">IsComplete</a><code> [get, set]</code></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-events" class="groupheader"><a id="events" name="events"></a>
+Eventos</h2></td></tr>
+<tr class="memitem:a510d8c904f60a50a69fd9c0fb29ae623" id="r_a510d8c904f60a50a69fd9c0fb29ae623"><td class="memItemLeft">Action&#160;</td><td class="memItemRight"><a class="el" href="#a510d8c904f60a50a69fd9c0fb29ae623">OnComplete</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Interfaz que gestiona los pasos que se pueden meter dentro de un workflow. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d9/d6f/_i_step_8cs_source.html#l00006">6</a> del archivo <a class="el" href="../../d9/d6f/_i_step_8cs_source.html">IStep.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a2043df04b8d352e62c6a5a1bb7ee6154" name="a2043df04b8d352e62c6a5a1bb7ee6154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2043df04b8d352e62c6a5a1bb7ee6154">&#9670;&#160;</a></span>Activate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IStep.Activate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implementado en <a class="el" href="../../de/da3/class_camera_move_step.html#ad7c82528b0a17b7ee04111bfde5e665b">CameraMoveStep</a>, <a class="el" href="../../d0/d1a/class_crouch_step.html#a0b2e1d6e6c8b9b690acba73c11367a1a">CrouchStep</a>, <a class="el" href="../../da/dfc/class_leave_tutorial_step.html#aeeea481cfbe8e0f4a14cab022fbb65cb">LeaveTutorialStep</a>, <a class="el" href="../../d1/d23/class_move_step.html#aa1555163eb24faa5db61a47a61b6cfb9">MoveStep</a>, <a class="el" href="../../d6/d67/class_open_door_step.html#ab7255d51c562b1fb6156d89b55face50">OpenDoorStep</a>, <a class="el" href="../../d5/db8/class_pick_up_spell_step.html#abddb121424f79399980a6bee1d016dda">PickUpSpellStep</a>, <a class="el" href="../../d1/dcd/class_press_space_step.html#abcd3e6da5b0f610a2019355fa54ed714">PressSpaceStep</a>, <a class="el" href="../../d6/d5c/class_reload_step.html#a6ef1bfa357f9d62538852bebc327ecdd">ReloadStep</a>, <a class="el" href="../../d0/df9/class_shooting_range_step.html#a296b622e9bb05a9afc933e068c5d5286">ShootingRangeStep</a>, <a class="el" href="../../db/dad/class_shoot_step.html#a51d13fadd36ce60f02cbb61810933780">ShootStep</a>, <a class="el" href="../../dc/db4/class_take_lantern_step.html#aa5846f694739558490927bc66b7549c8">TakeLanternStep</a> y <a class="el" href="../../d2/d5d/class_take_orbs_step.html#ad886eb0c4dfe30a563ab69a620eda7d7">TakeOrbsStep</a>.</p>
+
+</div>
+</div>
+<a id="abeb097adb31c927ffce952cb2cb172d2" name="abeb097adb31c927ffce952cb2cb172d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb097adb31c927ffce952cb2cb172d2">&#9670;&#160;</a></span>Deactivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IStep.Deactivate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implementado en <a class="el" href="../../de/da3/class_camera_move_step.html#ad0de1f724df739cabec7043179629e98">CameraMoveStep</a>, <a class="el" href="../../d0/d1a/class_crouch_step.html#a7aa27928d7a7c1eb1fb7cb602b3ab5f6">CrouchStep</a>, <a class="el" href="../../da/dfc/class_leave_tutorial_step.html#a7078a69fe4e17bf3fb09c5aef736fa7a">LeaveTutorialStep</a>, <a class="el" href="../../d1/d23/class_move_step.html#a9b0ba30a2ed0ffe370c507ece7a02bab">MoveStep</a>, <a class="el" href="../../d6/d67/class_open_door_step.html#ae58138c97329a4aed0ce3de8830558ac">OpenDoorStep</a>, <a class="el" href="../../d5/db8/class_pick_up_spell_step.html#a1e865962587954ed108f49fb82f979b3">PickUpSpellStep</a>, <a class="el" href="../../d1/dcd/class_press_space_step.html#ad8ebde3f16c3e78056c29856c11fac08">PressSpaceStep</a>, <a class="el" href="../../d6/d5c/class_reload_step.html#a180a942e8468c47e42339e7f9acb7a4d">ReloadStep</a>, <a class="el" href="../../d0/df9/class_shooting_range_step.html#abaf70efabb5d6f73582b1dbc2eae275a">ShootingRangeStep</a>, <a class="el" href="../../db/dad/class_shoot_step.html#a553a9a83f704e62b46a906241bc48cbf">ShootStep</a>, <a class="el" href="../../dc/db4/class_take_lantern_step.html#aa21e4a7d3bba4c1a46598430db05cda4">TakeLanternStep</a> y <a class="el" href="../../d2/d5d/class_take_orbs_step.html#a00c0ae1777f50f9e88e2360c8806e611">TakeOrbsStep</a>.</p>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Documentación de propiedades</h2>
+<a id="ab5e21ff9790e0aa30204bf456ce03867" name="ab5e21ff9790e0aa30204bf456ce03867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e21ff9790e0aa30204bf456ce03867">&#9670;&#160;</a></span>Description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalizedString IStep.Description</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementado en <a class="el" href="../../de/da3/class_camera_move_step.html#a9cc4c60611536ead194e7efcca551b1f">CameraMoveStep</a>, <a class="el" href="../../d0/d1a/class_crouch_step.html#a7b5dba9222c7e928b53303a3e39c427f">CrouchStep</a>, <a class="el" href="../../da/dfc/class_leave_tutorial_step.html#a2145e909b9ed4f15275483f5d7ae455a">LeaveTutorialStep</a>, <a class="el" href="../../d1/d23/class_move_step.html#a91b7489cbea03f4f4ab8e209a01bfe02">MoveStep</a>, <a class="el" href="../../d6/d67/class_open_door_step.html#a69084f63f2f22ac73922d7f39497b79a">OpenDoorStep</a>, <a class="el" href="../../d5/db8/class_pick_up_spell_step.html#ae48b3b4963e998017ef8957566972cec">PickUpSpellStep</a>, <a class="el" href="../../d1/dcd/class_press_space_step.html#acd5fe95eba41932451e06f5aec9ada1c">PressSpaceStep</a>, <a class="el" href="../../d6/d5c/class_reload_step.html#a41a76c31b3a5ba6eec12e6e34ef0d497">ReloadStep</a>, <a class="el" href="../../d0/df9/class_shooting_range_step.html#a266002757d7db146f8fbd5000ba6e47d">ShootingRangeStep</a>, <a class="el" href="../../db/dad/class_shoot_step.html#a6c6fa301c89cfe8cda2e6f6523f4628e">ShootStep</a>, <a class="el" href="../../dc/db4/class_take_lantern_step.html#a78e812794af1d9a75269b7da5e372c18">TakeLanternStep</a> y <a class="el" href="../../d2/d5d/class_take_orbs_step.html#af7e59f40d9f496caaa4bdae7747274dd">TakeOrbsStep</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d9/d6f/_i_step_8cs_source.html#l00012">12</a> del archivo <a class="el" href="../../d9/d6f/_i_step_8cs_source.html">IStep.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae93fb7f7464e3b1ab0b3ce6a03a6ebae" name="ae93fb7f7464e3b1ab0b3ce6a03a6ebae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93fb7f7464e3b1ab0b3ce6a03a6ebae">&#9670;&#160;</a></span>IsComplete</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IStep.IsComplete</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementado en <a class="el" href="../../de/da3/class_camera_move_step.html#a79095bfb487480e0150bcd1f4fc8c776">CameraMoveStep</a>, <a class="el" href="../../d0/d1a/class_crouch_step.html#a33fad4b50f71b353ede3339c3e708e04">CrouchStep</a>, <a class="el" href="../../da/dfc/class_leave_tutorial_step.html#a22d736e170119b7e4e22809806244d58">LeaveTutorialStep</a>, <a class="el" href="../../d1/d23/class_move_step.html#ae8a1da707e16dcd2649f949312775672">MoveStep</a>, <a class="el" href="../../d6/d67/class_open_door_step.html#aefd21b7c542dd58d1e671cd76e69cd3e">OpenDoorStep</a>, <a class="el" href="../../d5/db8/class_pick_up_spell_step.html#a6d83ab3b6c74157cb96db61fdb9d9a41">PickUpSpellStep</a>, <a class="el" href="../../d1/dcd/class_press_space_step.html#a766246429fc06fb2d79549b740b6b46e">PressSpaceStep</a>, <a class="el" href="../../d6/d5c/class_reload_step.html#a1da596804bb1153fe7c19c08ab69a81a">ReloadStep</a>, <a class="el" href="../../d0/df9/class_shooting_range_step.html#af0c787dd479017a7cdf518b966870fcf">ShootingRangeStep</a>, <a class="el" href="../../db/dad/class_shoot_step.html#a2216157fb079dc06de724cc69950c260">ShootStep</a>, <a class="el" href="../../dc/db4/class_take_lantern_step.html#a4785ba0915d5a5ac51919601c80f654f">TakeLanternStep</a> y <a class="el" href="../../d2/d5d/class_take_orbs_step.html#a7a4546f5a0ea62f80fc5f46f6aef15fc">TakeOrbsStep</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d9/d6f/_i_step_8cs_source.html#l00015">15</a> del archivo <a class="el" href="../../d9/d6f/_i_step_8cs_source.html">IStep.cs</a>.</p>
+
+</div>
+</div>
+<a id="a610ba12ed7a6127863cb9d1da214d645" name="a610ba12ed7a6127863cb9d1da214d645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a610ba12ed7a6127863cb9d1da214d645">&#9670;&#160;</a></span>Name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalizedString IStep.Name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementado en <a class="el" href="../../de/da3/class_camera_move_step.html#ab61614b957969f497b8b32d6a8263a0e">CameraMoveStep</a>, <a class="el" href="../../d0/d1a/class_crouch_step.html#aa690cb3a942035ea96b3c983a27a40d3">CrouchStep</a>, <a class="el" href="../../da/dfc/class_leave_tutorial_step.html#ab440721aeac12a3993472591e831ad4f">LeaveTutorialStep</a>, <a class="el" href="../../d1/d23/class_move_step.html#a01bf90daf2e1abae3bd703fc86fdfa78">MoveStep</a>, <a class="el" href="../../d6/d67/class_open_door_step.html#a0ee5426908dbf49db15e2926d5824e66">OpenDoorStep</a>, <a class="el" href="../../d5/db8/class_pick_up_spell_step.html#afb77990330ab0a61cc23dff50e334e17">PickUpSpellStep</a>, <a class="el" href="../../d1/dcd/class_press_space_step.html#add0d79496173d1a5615ec30f7589b4c3">PressSpaceStep</a>, <a class="el" href="../../d6/d5c/class_reload_step.html#ac5de0113e8695610da3da0a6801a9324">ReloadStep</a>, <a class="el" href="../../d0/df9/class_shooting_range_step.html#a294e6e8fbcf3a2422fad7fe525d601c5">ShootingRangeStep</a>, <a class="el" href="../../db/dad/class_shoot_step.html#a8d9cb2a8e0f0184b5fbfe860a86cf0da">ShootStep</a>, <a class="el" href="../../dc/db4/class_take_lantern_step.html#adf3ec869cd8871c41aad23025d1b0708">TakeLanternStep</a> y <a class="el" href="../../d2/d5d/class_take_orbs_step.html#ae08af21bda3f9786e7cfbad753f8dca6">TakeOrbsStep</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d9/d6f/_i_step_8cs_source.html#l00009">9</a> del archivo <a class="el" href="../../d9/d6f/_i_step_8cs_source.html">IStep.cs</a>.</p>
+
+</div>
+</div>
+<a name="doc-event-members" id="doc-event-members"></a><h2 id="header-doc-event-members" class="groupheader">Documentación de eventos</h2>
+<a id="a510d8c904f60a50a69fd9c0fb29ae623" name="a510d8c904f60a50a69fd9c0fb29ae623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a510d8c904f60a50a69fd9c0fb29ae623">&#9670;&#160;</a></span>OnComplete</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action IStep.OnComplete</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="../../d9/d6f/_i_step_8cs_source.html#l00024">24</a> del archivo <a class="el" href="../../d9/d6f/_i_step_8cs_source.html">IStep.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta interface está generada del siguiente archivo:<ul>
+<li>Scripts/WorkflowsSystem/<a class="el" href="../../d9/d6f/_i_step_8cs_source.html">IStep.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../da/d8b/interface_i_step.html">IStep</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

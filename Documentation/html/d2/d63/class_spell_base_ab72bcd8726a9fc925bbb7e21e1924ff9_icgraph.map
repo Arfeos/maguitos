@@ -1,0 +1,5 @@
+<map id="SpellBase.CastBallSpell" name="SpellBase.CastBallSpell">
+<area shape="rect" id="Node000001" title="Gestiona el lanzamiento de un hechizo de tipo bola. Si es de tipo cargado, verifica carga máxima y ma..." alt="" coords="225,5,388,32"/>
+<area shape="rect" id="Node000002" href="$d2/d63/class_spell_base.html#a818606033556b4d510bb25c0217362f6" title="Intenta lanzar un hechizo si hay mana suficiente y no se está casteando. Delega en el método correspo..." alt="" coords="5,5,177,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,19,177,21,177,16,212,19"/>
+</map>

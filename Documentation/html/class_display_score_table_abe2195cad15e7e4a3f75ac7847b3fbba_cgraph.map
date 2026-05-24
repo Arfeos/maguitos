@@ -1,5 +1,0 @@
-<map id="DisplayScoreTable.PreviousPage" name="DisplayScoreTable.PreviousPage">
-<area shape="rect" id="Node000001" title="Retrocede a la página anterior si no se está ya en la primera y refresca la tabla...." alt="" coords="5,13,221,40"/>
-<area shape="rect" id="Node000002" href="$class_display_score_table.html#ad898569563d6f49ccf35ba6a205cbd52" title="Destruye las filas existentes y genera las correspondientes a currentPage, ordenando las puntuaciones..." alt="" coords="269,5,449,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,24,255,27,250,27,221,29"/>
-</map>

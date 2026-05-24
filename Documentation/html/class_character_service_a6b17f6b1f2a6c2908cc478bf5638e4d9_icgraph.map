@@ -1,5 +1,0 @@
-<map id="CharacterService.Die" name="CharacterService.Die">
-<area shape="rect" id="Node000001" title="Gestiona la muerte del personaje publicando un evento DieEvent mediante IEventService." alt="" coords="257,5,403,32"/>
-<area shape="rect" id="Node000002" href="$class_character_service.html#af66efc05a12ac52aae7d2a276b83b794" title="Reduce la vida actual del personaje y publica un evento HPEvent mediante IEventService...." alt="" coords="5,5,209,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,19,209,21,209,16,244,19"/>
-</map>

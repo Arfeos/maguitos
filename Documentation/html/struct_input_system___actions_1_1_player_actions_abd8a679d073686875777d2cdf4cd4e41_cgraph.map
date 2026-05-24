@@ -1,5 +1,0 @@
-<map id="InputSystem_Actions.PlayerActions.PlayerActions" name="InputSystem_Actions.PlayerActions.PlayerActions">
-<area shape="rect" id="Node000001" title="Construct a new instance of the input action map wrapper class." alt="" coords="5,5,193,48"/>
-<area shape="rect" id="Node000002" href="$class_input_system___actions.html#a61685bf23c9929ed79a3f35740d27e3e" title="Constructs a new instance." alt="" coords="241,5,420,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,24,228,26,222,27,193,29"/>
-</map>

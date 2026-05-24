@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente Scripts/Score/ScoreManager.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d6/d64/_score_manager_8cs_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ScoreManager.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d64/_score_manager_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.IO;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>System.Linq;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d4/d4a/class_score_manager.html">   12</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="../../d4/d4a/class_score_manager.html">ScoreManager</a> : MonoBehaviour</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d4/d4a/class_score_manager.html#aa12df7ffc6af2160d9e40b1c2ab91e2a">   17</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="../../d5/d5d/class_score_table.html">ScoreTable</a> <a class="code hl_variable" href="../../d4/d4a/class_score_manager.html#aa12df7ffc6af2160d9e40b1c2ab91e2a">scoreTable</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">private</span> <span class="keywordtype">string</span> filePath;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">private</span> <a class="code hl_interface" href="../../de/df6/interface_i_score_service.html">IScoreService</a> _scoreService;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span> <a class="code hl_interface" href="../../d1/df4/interface_i_profile_service.html">IProfileService</a> _profileService;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> Awake()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        filePath = Path.Combine(Application.persistentDataPath, <span class="stringliteral">&quot;Scores.json&quot;</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        Debug.Log(<span class="stringliteral">&quot;Archivo JSON en: &quot;</span> + filePath);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        _scoreService = AppContainer.Get&lt;<a class="code hl_interface" href="../../de/df6/interface_i_score_service.html">IScoreService</a>&gt;();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        _profileService = AppContainer.Get&lt;<a class="code hl_interface" href="../../d1/df4/interface_i_profile_service.html">IProfileService</a>&gt;();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_function" href="../../d4/d4a/class_score_manager.html#a772b97dbc2d56f41f15f403427040841">LoadScores</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d4/d4a/class_score_manager.html#a85ea6058ca63524864116f7f55004e37">   52</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d4a/class_score_manager.html#a85ea6058ca63524864116f7f55004e37">AddScore</a>(<span class="keywordtype">bool</span> pacifist)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">string</span> profile = _profileService.getSelectedProfile().name;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_variable" href="../../d4/d4a/class_score_manager.html#aa12df7ffc6af2160d9e40b1c2ab91e2a">scoreTable</a>.scores.Add(<span class="keyword">new</span> <a class="code hl_class" href="../../d1/dfa/class_score_entry.html">ScoreEntry</a>(profile, _scoreService.GetPoints(profile), pacifist));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        scoreTable.scores = <a class="code hl_variable" href="../../d4/d4a/class_score_manager.html#aa12df7ffc6af2160d9e40b1c2ab91e2a">scoreTable</a>.scores.OrderByDescending(s =&gt; s.score).ToList();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_function" href="../../d4/d4a/class_score_manager.html#a5b10038ea3186940d79447de019f9358">SaveScores</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d4/d4a/class_score_manager.html#a5b10038ea3186940d79447de019f9358">   66</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d4a/class_score_manager.html#a5b10038ea3186940d79447de019f9358">SaveScores</a>()</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordtype">string</span> json = JsonUtility.ToJson(<a class="code hl_variable" href="../../d4/d4a/class_score_manager.html#aa12df7ffc6af2160d9e40b1c2ab91e2a">scoreTable</a>,<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        File.WriteAllText(filePath, json);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../d4/d4a/class_score_manager.html#a772b97dbc2d56f41f15f403427040841">   76</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d4a/class_score_manager.html#a772b97dbc2d56f41f15f403427040841">LoadScores</a>()</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">if</span> (File.Exists(filePath))</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordtype">string</span> json = File.ReadAllText(filePath);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_variable" href="../../d4/d4a/class_score_manager.html#aa12df7ffc6af2160d9e40b1c2ab91e2a">scoreTable</a> = JsonUtility.FromJson&lt;<a class="code hl_class" href="../../d5/d5d/class_score_table.html">ScoreTable</a>&gt;(json);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }<span class="keywordflow">else</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <a class="code hl_variable" href="../../d4/d4a/class_score_manager.html#aa12df7ffc6af2160d9e40b1c2ab91e2a">scoreTable</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d5/d5d/class_score_table.html">ScoreTable</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+</div>
+<div class="ttc" id="aclass_score_entry_html"><div class="ttname"><a href="../../d1/dfa/class_score_entry.html">ScoreEntry</a></div><div class="ttdoc">Representa una entrada individual en la tabla de puntuaciones, almacenando el nombre del jugador,...</div><div class="ttdef"><b>Definition</b> <a href="../../d0/db9/_score_entry_8cs_source.html#l00011">ScoreEntry.cs:12</a></div></div>
+<div class="ttc" id="aclass_score_manager_html"><div class="ttname"><a href="../../d4/d4a/class_score_manager.html">ScoreManager</a></div><div class="ttdoc">MonoBehaviour encargado de gestionar el registro de puntuaciones en un archivo JSON....</div><div class="ttdef"><b>Definition</b> <a href="#l00012">ScoreManager.cs:13</a></div></div>
+<div class="ttc" id="aclass_score_manager_html_a5b10038ea3186940d79447de019f9358"><div class="ttname"><a href="../../d4/d4a/class_score_manager.html#a5b10038ea3186940d79447de019f9358">ScoreManager.SaveScores</a></div><div class="ttdeci">void SaveScores()</div><div class="ttdoc">Serializa la tabla de puntuaciones actual y la escribe en el archivo Scores.json en Application....</div><div class="ttdef"><b>Definition</b> <a href="#l00066">ScoreManager.cs:66</a></div></div>
+<div class="ttc" id="aclass_score_manager_html_a772b97dbc2d56f41f15f403427040841"><div class="ttname"><a href="../../d4/d4a/class_score_manager.html#a772b97dbc2d56f41f15f403427040841">ScoreManager.LoadScores</a></div><div class="ttdeci">void LoadScores()</div><div class="ttdoc">Carga la tabla de puntuaciones desde el archivo Scores.json. Si el archivo no existe,...</div><div class="ttdef"><b>Definition</b> <a href="#l00076">ScoreManager.cs:76</a></div></div>
+<div class="ttc" id="aclass_score_manager_html_a85ea6058ca63524864116f7f55004e37"><div class="ttname"><a href="../../d4/d4a/class_score_manager.html#a85ea6058ca63524864116f7f55004e37">ScoreManager.AddScore</a></div><div class="ttdeci">void AddScore(bool pacifist)</div><div class="ttdoc">Registra la puntuación del perfil activo en la tabla de puntuaciones, la ordena de mayor a menor y pe...</div><div class="ttdef"><b>Definition</b> <a href="#l00052">ScoreManager.cs:52</a></div></div>
+<div class="ttc" id="aclass_score_manager_html_aa12df7ffc6af2160d9e40b1c2ab91e2a"><div class="ttname"><a href="../../d4/d4a/class_score_manager.html#aa12df7ffc6af2160d9e40b1c2ab91e2a">ScoreManager.scoreTable</a></div><div class="ttdeci">ScoreTable scoreTable</div><div class="ttdoc">Tabla de puntuaciones que se serializa y deserializa desde el archivo JSON.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">ScoreManager.cs:17</a></div></div>
+<div class="ttc" id="aclass_score_table_html"><div class="ttname"><a href="../../d5/d5d/class_score_table.html">ScoreTable</a></div><div class="ttdoc">Contenedor serializable que agrupa la lista de entradas de puntuaciones. Se usa para serializar y des...</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d3a/_score_table_8cs_source.html#l00010">ScoreTable.cs:11</a></div></div>
+<div class="ttc" id="ainterface_i_profile_service_html"><div class="ttname"><a href="../../d1/df4/interface_i_profile_service.html">IProfileService</a></div><div class="ttdoc">Implementación de IProfileService que persiste los perfiles de usuario como archivos JSON en Applicat...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/de5/_i_profile_service_8cs_source.html#l00008">IProfileService.cs:9</a></div></div>
+<div class="ttc" id="ainterface_i_score_service_html"><div class="ttname"><a href="../../de/df6/interface_i_score_service.html">IScoreService</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d74/_i_score_service_8cs_source.html#l00004">IScoreService.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_4edcbb236dfd51dd81727243a38df6a0.html">Scripts</a></li><li class="navelem"><a href="../../dir_e5ad152a02afc558843c4def5ae10649.html">Score</a></li><li class="navelem"><a href="../../d6/d64/_score_manager_8cs.html">ScoreManager.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

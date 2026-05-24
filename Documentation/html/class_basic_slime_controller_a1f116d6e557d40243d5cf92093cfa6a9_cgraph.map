@@ -1,9 +1,0 @@
-<map id="BasicSlimeController.OnUpdate" name="BasicSlimeController.OnUpdate">
-<area shape="rect" id="Node000001" title="Extiende el update base añadiendo detección de suelo y aterrizaje antes de evaluar el estado." alt="" coords="5,47,212,73"/>
-<area shape="rect" id="Node000002" href="$class_basic_slime_controller.html#af9604b80f1092ffe70911d9e86cb56e0" title="Comprueba si algún collider de groundLayer toca la esfera de radio groundRadius centrada en el slime,..." alt="" coords="260,5,446,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,43,247,41,242,42,212,49"/>
-<area shape="rect" id="Node000003" href="$class_basic_slime_controller.html#a6c3a037d8b212bc9f973385836f03357" title="Detecta el momento exacto de aterrizaje comparando _wasGrounded con _isGrounded. Solo actúa si el sli..." alt="" coords="260,72,446,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,71,247,78,242,79,211,77"/>
-<area shape="rect" id="Node000004" href="$class_basic_slime_controller.html#abab94e330af0e82221d1cf7bc73d9b55" title="Corrutina de aterrizaje: detiene la velocidad del rigidbody, activa la animación de aterrizaje y espe..." alt="" coords="494,72,686,115"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="447,91,481,93,476,93,447,96"/>
-</map>
