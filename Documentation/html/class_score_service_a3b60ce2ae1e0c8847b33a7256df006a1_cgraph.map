@@ -1,0 +1,9 @@
+<map id="ScoreService.AddScore" name="ScoreService.AddScore">
+<area shape="rect" id="Node000001" title="Registra la puntuación del perfil activo en la tabla de puntuaciones globales, la ordena de mayor a m..." alt="" coords="5,56,166,83"/>
+<area shape="rect" id="Node000002" href="$interface_i_character_service.html#a4afea1595c39bba793cf21e5fb06a5dc" title="Indica si el jugador ha completado la partida sin usar ningún hechizo." alt="" coords="214,5,406,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,53,235,35,230,37,149,58"/>
+<area shape="rect" id="Node000003" href="$class_score_service.html#a293def50016e03683748a0abc83fb842" title="Devuelve la puntuación actual del jugador indicado. Si el jugador no existe en la lista,..." alt="" coords="229,56,390,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,67,216,69,211,70,167,72"/>
+<area shape="rect" id="Node000004" href="$interface_i_profile_service.html#aecfaf91ad6c5878f844479474fc19f2b" title="Devuelve el perfil activo seleccionado en la sesión actual, o null si no hay ninguno." alt="" coords="220,107,400,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="140,81,213,101,208,103,139,86"/>
+</map>

@@ -1,17 +1,17 @@
 using UnityEngine;
 /// <summary>
-/// Componente de Unity encargado de inicializar autom醫icamente la reproducci髇 de m鷖ica al cargar una escena. Utiliza el servicio <see cref="IAudioService"/> obtenido desde <see cref="AppContainer"/> para gestionar la reproducci髇 de una lista de pistas musicales
+/// Componente de Unity encargado de inicializar autom谩ticamente la reproducci贸n de m煤sica al cargar una escena. Utiliza el servicio <see cref="IAudioService"/> obtenido desde <see cref="AppContainer"/> para gestionar la reproducci贸n de una lista de pistas musicales
 /// </summary>
 public class MusicInitializer : MonoBehaviour
 {
     /// <summary>
-    /// Variable serializada que almacena la lista de pistas musicales que ser醤 reproducidas por <see cref="IAudioService"/>.
+    /// Variable serializada que almacena la lista de pistas musicales que ser谩n reproducidas por <see cref="IAudioService"/>.
     /// </summary>
     [SerializeField] protected AudioClip[] musiclist;
     protected IAudioService _audioService;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     /// <summary>
-    /// M閠odo ejecutado durante la inicializaci髇 del objeto. Obtiene una referencia al servicio <see cref="IAudioService"/> mediante <see cref="AppContainer"/> y comienza la reproducci髇 de la lista de m鷖ica configurada
+    /// M茅todo ejecutado durante la inicializaci贸n del objeto. Obtiene una referencia al servicio <see cref="IAudioService"/> mediante <see cref="AppContainer"/> y comienza la reproducci贸n de la lista de m煤sica configurada
     /// </summary>
     protected virtual void Awake()
     {

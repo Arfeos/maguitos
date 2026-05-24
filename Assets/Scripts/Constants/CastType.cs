@@ -6,7 +6,7 @@ public partial class SpellBase
 {
 
     /// <summary>
-    /// Enumeración utilizada para definir los distintos tipos de lanzamiento que puede tener un hechizo
+    /// EnumeraciÃ³n utilizada para definir los distintos tipos de lanzamiento que puede tener un hechizo
     /// </summary>
     public enum CastType
     {

@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la clase AnimationService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_animation_service.html','','class_animation_service-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase AnimationService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Servicio encargado de gestionar distintas animaciones y efectos visuales mediante corrutinas. Puede interactuar con el servicio IAudioService para reproducir sonidos durante determinadas animaciones.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de AnimationService</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_service__inherit__graph.png" border="0" usemap="#a_animation_service_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_animation_service_inherit__map" id="a_animation_service_inherit__map">
+<area shape="rect" title="Servicio encargado de gestionar distintas animaciones y efectos visuales mediante corrutinas...." alt="" coords="7,80,131,107"/>
+<area shape="rect" href="interface_i_animation_service.html" title="Define el contrato para animaciones de UI reutilizables: wobble y fade." alt="" coords="5,5,133,32"/>
+<area shape="poly" title=" " alt="" coords="71,46,72,80,66,79,67,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">leyenda</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración de AnimationService:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_service__coll__graph.png" border="0" usemap="#a_animation_service_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_animation_service_coll__map" id="a_animation_service_coll__map">
+<area shape="rect" title="Servicio encargado de gestionar distintas animaciones y efectos visuales mediante corrutinas...." alt="" coords="7,80,131,107"/>
+<area shape="rect" href="interface_i_animation_service.html" title="Define el contrato para animaciones de UI reutilizables: wobble y fade." alt="" coords="5,5,133,32"/>
+<area shape="poly" title=" " alt="" coords="71,46,72,80,66,79,67,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ac00c2184970b6a2d6a8ba48329e7d1be" id="r_ac00c2184970b6a2d6a8ba48329e7d1be"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac00c2184970b6a2d6a8ba48329e7d1be">WobbleAnimationWithSound</a> (GameObject objectToMove, AudioClip _audioClip, float AnguloDeRebote=20f, float DuracionDeRebote=0.8f, int CantidadDeRebote=4)</td></tr>
+<tr class="memdesc:ac00c2184970b6a2d6a8ba48329e7d1be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia una animación de rebote sobre un objeto y reproduce un sonido mediante IAudioService.  <br /></td></tr>
+<tr class="memitem:ad05f141288678932f646ba54696770e4" id="r_ad05f141288678932f646ba54696770e4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad05f141288678932f646ba54696770e4">WobbleAnimation</a> (GameObject objectToMove, float AnguloDeRebote=20f, float DuracionDeRebote=0.8f, int CantidadDeRebote=4)</td></tr>
+<tr class="memdesc:ad05f141288678932f646ba54696770e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia una animación de rebote sobre un objeto sin reproducir sonido.  <br /></td></tr>
+<tr class="memitem:af827a7a884e2f9b4a7630fe9490a67af" id="r_af827a7a884e2f9b4a7630fe9490a67af"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af827a7a884e2f9b4a7630fe9490a67af">FadeInUIAnimation</a> (GameObject target, float duration=1f)</td></tr>
+<tr class="memdesc:af827a7a884e2f9b4a7630fe9490a67af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia una animación de aparición progresiva (Fade In) sobre un elemento de interfaz.  <br /></td></tr>
+<tr class="memitem:aabf0961855e2699a25545dac3cdece69" id="r_aabf0961855e2699a25545dac3cdece69"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aabf0961855e2699a25545dac3cdece69">FadeOutUIAnimation</a> (GameObject target, float duration=1f)</td></tr>
+<tr class="memdesc:aabf0961855e2699a25545dac3cdece69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia una animación de desaparición progresiva (Fade Out) sobre un elemento de interfaz.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Servicio encargado de gestionar distintas animaciones y efectos visuales mediante corrutinas. Puede interactuar con el servicio IAudioService para reproducir sonidos durante determinadas animaciones. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_animation_service_8cs_source.html#l00007">7</a> del archivo <a class="el" href="_animation_service_8cs_source.html">AnimationService.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="af827a7a884e2f9b4a7630fe9490a67af" name="af827a7a884e2f9b4a7630fe9490a67af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af827a7a884e2f9b4a7630fe9490a67af">&#9670;&#160;</a></span>FadeInUIAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimationService.FadeInUIAnimation </td>
+          <td>(</td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>duration</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1f</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicia una animación de aparición progresiva (Fade In) sobre un elemento de interfaz. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Elemento de UI que recibirá la animación</td></tr>
+    <tr><td class="paramname">duration</td><td>Duración de la transición. Valor por defecto: 1f</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="interface_i_animation_service.html#a0bb4ba0d68770e3b2d0994576b945bd3">IAnimationService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_animation_service_8cs_source.html#l00092">92</a> del archivo <a class="el" href="_animation_service_8cs_source.html">AnimationService.cs</a>.</p>
+
+</div>
+</div>
+<a id="aabf0961855e2699a25545dac3cdece69" name="aabf0961855e2699a25545dac3cdece69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf0961855e2699a25545dac3cdece69">&#9670;&#160;</a></span>FadeOutUIAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimationService.FadeOutUIAnimation </td>
+          <td>(</td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>duration</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1f</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicia una animación de desaparición progresiva (Fade Out) sobre un elemento de interfaz. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Elemento de UI que recibirá la animación</td></tr>
+    <tr><td class="paramname">duration</td><td>Duración de la transición. Valor por defecto: 1f</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="interface_i_animation_service.html#a181879ef36de9e4ff1c09652d451965e">IAnimationService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_animation_service_8cs_source.html#l00152">152</a> del archivo <a class="el" href="_animation_service_8cs_source.html">AnimationService.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad05f141288678932f646ba54696770e4" name="ad05f141288678932f646ba54696770e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad05f141288678932f646ba54696770e4">&#9670;&#160;</a></span>WobbleAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimationService.WobbleAnimation </td>
+          <td>(</td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>objectToMove</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>AnguloDeRebote</em></span><span class="paramdefsep"> = </span><span class="paramdefval">20f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>DuracionDeRebote</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0::8f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>CantidadDeRebote</em></span><span class="paramdefsep"> = </span><span class="paramdefval">4</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicia una animación de rebote sobre un objeto sin reproducir sonido. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objectToMove</td><td>Objeto sobre el que se aplicará la animación</td></tr>
+    <tr><td class="paramname">AnguloDeRebote</td><td>Ángulo máximo de rotación durante el rebote. Valor por defecto: 20f</td></tr>
+    <tr><td class="paramname">DuracionDeRebote</td><td>Duración total del efecto</td></tr>
+    <tr><td class="paramname">CantidadDeRebote</td><td>Número de oscilaciones</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="interface_i_animation_service.html#a9d3b27c0f6567a957a03cb8e3b9b1c0e">IAnimationService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_animation_service_8cs_source.html#l00046">46</a> del archivo <a class="el" href="_animation_service_8cs_source.html">AnimationService.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac00c2184970b6a2d6a8ba48329e7d1be" name="ac00c2184970b6a2d6a8ba48329e7d1be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac00c2184970b6a2d6a8ba48329e7d1be">&#9670;&#160;</a></span>WobbleAnimationWithSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimationService.WobbleAnimationWithSound </td>
+          <td>(</td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>objectToMove</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AudioClip</td>          <td class="paramname"><span class="paramname"><em>_audioClip</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>AnguloDeRebote</em></span><span class="paramdefsep"> = </span><span class="paramdefval">20f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>DuracionDeRebote</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0::8f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>CantidadDeRebote</em></span><span class="paramdefsep"> = </span><span class="paramdefval">4</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicia una animación de rebote sobre un objeto y reproduce un sonido mediante IAudioService. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objectToMove</td><td>Objeto que quieres que se realice la animacion</td></tr>
+    <tr><td class="paramname">AnguloDeRebote</td><td>Angulo de giro</td></tr>
+    <tr><td class="paramname">DuracionDeRebote</td><td>Cuanto se tira rebotando </td></tr>
+    <tr><td class="paramname">CantidadDeRebote</td><td>Cuantos rebotes pega </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd></dd></dl>
+
+<p>Implementa <a class="el" href="interface_i_animation_service.html#ab6c6f96144013da478cc971646c7f5da">IAnimationService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_animation_service_8cs_source.html#l00027">27</a> del archivo <a class="el" href="_animation_service_8cs_source.html">AnimationService.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_service_ac00c2184970b6a2d6a8ba48329e7d1be_cgraph.png" border="0" usemap="#aclass_animation_service_ac00c2184970b6a2d6a8ba48329e7d1be_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_animation_service_ac00c2184970b6a2d6a8ba48329e7d1be_cgraph" id="aclass_animation_service_ac00c2184970b6a2d6a8ba48329e7d1be_cgraph">
+<area shape="rect" title="Inicia una animación de rebote sobre un objeto y reproduce un sonido mediante IAudioService." alt="" coords="5,5,234,48"/>
+<area shape="rect" href="interface_i_audio_service.html#acb8a7d08c3cd8660a5406c5011c79fe9" title="Reproduce un efecto de sonido una sola vez. Incluye una restricción temporal para evitar reproducir r..." alt="" coords="282,13,451,40"/>
+<area shape="poly" title=" " alt="" coords="234,24,269,27,263,27,234,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>Scripts/Services/Animation/<a class="el" href="_animation_service_8cs_source.html">AnimationService.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_animation_service.html">AnimationService</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

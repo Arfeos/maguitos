@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Localization;
 /// <summary>
 /// Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz <see cref="IStep"/>. 
-/// Detecta cu醤do el jugador realiza la acci髇 de salto utilizando <see cref="PlayerInputManager"/> y marca el paso como completado cuando la acci髇 es ejecutada
+/// Detecta cu谩ndo el jugador realiza la acci贸n de salto utilizando <see cref="PlayerInputManager"/> y marca el paso como completado cuando la acci贸n es ejecutada
 /// </summary>
 public class PressSpaceStep : IStep
 {
@@ -16,11 +16,11 @@ public class PressSpaceStep : IStep
 
     // --- IStep ---
     /// <summary>
-    /// Propiedad que devuelve el nombre localizado correspondiente al paso actual mediante el sistema de localizaci髇 de Unity
+    /// Propiedad que devuelve el nombre localizado correspondiente al paso actual mediante el sistema de localizaci贸n de Unity
     /// </summary>
     public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "jumpName" };}
     /// <summary>
-    /// Propiedad que genera una descripci髇 localizada del paso incluyendo din醡icamente la tecla o entrada asignada a la acci髇 de salto obtenida desde <see cref="PlayerInputManager"/>
+    /// Propiedad que genera una descripci贸n localizada del paso incluyendo din谩micamente la tecla o entrada asignada a la acci贸n de salto obtenida desde <see cref="PlayerInputManager"/>
     /// </summary>
     public LocalizedString Description
     {
@@ -41,7 +41,7 @@ public class PressSpaceStep : IStep
     /// <summary>
     /// Propiedad que almacena el estado actual del paso indicando si ya ha sido completado
     /// </summary>
-    /// <returns>Estado de finalizaci髇 del paso</returns>
+    /// <returns>Estado de finalizaci贸n del paso</returns>
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }
     /// <summary>
     /// Evento ejecutado cuando el paso se completa correctamente
@@ -54,7 +54,7 @@ public class PressSpaceStep : IStep
     {
     }
     /// <summary>
-    /// Activa el paso actual registrando el m閠odo HandleAction() al evento de salto de <see cref="PlayerInputManager"/> para detectar la acci髇 realizada por el jugador
+    /// Activa el paso actual registrando el m茅todo HandleAction() al evento de salto de <see cref="PlayerInputManager"/> para detectar la acci贸n realizada por el jugador
     /// </summary>
     public void Activate()
     {
@@ -64,16 +64,16 @@ public class PressSpaceStep : IStep
 
     }
     /// <summary>
-    /// Desactiva el paso eliminando la suscripci髇 al evento de salto de <see cref="PlayerInputManager"/>
+    /// Desactiva el paso eliminando la suscripci贸n al evento de salto de <see cref="PlayerInputManager"/>
     /// </summary>
     public void Deactivate()
     {
         PlayerInputManager.Actions.Player.Jump.performed -= HandleAction;
     }
     /// <summary>
-    /// M閠odo ejecutado cuando el jugador realiza una acci髇 de salto. Marca el paso como completado y ejecuta el evento OnComplete
+    /// M茅todo ejecutado cuando el jugador realiza una acci贸n de salto. Marca el paso como completado y ejecuta el evento OnComplete
     /// </summary>
-    /// <param name="context">Informaci髇 asociada a la acci髇 ejecutada por el jugador</param>
+    /// <param name="context">Informaci贸n asociada a la acci贸n ejecutada por el jugador</param>
     private void HandleAction(InputAction.CallbackContext context)
     {
         this.IsComplete = true;

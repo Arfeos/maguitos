@@ -1,0 +1,5 @@
+<map id="ExplosiveSlime.Die" name="ExplosiveSlime.Die">
+<area shape="rect" id="Node000001" title="Sobreescribe la muerte para omitir la animación de Death y la disolución. Detiene todas las corrutina..." alt="" coords="207,5,342,32"/>
+<area shape="rect" id="Node000002" href="$class_explosive_slime.html#acd189315fd8528d4df4c6f26070714c8" title="Al entrar en rango, el slime explosivo se suicida en lugar de atacar normalmente. No llama a base...." alt="" coords="5,5,159,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,19,159,21,159,16,194,19"/>
+</map>

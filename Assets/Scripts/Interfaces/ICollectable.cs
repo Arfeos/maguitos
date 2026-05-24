@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 /// <summary>
 /// Define el contrato para objetos que pueden ser recogidos por el jugador.

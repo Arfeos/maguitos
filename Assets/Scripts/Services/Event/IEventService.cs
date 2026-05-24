@@ -1,27 +1,27 @@
 using System;
 using UnityEngine;
 /// <summary>
-/// Interfaz encargada de definir las operaciones necesarias para gestionar un sistema de eventos basado en publicaciÛn y suscripciÛn.
-/// Proporciona los mÈtodos necesarios para enviar, registrar y eliminar eventos derivados de <see cref="GameEventBase"/>. 
-/// Es implementada por <see cref="EventService"/> para facilitar la comunicaciÛn desacoplada entre distintos sistemas del proyecto
+/// Interfaz encargada de definir las operaciones necesarias para gestionar un sistema de eventos basado en publicaci√≥n y suscripci√≥n.
+/// Proporciona los m√©todos necesarios para enviar, registrar y eliminar eventos derivados de <see cref="GameEventBase"/>. 
+/// Es implementada por <see cref="EventService"/> para facilitar la comunicaci√≥n desacoplada entre distintos sistemas del proyecto
 /// </summary>
 public interface IEventService
 {
     /// <summary>
     /// Publica un evento para que sea recibido y procesado por todos los componentes suscritos al tipo correspondiente
     /// </summary>
-    /// <param name="action">Evento derivado de <see cref="GameEventBase"/> que ser· enviado a los suscriptores</param>
+    /// <param name="action">Evento derivado de <see cref="GameEventBase"/> que ser√° enviado a los suscriptores</param>
     public void Publish(GameEventBase action);
     /// <summary>
-    /// Registra una acciÛn para que sea ejecutada cuando se publique un evento de un tipo determinado
+    /// Registra una acci√≥n para que sea ejecutada cuando se publique un evento de un tipo determinado
     /// </summary>
-    /// <param name="action">AcciÛn que ser· ejecutada cuando ocurra el evento correspondiente</param>
-    /// <typeparam name="T">Tipo de evento derivado de <see cref="GameEventBase"/> que ser· escuchado</typeparam>
+    /// <param name="action">Acci√≥n que ser√° ejecutada cuando ocurra el evento correspondiente</param>
+    /// <typeparam name="T">Tipo de evento derivado de <see cref="GameEventBase"/> que ser√° escuchado</typeparam>
     public void Subscribe<T>(Action<GameEventBase> action);
     /// <summary>
-    /// Elimina una acciÛn previamente registrada de un tipo especÌfico de evento
+    /// Elimina una acci√≥n previamente registrada de un tipo espec√≠fico de evento
     /// </summary>
-    /// <param name="action">AcciÛn que dejar· de ejecutarse al producirse el evento</param>
-    /// <typeparam name="T">Tipo de evento derivado de <see cref="GameEventBase"/> del que se eliminar· la suscripciÛn</typeparam>
+    /// <param name="action">Acci√≥n que dejar√° de ejecutarse al producirse el evento</param>
+    /// <typeparam name="T">Tipo de evento derivado de <see cref="GameEventBase"/> del que se eliminar√° la suscripci√≥n</typeparam>
     public void Unsubscribe<T>(Action<GameEventBase> action);
 }

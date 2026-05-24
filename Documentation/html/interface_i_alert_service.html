@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la interface IAlertService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('interface_i_alert_service.html','','interface_i_alert_service-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la interface IAlertService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Define el contrato para mostrar y ocultar mensajes de alerta en la UI.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de IAlertService</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_i_alert_service__inherit__graph.png" border="0" usemap="#a_i_alert_service_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_i_alert_service_inherit__map" id="a_i_alert_service_inherit__map">
+<area shape="rect" title="Define el contrato para mostrar y ocultar mensajes de alerta en la UI." alt="" coords="5,5,102,32"/>
+<area shape="rect" href="class_alert_service.html" title=" " alt="" coords="7,80,100,107"/>
+<area shape="poly" title=" " alt="" coords="55,46,56,80,51,79,52,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:affce0d0b9cbeafb260912496738b090c" id="r_affce0d0b9cbeafb260912496738b090c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#affce0d0b9cbeafb260912496738b090c">ShowAlertMessage</a> (GameObject MessageBox, <a class="el" href="class_object_data_scriptable.html">ObjectDataScriptable</a> message)</td></tr>
+<tr class="memdesc:affce0d0b9cbeafb260912496738b090c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra los datos del objeto que se le pasen por pantalla en el Panel adecuado seleccionado.  <br /></td></tr>
+<tr class="memitem:ad9a0bd596641eb6db31baf43307f5597" id="r_ad9a0bd596641eb6db31baf43307f5597"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad9a0bd596641eb6db31baf43307f5597">HideAlertMessage</a> (GameObject MessageBox)</td></tr>
+<tr class="memdesc:ad9a0bd596641eb6db31baf43307f5597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oculta el Panel seleccionado.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Define el contrato para mostrar y ocultar mensajes de alerta en la UI. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_i_alert_service_8cs_source.html#l00006">6</a> del archivo <a class="el" href="_i_alert_service_8cs_source.html">IAlertService.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="ad9a0bd596641eb6db31baf43307f5597" name="ad9a0bd596641eb6db31baf43307f5597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a0bd596641eb6db31baf43307f5597">&#9670;&#160;</a></span>HideAlertMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IAlertService.HideAlertMessage </td>
+          <td>(</td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>MessageBox</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Oculta el Panel seleccionado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MessageBox</td><td>Un PausepanelPrefab, con 2 al menos 2 TextMeshProUGUI sobre el que se va a escribir </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado en <a class="el" href="class_alert_service.html#a0ea5e1702170dffece285f3e614e83b6">AlertService</a>.</p>
+
+</div>
+</div>
+<a id="affce0d0b9cbeafb260912496738b090c" name="affce0d0b9cbeafb260912496738b090c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affce0d0b9cbeafb260912496738b090c">&#9670;&#160;</a></span>ShowAlertMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IAlertService.ShowAlertMessage </td>
+          <td>(</td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>MessageBox</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_object_data_scriptable.html">ObjectDataScriptable</a></td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Muestra los datos del objeto que se le pasen por pantalla en el Panel adecuado seleccionado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MessageBox</td><td>Un PausepanelPrefab, con 2 al menos 2 TextMeshProUGUI sobre el que se va a escribir </td></tr>
+    <tr><td class="paramname">message</td><td>Data de un scriptable object del tipo <a class="el" href="class_object_data_scriptable.html">ObjectDataScriptable</a></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado en <a class="el" href="class_alert_service.html#a3d1c720f9bcc648f416c09b163b2b6ec">AlertService</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta interface está generada del siguiente archivo:<ul>
+<li>Scripts/Services/Alert/<a class="el" href="_i_alert_service_8cs_source.html">IAlertService.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="interface_i_alert_service.html">IAlertService</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

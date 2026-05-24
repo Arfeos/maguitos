@@ -1,20 +1,20 @@
 using UnityEngine;
 /// <summary>
-/// Componente encargado de actualizar continuamente la reproducciÛn de m˙sica mediante <see cref="AudioService"/>
+/// Componente encargado de actualizar continuamente la reproducci√≥n de m√∫sica mediante <see cref="AudioService"/>
 /// </summary>
 public class AudioUpdater : MonoBehaviour
 {
     private AudioService _audioService;
     /// <summary>
-    /// Inicializa el componente asign·ndole una referencia a <see cref="AudioService"/>.
+    /// Inicializa el componente asign√°ndole una referencia a <see cref="AudioService"/>.
     /// </summary>
-    /// <param name="service">Servicio de audio que ser· gestionado</param>
+    /// <param name="service">Servicio de audio que ser√° gestionado</param>
     public void Initialize(AudioService service)
     {
         _audioService = service;
     }
     /// <summary>
-    /// MÈtodo ejecutado autom·ticamente en cada frame que llama a UpdateMusicPlaylist() de <see cref="AudioService"/> para controlar el cambio autom·tico entre canciones.
+    /// M√©todo ejecutado autom√°ticamente en cada frame que llama a UpdateMusicPlaylist() de <see cref="AudioService"/> para controlar el cambio autom√°tico entre canciones.
     /// </summary>
     private void Update()
     {

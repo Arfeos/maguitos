@@ -1,6 +1,6 @@
 /// <summary>
-/// Clase de evento derivada de <see cref="GameEventBase"/> utilizada para notificar cambios relacionados con las preferencias o configuraciÛn del usuario dentro del sistema. 
-/// Permite informar a componentes suscritos mediante <see cref="IEventService"/> para actualizar par·metros dependientes del perfil, como sensibilidad o configuraciÛn de controles
+/// Clase de evento derivada de <see cref="GameEventBase"/> utilizada para notificar cambios relacionados con las preferencias o configuraci√≥n del usuario dentro del sistema. 
+/// Permite informar a componentes suscritos mediante <see cref="IEventService"/> para actualizar par√°metros dependientes del perfil, como sensibilidad o configuraci√≥n de controles
 /// </summary>
 public class PreferenceChangeEvent : GameEventBase
 {

@@ -1,0 +1,7 @@
+<map id="TargetController" name="TargetController">
+<area shape="rect" id="Node000001" title="MonoBehaviour que controla el comportamiento de un blanco del rango de tiro del tutorial...." alt="" coords="62,80,175,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,42,111,79,106,80,79,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="140,5,211,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,43,130,82,126,78,154,45"/>
+</map>

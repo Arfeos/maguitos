@@ -1,0 +1,5 @@
+<map id="UIService" name="UIService">
+<area shape="rect" id="Node000001" title="Servicio encargado de gestionar la interfaz de usuario, incluyendo el cambio de idioma y el registro ..." alt="" coords="7,80,87,107"/>
+<area shape="rect" id="Node000002" href="$interface_i_u_i_service.html" title="Servicio encargado de gestionar la interfaz de usuario, incluyendo el cambio de idioma y el registro ..." alt="" coords="5,5,89,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,46,50,80,44,79,45,50"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ICharacterService.getPacifist" name="ICharacterService.getPacifist">
+<area shape="rect" id="Node000001" title="Indica si el jugador ha completado la partida sin usar ningún hechizo." alt="" coords="214,5,406,32"/>
+<area shape="rect" id="Node000002" href="$class_score_service.html#a3b60ce2ae1e0c8847b33a7256df006a1" title="Registra la puntuación del perfil activo en la tabla de puntuaciones globales, la ordena de mayor a m..." alt="" coords="5,5,166,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,19,166,21,166,16,201,19"/>
+</map>

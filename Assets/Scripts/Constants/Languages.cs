@@ -1,6 +1,6 @@
 using UnityEngine;
 /// <summary>
-/// Enumeración utilizada para definir los idiomas disponibles dentro del sistema de localización del juego. Permite seleccionar y gestionar el idioma activo de la aplicación
+/// EnumeraciÃ³n utilizada para definir los idiomas disponibles dentro del sistema de localizaciÃ³n del juego. Permite seleccionar y gestionar el idioma activo de la aplicaciÃ³n
 /// </summary>
 public enum Languages
 {

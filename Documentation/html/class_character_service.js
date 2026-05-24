@@ -1,0 +1,25 @@
+var class_character_service =
+[
+    [ "CharacterService", "class_character_service.html#a71fc7fdf366f19b932c2e8523ee3a673", null ],
+    [ "AddMana", "class_character_service.html#aaf7515f7455871e7d3ab0f7707c16162", null ],
+    [ "addSpell", "class_character_service.html#ad44fb3e07d8807a603dffd9f48c20365", null ],
+    [ "CheckMana", "class_character_service.html#a17079774dd4b0b5a1a349fd18432f85b", null ],
+    [ "CheckSpellCapacity", "class_character_service.html#a6a7b5a2a649551e3adf884290fa1b270", null ],
+    [ "Die", "class_character_service.html#a6b17f6b1f2a6c2908cc478bf5638e4d9", null ],
+    [ "Genocide", "class_character_service.html#a7858adc62333e4c1856a2d37d8636375", null ],
+    [ "getIndex", "class_character_service.html#ad438725bdfc86bef376d7dc267c4719b", null ],
+    [ "getMaxMana", "class_character_service.html#a4146ad354bf366e6526bd7ff635436ab", null ],
+    [ "getPacifist", "class_character_service.html#ad1c7cb2309f5a50a606fc9109207d340", null ],
+    [ "getPrimarySpell", "class_character_service.html#aee3740d8a2d67c2594915530bcdc502e", null ],
+    [ "getSecundarySpell", "class_character_service.html#a93cc43a3ae5a145833a1eaa519cd1907", null ],
+    [ "getSpell", "class_character_service.html#a90b20cfbbbf9d9b6ca5a4fcf43997b1c", null ],
+    [ "getSpell", "class_character_service.html#a43fcb32b3480adecd785bce91b9c29fd", null ],
+    [ "Heal", "class_character_service.html#accbb71baa4bbffa27255b4fcac3b6297", null ],
+    [ "RemoveMana", "class_character_service.html#a061cdf8a59dd4539b201dd235391241c", null ],
+    [ "removeSpell", "class_character_service.html#a33722927a926fd38975ab885a8b121e9", null ],
+    [ "removeSpell", "class_character_service.html#a9fa7eae9201d88bcc5a9d0813e5c17ac", null ],
+    [ "removeSpell", "class_character_service.html#a15c5f227a0ec0512fdfc27a635db4759", null ],
+    [ "ResetCharacter", "class_character_service.html#a9437ff427b2ab36a056ab92f8a94f245", null ],
+    [ "setActualSpell", "class_character_service.html#a4ba234a88a93d6fb6c75f0ceb6eab953", null ],
+    [ "TakeDamage", "class_character_service.html#af66efc05a12ac52aae7d2a276b83b794", null ]
+];

@@ -17,7 +17,7 @@ public class AnimationService : IAnimationService
     private Quaternion _originalRotation;
     private IAudioService _audioService;
     /// <summary>
-    /// Inicia una animaciÛn de rebote sobre un objeto y reproduce un sonido mediante <see cref="IAudioService"/>
+    /// Inicia una animaci√≥n de rebote sobre un objeto y reproduce un sonido mediante <see cref="IAudioService"/>
     /// </summary>
     /// <param name="objectToMove"> Objeto que quieres que se realice la animacion</param>
     /// <param name="AnguloDeRebote"> Angulo de giro</param>
@@ -37,12 +37,12 @@ public class AnimationService : IAnimationService
         _wobbleCoroutine = CoroutineRunner.Instance.StartCoroutine(WobbleRoutine(objectToMove, AnguloDeRebote, DuracionDeRebote, CantidadDeRebote));
     }
     /// <summary>
-    /// Inicia una animaciÛn de rebote sobre un objeto sin reproducir sonido
+    /// Inicia una animaci√≥n de rebote sobre un objeto sin reproducir sonido
     /// </summary>
-    /// <param name="objectToMove">Objeto sobre el que se aplicar· la animaciÛn</param>
-    /// <param name="AnguloDeRebote">¡ngulo m·ximo de rotaciÛn durante el rebote. Valor por defecto: 20f</param>
-    /// <param name="DuracionDeRebote">DuraciÛn total del efecto</param>
-    /// <param name="CantidadDeRebote">N˙mero de oscilaciones</param>
+    /// <param name="objectToMove">Objeto sobre el que se aplicar√° la animaci√≥n</param>
+    /// <param name="AnguloDeRebote">√Ångulo m√°ximo de rotaci√≥n durante el rebote. Valor por defecto: 20f</param>
+    /// <param name="DuracionDeRebote">Duraci√≥n total del efecto</param>
+    /// <param name="CantidadDeRebote">N√∫mero de oscilaciones</param>
     public void WobbleAnimation(GameObject objectToMove,  float AnguloDeRebote = 20f, float DuracionDeRebote = 0.8f, int CantidadDeRebote = 4)
     {
         if (_wobbleCoroutine != null)
@@ -53,12 +53,12 @@ public class AnimationService : IAnimationService
         _wobbleCoroutine = CoroutineRunner.Instance.StartCoroutine(WobbleRoutine(objectToMove, AnguloDeRebote, DuracionDeRebote, CantidadDeRebote));
     }
     /// <summary>
-    /// Corrutina encargada de calcular y aplicar el movimiento oscilatorio mediante una funciÛn seno para generar el efecto de rebote
+    /// Corrutina encargada de calcular y aplicar el movimiento oscilatorio mediante una funci√≥n seno para generar el efecto de rebote
     /// </summary>
-    /// <param name="objectToMove">Objeto que recibir· la animaciÛn</param>
-    /// <param name="AnguloDeRebote">¡ngulo m·ximo de rotaciÛn</param>
-    /// <param name="DuracionDeRebote">DuraciÛn total del efecto</param>
-    /// <param name="CantidadDeRebote">N˙mero de oscilaciones</param>
+    /// <param name="objectToMove">Objeto que recibir√° la animaci√≥n</param>
+    /// <param name="AnguloDeRebote">√Ångulo m√°ximo de rotaci√≥n</param>
+    /// <param name="DuracionDeRebote">Duraci√≥n total del efecto</param>
+    /// <param name="CantidadDeRebote">N√∫mero de oscilaciones</param>
     /// <returns></returns>
     private IEnumerator WobbleRoutine(GameObject objectToMove, float AnguloDeRebote, float DuracionDeRebote, int CantidadDeRebote)
     {
@@ -85,10 +85,10 @@ public class AnimationService : IAnimationService
     }
 
     /// <summary>
-    /// Inicia una animaciÛn de apariciÛn progresiva (Fade In) sobre un elemento de interfaz
+    /// Inicia una animaci√≥n de aparici√≥n progresiva (Fade In) sobre un elemento de interfaz
     /// </summary>
-    /// <param name="target">Elemento de UI que recibir· la animaciÛn</param>
-    /// <param name="duration">DuraciÛn de la transiciÛn. Valor por defecto: 1f</param>
+    /// <param name="target">Elemento de UI que recibir√° la animaci√≥n</param>
+    /// <param name="duration">Duraci√≥n de la transici√≥n. Valor por defecto: 1f</param>
     public void FadeInUIAnimation(GameObject target, float duration = 1f)
     {
         if (_FadeInCoroutine != null)
@@ -99,7 +99,7 @@ public class AnimationService : IAnimationService
     /// Corrutina encargada de aumentar progresivamente la transparencia de un objeto hasta hacerlo completamente visible
     /// </summary>
     /// <param name="target">Elemento de UI a mostrar</param>
-    /// <param name="duration">Tiempo de duraciÛn de la animaciÛn</param>
+    /// <param name="duration">Tiempo de duraci√≥n de la animaci√≥n</param>
     /// <returns></returns>
     private IEnumerator FadeIn(GameObject target, float duration = 1f)
     {
@@ -145,10 +145,10 @@ public class AnimationService : IAnimationService
         }
     }
     /// <summary>
-    /// Inicia una animaciÛn de desapariciÛn progresiva (Fade Out) sobre un elemento de interfaz
+    /// Inicia una animaci√≥n de desaparici√≥n progresiva (Fade Out) sobre un elemento de interfaz
     /// </summary>
-    /// <param name="target">Elemento de UI que recibir· la animaciÛn</param>
-    /// <param name="duration">DuraciÛn de la transiciÛn. Valor por defecto: 1f</param>
+    /// <param name="target">Elemento de UI que recibir√° la animaci√≥n</param>
+    /// <param name="duration">Duraci√≥n de la transici√≥n. Valor por defecto: 1f</param>
     public void FadeOutUIAnimation(GameObject target, float duration = 1f)
     {
         if (_FadeOutCoroutine != null)
@@ -159,12 +159,12 @@ public class AnimationService : IAnimationService
     /// <summary>
     /// Corrutina encargada de disminuir progresivamente la transparencia de un objeto hasta hacerlo invisible y desactivarlo
     /// </summary>
-    /// <param name="target">Elemento de UI que desaparecer·</param>
-    /// <param name="duration">Tiempo total de la animaciÛn</param>
+    /// <param name="target">Elemento de UI que desaparecer√°</param>
+    /// <param name="duration">Tiempo total de la animaci√≥n</param>
     /// <returns></returns>
     private IEnumerator FadeOutUI(GameObject target, float duration = 1f)
     {
-        // Intenta con CanvasGroup (m·s eficiente para UI)
+        // Intenta con CanvasGroup (m√°s eficiente para UI)
         CanvasGroup canvasGroup = target.GetComponent<CanvasGroup>();
 
         if (canvasGroup != null)

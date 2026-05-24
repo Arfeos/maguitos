@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la clase SpellBaseScriptable</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_spell_base_scriptable.html','','class_spell_base_scriptable-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase SpellBaseScriptable</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencia de SpellBaseScriptable</div>
+<div class="dyncontent">
+<div class="center"><img src="class_spell_base_scriptable__inherit__graph.png" border="0" usemap="#a_spell_base_scriptable_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_spell_base_scriptable_inherit__map" id="a_spell_base_scriptable_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,80,144,107"/>
+<area shape="rect" title=" " alt="" coords="16,5,133,32"/>
+<area shape="poly" title=" " alt="" coords="76,46,77,80,72,79,73,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">leyenda</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración de SpellBaseScriptable:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_spell_base_scriptable__coll__graph.png" border="0" usemap="#a_spell_base_scriptable_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_spell_base_scriptable_coll__map" id="a_spell_base_scriptable_coll__map">
+<area shape="rect" title=" " alt="" coords="5,81,144,108"/>
+<area shape="rect" href="class_object_data_scriptable.html" title=" " alt="" coords="18,180,163,207"/>
+<area shape="poly" title=" " alt="" coords="26,119,15,133,11,144,15,155,27,168,44,178,40,181,24,172,11,157,6,144,11,131,27,114"/>
+<area shape="rect" title=" " alt="" coords="69,5,186,32"/>
+<area shape="poly" title=" " alt="" coords="109,47,86,82,81,79,112,42"/>
+<area shape="poly" title=" " alt="" coords="146,43,160,69,170,98,173,128,163,157,151,172,134,182,132,177,147,168,159,155,167,128,165,99,155,71,144,48"/>
+<area shape="poly" title=" " alt="" coords="83,164,75,110,78,107,89,165"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a659ec7631750a145c902f32b49bf53d6" id="r_a659ec7631750a145c902f32b49bf53d6"><td class="memItemLeft">SpellType&#160;</td><td class="memItemRight"><a class="el" href="#a659ec7631750a145c902f32b49bf53d6">spell_Type</a></td></tr>
+<tr class="memitem:ab912466ee59cae6e0563029856a654ff" id="r_ab912466ee59cae6e0563029856a654ff"><td class="memItemLeft">CastType&#160;</td><td class="memItemRight"><a class="el" href="#ab912466ee59cae6e0563029856a654ff">cast_Type</a></td></tr>
+<tr class="memitem:a36df477f0c5ebe98e38e4adbc73ec83e" id="r_a36df477f0c5ebe98e38e4adbc73ec83e"><td class="memItemLeft"><a class="el" href="_spellimportance_8cs.html#a611b3f0f58c1d3b0f8f880888a638b05">Spellimportance</a>&#160;</td><td class="memItemRight"><a class="el" href="#a36df477f0c5ebe98e38e4adbc73ec83e">spell_importance</a></td></tr>
+<tr class="memitem:a880635c91e76bcdeac0fecb186d06c76" id="r_a880635c91e76bcdeac0fecb186d06c76"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a880635c91e76bcdeac0fecb186d06c76">manaCost</a> = 1</td></tr>
+<tr class="memitem:a56117e19eded1d9de08f2bac48ea5313" id="r_a56117e19eded1d9de08f2bac48ea5313"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a56117e19eded1d9de08f2bac48ea5313">MaxCharge</a> = 5</td></tr>
+<tr class="memitem:a0d94340a0e341d89175ee3f0d3917679" id="r_a0d94340a0e341d89175ee3f0d3917679"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0d94340a0e341d89175ee3f0d3917679">currentCharge</a> = 0</td></tr>
+<tr class="memitem:a3e94be2f2d2b3edc26006e77e647c446" id="r_a3e94be2f2d2b3edc26006e77e647c446"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a3e94be2f2d2b3edc26006e77e647c446">ChargeTimePerUnit</a> = 0.5f</td></tr>
+<tr class="memitem:a04546e8db62b1b580940d5d255727892" id="r_a04546e8db62b1b580940d5d255727892"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a04546e8db62b1b580940d5d255727892">velocity</a> = 1f</td></tr>
+<tr class="memitem:ab96bb765ec6430d4db2ccd6e6d8440fc" id="r_ab96bb765ec6430d4db2ccd6e6d8440fc"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ab96bb765ec6430d4db2ccd6e6d8440fc">damage</a> = 1f</td></tr>
+<tr class="memitem:a51471a1bf88a67460135572070f05265" id="r_a51471a1bf88a67460135572070f05265"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a51471a1bf88a67460135572070f05265">lifeTime</a> = 1f</td></tr>
+<tr class="memitem:aa679656b28e80cabb4892b547816ed06" id="r_aa679656b28e80cabb4892b547816ed06"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aa679656b28e80cabb4892b547816ed06">shootDelay</a> = 1f</td></tr>
+<tr class="memitem:af3079e094d42dfe044f031b89c669918" id="r_af3079e094d42dfe044f031b89c669918"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#af3079e094d42dfe044f031b89c669918">spreadIntensity</a> = 0.1f</td></tr>
+<tr class="memitem:a2649c70a9a2d21efa8e60c0c7e505c87" id="r_a2649c70a9a2d21efa8e60c0c7e505c87"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2649c70a9a2d21efa8e60c0c7e505c87">producesLine</a> = false</td></tr>
+<tr class="memitem:aa4c66ed8ea74ee8ce3314e14f4995a25" id="r_aa4c66ed8ea74ee8ce3314e14f4995a25"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa4c66ed8ea74ee8ce3314e14f4995a25">penetrates</a> = false</td></tr>
+<tr class="memitem:afb9b977d7700d7e6471e0768628c7d08" id="r_afb9b977d7700d7e6471e0768628c7d08"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#afb9b977d7700d7e6471e0768628c7d08">penetrationlevel</a> = 1</td></tr>
+<tr class="memitem:ac0a2c6ae806005a97868af92ab145b6a" id="r_ac0a2c6ae806005a97868af92ab145b6a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac0a2c6ae806005a97868af92ab145b6a">CosteSlots</a> = 1</td></tr>
+<tr class="memitem:a81b4e2884649909c69688b6ed38ece53" id="r_a81b4e2884649909c69688b6ed38ece53"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a81b4e2884649909c69688b6ed38ece53">RayAliveTime</a> = 0.3f</td></tr>
+<tr class="memitem:a3070ce6fedfe530ab2c34dd1081d2e38" id="r_a3070ce6fedfe530ab2c34dd1081d2e38"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a3070ce6fedfe530ab2c34dd1081d2e38">nombreHechizo</a> = &quot;Change Spell name&quot;</td></tr>
+<tr class="memitem:a075deb21e8edfc3242a685dd95ab10d9" id="r_a075deb21e8edfc3242a685dd95ab10d9"><td class="memItemLeft">Sprite&#160;</td><td class="memItemRight"><a class="el" href="#a075deb21e8edfc3242a685dd95ab10d9">spellImage</a></td></tr>
+<tr class="memitem:a27bb184d370e5a054b9cd68c9f7115cd" id="r_a27bb184d370e5a054b9cd68c9f7115cd"><td class="memItemLeft"><a class="el" href="class_object_data_scriptable.html">ObjectDataScriptable</a>&#160;</td><td class="memItemRight"><a class="el" href="#a27bb184d370e5a054b9cd68c9f7115cd">objectData</a></td></tr>
+<tr class="memitem:ada24f803a1d318b4b07ba1b4ed943aa2" id="r_ada24f803a1d318b4b07ba1b4ed943aa2"><td class="memItemLeft">List&lt; Material &gt;?&#160;</td><td class="memItemRight"><a class="el" href="#ada24f803a1d318b4b07ba1b4ed943aa2">RayMaterial</a></td></tr>
+<tr class="memitem:addc1d649425d31798c2a129814c19d7b" id="r_addc1d649425d31798c2a129814c19d7b"><td class="memItemLeft">GameObject?&#160;</td><td class="memItemRight"><a class="el" href="#addc1d649425d31798c2a129814c19d7b">spawnPrefab</a></td></tr>
+<tr class="memitem:a3f0301f6808c079f04ec5bfcbb35e8dd" id="r_a3f0301f6808c079f04ec5bfcbb35e8dd"><td class="memItemLeft">GameObject?&#160;</td><td class="memItemRight"><a class="el" href="#a3f0301f6808c079f04ec5bfcbb35e8dd">producedParticle</a></td></tr>
+<tr class="memitem:aa71b74961b02da0f45482967ab42576f" id="r_aa71b74961b02da0f45482967ab42576f"><td class="memItemLeft">GameObject?&#160;</td><td class="memItemRight"><a class="el" href="#aa71b74961b02da0f45482967ab42576f">hitParticle</a></td></tr>
+<tr class="memitem:ad5a73fd2e4138a660bfb65766921e0a4" id="r_ad5a73fd2e4138a660bfb65766921e0a4"><td class="memItemLeft">AudioClip?&#160;</td><td class="memItemRight"><a class="el" href="#ad5a73fd2e4138a660bfb65766921e0a4">spawnSound</a></td></tr>
+<tr class="memitem:a34f9f55e907cb61828bcc6de6d213ec4" id="r_a34f9f55e907cb61828bcc6de6d213ec4"><td class="memItemLeft">AudioClip?&#160;</td><td class="memItemRight"><a class="el" href="#a34f9f55e907cb61828bcc6de6d213ec4">chargeSound</a></td></tr>
+<tr class="memitem:aa0caaa3eda568ef2396948df2d631a64" id="r_aa0caaa3eda568ef2396948df2d631a64"><td class="memItemLeft">AudioClip?&#160;</td><td class="memItemRight"><a class="el" href="#aa0caaa3eda568ef2396948df2d631a64">airSound</a></td></tr>
+<tr class="memitem:a6ba9ebea7ea824b69becbd43881927fb" id="r_a6ba9ebea7ea824b69becbd43881927fb"><td class="memItemLeft">AudioClip?&#160;</td><td class="memItemRight"><a class="el" href="#a6ba9ebea7ea824b69becbd43881927fb">hitSound</a></td></tr>
+<tr class="memitem:a615035cb7bf0edc089095508715569b5" id="r_a615035cb7bf0edc089095508715569b5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a615035cb7bf0edc089095508715569b5">canCast</a> = true</td></tr>
+<tr class="memitem:a2ee24f6c3972326d4a16a933937a4041" id="r_a2ee24f6c3972326d4a16a933937a4041"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2ee24f6c3972326d4a16a933937a4041">isCasting</a> = false</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00006">6</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="aa0caaa3eda568ef2396948df2d631a64" name="aa0caaa3eda568ef2396948df2d631a64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0caaa3eda568ef2396948df2d631a64">&#9670;&#160;</a></span>airSound</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioClip? SpellBaseScriptable.airSound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00042">42</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a615035cb7bf0edc089095508715569b5" name="a615035cb7bf0edc089095508715569b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a615035cb7bf0edc089095508715569b5">&#9670;&#160;</a></span>canCast</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SpellBaseScriptable.canCast = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00046">46</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="ab912466ee59cae6e0563029856a654ff" name="ab912466ee59cae6e0563029856a654ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab912466ee59cae6e0563029856a654ff">&#9670;&#160;</a></span>cast_Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CastType SpellBaseScriptable.cast_Type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00011">11</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a34f9f55e907cb61828bcc6de6d213ec4" name="a34f9f55e907cb61828bcc6de6d213ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f9f55e907cb61828bcc6de6d213ec4">&#9670;&#160;</a></span>chargeSound</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioClip? SpellBaseScriptable.chargeSound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00041">41</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3e94be2f2d2b3edc26006e77e647c446" name="a3e94be2f2d2b3edc26006e77e647c446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e94be2f2d2b3edc26006e77e647c446">&#9670;&#160;</a></span>ChargeTimePerUnit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SpellBaseScriptable.ChargeTimePerUnit = 0.5f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00016">16</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac0a2c6ae806005a97868af92ab145b6a" name="ac0a2c6ae806005a97868af92ab145b6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0a2c6ae806005a97868af92ab145b6a">&#9670;&#160;</a></span>CosteSlots</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SpellBaseScriptable.CosteSlots = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00025">25</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0d94340a0e341d89175ee3f0d3917679" name="a0d94340a0e341d89175ee3f0d3917679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d94340a0e341d89175ee3f0d3917679">&#9670;&#160;</a></span>currentCharge</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SpellBaseScriptable.currentCharge = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00015">15</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="ab96bb765ec6430d4db2ccd6e6d8440fc" name="ab96bb765ec6430d4db2ccd6e6d8440fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab96bb765ec6430d4db2ccd6e6d8440fc">&#9670;&#160;</a></span>damage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SpellBaseScriptable.damage = 1f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00018">18</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa71b74961b02da0f45482967ab42576f" name="aa71b74961b02da0f45482967ab42576f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa71b74961b02da0f45482967ab42576f">&#9670;&#160;</a></span>hitParticle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject? SpellBaseScriptable.hitParticle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00036">36</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a6ba9ebea7ea824b69becbd43881927fb" name="a6ba9ebea7ea824b69becbd43881927fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba9ebea7ea824b69becbd43881927fb">&#9670;&#160;</a></span>hitSound</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioClip? SpellBaseScriptable.hitSound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00043">43</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2ee24f6c3972326d4a16a933937a4041" name="a2ee24f6c3972326d4a16a933937a4041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee24f6c3972326d4a16a933937a4041">&#9670;&#160;</a></span>isCasting</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SpellBaseScriptable.isCasting = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00047">47</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a51471a1bf88a67460135572070f05265" name="a51471a1bf88a67460135572070f05265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51471a1bf88a67460135572070f05265">&#9670;&#160;</a></span>lifeTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SpellBaseScriptable.lifeTime = 1f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00019">19</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a880635c91e76bcdeac0fecb186d06c76" name="a880635c91e76bcdeac0fecb186d06c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a880635c91e76bcdeac0fecb186d06c76">&#9670;&#160;</a></span>manaCost</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SpellBaseScriptable.manaCost = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00013">13</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a56117e19eded1d9de08f2bac48ea5313" name="a56117e19eded1d9de08f2bac48ea5313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56117e19eded1d9de08f2bac48ea5313">&#9670;&#160;</a></span>MaxCharge</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SpellBaseScriptable.MaxCharge = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00014">14</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3070ce6fedfe530ab2c34dd1081d2e38" name="a3070ce6fedfe530ab2c34dd1081d2e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3070ce6fedfe530ab2c34dd1081d2e38">&#9670;&#160;</a></span>nombreHechizo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string SpellBaseScriptable.nombreHechizo = &quot;Change Spell name&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00027">27</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a27bb184d370e5a054b9cd68c9f7115cd" name="a27bb184d370e5a054b9cd68c9f7115cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27bb184d370e5a054b9cd68c9f7115cd">&#9670;&#160;</a></span>objectData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_object_data_scriptable.html">ObjectDataScriptable</a> SpellBaseScriptable.objectData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00029">29</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa4c66ed8ea74ee8ce3314e14f4995a25" name="aa4c66ed8ea74ee8ce3314e14f4995a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c66ed8ea74ee8ce3314e14f4995a25">&#9670;&#160;</a></span>penetrates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SpellBaseScriptable.penetrates = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00023">23</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="afb9b977d7700d7e6471e0768628c7d08" name="afb9b977d7700d7e6471e0768628c7d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb9b977d7700d7e6471e0768628c7d08">&#9670;&#160;</a></span>penetrationlevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SpellBaseScriptable.penetrationlevel = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00024">24</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3f0301f6808c079f04ec5bfcbb35e8dd" name="a3f0301f6808c079f04ec5bfcbb35e8dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f0301f6808c079f04ec5bfcbb35e8dd">&#9670;&#160;</a></span>producedParticle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject? SpellBaseScriptable.producedParticle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00035">35</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2649c70a9a2d21efa8e60c0c7e505c87" name="a2649c70a9a2d21efa8e60c0c7e505c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2649c70a9a2d21efa8e60c0c7e505c87">&#9670;&#160;</a></span>producesLine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SpellBaseScriptable.producesLine = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00022">22</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a81b4e2884649909c69688b6ed38ece53" name="a81b4e2884649909c69688b6ed38ece53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b4e2884649909c69688b6ed38ece53">&#9670;&#160;</a></span>RayAliveTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SpellBaseScriptable.RayAliveTime = 0.3f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00026">26</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="ada24f803a1d318b4b07ba1b4ed943aa2" name="ada24f803a1d318b4b07ba1b4ed943aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada24f803a1d318b4b07ba1b4ed943aa2">&#9670;&#160;</a></span>RayMaterial</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Material&gt;? SpellBaseScriptable.RayMaterial</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00033">33</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa679656b28e80cabb4892b547816ed06" name="aa679656b28e80cabb4892b547816ed06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa679656b28e80cabb4892b547816ed06">&#9670;&#160;</a></span>shootDelay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SpellBaseScriptable.shootDelay = 1f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00020">20</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="addc1d649425d31798c2a129814c19d7b" name="addc1d649425d31798c2a129814c19d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addc1d649425d31798c2a129814c19d7b">&#9670;&#160;</a></span>spawnPrefab</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject? SpellBaseScriptable.spawnPrefab</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00034">34</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad5a73fd2e4138a660bfb65766921e0a4" name="ad5a73fd2e4138a660bfb65766921e0a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5a73fd2e4138a660bfb65766921e0a4">&#9670;&#160;</a></span>spawnSound</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioClip? SpellBaseScriptable.spawnSound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00040">40</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a36df477f0c5ebe98e38e4adbc73ec83e" name="a36df477f0c5ebe98e38e4adbc73ec83e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36df477f0c5ebe98e38e4adbc73ec83e">&#9670;&#160;</a></span>spell_importance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_spellimportance_8cs.html#a611b3f0f58c1d3b0f8f880888a638b05">Spellimportance</a> SpellBaseScriptable.spell_importance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00012">12</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a659ec7631750a145c902f32b49bf53d6" name="a659ec7631750a145c902f32b49bf53d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659ec7631750a145c902f32b49bf53d6">&#9670;&#160;</a></span>spell_Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SpellType SpellBaseScriptable.spell_Type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00010">10</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a075deb21e8edfc3242a685dd95ab10d9" name="a075deb21e8edfc3242a685dd95ab10d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a075deb21e8edfc3242a685dd95ab10d9">&#9670;&#160;</a></span>spellImage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sprite SpellBaseScriptable.spellImage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00028">28</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="af3079e094d42dfe044f031b89c669918" name="af3079e094d42dfe044f031b89c669918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3079e094d42dfe044f031b89c669918">&#9670;&#160;</a></span>spreadIntensity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SpellBaseScriptable.spreadIntensity = 0.1f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00021">21</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a04546e8db62b1b580940d5d255727892" name="a04546e8db62b1b580940d5d255727892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04546e8db62b1b580940d5d255727892">&#9670;&#160;</a></span>velocity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SpellBaseScriptable.velocity = 1f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_spell_base_scriptable_8cs_source.html#l00017">17</a> del archivo <a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>ScriptableObjects/SpellScriptables/<a class="el" href="_spell_base_scriptable_8cs_source.html">SpellBaseScriptable.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_spell_base_scriptable.html">SpellBaseScriptable</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

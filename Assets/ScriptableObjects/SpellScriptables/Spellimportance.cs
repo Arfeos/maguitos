@@ -1,4 +1,4 @@
-﻿public enum Spellimportance
+public enum Spellimportance
 {
     primary,
     secundary

@@ -3,9 +3,9 @@ using UnityEngine;
 public class CoroutineRunner : MonoBehaviour
 {
     private static CoroutineRunner _instance;
-    //Esto es una puñetera solo para que las clases que no debiesen tirar corrutinas puedan hacerlo
+    //Esto es una puÃ±etera solo para que las clases que no debiesen tirar corrutinas puedan hacerlo
     //Es esto correcto, no lo se, pero a esta hora de la noche solo Dios puede juzgarme
-    //y por lo tanto mi creación contra natura se queda y es feliz viviendo como una clase apartada de los ojos de Dios
+    //y por lo tanto mi creaciÃ³n contra natura se queda y es feliz viviendo como una clase apartada de los ojos de Dios
     public static CoroutineRunner Instance
     {
         get

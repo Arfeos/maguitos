@@ -1,0 +1,5 @@
+<map id="InputSystem_Actions.PlayerActions.Disable" name="InputSystem_Actions.PlayerActions.Disable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,193,48"/>
+<area shape="rect" id="Node000002" href="$struct_input_system___actions_1_1_player_actions.html#ae1ce06fd43620a4d2e64faf84508e850" title="Provides access to the underlying input action map instance." alt="" coords="241,5,428,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,24,228,26,222,27,193,29"/>
+</map>

@@ -1,6 +1,6 @@
 using UnityEngine;
 /// <summary>
-/// EnumeraciÛn utilizada para definir los distintos modos de juego disponibles dentro del sistema. Permite identificar si la partida se ejecutar· de manera local o mediante funcionalidades de red
+/// Enumeraci√≥n utilizada para definir los distintos modos de juego disponibles dentro del sistema. Permite identificar si la partida se ejecutar√° de manera local o mediante funcionalidades de red
 /// </summary>
 public enum GameType
 {

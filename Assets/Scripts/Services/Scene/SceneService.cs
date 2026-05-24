@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
-/// Servicio encargado de gestionar la carga y navegaci髇 entre escenas del juego.
-/// Soporta transiciones con efecto de fade y navegaci髇 hacia la escena anterior.
+/// Servicio encargado de gestionar la carga y navegaci贸n entre escenas del juego.
+/// Soporta transiciones con efecto de fade y navegaci贸n hacia la escena anterior.
 /// </summary>
 public class SceneService :ISceneService
 {
     /// <summary>
-    /// Pila que almacena el historial de escenas visitadas para permitir la navegaci髇 hacia atr醩.
+    /// Pila que almacena el historial de escenas visitadas para permitir la navegaci贸n hacia atr谩s.
     /// </summary>
     private Stack<string> lastScene= new Stack<string>();
 
@@ -29,24 +29,24 @@ public class SceneService :ISceneService
     {
 
         lastScene.Push(SceneManager.GetActiveScene().name) ;
-        //he visto el atentado contra natura hecho por mi compa馿ro Sergio y dada la situacion, me veo en la necesidad de utilizarlo, asi que,
+        //he visto el atentado contra natura hecho por mi compa帽ero Sergio y dada la situacion, me veo en la necesidad de utilizarlo, asi que,
         //ahora es nuestra aberracion, una disculpa de antemano.
 
         CoroutineRunner.Instance.StartCoroutine(LoadSceneRutine(scene.ToString()));
     }
 
     /// <summary>
-    /// Inicializa el servicio de escenas con la configuraci髇 del panel de carga.
+    /// Inicializa el servicio de escenas con la configuraci贸n del panel de carga.
     /// </summary>
-    /// <param name="so">Scriptable Object que contiene el prefab del panel de transici髇.</param>
+    /// <param name="so">Scriptable Object que contiene el prefab del panel de transici贸n.</param>
     public SceneService(PanelConfigurationScriptable so)
     {
         this.prefab = so.Panel;
     }
 
     /// <summary>
-    /// Navega a la 鷏tima escena visitada, extray閚dola del historial.
-    /// Si no hay escenas en el historial, no realiza ninguna acci髇.
+    /// Navega a la 煤ltima escena visitada, extray茅ndola del historial.
+    /// Si no hay escenas en el historial, no realiza ninguna acci贸n.
     /// </summary>
     public void GoBack()
     {
@@ -56,7 +56,7 @@ public class SceneService :ISceneService
     }
 
     /// <summary>
-    /// Corrutina que gestiona la carga as韓crona de una escena con transici髇 de fade de entrada y salida.
+    /// Corrutina que gestiona la carga as铆ncrona de una escena con transici贸n de fade de entrada y salida.
     /// Crea un canvas temporal con el panel de carga, realiza el fade in, espera a que la escena
     /// cargue, activa la escena y finalmente hace fade out antes de destruir el canvas.
     /// </summary>
@@ -89,12 +89,12 @@ public class SceneService :ISceneService
     }
 
     /// <summary>
-    /// Corrutina que realiza una transici髇 de alpha (fade) sobre un <see cref="CanvasGroup"/>.
+    /// Corrutina que realiza una transici贸n de alpha (fade) sobre un <see cref="CanvasGroup"/>.
     /// </summary>
     /// <param name="canvasGroup">El <see cref="CanvasGroup"/> cuyo alpha se va a interpolar.</param>
     /// <param name="start">Valor de alpha inicial (0 = transparente, 1 = opaco).</param>
     /// <param name="end">Valor de alpha final.</param>
-    /// <param name="duration">Duraci髇 de la transici髇 en segundos.</param>
+    /// <param name="duration">Duraci贸n de la transici贸n en segundos.</param>
     private IEnumerator Fade(CanvasGroup canvasGroup, float start, float end, float duration) {
         float time = 0;
 

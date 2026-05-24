@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la interface InputSystem_Actions.IUIActions</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('interface_input_system___actions_1_1_i_u_i_actions.html','','interface_input_system___actions_1_1_i_u_i_actions-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la interface InputSystem_Actions.IUIActions</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ad7305d72df07cdab2242ff388eeed17f" id="r_ad7305d72df07cdab2242ff388eeed17f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad7305d72df07cdab2242ff388eeed17f">OnNavigate</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:ad7305d72df07cdab2242ff388eeed17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "Navigate" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:a34b727e37be37b9472377e31a9555721" id="r_a34b727e37be37b9472377e31a9555721"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a34b727e37be37b9472377e31a9555721">OnPause</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:a34b727e37be37b9472377e31a9555721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "pause" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:a694993137e26248e8f559b1d9ca2c00f" id="r_a694993137e26248e8f559b1d9ca2c00f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a694993137e26248e8f559b1d9ca2c00f">OnSubmit</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:a694993137e26248e8f559b1d9ca2c00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "Submit" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:af8352258056e7a4e739423da913d2af7" id="r_af8352258056e7a4e739423da913d2af7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af8352258056e7a4e739423da913d2af7">OnCancel</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:af8352258056e7a4e739423da913d2af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "Cancel" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:a7d5fc7dca9b8decf4bc36755b640ec4b" id="r_a7d5fc7dca9b8decf4bc36755b640ec4b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7d5fc7dca9b8decf4bc36755b640ec4b">OnPoint</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:a7d5fc7dca9b8decf4bc36755b640ec4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "Point" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:a2e15203b76caefffdb28ae5c8496d31f" id="r_a2e15203b76caefffdb28ae5c8496d31f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2e15203b76caefffdb28ae5c8496d31f">OnClick</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:a2e15203b76caefffdb28ae5c8496d31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "Click" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:afd8115309dad12c7cc42eb839cdfc1a1" id="r_afd8115309dad12c7cc42eb839cdfc1a1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afd8115309dad12c7cc42eb839cdfc1a1">OnRightClick</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:afd8115309dad12c7cc42eb839cdfc1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "RightClick" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:a6f04afa3fb662596342c8e4cecac2026" id="r_a6f04afa3fb662596342c8e4cecac2026"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6f04afa3fb662596342c8e4cecac2026">OnMiddleClick</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:a6f04afa3fb662596342c8e4cecac2026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "MiddleClick" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:ac67a6da79f37a46d7d557122c8fa854a" id="r_ac67a6da79f37a46d7d557122c8fa854a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac67a6da79f37a46d7d557122c8fa854a">OnScrollWheel</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:ac67a6da79f37a46d7d557122c8fa854a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "ScrollWheel" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:af13b368c4029601c8622cb54d2263bff" id="r_af13b368c4029601c8622cb54d2263bff"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af13b368c4029601c8622cb54d2263bff">OnTrackedDevicePosition</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:af13b368c4029601c8622cb54d2263bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "TrackedDevicePosition" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+<tr class="memitem:a807910f51931e0f9c6d5f710876a330a" id="r_a807910f51931e0f9c6d5f710876a330a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a807910f51931e0f9c6d5f710876a330a">OnTrackedDeviceOrientation</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="memdesc:a807910f51931e0f9c6d5f710876a330a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method invoked when associated input action "TrackedDeviceOrientation" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks. </p>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via  on a...">UIActions.AddCallbacks(IUIActions)</a>, <a class="el" href="struct_input_system___actions_1_1_u_i_actions.html#ab9b01702cb63557009b54e8cd1f4ad69" title="Unregisters  and unregisters all input action callbacks via UIActions.UnregisterCallbacks(IUIActions)...">UIActions.RemoveCallbacks(IUIActions)</a></dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01848">1848</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="af8352258056e7a4e739423da913d2af7" name="af8352258056e7a4e739423da913d2af7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8352258056e7a4e739423da913d2af7">&#9670;&#160;</a></span>OnCancel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnCancel </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "Cancel" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_af8352258056e7a4e739423da913d2af7_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_af8352258056e7a4e739423da913d2af7_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_af8352258056e7a4e739423da913d2af7_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_af8352258056e7a4e739423da913d2af7_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;Cancel&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2e15203b76caefffdb28ae5c8496d31f" name="a2e15203b76caefffdb28ae5c8496d31f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e15203b76caefffdb28ae5c8496d31f">&#9670;&#160;</a></span>OnClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnClick </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "Click" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_a2e15203b76caefffdb28ae5c8496d31f_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_a2e15203b76caefffdb28ae5c8496d31f_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_a2e15203b76caefffdb28ae5c8496d31f_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_a2e15203b76caefffdb28ae5c8496d31f_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;Click&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6f04afa3fb662596342c8e4cecac2026" name="a6f04afa3fb662596342c8e4cecac2026"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f04afa3fb662596342c8e4cecac2026">&#9670;&#160;</a></span>OnMiddleClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnMiddleClick </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "MiddleClick" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_a6f04afa3fb662596342c8e4cecac2026_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_a6f04afa3fb662596342c8e4cecac2026_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_a6f04afa3fb662596342c8e4cecac2026_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_a6f04afa3fb662596342c8e4cecac2026_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;MiddleClick&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad7305d72df07cdab2242ff388eeed17f" name="ad7305d72df07cdab2242ff388eeed17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7305d72df07cdab2242ff388eeed17f">&#9670;&#160;</a></span>OnNavigate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnNavigate </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "Navigate" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_ad7305d72df07cdab2242ff388eeed17f_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_ad7305d72df07cdab2242ff388eeed17f_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_ad7305d72df07cdab2242ff388eeed17f_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_ad7305d72df07cdab2242ff388eeed17f_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;Navigate&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a34b727e37be37b9472377e31a9555721" name="a34b727e37be37b9472377e31a9555721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b727e37be37b9472377e31a9555721">&#9670;&#160;</a></span>OnPause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnPause </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "pause" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_a34b727e37be37b9472377e31a9555721_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_a34b727e37be37b9472377e31a9555721_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_a34b727e37be37b9472377e31a9555721_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_a34b727e37be37b9472377e31a9555721_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;pause&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7d5fc7dca9b8decf4bc36755b640ec4b" name="a7d5fc7dca9b8decf4bc36755b640ec4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5fc7dca9b8decf4bc36755b640ec4b">&#9670;&#160;</a></span>OnPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnPoint </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "Point" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_a7d5fc7dca9b8decf4bc36755b640ec4b_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_a7d5fc7dca9b8decf4bc36755b640ec4b_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_a7d5fc7dca9b8decf4bc36755b640ec4b_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_a7d5fc7dca9b8decf4bc36755b640ec4b_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;Point&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afd8115309dad12c7cc42eb839cdfc1a1" name="afd8115309dad12c7cc42eb839cdfc1a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8115309dad12c7cc42eb839cdfc1a1">&#9670;&#160;</a></span>OnRightClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnRightClick </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "RightClick" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_afd8115309dad12c7cc42eb839cdfc1a1_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_afd8115309dad12c7cc42eb839cdfc1a1_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_afd8115309dad12c7cc42eb839cdfc1a1_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_afd8115309dad12c7cc42eb839cdfc1a1_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;RightClick&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac67a6da79f37a46d7d557122c8fa854a" name="ac67a6da79f37a46d7d557122c8fa854a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac67a6da79f37a46d7d557122c8fa854a">&#9670;&#160;</a></span>OnScrollWheel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnScrollWheel </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "ScrollWheel" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_ac67a6da79f37a46d7d557122c8fa854a_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_ac67a6da79f37a46d7d557122c8fa854a_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_ac67a6da79f37a46d7d557122c8fa854a_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_ac67a6da79f37a46d7d557122c8fa854a_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;ScrollWheel&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a694993137e26248e8f559b1d9ca2c00f" name="a694993137e26248e8f559b1d9ca2c00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a694993137e26248e8f559b1d9ca2c00f">&#9670;&#160;</a></span>OnSubmit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnSubmit </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "Submit" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_a694993137e26248e8f559b1d9ca2c00f_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_a694993137e26248e8f559b1d9ca2c00f_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_a694993137e26248e8f559b1d9ca2c00f_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_a694993137e26248e8f559b1d9ca2c00f_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;Submit&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a807910f51931e0f9c6d5f710876a330a" name="a807910f51931e0f9c6d5f710876a330a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a807910f51931e0f9c6d5f710876a330a">&#9670;&#160;</a></span>OnTrackedDeviceOrientation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnTrackedDeviceOrientation </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "TrackedDeviceOrientation" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_a807910f51931e0f9c6d5f710876a330a_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_a807910f51931e0f9c6d5f710876a330a_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_a807910f51931e0f9c6d5f710876a330a_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_a807910f51931e0f9c6d5f710876a330a_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;TrackedDeviceOrientation&quot; is either UnityEngine...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af13b368c4029601c8622cb54d2263bff" name="af13b368c4029601c8622cb54d2263bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af13b368c4029601c8622cb54d2263bff">&#9670;&#160;</a></span>OnTrackedDevicePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.IUIActions.OnTrackedDevicePosition </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method invoked when associated input action "TrackedDevicePosition" is either UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed or UnityEngine.InputSystem.InputAction.canceled. </p>
+<dl class="section see"><dt>Ver también</dt><dd>UnityEngine.InputSystem.InputAction.started, UnityEngine.InputSystem.InputAction.performed, UnityEngine.InputSystem.InputAction.canceled</dd></dl>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_input_system___actions_1_1_i_u_i_actions_af13b368c4029601c8622cb54d2263bff_icgraph.png" border="0" usemap="#ainterface_input_system___actions_1_1_i_u_i_actions_af13b368c4029601c8622cb54d2263bff_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_input_system___actions_1_1_i_u_i_actions_af13b368c4029601c8622cb54d2263bff_icgraph" id="ainterface_input_system___actions_1_1_i_u_i_actions_af13b368c4029601c8622cb54d2263bff_icgraph">
+<area shape="rect" title="Method invoked when associated input action &quot;TrackedDevicePosition&quot; is either UnityEngine...." alt="" coords="526,5,742,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" href="struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>La documentación de esta interface está generada del siguiente archivo:<ul>
+<li>Scripts/Input/<a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_input_system___actions.html">InputSystem_Actions</a></li><li class="navelem"><a href="interface_input_system___actions_1_1_i_u_i_actions.html">IUIActions</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<map id="TakeOrbsStep" name="TakeOrbsStep">
+<area shape="rect" id="Node000001" title="Paso que se completa cuando se recoge un orbve de mana y otro de vida." alt="" coords="5,80,110,107"/>
+<area shape="rect" id="Node000002" href="$interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="31,5,84,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,46,60,80,55,79,56,50"/>
+</map>

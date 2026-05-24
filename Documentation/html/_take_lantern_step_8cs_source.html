@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente Scripts/WorkflowsSystem/Steps/TakeLanternStep.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_take_lantern_step_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">TakeLanternStep.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_take_lantern_step_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Linq;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>UnityEngine.InputSystem;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>UnityEngine.Localization;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_take_lantern_step.html">   12</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_take_lantern_step.html#a603fa0d807e01be9f27c1872668df538">TakeLanternStep</a> : <a class="code hl_interface" href="interface_i_step.html">IStep</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// --- Variables ---</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> _actionComplete = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> _isComplete = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// --- IStep ---</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_take_lantern_step.html#adf3ec869cd8871c41aad23025d1b0708">   24</a></span>    <span class="keyword">public</span> LocalizedString <a class="code hl_property" href="class_take_lantern_step.html#adf3ec869cd8871c41aad23025d1b0708">Name</a> { <span class="keyword">get</span> =&gt; <span class="keyword">new</span> LocalizedString { TableReference = <span class="stringliteral">&quot;Steps&quot;</span>, TableEntryReference = <span class="stringliteral">&quot;takeLanternName&quot;</span> }; }</div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_take_lantern_step.html#a78e812794af1d9a75269b7da5e372c18">   29</a></span>    <span class="keyword">public</span> LocalizedString <a class="code hl_property" href="class_take_lantern_step.html#a78e812794af1d9a75269b7da5e372c18">Description</a></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">get</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            var takeAction = <a class="code hl_class" href="class_player_input_manager.html">PlayerInputManager</a>.<a class="code hl_property" href="class_player_input_manager.html#ab93afb8248b1c4076ef78c41560de01f">Actions</a>.<a class="code hl_property" href="class_input_system___actions.html#a20a11f2c906449516e76165274a386e3">Player</a>.<a class="code hl_property" href="struct_input_system___actions_1_1_player_actions.html#abd6bded9dc7287fd4e30a1cda56e29a9">Interact</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            var interactKeyName = <span class="keywordtype">string</span>.Join(<span class="stringliteral">&quot; &quot;</span>, takeAction.controls.Select(c =&gt; c.displayName));</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            var onOffAction = <a class="code hl_class" href="class_player_input_manager.html">PlayerInputManager</a>.<a class="code hl_property" href="class_player_input_manager.html#ab93afb8248b1c4076ef78c41560de01f">Actions</a>.<a class="code hl_property" href="class_input_system___actions.html#a20a11f2c906449516e76165274a386e3">Player</a>.<a class="code hl_property" href="struct_input_system___actions_1_1_player_actions.html#ae4f29e2a5bb2b7696ac88c7c80ec07d5">Lantern</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            var onOffKeyName = <span class="keywordtype">string</span>.Join(<span class="stringliteral">&quot; &quot;</span>, onOffAction.controls.Select(c =&gt; c.displayName));</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">return</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keyword">new</span> LocalizedString</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                    TableReference = <span class="stringliteral">&quot;Steps&quot;</span>,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                    TableEntryReference = <span class="stringliteral">&quot;takeLanternDesc&quot;</span>,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    Arguments = <span class="keyword">new</span> <span class="keywordtype">object</span>[] { interactKeyName, onOffKeyName }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                };</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_take_lantern_step.html#a4785ba0915d5a5ac51919601c80f654f">   50</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="class_take_lantern_step.html#a4785ba0915d5a5ac51919601c80f654f">IsComplete</a> { <span class="keyword">get</span> =&gt; this._isComplete; <span class="keyword">set</span> =&gt; this._isComplete = value; }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_take_lantern_step.html#a9663cdee08689c9923585ae1e8f59731">   54</a></span>    <span class="keyword">public</span> <span class="keyword">event</span> Action <a class="code hl_event" href="class_take_lantern_step.html#a9663cdee08689c9923585ae1e8f59731">OnComplete</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// &lt;summary&gt;</span></div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_take_lantern_step.html#a603fa0d807e01be9f27c1872668df538">   59</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_take_lantern_step.html#a603fa0d807e01be9f27c1872668df538">TakeLanternStep</a>()</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// &lt;summary&gt;</span></div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_take_lantern_step.html#aa21e4a7d3bba4c1a46598430db05cda4">   66</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_take_lantern_step.html#aa21e4a7d3bba4c1a46598430db05cda4">Deactivate</a>()</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        PlayerInputManager.Actions.Player.Interact.started -= HandleAction1;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        PlayerInputManager.Actions.Player.Lantern.started -= HandleAction2;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_take_lantern_step.html#aa5846f694739558490927bc66b7549c8">   74</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_take_lantern_step.html#aa5846f694739558490927bc66b7549c8">Activate</a>()</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        var action1 = <a class="code hl_class" href="class_player_input_manager.html">PlayerInputManager</a>.<a class="code hl_property" href="class_player_input_manager.html#ab93afb8248b1c4076ef78c41560de01f">Actions</a>.<a class="code hl_property" href="class_input_system___actions.html#a20a11f2c906449516e76165274a386e3">Player</a>.<a class="code hl_property" href="struct_input_system___actions_1_1_player_actions.html#abd6bded9dc7287fd4e30a1cda56e29a9">Interact</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        var action2 = <a class="code hl_class" href="class_player_input_manager.html">PlayerInputManager</a>.<a class="code hl_property" href="class_player_input_manager.html#ab93afb8248b1c4076ef78c41560de01f">Actions</a>.<a class="code hl_property" href="class_input_system___actions.html#a20a11f2c906449516e76165274a386e3">Player</a>.<a class="code hl_property" href="struct_input_system___actions_1_1_player_actions.html#ae4f29e2a5bb2b7696ac88c7c80ec07d5">Lantern</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        action1.started += HandleAction1;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        action2.started += HandleAction2;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        Debug.Log($<span class="stringliteral">&quot;Suscrito. Listeners: {action1.GetType()} y {action2.GetType()}&quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> HandleAction1(InputAction.CallbackContext context)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        _actionComplete = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> HandleAction2(InputAction.CallbackContext context)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (_actionComplete)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            this.IsComplete = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            this.<a class="code hl_event" href="class_take_lantern_step.html#a9663cdee08689c9923585ae1e8f59731">OnComplete</a>?.Invoke();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+</div>
+<div class="ttc" id="aclass_input_system___actions_html_a20a11f2c906449516e76165274a386e3"><div class="ttname"><a href="class_input_system___actions.html#a20a11f2c906449516e76165274a386e3">InputSystem_Actions.Player</a></div><div class="ttdeci">PlayerActions Player</div><div class="ttdoc">Provides a new PlayerActions instance referencing this action map.</div><div class="ttdef"><b>Definition</b> <a href="_input_system___actions_8cs_source.html#l01511">InputSystem_Actions.cs:1511</a></div></div>
+<div class="ttc" id="aclass_player_input_manager_html"><div class="ttname"><a href="class_player_input_manager.html">PlayerInputManager</a></div><div class="ttdoc">Singleton global para gestionar PlayerInputActions.</div><div class="ttdef"><b>Definition</b> <a href="_player_input_manager_8cs_source.html#l00010">PlayerInputManager.cs:11</a></div></div>
+<div class="ttc" id="aclass_player_input_manager_html_ab93afb8248b1c4076ef78c41560de01f"><div class="ttname"><a href="class_player_input_manager.html#ab93afb8248b1c4076ef78c41560de01f">PlayerInputManager.Actions</a></div><div class="ttdeci">static InputSystem_Actions Actions</div><div class="ttdoc">Acceso global a las acciones. Si no existe instancia, la crea automaticamente.</div><div class="ttdef"><b>Definition</b> <a href="_player_input_manager_8cs_source.html#l00032">PlayerInputManager.cs:33</a></div></div>
+<div class="ttc" id="aclass_take_lantern_step_html_a4785ba0915d5a5ac51919601c80f654f"><div class="ttname"><a href="class_take_lantern_step.html#a4785ba0915d5a5ac51919601c80f654f">TakeLanternStep.IsComplete</a></div><div class="ttdeci">bool IsComplete</div><div class="ttdoc">Indica si el paso ha sido completado. Al establecerse a true se considera superado.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">TakeLanternStep.cs:50</a></div></div>
+<div class="ttc" id="aclass_take_lantern_step_html_a603fa0d807e01be9f27c1872668df538"><div class="ttname"><a href="class_take_lantern_step.html#a603fa0d807e01be9f27c1872668df538">TakeLanternStep.TakeLanternStep</a></div><div class="ttdeci">TakeLanternStep()</div><div class="ttdef"><b>Definition</b> <a href="#l00059">TakeLanternStep.cs:59</a></div></div>
+<div class="ttc" id="aclass_take_lantern_step_html_a78e812794af1d9a75269b7da5e372c18"><div class="ttname"><a href="class_take_lantern_step.html#a78e812794af1d9a75269b7da5e372c18">TakeLanternStep.Description</a></div><div class="ttdeci">LocalizedString Description</div><div class="ttdoc">Descripción localizada del paso, construida dinámicamente con los nombres de las teclas de interacció...</div><div class="ttdef"><b>Definition</b> <a href="#l00029">TakeLanternStep.cs:30</a></div></div>
+<div class="ttc" id="aclass_take_lantern_step_html_a9663cdee08689c9923585ae1e8f59731"><div class="ttname"><a href="class_take_lantern_step.html#a9663cdee08689c9923585ae1e8f59731">TakeLanternStep.OnComplete</a></div><div class="ttdeci">Action OnComplete</div><div class="ttdoc">Evento invocado cuando el jugador completa ambas fases del paso.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">TakeLanternStep.cs:54</a></div></div>
+<div class="ttc" id="aclass_take_lantern_step_html_aa21e4a7d3bba4c1a46598430db05cda4"><div class="ttname"><a href="class_take_lantern_step.html#aa21e4a7d3bba4c1a46598430db05cda4">TakeLanternStep.Deactivate</a></div><div class="ttdeci">void Deactivate()</div><div class="ttdef"><b>Definition</b> <a href="#l00066">TakeLanternStep.cs:66</a></div></div>
+<div class="ttc" id="aclass_take_lantern_step_html_aa5846f694739558490927bc66b7549c8"><div class="ttname"><a href="class_take_lantern_step.html#aa5846f694739558490927bc66b7549c8">TakeLanternStep.Activate</a></div><div class="ttdeci">void Activate()</div><div class="ttdoc">Activa el paso suscribiéndose a las acciones de interacción y linterna del jugador.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">TakeLanternStep.cs:74</a></div></div>
+<div class="ttc" id="aclass_take_lantern_step_html_adf3ec869cd8871c41aad23025d1b0708"><div class="ttname"><a href="class_take_lantern_step.html#adf3ec869cd8871c41aad23025d1b0708">TakeLanternStep.Name</a></div><div class="ttdeci">LocalizedString Name</div><div class="ttdoc">Nombre localizado del paso, obtenido de la tabla Steps con la clave takeLanternName.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">TakeLanternStep.cs:24</a></div></div>
+<div class="ttc" id="ainterface_i_step_html"><div class="ttname"><a href="interface_i_step.html">IStep</a></div><div class="ttdoc">Interfaz que gestiona los pasos que se pueden meter dentro de un workflow.</div><div class="ttdef"><b>Definition</b> <a href="_i_step_8cs_source.html#l00006">IStep.cs:7</a></div></div>
+<div class="ttc" id="astruct_input_system___actions_1_1_player_actions_html_abd6bded9dc7287fd4e30a1cda56e29a9"><div class="ttname"><a href="struct_input_system___actions_1_1_player_actions.html#abd6bded9dc7287fd4e30a1cda56e29a9">InputSystem_Actions.PlayerActions.Interact</a></div><div class="ttdeci">InputAction Interact</div><div class="ttdoc">Provides access to the underlying input action &quot;Player/Interact&quot;.</div><div class="ttdef"><b>Definition</b> <a href="_input_system___actions_8cs_source.html#l01327">InputSystem_Actions.cs:1327</a></div></div>
+<div class="ttc" id="astruct_input_system___actions_1_1_player_actions_html_ae4f29e2a5bb2b7696ac88c7c80ec07d5"><div class="ttname"><a href="struct_input_system___actions_1_1_player_actions.html#ae4f29e2a5bb2b7696ac88c7c80ec07d5">InputSystem_Actions.PlayerActions.Lantern</a></div><div class="ttdeci">InputAction Lantern</div><div class="ttdoc">Provides access to the underlying input action &quot;Player/Lantern&quot;.</div><div class="ttdef"><b>Definition</b> <a href="_input_system___actions_8cs_source.html#l01355">InputSystem_Actions.cs:1355</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_4edcbb236dfd51dd81727243a38df6a0.html">Scripts</a></li><li class="navelem"><a href="dir_20e862f5435d137ebcdc4334b916fa37.html">WorkflowsSystem</a></li><li class="navelem"><a href="dir_e9e4d6767e908698324ea109f3fb4bbf.html">Steps</a></li><li class="navelem"><a href="_take_lantern_step_8cs.html">TakeLanternStep.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

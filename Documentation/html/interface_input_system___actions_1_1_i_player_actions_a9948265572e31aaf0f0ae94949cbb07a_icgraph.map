@@ -1,0 +1,7 @@
+<map id="InputSystem_Actions.IPlayerActions.OnNext" name="InputSystem_Actions.IPlayerActions.OnNext">
+<area shape="rect" id="Node000001" title="Method invoked when associated input action &quot;Next&quot; is either UnityEngine.InputSystem...." alt="" coords="476,5,667,48"/>
+<area shape="rect" id="Node000002" href="$struct_input_system___actions_1_1_player_actions.html#a59ea99548b2f7daf3e3e4343446bff3b" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="241,5,428,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,27,429,29,428,24,463,27"/>
+<area shape="rect" id="Node000003" href="$struct_input_system___actions_1_1_player_actions.html#a8d325b740e7c6e1fd330045f48720e49" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,193,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="222,27,193,29,193,24,227,26"/>
+</map>

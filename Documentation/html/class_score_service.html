@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la clase ScoreService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_score_service.html','','class_score_service-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase ScoreService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Servicio encargado de gestionar la puntuación de los jugadores durante la partida, así como el guardado y carga del historial de puntuaciones en un archivo JSON.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de ScoreService</div>
+<div class="dyncontent">
+<div class="center"><img src="class_score_service__inherit__graph.png" border="0" usemap="#a_score_service_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_score_service_inherit__map" id="a_score_service_inherit__map">
+<area shape="rect" title="Servicio encargado de gestionar la puntuación de los jugadores durante la partida,..." alt="" coords="7,80,107,107"/>
+<area shape="rect" href="interface_i_score_service.html" title=" " alt="" coords="5,5,109,32"/>
+<area shape="poly" title=" " alt="" coords="59,46,60,80,54,79,55,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">leyenda</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración de ScoreService:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_score_service__coll__graph.png" border="0" usemap="#a_score_service_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_score_service_coll__map" id="a_score_service_coll__map">
+<area shape="rect" title="Servicio encargado de gestionar la puntuación de los jugadores durante la partida,..." alt="" coords="66,104,165,131"/>
+<area shape="rect" href="interface_i_score_service.html" title=" " alt="" coords="5,5,109,32"/>
+<area shape="poly" title=" " alt="" coords="74,43,111,103,106,104,71,48"/>
+<area shape="rect" href="class_score_table.html" title="Contenedor serializable que agrupa la lista de entradas de puntuaciones. Se usa para serializar y des..." alt="" coords="132,5,219,32"/>
+<area shape="poly" title=" " alt="" coords="162,45,125,106,121,102,157,46"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a2217c936ce526522b924f1fca519f361" id="r_a2217c936ce526522b924f1fca519f361"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2217c936ce526522b924f1fca519f361">addPoints</a> (string player, int points)</td></tr>
+<tr class="memdesc:a2217c936ce526522b924f1fca519f361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrega los puntos indicados al jugador designado. Si el jugador no existe en la lista, lo registra con la puntuación indicada.  <br /></td></tr>
+<tr class="memitem:a293def50016e03683748a0abc83fb842" id="r_a293def50016e03683748a0abc83fb842"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a293def50016e03683748a0abc83fb842">GetPoints</a> (string player)</td></tr>
+<tr class="memdesc:a293def50016e03683748a0abc83fb842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la puntuación actual del jugador indicado. Si el jugador no existe en la lista, lo registra con 0 puntos y devuelve 0.  <br /></td></tr>
+<tr class="memitem:ae8ca2c925966697744c23249ac667185" id="r_ae8ca2c925966697744c23249ac667185"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae8ca2c925966697744c23249ac667185">removePoints</a> (string player, int points)</td></tr>
+<tr class="memdesc:ae8ca2c925966697744c23249ac667185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resta los puntos indicados al jugador designado. Si el jugador no existe en la lista, lo registra con puntuación negativa.  <br /></td></tr>
+<tr class="memitem:a33ec388b94146a4ef618e6f658994f69" id="r_a33ec388b94146a4ef618e6f658994f69"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a33ec388b94146a4ef618e6f658994f69">resetScore</a> ()</td></tr>
+<tr class="memdesc:a33ec388b94146a4ef618e6f658994f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinicia la lista de puntuaciones de la partida actual, eliminando todos los jugadores y sus puntuaciones registradas.  <br /></td></tr>
+<tr class="memitem:a3b60ce2ae1e0c8847b33a7256df006a1" id="r_a3b60ce2ae1e0c8847b33a7256df006a1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3b60ce2ae1e0c8847b33a7256df006a1">AddScore</a> ()</td></tr>
+<tr class="memdesc:a3b60ce2ae1e0c8847b33a7256df006a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra la puntuación del perfil activo en la tabla de puntuaciones globales, la ordena de mayor a menor y guarda el resultado en el archivo JSON.  <br /></td></tr>
+<tr class="memitem:aaac55f2363a6e356c25c296830e47b2d" id="r_aaac55f2363a6e356c25c296830e47b2d"><td class="memItemLeft"><a class="el" href="class_score_table.html">ScoreTable</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaac55f2363a6e356c25c296830e47b2d">getScoreTable</a> ()</td></tr>
+<tr class="memdesc:aaac55f2363a6e356c25c296830e47b2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la tabla de puntuaciones, cargándola desde disco si aún no ha sido inicializada.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:ac7f8fbe581dd1097e13051582cbd4e96" id="r_ac7f8fbe581dd1097e13051582cbd4e96"><td class="memItemLeft">Dictionary&lt; string, int &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac7f8fbe581dd1097e13051582cbd4e96">PlayerList</a> = new Dictionary&lt;string, int&gt;()</td></tr>
+<tr class="memitem:aa288b1ece9192657ddd0d03340837eed" id="r_aa288b1ece9192657ddd0d03340837eed"><td class="memItemLeft"><a class="el" href="class_score_table.html">ScoreTable</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa288b1ece9192657ddd0d03340837eed">scoreTable</a></td></tr>
+<tr class="memdesc:aa288b1ece9192657ddd0d03340837eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tabla de puntuaciones persistente que se serializa y deserializa desde el archivo JSON.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Servicio encargado de gestionar la puntuación de los jugadores durante la partida, así como el guardado y carga del historial de puntuaciones en un archivo JSON. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_score_service_8cs_source.html#l00010">10</a> del archivo <a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a2217c936ce526522b924f1fca519f361" name="a2217c936ce526522b924f1fca519f361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2217c936ce526522b924f1fca519f361">&#9670;&#160;</a></span>addPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScoreService.addPoints </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>player</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>points</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Agrega los puntos indicados al jugador designado. Si el jugador no existe en la lista, lo registra con la puntuación indicada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Nombre del jugador al que se le suman los puntos.</td></tr>
+    <tr><td class="paramname">points</td><td>Cantidad de puntos a añadir.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="interface_i_score_service.html#a5337ec2a4e60dc73d239885aba1667c7">IScoreService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_score_service_8cs_source.html#l00031">31</a> del archivo <a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3b60ce2ae1e0c8847b33a7256df006a1" name="a3b60ce2ae1e0c8847b33a7256df006a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b60ce2ae1e0c8847b33a7256df006a1">&#9670;&#160;</a></span>AddScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScoreService.AddScore </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registra la puntuación del perfil activo en la tabla de puntuaciones globales, la ordena de mayor a menor y guarda el resultado en el archivo JSON. </p>
+
+<p>Implementa <a class="el" href="interface_i_score_service.html#a09dc851905ee1bd23325245f035f10d1">IScoreService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_score_service_8cs_source.html#l00096">96</a> del archivo <a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_score_service_a3b60ce2ae1e0c8847b33a7256df006a1_cgraph.png" border="0" usemap="#aclass_score_service_a3b60ce2ae1e0c8847b33a7256df006a1_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_score_service_a3b60ce2ae1e0c8847b33a7256df006a1_cgraph" id="aclass_score_service_a3b60ce2ae1e0c8847b33a7256df006a1_cgraph">
+<area shape="rect" title="Registra la puntuación del perfil activo en la tabla de puntuaciones globales, la ordena de mayor a m..." alt="" coords="5,56,166,83"/>
+<area shape="rect" href="interface_i_character_service.html#a4afea1595c39bba793cf21e5fb06a5dc" title="Indica si el jugador ha completado la partida sin usar ningún hechizo." alt="" coords="214,5,406,32"/>
+<area shape="poly" title=" " alt="" coords="147,53,235,35,230,37,149,58"/>
+<area shape="rect" href="class_score_service.html#a293def50016e03683748a0abc83fb842" title="Devuelve la puntuación actual del jugador indicado. Si el jugador no existe en la lista,..." alt="" coords="229,56,390,83"/>
+<area shape="poly" title=" " alt="" coords="166,67,216,69,211,70,167,72"/>
+<area shape="rect" href="interface_i_profile_service.html#aecfaf91ad6c5878f844479474fc19f2b" title="Devuelve el perfil activo seleccionado en la sesión actual, o null si no hay ninguno." alt="" coords="220,107,400,149"/>
+<area shape="poly" title=" " alt="" coords="140,81,213,101,208,103,139,86"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a293def50016e03683748a0abc83fb842" name="a293def50016e03683748a0abc83fb842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a293def50016e03683748a0abc83fb842">&#9670;&#160;</a></span>GetPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScoreService.GetPoints </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Devuelve la puntuación actual del jugador indicado. Si el jugador no existe en la lista, lo registra con 0 puntos y devuelve 0. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Nombre del jugador cuya puntuación se quiere consultar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Puntuación actual del jugador.</dd></dl>
+
+<p>Implementa <a class="el" href="interface_i_score_service.html#a207f05663bc7289325b3cc955bf97b13">IScoreService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_score_service_8cs_source.html#l00052">52</a> del archivo <a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_score_service_a293def50016e03683748a0abc83fb842_icgraph.png" border="0" usemap="#aclass_score_service_a293def50016e03683748a0abc83fb842_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_score_service_a293def50016e03683748a0abc83fb842_icgraph" id="aclass_score_service_a293def50016e03683748a0abc83fb842_icgraph">
+<area shape="rect" title="Devuelve la puntuación actual del jugador indicado. Si el jugador no existe en la lista,..." alt="" coords="214,5,375,32"/>
+<area shape="rect" href="class_score_service.html#a3b60ce2ae1e0c8847b33a7256df006a1" title="Registra la puntuación del perfil activo en la tabla de puntuaciones globales, la ordena de mayor a m..." alt="" coords="5,5,166,32"/>
+<area shape="poly" title=" " alt="" coords="196,19,166,21,166,16,201,19"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaac55f2363a6e356c25c296830e47b2d" name="aaac55f2363a6e356c25c296830e47b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaac55f2363a6e356c25c296830e47b2d">&#9670;&#160;</a></span>getScoreTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_score_table.html">ScoreTable</a> ScoreService.getScoreTable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Devuelve la tabla de puntuaciones, cargándola desde disco si aún no ha sido inicializada. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>La ScoreTable con el historial de puntuaciones.</dd></dl>
+
+<p>Implementa <a class="el" href="interface_i_score_service.html#af228ff53f9abf6aef8a0f743f808c37b">IScoreService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_score_service_8cs_source.html#l00140">140</a> del archivo <a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae8ca2c925966697744c23249ac667185" name="ae8ca2c925966697744c23249ac667185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ca2c925966697744c23249ac667185">&#9670;&#160;</a></span>removePoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScoreService.removePoints </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>player</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>points</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resta los puntos indicados al jugador designado. Si el jugador no existe en la lista, lo registra con puntuación negativa. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Nombre del jugador al que se le restan los puntos.</td></tr>
+    <tr><td class="paramname">points</td><td>Cantidad de puntos a restar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="interface_i_score_service.html#a230856beb65e6d1c973943f4af13ff43">IScoreService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_score_service_8cs_source.html#l00069">69</a> del archivo <a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a>.</p>
+
+</div>
+</div>
+<a id="a33ec388b94146a4ef618e6f658994f69" name="a33ec388b94146a4ef618e6f658994f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ec388b94146a4ef618e6f658994f69">&#9670;&#160;</a></span>resetScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScoreService.resetScore </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reinicia la lista de puntuaciones de la partida actual, eliminando todos los jugadores y sus puntuaciones registradas. </p>
+
+<p>Implementa <a class="el" href="interface_i_score_service.html#a71a905c2c99d627bb26cf3f7fe3adc65">IScoreService</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="_score_service_8cs_source.html#l00086">86</a> del archivo <a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="ac7f8fbe581dd1097e13051582cbd4e96" name="ac7f8fbe581dd1097e13051582cbd4e96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f8fbe581dd1097e13051582cbd4e96">&#9670;&#160;</a></span>PlayerList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, int&gt; ScoreService.PlayerList = new Dictionary&lt;string, int&gt;()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Diccionario que almacena la puntuación actual de cada jugador durante la partida, usando el nombre del jugador como clave y su puntuación como valor. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_score_service_8cs_source.html#l00016">16</a> del archivo <a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa288b1ece9192657ddd0d03340837eed" name="aa288b1ece9192657ddd0d03340837eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa288b1ece9192657ddd0d03340837eed">&#9670;&#160;</a></span>scoreTable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_score_table.html">ScoreTable</a> ScoreService.scoreTable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tabla de puntuaciones persistente que se serializa y deserializa desde el archivo JSON. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_score_service_8cs_source.html#l00021">21</a> del archivo <a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>Scripts/Services/Score/<a class="el" href="_score_service_8cs_source.html">ScoreService.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_score_service.html">ScoreService</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<map id="Gráfico de jerarquía de clases" name="Gráfico de jerarquía de clases">
+<area shape="rect" id="Node000000" href="$interface_i_alert_service.html" title="Define el contrato para mostrar y ocultar mensajes de alerta en la UI." alt="" coords="13,5,109,32"/>
+<area shape="rect" id="Node000001" href="$class_alert_service.html" title=" " alt="" coords="205,5,297,32"/>
+<area shape="poly" id="edge11_Node000000_Node000001" title=" " alt="" coords="123,17,206,17,202,21,127,21"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,1095,117,1121"/>
+<area shape="poly" id="edge12_Node000002_Node000001" title=" " alt="" coords="61,1079,69,860,88,531,102,365,118,217,138,105,150,66,163,42,181,28,206,20,203,24,184,32,167,46,155,68,144,106,124,218,107,365,93,532,74,861,66,1079"/>
+<area shape="rect" id="Node000003" href="$class_audio_updater.html" title="Componente encargado de actualizar continuamente la reproducción de música mediante AudioService." alt="" coords="201,56,301,83"/>
+<area shape="poly" id="edge13_Node000002_Node000003" title=" " alt="" coords="61,1079,70,870,89,557,103,399,120,259,139,152,151,116,163,93,179,79,202,72,199,76,182,84,167,96,155,118,145,154,125,260,108,399,95,557,75,870,66,1079"/>
+<area shape="rect" id="Node000004" href="$class_avatar_grid.html" title="Genera una cuadrícula de botones de selección de avatar a partir de una lista de sprites...." alt="" coords="209,107,292,133"/>
+<area shape="poly" id="edge14_Node000002_Node000004" title=" " alt="" coords="61,1079,71,879,91,582,105,433,121,300,140,200,151,165,163,144,184,128,210,121,207,125,186,133,167,147,156,167,146,201,127,301,110,433,96,583,76,879,66,1079"/>
+<area shape="rect" id="Node000005" href="$class_ball_spell_type.html" title="Componente de Unity encargado de gestionar el comportamiento de un hechizo tipo esfera...." alt="" coords="201,157,301,184"/>
+<area shape="poly" id="edge15_Node000002_Node000005" title=" " alt="" coords="61,1079,72,889,92,608,106,467,123,342,141,247,152,215,163,194,180,181,202,173,199,177,182,185,167,198,156,217,147,249,128,343,112,467,98,609,77,889,66,1079"/>
+<area shape="rect" id="Node000006" href="$class_base_button.html" title="Clase base para botones de la UI que reproducen un sonido al ser pulsados. Las subclases pueden sobre..." alt="" coords="206,208,296,235"/>
+<area shape="poly" id="edge16_Node000002_Node000006" title=" " alt="" coords="61,1079,73,898,94,634,108,501,124,384,142,295,152,264,163,245,182,230,207,223,204,227,185,235,167,248,157,266,147,296,130,385,113,501,99,634,78,898,67,1079"/>
+<area shape="rect" id="Node000010" href="$class_card_u_i.html" title="Representa visualmente un perfil de usuario en la pantalla de selección de perfiles...." alt="" coords="219,259,282,285"/>
+<area shape="poly" id="edge20_Node000002_Node000010" title=" " alt="" coords="59,1079,60,919,72,685,84,563,102,452,128,360,144,323,163,296,175,285,189,278,220,271,217,275,191,283,178,290,167,299,149,326,133,361,108,453,89,564,77,685,66,919,65,1079"/>
+<area shape="rect" id="Node000011" href="$class_change_language.html" title="Componente de UI que permite cambiar el idioma de la aplicación a través de IUIService...." alt="" coords="190,309,312,336"/>
+<area shape="poly" id="edge21_Node000002_Node000011" title=" " alt="" coords="60,1079,62,928,75,709,87,596,105,492,130,406,145,372,163,346,190,329,188,334,167,350,150,375,135,408,111,493,92,596,80,709,67,928,65,1079"/>
+<area shape="rect" id="Node000012" href="$class_coroutine_runner.html" title=" " alt="" coords="191,360,310,387"/>
+<area shape="poly" id="edge22_Node000002_Node000012" title=" " alt="" coords="60,1079,64,937,78,733,90,628,108,532,132,452,146,421,163,397,175,386,192,379,189,383,178,391,167,400,151,424,137,454,113,533,96,629,83,734,69,938,65,1080"/>
+<area shape="rect" id="Node000013" href="$class_data_show.html" title="Expone un ObjectDataScriptable asignado desde el Inspector para que otros componentes puedan consulta..." alt="" coords="210,411,292,437"/>
+<area shape="poly" id="edge23_Node000002_Node000013" title=" " alt="" coords="60,1079,65,946,81,757,94,660,111,572,134,498,147,470,163,447,184,432,211,425,207,429,186,437,167,451,152,472,139,500,116,573,99,661,86,758,71,946,66,1079"/>
+<area shape="rect" id="Node000014" href="$class_death_panel.html" title="Panel que aparece al morir el jugador. Escucha el input de pausa para reiniciar la partida: resetea e..." alt="" coords="206,461,296,488"/>
+<area shape="poly" id="edge24_Node000002_Node000014" title=" " alt="" coords="61,1079,67,955,84,781,97,693,114,612,136,545,148,518,163,498,182,484,207,476,204,480,185,488,167,502,153,521,141,547,119,613,102,694,89,782,73,955,66,1079"/>
+<area shape="rect" id="Node000015" href="$class_destroy_zone.html" title="Componente de Unity encargado de eliminar objetos que entran en una zona determinada mediante colisio..." alt="" coords="203,512,299,539"/>
+<area shape="poly" id="edge25_Node000002_Node000015" title=" " alt="" coords="61,1079,69,964,87,806,100,725,117,652,138,591,163,549,181,535,204,528,201,532,183,540,167,552,142,593,122,653,105,726,92,807,74,965,66,1079"/>
+<area shape="rect" id="Node000016" href="$class_display_score_table.html" title="Muestra la tabla de puntuaciones en escena con paginación. Las puntuaciones se ordenan de mayor a men..." alt="" coords="186,563,316,589"/>
+<area shape="poly" id="edge26_Node000002_Node000016" title=" " alt="" coords="62,1079,71,974,90,831,104,758,120,692,140,637,163,600,187,584,184,589,167,603,144,640,125,693,109,759,95,831,77,974,67,1080"/>
+<area shape="rect" id="Node000017" href="$class_dissolve_mesh.html" title="Componente standalone que aplica el shader Custom/Dissolve al Renderer del objeto y lo destruye al te..." alt="" coords="199,613,303,640"/>
+<area shape="poly" id="edge27_Node000002_Node000017" title=" " alt="" coords="62,1079,73,983,93,855,107,791,123,732,141,684,163,650,179,638,200,631,196,635,181,643,167,654,146,686,128,734,112,792,99,856,79,984,68,1080"/>
+<area shape="rect" id="Node000018" href="$class_focus_controller.html" title="Controla el modo Focus del jugador: sincroniza las animaciones del punto de mira y la cámara con la e..." alt="" coords="194,664,308,691"/>
+<area shape="poly" id="edge28_Node000002_Node000018" title=" " alt="" coords="63,1079,76,993,97,880,126,772,143,730,163,701,177,690,195,683,192,687,179,694,167,704,148,733,131,774,102,881,81,994,69,1080"/>
+<area shape="rect" id="Node000019" href="$class_lantern_collect.html" title="Objeto coleccionable que representa una linterna. Al ser recogida por el jugador, se acopla al socket..." alt="" coords="198,715,304,741"/>
+<area shape="poly" id="edge29_Node000002_Node000019" title=" " alt="" coords="59,1079,63,1013,77,925,90,878,108,832,132,789,163,751,179,740,200,733,196,737,181,744,167,755,136,792,113,835,95,880,82,926,68,1013,65,1079"/>
+<area shape="rect" id="Node000020" href="$class_lantern_socket.html" title=" " alt="" coords="198,765,304,792"/>
+<area shape="poly" id="edge30_Node000002_Node000020" title=" " alt="" coords="61,1079,67,1021,84,947,97,908,114,869,136,834,163,802,179,791,199,784,196,788,181,795,166,806,140,837,119,872,102,910,89,948,73,1022,66,1079"/>
+<area shape="rect" id="Node000021" href="$class_music_initializer.html" title="Componente de Unity encargado de inicializar automáticamente la reproducción de música al cargar una ..." alt="" coords="197,816,305,843"/>
+<area shape="poly" id="edge31_Node000002_Node000021" title=" " alt="" coords="63,1079,73,1030,91,969,120,907,139,878,163,853,178,842,198,835,195,839,181,847,166,857,144,881,124,909,96,971,78,1031,68,1079"/>
+<area shape="rect" id="Node000022" href="$class_new_mono_behaviour_script.html" title="MonoBehaviour que gestiona el lanzamiento y carga de hechizos del jugador, procesando la entrada segú..." alt="" coords="165,867,337,893"/>
+<area shape="poly" id="edge32_Node000002_Node000022" title=" " alt="" coords="66,1079,79,1040,98,992,126,944,163,903,185,892,182,896,166,907,130,948,103,995,84,1041,72,1080"/>
+<area shape="rect" id="Node000023" href="$class_object_detection.html" title="Componente de Unity encargado de detectar objetos frente al jugador mediante Raycast...." alt="" coords="193,917,308,944"/>
+<area shape="poly" id="edge33_Node000002_Node000023" title=" " alt="" coords="71,1080,106,1016,132,983,163,954,194,940,191,944,166,958,136,986,111,1019,76,1081"/>
+<area shape="rect" id="Node000024" href="$class_opendoor.html" title="Esta clase sirve para controlar los botones de las puertas." alt="" coords="212,968,290,995"/>
+<area shape="poly" id="edge34_Node000002_Node000024" title=" " alt="" coords="79,1081,116,1041,163,1004,187,993,213,986,210,990,189,998,166,1009,120,1045,84,1084"/>
+<area shape="rect" id="Node000025" href="$class_pause_panel.html" title="MonoBehaviour que gestiona el panel de pausa del juego, permitiendo reanudar la partida,..." alt="" coords="205,1019,296,1045"/>
+<area shape="poly" id="edge35_Node000002_Node000025" title=" " alt="" coords="99,1085,164,1055,206,1042,203,1046,166,1060,103,1089"/>
+<area shape="rect" id="Node000026" href="$class_player_controller.html" title="Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento,..." alt="" coords="194,1069,308,1096"/>
+<area shape="poly" id="edge36_Node000002_Node000026" title=" " alt="" coords="130,1097,195,1088,191,1092,134,1101"/>
+<area shape="rect" id="Node000027" href="$class_player_input_manager.html" title="Singleton global para gestionar PlayerInputActions." alt="" coords="182,1120,320,1147"/>
+<area shape="poly" id="edge37_Node000002_Node000027" title=" " alt="" coords="131,1115,184,1122,180,1126,134,1120"/>
+<area shape="rect" id="Node000028" href="$class_portal___controller.html" title=" " alt="" coords="192,1171,310,1197"/>
+<area shape="poly" id="edge38_Node000002_Node000028" title=" " alt="" coords="100,1127,166,1156,200,1169,196,1172,164,1161,102,1131"/>
+<area shape="rect" id="Node000029" href="$class_profile_loader.html" title="Componente de Unity que se encarga de cargar y mostrar perfiles de usuario en la UI al iniciar la esc..." alt="" coords="202,1221,300,1248"/>
+<area shape="poly" id="edge39_Node000002_Node000029" title=" " alt="" coords="81,1131,120,1171,166,1207,204,1223,199,1226,163,1212,116,1175,83,1136"/>
+<area shape="rect" id="Node000030" href="$class_ray_line.html" title="MonoBehaviour que gestiona el ciclo de vida de un rayo lanzado como hechizo, desactivándolo automátic..." alt="" coords="216,1272,286,1299"/>
+<area shape="poly" id="edge40_Node000002_Node000030" title=" " alt="" coords="73,1133,111,1197,136,1230,166,1258,191,1271,218,1279,213,1282,189,1276,163,1262,132,1233,106,1200,74,1138"/>
+<area shape="rect" id="Node000031" href="$class_score_manager.html" title="MonoBehaviour encargado de gestionar el registro de puntuaciones en un archivo JSON...." alt="" coords="198,1323,304,1349"/>
+<area shape="poly" id="edge41_Node000002_Node000031" title=" " alt="" coords="69,1134,84,1175,103,1221,130,1268,166,1309,182,1318,200,1326,195,1329,179,1323,163,1313,126,1272,98,1224,79,1176,69,1139"/>
+<area shape="rect" id="Node000032" href="$class_scroll_follow.html" title="MonoBehaviour que desplaza automáticamente un ScrollRect horizontal para mantener visible el elemento..." alt="" coords="205,1373,297,1400"/>
+<area shape="poly" id="edge42_Node000002_Node000032" title=" " alt="" coords="66,1134,78,1185,96,1245,124,1307,144,1335,166,1359,184,1371,207,1380,202,1382,182,1376,163,1363,139,1338,120,1309,91,1247,73,1186,66,1140"/>
+<area shape="rect" id="Node000033" href="$class_setting_controller.html" title="MonoBehaviour que gestiona el panel de ajustes de usuario, cargando la configuración del perfil activ..." alt="" coords="192,1424,310,1451"/>
+<area shape="poly" id="edge43_Node000002_Node000033" title=" " alt="" coords="64,1134,73,1194,89,1268,102,1306,119,1344,140,1379,166,1410,194,1427,189,1429,163,1414,136,1382,114,1347,97,1308,84,1269,67,1195,64,1140"/>
+<area shape="rect" id="Node000034" href="$class_slime_base.html" title="Clase base para todos los slimes del juego. Gestiona vida, barra de vida, disolución al morir y el ci..." alt="" coords="209,1475,293,1501"/>
+<area shape="poly" id="edge44_Node000002_Node000034" title=" " alt="" coords="62,1134,68,1203,82,1290,95,1336,113,1381,136,1424,166,1461,186,1474,210,1483,206,1485,184,1479,163,1465,132,1427,108,1384,90,1338,77,1291,63,1203,62,1140"/>
+<area shape="rect" id="Node000039" href="$class_slots_spell_book.html" title="Componente de Unity encargado de gestionar la lógica relacionada con los espacios o slots disponibles..." alt="" coords="196,1525,306,1552"/>
+<area shape="poly" id="edge49_Node000002_Node000039" title=" " alt="" coords="66,1134,81,1222,102,1335,131,1442,148,1483,167,1512,180,1522,197,1530,193,1533,177,1526,163,1515,143,1486,126,1444,97,1336,76,1223,66,1139"/>
+<area shape="rect" id="Node000040" href="$class_spell_base.html" title="Clase parcial encargada de definir la estructura base de un hechizo. Contiene elementos comunes utili..." alt="" coords="211,1576,291,1603"/>
+<area shape="poly" id="edge50_Node000002_Node000040" title=" " alt="" coords="65,1134,79,1232,99,1360,112,1424,128,1482,146,1530,167,1562,187,1576,213,1585,208,1588,185,1581,163,1566,141,1532,123,1484,107,1425,93,1361,73,1233,65,1139"/>
+<area shape="rect" id="Node000047" href="$class_spell_book_page_controller.html" title="Componente de Unity encargado de controlar y actualizar la información mostrada en una página del lib..." alt="" coords="168,1627,334,1653"/>
+<area shape="poly" id="edge57_Node000002_Node000047" title=" " alt="" coords="64,1134,77,1242,95,1385,109,1457,125,1523,144,1576,167,1613,182,1625,177,1627,163,1616,140,1579,120,1524,104,1458,90,1385,71,1242,64,1139"/>
+<area shape="rect" id="Node000048" href="$class_spellbook.html" title="Componente de Unity encargado de representar un libro de hechizos coleccionable dentro del juego...." alt="" coords="212,1677,290,1704"/>
+<area shape="poly" id="edge58_Node000002_Node000048" title=" " alt="" coords="64,1134,74,1251,92,1409,105,1490,122,1563,142,1623,167,1664,187,1678,214,1687,209,1689,185,1683,163,1667,138,1625,117,1564,100,1491,87,1410,69,1252,64,1139"/>
+<area shape="rect" id="Node000049" href="$class_start_shooting_range.html" title="MonoBehaviour que implementa IHittable para actuar como disparador del rango de tiro del tutorial...." alt="" coords="182,1728,320,1755"/>
+<area shape="poly" id="edge59_Node000002_Node000049" title=" " alt="" coords="63,1134,73,1261,89,1434,102,1522,119,1603,141,1669,153,1695,167,1714,184,1728,179,1730,163,1718,148,1698,136,1671,114,1604,97,1523,84,1435,67,1261,63,1140"/>
+<area shape="rect" id="Node000050" href="$class_submit_user.html" title="Componente de Unity encargado de gestionar la creación de perfiles de usuario desde la interfaz...." alt="" coords="206,1779,296,1805"/>
+<area shape="poly" id="edge60_Node000002_Node000050" title=" " alt="" coords="63,1134,71,1270,86,1458,99,1555,116,1643,139,1716,152,1744,167,1765,184,1778,207,1787,203,1789,182,1783,163,1769,147,1746,134,1718,111,1644,94,1556,81,1459,65,1270,63,1139"/>
+<area shape="rect" id="Node000051" href="$class_target_controller.html" title="MonoBehaviour que controla el comportamiento de un blanco del rango de tiro del tutorial...." alt="" coords="194,1829,308,1856"/>
+<area shape="poly" id="edge61_Node000002_Node000051" title=" " alt="" coords="63,1134,69,1278,83,1482,96,1587,113,1683,137,1762,151,1792,167,1816,179,1826,196,1835,191,1837,176,1831,163,1819,146,1795,132,1764,108,1684,90,1588,78,1483,64,1279,62,1139"/>
+<area shape="rect" id="Node000052" href="$class_tutorial_inicializer.html" title="MonoBehaviour encargado de inicializar y gestionar el flujo del tutorial inicial, definiendo la secue..." alt="" coords="191,1880,310,1907"/>
+<area shape="poly" id="edge62_Node000002_Node000052" title=" " alt="" coords="62,1134,67,1288,80,1507,92,1620,111,1723,135,1808,150,1841,167,1866,178,1876,193,1885,188,1886,175,1881,163,1870,145,1844,130,1810,105,1724,87,1620,75,1507,62,1288,62,1140"/>
+<area shape="rect" id="Node000053" href="$class_u_i_controller.html" title="MonoBehaviour que controla los elementos de UI relacionados con las estadísticas del jugador,..." alt="" coords="205,1931,296,1957"/>
+<area shape="poly" id="edge63_Node000002_Node000053" title=" " alt="" coords="62,1134,66,1297,77,1531,89,1652,108,1763,133,1855,149,1890,167,1917,184,1930,207,1939,202,1941,182,1935,163,1920,144,1893,128,1856,102,1764,84,1653,72,1531,60,1297,62,1139"/>
+<area shape="rect" id="Node000054" href="$class_u_i_initializer.html" title="MonoBehaviour que inicializa el estado de la UI al activarse, cambiando el mapa de controles a UI y r..." alt="" coords="207,1981,294,2008"/>
+<area shape="poly" id="edge64_Node000002_Node000054" title=" " alt="" coords="64,1134,78,1318,99,1582,113,1715,130,1831,147,1920,157,1950,167,1968,185,1981,209,1991,204,1992,183,1986,163,1971,152,1952,142,1921,124,1832,108,1715,94,1582,73,1318,64,1140"/>
+<area shape="rect" id="Node000055" href="$class_wave_manager.html" title="MonoBehaviour que gestiona el sistema de oleadas de enemigos, controlando el spawning,..." alt="" coords="199,2032,303,2059"/>
+<area shape="poly" id="edge65_Node000002_Node000055" title=" " alt="" coords="64,1134,77,1327,98,1607,112,1749,128,1873,147,1967,156,1999,167,2018,181,2030,201,2039,196,2041,178,2035,163,2022,152,2001,141,1969,123,1874,106,1749,92,1608,72,1327,64,1139"/>
+<area shape="rect" id="Node000056" href="$classball_controller.html" title="Componente de Unity encargado de controlar el comportamiento de un objeto flotante coleccionable...." alt="" coords="202,2083,300,2109"/>
+<area shape="poly" id="edge66_Node000002_Node000056" title=" " alt="" coords="64,1134,76,1337,96,1633,110,1783,127,1915,146,2015,156,2049,167,2069,183,2082,204,2091,199,2092,180,2086,163,2072,151,2051,140,2016,121,1916,105,1783,91,1634,71,1337,63,1140"/>
+<area shape="rect" id="Node000057" href="$classchange_staff_material.html" title="Componente que actualiza el material del objeto en cada frame para reflejar visualmente el hechizo ac..." alt="" coords="183,2133,319,2160"/>
+<area shape="poly" id="edge67_Node000002_Node000057" title=" " alt="" coords="63,1134,75,1346,95,1659,108,1817,125,1956,145,2062,155,2098,167,2120,185,2135,180,2135,163,2123,151,2100,139,2064,120,1957,103,1817,89,1659,70,1346,63,1140"/>
+<area shape="rect" id="Node000058" href="$classteleporter__controller.html" title="Teletransportador con fade al color que queramos. Al entrar el jugador en el trigger,..." alt="" coords="183,2184,318,2211"/>
+<area shape="poly" id="edge68_Node000002_Node000058" title=" " alt="" coords="63,1134,74,1355,93,1684,107,1851,124,1998,144,2110,155,2148,167,2170,185,2186,180,2186,163,2174,150,2150,138,2111,118,1999,102,1851,88,1685,69,1356,63,1140"/>
+<area shape="rect" id="Node000007" href="$class_back_button.html" title="Botón que navega a la escena anterior usando ISceneService. Hereda la reproducción de sonido de BaseB..." alt="" coords="418,157,507,184"/>
+<area shape="poly" id="edge17_Node000006_Node000007" title=" " alt="" coords="309,205,419,179,416,183,312,209"/>
+<area shape="rect" id="Node000008" href="$class_quit_button.html" title="Botón que cierra la aplicación al ser pulsado. Hereda la reproducción de sonido de BaseButton." alt="" coords="421,208,504,235"/>
+<area shape="poly" id="edge18_Node000006_Node000008" title=" " alt="" coords="310,219,422,220,418,223,313,223"/>
+<area shape="rect" id="Node000009" href="$class_scene_button.html" title="Botón que carga una escena específica usando ISceneService. La escena de destino se configura desde e..." alt="" coords="414,259,511,285"/>
+<area shape="poly" id="edge19_Node000006_Node000009" title=" " alt="" coords="309,233,416,259,412,262,312,238"/>
+<area shape="rect" id="Node000035" href="$class_basic_slime_controller.html" title="Slime básico que se mueve saltando hacia el jugador y ataca por proximidad con un OverlapSphere...." alt="" coords="391,1399,534,1425"/>
+<area shape="poly" id="edge45_Node000034_Node000035" title=" " alt="" coords="306,1471,336,1460,384,1435,417,1424,413,1428,386,1440,338,1465,310,1475"/>
+<area shape="rect" id="Node000038" href="$class_shooter_slime_controller.html" title="Slime a distancia que mantiene un rango óptimo con el jugador y dispara un raycast cuando tiene línea..." alt="" coords="385,1449,540,1476"/>
+<area shape="poly" id="edge48_Node000034_Node000038" title=" " alt="" coords="307,1479,387,1470,382,1474,310,1483"/>
+<area shape="rect" id="Node000036" href="$class_big_slime.html" title="Variante grande del slime básico que, al morir, genera un número aleatorio de slimes hijos en posicio..." alt="" coords="607,1373,681,1400"/>
+<area shape="poly" id="edge46_Node000035_Node000036" title=" " alt="" coords="548,1398,609,1390,605,1393,551,1402"/>
+<area shape="rect" id="Node000037" href="$class_explosive_slime.html" title="Slime que explota al entrar en rango de ataque, dañando todo lo que esté cerca y destruyéndose...." alt="" coords="588,1424,700,1451"/>
+<area shape="poly" id="edge47_Node000035_Node000037" title=" " alt="" coords="549,1422,590,1428,586,1431,551,1427"/>
+<area shape="rect" id="Node000041" href="$class_acid_bolt.html" title=" " alt="" coords="428,1500,498,1527"/>
+<area shape="poly" id="edge51_Node000040_Node000041" title=" " alt="" coords="304,1573,336,1562,384,1536,429,1522,425,1525,386,1541,338,1566,308,1577"/>
+<area shape="rect" id="Node000042" href="$class_fireball.html" title=" " alt="" coords="431,1551,494,1577"/>
+<area shape="poly" id="edge52_Node000040_Node000042" title=" " alt="" coords="305,1580,432,1566,428,1569,308,1585"/>
+<area shape="rect" id="Node000043" href="$class_solar_flare.html" title=" " alt="" coords="422,1601,503,1628"/>
+<area shape="poly" id="edge53_Node000040_Node000043" title=" " alt="" coords="305,1593,424,1608,420,1611,307,1598"/>
+<area shape="rect" id="Node000044" href="$class_spell_antimatter.html" title=" " alt="" coords="408,1652,518,1679"/>
+<area shape="poly" id="edge54_Node000040_Node000044" title=" " alt="" coords="305,1601,338,1612,386,1638,418,1651,413,1652,384,1642,336,1617,307,1606"/>
+<area shape="rect" id="Node000045" href="$class_spell_lanza_de_luz.html" title=" " alt="" coords="401,1703,524,1729"/>
+<area shape="poly" id="edge55_Node000040_Node000045" title=" " alt="" coords="306,1597,339,1613,356,1632,364,1652,371,1670,387,1689,407,1701,402,1703,383,1693,366,1673,359,1653,351,1635,335,1617,307,1602"/>
+<area shape="rect" id="Node000046" href="$class_spell_light_spread.html" title=" " alt="" coords="403,1753,522,1780"/>
+<area shape="poly" id="edge56_Node000040_Node000046" title=" " alt="" coords="305,1595,324,1602,339,1613,352,1629,360,1645,364,1677,368,1709,375,1724,387,1739,405,1753,400,1754,383,1743,370,1727,363,1710,359,1678,354,1647,348,1632,335,1617,321,1607,307,1600"/>
+</map>

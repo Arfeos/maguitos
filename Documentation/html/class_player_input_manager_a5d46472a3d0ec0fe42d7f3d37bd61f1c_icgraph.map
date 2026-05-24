@@ -1,0 +1,5 @@
+<map id="PlayerInputManager.SwitchControlMap" name="PlayerInputManager.SwitchControlMap">
+<area shape="rect" id="Node000001" title="Cambia el ActionMap activo. Deshabilita todas las acciones y habilita solo el mapa solicitado." alt="" coords="235,5,416,48"/>
+<area shape="rect" id="Node000002" href="$class_pause_service.html#adde550d219723c811e499d600d284096" title="Alterna el estado del panel de pausa. Si no existe una instancia en la escena activa,..." alt="" coords="5,13,187,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,27,187,29,187,24,222,26"/>
+</map>

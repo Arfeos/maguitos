@@ -1,11 +1,11 @@
 /// <summary>
-/// Clase de evento derivada de <see cref="GameEventBase"/> utilizada para notificar cambios relacionados con el man· del personaje dentro del sistema de eventos gestionado por <see cref="EventService"/>. 
-/// Permite comunicar actualizaciones del valor de man· a otros sistemas suscritos mediante <see cref="IEventService"/>
+/// Clase de evento derivada de <see cref="GameEventBase"/> utilizada para notificar cambios relacionados con el man√° del personaje dentro del sistema de eventos gestionado por <see cref="EventService"/>. 
+/// Permite comunicar actualizaciones del valor de man√° a otros sistemas suscritos mediante <see cref="IEventService"/>
 /// </summary>
 public class ManaEvent : GameEventBase
 {
     /// <summary>
-    /// Variable p˙blica que almacena la nueva cantidad de man· que deber· ser aplicada o actualizada
+    /// Variable p√∫blica que almacena la nueva cantidad de man√° que deber√° ser aplicada o actualizada
     /// </summary>
     public int ManaToChange;    
 }

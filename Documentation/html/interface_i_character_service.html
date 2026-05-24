@@ -1,0 +1,742 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la interface ICharacterService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('interface_i_character_service.html','','interface_i_character_service-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la interface ICharacterService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Define el contrato para gestionar el estado del personaje jugador: hechizos equipados, maná, vida y estadísticas de partida.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de ICharacterService</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_i_character_service__inherit__graph.png" border="0" usemap="#a_i_character_service_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_i_character_service_inherit__map" id="a_i_character_service_inherit__map">
+<area shape="rect" title="Define el contrato para gestionar el estado del personaje jugador: hechizos equipados,..." alt="" coords="5,5,132,32"/>
+<area shape="rect" href="class_character_service.html" title="Servicio encargado de gestionar toda la lógica relacionada con el personaje, incluyendo salud,..." alt="" coords="7,80,130,107"/>
+<area shape="poly" title=" " alt="" coords="70,46,71,80,66,79,67,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ab2f4a017a6edd5a0654a6d5e24ad47e1" id="r_ab2f4a017a6edd5a0654a6d5e24ad47e1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ab2f4a017a6edd5a0654a6d5e24ad47e1">getIndex</a> ()</td></tr>
+<tr class="memdesc:ab2f4a017a6edd5a0654a6d5e24ad47e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el índice del hechizo actualmente seleccionado.  <br /></td></tr>
+<tr class="memitem:aecff46bc354ab7b9e6141111427aa46a" id="r_aecff46bc354ab7b9e6141111427aa46a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aecff46bc354ab7b9e6141111427aa46a">setActualSpell</a> (int cambioDePosicion)</td></tr>
+<tr class="memdesc:aecff46bc354ab7b9e6141111427aa46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cambia el hechizo activo desplazando la selección la cantidad indicada.  <br /></td></tr>
+<tr class="memitem:a52b4f7fc89f6ad6cf490b3baf64ebb66" id="r_a52b4f7fc89f6ad6cf490b3baf64ebb66"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a52b4f7fc89f6ad6cf490b3baf64ebb66">addSpell</a> (<a class="el" href="class_spell_base.html">SpellBase</a> spellToAdd)</td></tr>
+<tr class="memdesc:a52b4f7fc89f6ad6cf490b3baf64ebb66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade un hechizo al inventario del personaje.  <br /></td></tr>
+<tr class="memitem:ada4181ed909eecb713446cb13f8b714b" id="r_ada4181ed909eecb713446cb13f8b714b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ada4181ed909eecb713446cb13f8b714b">removeSpell</a> (<a class="el" href="class_spell_base.html">SpellBase</a> spellToRemove)</td></tr>
+<tr class="memdesc:ada4181ed909eecb713446cb13f8b714b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un hechizo del inventario por referencia.  <br /></td></tr>
+<tr class="memitem:a2c7144d4545095be2d85131799f133a7" id="r_a2c7144d4545095be2d85131799f133a7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2c7144d4545095be2d85131799f133a7">removeSpell</a> (int spellToRemove)</td></tr>
+<tr class="memdesc:a2c7144d4545095be2d85131799f133a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina el hechizo situado en la posición indicada del inventario.  <br /></td></tr>
+<tr class="memitem:a696eada8fe4fe888e124603f35cc22b5" id="r_a696eada8fe4fe888e124603f35cc22b5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a696eada8fe4fe888e124603f35cc22b5">removeSpell</a> (string spellToRemove)</td></tr>
+<tr class="memdesc:a696eada8fe4fe888e124603f35cc22b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina el hechizo con el nombre indicado del inventario.  <br /></td></tr>
+<tr class="memitem:a1ce6efcae73ab3dbcb498288d08c6ea3" id="r_a1ce6efcae73ab3dbcb498288d08c6ea3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1ce6efcae73ab3dbcb498288d08c6ea3">ResetCharacter</a> ()</td></tr>
+<tr class="memdesc:a1ce6efcae73ab3dbcb498288d08c6ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restaura el personaje a su estado inicial (vida, maná, hechizos, etc.).  <br /></td></tr>
+<tr class="memitem:a986ea13b42bfd6b50c774b22f8548d50" id="r_a986ea13b42bfd6b50c774b22f8548d50"><td class="memItemLeft"><a class="el" href="class_spell_base.html">SpellBase</a>&#160;</td><td class="memItemRight"><a class="el" href="#a986ea13b42bfd6b50c774b22f8548d50">getSpell</a> (string spellName)</td></tr>
+<tr class="memdesc:a986ea13b42bfd6b50c774b22f8548d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el hechizo equipado con el nombre indicado.  <br /></td></tr>
+<tr class="memitem:a5da0a0ac2bd99aa8e1b5006b87669b51" id="r_a5da0a0ac2bd99aa8e1b5006b87669b51"><td class="memItemLeft"><a class="el" href="class_spell_base.html">SpellBase</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5da0a0ac2bd99aa8e1b5006b87669b51">getSpell</a> (int spellPosition)</td></tr>
+<tr class="memdesc:a5da0a0ac2bd99aa8e1b5006b87669b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el hechizo situado en la posición indicada del inventario.  <br /></td></tr>
+<tr class="memitem:abd225f81a3b91981b839ae9a635a9151" id="r_abd225f81a3b91981b839ae9a635a9151"><td class="memItemLeft">List&lt; <a class="el" href="class_spell_base.html">SpellBase</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#abd225f81a3b91981b839ae9a635a9151">getPrimarySpell</a> ()</td></tr>
+<tr class="memdesc:abd225f81a3b91981b839ae9a635a9151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la lista de hechizos primarios equipados.  <br /></td></tr>
+<tr class="memitem:a62b54bf7dcb56c3df678e50a4d502460" id="r_a62b54bf7dcb56c3df678e50a4d502460"><td class="memItemLeft">List&lt; <a class="el" href="class_spell_base.html">SpellBase</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a62b54bf7dcb56c3df678e50a4d502460">getSecundarySpell</a> ()</td></tr>
+<tr class="memdesc:a62b54bf7dcb56c3df678e50a4d502460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la lista de hechizos secundarios equipados.  <br /></td></tr>
+<tr class="memitem:a99b2b13b499a989ca370e75966809a4c" id="r_a99b2b13b499a989ca370e75966809a4c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a99b2b13b499a989ca370e75966809a4c">AddMana</a> (int mana)</td></tr>
+<tr class="memdesc:a99b2b13b499a989ca370e75966809a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade maná al personaje sin superar el máximo.  <br /></td></tr>
+<tr class="memitem:a68fa9406ba9704fd114361d7f9611ec9" id="r_a68fa9406ba9704fd114361d7f9611ec9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a68fa9406ba9704fd114361d7f9611ec9">RemoveMana</a> (int mana)</td></tr>
+<tr class="memdesc:a68fa9406ba9704fd114361d7f9611ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consume maná del personaje si hay suficiente.  <br /></td></tr>
+<tr class="memitem:a9af5cf96c36d98b1f8b9deabd39cad19" id="r_a9af5cf96c36d98b1f8b9deabd39cad19"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a9af5cf96c36d98b1f8b9deabd39cad19">CheckMana</a> ()</td></tr>
+<tr class="memdesc:a9af5cf96c36d98b1f8b9deabd39cad19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el maná actual del personaje.  <br /></td></tr>
+<tr class="memitem:af0bcc5698ae17b3e1a85698038dfc638" id="r_af0bcc5698ae17b3e1a85698038dfc638"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af0bcc5698ae17b3e1a85698038dfc638">getMaxMana</a> ()</td></tr>
+<tr class="memdesc:af0bcc5698ae17b3e1a85698038dfc638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el maná máximo del personaje.  <br /></td></tr>
+<tr class="memitem:afad413a6fce5be6a2d9ac2148416f633" id="r_afad413a6fce5be6a2d9ac2148416f633"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#afad413a6fce5be6a2d9ac2148416f633">CheckSpellCapacity</a> ()</td></tr>
+<tr class="memdesc:afad413a6fce5be6a2d9ac2148416f633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el número de huecos de hechizo disponibles.  <br /></td></tr>
+<tr class="memitem:a342f13bc8b83720f0236c1ef2eb19374" id="r_a342f13bc8b83720f0236c1ef2eb19374"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a342f13bc8b83720f0236c1ef2eb19374">TakeDamage</a> (int damageTaken)</td></tr>
+<tr class="memdesc:a342f13bc8b83720f0236c1ef2eb19374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aplica daño al personaje, reduciendo su vida.  <br /></td></tr>
+<tr class="memitem:a97adb95f9f7d62bd55552dae60d252e8" id="r_a97adb95f9f7d62bd55552dae60d252e8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a97adb95f9f7d62bd55552dae60d252e8">Heal</a> (int amountHealed)</td></tr>
+<tr class="memdesc:a97adb95f9f7d62bd55552dae60d252e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cura al personaje, aumentando su vida sin superar el máximo.  <br /></td></tr>
+<tr class="memitem:a4c506dd7393053d7d2b7f1bc662419eb" id="r_a4c506dd7393053d7d2b7f1bc662419eb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4c506dd7393053d7d2b7f1bc662419eb">Die</a> ()</td></tr>
+<tr class="memdesc:a4c506dd7393053d7d2b7f1bc662419eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ejecuta la secuencia de muerte del personaje.  <br /></td></tr>
+<tr class="memitem:aafb5cb25b539ca04f3dd52454b847b23" id="r_aafb5cb25b539ca04f3dd52454b847b23"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aafb5cb25b539ca04f3dd52454b847b23">Genocide</a> ()</td></tr>
+<tr class="memdesc:aafb5cb25b539ca04f3dd52454b847b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra que el jugador ha usado un hechizo, invalidando el logro pacifista si procede.  <br /></td></tr>
+<tr class="memitem:a4afea1595c39bba793cf21e5fb06a5dc" id="r_a4afea1595c39bba793cf21e5fb06a5dc"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a4afea1595c39bba793cf21e5fb06a5dc">getPacifist</a> ()</td></tr>
+<tr class="memdesc:a4afea1595c39bba793cf21e5fb06a5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si el jugador ha completado la partida sin usar ningún hechizo.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Define el contrato para gestionar el estado del personaje jugador: hechizos equipados, maná, vida y estadísticas de partida. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_i_character_service_8cs_source.html#l00009">9</a> del archivo <a class="el" href="_i_character_service_8cs_source.html">ICharacterService.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a99b2b13b499a989ca370e75966809a4c" name="a99b2b13b499a989ca370e75966809a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b2b13b499a989ca370e75966809a4c">&#9670;&#160;</a></span>AddMana()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ICharacterService.AddMana </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mana</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Añade maná al personaje sin superar el máximo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mana</td><td>Cantidad de maná a añadir.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#aaf7515f7455871e7d3ab0f7707c16162">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a52b4f7fc89f6ad6cf490b3baf64ebb66" name="a52b4f7fc89f6ad6cf490b3baf64ebb66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b4f7fc89f6ad6cf490b3baf64ebb66">&#9670;&#160;</a></span>addSpell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ICharacterService.addSpell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_spell_base.html">SpellBase</a></td>          <td class="paramname"><span class="paramname"><em>spellToAdd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Añade un hechizo al inventario del personaje. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spellToAdd</td><td>Hechizo a añadir.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si se añadió correctamente; <code>false</code> si no hay hueco o ya estaba equipado.</dd></dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#ad44fb3e07d8807a603dffd9f48c20365">CharacterService</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_i_character_service_a52b4f7fc89f6ad6cf490b3baf64ebb66_icgraph.png" border="0" usemap="#ainterface_i_character_service_a52b4f7fc89f6ad6cf490b3baf64ebb66_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_i_character_service_a52b4f7fc89f6ad6cf490b3baf64ebb66_icgraph" id="ainterface_i_character_service_a52b4f7fc89f6ad6cf490b3baf64ebb66_icgraph">
+<area shape="rect" title="Añade un hechizo al inventario del personaje." alt="" coords="177,5,357,32"/>
+<area shape="rect" href="class_spellbook.html#a5d37511afa4487802501584662fd5157" title="Método ejecutado cuando el objeto es recogido. Obtiene una referencia a ICharacterService mediante Ap..." alt="" coords="5,5,129,32"/>
+<area shape="poly" title=" " alt="" coords="158,19,129,21,129,16,163,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9af5cf96c36d98b1f8b9deabd39cad19" name="a9af5cf96c36d98b1f8b9deabd39cad19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af5cf96c36d98b1f8b9deabd39cad19">&#9670;&#160;</a></span>CheckMana()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ICharacterService.CheckMana </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve el maná actual del personaje. </p>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a17079774dd4b0b5a1a349fd18432f85b">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="afad413a6fce5be6a2d9ac2148416f633" name="afad413a6fce5be6a2d9ac2148416f633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afad413a6fce5be6a2d9ac2148416f633">&#9670;&#160;</a></span>CheckSpellCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ICharacterService.CheckSpellCapacity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve el número de huecos de hechizo disponibles. </p>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a6a7b5a2a649551e3adf884290fa1b270">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a4c506dd7393053d7d2b7f1bc662419eb" name="a4c506dd7393053d7d2b7f1bc662419eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c506dd7393053d7d2b7f1bc662419eb">&#9670;&#160;</a></span>Die()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ICharacterService.Die </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ejecuta la secuencia de muerte del personaje. </p>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a6b17f6b1f2a6c2908cc478bf5638e4d9">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="aafb5cb25b539ca04f3dd52454b847b23" name="aafb5cb25b539ca04f3dd52454b847b23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb5cb25b539ca04f3dd52454b847b23">&#9670;&#160;</a></span>Genocide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ICharacterService.Genocide </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registra que el jugador ha usado un hechizo, invalidando el logro pacifista si procede. </p>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a7858adc62333e4c1856a2d37d8636375">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="ab2f4a017a6edd5a0654a6d5e24ad47e1" name="ab2f4a017a6edd5a0654a6d5e24ad47e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2f4a017a6edd5a0654a6d5e24ad47e1">&#9670;&#160;</a></span>getIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ICharacterService.getIndex </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve el índice del hechizo actualmente seleccionado. </p>
+
+<p>Implementado en <a class="el" href="class_character_service.html#ad438725bdfc86bef376d7dc267c4719b">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="af0bcc5698ae17b3e1a85698038dfc638" name="af0bcc5698ae17b3e1a85698038dfc638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0bcc5698ae17b3e1a85698038dfc638">&#9670;&#160;</a></span>getMaxMana()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ICharacterService.getMaxMana </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve el maná máximo del personaje. </p>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a4146ad354bf366e6526bd7ff635436ab">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a4afea1595c39bba793cf21e5fb06a5dc" name="a4afea1595c39bba793cf21e5fb06a5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4afea1595c39bba793cf21e5fb06a5dc">&#9670;&#160;</a></span>getPacifist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ICharacterService.getPacifist </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si el jugador ha completado la partida sin usar ningún hechizo. </p>
+<dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si el jugador es pacifista; <code>false</code> si ha usado un hechizo.</dd></dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#ad1c7cb2309f5a50a606fc9109207d340">CharacterService</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="interface_i_character_service_a4afea1595c39bba793cf21e5fb06a5dc_icgraph.png" border="0" usemap="#ainterface_i_character_service_a4afea1595c39bba793cf21e5fb06a5dc_icgraph" loading="lazy" alt=""/></div>
+<map name="ainterface_i_character_service_a4afea1595c39bba793cf21e5fb06a5dc_icgraph" id="ainterface_i_character_service_a4afea1595c39bba793cf21e5fb06a5dc_icgraph">
+<area shape="rect" title="Indica si el jugador ha completado la partida sin usar ningún hechizo." alt="" coords="214,5,406,32"/>
+<area shape="rect" href="class_score_service.html#a3b60ce2ae1e0c8847b33a7256df006a1" title="Registra la puntuación del perfil activo en la tabla de puntuaciones globales, la ordena de mayor a m..." alt="" coords="5,5,166,32"/>
+<area shape="poly" title=" " alt="" coords="195,19,166,21,166,16,201,19"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abd225f81a3b91981b839ae9a635a9151" name="abd225f81a3b91981b839ae9a635a9151"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd225f81a3b91981b839ae9a635a9151">&#9670;&#160;</a></span>getPrimarySpell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_spell_base.html">SpellBase</a> &gt; ICharacterService.getPrimarySpell </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve la lista de hechizos primarios equipados. </p>
+
+<p>Implementado en <a class="el" href="class_character_service.html#aee3740d8a2d67c2594915530bcdc502e">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a62b54bf7dcb56c3df678e50a4d502460" name="a62b54bf7dcb56c3df678e50a4d502460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62b54bf7dcb56c3df678e50a4d502460">&#9670;&#160;</a></span>getSecundarySpell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_spell_base.html">SpellBase</a> &gt; ICharacterService.getSecundarySpell </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve la lista de hechizos secundarios equipados. </p>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a93cc43a3ae5a145833a1eaa519cd1907">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a5da0a0ac2bd99aa8e1b5006b87669b51" name="a5da0a0ac2bd99aa8e1b5006b87669b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da0a0ac2bd99aa8e1b5006b87669b51">&#9670;&#160;</a></span>getSpell() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_spell_base.html">SpellBase</a> ICharacterService.getSpell </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>spellPosition</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve el hechizo situado en la posición indicada del inventario. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spellPosition</td><td>Índice del hechizo a obtener.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El hechizo en esa posición, o <code>null</code> si el índice no es válido.</dd></dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a90b20cfbbbf9d9b6ca5a4fcf43997b1c">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a986ea13b42bfd6b50c774b22f8548d50" name="a986ea13b42bfd6b50c774b22f8548d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986ea13b42bfd6b50c774b22f8548d50">&#9670;&#160;</a></span>getSpell() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_spell_base.html">SpellBase</a> ICharacterService.getSpell </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>spellName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve el hechizo equipado con el nombre indicado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spellName</td><td>Nombre del hechizo a buscar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El hechizo encontrado, o <code>null</code> si no existe.</dd></dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a43fcb32b3480adecd785bce91b9c29fd">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a97adb95f9f7d62bd55552dae60d252e8" name="a97adb95f9f7d62bd55552dae60d252e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97adb95f9f7d62bd55552dae60d252e8">&#9670;&#160;</a></span>Heal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ICharacterService.Heal </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>amountHealed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cura al personaje, aumentando su vida sin superar el máximo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amountHealed</td><td>Cantidad de vida a restaurar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#accbb71baa4bbffa27255b4fcac3b6297">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a68fa9406ba9704fd114361d7f9611ec9" name="a68fa9406ba9704fd114361d7f9611ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68fa9406ba9704fd114361d7f9611ec9">&#9670;&#160;</a></span>RemoveMana()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ICharacterService.RemoveMana </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mana</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Consume maná del personaje si hay suficiente. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mana</td><td>Cantidad de maná a consumir.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si había suficiente maná y se consumió; <code>false</code> en caso contrario.</dd></dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a061cdf8a59dd4539b201dd235391241c">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a2c7144d4545095be2d85131799f133a7" name="a2c7144d4545095be2d85131799f133a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7144d4545095be2d85131799f133a7">&#9670;&#160;</a></span>removeSpell() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ICharacterService.removeSpell </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>spellToRemove</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina el hechizo situado en la posición indicada del inventario. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spellToRemove</td><td>Índice del hechizo a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si se eliminó correctamente; <code>false</code> si el índice no es válido.</dd></dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a33722927a926fd38975ab885a8b121e9">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="ada4181ed909eecb713446cb13f8b714b" name="ada4181ed909eecb713446cb13f8b714b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada4181ed909eecb713446cb13f8b714b">&#9670;&#160;</a></span>removeSpell() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ICharacterService.removeSpell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_spell_base.html">SpellBase</a></td>          <td class="paramname"><span class="paramname"><em>spellToRemove</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina un hechizo del inventario por referencia. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spellToRemove</td><td>Hechizo a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si se eliminó correctamente; <code>false</code> si no se encontró.</dd></dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a9fa7eae9201d88bcc5a9d0813e5c17ac">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a696eada8fe4fe888e124603f35cc22b5" name="a696eada8fe4fe888e124603f35cc22b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a696eada8fe4fe888e124603f35cc22b5">&#9670;&#160;</a></span>removeSpell() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ICharacterService.removeSpell </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>spellToRemove</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina el hechizo con el nombre indicado del inventario. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spellToRemove</td><td>Nombre del hechizo a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si se encontró y eliminó; <code>false</code> si no existe ningún hechizo con ese nombre.</dd></dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a15c5f227a0ec0512fdfc27a635db4759">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a1ce6efcae73ab3dbcb498288d08c6ea3" name="a1ce6efcae73ab3dbcb498288d08c6ea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce6efcae73ab3dbcb498288d08c6ea3">&#9670;&#160;</a></span>ResetCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ICharacterService.ResetCharacter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restaura el personaje a su estado inicial (vida, maná, hechizos, etc.). </p>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a9437ff427b2ab36a056ab92f8a94f245">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="aecff46bc354ab7b9e6141111427aa46a" name="aecff46bc354ab7b9e6141111427aa46a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecff46bc354ab7b9e6141111427aa46a">&#9670;&#160;</a></span>setActualSpell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ICharacterService.setActualSpell </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cambioDePosicion</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cambia el hechizo activo desplazando la selección la cantidad indicada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cambioDePosicion</td><td>Desplazamiento positivo o negativo sobre la lista de hechizos.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#a4ba234a88a93d6fb6c75f0ceb6eab953">CharacterService</a>.</p>
+
+</div>
+</div>
+<a id="a342f13bc8b83720f0236c1ef2eb19374" name="a342f13bc8b83720f0236c1ef2eb19374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a342f13bc8b83720f0236c1ef2eb19374">&#9670;&#160;</a></span>TakeDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ICharacterService.TakeDamage </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>damageTaken</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aplica daño al personaje, reduciendo su vida. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">damageTaken</td><td>Cantidad de daño a aplicar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado en <a class="el" href="class_character_service.html#af66efc05a12ac52aae7d2a276b83b794">CharacterService</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta interface está generada del siguiente archivo:<ul>
+<li>Scripts/Services/Character/<a class="el" href="_i_character_service_8cs_source.html">ICharacterService.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="interface_i_character_service.html">ICharacterService</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

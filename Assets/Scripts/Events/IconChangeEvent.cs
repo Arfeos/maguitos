@@ -1,16 +1,16 @@
 /// <summary>
-/// Clase de evento derivada de <see cref="GameEventBase"/> utilizada para notificar cambios relacionados con un icono dentro del sistema. Almacena la informaciÛn necesaria para actualizar la imagen o recurso gr·fico asociado
+/// Clase de evento derivada de <see cref="GameEventBase"/> utilizada para notificar cambios relacionados con un icono dentro del sistema. Almacena la informaci√≥n necesaria para actualizar la imagen o recurso gr√°fico asociado
 /// </summary>
 public class IconChangeEvent : GameEventBase
 {
     /// <summary>
-    /// Variable p˙blica que almacena la direcciÛn o ruta del nuevo icono asociado al evento
+    /// Variable p√∫blica que almacena la direcci√≥n o ruta del nuevo icono asociado al evento
     /// </summary>
     public string newIconUrl;
     /// <summary>
-    /// Constructor encargado de crear una nueva instancia del evento asignando la direcciÛn o ruta del nuevo icono
+    /// Constructor encargado de crear una nueva instancia del evento asignando la direcci√≥n o ruta del nuevo icono
     /// </summary>
-    /// <param name="newIconUrl">Ruta, URL o identificador del nuevo icono que ser· utilizado para reemplazar el actual</param>
+    /// <param name="newIconUrl">Ruta, URL o identificador del nuevo icono que ser√° utilizado para reemplazar el actual</param>
     public IconChangeEvent(string newIconUrl)
     {
         this.newIconUrl = newIconUrl;

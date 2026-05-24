@@ -1,0 +1,5 @@
+<map id="IProfileService.getSelectedProfile" name="IProfileService.getSelectedProfile">
+<area shape="rect" id="Node000001" title="Devuelve el perfil activo seleccionado en la sesión actual, o null si no hay ninguno." alt="" coords="214,5,393,48"/>
+<area shape="rect" id="Node000002" href="$class_score_service.html#a3b60ce2ae1e0c8847b33a7256df006a1" title="Registra la puntuación del perfil activo en la tabla de puntuaciones globales, la ordena de mayor a m..." alt="" coords="5,13,166,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,27,166,29,166,24,201,26"/>
+</map>

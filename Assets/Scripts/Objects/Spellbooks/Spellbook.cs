@@ -2,17 +2,17 @@
 using UnityEngine;
 /// <summary>
 /// Componente de Unity encargado de representar un libro de hechizos coleccionable dentro del juego. 
-/// Implementa la interfaz <see cref="ICollectable"/> y permite aÒadir un objeto <see cref="SpellBase"/> al personaje mediante <see cref="ICharacterService"/>
+/// Implementa la interfaz <see cref="ICollectable"/> y permite a√±adir un objeto <see cref="SpellBase"/> al personaje mediante <see cref="ICharacterService"/>
 /// </summary>
 public class Spellbook : MonoBehaviour, ICollectable
 {
     /// <summary>
-    /// Variable serializada que almacena el hechizo asociado al libro que ser· aÒadido al personaje al recogerlo
+    /// Variable serializada que almacena el hechizo asociado al libro que ser√° a√±adido al personaje al recogerlo
     /// </summary>
     [SerializeField] private SpellBase Spell;
     private ICharacterService _characterService;
     /// <summary>
-    /// MÈtodo ejecutado cuando el objeto es recogido. Obtiene una referencia a <see cref="ICharacterService"/> mediante <see cref="AppContainer"/> y aÒade el hechizo asociado utilizando un objeto <see cref="SpellBase"/>
+    /// M√©todo ejecutado cuando el objeto es recogido. Obtiene una referencia a <see cref="ICharacterService"/> mediante <see cref="AppContainer"/> y a√±ade el hechizo asociado utilizando un objeto <see cref="SpellBase"/>
     /// </summary>
     public void Collect()
     {

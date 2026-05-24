@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Localization;
 /// <summary>
 /// Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz <see cref="IStep"/>. 
-/// Detecta cu醤do el jugador realiza una acci髇 de recarga utilizando <see cref="PlayerInputManager"/> y marca el paso como completado cuando dicha acci髇 es ejecutada
+/// Detecta cu谩ndo el jugador realiza una acci贸n de recarga utilizando <see cref="PlayerInputManager"/> y marca el paso como completado cuando dicha acci贸n es ejecutada
 /// </summary>
 public class ReloadStep : IStep
 {
@@ -15,11 +15,11 @@ public class ReloadStep : IStep
 
     // --- IStep ---
     /// <summary>
-    /// Propiedad que devuelve el nombre localizado correspondiente al paso actual mediante el sistema de localizaci髇 de Unity
+    /// Propiedad que devuelve el nombre localizado correspondiente al paso actual mediante el sistema de localizaci贸n de Unity
     /// </summary>
     public LocalizedString Name {get => new LocalizedString { TableReference = "Steps", TableEntryReference = "reloadName" };}
     /// <summary>
-    /// Propiedad que genera una descripci髇 localizada del paso incluyendo din醡icamente la tecla o entrada asignada a la acci髇 de recarga obtenida desde <see cref="PlayerInputManager"/>
+    /// Propiedad que genera una descripci贸n localizada del paso incluyendo din谩micamente la tecla o entrada asignada a la acci贸n de recarga obtenida desde <see cref="PlayerInputManager"/>
     /// </summary>
     public LocalizedString Description
     {
@@ -40,7 +40,7 @@ public class ReloadStep : IStep
     /// <summary>
     /// Propiedad que almacena el estado actual del paso indicando si ha sido completado
     /// </summary>
-    /// <returns>Estado de finalizaci髇 del paso</returns>
+    /// <returns>Estado de finalizaci贸n del paso</returns>
     public bool IsComplete { get => this._isComplete; set => this._isComplete = value; }
     /// <summary>
     /// Evento ejecutado cuando el paso se completa correctamente
@@ -53,7 +53,7 @@ public class ReloadStep : IStep
     {
     }
     /// <summary>
-    /// Activa el paso actual registrando el m閠odo HandleAction() al evento de recarga de <see cref="PlayerInputManager"/> para detectar la interacci髇 del jugador
+    /// Activa el paso actual registrando el m茅todo HandleAction() al evento de recarga de <see cref="PlayerInputManager"/> para detectar la interacci贸n del jugador
     /// </summary>
     public void Activate()
     {
@@ -63,16 +63,16 @@ public class ReloadStep : IStep
 
     }
     /// <summary>
-    /// Desactiva el paso eliminando la suscripci髇 al evento de recarga de <see cref="PlayerInputManager"/>
+    /// Desactiva el paso eliminando la suscripci贸n al evento de recarga de <see cref="PlayerInputManager"/>
     /// </summary>
     public void Deactivate()
     {
         PlayerInputManager.Actions.Player.Reload.performed -= HandleAction;
     }
     /// <summary>
-    /// M閠odo ejecutado cuando el jugador realiza una acci髇 de recarga. Marca el paso como completado y ejecuta el evento OnComplete
+    /// M茅todo ejecutado cuando el jugador realiza una acci贸n de recarga. Marca el paso como completado y ejecuta el evento OnComplete
     /// </summary>
-    /// <param name="context">Informaci髇 asociada a la acci髇 realizada por el jugador</param>
+    /// <param name="context">Informaci贸n asociada a la acci贸n realizada por el jugador</param>
     private void HandleAction(InputAction.CallbackContext context)
     {
         this.IsComplete = true;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyZone : MonoBehaviour
 {
     /// <summary>
-    /// Se ejecuta autom·ticamente cuando otro objeto con un Collider entra en la zona Trigger. Destruye el objeto detectado utilizando Destroy() sobre su gameObject, elimin·ndolo de la escena
+    /// Se ejecuta autom√°ticamente cuando otro objeto con un Collider entra en la zona Trigger. Destruye el objeto detectado utilizando Destroy() sobre su gameObject, elimin√°ndolo de la escena
     /// </summary>
     /// <param name="other">Referencia al Collider del objeto que ha entrado en la zona Trigger. Permite acceder a su gameObject y a sus componentes asociados</param>
     private void OnTriggerEnter(Collider other)

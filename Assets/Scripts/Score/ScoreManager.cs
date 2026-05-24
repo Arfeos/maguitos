@@ -6,7 +6,7 @@ using UnityEngine;
 
 /// <summary>
 /// MonoBehaviour encargado de gestionar el registro de puntuaciones en un archivo JSON.
-/// Actúa como puente entre el <see cref="IScoreService"/>, el <see cref="IProfileService"/>
+/// ActÃºa como puente entre el <see cref="IScoreService"/>, el <see cref="IProfileService"/>
 /// y la persistencia de datos en disco.
 /// </summary>
 public class ScoreManager : MonoBehaviour
@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
     private string filePath;
 
     /// <summary>
-    /// Referencia al servicio de puntuación, usado para obtener los puntos del perfil activo.
+    /// Referencia al servicio de puntuaciÃ³n, usado para obtener los puntos del perfil activo.
     /// </summary>
     private IScoreService _scoreService;
 
@@ -45,10 +45,10 @@ public class ScoreManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Registra la puntuación del perfil activo en la tabla de puntuaciones,
+    /// Registra la puntuaciÃ³n del perfil activo en la tabla de puntuaciones,
     /// la ordena de mayor a menor y persiste el resultado en el archivo JSON.
     /// </summary>
-    /// <param name="pacifist">Indica si el jugador completó la partida en modo pacifista.</param>
+    /// <param name="pacifist">Indica si el jugador completÃ³ la partida en modo pacifista.</param>
     public void AddScore(bool pacifist)
     {
         string profile = _profileService.getSelectedProfile().name;
@@ -71,7 +71,7 @@ public class ScoreManager : MonoBehaviour
 
     /// <summary>
     /// Carga la tabla de puntuaciones desde el archivo <c>Scores.json</c>.
-    /// Si el archivo no existe, inicializa una tabla vacía.
+    /// Si el archivo no existe, inicializa una tabla vacÃ­a.
     /// </summary>
     public void LoadScores()
     {

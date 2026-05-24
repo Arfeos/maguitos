@@ -1,0 +1,9 @@
+<map id="BackButton" name="BackButton">
+<area shape="rect" id="Node000001" title="Botón que navega a la escena anterior usando ISceneService. Hereda la reproducción de sonido de BaseB..." alt="" coords="82,180,171,207"/>
+<area shape="rect" id="Node000002" href="$class_base_button.html" title="Clase base para botones de la UI que reproducen un sonido al ser pulsados. Las subclases pueden sobre..." alt="" coords="82,104,171,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,144,129,181,124,178,124,148"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,42,121,103,115,104,77,47"/>
+<area shape="rect" id="Node000004" href="$interface_i_audio_service.html" title="Servicio encargado de gestionar la reproducción de música y efectos de sonido del juego mediante el c..." alt="" coords="140,5,243,32"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="177,43,137,105,133,102,173,47"/>
+</map>

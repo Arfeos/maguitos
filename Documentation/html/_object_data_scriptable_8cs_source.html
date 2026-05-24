@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente ScriptableObjects/DataScriptables/ObjectDataScriptable.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_object_data_scriptable_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ObjectDataScriptable.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_object_data_scriptable_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine.Localization;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>[CreateAssetMenu(fileName = <span class="stringliteral">&quot;ObjectDataScriptable&quot;</span>, menuName = <span class="stringliteral">&quot;Scriptable Objects/ObjectDataScriptable&quot;</span>)]</div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_object_data_scriptable.html">    5</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_object_data_scriptable.html">ObjectDataScriptable</a> : ScriptableObject</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">//TODO: Revisar campos necesarios</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_object_data_scriptable.html#af61d2314b919ceafd42ba846a6011a5a">    8</a></span>    <span class="keyword">public</span> LocalizedString <a class="code hl_variable" href="class_object_data_scriptable.html#af61d2314b919ceafd42ba846a6011a5a">objectName</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_object_data_scriptable.html#ac95c87ca63c765f2a879aaa67614f406">    9</a></span>    <span class="keyword">public</span> LocalizedString <a class="code hl_variable" href="class_object_data_scriptable.html#ac95c87ca63c765f2a879aaa67614f406">objetDescription</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_object_data_scriptable.html#a534cf5480342e2c3df384e50dd3e2a7f">   10</a></span>    <span class="keyword">public</span> Sprite <a class="code hl_variable" href="class_object_data_scriptable.html#a534cf5480342e2c3df384e50dd3e2a7f">objectSprite</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// Referencia al hechizo para mostrar sus stats</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_object_data_scriptable.html#a08030723b94fa2e94a2be44c39e67e0e">   13</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="class_spell_base_scriptable.html">SpellBaseScriptable</a> <a class="code hl_variable" href="class_object_data_scriptable.html#a08030723b94fa2e94a2be44c39e67e0e">spellData</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_object_data_scriptable.html#aa4f52c3cf083103e50ec9a501d642f11">   15</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_object_data_scriptable.html#aa4f52c3cf083103e50ec9a501d642f11">GetTypeKey</a>() =&gt; spellData.spell_Type <span class="keywordflow">switch</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        SpellBase.SpellType.ray =&gt; <span class="stringliteral">&quot;typeRay&quot;</span>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        SpellBase.SpellType.ball =&gt; <span class="stringliteral">&quot;typeBall&quot;</span>,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        SpellBase.SpellType.buff =&gt; <span class="stringliteral">&quot;typeBuff&quot;</span>,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        SpellBase.SpellType.structure =&gt; <span class="stringliteral">&quot;typeStructure&quot;</span>,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        _ =&gt; <span class="stringliteral">&quot;typeRay&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    };</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_object_data_scriptable.html#a107ef929a368036573797bc60c5672ba">   24</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_object_data_scriptable.html#a107ef929a368036573797bc60c5672ba">GetImportanceKey</a>() =&gt; spellData.spell_importance <span class="keywordflow">switch</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_enumvalue" href="_spellimportance_8cs.html#a611b3f0f58c1d3b0f8f880888a638b05a386bba5a5dc4fac215c9cf0b9a29b352">Spellimportance.primary</a> =&gt; <span class="stringliteral">&quot;importance1&quot;</span>,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_enumvalue" href="_spellimportance_8cs.html#a611b3f0f58c1d3b0f8f880888a638b05ab3fc7d54ad38e548901db2137f0e532a">Spellimportance.secundary</a> =&gt; <span class="stringliteral">&quot;importance2&quot;</span>,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        _ =&gt; <span class="stringliteral">&quot;importance1&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    };</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+</div>
+<div class="ttc" id="a_spellimportance_8cs_html_a611b3f0f58c1d3b0f8f880888a638b05a386bba5a5dc4fac215c9cf0b9a29b352"><div class="ttname"><a href="_spellimportance_8cs.html#a611b3f0f58c1d3b0f8f880888a638b05a386bba5a5dc4fac215c9cf0b9a29b352">Spellimportance.primary</a></div><div class="ttdeci">@ primary</div><div class="ttdef"><b>Definition</b> <a href="_spellimportance_8cs_source.html#l00003">Spellimportance.cs:3</a></div></div>
+<div class="ttc" id="a_spellimportance_8cs_html_a611b3f0f58c1d3b0f8f880888a638b05ab3fc7d54ad38e548901db2137f0e532a"><div class="ttname"><a href="_spellimportance_8cs.html#a611b3f0f58c1d3b0f8f880888a638b05ab3fc7d54ad38e548901db2137f0e532a">Spellimportance.secundary</a></div><div class="ttdeci">@ secundary</div><div class="ttdef"><b>Definition</b> <a href="_spellimportance_8cs_source.html#l00004">Spellimportance.cs:4</a></div></div>
+<div class="ttc" id="aclass_object_data_scriptable_html"><div class="ttname"><a href="class_object_data_scriptable.html">ObjectDataScriptable</a></div><div class="ttdef"><b>Definition</b> <a href="#l00005">ObjectDataScriptable.cs:6</a></div></div>
+<div class="ttc" id="aclass_object_data_scriptable_html_a08030723b94fa2e94a2be44c39e67e0e"><div class="ttname"><a href="class_object_data_scriptable.html#a08030723b94fa2e94a2be44c39e67e0e">ObjectDataScriptable.spellData</a></div><div class="ttdeci">SpellBaseScriptable spellData</div><div class="ttdef"><b>Definition</b> <a href="#l00013">ObjectDataScriptable.cs:13</a></div></div>
+<div class="ttc" id="aclass_object_data_scriptable_html_a107ef929a368036573797bc60c5672ba"><div class="ttname"><a href="class_object_data_scriptable.html#a107ef929a368036573797bc60c5672ba">ObjectDataScriptable.GetImportanceKey</a></div><div class="ttdeci">string GetImportanceKey()</div><div class="ttdef"><b>Definition</b> <a href="#l00024">ObjectDataScriptable.cs:24</a></div></div>
+<div class="ttc" id="aclass_object_data_scriptable_html_a534cf5480342e2c3df384e50dd3e2a7f"><div class="ttname"><a href="class_object_data_scriptable.html#a534cf5480342e2c3df384e50dd3e2a7f">ObjectDataScriptable.objectSprite</a></div><div class="ttdeci">Sprite objectSprite</div><div class="ttdef"><b>Definition</b> <a href="#l00010">ObjectDataScriptable.cs:10</a></div></div>
+<div class="ttc" id="aclass_object_data_scriptable_html_aa4f52c3cf083103e50ec9a501d642f11"><div class="ttname"><a href="class_object_data_scriptable.html#aa4f52c3cf083103e50ec9a501d642f11">ObjectDataScriptable.GetTypeKey</a></div><div class="ttdeci">string GetTypeKey()</div><div class="ttdef"><b>Definition</b> <a href="#l00015">ObjectDataScriptable.cs:15</a></div></div>
+<div class="ttc" id="aclass_object_data_scriptable_html_ac95c87ca63c765f2a879aaa67614f406"><div class="ttname"><a href="class_object_data_scriptable.html#ac95c87ca63c765f2a879aaa67614f406">ObjectDataScriptable.objetDescription</a></div><div class="ttdeci">LocalizedString objetDescription</div><div class="ttdef"><b>Definition</b> <a href="#l00009">ObjectDataScriptable.cs:9</a></div></div>
+<div class="ttc" id="aclass_object_data_scriptable_html_af61d2314b919ceafd42ba846a6011a5a"><div class="ttname"><a href="class_object_data_scriptable.html#af61d2314b919ceafd42ba846a6011a5a">ObjectDataScriptable.objectName</a></div><div class="ttdeci">LocalizedString objectName</div><div class="ttdef"><b>Definition</b> <a href="#l00008">ObjectDataScriptable.cs:8</a></div></div>
+<div class="ttc" id="aclass_spell_base_scriptable_html"><div class="ttname"><a href="class_spell_base_scriptable.html">SpellBaseScriptable</a></div><div class="ttdef"><b>Definition</b> <a href="_spell_base_scriptable_8cs_source.html#l00006">SpellBaseScriptable.cs:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_08913f649172db4e709f364f6d048f31.html">ScriptableObjects</a></li><li class="navelem"><a href="dir_48f869a39d105310b3f36f267f32bcde.html">DataScriptables</a></li><li class="navelem"><a href="_object_data_scriptable_8cs.html">ObjectDataScriptable.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

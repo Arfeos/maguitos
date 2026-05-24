@@ -1,0 +1,7 @@
+<map id="SceneButton" name="SceneButton">
+<area shape="rect" id="Node000001" title="Botón que carga una escena específica usando ISceneService. La escena de destino se configura desde e..." alt="" coords="13,155,109,181"/>
+<area shape="rect" id="Node000002" href="$class_base_button.html" title="Clase base para botones de la UI que reproducen un sonido al ser pulsados. Las subclases pueden sobre..." alt="" coords="16,80,106,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,121,64,155,58,154,59,124"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,45,64,80,58,79,60,50"/>
+</map>

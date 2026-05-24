@@ -1,11 +1,11 @@
 using UnityEngine;
 /// <summary>
-/// Clase est·tica encargada de inicializar y registrar todos los servicios de la aplicaciÛn antes de cargar cualquier escena utilizando <see cref="AppContainer"/>.
+/// Clase est√°tica encargada de inicializar y registrar todos los servicios de la aplicaci√≥n antes de cargar cualquier escena utilizando <see cref="AppContainer"/>.
 /// </summary>
 public static class Program
 {
     /// <summary>
-    /// MÈtodo est·tico ejecutado autom·ticamente antes de cargar la primera escena gracias al atributo RuntimeInitializeOnLoadMethod. 
+    /// M√©todo est√°tico ejecutado autom√°ticamente antes de cargar la primera escena gracias al atributo RuntimeInitializeOnLoadMethod. 
     ///Registra en <see cref="AppContainer"/> los distintos servicios necesarios para el funcionamiento del juego, incluyendo <see cref="AudioService"/>, 
     ///<see cref="EventService"/>, <see cref="HudService"/>, <see cref="CharacterService"/>, <see cref="ProfileService"/>, <see cref="SceneService"/>, <see cref="ScoreService"/>, 
     ///<see cref="AlertService"/>, <see cref="UIService"/>, <see cref="AnimationService"/>, <see cref="SpellService"/> y <see cref="PauseService"/>.

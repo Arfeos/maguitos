@@ -1,0 +1,5 @@
+<map id="SlimeBase.OnUpdate" name="SlimeBase.OnUpdate">
+<area shape="rect" id="Node000001" title="Se llama cada frame desde Update (ya filtrado por null y muerte). Sobreescribe para añadir lógica ext..." alt="" coords="184,5,331,32"/>
+<area shape="rect" id="Node000002" href="$class_slime_base.html#a99ac7b232defb9c96a027ccf010d555a" title="Cada frame busca al jugador si falta la referencia, comprueba si el slime está muerto y lanza la corr..." alt="" coords="5,5,136,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,19,136,21,136,16,171,18"/>
+</map>

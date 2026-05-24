@@ -1,13 +1,13 @@
 using TMPro;
 using UnityEngine;
 /// <summary>
-/// Componente de Unity encargado de controlar y actualizar la informaciÛn mostrada en una p·gina del libro de hechizos. 
-/// Gestiona la visualizaciÛn del nombre, coste de man· e imagen del hechizo mediante eventos recibidos desde <see cref="IEventService"/> utilizando objetos <see cref="SpellChangeOnPageEvent"/>
+/// Componente de Unity encargado de controlar y actualizar la informaci√≥n mostrada en una p√°gina del libro de hechizos. 
+/// Gestiona la visualizaci√≥n del nombre, coste de man√° e imagen del hechizo mediante eventos recibidos desde <see cref="IEventService"/> utilizando objetos <see cref="SpellChangeOnPageEvent"/>
 /// </summary>
 public class SpellBookPageController : MonoBehaviour
 {
     /// <summary>
-    /// Variable serializada que determina quÈ categorÌa de hechizo mostrar· la p·gina actual utilizando la enumeraciÛn <see cref="Spellimportance"/>
+    /// Variable serializada que determina qu√© categor√≠a de hechizo mostrar√° la p√°gina actual utilizando la enumeraci√≥n <see cref="Spellimportance"/>
     /// </summary>
     [SerializeField] private Spellimportance importance;
     /// <summary>
@@ -15,7 +15,7 @@ public class SpellBookPageController : MonoBehaviour
     /// </summary>
     [SerializeField] private TextMeshPro textoNombre;
     /// <summary>
-    /// Referencia al componente encargado de mostrar el coste de man· del hechizo
+    /// Referencia al componente encargado de mostrar el coste de man√° del hechizo
     /// </summary>
     [SerializeField] private TextMeshPro textoMana;
     /// <summary>
@@ -26,7 +26,7 @@ public class SpellBookPageController : MonoBehaviour
     private IEventService _eventService;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     /// <summary>
-    /// MÈtodo ejecutado durante la inicializaciÛn del objeto. Obtiene referencias a los servicios <see cref="ICharacterService"/> y <see cref="IEventService"/> mediante <see cref="AppContainer"/> y busca autom·ticamente el componente visual encargado de mostrar la imagen del hechizo
+    /// M√©todo ejecutado durante la inicializaci√≥n del objeto. Obtiene referencias a los servicios <see cref="ICharacterService"/> y <see cref="IEventService"/> mediante <see cref="AppContainer"/> y busca autom√°ticamente el componente visual encargado de mostrar la imagen del hechizo
     /// </summary>
     void Awake()
     {
@@ -36,24 +36,24 @@ public class SpellBookPageController : MonoBehaviour
         spellImage = this.GetComponentInChildren<SpriteRenderer>(true);
     }
     /// <summary>
-    /// MÈtodo ejecutado cuando el objeto se activa. Registra el mÈtodo ChangePageSpell() como suscriptor del evento <see cref="SpellChangeOnPageEvent"/> mediante <see cref="IEventService"/>
+    /// M√©todo ejecutado cuando el objeto se activa. Registra el m√©todo ChangePageSpell() como suscriptor del evento <see cref="SpellChangeOnPageEvent"/> mediante <see cref="IEventService"/>
     /// </summary>
     private void OnEnable()
     {
         _eventService.Subscribe<SpellChangeOnPageEvent>(ChangePageSpell);
     }
     /// <summary>
-    /// MÈtodo ejecutado cuando el objeto se desactiva. Elimina la suscripciÛn al evento <see cref="SpellChangeOnPageEvent"/> mediante <see cref="IEventService"/>
+    /// M√©todo ejecutado cuando el objeto se desactiva. Elimina la suscripci√≥n al evento <see cref="SpellChangeOnPageEvent"/> mediante <see cref="IEventService"/>
     /// </summary>
     private void OnDisable()
     {
         _eventService.Unsubscribe<SpellChangeOnPageEvent>(ChangePageSpell);
     }
     /// <summary>
-    /// MÈtodo encargado de actualizar la informaciÛn visual de la p·gina cuando se recibe un evento <see cref="SpellChangeOnPageEvent"/>. 
-    /// Si la importancia del hechizo coincide con la p·gina actual, actualiza el nombre localizado, el coste de man· y la imagen asociada
+    /// M√©todo encargado de actualizar la informaci√≥n visual de la p√°gina cuando se recibe un evento <see cref="SpellChangeOnPageEvent"/>. 
+    /// Si la importancia del hechizo coincide con la p√°gina actual, actualiza el nombre localizado, el coste de man√° y la imagen asociada
     /// </summary>
-    /// <param name="parameters">Evento recibido que contiene informaciÛn del hechizo. Se convierte internamente a <see cref="SpellChangeOnPageEvent"/></param>
+    /// <param name="parameters">Evento recibido que contiene informaci√≥n del hechizo. Se convierte internamente a <see cref="SpellChangeOnPageEvent"/></param>
     private void ChangePageSpell(GameEventBase parameters)
     {
 

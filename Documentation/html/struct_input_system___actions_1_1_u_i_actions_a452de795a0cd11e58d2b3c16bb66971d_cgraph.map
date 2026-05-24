@@ -1,0 +1,5 @@
+<map id="InputSystem_Actions.UIActions.Disable" name="InputSystem_Actions.UIActions.Disable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,218,48"/>
+<area shape="rect" id="Node000002" href="$struct_input_system___actions_1_1_u_i_actions.html#aba86cce77eb9cedd49e58d2f561ee52d" title="Provides access to the underlying input action map instance." alt="" coords="266,13,499,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,24,253,27,247,27,218,29"/>
+</map>

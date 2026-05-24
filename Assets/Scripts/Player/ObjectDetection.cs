@@ -4,25 +4,25 @@ using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 /// <summary>
 /// Componente de Unity encargado de detectar objetos frente al jugador mediante Raycast. 
-/// Gestiona la interacciÛn con objetos coleccionables y la visualizaciÛn de informaciÛn contextual utilizando los servicios <see cref="IAlertService"/> y <see cref="IAnimationService"/>. 
-/// TambiÈn utiliza <see cref="PlayerInputManager"/> para detectar las acciones del jugador
+/// Gestiona la interacci√≥n con objetos coleccionables y la visualizaci√≥n de informaci√≥n contextual utilizando los servicios <see cref="IAlertService"/> y <see cref="IAnimationService"/>. 
+/// Tambi√©n utiliza <see cref="PlayerInputManager"/> para detectar las acciones del jugador
 /// </summary>
 public class ObjectDetection : MonoBehaviour
 {
     /// <summary>
-    /// Variable serializada que define la distancia m·xima de detecciÛn del Raycast
+    /// Variable serializada que define la distancia m√°xima de detecci√≥n del Raycast
     /// </summary>
     [SerializeField] private int rango = 5;
     /// <summary>
-    /// Referencia al transform de la c·mara desde donde se lanzar· el Raycast
+    /// Referencia al transform de la c√°mara desde donde se lanzar√° el Raycast
     /// </summary>
     [SerializeField] Transform camara;
     /// <summary>
-    /// Elemento visual utilizado como indicador para mostrar cu·ndo un objeto puede ser interactuado
+    /// Elemento visual utilizado como indicador para mostrar cu√°ndo un objeto puede ser interactuado
     /// </summary>
     [SerializeField] Image Marker;
     /// <summary>
-    /// Objeto encargado de mostrar mensajes o informaciÛn contextual en pantalla mediante <see cref="IAlertService"/>
+    /// Objeto encargado de mostrar mensajes o informaci√≥n contextual en pantalla mediante <see cref="IAlertService"/>
     /// </summary>
     [SerializeField] GameObject MessageBox;
 
@@ -33,7 +33,7 @@ public class ObjectDetection : MonoBehaviour
     private Color colorBase = Color.white;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     /// <summary>
-    /// MÈtodo ejecutado al comenzar la escena. Obtiene referencias a los servicios <see cref="IAnimationService"/> y <see cref="IAlertService"/> mediante <see cref="AppContainer"/> y almacena el color inicial del marcador visual
+    /// M√©todo ejecutado al comenzar la escena. Obtiene referencias a los servicios <see cref="IAnimationService"/> y <see cref="IAlertService"/> mediante <see cref="AppContainer"/> y almacena el color inicial del marcador visual
     /// </summary>
     void Start()
     {
@@ -42,9 +42,9 @@ public class ObjectDetection : MonoBehaviour
         colorBase = Marker.color;
     }
     /// <summary>
-    /// MÈtodo ejecutado autom·ticamente a intervalos fijos. Lanza un Raycast desde la posiciÛn de la c·mara para detectar objetos dentro del rango especificado. 
+    /// M√©todo ejecutado autom√°ticamente a intervalos fijos. Lanza un Raycast desde la posici√≥n de la c√°mara para detectar objetos dentro del rango especificado. 
     /// Si detecta un objeto que implementa <see cref="ICollectable"/>, modifica el color del marcador y permite recogerlo utilizando <see cref="PlayerInputManager"/>. 
-    /// Si detecta un objeto <see cref="DataShow"/>, muestra informaciÛn contextual mediante <see cref="IAlertService"/>
+    /// Si detecta un objeto <see cref="DataShow"/>, muestra informaci√≥n contextual mediante <see cref="IAlertService"/>
     /// </summary>
     void FixedUpdate()
     {

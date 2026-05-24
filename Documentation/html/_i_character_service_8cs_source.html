@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente Scripts/Services/Character/ICharacterService.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_i_character_service_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ICharacterService.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_i_character_service_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>NUnit.Framework;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span></div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="interface_i_character_service.html">    9</a></span><span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="interface_i_character_service.html">ICharacterService</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#ab2f4a017a6edd5a0654a6d5e24ad47e1">   14</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="interface_i_character_service.html#ab2f4a017a6edd5a0654a6d5e24ad47e1">getIndex</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#aecff46bc354ab7b9e6141111427aa46a">   20</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="interface_i_character_service.html#aecff46bc354ab7b9e6141111427aa46a">setActualSpell</a>(<span class="keywordtype">int</span> cambioDePosicion);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a52b4f7fc89f6ad6cf490b3baf64ebb66">   27</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="interface_i_character_service.html#a52b4f7fc89f6ad6cf490b3baf64ebb66">addSpell</a>(<a class="code hl_class" href="class_spell_base.html">SpellBase</a> spellToAdd);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#ada4181ed909eecb713446cb13f8b714b">   34</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="interface_i_character_service.html#ada4181ed909eecb713446cb13f8b714b">removeSpell</a>(<a class="code hl_class" href="class_spell_base.html">SpellBase</a> spellToRemove);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a2c7144d4545095be2d85131799f133a7">   41</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="interface_i_character_service.html#a2c7144d4545095be2d85131799f133a7">removeSpell</a>(<span class="keywordtype">int</span> spellToRemove);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a696eada8fe4fe888e124603f35cc22b5">   48</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="interface_i_character_service.html#a696eada8fe4fe888e124603f35cc22b5">removeSpell</a>(<span class="keywordtype">string</span> spellToRemove);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a1ce6efcae73ab3dbcb498288d08c6ea3">   53</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="interface_i_character_service.html#a1ce6efcae73ab3dbcb498288d08c6ea3">ResetCharacter</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a986ea13b42bfd6b50c774b22f8548d50">   60</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="class_spell_base.html">SpellBase</a> <a class="code hl_function" href="interface_i_character_service.html#a986ea13b42bfd6b50c774b22f8548d50">getSpell</a>(<span class="keywordtype">string</span> spellName);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a5da0a0ac2bd99aa8e1b5006b87669b51">   67</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="class_spell_base.html">SpellBase</a> <a class="code hl_function" href="interface_i_character_service.html#a5da0a0ac2bd99aa8e1b5006b87669b51">getSpell</a>(<span class="keywordtype">int</span> spellPosition);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#abd225f81a3b91981b839ae9a635a9151">   72</a></span>    <span class="keyword">public</span> List&lt;SpellBase&gt; <a class="code hl_function" href="interface_i_character_service.html#abd225f81a3b91981b839ae9a635a9151">getPrimarySpell</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a62b54bf7dcb56c3df678e50a4d502460">   77</a></span>    <span class="keyword">public</span> List&lt;SpellBase&gt; <a class="code hl_function" href="interface_i_character_service.html#a62b54bf7dcb56c3df678e50a4d502460">getSecundarySpell</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a99b2b13b499a989ca370e75966809a4c">   83</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="interface_i_character_service.html#a99b2b13b499a989ca370e75966809a4c">AddMana</a>(<span class="keywordtype">int</span> mana);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a68fa9406ba9704fd114361d7f9611ec9">   90</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="interface_i_character_service.html#a68fa9406ba9704fd114361d7f9611ec9">RemoveMana</a>(<span class="keywordtype">int</span> mana);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a9af5cf96c36d98b1f8b9deabd39cad19">   95</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="interface_i_character_service.html#a9af5cf96c36d98b1f8b9deabd39cad19">CheckMana</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#af0bcc5698ae17b3e1a85698038dfc638">  100</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="interface_i_character_service.html#af0bcc5698ae17b3e1a85698038dfc638">getMaxMana</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#afad413a6fce5be6a2d9ac2148416f633">  105</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="interface_i_character_service.html#afad413a6fce5be6a2d9ac2148416f633">CheckSpellCapacity</a>();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a342f13bc8b83720f0236c1ef2eb19374">  111</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="interface_i_character_service.html#a342f13bc8b83720f0236c1ef2eb19374">TakeDamage</a>(<span class="keywordtype">int</span> damageTaken);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a97adb95f9f7d62bd55552dae60d252e8">  117</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="interface_i_character_service.html#a97adb95f9f7d62bd55552dae60d252e8">Heal</a>(<span class="keywordtype">int</span> amountHealed);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a4c506dd7393053d7d2b7f1bc662419eb">  122</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="interface_i_character_service.html#a4c506dd7393053d7d2b7f1bc662419eb">Die</a>();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#aafb5cb25b539ca04f3dd52454b847b23">  127</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="interface_i_character_service.html#aafb5cb25b539ca04f3dd52454b847b23">Genocide</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="interface_i_character_service.html#a4afea1595c39bba793cf21e5fb06a5dc">  133</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="interface_i_character_service.html#a4afea1595c39bba793cf21e5fb06a5dc">getPacifist</a>();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+</div>
+<div class="ttc" id="aclass_spell_base_html"><div class="ttname"><a href="class_spell_base.html">SpellBase</a></div><div class="ttdoc">Clase parcial encargada de definir la estructura base de un hechizo. Contiene elementos comunes utili...</div><div class="ttdef"><b>Definition</b> <a href="_cast_type_8cs_source.html#l00005">CastType.cs:6</a></div></div>
+<div class="ttc" id="ainterface_i_character_service_html"><div class="ttname"><a href="interface_i_character_service.html">ICharacterService</a></div><div class="ttdoc">Define el contrato para gestionar el estado del personaje jugador: hechizos equipados,...</div><div class="ttdef"><b>Definition</b> <a href="#l00009">ICharacterService.cs:10</a></div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a1ce6efcae73ab3dbcb498288d08c6ea3"><div class="ttname"><a href="interface_i_character_service.html#a1ce6efcae73ab3dbcb498288d08c6ea3">ICharacterService.ResetCharacter</a></div><div class="ttdeci">void ResetCharacter()</div><div class="ttdoc">Restaura el personaje a su estado inicial (vida, maná, hechizos, etc.).</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a2c7144d4545095be2d85131799f133a7"><div class="ttname"><a href="interface_i_character_service.html#a2c7144d4545095be2d85131799f133a7">ICharacterService.removeSpell</a></div><div class="ttdeci">bool removeSpell(int spellToRemove)</div><div class="ttdoc">Elimina el hechizo situado en la posición indicada del inventario.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a342f13bc8b83720f0236c1ef2eb19374"><div class="ttname"><a href="interface_i_character_service.html#a342f13bc8b83720f0236c1ef2eb19374">ICharacterService.TakeDamage</a></div><div class="ttdeci">void TakeDamage(int damageTaken)</div><div class="ttdoc">Aplica daño al personaje, reduciendo su vida.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a4afea1595c39bba793cf21e5fb06a5dc"><div class="ttname"><a href="interface_i_character_service.html#a4afea1595c39bba793cf21e5fb06a5dc">ICharacterService.getPacifist</a></div><div class="ttdeci">bool getPacifist()</div><div class="ttdoc">Indica si el jugador ha completado la partida sin usar ningún hechizo.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a4c506dd7393053d7d2b7f1bc662419eb"><div class="ttname"><a href="interface_i_character_service.html#a4c506dd7393053d7d2b7f1bc662419eb">ICharacterService.Die</a></div><div class="ttdeci">void Die()</div><div class="ttdoc">Ejecuta la secuencia de muerte del personaje.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a52b4f7fc89f6ad6cf490b3baf64ebb66"><div class="ttname"><a href="interface_i_character_service.html#a52b4f7fc89f6ad6cf490b3baf64ebb66">ICharacterService.addSpell</a></div><div class="ttdeci">bool addSpell(SpellBase spellToAdd)</div><div class="ttdoc">Añade un hechizo al inventario del personaje.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a5da0a0ac2bd99aa8e1b5006b87669b51"><div class="ttname"><a href="interface_i_character_service.html#a5da0a0ac2bd99aa8e1b5006b87669b51">ICharacterService.getSpell</a></div><div class="ttdeci">SpellBase getSpell(int spellPosition)</div><div class="ttdoc">Devuelve el hechizo situado en la posición indicada del inventario.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a62b54bf7dcb56c3df678e50a4d502460"><div class="ttname"><a href="interface_i_character_service.html#a62b54bf7dcb56c3df678e50a4d502460">ICharacterService.getSecundarySpell</a></div><div class="ttdeci">List&lt; SpellBase &gt; getSecundarySpell()</div><div class="ttdoc">Devuelve la lista de hechizos secundarios equipados.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a68fa9406ba9704fd114361d7f9611ec9"><div class="ttname"><a href="interface_i_character_service.html#a68fa9406ba9704fd114361d7f9611ec9">ICharacterService.RemoveMana</a></div><div class="ttdeci">bool RemoveMana(int mana)</div><div class="ttdoc">Consume maná del personaje si hay suficiente.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a696eada8fe4fe888e124603f35cc22b5"><div class="ttname"><a href="interface_i_character_service.html#a696eada8fe4fe888e124603f35cc22b5">ICharacterService.removeSpell</a></div><div class="ttdeci">bool removeSpell(string spellToRemove)</div><div class="ttdoc">Elimina el hechizo con el nombre indicado del inventario.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a97adb95f9f7d62bd55552dae60d252e8"><div class="ttname"><a href="interface_i_character_service.html#a97adb95f9f7d62bd55552dae60d252e8">ICharacterService.Heal</a></div><div class="ttdeci">void Heal(int amountHealed)</div><div class="ttdoc">Cura al personaje, aumentando su vida sin superar el máximo.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a986ea13b42bfd6b50c774b22f8548d50"><div class="ttname"><a href="interface_i_character_service.html#a986ea13b42bfd6b50c774b22f8548d50">ICharacterService.getSpell</a></div><div class="ttdeci">SpellBase getSpell(string spellName)</div><div class="ttdoc">Devuelve el hechizo equipado con el nombre indicado.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a99b2b13b499a989ca370e75966809a4c"><div class="ttname"><a href="interface_i_character_service.html#a99b2b13b499a989ca370e75966809a4c">ICharacterService.AddMana</a></div><div class="ttdeci">void AddMana(int mana)</div><div class="ttdoc">Añade maná al personaje sin superar el máximo.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_a9af5cf96c36d98b1f8b9deabd39cad19"><div class="ttname"><a href="interface_i_character_service.html#a9af5cf96c36d98b1f8b9deabd39cad19">ICharacterService.CheckMana</a></div><div class="ttdeci">int CheckMana()</div><div class="ttdoc">Devuelve el maná actual del personaje.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_aafb5cb25b539ca04f3dd52454b847b23"><div class="ttname"><a href="interface_i_character_service.html#aafb5cb25b539ca04f3dd52454b847b23">ICharacterService.Genocide</a></div><div class="ttdeci">void Genocide()</div><div class="ttdoc">Registra que el jugador ha usado un hechizo, invalidando el logro pacifista si procede.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_ab2f4a017a6edd5a0654a6d5e24ad47e1"><div class="ttname"><a href="interface_i_character_service.html#ab2f4a017a6edd5a0654a6d5e24ad47e1">ICharacterService.getIndex</a></div><div class="ttdeci">int getIndex()</div><div class="ttdoc">Devuelve el índice del hechizo actualmente seleccionado.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_abd225f81a3b91981b839ae9a635a9151"><div class="ttname"><a href="interface_i_character_service.html#abd225f81a3b91981b839ae9a635a9151">ICharacterService.getPrimarySpell</a></div><div class="ttdeci">List&lt; SpellBase &gt; getPrimarySpell()</div><div class="ttdoc">Devuelve la lista de hechizos primarios equipados.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_ada4181ed909eecb713446cb13f8b714b"><div class="ttname"><a href="interface_i_character_service.html#ada4181ed909eecb713446cb13f8b714b">ICharacterService.removeSpell</a></div><div class="ttdeci">bool removeSpell(SpellBase spellToRemove)</div><div class="ttdoc">Elimina un hechizo del inventario por referencia.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_aecff46bc354ab7b9e6141111427aa46a"><div class="ttname"><a href="interface_i_character_service.html#aecff46bc354ab7b9e6141111427aa46a">ICharacterService.setActualSpell</a></div><div class="ttdeci">void setActualSpell(int cambioDePosicion)</div><div class="ttdoc">Cambia el hechizo activo desplazando la selección la cantidad indicada.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_af0bcc5698ae17b3e1a85698038dfc638"><div class="ttname"><a href="interface_i_character_service.html#af0bcc5698ae17b3e1a85698038dfc638">ICharacterService.getMaxMana</a></div><div class="ttdeci">int getMaxMana()</div><div class="ttdoc">Devuelve el maná máximo del personaje.</div></div>
+<div class="ttc" id="ainterface_i_character_service_html_afad413a6fce5be6a2d9ac2148416f633"><div class="ttname"><a href="interface_i_character_service.html#afad413a6fce5be6a2d9ac2148416f633">ICharacterService.CheckSpellCapacity</a></div><div class="ttdeci">int CheckSpellCapacity()</div><div class="ttdoc">Devuelve el número de huecos de hechizo disponibles.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_4edcbb236dfd51dd81727243a38df6a0.html">Scripts</a></li><li class="navelem"><a href="dir_0f7e8dd2440a07a53a3c6bb386854dca.html">Services</a></li><li class="navelem"><a href="dir_a12d436686d5ccd4ffb301b2a0b0c32f.html">Character</a></li><li class="navelem"><a href="_i_character_service_8cs.html">ICharacterService.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

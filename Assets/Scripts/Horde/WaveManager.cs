@@ -5,7 +5,7 @@ using UnityEngine.Localization.Components;
 
 /// <summary>
 /// MonoBehaviour que gestiona el sistema de oleadas de enemigos,
-/// controlando el spawning, la progresiÛn de hordas, la puntuaciÛn
+/// controlando el spawning, la progresi√≥n de hordas, la puntuaci√≥n
 /// y la pantalla de muerte al morir el jugador.
 /// </summary>
 public class WaveManager : MonoBehaviour
@@ -21,40 +21,40 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject Mapcenter;
     /// <summary>Prefab del panel que se muestra al morir el jugador.</summary>
     [SerializeField] GameObject DeathPanel;
-    /// <summary>LÌmite inferior del ·rea de spawn relativo al centro del mapa.</summary>
+    /// <summary>L√≠mite inferior del √°rea de spawn relativo al centro del mapa.</summary>
     [SerializeField] private Vector2 mapMinBounds;
-    /// <summary>LÌmite superior del ·rea de spawn relativo al centro del mapa.</summary>
+    /// <summary>L√≠mite superior del √°rea de spawn relativo al centro del mapa.</summary>
     [SerializeField] private Vector2 mapMaxBounds;
-    /// <summary>M·scara de capas usada para detectar obst·culos al buscar posiciones de spawn v·lidas.</summary>
+    /// <summary>M√°scara de capas usada para detectar obst√°culos al buscar posiciones de spawn v√°lidas.</summary>
     [SerializeField] private LayerMask obstacleMask;
     /// <summary>Referencia al servicio de eventos para suscribirse al <see cref="DieEvent"/>.</summary>
     IEventService _eventService;
-    /// <summary>Referencia al servicio de puntuaciÛn para sumar puntos y registrar la partida.</summary>
+    /// <summary>Referencia al servicio de puntuaci√≥n para sumar puntos y registrar la partida.</summary>
     IScoreService _scoreService;
     /// <summary>Referencia al servicio de perfiles para obtener el perfil activo del jugador.</summary>
     IProfileService _profileService;
     [Header("Wave Settings")]
-    /// <summary>Distancia mÌnima entre el jugador y una posiciÛn de spawn para que sea v·lida.</summary>
+    /// <summary>Distancia m√≠nima entre el jugador y una posici√≥n de spawn para que sea v√°lida.</summary>
     [SerializeField] private float minSpawnDistance = 2f;
-    /// <summary>Tiempo m·ximo en segundos que dura cada horda antes de pasar a la siguiente.</summary>
+    /// <summary>Tiempo m√°ximo en segundos que dura cada horda antes de pasar a la siguiente.</summary>
     [SerializeField] private int maxCount = 30;
-    /// <summary>N˙mero de enemigos que se generan al inicio de cada horda.</summary>
+    /// <summary>N√∫mero de enemigos que se generan al inicio de cada horda.</summary>
     [SerializeField] private int enemiesPerHorde = 2;
     /// <summary>Puntos base que se otorgan al completar cada horda, escalados con el progreso.</summary>
     [SerializeField] private int pointsPerHorde=1000;
-    /// <summary>Temporizador de cuenta atr·s para la horda actual.</summary>
+    /// <summary>Temporizador de cuenta atr√°s para la horda actual.</summary>
     private float timer;
-    /// <summary>N˙mero de la horda actual, incrementado al comenzar cada nueva oleada.</summary>
+    /// <summary>N√∫mero de la horda actual, incrementado al comenzar cada nueva oleada.</summary>
     private int horde = 1;
     /// <summary>Indica si hay una horda activa en curso.</summary>
     private bool isInHorde = false;
-    /// <summary>Texto que muestra el n˙mero de horda actual en la UI del jugador.</summary>
+    /// <summary>Texto que muestra el n√∫mero de horda actual en la UI del jugador.</summary>
     private TextMeshProUGUI hordeCounter;
-    /// <summary>Componente de localizaciÛn que muestra el tiempo restante de la horda.</summary>
+    /// <summary>Componente de localizaci√≥n que muestra el tiempo restante de la horda.</summary>
     private LocalizeStringEvent counter;
     /// <summary>GameObject padre que agrupa a todos los enemigos spawneados en la horda actual.</summary>
     private GameObject enemiesParent;
-    /// <summary>Indica si el jugador ya ha muerto, para evitar procesar el evento de muerte m·s de una vez.</summary>
+    /// <summary>Indica si el jugador ya ha muerto, para evitar procesar el evento de muerte m√°s de una vez.</summary>
     private bool death = false;
 
     /// <summary>
@@ -70,7 +70,7 @@ public class WaveManager : MonoBehaviour
     }
     /// <summary>
     /// Actualiza el temporizador y comprueba el estado de los enemigos cada frame.
-    /// No realiza ninguna acciÛn si no hay una horda activa.
+    /// No realiza ninguna acci√≥n si no hay una horda activa.
     /// </summary>
     void Update()
     {
@@ -81,7 +81,7 @@ public class WaveManager : MonoBehaviour
         checkEnemies();
     }
     /// <summary>
-    /// Cancela la suscripciÛn al <see cref="DieEvent"/> al destruirse el componente.
+    /// Cancela la suscripci√≥n al <see cref="DieEvent"/> al destruirse el componente.
     /// </summary>
     private void OnDestroy()
     {
@@ -128,7 +128,7 @@ public class WaveManager : MonoBehaviour
 
     }
     /// <summary>
-    /// Actualiza el argumento de localizaciÛn del contador de tiempo con el valor
+    /// Actualiza el argumento de localizaci√≥n del contador de tiempo con el valor
     /// redondeado hacia arriba del temporizador actual y refresca el texto en pantalla.
     /// </summary>
     private void updateCounter()
@@ -144,7 +144,7 @@ public class WaveManager : MonoBehaviour
         //counter.StringReference.Arguments = new object[] {Mathf.CeilToInt(timer) };
     }
     /// <summary>
-    /// Instancia los enemigos de la horda actual en posiciones v·lidas del mapa,
+    /// Instancia los enemigos de la horda actual en posiciones v√°lidas del mapa,
     /// eligiendo aleatoriamente entre los prefabs disponibles en <see cref="enemy"/>.
     /// </summary>
     private void spawnEnemies()
@@ -157,11 +157,11 @@ public class WaveManager : MonoBehaviour
         }
     }
     /// <summary>
-    /// Intenta encontrar una posiciÛn de spawn v·lida dentro de los lÌmites del mapa,
-    /// descartando posiciones demasiado cercanas al jugador o bloqueadas por obst·culos.
+    /// Intenta encontrar una posici√≥n de spawn v√°lida dentro de los l√≠mites del mapa,
+    /// descartando posiciones demasiado cercanas al jugador o bloqueadas por obst√°culos.
     /// </summary>
-    /// <param name="spawnPos">PosiciÛn v·lida encontrada, o <see cref="Vector3.zero"/> si no se encontrÛ ninguna.</param>
-    /// <returns><c>true</c> si se encontrÛ una posiciÛn v·lida; <c>false</c> si se agotaron los intentos.</returns>
+    /// <param name="spawnPos">Posici√≥n v√°lida encontrada, o <see cref="Vector3.zero"/> si no se encontr√≥ ninguna.</param>
+    /// <returns><c>true</c> si se encontr√≥ una posici√≥n v√°lida; <c>false</c> si se agotaron los intentos.</returns>
     private bool TryGetPosition(out Vector3 spawnPos)
     {
         int maxAtempts = 20;
@@ -169,13 +169,13 @@ public class WaveManager : MonoBehaviour
             float randomX = Random.Range(mapMinBounds.x, mapMaxBounds.x);
             float randomZ = Random.Range(mapMinBounds.y, mapMaxBounds.y);
             Vector3 randomPos = new Vector3(Mapcenter.transform.position.x + randomX, Mapcenter.transform.position.y, Mapcenter.transform.position.z + randomZ);
-            Debug.Log("Intento " + i + ": PosiciÛn aleatoria generada: " + randomPos);
+            Debug.Log("Intento " + i + ": Posici√≥n aleatoria generada: " + randomPos);
             //checkea la distancia con el jugador
             if (Vector3.Distance(player.transform.position, randomPos) < minSpawnDistance)
               continue;
             //compureba si choca con algun obstaculo
             bool blocked = Physics.CheckSphere(randomPos, 1f, obstacleMask);
-            Debug.Log("Intento " + i + ": øPosiciÛn bloqueada por obst·culos? " + blocked);
+            Debug.Log("Intento " + i + ": ¬øPosici√≥n bloqueada por obst√°culos? " + blocked);
             if (blocked) continue;
             spawnPos= randomPos;
             return true;
@@ -184,7 +184,7 @@ public class WaveManager : MonoBehaviour
         return false;
     }
     /// <summary>
-    /// Avanza a la siguiente horda incrementando el contador, escalando el n˙mero de enemigos
+    /// Avanza a la siguiente horda incrementando el contador, escalando el n√∫mero de enemigos
     /// y los puntos por horda en un 50%, sumando los puntos al perfil activo y spawneando
     /// la nueva oleada de enemigos.
     /// </summary>
@@ -203,8 +203,8 @@ public class WaveManager : MonoBehaviour
     /// <summary>
     /// Callback invocado al recibir el <see cref="DieEvent"/>.
     /// Pausa el juego, muestra el cursor, cambia el mapa de controles a UI,
-    /// registra la puntuaciÛn final y muestra el panel de muerte con la horda
-    /// alcanzada y la puntuaciÛn obtenida. Solo se ejecuta una vez gracias al flag <see cref="death"/>.
+    /// registra la puntuaci√≥n final y muestra el panel de muerte con la horda
+    /// alcanzada y la puntuaci√≥n obtenida. Solo se ejecuta una vez gracias al flag <see cref="death"/>.
     /// </summary>
     /// <param name="base">Evento base recibido, correspondiente a un <see cref="DieEvent"/>.</param>
     private void OnPlayerDeath(GameEventBase @base)

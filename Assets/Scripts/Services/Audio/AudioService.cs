@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 /// <summary>
-/// Servicio encargado de gestionar la reproducciÛn de m˙sica y efectos de sonido del juego mediante el componente <see cref="AudioUpdater"/>
+/// Servicio encargado de gestionar la reproducci√≥n de m√∫sica y efectos de sonido del juego mediante el componente <see cref="AudioUpdater"/>
 /// </summary>
 public class AudioService : IAudioService
 {
@@ -20,7 +20,7 @@ public class AudioService : IAudioService
     private AudioClip[] _musicPlaylist;
     private int _currentTrackIndex = 0;
     /// <summary>
-    /// Constructor encargado de crear el objeto principal de audio y asociarlo con <see cref="AudioUpdater"/> para controlar la actualizaciÛn autom·tica de la m˙sica
+    /// Constructor encargado de crear el objeto principal de audio y asociarlo con <see cref="AudioUpdater"/> para controlar la actualizaci√≥n autom√°tica de la m√∫sica
     /// </summary>
     public AudioService()
     {
@@ -33,7 +33,7 @@ public class AudioService : IAudioService
     }
     //Musica
     /// <summary>
-    /// Crea e inicializa la fuente de audio utilizada para reproducir m˙sica de fondo
+    /// Crea e inicializa la fuente de audio utilizada para reproducir m√∫sica de fondo
     /// </summary>
     private void CreateMusicSource()
     {
@@ -44,9 +44,9 @@ public class AudioService : IAudioService
     }
 
     /// <summary>
-    /// Inicia la reproducciÛn de una lista de pistas musicales y establece la primera canciÛn como reproducciÛn actual
+    /// Inicia la reproducci√≥n de una lista de pistas musicales y establece la primera canci√≥n como reproducci√≥n actual
     /// </summary>
-    /// <param name="clips">Lista de clips de audio que formar·n la lista de reproducciÛn</param>
+    /// <param name="clips">Lista de clips de audio que formar√°n la lista de reproducci√≥n</param>
     public void PlayMusic(AudioClip[] clips)
     {
         if (clips == null || clips.Length == 0)
@@ -56,7 +56,7 @@ public class AudioService : IAudioService
         PlayCurrentTrack();
     }
     /// <summary>
-    /// Reproduce la pista actual de la lista de reproducciÛn cargada
+    /// Reproduce la pista actual de la lista de reproducci√≥n cargada
     /// </summary>
     private void PlayCurrentTrack()
     {
@@ -67,16 +67,16 @@ public class AudioService : IAudioService
         _musicSource.Play();
     }
     /// <summary>
-    /// Detiene la reproducciÛn de la m˙sica actual
+    /// Detiene la reproducci√≥n de la m√∫sica actual
     /// </summary>
     public void StopMusic()
     {
         _musicSource.Stop();
     }
     /// <summary>
-    /// Modifica el volumen de la m˙sica de fondo
+    /// Modifica el volumen de la m√∫sica de fondo
     /// </summary>
-    /// <param name="volume">Valor del volumen que se aplicar· a la m˙sica</param>
+    /// <param name="volume">Valor del volumen que se aplicar√° a la m√∫sica</param>
     public void SetMusicVolume(float volume)
     {
         _musicVolume = volume;
@@ -84,7 +84,7 @@ public class AudioService : IAudioService
         _musicSource.volume = volume;
     }
     /// <summary>
-    /// Comprueba si la canciÛn actual ha finalizado y, en caso necesario, avanza autom·ticamente a la siguiente pista de la lista
+    /// Comprueba si la canci√≥n actual ha finalizado y, en caso necesario, avanza autom√°ticamente a la siguiente pista de la lista
     /// </summary>
     public void UpdateMusicPlaylist()
     {
@@ -106,9 +106,9 @@ public class AudioService : IAudioService
 
     //efectos de sonido
     /// <summary>
-    /// Reproduce un efecto de sonido una sola vez. Incluye una restricciÛn temporal para evitar reproducir repetidamente el mismo sonido en intervalos muy cortos
+    /// Reproduce un efecto de sonido una sola vez. Incluye una restricci√≥n temporal para evitar reproducir repetidamente el mismo sonido en intervalos muy cortos
     /// </summary>
-    /// <param name="clip">Clip de audio que se reproducir· como efecto de sonido</param>
+    /// <param name="clip">Clip de audio que se reproducir√° como efecto de sonido</param>
     public void PlaySound(AudioClip clip)
     {
         if (clip == null)
@@ -133,7 +133,7 @@ public class AudioService : IAudioService
     /// <summary>
     /// Reproduce un efecto de sonido en bucle continuo y permite modificar su velocidad o tono
     /// </summary>
-    /// <param name="clip">Clip de audio que se reproducir· en bucle</param>
+    /// <param name="clip">Clip de audio que se reproducir√° en bucle</param>
     /// <param name="pitch">Valor que determina el tono o velocidad del sonido. Valor por defecto: 1f</param>
     public void PlayLoopSound(AudioClip clip, float pitch = 1f)
     {
@@ -178,7 +178,7 @@ public class AudioService : IAudioService
     /// <summary>
     /// Modifica el volumen de todos los efectos de sonido activos
     /// </summary>
-    /// <param name="volume">Valor del volumen que se aplicar· a los efectos de sonido</param>
+    /// <param name="volume">Valor del volumen que se aplicar√° a los efectos de sonido</param>
     public void SetSFXVolume(float volume)
     {
         _sfxVolume = volume;
@@ -203,9 +203,9 @@ public class AudioService : IAudioService
         Object.Destroy(_musicSource);
     }
     /// <summary>
-    /// Detiene la reproducciÛn de un efecto de sonido especÌfico
+    /// Detiene la reproducci√≥n de un efecto de sonido espec√≠fico
     /// </summary>
-    /// <param name="clip">Clip de audio que dejar· de reproducirse</param>
+    /// <param name="clip">Clip de audio que dejar√° de reproducirse</param>
     public void StopSound(AudioClip clip)
     {
         if (clip == null)

@@ -27,12 +27,12 @@ public partial class SpellBase : MonoBehaviour
         isCasting = false;
     }
     /// <summary>
-    /// Intenta lanzar un hechizo si hay mana suficiente y no se está casteando.
-    /// Delega en el método correspondiente según el tipo de hechizo.
+    /// Intenta lanzar un hechizo si hay mana suficiente y no se estÃ¡ casteando.
+    /// Delega en el mÃ©todo correspondiente segÃºn el tipo de hechizo.
     /// </summary>
     /// <param name="spellSpawn">Transform desde donde se origina el hechizo.</param>
     /// <param name="spell">Referencia al SpellBase que se va a lanzar.</param>
-    /// <param name="layersToHit">Capas con las que interactúa el hechizo.</param>
+    /// <param name="layersToHit">Capas con las que interactÃºa el hechizo.</param>
     public virtual void LanzarHechizo(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
         if (_characterService == null) _characterService = AppContainer.Get<ICharacterService>();
@@ -68,7 +68,7 @@ public partial class SpellBase : MonoBehaviour
     }
     /// <summary>
     /// Corrutina que recarga el mana del personaje gradualmente
-    /// hasta alcanzar el máximo.
+    /// hasta alcanzar el mÃ¡ximo.
     /// </summary>
     public virtual IEnumerator Reload()
     {
@@ -82,7 +82,7 @@ public partial class SpellBase : MonoBehaviour
     }
     /// <summary>
     /// Corrutina que gestiona la carga progresiva del hechizo.
-    /// Reproduce sonido de carga y avanza hasta alcanzar la carga máxima.
+    /// Reproduce sonido de carga y avanza hasta alcanzar la carga mÃ¡xima.
     /// </summary>
     public virtual IEnumerator CargarHechizo()
     {
@@ -102,18 +102,18 @@ public partial class SpellBase : MonoBehaviour
 
             spell.currentCharge++;
         }
-        //TODO añadir sonido de carga maxima
+        //TODO aÃ±adir sonido de carga maxima
         stopCharginSound();
 
         Debug.Log("Carga maxima");
     }
     /// <summary>
     /// Gestiona el lanzamiento de un hechizo de tipo rayo.
-    /// Si es de tipo cargado, verifica que se haya alcanzado la carga máxima antes de disparar.
+    /// Si es de tipo cargado, verifica que se haya alcanzado la carga mÃ¡xima antes de disparar.
     /// </summary>
     /// <param name="spellSpawn">Transform desde donde se origina el rayo.</param>
     /// <param name="spell">Referencia al SpellBase con los datos del hechizo.</param>
-    /// <param name="layersToHit">Capas con las que interactúa el rayo.</param>
+    /// <param name="layersToHit">Capas con las que interactÃºa el rayo.</param>
     public virtual void CastRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
         if (spell.spell.cast_Type == CastType.charged)
@@ -142,11 +142,11 @@ public partial class SpellBase : MonoBehaviour
     }
     /// <summary>
     /// Gestiona el lanzamiento de un hechizo de tipo bola.
-    /// Si es de tipo cargado, verifica carga máxima y mana suficiente antes de disparar.
+    /// Si es de tipo cargado, verifica carga mÃ¡xima y mana suficiente antes de disparar.
     /// </summary>
     /// <param name="spellSpawn">Transform desde donde se origina la bola.</param>
     /// <param name="spell">Referencia al SpellBase con los datos del hechizo.</param>
-    /// <param name="layersToHit">Capas con las que interactúa la bola.</param>
+    /// <param name="layersToHit">Capas con las que interactÃºa la bola.</param>
     public virtual void CastBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
         if (spell.spell.cast_Type == CastType.charged)
@@ -177,23 +177,23 @@ public partial class SpellBase : MonoBehaviour
 
     }
     /// <summary>
-    /// Ejecuta el disparo físico de la bola delegando en el servicio de hechizos.
+    /// Ejecuta el disparo fÃ­sico de la bola delegando en el servicio de hechizos.
     /// </summary>
     /// <param name="spellSpawn">Transform origen del disparo.</param>
     /// <param name="spell">Referencia al SpellBase con los datos del hechizo.</param>
-    /// <param name="layersToHit">Capas con las que interactúa la bola.</param>
+    /// <param name="layersToHit">Capas con las que interactÃºa la bola.</param>
     private void ShootBallSpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
         var spellService = AppContainer.Get<ISpellService>();
         spellService.ShootBall(spellSpawn.position, spellSpawn.transform.forward, _characterService.getSpell(_characterService.getIndex()).spell.velocity, spell.spell.RayMaterial);
     }
     /// <summary>
-    /// Ejecuta el disparo de un rayo mediante Raycast, aplicando daño a los objetos golpeados.
-    /// Soporta penetración de múltiples objetivos y dibuja la línea visual del rayo si está configurado.
+    /// Ejecuta el disparo de un rayo mediante Raycast, aplicando daÃ±o a los objetos golpeados.
+    /// Soporta penetraciÃ³n de mÃºltiples objetivos y dibuja la lÃ­nea visual del rayo si estÃ¡ configurado.
     /// </summary>
     /// <param name="spellSpawn">Transform origen del rayo.</param>
     /// <param name="spell">Referencia al SpellBase con los datos del hechizo.</param>
-    /// <param name="layersToHit">Capas con las que interactúa el rayo.</param>
+    /// <param name="layersToHit">Capas con las que interactÃºa el rayo.</param>
     private void ShootRaySpell(Transform spellSpawn, SpellBase spell, LayerMask layersToHit)
     {
         RaycastHit hit;
@@ -202,7 +202,7 @@ public partial class SpellBase : MonoBehaviour
         Vector3 endPoint;
         if (spell.spell.penetrates)
         {
-            //Raycast con penetración
+            //Raycast con penetraciÃ³n
             RaycastHit[] hits = Physics.RaycastAll(spellSpawn.position, direction, spell.spell.lifeTime, layersToHit);
             if (hits.Count() >= nivelDePenetracion)
             {
@@ -259,11 +259,11 @@ public partial class SpellBase : MonoBehaviour
     }
 
     /// <summary>
-    /// Calcula la dirección de disparo aplicando dispersión aleatoria
-    /// según la intensidad de spread configurada en el hechizo.
+    /// Calcula la direcciÃ³n de disparo aplicando dispersiÃ³n aleatoria
+    /// segÃºn la intensidad de spread configurada en el hechizo.
     /// </summary>
-    /// <param name="vector3">Dirección base del disparo.</param>
-    /// <returns>Dirección modificada con dispersión aplicada.</returns>
+    /// <param name="vector3">DirecciÃ³n base del disparo.</param>
+    /// <returns>DirecciÃ³n modificada con dispersiÃ³n aplicada.</returns>
     private Vector3 CalculateDispersion(Vector3 vector3)
     {
         float xDispersiom = UnityEngine.Random.Range(spell.spreadIntensity, -spell.spreadIntensity);
@@ -283,7 +283,7 @@ public partial class SpellBase : MonoBehaviour
         canCast = true;
     }
     /// <summary>
-    /// Detiene el sonido de carga del hechizo si estaba reproduciéndose.
+    /// Detiene el sonido de carga del hechizo si estaba reproduciÃ©ndose.
     /// </summary>
     public void stopCharginSound()
     {

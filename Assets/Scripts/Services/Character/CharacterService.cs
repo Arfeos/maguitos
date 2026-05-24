@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.X86;
 /// <summary>
-/// Servicio encargado de gestionar toda la lÛgica relacionada con el personaje, incluyendo salud, man·, inventario de hechizos, selecciÛn de habilidades y estados especiales. 
+/// Servicio encargado de gestionar toda la l√≥gica relacionada con el personaje, incluyendo salud, man√°, inventario de hechizos, selecci√≥n de habilidades y estados especiales. 
 /// Se comunica con <see cref="IEventService"/> para notificar cambios y utiliza objetos <see cref="SpellBase"/> para administrar los hechizos del jugador
 /// </summary>
 public class CharacterService : ICharacterService
@@ -25,9 +25,9 @@ public class CharacterService : ICharacterService
         _eventService = AppContainer.Get<IEventService>();
     }
     /// <summary>
-    /// AÒade una cantidad de man· al personaje y publica un evento <see cref="ManaEvent"/> mediante <see cref="IEventService"/> para actualizar el estado del sistema
+    /// A√±ade una cantidad de man√° al personaje y publica un evento <see cref="ManaEvent"/> mediante <see cref="IEventService"/> para actualizar el estado del sistema
     /// </summary>
-    /// <param name="manaAniadir">Cantidad de man· que ser· aÒadida</param>    
+    /// <param name="manaAniadir">Cantidad de man√° que ser√° a√±adida</param>    
     public void AddMana(int manaAniadir)
     {
         if (manaActual + manaAniadir > mana)
@@ -44,25 +44,25 @@ public class CharacterService : ICharacterService
 
     }
     /// <summary>
-    /// Obtiene la cantidad m·xima de man· disponible para el personaje
+    /// Obtiene la cantidad m√°xima de man√° disponible para el personaje
     /// </summary>
-    /// <returns>Cantidad m·xima de man·</returns>
+    /// <returns>Cantidad m√°xima de man√°</returns>
     public int getMaxMana()
     {
         return mana;
     }
     /// <summary>
-    /// Obtiene la posiciÛn actual del hechizo seleccionado
+    /// Obtiene la posici√≥n actual del hechizo seleccionado
     /// </summary>
-    /// <returns>Õndice del hechizo seleccionado</returns>
+    /// <returns>√çndice del hechizo seleccionado</returns>
     public int getIndex()
     {
         return index;
     }
     /// <summary>
-    /// Cambia el hechizo seleccionado actualmente desplaz·ndose por la lista de hechizos almacenada
+    /// Cambia el hechizo seleccionado actualmente desplaz√°ndose por la lista de hechizos almacenada
     /// </summary>
-    /// <param name="cambioDePosicion">Cantidad de posiciones que se desplazar· la selecciÛn</param>
+    /// <param name="cambioDePosicion">Cantidad de posiciones que se desplazar√° la selecci√≥n</param>
     public void setActualSpell(int cambioDePosicion)
     {
         if (listaHechizos.Count <=0) return;
@@ -72,9 +72,9 @@ public class CharacterService : ICharacterService
         Debug.Log("Hechizo actual: " + listaHechizos[index].name);
     }
     /// <summary>
-    /// Obtiene la cantidad actual de man· disponible
+    /// Obtiene la cantidad actual de man√° disponible
     /// </summary>
-    /// <returns>Man· actual del personaje</returns>
+    /// <returns>Man√° actual del personaje</returns>
     public int CheckMana()
     {
         return manaActual;
@@ -99,10 +99,10 @@ public class CharacterService : ICharacterService
 
     }
     /// <summary>
-    /// Reduce una cantidad de man· y publica un evento <see cref="ManaEvent"/> mediante <see cref="IEventService"/>
+    /// Reduce una cantidad de man√° y publica un evento <see cref="ManaEvent"/> mediante <see cref="IEventService"/>
     /// </summary>
-    /// <param name="spellToAdd">Cantidad de man· que ser· eliminada</param>
-    /// <returns>Devuelve true si la operaciÛn se realizÛ correctamente o false si no hay suficiente man·</returns>
+    /// <param name="spellToAdd">Cantidad de man√° que ser√° eliminada</param>
+    /// <returns>Devuelve true si la operaci√≥n se realiz√≥ correctamente o false si no hay suficiente man√°</returns>
     public bool addSpell(SpellBase spellToAdd)
     {
         spellToAdd.ResetSpellShot();
@@ -216,9 +216,9 @@ public class CharacterService : ICharacterService
         return null;
     }
     /// <summary>
-    /// Obtiene un objeto <see cref="SpellBase"/> seg˙n su posiciÛn dentro de la lista
+    /// Obtiene un objeto <see cref="SpellBase"/> seg√∫n su posici√≥n dentro de la lista
     /// </summary>
-    /// <param name="spellPosition">PosiciÛn del hechizo</param>
+    /// <param name="spellPosition">Posici√≥n del hechizo</param>
     /// <returns>Hechizo encontrado o null</returns>
     public SpellBase getSpell(int spellPosition)
     {
@@ -230,8 +230,8 @@ public class CharacterService : ICharacterService
     /// <summary>
     /// Elimina un objeto <see cref="SpellBase"/> de la lista de hechizos
     /// </summary>
-    /// <param name="spellToRemove">Hechizo que ser· eliminado</param>
-    /// <returns>Devuelve true si se eliminÛ correctamente</returns>
+    /// <param name="spellToRemove">Hechizo que ser√° eliminado</param>
+    /// <returns>Devuelve true si se elimin√≥ correctamente</returns>
     public bool removeSpell(SpellBase spellToRemove)
     {
         if (spellToRemove == null) return false;
@@ -240,10 +240,10 @@ public class CharacterService : ICharacterService
         return true;
     }
     /// <summary>
-    /// Elimina un hechizo seg˙n su posiciÛn dentro de la lista
+    /// Elimina un hechizo seg√∫n su posici√≥n dentro de la lista
     /// </summary>
-    /// <param name="spellToRemove">PosiciÛn del hechizo a eliminar</param>
-    /// <returns>Devuelve true si la operaciÛn fue correcta</returns>
+    /// <param name="spellToRemove">Posici√≥n del hechizo a eliminar</param>
+    /// <returns>Devuelve true si la operaci√≥n fue correcta</returns>
     public bool removeSpell(int spellToRemove)
     {
         if (spellToRemove < 0) return false;
@@ -254,8 +254,8 @@ public class CharacterService : ICharacterService
     /// <summary>
     /// Elimina un objeto<see cref = "SpellBase" /> utilizando su nombre
     /// </summary>
-    /// <param name="spellToRemove">Nombre del hechizo que ser· eliminado</param>
-    /// <returns>Devuelve true si se eliminÛ correctamente</returns>
+    /// <param name="spellToRemove">Nombre del hechizo que ser√° eliminado</param>
+    /// <returns>Devuelve true si se elimin√≥ correctamente</returns>
     public bool removeSpell(string spellToRemove)
     {
         if (spellToRemove == null || spellToRemove.Equals("") || spellToRemove.Equals("Change Spell name")) return false;
@@ -286,7 +286,7 @@ public class CharacterService : ICharacterService
     /// <summary>
     /// Reduce la vida actual del personaje y publica un evento <see cref="HPEvent"/> mediante <see cref="IEventService"/>. Si la vida llega a cero ejecuta Die()
     /// </summary>
-    /// <param name="damageTaken">Cantidad de daÒo recibido</param>
+    /// <param name="damageTaken">Cantidad de da√±o recibido</param>
     public void TakeDamage(int damageTaken)
     {
         this.Curretlife -= damageTaken;
@@ -330,7 +330,7 @@ public class CharacterService : ICharacterService
     /// <summary>
     /// Obtiene el estado pacifista actual del personaje
     /// </summary>
-    /// <returns>Devuelve true si el personaje contin˙a siendo pacifista</returns>
+    /// <returns>Devuelve true si el personaje contin√∫a siendo pacifista</returns>
     public bool getPacifist()
     {
         return _pacifista;

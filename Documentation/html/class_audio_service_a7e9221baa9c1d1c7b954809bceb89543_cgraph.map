@@ -1,0 +1,5 @@
+<map id="AudioService.AudioService" name="AudioService.AudioService">
+<area shape="rect" id="Node000001" title="Constructor encargado de crear el objeto principal de audio y asociarlo con AudioUpdater para control..." alt="" coords="5,5,185,32"/>
+<area shape="rect" id="Node000002" href="$class_audio_updater.html#a36d95b3536ff4f5465c335c3e8920802" title="Inicializa el componente asignándole una referencia a AudioService." alt="" coords="233,5,385,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,16,220,19,214,19,185,21"/>
+</map>

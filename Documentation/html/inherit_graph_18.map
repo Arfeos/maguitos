@@ -1,0 +1,5 @@
+<map id="Gráfico de jerarquía de clases" name="Gráfico de jerarquía de clases">
+<area shape="rect" id="Node000000" href="$interface_i_u_i_service.html" title="Servicio encargado de gestionar la interfaz de usuario, incluyendo el cambio de idioma y el registro ..." alt="" coords="5,5,89,32"/>
+<area shape="rect" id="Node000001" href="$class_u_i_service.html" title="Servicio encargado de gestionar la interfaz de usuario, incluyendo el cambio de idioma y el registro ..." alt="" coords="137,5,216,32"/>
+<area shape="poly" id="edge93_Node000000_Node000001" title=" " alt="" coords="104,16,139,18,133,19,105,21"/>
+</map>

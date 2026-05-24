@@ -1,0 +1,7 @@
+<map id="InputSystem_Actions.IUIActions.OnMiddleClick" name="InputSystem_Actions.IUIActions.OnMiddleClick">
+<area shape="rect" id="Node000001" title="Method invoked when associated input action &quot;MiddleClick&quot; is either UnityEngine.InputSystem...." alt="" coords="526,5,742,48"/>
+<area shape="rect" id="Node000002" href="$struct_input_system___actions_1_1_u_i_actions.html#a116611ffabbf5ed2fbb356127a409b0e" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="266,5,478,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="508,27,479,29,478,24,513,27"/>
+<area shape="rect" id="Node000003" href="$struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,218,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,27,218,29,218,24,253,27"/>
+</map>

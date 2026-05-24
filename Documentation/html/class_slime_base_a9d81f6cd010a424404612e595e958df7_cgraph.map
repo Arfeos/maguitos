@@ -1,0 +1,9 @@
+<map id="SlimeBase.CheckState" name="SlimeBase.CheckState">
+<area shape="rect" id="Node000001" title="Evalúa si el slime debe atacar o moverse en función de la distancia al jugador. Solo actúa si _nextAc..." alt="" coords="5,56,163,83"/>
+<area shape="rect" id="Node000002" href="$class_slime_base.html#acca4b82f932f3474d22de74265ab05c2" title="Lógica de ataque específica del enemigo. La base reproduce el AttackSound; las subclases deben llamar..." alt="" coords="245,5,372,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,53,233,35,229,37,147,58"/>
+<area shape="rect" id="Node000003" href="$class_slime_base.html#a79bdf4312a1f2d5714b2fecd9a696eb1" title="Calcula la distancia plana (ignorando el eje Y) entre el slime y el jugador." alt="" coords="211,56,406,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,67,197,69,192,70,163,72"/>
+<area shape="rect" id="Node000004" href="$class_slime_base.html#aa6026f9416ece929b0946c8f4064e715" title="Lógica de movimiento específica del enemigo. La base reproduce el JumpSound; las subclases deben llam..." alt="" coords="248,107,368,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="147,81,235,102,230,104,146,86"/>
+</map>

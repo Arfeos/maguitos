@@ -1,0 +1,5 @@
+<map id="UIInitializer" name="UIInitializer">
+<area shape="rect" id="Node000001" title="MonoBehaviour que inicializa el estado de la UI al activarse, cambiando el mapa de controles a UI y r..." alt="" coords="17,80,105,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,46,64,80,58,79,59,50"/>
+</map>

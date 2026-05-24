@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 /// <summary>
-/// Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento, rotaci髇 de c醡ara, salto, agacharse, animaciones, sonidos, pausa, cambio de hechizos y da駉 recibido. Se comunica con m鷏tiples servicios como <see cref="ICharacterService"/>, <see cref="IEventService"/>, <see cref="IAudioService"/>, <see cref="IPauseService"/> y <see cref="IProfileService"/>. 
-/// Tambi閚 utiliza <see cref="PlayerInputManager"/> para gestionar las entradas del jugador
+/// Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento, rotaci贸n de c谩mara, salto, agacharse, animaciones, sonidos, pausa, cambio de hechizos y da帽o recibido. Se comunica con m煤ltiples servicios como <see cref="ICharacterService"/>, <see cref="IEventService"/>, <see cref="IAudioService"/>, <see cref="IPauseService"/> y <see cref="IProfileService"/>. 
+/// Tambi茅n utiliza <see cref="PlayerInputManager"/> para gestionar las entradas del jugador
 /// </summary>
 public class PlayerController : MonoBehaviour, IHittable
 {
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour, IHittable
 
 
     /// <summary>
-    /// M閠odo ejecutado durante la inicializaci髇 del objeto. Configura el mapa de controles mediante <see cref="PlayerInputManager"/>, obtiene referencias a servicios mediante <see cref="AppContainer"/>, registra eventos de <see cref="PreferenceChangeEvent"/> y configura la c醡ara y el cursor
+    /// M茅todo ejecutado durante la inicializaci贸n del objeto. Configura el mapa de controles mediante <see cref="PlayerInputManager"/>, obtiene referencias a servicios mediante <see cref="AppContainer"/>, registra eventos de <see cref="PreferenceChangeEvent"/> y configura la c谩mara y el cursor
     /// </summary>
     private void Awake()
     {
@@ -68,14 +68,14 @@ public class PlayerController : MonoBehaviour, IHittable
         updatePreferences();
     }
     /// <summary>
-    /// M閠odo ejecutado al destruir el objeto. Elimina la suscripci髇 al evento <see cref="PreferenceChangeEvent"/> desde <see cref="IEventService"/>
+    /// M茅todo ejecutado al destruir el objeto. Elimina la suscripci贸n al evento <see cref="PreferenceChangeEvent"/> desde <see cref="IEventService"/>
     /// </summary>
     private void OnDestroy()
     {
         _eventService.Unsubscribe<PreferenceChangeEvent>(updatePreferences);
     }
     /// <summary>
-    /// M閠odo ejecutado autom醫icamente en cada frame. Gestiona las funciones principales del jugador como movimiento, c醡ara, agacharse, recarga, cambio de hechizos, pausa y animaciones
+    /// M茅todo ejecutado autom谩ticamente en cada frame. Gestiona las funciones principales del jugador como movimiento, c谩mara, agacharse, recarga, cambio de hechizos, pausa y animaciones
     /// </summary>
     private void Update()
     {
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour, IHittable
 
 
     /// <summary>
-    /// Gestiona la rotaci髇 de la c醡ara y del personaje utilizando las entradas proporcionadas por <see cref="PlayerInputManager"/>
+    /// Gestiona la rotaci贸n de la c谩mara y del personaje utilizando las entradas proporcionadas por <see cref="PlayerInputManager"/>
     /// </summary>
     private void Look ()
     {
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour, IHittable
         transform.Rotate(Vector3.up *  X);
     }
     /// <summary>
-    /// Gestiona el movimiento del jugador, incluyendo desplazamiento, gravedad, salto, sprint y reproducci髇 de sonidos mediante <see cref="IAudioService"/>
+    /// Gestiona el movimiento del jugador, incluyendo desplazamiento, gravedad, salto, sprint y reproducci贸n de sonidos mediante <see cref="IAudioService"/>
     /// </summary>
     private void Move()
     {
@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour, IHittable
         
     }
     /// <summary>
-    /// Gestiona el estado agachado del jugador modificando progresivamente la altura del <see cref="CharacterController"/> y la posici髇 de la c醡ara
+    /// Gestiona el estado agachado del jugador modificando progresivamente la altura del <see cref="CharacterController"/> y la posici贸n de la c谩mara
     /// </summary>
     private void HandleCrouch()
     {
@@ -228,7 +228,7 @@ public class PlayerController : MonoBehaviour, IHittable
         }
     }
     /// <summary>
-    /// Detecta la acci髇 de pausa mediante <see cref="PlayerInputManager"/> y alterna el estado del juego utilizando <see cref="IPauseService"/>
+    /// Detecta la acci贸n de pausa mediante <see cref="PlayerInputManager"/> y alterna el estado del juego utilizando <see cref="IPauseService"/>
     /// </summary>
     private void handlePause()
     {
@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour, IHittable
         }
     }
     /// <summary>
-    /// Actualiza los par醡etros del <see cref="Animator"/> para sincronizar las animaciones con el estado actual del jugador, como movimiento, salto, carrera o agacharse
+    /// Actualiza los par谩metros del <see cref="Animator"/> para sincronizar las animaciones con el estado actual del jugador, como movimiento, salto, carrera o agacharse
     /// </summary>
     private void SetAnimation()
     {
@@ -264,7 +264,7 @@ public class PlayerController : MonoBehaviour, IHittable
 
     }
     /// <summary>
-    /// Implementaci髇 de la interfaz IHittable. Aplica da駉 al personaje utilizando <see cref="ICharacterService"/>
+    /// Implementaci贸n de la interfaz IHittable. Aplica da帽o al personaje utilizando <see cref="ICharacterService"/>
     /// </summary>
     /// <param name="damage"></param>
     public void Hit(float damage)
@@ -272,7 +272,7 @@ public class PlayerController : MonoBehaviour, IHittable
         _characterService.TakeDamage((int)damage);
     }
     /// <summary>
-    /// Actualiza las preferencias del jugador utilizando los datos almacenados en <see cref="UserProfile"/> obtenidos mediante <see cref="IProfileService"/>. Modifica sensibilidad y configuraci髇 de ejes
+    /// Actualiza las preferencias del jugador utilizando los datos almacenados en <see cref="UserProfile"/> obtenidos mediante <see cref="IProfileService"/>. Modifica sensibilidad y configuraci贸n de ejes
     /// </summary>
     /// <param name="game">Evento recibido desde <see cref="IEventService"/> para actualizar preferencias. Valor por defecto null</param>
     private void updatePreferences(GameEventBase game = null)

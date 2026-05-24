@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente Scripts/WorkflowsSystem/Steps/MoveStep.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_move_step_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MoveStep.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_move_step_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Linq;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>UnityEngine.InputSystem;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using </span>UnityEngine.Localization;</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_move_step.html">   10</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_move_step.html#ab1f87a16866fcfdd33fe541663492467">MoveStep</a> : <a class="code hl_interface" href="interface_i_step.html">IStep</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">// --- Variables ---</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> _isComplete = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// --- IStep ---</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_move_step.html#a01bf90daf2e1abae3bd703fc86fdfa78">   18</a></span>    <span class="keyword">public</span> LocalizedString <a class="code hl_property" href="class_move_step.html#a01bf90daf2e1abae3bd703fc86fdfa78">Name</a> { <span class="keyword">get</span> =&gt; <span class="keyword">new</span> LocalizedString { TableReference = <span class="stringliteral">&quot;Steps&quot;</span>, TableEntryReference = <span class="stringliteral">&quot;playerMoveName&quot;</span> }; }</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_move_step.html#a91b7489cbea03f4f4ab8e209a01bfe02">   19</a></span>    <span class="keyword">public</span> LocalizedString <a class="code hl_property" href="class_move_step.html#a91b7489cbea03f4f4ab8e209a01bfe02">Description</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">get</span> <span class="comment">/* =&gt; new LocalizedString { TableReference = &quot;Steps&quot;, TableEntryReference = &quot;playerMoveDesc&quot; }; */</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            var moveAction = <a class="code hl_class" href="class_player_input_manager.html">PlayerInputManager</a>.<a class="code hl_property" href="class_player_input_manager.html#ab93afb8248b1c4076ef78c41560de01f">Actions</a>.<a class="code hl_property" href="class_input_system___actions.html#a20a11f2c906449516e76165274a386e3">Player</a>.<a class="code hl_property" href="struct_input_system___actions_1_1_player_actions.html#a7e7614c3db5d083c1efb8f54d5c644bb">Move</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            var keyNames = <span class="keywordtype">string</span>.Join(<span class="stringliteral">&quot;, &quot;</span>, moveAction.controls.Select(c =&gt; c.displayName));</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">return</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="keyword">new</span> LocalizedString</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                    TableReference = <span class="stringliteral">&quot;Steps&quot;</span>,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                    TableEntryReference = <span class="stringliteral">&quot;playerMoveDesc&quot;</span>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                    Arguments = <span class="keyword">new</span> <span class="keywordtype">object</span>[] { keyNames }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                };</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">private</span> <span class="keywordtype">string</span> GetControlKey()</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        var moveAction = <a class="code hl_class" href="class_player_input_manager.html">PlayerInputManager</a>.<a class="code hl_property" href="class_player_input_manager.html#ab93afb8248b1c4076ef78c41560de01f">Actions</a>.<a class="code hl_property" href="class_input_system___actions.html#a20a11f2c906449516e76165274a386e3">Player</a>.<a class="code hl_property" href="struct_input_system___actions_1_1_player_actions.html#a67c2ac0d22f1bbc7623a301260179dcb">Look</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        var keyNames = <span class="keywordtype">string</span>.Join(<span class="stringliteral">&quot;, &quot;</span>, moveAction.controls.Select(c =&gt; c.displayName));</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="comment">// Mapeamos los valores que devuelve Unity a keys de nuestra tabla</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span> (keyNames.Contains(<span class="stringliteral">&quot;Delta&quot;</span>)) <span class="keywordflow">return</span> <span class="stringliteral">&quot;control_mouse&quot;</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (keyNames.Contains(<span class="stringliteral">&quot;WASD&quot;</span>)) <span class="keywordflow">return</span> <span class="stringliteral">&quot;control_wasd&quot;</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;control_unknown&quot;</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">//public string Description =&gt; &quot;Presionando la tecla &quot; + PlayerInputManager.Actions.Player.Move.controls.ToString() +  &quot; superas el `step` del workflow&quot;;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_move_step.html#ae8a1da707e16dcd2649f949312775672">   49</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="class_move_step.html#ae8a1da707e16dcd2649f949312775672">IsComplete</a> { <span class="keyword">get</span> =&gt; this._isComplete; <span class="keyword">set</span> =&gt; this._isComplete = value; }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_move_step.html#a192d80d11ed38e486e9d1971f0dd8c97">   50</a></span>    <span class="keyword">public</span> <span class="keyword">event</span> Action <a class="code hl_event" href="class_move_step.html#a192d80d11ed38e486e9d1971f0dd8c97">OnComplete</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_move_step.html#ab1f87a16866fcfdd33fe541663492467">   52</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_move_step.html#ab1f87a16866fcfdd33fe541663492467">MoveStep</a>()</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_move_step.html#aa1555163eb24faa5db61a47a61b6cfb9">   56</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_move_step.html#aa1555163eb24faa5db61a47a61b6cfb9">Activate</a>()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        Debug.Log($<span class="stringliteral">&quot;Activamos {this.Name}&quot;</span>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        Debug.Log($<span class="stringliteral">&quot;{this.Description}&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        PlayerInputManager.Actions.Player.Move.performed += HandleAction;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_move_step.html#a9b0ba30a2ed0ffe370c507ece7a02bab">   64</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_move_step.html#a9b0ba30a2ed0ffe370c507ece7a02bab">Deactivate</a>()</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        PlayerInputManager.Actions.Player.Move.performed -= HandleAction;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> HandleAction(InputAction.CallbackContext context)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        this.IsComplete = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        this.OnComplete?.Invoke();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+</div>
+<div class="ttc" id="aclass_input_system___actions_html_a20a11f2c906449516e76165274a386e3"><div class="ttname"><a href="class_input_system___actions.html#a20a11f2c906449516e76165274a386e3">InputSystem_Actions.Player</a></div><div class="ttdeci">PlayerActions Player</div><div class="ttdoc">Provides a new PlayerActions instance referencing this action map.</div><div class="ttdef"><b>Definition</b> <a href="_input_system___actions_8cs_source.html#l01511">InputSystem_Actions.cs:1511</a></div></div>
+<div class="ttc" id="aclass_move_step_html_a01bf90daf2e1abae3bd703fc86fdfa78"><div class="ttname"><a href="class_move_step.html#a01bf90daf2e1abae3bd703fc86fdfa78">MoveStep.Name</a></div><div class="ttdeci">LocalizedString Name</div><div class="ttdef"><b>Definition</b> <a href="#l00018">MoveStep.cs:18</a></div></div>
+<div class="ttc" id="aclass_move_step_html_a192d80d11ed38e486e9d1971f0dd8c97"><div class="ttname"><a href="class_move_step.html#a192d80d11ed38e486e9d1971f0dd8c97">MoveStep.OnComplete</a></div><div class="ttdeci">Action OnComplete</div><div class="ttdef"><b>Definition</b> <a href="#l00050">MoveStep.cs:50</a></div></div>
+<div class="ttc" id="aclass_move_step_html_a91b7489cbea03f4f4ab8e209a01bfe02"><div class="ttname"><a href="class_move_step.html#a91b7489cbea03f4f4ab8e209a01bfe02">MoveStep.Description</a></div><div class="ttdeci">LocalizedString Description</div><div class="ttdef"><b>Definition</b> <a href="#l00019">MoveStep.cs:20</a></div></div>
+<div class="ttc" id="aclass_move_step_html_a9b0ba30a2ed0ffe370c507ece7a02bab"><div class="ttname"><a href="class_move_step.html#a9b0ba30a2ed0ffe370c507ece7a02bab">MoveStep.Deactivate</a></div><div class="ttdeci">void Deactivate()</div><div class="ttdef"><b>Definition</b> <a href="#l00064">MoveStep.cs:64</a></div></div>
+<div class="ttc" id="aclass_move_step_html_aa1555163eb24faa5db61a47a61b6cfb9"><div class="ttname"><a href="class_move_step.html#aa1555163eb24faa5db61a47a61b6cfb9">MoveStep.Activate</a></div><div class="ttdeci">void Activate()</div><div class="ttdef"><b>Definition</b> <a href="#l00056">MoveStep.cs:56</a></div></div>
+<div class="ttc" id="aclass_move_step_html_ab1f87a16866fcfdd33fe541663492467"><div class="ttname"><a href="class_move_step.html#ab1f87a16866fcfdd33fe541663492467">MoveStep.MoveStep</a></div><div class="ttdeci">MoveStep()</div><div class="ttdef"><b>Definition</b> <a href="#l00052">MoveStep.cs:52</a></div></div>
+<div class="ttc" id="aclass_move_step_html_ae8a1da707e16dcd2649f949312775672"><div class="ttname"><a href="class_move_step.html#ae8a1da707e16dcd2649f949312775672">MoveStep.IsComplete</a></div><div class="ttdeci">bool IsComplete</div><div class="ttdef"><b>Definition</b> <a href="#l00049">MoveStep.cs:49</a></div></div>
+<div class="ttc" id="aclass_player_input_manager_html"><div class="ttname"><a href="class_player_input_manager.html">PlayerInputManager</a></div><div class="ttdoc">Singleton global para gestionar PlayerInputActions.</div><div class="ttdef"><b>Definition</b> <a href="_player_input_manager_8cs_source.html#l00010">PlayerInputManager.cs:11</a></div></div>
+<div class="ttc" id="aclass_player_input_manager_html_ab93afb8248b1c4076ef78c41560de01f"><div class="ttname"><a href="class_player_input_manager.html#ab93afb8248b1c4076ef78c41560de01f">PlayerInputManager.Actions</a></div><div class="ttdeci">static InputSystem_Actions Actions</div><div class="ttdoc">Acceso global a las acciones. Si no existe instancia, la crea automaticamente.</div><div class="ttdef"><b>Definition</b> <a href="_player_input_manager_8cs_source.html#l00032">PlayerInputManager.cs:33</a></div></div>
+<div class="ttc" id="ainterface_i_step_html"><div class="ttname"><a href="interface_i_step.html">IStep</a></div><div class="ttdoc">Interfaz que gestiona los pasos que se pueden meter dentro de un workflow.</div><div class="ttdef"><b>Definition</b> <a href="_i_step_8cs_source.html#l00006">IStep.cs:7</a></div></div>
+<div class="ttc" id="astruct_input_system___actions_1_1_player_actions_html_a67c2ac0d22f1bbc7623a301260179dcb"><div class="ttname"><a href="struct_input_system___actions_1_1_player_actions.html#a67c2ac0d22f1bbc7623a301260179dcb">InputSystem_Actions.PlayerActions.Look</a></div><div class="ttdeci">InputAction Look</div><div class="ttdoc">Provides access to the underlying input action &quot;Player/Look&quot;.</div><div class="ttdef"><b>Definition</b> <a href="_input_system___actions_8cs_source.html#l01319">InputSystem_Actions.cs:1319</a></div></div>
+<div class="ttc" id="astruct_input_system___actions_1_1_player_actions_html_a7e7614c3db5d083c1efb8f54d5c644bb"><div class="ttname"><a href="struct_input_system___actions_1_1_player_actions.html#a7e7614c3db5d083c1efb8f54d5c644bb">InputSystem_Actions.PlayerActions.Move</a></div><div class="ttdeci">InputAction Move</div><div class="ttdoc">Provides access to the underlying input action &quot;Player/Move&quot;.</div><div class="ttdef"><b>Definition</b> <a href="_input_system___actions_8cs_source.html#l01315">InputSystem_Actions.cs:1315</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_4edcbb236dfd51dd81727243a38df6a0.html">Scripts</a></li><li class="navelem"><a href="dir_20e862f5435d137ebcdc4334b916fa37.html">WorkflowsSystem</a></li><li class="navelem"><a href="dir_e9e4d6767e908698324ea109f3fb4bbf.html">Steps</a></li><li class="navelem"><a href="_move_step_8cs.html">MoveStep.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

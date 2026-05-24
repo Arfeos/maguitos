@@ -2,9 +2,9 @@ using System;
 using TMPro;
 using UnityEngine;
 /// <summary>
-/// Componente de Unity encargado de gestionar la creación de perfiles de usuario desde la interfaz. 
+/// Componente de Unity encargado de gestionar la creaciÃ³n de perfiles de usuario desde la interfaz. 
 /// Obtiene los datos introducidos por el jugador, recibe la imagen seleccionada mediante eventos y utiliza <see cref="IProfileService"/> para crear un objeto <see cref="UserProfile"/>. 
-/// También emplea <see cref="IEventService"/> para escuchar cambios relacionados con iconos
+/// TambiÃ©n emplea <see cref="IEventService"/> para escuchar cambios relacionados con iconos
 /// </summary>
 public class SubmitUser : MonoBehaviour
 {
@@ -20,7 +20,7 @@ public class SubmitUser : MonoBehaviour
     IEventService eventService;
     private IProfileService profileService;
     /// <summary>
-    /// Método ejecutado al comenzar la escena. Obtiene referencias a los servicios <see cref="IProfileService"/> y <see cref="IEventService"/> mediante <see cref="AppContainer"/> y registra el método saveIcon() como suscriptor del evento <see cref="IconChangeEvent"/>
+    /// MÃ©todo ejecutado al comenzar la escena. Obtiene referencias a los servicios <see cref="IProfileService"/> y <see cref="IEventService"/> mediante <see cref="AppContainer"/> y registra el mÃ©todo saveIcon() como suscriptor del evento <see cref="IconChangeEvent"/>
     /// </summary>
     public void Start()
     {
@@ -30,7 +30,7 @@ public class SubmitUser : MonoBehaviour
 
     }
     /// <summary>
-    /// Método encargado de almacenar la información del icono recibido mediante un evento <see cref="IconChangeEvent"/>
+    /// MÃ©todo encargado de almacenar la informaciÃ³n del icono recibido mediante un evento <see cref="IconChangeEvent"/>
     /// </summary>
     /// <param name="base">Evento recibido que contiene los datos del nuevo icono. Se convierte internamente a <see cref="IconChangeEvent"/></param>
     private void saveIcon(GameEventBase @base)
@@ -39,7 +39,7 @@ public class SubmitUser : MonoBehaviour
         newIcon = data.newIconUrl;
     }
     /// <summary>
-    /// Método encargado de crear un nuevo perfil utilizando la información introducida por el usuario. Obtiene el nombre desde TMP_InputField, configura el idioma mediante <see cref="Languages"/> y crea el perfil utilizando <see cref="IProfileService"/>
+    /// MÃ©todo encargado de crear un nuevo perfil utilizando la informaciÃ³n introducida por el usuario. Obtiene el nombre desde TMP_InputField, configura el idioma mediante <see cref="Languages"/> y crea el perfil utilizando <see cref="IProfileService"/>
     /// </summary>
     public void CreateUser()
     {
@@ -47,7 +47,7 @@ public class SubmitUser : MonoBehaviour
 
         if (string.IsNullOrWhiteSpace(name))
         {
-            Debug.Log("Nombre vacío");
+            Debug.Log("Nombre vacÃ­o");
             return;
         }
 

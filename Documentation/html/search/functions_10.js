@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['savescores_0',['SaveScores',['../class_score_manager.html#a5b10038ea3186940d79447de019f9358',1,'ScoreManager']]],
+  ['sceneservice_1',['SceneService',['../class_scene_service.html#a4825005dd6303dc3bf6e300fe32284f9',1,'SceneService']]],
+  ['scoreentry_2',['ScoreEntry',['../class_score_entry.html#a4ea3e5c912ab8d3ebca8b3b38cba5756',1,'ScoreEntry']]],
+  ['selectprofile_3',['SelectProfile',['../interface_i_profile_service.html#af95a21e875c64f92c9e39c7acca19de4',1,'IProfileService.SelectProfile()'],['../class_profile_service.html#a45f6bbac4c22c08b4f4ceeb858a8a62e',1,'ProfileService.SelectProfile()']]],
+  ['setactualspell_4',['setActualSpell',['../class_character_service.html#a4ba234a88a93d6fb6c75f0ceb6eab953',1,'CharacterService.setActualSpell()'],['../interface_i_character_service.html#aecff46bc354ab7b9e6141111427aa46a',1,'ICharacterService.setActualSpell()']]],
+  ['setcallbacks_5',['SetCallbacks',['../struct_input_system___actions_1_1_player_actions.html#a8d325b740e7c6e1fd330045f48720e49',1,'InputSystem_Actions.PlayerActions.SetCallbacks()'],['../struct_input_system___actions_1_1_u_i_actions.html#a3c1c598b95c89cc9a40d79aa41e19876',1,'InputSystem_Actions.UIActions.SetCallbacks()']]],
+  ['setmusicvolume_6',['SetMusicVolume',['../class_audio_service.html#a50895a73f9c2ce81f0ec08df70d16a74',1,'AudioService.SetMusicVolume()'],['../interface_i_audio_service.html#a7109f71e642d0beb9a184bff95ddb8ee',1,'IAudioService.SetMusicVolume()']]],
+  ['setsfxvolume_7',['SetSFXVolume',['../class_audio_service.html#a343053deaf7e0b4975d1359539a3d063',1,'AudioService.SetSFXVolume()'],['../interface_i_audio_service.html#af0d83620a33aaf176b53b0c48d9377c3',1,'IAudioService.SetSFXVolume()']]],
+  ['settings_8',['Settings',['../class_settings.html#ac1ec7238edb3d1b896e22bd19915bdd8',1,'Settings.Settings()'],['../class_settings.html#af1ca928523ecb746c5e25580fb170549',1,'Settings.Settings(Languages language, int axisXDirection, int axisYDirection, float musicVolume, float masterVolume, float sensibility)'],['../class_pause_panel.html#a6ec266fb16027a3f335f118f0610b742',1,'PausePanel.Settings()']]],
+  ['setup_9',['Setup',['../class_card_u_i.html#a344abc7d9a6b15ed92234dee0beafa17',1,'CardUI']]],
+  ['setupprofiles_10',['SetupProfiles',['../class_profile_loader.html#ab641ba8b9efe6626138c8f1f222817b2',1,'ProfileLoader']]],
+  ['shootball_11',['ShootBall',['../interface_i_spell_service.html#a7f8e2790d33594287d01efe4bdd1b29d',1,'ISpellService.ShootBall()'],['../class_spell_service.html#a810e3d787bb59d1b70c23076948fea61',1,'SpellService.ShootBall()']]],
+  ['shootingrangestep_12',['ShootingRangeStep',['../class_shooting_range_step.html#ac0c2181dd1ee9dd603e1019ad6f4b512',1,'ShootingRangeStep']]],
+  ['shootray_13',['ShootRay',['../interface_i_spell_service.html#a16dcaedfe4476721f04a4a04a1c383ce',1,'ISpellService.ShootRay(Vector3 start, Vector3 end)'],['../interface_i_spell_service.html#a59f9c2d0cfdd250bce60ab03fa0e75ec',1,'ISpellService.ShootRay(Vector3 start, Vector3 end, List&lt; Material &gt; listamateriales)'],['../class_spell_service.html#a1300584b5ddd9b7cf5c434d5cfe77627',1,'SpellService.ShootRay(Vector3 start, Vector3 end)'],['../class_spell_service.html#acd2b5c7f6337d5e3a061653c73f5c598',1,'SpellService.ShootRay(Vector3 start, Vector3 end, List&lt; Material &gt; material)']]],
+  ['shootstep_14',['ShootStep',['../class_shoot_step.html#a9e7452e4ca11dcf9cc55a3a198b2d881',1,'ShootStep']]],
+  ['showalertmessage_15',['ShowAlertMessage',['../class_alert_service.html#a3d1c720f9bcc648f416c09b163b2b6ec',1,'AlertService.ShowAlertMessage()'],['../interface_i_alert_service.html#affce0d0b9cbeafb260912496738b090c',1,'IAlertService.ShowAlertMessage()']]],
+  ['spellservice_16',['SpellService',['../class_spell_service.html#aa1f937a42e3e24dc6b775568224eb421',1,'SpellService']]],
+  ['start_17',['Start',['../class_slime_base.html#a3b394dcb8918c8c0bf63a7d31d8fbe03',1,'SlimeBase.Start()'],['../class_submit_user.html#a10ef1a5128cc20e749620503261f6491',1,'SubmitUser.Start()']]],
+  ['stopcharginsound_18',['stopCharginSound',['../class_spell_base.html#af8754964272cfc3e6cd6bf8b1f2e8392',1,'SpellBase']]],
+  ['stopmusic_19',['StopMusic',['../class_audio_service.html#a748f3ba9e57553486cb87e34ef9976bf',1,'AudioService.StopMusic()'],['../interface_i_audio_service.html#ac9a7a28f6b6620ce7199a20c9aec163a',1,'IAudioService.StopMusic()']]],
+  ['stopsound_20',['StopSound',['../class_audio_service.html#ada571e37d9fffdeb825f607d5d5a53d0',1,'AudioService.StopSound()'],['../interface_i_audio_service.html#aa49023d2d537957c3bdc24f7f0feadf8',1,'IAudioService.StopSound()']]],
+  ['subscribe_3c_20t_20_3e_21',['Subscribe&lt; T &gt;',['../class_event_service.html#a3adbd6dccd7b383a4a9909c7d310c583',1,'EventService.Subscribe&lt; T &gt;()'],['../interface_i_event_service.html#a1a0cd37b714c8c1221e748f072d9c55e',1,'IEventService.Subscribe&lt; T &gt;()']]],
+  ['switchcontrolmap_22',['SwitchControlMap',['../class_player_input_manager.html#a5d46472a3d0ec0fe42d7f3d37bd61f1c',1,'PlayerInputManager']]]
+];

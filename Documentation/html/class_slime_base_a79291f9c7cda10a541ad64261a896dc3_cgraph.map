@@ -1,0 +1,13 @@
+<map id="SlimeBase.Die" name="SlimeBase.Die">
+<area shape="rect" id="Node000001" title="Ejecuta la secuencia de muerte: detiene corrutinas, activa la animación de muerte,..." alt="" coords="5,31,114,57"/>
+<area shape="rect" id="Node000002" href="$class_slime_base.html#ac34e7df6a63e016dd308a4c112be6a90" title="Corrutina que espera delayBeforeStart segundos, luego aplica el shader de disolución a todos los rend..." alt="" coords="162,5,363,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,35,149,32,144,34,115,40"/>
+<area shape="rect" id="Node000003" href="$class_slime_base.html#a256b96e2e14b05fbdae17239fb068a18" title="Se llama justo antes de iniciar la disolución del objeto. La base suma puntuación e intenta spawnear ..." alt="" coords="192,56,332,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,48,179,58,174,60,114,53"/>
+<area shape="rect" id="Node000004" href="$class_slime_base.html#a7f91278aa183c7700efb878dc625f30d" title="Comprueba la probabilidad y, si se cumple, instancia el orbe indicado cerca del slime." alt="" coords="411,56,627,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="333,67,399,69,393,70,333,72"/>
+<area shape="rect" id="Node000005" href="$class_slime_base.html#a1841a199a78d1cc87c845c9dba619fc4" title="Genera un número aleatorio entre 0 y 100 y lo compara con percentToCheck ." alt="" coords="675,31,887,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="628,56,657,56,663,55,628,62"/>
+<area shape="rect" id="Node000006" href="$class_slime_base.html#a8b397ee1b9149c29b04667b1734b2177" title=" " alt="" coords="696,81,866,108"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="628,77,683,85,678,85,628,82"/>
+</map>

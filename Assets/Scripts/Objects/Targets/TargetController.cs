@@ -3,39 +3,39 @@ using UnityEngine;
 /// <summary>
 /// MonoBehaviour que controla el comportamiento de un blanco del rango de tiro del tutorial.
 /// Implementa <see cref="IHittable"/> para reaccionar a los impactos, se mueve horizontalmente
-/// rebotando en los lÌmites y suma puntos al jugador cuando el juego est· activo.
+/// rebotando en los l√≠mites y suma puntos al jugador cuando el juego est√° activo.
 /// </summary>
 public class TargetController : MonoBehaviour, IHittable
 {
-    /// <summary>Referencia al servicio de animaciones para reproducir la animaciÛn y sonido al recibir un impacto.</summary>
+    /// <summary>Referencia al servicio de animaciones para reproducir la animaci√≥n y sonido al recibir un impacto.</summary>
     IAnimationService _animationService;
     /// <summary>Referencia al servicio de eventos para suscribirse al <see cref="TutorialGameEvent"/> y publicar <see cref="ScoreChangeEvent"/>.</summary>
     IEventService _eventService;
-    /// <summary>Referencia al servicio de puntuaciÛn para sumar puntos al acertar el blanco.</summary>
+    /// <summary>Referencia al servicio de puntuaci√≥n para sumar puntos al acertar el blanco.</summary>
     IScoreService _scoreService;
     /// <summary>Clip de audio que se reproduce al recibir un impacto.</summary>
     [SerializeField]AudioClip audioWhenHit;
-    /// <summary>Velocidad mÌnima de movimiento horizontal del blanco.</summary>
+    /// <summary>Velocidad m√≠nima de movimiento horizontal del blanco.</summary>
     [SerializeField] int minVelocity;
-    /// <summary>Velocidad m·xima de movimiento horizontal del blanco.</summary>
+    /// <summary>Velocidad m√°xima de movimiento horizontal del blanco.</summary>
     [SerializeField] int maxVelocity;
     /// <summary>Puntos que se otorgan al jugador al acertar este blanco.</summary>
     [SerializeField] int puntos;
     /// <summary>Velocidad actual del blanco, inicializada aleatoriamente entre <see cref="minVelocity"/> y <see cref="maxVelocity"/>.</summary>
     private int velocity;
-    /// <summary>DirecciÛn actual del movimiento: 1 para derecha, -1 para izquierda.</summary>
+    /// <summary>Direcci√≥n actual del movimiento: 1 para derecha, -1 para izquierda.</summary>
     private int direction = 1;
-    /// <summary>PosiciÛn inicial del blanco, usada como referencia para el movimiento.</summary>
+    /// <summary>Posici√≥n inicial del blanco, usada como referencia para el movimiento.</summary>
     private Vector3 InitialPosition;
-    /// <summary>Indica si el minijuego del rango de tiro est· activo.</summary>
+    /// <summary>Indica si el minijuego del rango de tiro est√° activo.</summary>
     private bool _isGameStarted = false;
 
     /// <summary>
-    /// Llamado al recibir un impacto. Reproduce la animaciÛn y sonido de golpe y,
-    /// si el minijuego est· activo, suma los puntos definidos al jugador y publica
+    /// Llamado al recibir un impacto. Reproduce la animaci√≥n y sonido de golpe y,
+    /// si el minijuego est√° activo, suma los puntos definidos al jugador y publica
     /// un <see cref="ScoreChangeEvent"/> con la cantidad obtenida.
     /// </summary>
-    /// <param name="damage">Cantidad de daÒo recibido (no utilizado en esta implementaciÛn).</param>
+    /// <param name="damage">Cantidad de da√±o recibido (no utilizado en esta implementaci√≥n).</param>
     public void Hit(float damage)
     {
         _animationService.WobbleAnimationWithSound(this.gameObject, audioWhenHit);
@@ -50,7 +50,7 @@ public class TargetController : MonoBehaviour, IHittable
     }
     /// <summary>
     /// Obtiene las referencias a los servicios, inicializa la velocidad aleatoria
-    /// y guarda la posiciÛn inicial del blanco.
+    /// y guarda la posici√≥n inicial del blanco.
     /// </summary>
     private void Awake()
     {
@@ -62,7 +62,7 @@ public class TargetController : MonoBehaviour, IHittable
     }
 
     /// <summary>
-    /// Mueve el blanco horizontalmente cada frame si el minijuego est· activo.
+    /// Mueve el blanco horizontalmente cada frame si el minijuego est√° activo.
     /// </summary>
     private void Update()
     {
@@ -72,7 +72,7 @@ public class TargetController : MonoBehaviour, IHittable
 
     /// <summary>
     /// Callback invocado al recibir un <see cref="TutorialGameEvent"/>.
-    /// Alterna el estado activo del minijuego y, al desactivarse, resetea la puntuaciÛn.
+    /// Alterna el estado activo del minijuego y, al desactivarse, resetea la puntuaci√≥n.
     /// </summary>
     /// <param name="parameters">Evento base recibido, correspondiente a un <see cref="TutorialGameEvent"/>.</param>
     public void activateGame(GameEventBase parameters)
@@ -93,7 +93,7 @@ public class TargetController : MonoBehaviour, IHittable
     }
 
     /// <summary>
-    /// Cancela la suscripciÛn al <see cref="TutorialGameEvent"/> al desactivarse el componente.
+    /// Cancela la suscripci√≥n al <see cref="TutorialGameEvent"/> al desactivarse el componente.
     /// </summary>
     private void OnDisable()
     {
@@ -101,15 +101,15 @@ public class TargetController : MonoBehaviour, IHittable
     }
 
     /// <summary>
-    /// Mueve el blanco horizontalmente a la velocidad actual y cambia de direcciÛn
-    /// al detectar mediante un <see cref="Physics.Raycast"/> una colisiÛn con un objeto
+    /// Mueve el blanco horizontalmente a la velocidad actual y cambia de direcci√≥n
+    /// al detectar mediante un <see cref="Physics.Raycast"/> una colisi√≥n con un objeto
     /// etiquetado como <c>BounceZone</c>.
     /// </summary>
     private void Move()
     {
         float step = velocity * direction * Time.deltaTime;
 
-        // Lanza un ray en la direcciÛn de movimiento
+        // Lanza un ray en la direcci√≥n de movimiento
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.right * direction, out hit, Mathf.Abs(step) + 0.5f))
         {

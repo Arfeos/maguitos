@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente Scripts/Services/Audio/AudioService.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_audio_service_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">AudioService.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_audio_service_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Linq;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_audio_service.html">    7</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_audio_service.html#a7e9221baa9c1d1c7b954809bceb89543">AudioService</a> : <a class="code hl_interface" href="interface_i_audio_service.html">IAudioService</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">private</span> readonly GameObject _audioRoot;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">private</span> AudioSource _musicSource;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">private</span> List&lt;AudioSource&gt; _sfxSources = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">private</span> <span class="keywordtype">float</span> _minInterval = 0.3f;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">private</span> Dictionary&lt;AudioClip, float&gt; _lastPlayTime = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">private</span> <span class="keywordtype">float</span> _musicVolume = 1f;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">private</span> <span class="keywordtype">float</span> _sfxVolume = 1f;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">private</span> AudioClip[] _musicPlaylist;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">private</span> <span class="keywordtype">int</span> _currentTrackIndex = 0;</div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_audio_service.html#a7e9221baa9c1d1c7b954809bceb89543">   25</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_audio_service.html#a7e9221baa9c1d1c7b954809bceb89543">AudioService</a>()</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        _audioRoot = <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;AudioService&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        Object.DontDestroyOnLoad(_audioRoot);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_class" href="class_audio_updater.html">AudioUpdater</a> updater = _audioRoot.AddComponent&lt;<a class="code hl_class" href="class_audio_updater.html">AudioUpdater</a>&gt;();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        updater.<a class="code hl_function" href="class_audio_updater.html#a36d95b3536ff4f5465c335c3e8920802">Initialize</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        CreateMusicSource();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">//Musica</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> CreateMusicSource()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        _musicSource = _audioRoot.AddComponent&lt;AudioSource&gt;();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        Object.DontDestroyOnLoad(_musicSource);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        _musicSource.loop = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        _musicSource.volume = _musicVolume;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_audio_service.html#a1421478b2307d2d248cd589b21440dee">   50</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_service.html#a1421478b2307d2d248cd589b21440dee">PlayMusic</a>(AudioClip[] clips)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span> (clips == <span class="keyword">null</span> || clips.Length == 0)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        _musicPlaylist = clips;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        _currentTrackIndex = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        PlayCurrentTrack();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> PlayCurrentTrack()</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">if</span> (_musicPlaylist == <span class="keyword">null</span> || _musicPlaylist.Length == 0)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _musicSource.Stop();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        _musicSource.clip = _musicPlaylist[_currentTrackIndex];</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        _musicSource.Play();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_audio_service.html#a748f3ba9e57553486cb87e34ef9976bf">   72</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_service.html#a748f3ba9e57553486cb87e34ef9976bf">StopMusic</a>()</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        _musicSource.Stop();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_audio_service.html#a50895a73f9c2ce81f0ec08df70d16a74">   80</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_service.html#a50895a73f9c2ce81f0ec08df70d16a74">SetMusicVolume</a>(<span class="keywordtype">float</span> volume)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        _musicVolume = volume;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        _musicSource.volume = volume;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_audio_service.html#a1f85fa045db084a22c0668906360f5e9">   89</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_service.html#a1f85fa045db084a22c0668906360f5e9">UpdateMusicPlaylist</a>()</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">if</span> (_musicPlaylist == <span class="keyword">null</span> || _musicPlaylist.Length == 0)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">if</span> (_musicSource.isPlaying)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        _currentTrackIndex++;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (_currentTrackIndex &gt;= _musicPlaylist.Length)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            _currentTrackIndex = 0;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        PlayCurrentTrack();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">//efectos de sonido</span></div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_audio_service.html#aa819c16e6020e909fa14e3e9e80326a5">  112</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_service.html#aa819c16e6020e909fa14e3e9e80326a5">PlaySound</a>(AudioClip clip)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">if</span> (clip == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">if</span> (_lastPlayTime.TryGetValue(clip, out <span class="keywordtype">float</span> lastTime))</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">if</span> (Time.time - lastTime &lt; _minInterval)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        _lastPlayTime[clip] = Time.time;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        AudioSource source = GetOrCreateSFXSource();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        source.clip = clip;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        source.loop = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        source.Play();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="class_audio_service.html#a98d95ccad45a8174f01430bdf45c27c1">  138</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_service.html#a98d95ccad45a8174f01430bdf45c27c1">PlayLoopSound</a>(AudioClip clip, <span class="keywordtype">float</span> pitch = 1f)</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">if</span> (clip == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">foreach</span> (var sound <span class="keywordflow">in</span> _sfxSources)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">if</span> (sound.clip == clip &amp;&amp; sound.isPlaying)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                sound.pitch = pitch;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        AudioSource source = GetOrCreateSFXSource();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        source.clip = clip;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        source.pitch = pitch;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        source.loop = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        source.Play();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
+</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keyword">private</span> AudioSource GetOrCreateSFXSource()</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        AudioSource source = _sfxSources</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            .FirstOrDefault(x =&gt; !x.isPlaying);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keywordflow">if</span> (source == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            source = _audioRoot.AddComponent&lt;AudioSource&gt;();</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            source.volume = _sfxVolume;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            _sfxSources.Add(source);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordflow">return</span> source;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    }</div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="}">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="class_audio_service.html#a343053deaf7e0b4975d1359539a3d063">  182</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_service.html#a343053deaf7e0b4975d1359539a3d063">SetSFXVolume</a>(<span class="keywordtype">float</span> volume)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        _sfxVolume = volume;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keywordflow">foreach</span> (var source <span class="keywordflow">in</span> _sfxSources)</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            source.volume = volume;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span></div>
+<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="class_audio_service.html#af3c377d4cf6a1d895783c5b172e6ff8e">  194</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_service.html#af3c377d4cf6a1d895783c5b172e6ff8e">DestroyAudioSources</a>()</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">foreach</span> (var source <span class="keywordflow">in</span> _sfxSources)</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            Object.Destroy(source);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        _sfxSources.Clear();</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        Object.Destroy(_musicSource);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
+</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span></div>
+<div class="foldopen" id="foldopen00209" data-start="{" data-end="}">
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="class_audio_service.html#ada571e37d9fffdeb825f607d5d5a53d0">  209</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_service.html#ada571e37d9fffdeb825f607d5d5a53d0">StopSound</a>(AudioClip clip)</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">if</span> (clip == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="keywordflow">foreach</span> (var source <span class="keywordflow">in</span> _sfxSources)</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keywordflow">if</span> (source.clip == clip &amp;&amp; source.isPlaying)</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                source.Stop();</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            }</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    }</div>
+</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}</div>
+</div>
+<div class="ttc" id="aclass_audio_service_html_a1421478b2307d2d248cd589b21440dee"><div class="ttname"><a href="class_audio_service.html#a1421478b2307d2d248cd589b21440dee">AudioService.PlayMusic</a></div><div class="ttdeci">void PlayMusic(AudioClip[] clips)</div><div class="ttdoc">Inicia la reproducción de una lista de pistas musicales y establece la primera canción como reproducc...</div><div class="ttdef"><b>Definition</b> <a href="#l00050">AudioService.cs:50</a></div></div>
+<div class="ttc" id="aclass_audio_service_html_a1f85fa045db084a22c0668906360f5e9"><div class="ttname"><a href="class_audio_service.html#a1f85fa045db084a22c0668906360f5e9">AudioService.UpdateMusicPlaylist</a></div><div class="ttdeci">void UpdateMusicPlaylist()</div><div class="ttdoc">Comprueba si la canción actual ha finalizado y, en caso necesario, avanza automáticamente a la siguie...</div><div class="ttdef"><b>Definition</b> <a href="#l00089">AudioService.cs:89</a></div></div>
+<div class="ttc" id="aclass_audio_service_html_a343053deaf7e0b4975d1359539a3d063"><div class="ttname"><a href="class_audio_service.html#a343053deaf7e0b4975d1359539a3d063">AudioService.SetSFXVolume</a></div><div class="ttdeci">void SetSFXVolume(float volume)</div><div class="ttdoc">Modifica el volumen de todos los efectos de sonido activos.</div><div class="ttdef"><b>Definition</b> <a href="#l00182">AudioService.cs:182</a></div></div>
+<div class="ttc" id="aclass_audio_service_html_a50895a73f9c2ce81f0ec08df70d16a74"><div class="ttname"><a href="class_audio_service.html#a50895a73f9c2ce81f0ec08df70d16a74">AudioService.SetMusicVolume</a></div><div class="ttdeci">void SetMusicVolume(float volume)</div><div class="ttdoc">Modifica el volumen de la música de fondo.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">AudioService.cs:80</a></div></div>
+<div class="ttc" id="aclass_audio_service_html_a748f3ba9e57553486cb87e34ef9976bf"><div class="ttname"><a href="class_audio_service.html#a748f3ba9e57553486cb87e34ef9976bf">AudioService.StopMusic</a></div><div class="ttdeci">void StopMusic()</div><div class="ttdoc">Detiene la reproducción de la música actual.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">AudioService.cs:72</a></div></div>
+<div class="ttc" id="aclass_audio_service_html_a7e9221baa9c1d1c7b954809bceb89543"><div class="ttname"><a href="class_audio_service.html#a7e9221baa9c1d1c7b954809bceb89543">AudioService.AudioService</a></div><div class="ttdeci">AudioService()</div><div class="ttdoc">Constructor encargado de crear el objeto principal de audio y asociarlo con AudioUpdater para control...</div><div class="ttdef"><b>Definition</b> <a href="#l00025">AudioService.cs:25</a></div></div>
+<div class="ttc" id="aclass_audio_service_html_a98d95ccad45a8174f01430bdf45c27c1"><div class="ttname"><a href="class_audio_service.html#a98d95ccad45a8174f01430bdf45c27c1">AudioService.PlayLoopSound</a></div><div class="ttdeci">void PlayLoopSound(AudioClip clip, float pitch=1f)</div><div class="ttdoc">Reproduce un efecto de sonido en bucle continuo y permite modificar su velocidad o tono.</div><div class="ttdef"><b>Definition</b> <a href="#l00138">AudioService.cs:138</a></div></div>
+<div class="ttc" id="aclass_audio_service_html_aa819c16e6020e909fa14e3e9e80326a5"><div class="ttname"><a href="class_audio_service.html#aa819c16e6020e909fa14e3e9e80326a5">AudioService.PlaySound</a></div><div class="ttdeci">void PlaySound(AudioClip clip)</div><div class="ttdoc">Reproduce un efecto de sonido una sola vez. Incluye una restricción temporal para evitar reproducir r...</div><div class="ttdef"><b>Definition</b> <a href="#l00112">AudioService.cs:112</a></div></div>
+<div class="ttc" id="aclass_audio_service_html_ada571e37d9fffdeb825f607d5d5a53d0"><div class="ttname"><a href="class_audio_service.html#ada571e37d9fffdeb825f607d5d5a53d0">AudioService.StopSound</a></div><div class="ttdeci">void StopSound(AudioClip clip)</div><div class="ttdoc">Detiene la reproducción de un efecto de sonido específico.</div><div class="ttdef"><b>Definition</b> <a href="#l00209">AudioService.cs:209</a></div></div>
+<div class="ttc" id="aclass_audio_service_html_af3c377d4cf6a1d895783c5b172e6ff8e"><div class="ttname"><a href="class_audio_service.html#af3c377d4cf6a1d895783c5b172e6ff8e">AudioService.DestroyAudioSources</a></div><div class="ttdeci">void DestroyAudioSources()</div><div class="ttdoc">Destruye todas las fuentes de audio creadas y limpia las listas internas asociadas.</div><div class="ttdef"><b>Definition</b> <a href="#l00194">AudioService.cs:194</a></div></div>
+<div class="ttc" id="aclass_audio_updater_html"><div class="ttname"><a href="class_audio_updater.html">AudioUpdater</a></div><div class="ttdoc">Componente encargado de actualizar continuamente la reproducción de música mediante AudioService.</div><div class="ttdef"><b>Definition</b> <a href="_audio_updater_8cs_source.html#l00005">AudioUpdater.cs:6</a></div></div>
+<div class="ttc" id="aclass_audio_updater_html_a36d95b3536ff4f5465c335c3e8920802"><div class="ttname"><a href="class_audio_updater.html#a36d95b3536ff4f5465c335c3e8920802">AudioUpdater.Initialize</a></div><div class="ttdeci">void Initialize(AudioService service)</div><div class="ttdoc">Inicializa el componente asignándole una referencia a AudioService.</div><div class="ttdef"><b>Definition</b> <a href="_audio_updater_8cs_source.html#l00012">AudioUpdater.cs:12</a></div></div>
+<div class="ttc" id="ainterface_i_audio_service_html"><div class="ttname"><a href="interface_i_audio_service.html">IAudioService</a></div><div class="ttdoc">Servicio encargado de gestionar la reproducción de música y efectos de sonido del juego mediante el c...</div><div class="ttdef"><b>Definition</b> <a href="_i_audio_service_8cs_source.html#l00006">IAudioService.cs:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_4edcbb236dfd51dd81727243a38df6a0.html">Scripts</a></li><li class="navelem"><a href="dir_0f7e8dd2440a07a53a3c6bb386854dca.html">Services</a></li><li class="navelem"><a href="dir_2bfeb998da820ccdef61c8008981227f.html">Audio</a></li><li class="navelem"><a href="_audio_service_8cs.html">AudioService.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

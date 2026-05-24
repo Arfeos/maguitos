@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 /// <summary>
 /// Componente de Unity encargado de gestionar el comportamiento de un hechizo tipo esfera. 
-/// Controla las colisiones, detecta enemigos dentro de un ·rea de impacto, aplica daÒo mediante <see cref="ICharacterService"/> y devuelve el proyectil al sistema de reutilizaciÛn mediante <see cref="ISpellService"/>
+/// Controla las colisiones, detecta enemigos dentro de un √°rea de impacto, aplica da√±o mediante <see cref="ICharacterService"/> y devuelve el proyectil al sistema de reutilizaci√≥n mediante <see cref="ISpellService"/>
 /// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class BallSpellType : MonoBehaviour
@@ -17,7 +17,7 @@ public class BallSpellType : MonoBehaviour
     private Coroutine corutinaCrecer;
 
     /// <summary>
-    /// MÈtodo ejecutado durante la inicializaciÛn del objeto. Obtiene referencias a los servicios <see cref="ISpellService"/> y <see cref="ICharacterService"/> mediante <see cref="AppContainer"/> y almacena una referencia al componente <see cref="Rigidbody"/>
+    /// M√©todo ejecutado durante la inicializaci√≥n del objeto. Obtiene referencias a los servicios <see cref="ISpellService"/> y <see cref="ICharacterService"/> mediante <see cref="AppContainer"/> y almacena una referencia al componente <see cref="Rigidbody"/>
     /// </summary>
     void Awake()
     {
@@ -26,21 +26,21 @@ public class BallSpellType : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
     /// <summary>
-    /// MÈtodo ejecutado autom·ticamente cuando el objeto colisiona con otro elemento. 
-    /// Comprueba si el objeto impactado pertenece a las capas permitidas, calcula el ·rea de explosiÛn, detecta los objetos afectados y aplica daÒo a aquellos que implementen la interfaz <see cref="IHittable">
+    /// M√©todo ejecutado autom√°ticamente cuando el objeto colisiona con otro elemento. 
+    /// Comprueba si el objeto impactado pertenece a las capas permitidas, calcula el √°rea de explosi√≥n, detecta los objetos afectados y aplica da√±o a aquellos que implementen la interfaz <see cref="IHittable">
     /// </summary>
-    /// <param name="collision">InformaciÛn de la colisiÛn producida, incluyendo contactos y objeto impactado</param>
+    /// <param name="collision">Informaci√≥n de la colisi√≥n producida, incluyendo contactos y objeto impactado</param>
     private void OnCollisionEnter(Collision collision)
     {
-        // 2. Comprobar si la capa est· dentro de la LayerMask
-        // (1 << objectLayer) crea una m·scara con un solo bit activado
+        // 2. Comprobar si la capa est√° dentro de la LayerMask
+        // (1 << objectLayer) crea una m√°scara con un solo bit activado
         int objectLayer = collision.gameObject.layer;
         if ((layersToHit.value & (1 << objectLayer)) == 0) return;
         
 
         // SphereCast desde el punto de impacto
         Vector3 impactPoint = collision.contacts[0].point;
-        float radius = 3f;      // Radio de la explosiÛn
+        float radius = 3f;      // Radio de la explosi√≥n
 
         Collider[] hits = Physics.OverlapSphere(impactPoint, radius, layersToHit);
         gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
@@ -53,11 +53,11 @@ public class BallSpellType : MonoBehaviour
         
     }
     /// <summary>
-    /// Corrutina encargada de crear una representaciÛn visual temporal de la explosiÛn. Genera una esfera, aplica un material obtenido desde <see cref="ICharacterService"/>, realiza una animaciÛn de crecimiento progresivo y posteriormente elimina el efecto visual antes de devolver el proyectil mediante <see cref="ISpellService"/>
+    /// Corrutina encargada de crear una representaci√≥n visual temporal de la explosi√≥n. Genera una esfera, aplica un material obtenido desde <see cref="ICharacterService"/>, realiza una animaci√≥n de crecimiento progresivo y posteriormente elimina el efecto visual antes de devolver el proyectil mediante <see cref="ISpellService"/>
     /// </summary>
-    /// <param name="point">PosiciÛn donde se generar· la explosiÛn</param>
-    /// <param name="radius">Radio del ·rea visual de explosiÛn</param>
-    /// <returns>Corrutina utilizada para ejecutar la animaciÛn progresiva de la explosiÛn</returns>
+    /// <param name="point">Posici√≥n donde se generar√° la explosi√≥n</param>
+    /// <param name="radius">Radio del √°rea visual de explosi√≥n</param>
+    /// <returns>Corrutina utilizada para ejecutar la animaci√≥n progresiva de la explosi√≥n</returns>
     private IEnumerator ShowExplosionSphere(Vector3 point, float radius)
     {
         GameObject visual = GameObject.CreatePrimitive(PrimitiveType.Sphere);

@@ -1,0 +1,5 @@
+<map id="CharacterService.getPrimarySpell" name="CharacterService.getPrimarySpell">
+<area shape="rect" id="Node000001" title="Obtiene todos los hechizos principales almacenados en la lista de objetos SpellBase." alt="" coords="230,5,419,48"/>
+<area shape="rect" id="Node000002" href="$class_character_service.html#ad44fb3e07d8807a603dffd9f48c20365" title="Reduce una cantidad de maná y publica un evento ManaEvent mediante IEventService." alt="" coords="5,13,182,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,27,182,29,182,24,217,26"/>
+</map>

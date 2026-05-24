@@ -1,0 +1,5 @@
+<map id="ShootingRangeStep" name="ShootingRangeStep">
+<area shape="rect" id="Node000001" title="Paso que se activa cuando se dispara a un cartel." alt="" coords="5,80,143,107"/>
+<area shape="rect" id="Node000002" href="$interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="48,5,100,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,46,77,80,71,79,72,50"/>
+</map>

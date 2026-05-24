@@ -1,0 +1,5 @@
+<map id="teleporter_controller" name="teleporter_controller">
+<area shape="rect" id="Node000001" title="Teletransportador con fade al color que queramos. Al entrar el jugador en el trigger,..." alt="" coords="5,80,141,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="17,5,129,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,46,76,80,70,79,71,50"/>
+</map>

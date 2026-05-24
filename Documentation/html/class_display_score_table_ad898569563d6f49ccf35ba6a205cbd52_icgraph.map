@@ -1,0 +1,7 @@
+<map id="DisplayScoreTable.RefreshTable" name="DisplayScoreTable.RefreshTable">
+<area shape="rect" id="Node000001" title="Destruye las filas existentes y genera las correspondientes a currentPage, ordenando las puntuaciones..." alt="" coords="269,23,449,65"/>
+<area shape="rect" id="Node000002" href="$class_display_score_table.html#aff91ed0d4d5d3d5fe05f672f3360547f" title="Avanza a la página siguiente si no se ha llegado a la última y refresca la tabla. Llamar desde el eve..." alt="" coords="17,5,209,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,33,210,31,210,26,256,33"/>
+<area shape="rect" id="Node000003" href="$class_display_score_table.html#abe2195cad15e7e4a3f75ac7847b3fbba" title="Retrocede a la página anterior si no se está ya en la primera y refresca la tabla...." alt="" coords="5,56,221,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,55,222,61,221,56,256,55"/>
+</map>

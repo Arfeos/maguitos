@@ -20,7 +20,7 @@ public class SpellService : ISpellService
     //public GameObject ShootRay(GameObject Ball)
     //{
     //    if (Ball == null) return null;
-    //    //no hace falta comprobar si el rayo ya existe, porque cada rayo es único y se inactiva al finalizar su animación
+    //    //no hace falta comprobar si el rayo ya existe, porque cada rayo es Ãºnico y se inactiva al finalizar su animaciÃ³n
     //    var RayObject = GetOrCreateRay();
     //    RayObject = Ball;
     //    return RayObject;

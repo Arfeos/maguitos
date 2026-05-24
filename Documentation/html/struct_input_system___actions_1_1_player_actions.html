@@ -1,0 +1,955 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la estructura InputSystem_Actions.PlayerActions</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('struct_input_system___actions_1_1_player_actions.html','','struct_input_system___actions_1_1_player_actions-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la estructura InputSystem_Actions.PlayerActions</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Provides access to input actions defined in input action map "Player".  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:abd8a679d073686875777d2cdf4cd4e41" id="r_abd8a679d073686875777d2cdf4cd4e41"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abd8a679d073686875777d2cdf4cd4e41">PlayerActions</a> (@<a class="el" href="class_input_system___actions.html">InputSystem_Actions</a> wrapper)</td></tr>
+<tr class="memdesc:abd8a679d073686875777d2cdf4cd4e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new instance of the input action map wrapper class.  <br /></td></tr>
+<tr class="memitem:ae1ce06fd43620a4d2e64faf84508e850" id="r_ae1ce06fd43620a4d2e64faf84508e850"><td class="memItemLeft">InputActionMap&#160;</td><td class="memItemRight"><a class="el" href="#ae1ce06fd43620a4d2e64faf84508e850">Get</a> ()</td></tr>
+<tr class="memdesc:ae1ce06fd43620a4d2e64faf84508e850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action map instance.  <br /></td></tr>
+<tr class="memitem:aaaece65f0570756a3c77ee12493e140f" id="r_aaaece65f0570756a3c77ee12493e140f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaaece65f0570756a3c77ee12493e140f">Enable</a> ()</td></tr>
+<tr class="memitem:ab198d32b5dc2ba18700c31bb340a6518" id="r_ab198d32b5dc2ba18700c31bb340a6518"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab198d32b5dc2ba18700c31bb340a6518">Disable</a> ()</td></tr>
+<tr class="memitem:a59ea99548b2f7daf3e3e4343446bff3b" id="r_a59ea99548b2f7daf3e3e4343446bff3b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a59ea99548b2f7daf3e3e4343446bff3b">AddCallbacks</a> (<a class="el" href="interface_input_system___actions_1_1_i_player_actions.html">IPlayerActions</a> instance)</td></tr>
+<tr class="memdesc:a59ea99548b2f7daf3e3e4343446bff3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via  on all input actions contained in this map.  <br /></td></tr>
+<tr class="memitem:aa05e9dcee22245c5c70747415e644400" id="r_aa05e9dcee22245c5c70747415e644400"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa05e9dcee22245c5c70747415e644400">RemoveCallbacks</a> (<a class="el" href="interface_input_system___actions_1_1_i_player_actions.html">IPlayerActions</a> instance)</td></tr>
+<tr class="memdesc:aa05e9dcee22245c5c70747415e644400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters  and unregisters all input action callbacks via PlayerActions.UnregisterCallbacks(IPlayerActions).  <br /></td></tr>
+<tr class="memitem:a8d325b740e7c6e1fd330045f48720e49" id="r_a8d325b740e7c6e1fd330045f48720e49"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8d325b740e7c6e1fd330045f48720e49">SetCallbacks</a> (<a class="el" href="interface_input_system___actions_1_1_i_player_actions.html">IPlayerActions</a> instance)</td></tr>
+<tr class="memdesc:a8d325b740e7c6e1fd330045f48720e49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via .  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr class="memitem:a8dd5ab45c6bc121318e5f53beaca6574" id="r_a8dd5ab45c6bc121318e5f53beaca6574"><td class="memItemLeft">static implicit&#160;</td><td class="memItemRight"><a class="el" href="#a8dd5ab45c6bc121318e5f53beaca6574">operator InputActionMap</a> (<a class="el" href="#abd8a679d073686875777d2cdf4cd4e41">PlayerActions</a> set)</td></tr>
+<tr class="memdesc:a8dd5ab45c6bc121318e5f53beaca6574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicitly converts an  to an  instance.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Propiedades</h2></td></tr>
+<tr class="memitem:a7e7614c3db5d083c1efb8f54d5c644bb" id="r_a7e7614c3db5d083c1efb8f54d5c644bb"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a7e7614c3db5d083c1efb8f54d5c644bb">Move</a><code> [get]</code></td></tr>
+<tr class="memdesc:a7e7614c3db5d083c1efb8f54d5c644bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Move".  <br /></td></tr>
+<tr class="memitem:a67c2ac0d22f1bbc7623a301260179dcb" id="r_a67c2ac0d22f1bbc7623a301260179dcb"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a67c2ac0d22f1bbc7623a301260179dcb">Look</a><code> [get]</code></td></tr>
+<tr class="memdesc:a67c2ac0d22f1bbc7623a301260179dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Look".  <br /></td></tr>
+<tr class="memitem:a0ade3ec192a89da9b7091da21b626b96" id="r_a0ade3ec192a89da9b7091da21b626b96"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a0ade3ec192a89da9b7091da21b626b96">Attack</a><code> [get]</code></td></tr>
+<tr class="memdesc:a0ade3ec192a89da9b7091da21b626b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Attack".  <br /></td></tr>
+<tr class="memitem:abd6bded9dc7287fd4e30a1cda56e29a9" id="r_abd6bded9dc7287fd4e30a1cda56e29a9"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#abd6bded9dc7287fd4e30a1cda56e29a9">Interact</a><code> [get]</code></td></tr>
+<tr class="memdesc:abd6bded9dc7287fd4e30a1cda56e29a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Interact".  <br /></td></tr>
+<tr class="memitem:a1f41fa983b8f0db745160f7a3749d1fb" id="r_a1f41fa983b8f0db745160f7a3749d1fb"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a1f41fa983b8f0db745160f7a3749d1fb">Crouch</a><code> [get]</code></td></tr>
+<tr class="memdesc:a1f41fa983b8f0db745160f7a3749d1fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Crouch".  <br /></td></tr>
+<tr class="memitem:af6c99e636d1767f58d4f12af247dd059" id="r_af6c99e636d1767f58d4f12af247dd059"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#af6c99e636d1767f58d4f12af247dd059">Jump</a><code> [get]</code></td></tr>
+<tr class="memdesc:af6c99e636d1767f58d4f12af247dd059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Jump".  <br /></td></tr>
+<tr class="memitem:a640c43b0d40109f2191aa8c27327d0f2" id="r_a640c43b0d40109f2191aa8c27327d0f2"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a640c43b0d40109f2191aa8c27327d0f2">Previous</a><code> [get]</code></td></tr>
+<tr class="memdesc:a640c43b0d40109f2191aa8c27327d0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Previous".  <br /></td></tr>
+<tr class="memitem:af0ad7df6bcd5034fdc8f21699b689c7b" id="r_af0ad7df6bcd5034fdc8f21699b689c7b"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#af0ad7df6bcd5034fdc8f21699b689c7b">Next</a><code> [get]</code></td></tr>
+<tr class="memdesc:af0ad7df6bcd5034fdc8f21699b689c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Next".  <br /></td></tr>
+<tr class="memitem:a5dd62dfb3d23e6dfec32615020a040fe" id="r_a5dd62dfb3d23e6dfec32615020a040fe"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a5dd62dfb3d23e6dfec32615020a040fe">Sprint</a><code> [get]</code></td></tr>
+<tr class="memdesc:a5dd62dfb3d23e6dfec32615020a040fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Sprint".  <br /></td></tr>
+<tr class="memitem:a2b30fac3a3cc4e37879a97c4c0a4e3a3" id="r_a2b30fac3a3cc4e37879a97c4c0a4e3a3"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a2b30fac3a3cc4e37879a97c4c0a4e3a3">Reload</a><code> [get]</code></td></tr>
+<tr class="memdesc:a2b30fac3a3cc4e37879a97c4c0a4e3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Reload".  <br /></td></tr>
+<tr class="memitem:ae4f29e2a5bb2b7696ac88c7c80ec07d5" id="r_ae4f29e2a5bb2b7696ac88c7c80ec07d5"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#ae4f29e2a5bb2b7696ac88c7c80ec07d5">Lantern</a><code> [get]</code></td></tr>
+<tr class="memdesc:ae4f29e2a5bb2b7696ac88c7c80ec07d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Lantern".  <br /></td></tr>
+<tr class="memitem:a1be120e65ee8d1592e21470a531bd57b" id="r_a1be120e65ee8d1592e21470a531bd57b"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a1be120e65ee8d1592e21470a531bd57b">pause</a><code> [get]</code></td></tr>
+<tr class="memdesc:a1be120e65ee8d1592e21470a531bd57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/pause".  <br /></td></tr>
+<tr class="memitem:a0d835032b84fd3861a22ce762bca1b46" id="r_a0d835032b84fd3861a22ce762bca1b46"><td class="memItemLeft">InputAction&#160;</td><td class="memItemRight"><a class="el" href="#a0d835032b84fd3861a22ce762bca1b46">Focus</a><code> [get]</code></td></tr>
+<tr class="memdesc:a0d835032b84fd3861a22ce762bca1b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the underlying input action "Player/Focus".  <br /></td></tr>
+<tr class="memitem:ae222832e75ceaea0d6837a72bfd84cc0" id="r_ae222832e75ceaea0d6837a72bfd84cc0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae222832e75ceaea0d6837a72bfd84cc0">enabled</a><code> [get]</code></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Provides access to input actions defined in input action map "Player". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01304">1304</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="abd8a679d073686875777d2cdf4cd4e41" name="abd8a679d073686875777d2cdf4cd4e41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd8a679d073686875777d2cdf4cd4e41">&#9670;&#160;</a></span>PlayerActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputSystem_Actions.PlayerActions.PlayerActions </td>
+          <td>(</td>
+          <td class="paramtype">@<a class="el" href="class_input_system___actions.html">InputSystem_Actions</a></td>          <td class="paramname"><span class="paramname"><em>wrapper</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new instance of the input action map wrapper class. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01311">1311</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_input_system___actions_1_1_player_actions_abd8a679d073686875777d2cdf4cd4e41_cgraph.png" border="0" usemap="#astruct_input_system___actions_1_1_player_actions_abd8a679d073686875777d2cdf4cd4e41_cgraph" loading="lazy" alt=""/></div>
+<map name="astruct_input_system___actions_1_1_player_actions_abd8a679d073686875777d2cdf4cd4e41_cgraph" id="astruct_input_system___actions_1_1_player_actions_abd8a679d073686875777d2cdf4cd4e41_cgraph">
+<area shape="rect" title="Construct a new instance of the input action map wrapper class." alt="" coords="5,5,193,48"/>
+<area shape="rect" href="class_input_system___actions.html#a61685bf23c9929ed79a3f35740d27e3e" title="Constructs a new instance." alt="" coords="241,5,420,48"/>
+<area shape="poly" title=" " alt="" coords="193,24,228,26,222,27,193,29"/>
+</map>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_input_system___actions_1_1_player_actions_abd8a679d073686875777d2cdf4cd4e41_icgraph.png" border="0" usemap="#astruct_input_system___actions_1_1_player_actions_abd8a679d073686875777d2cdf4cd4e41_icgraph" loading="lazy" alt=""/></div>
+<map name="astruct_input_system___actions_1_1_player_actions_abd8a679d073686875777d2cdf4cd4e41_icgraph" id="astruct_input_system___actions_1_1_player_actions_abd8a679d073686875777d2cdf4cd4e41_icgraph">
+<area shape="rect" title="Construct a new instance of the input action map wrapper class." alt="" coords="265,5,452,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_player_actions.html#a8dd5ab45c6bc121318e5f53beaca6574" title="Implicitly converts an &#160;to an &#160;instance." alt="" coords="5,5,217,48"/>
+<area shape="poly" title=" " alt="" coords="246,27,217,29,217,24,251,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a59ea99548b2f7daf3e3e4343446bff3b" name="a59ea99548b2f7daf3e3e4343446bff3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ea99548b2f7daf3e3e4343446bff3b">&#9670;&#160;</a></span>AddCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.PlayerActions.AddCallbacks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_input_system___actions_1_1_i_player_actions.html">IPlayerActions</a></td>          <td class="paramname"><span class="paramname"><em>instance</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via  on all input actions contained in this map. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>Callback instance.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If <em>instance</em>  is <code>null</code> or <em>instance</em>  have already been added this method does nothing. </p>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="struct_input_system___actions_1_1_player_actions.html" title="Provides access to input actions defined in input action map &quot;Player&quot;.">PlayerActions</a></dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01386">1386</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_input_system___actions_1_1_player_actions_a59ea99548b2f7daf3e3e4343446bff3b_cgraph.png" border="0" usemap="#astruct_input_system___actions_1_1_player_actions_a59ea99548b2f7daf3e3e4343446bff3b_cgraph" loading="lazy" alt=""/></div>
+<map name="astruct_input_system___actions_1_1_player_actions_a59ea99548b2f7daf3e3e4343446bff3b_cgraph" id="astruct_input_system___actions_1_1_player_actions_a59ea99548b2f7daf3e3e4343446bff3b_cgraph">
+<area shape="rect" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="5,405,193,448"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a39b0cb0611d50c6896516dfd238e8b6b" title="Method invoked when associated input action &quot;Attack&quot; is either UnityEngine.InputSystem...." alt="" coords="241,5,432,48"/>
+<area shape="poly" title=" " alt="" coords="100,405,110,338,133,246,151,196,174,146,203,99,239,58,245,55,242,59,243,62,208,103,179,149,156,198,138,247,115,339,105,406"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#ae8238612e5c81988fe9cbd574b250d94" title="Method invoked when associated input action &quot;Crouch&quot; is either UnityEngine.InputSystem...." alt="" coords="241,72,432,115"/>
+<area shape="poly" title=" " alt="" coords="102,404,116,348,142,274,160,234,182,194,208,157,239,125,245,122,242,126,243,129,212,161,187,197,165,236,147,276,121,350,107,405"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#ab8ba4e64962b6bb70a5f179c2e2d50cc" title="Method invoked when associated input action &quot;Focus&quot; is either UnityEngine.InputSystem...." alt="" coords="241,139,432,181"/>
+<area shape="poly" title=" " alt="" coords="105,404,123,360,151,303,190,243,213,216,239,191,247,188,244,192,242,195,217,219,194,246,156,305,128,362,110,406"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a7f0b3c53ea842fce0b16f0602cb7dd95" title="Method invoked when associated input action &quot;Interact&quot; is either UnityEngine.InputSystem...." alt="" coords="241,205,432,248"/>
+<area shape="poly" title=" " alt="" coords="111,404,161,333,198,293,239,258,250,253,246,257,242,262,201,297,165,336,115,406"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a8c02484fcb73d1dbd5dc10448dc9e2e8" title="Method invoked when associated input action &quot;Jump&quot; is either UnityEngine.InputSystem...." alt="" coords="241,272,432,315"/>
+<area shape="poly" title=" " alt="" coords="124,403,176,364,239,324,254,319,250,323,242,329,179,368,128,406"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#aabd34189156748ec0b937b9efe4ce589" title="Method invoked when associated input action &quot;Lantern&quot; is either UnityEngine.InputSystem...." alt="" coords="241,339,432,381"/>
+<area shape="poly" title=" " alt="" coords="176,403,245,384,242,388,179,407"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a5828287711e7c7b683c048dbb62bb349" title="Method invoked when associated input action &quot;Look&quot; is either UnityEngine.InputSystem...." alt="" coords="241,405,432,448"/>
+<area shape="poly" title=" " alt="" coords="192,424,227,425,223,428,194,429"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#ab3366dfc3e68c0bf3ea3ceacd9c3a3d4" title="Method invoked when associated input action &quot;Move&quot; is either UnityEngine.InputSystem...." alt="" coords="241,472,432,515"/>
+<area shape="poly" title=" " alt="" coords="176,446,246,466,241,469,178,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a9948265572e31aaf0f0ae94949cbb07a" title="Method invoked when associated input action &quot;Next&quot; is either UnityEngine.InputSystem...." alt="" coords="241,539,432,581"/>
+<area shape="poly" title=" " alt="" coords="126,446,179,485,242,524,255,532,250,533,239,529,176,490,127,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#acb3e83bfdaa47871c37fe65649d9e8e7" title="Method invoked when associated input action &quot;pause&quot; is either UnityEngine.InputSystem...." alt="" coords="241,605,432,648"/>
+<area shape="poly" title=" " alt="" coords="113,446,165,517,201,557,242,591,251,598,245,598,239,595,198,561,161,521,113,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a2600ce746566d91acb2e1f182860966e" title="Method invoked when associated input action &quot;Previous&quot; is either UnityEngine.InputSystem...." alt="" coords="241,672,432,715"/>
+<area shape="poly" title=" " alt="" coords="108,446,128,491,156,548,194,607,217,634,242,658,248,664,243,664,239,662,213,638,190,610,151,551,123,494,108,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#ad5bdb096a27daab9134310d01090af68" title="Method invoked when associated input action &quot;Reload&quot; is either UnityEngine.InputSystem...." alt="" coords="241,739,432,781"/>
+<area shape="poly" title=" " alt="" coords="105,446,121,503,147,578,165,617,187,656,212,693,243,725,247,730,241,729,239,729,208,696,182,659,160,620,142,580,116,505,104,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a769fd450b41670da338dc68f7b02b1ec" title="Method invoked when associated input action &quot;Sprint&quot; is either UnityEngine.InputSystem...." alt="" coords="241,805,432,848"/>
+<area shape="poly" title=" " alt="" coords="103,446,115,514,138,606,156,656,179,705,208,751,243,791,246,797,241,795,239,795,203,754,174,707,151,658,133,608,110,515,102,451"/>
+</map>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_input_system___actions_1_1_player_actions_a59ea99548b2f7daf3e3e4343446bff3b_icgraph.png" border="0" usemap="#astruct_input_system___actions_1_1_player_actions_a59ea99548b2f7daf3e3e4343446bff3b_icgraph" loading="lazy" alt=""/></div>
+<map name="astruct_input_system___actions_1_1_player_actions_a59ea99548b2f7daf3e3e4343446bff3b_icgraph" id="astruct_input_system___actions_1_1_player_actions_a59ea99548b2f7daf3e3e4343446bff3b_icgraph">
+<area shape="rect" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="241,5,428,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_player_actions.html#a8d325b740e7c6e1fd330045f48720e49" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,5,193,48"/>
+<area shape="poly" title=" " alt="" coords="222,27,193,29,193,24,227,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab198d32b5dc2ba18700c31bb340a6518" name="ab198d32b5dc2ba18700c31bb340a6518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab198d32b5dc2ba18700c31bb340a6518">&#9670;&#160;</a></span>Disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.PlayerActions.Disable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01371">1371</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_input_system___actions_1_1_player_actions_ab198d32b5dc2ba18700c31bb340a6518_cgraph.png" border="0" usemap="#astruct_input_system___actions_1_1_player_actions_ab198d32b5dc2ba18700c31bb340a6518_cgraph" loading="lazy" alt=""/></div>
+<map name="astruct_input_system___actions_1_1_player_actions_ab198d32b5dc2ba18700c31bb340a6518_cgraph" id="astruct_input_system___actions_1_1_player_actions_ab198d32b5dc2ba18700c31bb340a6518_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,193,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_player_actions.html#ae1ce06fd43620a4d2e64faf84508e850" title="Provides access to the underlying input action map instance." alt="" coords="241,5,428,48"/>
+<area shape="poly" title=" " alt="" coords="193,24,228,26,222,27,193,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaaece65f0570756a3c77ee12493e140f" name="aaaece65f0570756a3c77ee12493e140f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaece65f0570756a3c77ee12493e140f">&#9670;&#160;</a></span>Enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.PlayerActions.Enable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01369">1369</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_input_system___actions_1_1_player_actions_aaaece65f0570756a3c77ee12493e140f_cgraph.png" border="0" usemap="#astruct_input_system___actions_1_1_player_actions_aaaece65f0570756a3c77ee12493e140f_cgraph" loading="lazy" alt=""/></div>
+<map name="astruct_input_system___actions_1_1_player_actions_aaaece65f0570756a3c77ee12493e140f_cgraph" id="astruct_input_system___actions_1_1_player_actions_aaaece65f0570756a3c77ee12493e140f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,193,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_player_actions.html#ae1ce06fd43620a4d2e64faf84508e850" title="Provides access to the underlying input action map instance." alt="" coords="241,5,428,48"/>
+<area shape="poly" title=" " alt="" coords="193,24,228,26,222,27,193,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae1ce06fd43620a4d2e64faf84508e850" name="ae1ce06fd43620a4d2e64faf84508e850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1ce06fd43620a4d2e64faf84508e850">&#9670;&#160;</a></span>Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputActionMap InputSystem_Actions.PlayerActions.Get </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action map instance. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01367">1367</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_input_system___actions_1_1_player_actions_ae1ce06fd43620a4d2e64faf84508e850_icgraph.png" border="0" usemap="#astruct_input_system___actions_1_1_player_actions_ae1ce06fd43620a4d2e64faf84508e850_icgraph" loading="lazy" alt=""/></div>
+<map name="astruct_input_system___actions_1_1_player_actions_ae1ce06fd43620a4d2e64faf84508e850_icgraph" id="astruct_input_system___actions_1_1_player_actions_ae1ce06fd43620a4d2e64faf84508e850_icgraph">
+<area shape="rect" title="Provides access to the underlying input action map instance." alt="" coords="241,39,428,81"/>
+<area shape="rect" href="struct_input_system___actions_1_1_player_actions.html#ab198d32b5dc2ba18700c31bb340a6518" title=" " alt="" coords="5,5,193,48"/>
+<area shape="poly" title=" " alt="" coords="222,45,193,43,193,37,228,44"/>
+<area shape="rect" href="struct_input_system___actions_1_1_player_actions.html#aaaece65f0570756a3c77ee12493e140f" title=" " alt="" coords="5,72,193,115"/>
+<area shape="poly" title=" " alt="" coords="222,76,194,83,193,77,228,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8dd5ab45c6bc121318e5f53beaca6574" name="a8dd5ab45c6bc121318e5f53beaca6574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dd5ab45c6bc121318e5f53beaca6574">&#9670;&#160;</a></span>operator InputActionMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">implicit InputSystem_Actions.PlayerActions.operator InputActionMap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#abd8a679d073686875777d2cdf4cd4e41">PlayerActions</a></td>          <td class="paramname"><span class="paramname"><em>set</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implicitly converts an  to an  instance. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01377">1377</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_input_system___actions_1_1_player_actions_a8dd5ab45c6bc121318e5f53beaca6574_cgraph.png" border="0" usemap="#astruct_input_system___actions_1_1_player_actions_a8dd5ab45c6bc121318e5f53beaca6574_cgraph" loading="lazy" alt=""/></div>
+<map name="astruct_input_system___actions_1_1_player_actions_a8dd5ab45c6bc121318e5f53beaca6574_cgraph" id="astruct_input_system___actions_1_1_player_actions_a8dd5ab45c6bc121318e5f53beaca6574_cgraph">
+<area shape="rect" title="Implicitly converts an &#160;to an &#160;instance." alt="" coords="5,5,217,48"/>
+<area shape="rect" href="struct_input_system___actions_1_1_player_actions.html#abd8a679d073686875777d2cdf4cd4e41" title="Construct a new instance of the input action map wrapper class." alt="" coords="265,5,452,48"/>
+<area shape="poly" title=" " alt="" coords="217,24,252,27,247,27,217,29"/>
+<area shape="rect" href="class_input_system___actions.html#a61685bf23c9929ed79a3f35740d27e3e" title="Constructs a new instance." alt="" coords="500,5,679,48"/>
+<area shape="poly" title=" " alt="" coords="452,24,487,27,482,27,452,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa05e9dcee22245c5c70747415e644400" name="aa05e9dcee22245c5c70747415e644400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa05e9dcee22245c5c70747415e644400">&#9670;&#160;</a></span>RemoveCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.PlayerActions.RemoveCallbacks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_input_system___actions_1_1_i_player_actions.html">IPlayerActions</a></td>          <td class="paramname"><span class="paramname"><em>instance</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unregisters  and unregisters all input action callbacks via PlayerActions.UnregisterCallbacks(IPlayerActions). </p>
+<dl class="section see"><dt>Ver también</dt><dd>PlayerActions.UnregisterCallbacks(IPlayerActions)</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01485">1485</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a8d325b740e7c6e1fd330045f48720e49" name="a8d325b740e7c6e1fd330045f48720e49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d325b740e7c6e1fd330045f48720e49">&#9670;&#160;</a></span>SetCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSystem_Actions.PlayerActions.SetCallbacks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_input_system___actions_1_1_i_player_actions.html">IPlayerActions</a></td>          <td class="paramname"><span class="paramname"><em>instance</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via . </p>
+<p>If <em>instance</em>  is <code>null</code>, calling this method will only unregister all existing callbacks but not register any new callbacks. </p>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="#a59ea99548b2f7daf3e3e4343446bff3b" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via  on a...">PlayerActions.AddCallbacks(IPlayerActions)</a>, <a class="el" href="#aa05e9dcee22245c5c70747415e644400" title="Unregisters  and unregisters all input action callbacks via PlayerActions.UnregisterCallbacks(IPlayer...">PlayerActions.RemoveCallbacks(IPlayerActions)</a>, PlayerActions.UnregisterCallbacks(IPlayerActions)</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01500">1500</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_input_system___actions_1_1_player_actions_a8d325b740e7c6e1fd330045f48720e49_cgraph.png" border="0" usemap="#astruct_input_system___actions_1_1_player_actions_a8d325b740e7c6e1fd330045f48720e49_cgraph" loading="lazy" alt=""/></div>
+<map name="astruct_input_system___actions_1_1_player_actions_a8d325b740e7c6e1fd330045f48720e49_cgraph" id="astruct_input_system___actions_1_1_player_actions_a8d325b740e7c6e1fd330045f48720e49_cgraph">
+<area shape="rect" title="Replaces all existing callback instances and previously registered input action callbacks associated ..." alt="" coords="5,405,193,448"/>
+<area shape="rect" href="struct_input_system___actions_1_1_player_actions.html#a59ea99548b2f7daf3e3e4343446bff3b" title="Adds InputAction.started, InputAction.performed and InputAction.canceled callbacks provided via &#160;on a..." alt="" coords="241,405,428,448"/>
+<area shape="poly" title=" " alt="" coords="192,424,227,425,223,428,195,429"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a39b0cb0611d50c6896516dfd238e8b6b" title="Method invoked when associated input action &quot;Attack&quot; is either UnityEngine.InputSystem...." alt="" coords="476,5,667,48"/>
+<area shape="poly" title=" " alt="" coords="335,404,345,338,368,246,387,196,410,146,439,99,474,58,481,55,477,59,478,62,443,103,414,149,392,198,374,247,350,339,340,406"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#ae8238612e5c81988fe9cbd574b250d94" title="Method invoked when associated input action &quot;Crouch&quot; is either UnityEngine.InputSystem...." alt="" coords="476,72,667,115"/>
+<area shape="poly" title=" " alt="" coords="337,404,351,348,377,274,395,234,417,194,444,157,474,125,481,122,477,126,478,129,448,161,422,197,400,236,382,276,356,350,342,406"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#ab8ba4e64962b6bb70a5f179c2e2d50cc" title="Method invoked when associated input action &quot;Focus&quot; is either UnityEngine.InputSystem...." alt="" coords="476,139,667,181"/>
+<area shape="poly" title=" " alt="" coords="341,404,358,360,386,303,425,243,448,216,474,191,483,188,479,192,478,195,452,219,429,246,391,305,363,362,345,406"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a7f0b3c53ea842fce0b16f0602cb7dd95" title="Method invoked when associated input action &quot;Interact&quot; is either UnityEngine.InputSystem...." alt="" coords="476,205,667,248"/>
+<area shape="poly" title=" " alt="" coords="346,403,397,333,433,293,474,258,485,254,481,257,478,262,437,297,401,336,351,407"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a8c02484fcb73d1dbd5dc10448dc9e2e8" title="Method invoked when associated input action &quot;Jump&quot; is either UnityEngine.InputSystem...." alt="" coords="476,272,667,315"/>
+<area shape="poly" title=" " alt="" coords="360,403,411,364,475,324,490,319,486,323,477,329,414,368,363,407"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#aabd34189156748ec0b937b9efe4ce589" title="Method invoked when associated input action &quot;Lantern&quot; is either UnityEngine.InputSystem...." alt="" coords="476,339,667,381"/>
+<area shape="poly" title=" " alt="" coords="411,403,481,385,477,387,414,407"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a5828287711e7c7b683c048dbb62bb349" title="Method invoked when associated input action &quot;Look&quot; is either UnityEngine.InputSystem...." alt="" coords="476,405,667,448"/>
+<area shape="poly" title=" " alt="" coords="427,424,463,426,458,428,429,429"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#ab3366dfc3e68c0bf3ea3ceacd9c3a3d4" title="Method invoked when associated input action &quot;Move&quot; is either UnityEngine.InputSystem...." alt="" coords="476,472,667,515"/>
+<area shape="poly" title=" " alt="" coords="412,446,481,467,476,468,413,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a9948265572e31aaf0f0ae94949cbb07a" title="Method invoked when associated input action &quot;Next&quot; is either UnityEngine.InputSystem...." alt="" coords="476,539,667,581"/>
+<area shape="poly" title=" " alt="" coords="362,446,414,485,477,524,490,532,485,533,475,529,411,490,362,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#acb3e83bfdaa47871c37fe65649d9e8e7" title="Method invoked when associated input action &quot;pause&quot; is either UnityEngine.InputSystem...." alt="" coords="476,605,667,648"/>
+<area shape="poly" title=" " alt="" coords="349,446,401,517,437,557,478,591,486,598,481,598,474,595,433,561,397,521,348,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a2600ce746566d91acb2e1f182860966e" title="Method invoked when associated input action &quot;Previous&quot; is either UnityEngine.InputSystem...." alt="" coords="476,672,667,715"/>
+<area shape="poly" title=" " alt="" coords="344,446,363,491,391,548,429,607,452,634,478,658,483,664,478,663,474,662,448,638,425,610,386,551,358,494,342,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#ad5bdb096a27daab9134310d01090af68" title="Method invoked when associated input action &quot;Reload&quot; is either UnityEngine.InputSystem...." alt="" coords="476,739,667,781"/>
+<area shape="poly" title=" " alt="" coords="341,446,356,503,382,578,400,617,422,656,448,693,478,725,482,730,477,729,474,729,444,696,417,659,395,620,377,580,351,505,339,451"/>
+<area shape="rect" href="interface_input_system___actions_1_1_i_player_actions.html#a769fd450b41670da338dc68f7b02b1ec" title="Method invoked when associated input action &quot;Sprint&quot; is either UnityEngine.InputSystem...." alt="" coords="476,805,667,848"/>
+<area shape="poly" title=" " alt="" coords="339,446,350,514,374,606,392,656,414,705,443,751,478,791,482,797,476,795,474,795,439,754,410,707,387,658,368,608,345,515,337,451"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Documentación de propiedades</h2>
+<a id="a0ade3ec192a89da9b7091da21b626b96" name="a0ade3ec192a89da9b7091da21b626b96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ade3ec192a89da9b7091da21b626b96">&#9670;&#160;</a></span>Attack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Attack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Attack". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01323">1323</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1f41fa983b8f0db745160f7a3749d1fb" name="a1f41fa983b8f0db745160f7a3749d1fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f41fa983b8f0db745160f7a3749d1fb">&#9670;&#160;</a></span>Crouch</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Crouch</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Crouch". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01331">1331</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae222832e75ceaea0d6837a72bfd84cc0" name="ae222832e75ceaea0d6837a72bfd84cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae222832e75ceaea0d6837a72bfd84cc0">&#9670;&#160;</a></span>enabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InputSystem_Actions.PlayerActions.enabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01373">1373</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0d835032b84fd3861a22ce762bca1b46" name="a0d835032b84fd3861a22ce762bca1b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d835032b84fd3861a22ce762bca1b46">&#9670;&#160;</a></span>Focus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Focus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Focus". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01363">1363</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="abd6bded9dc7287fd4e30a1cda56e29a9" name="abd6bded9dc7287fd4e30a1cda56e29a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd6bded9dc7287fd4e30a1cda56e29a9">&#9670;&#160;</a></span>Interact</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Interact</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Interact". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01327">1327</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="af6c99e636d1767f58d4f12af247dd059" name="af6c99e636d1767f58d4f12af247dd059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6c99e636d1767f58d4f12af247dd059">&#9670;&#160;</a></span>Jump</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Jump</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Jump". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01335">1335</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae4f29e2a5bb2b7696ac88c7c80ec07d5" name="ae4f29e2a5bb2b7696ac88c7c80ec07d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4f29e2a5bb2b7696ac88c7c80ec07d5">&#9670;&#160;</a></span>Lantern</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Lantern</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Lantern". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01355">1355</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a67c2ac0d22f1bbc7623a301260179dcb" name="a67c2ac0d22f1bbc7623a301260179dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67c2ac0d22f1bbc7623a301260179dcb">&#9670;&#160;</a></span>Look</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Look</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Look". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01319">1319</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a7e7614c3db5d083c1efb8f54d5c644bb" name="a7e7614c3db5d083c1efb8f54d5c644bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e7614c3db5d083c1efb8f54d5c644bb">&#9670;&#160;</a></span>Move</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Move</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Move". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01315">1315</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="af0ad7df6bcd5034fdc8f21699b689c7b" name="af0ad7df6bcd5034fdc8f21699b689c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0ad7df6bcd5034fdc8f21699b689c7b">&#9670;&#160;</a></span>Next</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Next</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Next". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01343">1343</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1be120e65ee8d1592e21470a531bd57b" name="a1be120e65ee8d1592e21470a531bd57b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be120e65ee8d1592e21470a531bd57b">&#9670;&#160;</a></span>pause</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.pause</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/pause". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01359">1359</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a640c43b0d40109f2191aa8c27327d0f2" name="a640c43b0d40109f2191aa8c27327d0f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a640c43b0d40109f2191aa8c27327d0f2">&#9670;&#160;</a></span>Previous</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Previous</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Previous". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01339">1339</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2b30fac3a3cc4e37879a97c4c0a4e3a3" name="a2b30fac3a3cc4e37879a97c4c0a4e3a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b30fac3a3cc4e37879a97c4c0a4e3a3">&#9670;&#160;</a></span>Reload</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Reload</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Reload". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01351">1351</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<a id="a5dd62dfb3d23e6dfec32615020a040fe" name="a5dd62dfb3d23e6dfec32615020a040fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dd62dfb3d23e6dfec32615020a040fe">&#9670;&#160;</a></span>Sprint</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InputAction InputSystem_Actions.PlayerActions.Sprint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides access to the underlying input action "Player/Sprint". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_input_system___actions_8cs_source.html#l01347">1347</a> del archivo <a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta estructura está generada del siguiente archivo:<ul>
+<li>Scripts/Input/<a class="el" href="_input_system___actions_8cs_source.html">InputSystem_Actions.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_input_system___actions.html">InputSystem_Actions</a></li><li class="navelem"><a href="struct_input_system___actions_1_1_player_actions.html">PlayerActions</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

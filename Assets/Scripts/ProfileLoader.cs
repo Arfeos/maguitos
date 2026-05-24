@@ -14,7 +14,7 @@ public class ProfileLoader : MonoBehaviour
         SetupProfiles();
     }
     /// <summary>
-    /// Obtiene la lista de perfiles a través del servicio <see cref="IProfileService"> inyectado desde <see cref="AppContainer">. 
+    /// Obtiene la lista de perfiles a travÃ©s del servicio <see cref="IProfileService"> inyectado desde <see cref="AppContainer">. 
     /// Si no hay perfiles, loguea un mensaje y sale. 
     /// Por cada perfil existente, instancia un cardPrefab como hijo del transform actual y llama a Setup() en su componente <see cref="CardUI"> para inicializarlo con los datos del perfil
     /// </summary>

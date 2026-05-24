@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la clase Settings</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_settings.html','','class_settings-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase Settings</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase serializable que representa la configuración de usuario de la aplicación, incluyendo idioma, direcciones de ejes, volúmenes y sensibilidad. Se persiste en disco para mantener las preferencias entre sesiones.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ac1ec7238edb3d1b896e22bd19915bdd8" id="r_ac1ec7238edb3d1b896e22bd19915bdd8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac1ec7238edb3d1b896e22bd19915bdd8">Settings</a> ()</td></tr>
+<tr class="memdesc:ac1ec7238edb3d1b896e22bd19915bdd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa la configuración con los valores por defecto: idioma inglés, ejes sin invertir, volúmenes al máximo y sensibilidad estándar.  <br /></td></tr>
+<tr class="memitem:af1ca928523ecb746c5e25580fb170549" id="r_af1ca928523ecb746c5e25580fb170549"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af1ca928523ecb746c5e25580fb170549">Settings</a> (<a class="el" href="_languages_8cs.html#acf67cffc3861e9cc26af962680674ddd">Languages</a> language, int axisXDirection, int axisYDirection, float musicVolume, float masterVolume, float sensibility)</td></tr>
+<tr class="memdesc:af1ca928523ecb746c5e25580fb170549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa la configuración con los valores especificados por el usuario.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a7d8305ef944b9ea9166a463e32ae960e" id="r_a7d8305ef944b9ea9166a463e32ae960e"><td class="memItemLeft"><a class="el" href="_languages_8cs.html#acf67cffc3861e9cc26af962680674ddd">Languages</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7d8305ef944b9ea9166a463e32ae960e">language</a></td></tr>
+<tr class="memdesc:a7d8305ef944b9ea9166a463e32ae960e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Idioma seleccionado por el usuario.  <br /></td></tr>
+<tr class="memitem:af5a5d5528ec52f340962f0875cfd93af" id="r_af5a5d5528ec52f340962f0875cfd93af"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af5a5d5528ec52f340962f0875cfd93af">axisXDirection</a></td></tr>
+<tr class="memdesc:af5a5d5528ec52f340962f0875cfd93af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección del eje horizontal del ratón o joystick: 1 para normal, -1 para invertido.  <br /></td></tr>
+<tr class="memitem:aee1f6b2f98c370b427072eccfb7606f6" id="r_aee1f6b2f98c370b427072eccfb7606f6"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aee1f6b2f98c370b427072eccfb7606f6">axisYDirection</a></td></tr>
+<tr class="memdesc:aee1f6b2f98c370b427072eccfb7606f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección del eje vertical del ratón o joystick: 1 para normal, -1 para invertido.  <br /></td></tr>
+<tr class="memitem:adf355ec6df8127d8b15d59f6d7950ce7" id="r_adf355ec6df8127d8b15d59f6d7950ce7"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#adf355ec6df8127d8b15d59f6d7950ce7">musicVolume</a></td></tr>
+<tr class="memdesc:adf355ec6df8127d8b15d59f6d7950ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volumen de la música de fondo, en un rango de 0 a 1.  <br /></td></tr>
+<tr class="memitem:ad8de453eebd5447d0f05fc37337f76ff" id="r_ad8de453eebd5447d0f05fc37337f76ff"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ad8de453eebd5447d0f05fc37337f76ff">masterVolume</a></td></tr>
+<tr class="memdesc:ad8de453eebd5447d0f05fc37337f76ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volumen maestro general de la aplicación, en un rango de 0 a 1.  <br /></td></tr>
+<tr class="memitem:a7e498fdb3dc1eb0c7faa354bc1a8a653" id="r_a7e498fdb3dc1eb0c7faa354bc1a8a653"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a7e498fdb3dc1eb0c7faa354bc1a8a653">sensibility</a></td></tr>
+<tr class="memdesc:a7e498fdb3dc1eb0c7faa354bc1a8a653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensibilidad del ratón o joystick para el control de cámara.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase serializable que representa la configuración de usuario de la aplicación, incluyendo idioma, direcciones de ejes, volúmenes y sensibilidad. Se persiste en disco para mantener las preferencias entre sesiones. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_settings_8cs_source.html#l00009">9</a> del archivo <a class="el" href="_settings_8cs_source.html">Settings.cs</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="ac1ec7238edb3d1b896e22bd19915bdd8" name="ac1ec7238edb3d1b896e22bd19915bdd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ec7238edb3d1b896e22bd19915bdd8">&#9670;&#160;</a></span>Settings() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Settings.Settings </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicializa la configuración con los valores por defecto: idioma inglés, ejes sin invertir, volúmenes al máximo y sensibilidad estándar. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_settings_8cs_source.html#l00028">28</a> del archivo <a class="el" href="_settings_8cs_source.html">Settings.cs</a>.</p>
+
+</div>
+</div>
+<a id="af1ca928523ecb746c5e25580fb170549" name="af1ca928523ecb746c5e25580fb170549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ca928523ecb746c5e25580fb170549">&#9670;&#160;</a></span>Settings() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Settings.Settings </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_languages_8cs.html#acf67cffc3861e9cc26af962680674ddd">Languages</a></td>          <td class="paramname"><span class="paramname"><em>language</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>axisXDirection</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>axisYDirection</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>musicVolume</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>masterVolume</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>sensibility</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicializa la configuración con los valores especificados por el usuario. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">language</td><td>Idioma seleccionado.</td></tr>
+    <tr><td class="paramname">axisXDirection</td><td>Dirección del eje horizontal: 1 para normal, -1 para invertido.</td></tr>
+    <tr><td class="paramname">axisYDirection</td><td>Dirección del eje vertical: 1 para normal, -1 para invertido.</td></tr>
+    <tr><td class="paramname">musicVolume</td><td>Volumen de la música de fondo (0 a 1).</td></tr>
+    <tr><td class="paramname">masterVolume</td><td>Volumen maestro general (0 a 1).</td></tr>
+    <tr><td class="paramname">sensibility</td><td>Sensibilidad del control de cámara.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_settings_8cs_source.html#l00047">47</a> del archivo <a class="el" href="_settings_8cs_source.html">Settings.cs</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="af5a5d5528ec52f340962f0875cfd93af" name="af5a5d5528ec52f340962f0875cfd93af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5a5d5528ec52f340962f0875cfd93af">&#9670;&#160;</a></span>axisXDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Settings.axisXDirection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dirección del eje horizontal del ratón o joystick: 1 para normal, -1 para invertido. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_settings_8cs_source.html#l00014">14</a> del archivo <a class="el" href="_settings_8cs_source.html">Settings.cs</a>.</p>
+
+</div>
+</div>
+<a id="aee1f6b2f98c370b427072eccfb7606f6" name="aee1f6b2f98c370b427072eccfb7606f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee1f6b2f98c370b427072eccfb7606f6">&#9670;&#160;</a></span>axisYDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Settings.axisYDirection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dirección del eje vertical del ratón o joystick: 1 para normal, -1 para invertido. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_settings_8cs_source.html#l00016">16</a> del archivo <a class="el" href="_settings_8cs_source.html">Settings.cs</a>.</p>
+
+</div>
+</div>
+<a id="a7d8305ef944b9ea9166a463e32ae960e" name="a7d8305ef944b9ea9166a463e32ae960e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d8305ef944b9ea9166a463e32ae960e">&#9670;&#160;</a></span>language</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_languages_8cs.html#acf67cffc3861e9cc26af962680674ddd">Languages</a> Settings.language</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Idioma seleccionado por el usuario. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_settings_8cs_source.html#l00012">12</a> del archivo <a class="el" href="_settings_8cs_source.html">Settings.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad8de453eebd5447d0f05fc37337f76ff" name="ad8de453eebd5447d0f05fc37337f76ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8de453eebd5447d0f05fc37337f76ff">&#9670;&#160;</a></span>masterVolume</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Settings.masterVolume</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Volumen maestro general de la aplicación, en un rango de 0 a 1. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_settings_8cs_source.html#l00020">20</a> del archivo <a class="el" href="_settings_8cs_source.html">Settings.cs</a>.</p>
+
+</div>
+</div>
+<a id="adf355ec6df8127d8b15d59f6d7950ce7" name="adf355ec6df8127d8b15d59f6d7950ce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf355ec6df8127d8b15d59f6d7950ce7">&#9670;&#160;</a></span>musicVolume</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Settings.musicVolume</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Volumen de la música de fondo, en un rango de 0 a 1. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_settings_8cs_source.html#l00018">18</a> del archivo <a class="el" href="_settings_8cs_source.html">Settings.cs</a>.</p>
+
+</div>
+</div>
+<a id="a7e498fdb3dc1eb0c7faa354bc1a8a653" name="a7e498fdb3dc1eb0c7faa354bc1a8a653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e498fdb3dc1eb0c7faa354bc1a8a653">&#9670;&#160;</a></span>sensibility</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Settings.sensibility</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sensibilidad del ratón o joystick para el control de cámara. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_settings_8cs_source.html#l00022">22</a> del archivo <a class="el" href="_settings_8cs_source.html">Settings.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>Scripts/Classes/<a class="el" href="_settings_8cs_source.html">Settings.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_settings.html">Settings</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

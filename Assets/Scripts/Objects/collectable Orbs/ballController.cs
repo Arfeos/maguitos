@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 /// <summary>
 /// Componente de Unity encargado de controlar el comportamiento de un objeto flotante coleccionable. 
 /// Gestiona la animación de flotación, la detección del jugador, la persecución automática y la aplicación de efectos al personaje mediante los servicios <see cref="ICharacterService"/> y <see cref="IAudioService"/>.
