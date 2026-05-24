@@ -45,7 +45,7 @@ public class ObjectDetection : MonoBehaviour
             if (hit.collider.TryGetComponent<DataShow>(out DataShow data))
             {
                 Marker.color = color;
-                _alertService.ShowAlertMessage(MessageBox, data.getData());
+                _alertService.ShowAlertMessage(MessageBox, data.GetData());
                 
             }
         }

@@ -808,7 +808,7 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 64
-  "puntuaci\xF3n": 50
+  puntuacion: 20
   _lifeBar: {fileID: 1964707926374396930}
   dissolveTexture: {fileID: 2800000, guid: a4b3a39397377f64490aa77190c55cf4, type: 3}
   dissolveColor: {r: 1, g: 1, b: 1, a: 1}
@@ -823,7 +823,7 @@ MonoBehaviour:
   AttackSound: {fileID: 8300000, guid: 35b16ee02380268498fb76d9c4860e9e, type: 3}
   jumpDistance: 10
   jumpHeight: 5
-  recoverTime: 1
+  recoverTime: 3
   groundRadius: 0.25
   groundLayer:
     serializedVersion: 2
