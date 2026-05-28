@@ -3,7 +3,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
-
+/// <summary>
+/// Paso que se activa cuando se dispara a un cartel 
+/// </summary>
 public class ShootingRangeStep : IStep
 {
     private GameObject _messageBox;

@@ -1,7 +1,9 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Interfaz del servicio que proporciona los metodos necesarios para poder lanzar hechizos
+/// </summary>
 public interface ISpellService
 {
     GameObject ShootRay(Vector3 start, Vector3 end);

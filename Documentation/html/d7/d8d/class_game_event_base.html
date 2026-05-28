@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la clase GameEventBase</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d7/d8d/class_game_event_base.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase GameEventBase<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase abstracta utilizada como base para todos los eventos del sistema de eventos gestionado mediante EventService. Proporciona una estructura común que permite identificar y manejar distintos tipos de eventos personalizados.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de GameEventBase</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/da0/class_game_event_base__inherit__graph.png" border="0" usemap="#a_game_event_base_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_game_event_base_inherit__map" id="a_game_event_base_inherit__map">
+<area shape="rect" title="Clase abstracta utilizada como base para todos los eventos del sistema de eventos gestionado mediante..." alt="" coords="5,233,126,260"/>
+<area shape="rect" href="../../d4/d74/class_die_event.html" title="Evento que se ejecuta cuando el personaje muere." alt="" coords="224,5,300,32"/>
+<area shape="poly" title=" " alt="" coords="72,217,85,178,105,131,134,83,172,42,197,28,226,21,222,25,199,33,175,46,138,86,110,133,90,180,77,219"/>
+<area shape="rect" href="../../d0/d22/class_h_p_event.html" title="Evento que se ejecuta cuando la vida del personaje cambia." alt="" coords="225,56,299,83"/>
+<area shape="poly" title=" " alt="" coords="77,218,113,155,140,121,172,92,197,79,226,72,222,76,199,84,175,97,144,125,118,158,81,220"/>
+<area shape="rect" href="../../dc/dfa/class_icon_change_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con un icono ..." alt="" coords="199,107,324,133"/>
+<area shape="poly" title=" " alt="" coords="85,220,123,180,172,143,201,132,197,136,175,148,127,184,90,223"/>
+<area shape="rect" href="../../d0/de2/class_mana_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con el maná d..." alt="" coords="218,157,306,184"/>
+<area shape="poly" title=" " alt="" coords="105,224,173,194,220,180,216,183,175,198,108,228"/>
+<area shape="rect" href="../../de/da4/class_preference_change_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con las prefe..." alt="" coords="180,208,344,235"/>
+<area shape="poly" title=" " alt="" coords="140,235,182,230,177,234,142,239"/>
+<area shape="rect" href="../../dd/d13/class_reload_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar una acción de recarga dentro del s..." alt="" coords="214,259,310,285"/>
+<area shape="poly" title=" " alt="" coords="140,254,216,264,211,267,142,259"/>
+<area shape="rect" href="../../d7/db2/class_score_change_event.html" title="Evento que se lanza cuando la puntuación del jugador cambia. Contiene la cantidad de puntos involucra..." alt="" coords="195,309,329,336"/>
+<area shape="poly" title=" " alt="" coords="106,265,175,295,210,308,205,310,173,300,107,270"/>
+<area shape="rect" href="../../d3/df1/class_spell_change_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con la selecc..." alt="" coords="197,360,326,387"/>
+<area shape="poly" title=" " alt="" coords="88,270,127,309,175,346,202,359,197,360,172,350,123,313,87,275"/>
+<area shape="rect" href="../../dd/dbc/class_spell_change_on_page_event.html" title="Clase de evento derivada de GameEventBase utilizada para notificar cambios relacionados con la visual..." alt="" coords="174,411,350,437"/>
+<area shape="poly" title=" " alt="" coords="80,272,118,336,144,369,175,396,197,410,192,410,172,401,140,372,113,339,78,277"/>
+<area shape="rect" href="../../da/d69/class_tutorial_game_event.html" title="Evento que se lanza para notificar que se ha producido un avance o cambio de estado relevante durante..." alt="" coords="195,461,328,488"/>
+<area shape="poly" title=" " alt="" coords="74,272,90,313,110,360,138,407,175,447,197,462,192,461,172,451,134,410,105,363,85,315,74,278"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase abstracta utilizada como base para todos los eventos del sistema de eventos gestionado mediante EventService. Proporciona una estructura común que permite identificar y manejar distintos tipos de eventos personalizados. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6c/_game_event_base_8cs_source.html#l00004">4</a> del archivo <a class="el" href="../../d8/d6c/_game_event_base_8cs_source.html">GameEventBase.cs</a>.</p>
+</div><hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>Scripts/Events/<a class="el" href="../../d8/d6c/_game_event_base_8cs_source.html">GameEventBase.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../d7/d8d/class_game_event_base.html">GameEventBase</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

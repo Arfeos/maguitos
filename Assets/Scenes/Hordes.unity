@@ -40022,7 +40022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1667691811}
-  - component: {fileID: 1667691810}
+  - component: {fileID: 1667691812}
   m_Layer: 0
   m_Name: HordeInitializer
   m_TagString: Untagged
@@ -40030,23 +40030,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1667691810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667691809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db18ecaa8f2b4e647b68edc53d298e06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  musiclist:
-  - {fileID: 8300000, guid: c6927c2c5d838ee4099fe4fc78a6b139, type: 3}
-  - {fileID: 8300000, guid: b438866252becfb4c9c7358cc3567d39, type: 3}
-  - {fileID: 8300000, guid: d7aa9375cdbff764f8efedc89b82616d, type: 3}
-  - {fileID: 8300000, guid: 0fe4512d7d4e4434f8df4614eb9d4c69, type: 3}
 --- !u!4 &1667691811
 Transform:
   m_ObjectHideFlags: 0
@@ -40062,6 +40045,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667691812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667691809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06b53e1a18e4a6479a036978c0a7f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicInitializer
+  musiclist:
+  - {fileID: 8300000, guid: b438866252becfb4c9c7358cc3567d39, type: 3}
+  - {fileID: 8300000, guid: c6927c2c5d838ee4099fe4fc78a6b139, type: 3}
+  - {fileID: 8300000, guid: d7aa9375cdbff764f8efedc89b82616d, type: 3}
+  - {fileID: 8300000, guid: 0fe4512d7d4e4434f8df4614eb9d4c69, type: 3}
 --- !u!43 &1701342522
 Mesh:
   m_ObjectHideFlags: 0
@@ -45930,7 +45930,7 @@ PrefabInstance:
       objectReference: {fileID: 6502885931249821474, guid: 83f7fcef08935494eb9e3a5af486e79c, type: 3}
     - target: {fileID: 3743467397682995237, guid: 7f2d5b691e31a964db9192f5b5824752, type: 3}
       propertyPath: enemiesPerHorde
-      value: 100
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3743467397682995237, guid: 7f2d5b691e31a964db9192f5b5824752, type: 3}
       propertyPath: enemy.Array.size

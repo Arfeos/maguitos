@@ -3,7 +3,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
-
+/// <summary>
+/// Paso que se completa cuando el jugador tiene un hechizo en el inventario
+/// </summary>
 public class PickUpSpellStep : IStep
 {
     // --- Variables ---

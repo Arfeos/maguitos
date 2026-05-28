@@ -1,0 +1,15 @@
+<map id="SlimeBase.Update" name="SlimeBase.Update">
+<area shape="rect" id="Node000001" title="Cada frame busca al jugador si falta la referencia, comprueba si el slime está muerto y lanza la corr..." alt="" coords="5,43,136,69"/>
+<area shape="rect" id="Node000002" href="$d8/d52/class_slime_base.html#a916edda1269b3b46a3eae7e66f27cb51" title="Corrutina que bloquea nuevas acciones durante attackCooldown segundos y después las habilita de nuevo..." alt="" coords="184,5,367,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,44,170,41,166,43,137,49"/>
+<area shape="rect" id="Node000003" href="$d8/d52/class_slime_base.html#abb96de4b96b110f16d6d09e0f404a6fe" title="Se llama cada frame desde Update (ya filtrado por null y muerte). Sobreescribe para añadir lógica ext..." alt="" coords="202,72,349,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,63,189,72,184,74,136,68"/>
+<area shape="rect" id="Node000004" href="$d8/d52/class_slime_base.html#a9d81f6cd010a424404612e595e958df7" title="Evalúa si el slime debe atacar o moverse en función de la distancia al jugador. Solo actúa si _nextAc..." alt="" coords="415,72,572,99"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="349,83,402,85,397,86,349,88"/>
+<area shape="rect" id="Node000005" href="$d8/d52/class_slime_base.html#acca4b82f932f3474d22de74265ab05c2" title="Lógica de ataque específica del enemigo. La base reproduce el AttackSound; las subclases deben llamar..." alt="" coords="655,21,781,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="556,69,638,52,643,52,557,74"/>
+<area shape="rect" id="Node000006" href="$d8/d52/class_slime_base.html#a79bdf4312a1f2d5714b2fecd9a696eb1" title="Calcula la distancia plana (ignorando el eje Y) entre el slime y el jugador." alt="" coords="620,72,816,99"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="572,83,607,85,602,85,573,88"/>
+<area shape="rect" id="Node000007" href="$d8/d52/class_slime_base.html#aa6026f9416ece929b0946c8f4064e715" title="Lógica de movimiento específica del enemigo. La base reproduce el JumpSound; las subclases deben llam..." alt="" coords="658,123,778,149"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="556,97,645,119,640,119,556,102"/>
+</map>

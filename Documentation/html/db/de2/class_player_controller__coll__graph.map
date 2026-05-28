@@ -1,0 +1,7 @@
+<map id="PlayerController" name="PlayerController">
+<area shape="rect" id="Node000001" title="Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento,..." alt="" coords="61,80,176,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,42,111,79,106,80,79,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="140,5,211,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,43,130,82,126,78,154,45"/>
+</map>

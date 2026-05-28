@@ -1,0 +1,9 @@
+<map id="ObjectDataScriptable" name="ObjectDataScriptable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,151,108"/>
+<area shape="rect" id="Node000003" href="$d1/d08/class_spell_base_scriptable.html" title=" " alt="" coords="37,180,175,207"/>
+<area shape="poly" id="edge4_Node000003_Node000001" title=" " alt="" coords="26,119,15,133,11,144,15,155,27,168,45,178,40,181,24,172,10,157,5,144,10,131,28,114"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="74,5,191,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,47,89,83,85,79,116,42"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="149,43,163,69,172,98,174,128,166,157,154,172,139,182,136,177,150,168,161,155,169,128,166,99,158,71,148,48"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,165,80,111,83,107,101,165"/>
+</map>

@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente Scripts/Enemy/SlimeBase.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('da/d76/_slime_base_8cs_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SlimeBase.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/d76/_slime_base_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>Unity.Mathematics;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>UnityEngine.UI;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>[RequireComponent(typeof(Rigidbody))]</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html">   12</a></span><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code hl_class" href="../../d8/d52/class_slime_base.html">SlimeBase</a> : MonoBehaviour, IHittable</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// ── Referencias ─────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#afc460be79865710e6ab0db84f509c1c3">   16</a></span>    <span class="keyword">protected</span> <a class="code hl_class" href="../../dc/dde/class_player_controller.html">PlayerController</a> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#afc460be79865710e6ab0db84f509c1c3">_playerController</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a1c56ea5fcf5c26fb103c1536d66aaf4f">   18</a></span>    <span class="keyword">protected</span> Rigidbody <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a1c56ea5fcf5c26fb103c1536d66aaf4f">_rigidbody</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a096cb37d1bcdda5268aceb5284da1839">   20</a></span>    <span class="keyword">protected</span> Animator <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a096cb37d1bcdda5268aceb5284da1839">_animator</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// ── Combat ───────────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    [Header(<span class="stringliteral">&quot;Combat&quot;</span>)]</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#ad403c4b06e6ff4fe758a0e5528c84daf">   25</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ad403c4b06e6ff4fe758a0e5528c84daf">distanceToAttack</a> = 2.5f;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a264cb6772276eef42a4d7bec27cd27c5">   27</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a264cb6772276eef42a4d7bec27cd27c5">attackCooldown</a> = 2f;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#af0f835163fa1ba2ecc31dee976dbd2b3">   29</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af0f835163fa1ba2ecc31dee976dbd2b3">damage</a> = 20f;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#af9c7f5bb0ebedcc7a87b5e14f70a660b">   31</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af9c7f5bb0ebedcc7a87b5e14f70a660b">maxLife</a> = 100f;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#aa6f1d7c0f8e408dd57fc75de7bdb6706">   33</a></span>    [SerializeField] <span class="keyword">protected</span> LayerMask <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#aa6f1d7c0f8e408dd57fc75de7bdb6706">attackLayer</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    [Header(<span class="stringliteral">&quot;Puntuacion&quot;</span>)]</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a8b21b4bc3a81c2f9bb0837882eac54c1">   37</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a8b21b4bc3a81c2f9bb0837882eac54c1">puntuacion</a> = 20;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// ── Life bar ─────────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    [Header(<span class="stringliteral">&quot;UI&quot;</span>)]</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a458f75da25ff4731c6828ba4135a1344">   42</a></span>    [SerializeField] <span class="keyword">protected</span> Slider <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a458f75da25ff4731c6828ba4135a1344">_lifeBar</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// ── Dissolve ─────────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    [Header(<span class="stringliteral">&quot;Dissolve&quot;</span>)]</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#aff42ff730fe5254fbf48d4504fbab34c">   47</a></span>    [SerializeField] <span class="keyword">protected</span> Texture2D <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#aff42ff730fe5254fbf48d4504fbab34c">dissolveTexture</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a449104c810d6df793bd3f16297b86bf3">   49</a></span>    [SerializeField] <span class="keyword">protected</span> Color <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a449104c810d6df793bd3f16297b86bf3">dissolveColor</a> = Color.red;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a9d6724148ee551ff12a7938e7d191970">   51</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a9d6724148ee551ff12a7938e7d191970">delayBeforeStart</a> = 3f;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#ade1202c4c8d584ac095a633525de5b66">   53</a></span>    [SerializeField] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ade1202c4c8d584ac095a633525de5b66">dissolveTime</a> = 2f;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// ── Orbes ───────────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    [Header(<span class="stringliteral">&quot;Orbes&quot;</span>)]</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a4709d47b8dea5576ae2c918a67398b95">   58</a></span>    [SerializeField] <span class="keyword">protected</span> GameObject <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a4709d47b8dea5576ae2c918a67398b95">orbVida</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a62d61da8a0eb2054d0135ceb15ad7db1">   60</a></span>    [SerializeField] <span class="keyword">protected</span> GameObject <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a62d61da8a0eb2054d0135ceb15ad7db1">orbMana</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#af5723b69deb7938b13625f790c13fb25">   62</a></span>    [SerializeField, Range(0f, 100f)] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af5723b69deb7938b13625f790c13fb25">percentSpawnLife</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a001efdb656a869be24389796b8d04de9">   64</a></span>    [SerializeField, Range(0f, 100f)] <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a001efdb656a869be24389796b8d04de9">percentSpawnMana</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// ── Sonidos ─────────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    [Header(<span class="stringliteral">&quot;Sounds&quot;</span>)]</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a63786eedf737d80c1726d9a1dabec029">   69</a></span>    [SerializeField] <span class="keyword">protected</span> AudioClip <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a63786eedf737d80c1726d9a1dabec029">TakeDamageSound</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#ace87a5128805caa571168290e67859c0">   71</a></span>    [SerializeField] <span class="keyword">protected</span> AudioClip <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ace87a5128805caa571168290e67859c0">JumpSound</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#ab0f5d40ea9d17fdf449408ba4754f7da">   73</a></span>    [SerializeField] <span class="keyword">protected</span> AudioClip <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ab0f5d40ea9d17fdf449408ba4754f7da">AttackSound</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// ── Estado interno ───────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#af286ffeff64f2d9df642170a254bc3f3">   77</a></span>    <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af286ffeff64f2d9df642170a254bc3f3">Life</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a8b70355691d715e770129144ec6507f8">   79</a></span>    <span class="keyword">protected</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a8b70355691d715e770129144ec6507f8">_isDeath</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#ac0c0dff4fbb33128632f9a6db25c1be9">   84</a></span>    <span class="keyword">protected</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ac0c0dff4fbb33128632f9a6db25c1be9">_nextActionTime</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a7cf2df5abfa2c03ab25f89d9e044724a">   86</a></span>    <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a7cf2df5abfa2c03ab25f89d9e044724a">dissolveProgress</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a776b0ee587b5caab276c89a9e797902f">   88</a></span>    <span class="keyword">protected</span> Coroutine <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a776b0ee587b5caab276c89a9e797902f">_actionCoroutine</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">   90</a></span>    <span class="keyword">protected</span> <a class="code hl_interface" href="../../de/d33/interface_i_audio_service.html">IAudioService</a> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a0c4509d2088c046c4e3ad45504302e49">   92</a></span>    <span class="keyword">protected</span> <a class="code hl_interface" href="../../d1/df4/interface_i_profile_service.html">IProfileService</a> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a0c4509d2088c046c4e3ad45504302e49">_profileService</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a2c608a79a6acd32e77150b80ec613485">   94</a></span>    <span class="keyword">protected</span> <a class="code hl_interface" href="../../de/df6/interface_i_score_service.html">IScoreService</a> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a2c608a79a6acd32e77150b80ec613485">_scoreService</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">// ── Unity Lifecycle ──────────────────────────────────────────────────────</span></div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#ac6fd4e4697ca6fa1d8a7c0740f4d378d">  100</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#ac6fd4e4697ca6fa1d8a7c0740f4d378d">Awake</a>()</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a> = AppContainer.Get&lt;<a class="code hl_interface" href="../../de/d33/interface_i_audio_service.html">IAudioService</a>&gt;();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a2c608a79a6acd32e77150b80ec613485">_scoreService</a> = AppContainer.Get&lt;<a class="code hl_interface" href="../../de/df6/interface_i_score_service.html">IScoreService</a>&gt;();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a0c4509d2088c046c4e3ad45504302e49">_profileService</a> = AppContainer.Get&lt;<a class="code hl_interface" href="../../d1/df4/interface_i_profile_service.html">IProfileService</a>&gt;();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a3b394dcb8918c8c0bf63a7d31d8fbe03">  109</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a3b394dcb8918c8c0bf63a7d31d8fbe03">Start</a>()</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#afc460be79865710e6ab0db84f509c1c3">_playerController</a> = FindFirstObjectByType&lt;PlayerController&gt;();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a1c56ea5fcf5c26fb103c1536d66aaf4f">_rigidbody</a> = GetComponent&lt;Rigidbody&gt;();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a096cb37d1bcdda5268aceb5284da1839">_animator</a> = GetComponent&lt;Animator&gt;();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a458f75da25ff4731c6828ba4135a1344">_lifeBar</a> = GetComponentInChildren&lt;Slider&gt;();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        _lifeBar.maxValue = <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af9c7f5bb0ebedcc7a87b5e14f70a660b">maxLife</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        _lifeBar.value = <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af9c7f5bb0ebedcc7a87b5e14f70a660b">maxLife</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a458f75da25ff4731c6828ba4135a1344">_lifeBar</a>.gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af286ffeff64f2d9df642170a254bc3f3">Life</a> = <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af9c7f5bb0ebedcc7a87b5e14f70a660b">maxLife</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a7cf2df5abfa2c03ab25f89d9e044724a">dissolveProgress</a> = 0f;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a99ac7b232defb9c96a027ccf010d555a">  128</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a99ac7b232defb9c96a027ccf010d555a">Update</a>()</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#afc460be79865710e6ab0db84f509c1c3">_playerController</a> == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#afc460be79865710e6ab0db84f509c1c3">_playerController</a> = FindFirstObjectByType&lt;PlayerController&gt;();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a8b70355691d715e770129144ec6507f8">_isDeath</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <a class="code hl_function" href="../../d8/d52/class_slime_base.html#abb96de4b96b110f16d6d09e0f404a6fe">OnUpdate</a>();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a776b0ee587b5caab276c89a9e797902f">_actionCoroutine</a> == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a776b0ee587b5caab276c89a9e797902f">_actionCoroutine</a> = StartCoroutine(<a class="code hl_function" href="../../d8/d52/class_slime_base.html#a916edda1269b3b46a3eae7e66f27cb51">ActionCooldownRoutine</a>());</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="comment">// ── Métodos abstractos que cada enemigo debe implementar ─────────────────</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#acca4b82f932f3474d22de74265ab05c2">  150</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#acca4b82f932f3474d22de74265ab05c2">Attack</a>()</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a> == <span class="keyword">null</span>) <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a> = AppContainer.Get&lt;<a class="code hl_interface" href="../../de/d33/interface_i_audio_service.html">IAudioService</a>&gt;();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ab0f5d40ea9d17fdf449408ba4754f7da">AttackSound</a> != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a>.PlaySound(<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ab0f5d40ea9d17fdf449408ba4754f7da">AttackSound</a>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
+</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#aa6026f9416ece929b0946c8f4064e715">  163</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#aa6026f9416ece929b0946c8f4064e715">Move</a>(<span class="keywordtype">float</span> distanceToPlayer)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a> == <span class="keyword">null</span>) <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a> = AppContainer.Get&lt;<a class="code hl_interface" href="../../de/d33/interface_i_audio_service.html">IAudioService</a>&gt;();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ace87a5128805caa571168290e67859c0">JumpSound</a> != <span class="keyword">null</span>) <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a>.PlaySound(<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ace87a5128805caa571168290e67859c0">JumpSound</a>);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="comment">// ── Métodos virtuales sobreescribibles ───────────────────────────────────</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#abb96de4b96b110f16d6d09e0f404a6fe">  177</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#abb96de4b96b110f16d6d09e0f404a6fe">OnUpdate</a>()</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a9d81f6cd010a424404612e595e958df7">CheckState</a>();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
+</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span></div>
+<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a256b96e2e14b05fbdae17239fb068a18">  187</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a256b96e2e14b05fbdae17239fb068a18">OnDeath</a>()</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a2c608a79a6acd32e77150b80ec613485">_scoreService</a> == <span class="keyword">null</span>) <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a2c608a79a6acd32e77150b80ec613485">_scoreService</a> = AppContainer.Get&lt;<a class="code hl_interface" href="../../de/df6/interface_i_score_service.html">IScoreService</a>&gt;();</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a2c608a79a6acd32e77150b80ec613485">_scoreService</a>.addPoints(<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a0c4509d2088c046c4e3ad45504302e49">_profileService</a>.getSelectedProfile().guid, <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a8b21b4bc3a81c2f9bb0837882eac54c1">puntuacion</a>);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a7f91278aa183c7700efb878dc625f30d">CreateOrbsByPercent</a>(<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a001efdb656a869be24389796b8d04de9">percentSpawnMana</a>, <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a62d61da8a0eb2054d0135ceb15ad7db1">orbMana</a>);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a7f91278aa183c7700efb878dc625f30d">CreateOrbsByPercent</a>(<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af5723b69deb7938b13625f790c13fb25">percentSpawnLife</a>, <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a4709d47b8dea5576ae2c918a67398b95">orbVida</a>);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="comment">// ── Lógica común ─────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span></div>
+<div class="foldopen" id="foldopen00203" data-start="{" data-end="}">
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a9d81f6cd010a424404612e595e958df7">  203</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a9d81f6cd010a424404612e595e958df7">CheckState</a>()</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ac0c0dff4fbb33128632f9a6db25c1be9">_nextActionTime</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keywordtype">float</span> distance = <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a79bdf4312a1f2d5714b2fecd9a696eb1">CalculateDistance</a>();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keywordflow">if</span> (distance &lt;= <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ad403c4b06e6ff4fe758a0e5528c84daf">distanceToAttack</a>)</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <a class="code hl_function" href="../../d8/d52/class_slime_base.html#acca4b82f932f3474d22de74265ab05c2">Attack</a>();</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <a class="code hl_function" href="../../d8/d52/class_slime_base.html#aa6026f9416ece929b0946c8f4064e715">Move</a>(distance);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    }</div>
+</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span></div>
+<div class="foldopen" id="foldopen00219" data-start="{" data-end="}">
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a79bdf4312a1f2d5714b2fecd9a696eb1">  219</a></span>    <span class="keyword">protected</span> <span class="keywordtype">float</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a79bdf4312a1f2d5714b2fecd9a696eb1">CalculateDistance</a>()</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        Vector3 target = <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#afc460be79865710e6ab0db84f509c1c3">_playerController</a>.transform.position;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        target.y = 0f;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        Vector3 origin = transform.position;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        origin.y = 0f;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keywordflow">return</span> Vector3.Distance(origin, target);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    }</div>
+</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>   <span class="comment">// ── IHittable ────────────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="foldopen" id="foldopen00239" data-start="{" data-end="}">
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#aa773fe72d3929aa2696411bbab3a1f8f">  239</a></span>    <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#aa773fe72d3929aa2696411bbab3a1f8f">Hit</a>(<span class="keywordtype">float</span> <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af0f835163fa1ba2ecc31dee976dbd2b3">damage</a>)</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a> == <span class="keyword">null</span>) <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a> = AppContainer.Get&lt;<a class="code hl_interface" href="../../de/d33/interface_i_audio_service.html">IAudioService</a>&gt;();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a63786eedf737d80c1726d9a1dabec029">TakeDamageSound</a> != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">_audioService</a>.PlaySound(<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a63786eedf737d80c1726d9a1dabec029">TakeDamageSound</a>);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a8b70355691d715e770129144ec6507f8">_isDeath</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a458f75da25ff4731c6828ba4135a1344">_lifeBar</a>.gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af286ffeff64f2d9df642170a254bc3f3">Life</a> -= <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af0f835163fa1ba2ecc31dee976dbd2b3">damage</a>;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        _lifeBar.value = <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af286ffeff64f2d9df642170a254bc3f3">Life</a>;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#af286ffeff64f2d9df642170a254bc3f3">Life</a> &lt;= 0)</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a79291f9c7cda10a541ad64261a896dc3">Die</a>();</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    }</div>
+</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="comment">// ── Muerte y disolución ──────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="foldopen" id="foldopen00262" data-start="{" data-end="}">
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a79291f9c7cda10a541ad64261a896dc3">  262</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a79291f9c7cda10a541ad64261a896dc3">Die</a>()</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        StopAllCoroutines();</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a8b70355691d715e770129144ec6507f8">_isDeath</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a096cb37d1bcdda5268aceb5284da1839">_animator</a>.SetTrigger(<span class="stringliteral">&quot;Death&quot;</span>);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a458f75da25ff4731c6828ba4135a1344">_lifeBar</a>.gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a256b96e2e14b05fbdae17239fb068a18">OnDeath</a>();</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        StartCoroutine(<a class="code hl_function" href="../../d8/d52/class_slime_base.html#ac34e7df6a63e016dd308a4c112be6a90">DissolveAfterDelay</a>());</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    }</div>
+</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span></div>
+<div class="foldopen" id="foldopen00279" data-start="{" data-end="}">
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#ac34e7df6a63e016dd308a4c112be6a90">  279</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> IEnumerator <a class="code hl_function" href="../../d8/d52/class_slime_base.html#ac34e7df6a63e016dd308a4c112be6a90">DissolveAfterDelay</a>()</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a9d6724148ee551ff12a7938e7d191970">delayBeforeStart</a>);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        Renderer[] renderers = GetComponentsInChildren&lt;Renderer&gt;();</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="comment">// Cambiar shader en todos los materiales</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        <span class="keywordflow">foreach</span> (Renderer r <span class="keywordflow">in</span> renderers)</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            <span class="keywordflow">foreach</span> (Material mat <span class="keywordflow">in</span> r.materials)</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                mat.shader = Shader.Find(<span class="stringliteral">&quot;Custom/Dissolve&quot;</span>);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                mat.SetTexture(<span class="stringliteral">&quot;_DissolveTex&quot;</span>, <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#aff42ff730fe5254fbf48d4504fbab34c">dissolveTexture</a>);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                mat.SetColor(<span class="stringliteral">&quot;_DissolveColor&quot;</span>, <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a449104c810d6df793bd3f16297b86bf3">dissolveColor</a>);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        }</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <span class="comment">// Animar la disolución</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keywordflow">while</span> (<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a7cf2df5abfa2c03ab25f89d9e044724a">dissolveProgress</a> &lt; 1f)</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a7cf2df5abfa2c03ab25f89d9e044724a">dissolveProgress</a> += Time.deltaTime / <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ade1202c4c8d584ac095a633525de5b66">dissolveTime</a>;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            <span class="keywordflow">foreach</span> (Renderer r <span class="keywordflow">in</span> renderers)</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                <span class="keywordflow">foreach</span> (Material mat <span class="keywordflow">in</span> r.materials)</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                    mat.SetFloat(<span class="stringliteral">&quot;_DissolveThreshold&quot;</span>, <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a7cf2df5abfa2c03ab25f89d9e044724a">dissolveProgress</a>);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            yield <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        Destroy(gameObject);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    }</div>
+</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span></div>
+<div class="foldopen" id="foldopen00316" data-start="{" data-end="}">
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a7f91278aa183c7700efb878dc625f30d">  316</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a7f91278aa183c7700efb878dc625f30d">CreateOrbsByPercent</a>(<span class="keywordtype">float</span> Percent, GameObject Orb)</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    {</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d52/class_slime_base.html#a1841a199a78d1cc87c845c9dba619fc4">CheckPercentSpawn</a>(Percent))</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a8b397ee1b9149c29b04667b1734b2177">InstantiateOrb</a>(Orb);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    }</div>
+</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span></div>
+<div class="foldopen" id="foldopen00329" data-start="{" data-end="}">
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a1841a199a78d1cc87c845c9dba619fc4">  329</a></span>    <span class="keyword">protected</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a1841a199a78d1cc87c845c9dba619fc4">CheckPercentSpawn</a>(<span class="keywordtype">float</span> percentToCheck)</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    {</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <span class="keywordtype">float</span> percentValue = UnityEngine.Random.Range(0, 100);</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        <span class="keywordflow">return</span> percentValue &lt;= percentToCheck;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    }</div>
+</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span></div>
+<div class="foldopen" id="foldopen00339" data-start="{" data-end="}">
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a8b397ee1b9149c29b04667b1734b2177">  339</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a8b397ee1b9149c29b04667b1734b2177">InstantiateOrb</a>(GameObject Orb)</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    {</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        Vector3 randomPos = transform.position + UnityEngine.Random.insideUnitSphere * 1f;</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        Instantiate(Orb, randomPos, quaternion.identity);</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    }</div>
+</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    <span class="comment">// ── Cooldown de acciones ─────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span></div>
+<div class="foldopen" id="foldopen00351" data-start="{" data-end="}">
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="../../d8/d52/class_slime_base.html#a916edda1269b3b46a3eae7e66f27cb51">  351</a></span>    <span class="keyword">protected</span> IEnumerator <a class="code hl_function" href="../../d8/d52/class_slime_base.html#a916edda1269b3b46a3eae7e66f27cb51">ActionCooldownRoutine</a>()</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ac0c0dff4fbb33128632f9a6db25c1be9">_nextActionTime</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a264cb6772276eef42a4d7bec27cd27c5">attackCooldown</a>);</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#ac0c0dff4fbb33128632f9a6db25c1be9">_nextActionTime</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <a class="code hl_variable" href="../../d8/d52/class_slime_base.html#a776b0ee587b5caab276c89a9e797902f">_actionCoroutine</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    }</div>
+</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>}</div>
+</div>
+<div class="ttc" id="aclass_player_controller_html"><div class="ttname"><a href="../../dc/dde/class_player_controller.html">PlayerController</a></div><div class="ttdoc">Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento,...</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d59/_player_controller_8cs_source.html#l00007">PlayerController.cs:8</a></div></div>
+<div class="ttc" id="aclass_slime_base_html"><div class="ttname"><a href="../../d8/d52/class_slime_base.html">SlimeBase</a></div><div class="ttdoc">Clase base para todos los slimes del juego. Gestiona vida, barra de vida, disolución al morir y el ci...</div><div class="ttdef"><b>Definition</b> <a href="#l00012">SlimeBase.cs:13</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a001efdb656a869be24389796b8d04de9"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a001efdb656a869be24389796b8d04de9">SlimeBase.percentSpawnMana</a></div><div class="ttdeci">float percentSpawnMana</div><div class="ttdoc">Probabilidad (0-100) de que aparezca un orbe de maná al morir.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">SlimeBase.cs:64</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a096cb37d1bcdda5268aceb5284da1839"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a096cb37d1bcdda5268aceb5284da1839">SlimeBase._animator</a></div><div class="ttdeci">Animator _animator</div><div class="ttdoc">Animator del slime, controla las transiciones de animación.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">SlimeBase.cs:20</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a0c4509d2088c046c4e3ad45504302e49"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a0c4509d2088c046c4e3ad45504302e49">SlimeBase._profileService</a></div><div class="ttdeci">IProfileService _profileService</div><div class="ttdoc">Servicio de perfiles para obtener el perfil activo del jugador.</div><div class="ttdef"><b>Definition</b> <a href="#l00092">SlimeBase.cs:92</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a1841a199a78d1cc87c845c9dba619fc4"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a1841a199a78d1cc87c845c9dba619fc4">SlimeBase.CheckPercentSpawn</a></div><div class="ttdeci">bool CheckPercentSpawn(float percentToCheck)</div><div class="ttdoc">Genera un número aleatorio entre 0 y 100 y lo compara con percentToCheck .</div><div class="ttdef"><b>Definition</b> <a href="#l00329">SlimeBase.cs:329</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a1c56ea5fcf5c26fb103c1536d66aaf4f"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a1c56ea5fcf5c26fb103c1536d66aaf4f">SlimeBase._rigidbody</a></div><div class="ttdeci">Rigidbody _rigidbody</div><div class="ttdoc">Rigidbody del slime, usado para aplicar fuerzas de movimiento.</div><div class="ttdef"><b>Definition</b> <a href="#l00018">SlimeBase.cs:18</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a256b96e2e14b05fbdae17239fb068a18"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a256b96e2e14b05fbdae17239fb068a18">SlimeBase.OnDeath</a></div><div class="ttdeci">virtual void OnDeath()</div><div class="ttdoc">Se llama justo antes de iniciar la disolución del objeto. La base suma puntuación e intenta spawnear ...</div><div class="ttdef"><b>Definition</b> <a href="#l00187">SlimeBase.cs:187</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a264cb6772276eef42a4d7bec27cd27c5"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a264cb6772276eef42a4d7bec27cd27c5">SlimeBase.attackCooldown</a></div><div class="ttdeci">float attackCooldown</div><div class="ttdoc">Tiempo en segundos que el slime espera entre acciones (ataque o movimiento).</div><div class="ttdef"><b>Definition</b> <a href="#l00027">SlimeBase.cs:27</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a2c608a79a6acd32e77150b80ec613485"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a2c608a79a6acd32e77150b80ec613485">SlimeBase._scoreService</a></div><div class="ttdeci">IScoreService _scoreService</div><div class="ttdoc">Servicio de puntuación para sumar puntos al matar al slime.</div><div class="ttdef"><b>Definition</b> <a href="#l00094">SlimeBase.cs:94</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a3b394dcb8918c8c0bf63a7d31d8fbe03"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a3b394dcb8918c8c0bf63a7d31d8fbe03">SlimeBase.Start</a></div><div class="ttdeci">virtual void Start()</div><div class="ttdoc">Inicializa referencias de componentes, configura la barra de vida y los valores de estado.</div><div class="ttdef"><b>Definition</b> <a href="#l00109">SlimeBase.cs:109</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a449104c810d6df793bd3f16297b86bf3"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a449104c810d6df793bd3f16297b86bf3">SlimeBase.dissolveColor</a></div><div class="ttdeci">Color dissolveColor</div><div class="ttdoc">Color del borde que aparece durante la disolución.</div><div class="ttdef"><b>Definition</b> <a href="#l00049">SlimeBase.cs:49</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a458f75da25ff4731c6828ba4135a1344"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a458f75da25ff4731c6828ba4135a1344">SlimeBase._lifeBar</a></div><div class="ttdeci">Slider _lifeBar</div><div class="ttdoc">Slider de la UI que representa la barra de vida del slime.</div><div class="ttdef"><b>Definition</b> <a href="#l00042">SlimeBase.cs:42</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a4709d47b8dea5576ae2c918a67398b95"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a4709d47b8dea5576ae2c918a67398b95">SlimeBase.orbVida</a></div><div class="ttdeci">GameObject orbVida</div><div class="ttdoc">Prefab del orbe de vida que puede spawnear al morir el slime.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">SlimeBase.cs:58</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a62d61da8a0eb2054d0135ceb15ad7db1"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a62d61da8a0eb2054d0135ceb15ad7db1">SlimeBase.orbMana</a></div><div class="ttdeci">GameObject orbMana</div><div class="ttdoc">Prefab del orbe de maná que puede spawnear al morir el slime.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">SlimeBase.cs:60</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a63786eedf737d80c1726d9a1dabec029"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a63786eedf737d80c1726d9a1dabec029">SlimeBase.TakeDamageSound</a></div><div class="ttdeci">AudioClip TakeDamageSound</div><div class="ttdoc">Sonido que se reproduce cuando el slime recibe daño.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">SlimeBase.cs:69</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a6bdcf516c4b66d4d0c9341143a98a668"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a6bdcf516c4b66d4d0c9341143a98a668">SlimeBase._audioService</a></div><div class="ttdeci">IAudioService _audioService</div><div class="ttdoc">Servicio de audio inyectado desde el contenedor de dependencias.</div><div class="ttdef"><b>Definition</b> <a href="#l00090">SlimeBase.cs:90</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a776b0ee587b5caab276c89a9e797902f"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a776b0ee587b5caab276c89a9e797902f">SlimeBase._actionCoroutine</a></div><div class="ttdeci">Coroutine _actionCoroutine</div><div class="ttdoc">Referencia a la corrutina del cooldown de acciones, para evitar iniciarla varias veces.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">SlimeBase.cs:88</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a79291f9c7cda10a541ad64261a896dc3"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a79291f9c7cda10a541ad64261a896dc3">SlimeBase.Die</a></div><div class="ttdeci">virtual void Die()</div><div class="ttdoc">Ejecuta la secuencia de muerte: detiene corrutinas, activa la animación de muerte,...</div><div class="ttdef"><b>Definition</b> <a href="#l00262">SlimeBase.cs:262</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a79bdf4312a1f2d5714b2fecd9a696eb1"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a79bdf4312a1f2d5714b2fecd9a696eb1">SlimeBase.CalculateDistance</a></div><div class="ttdeci">float CalculateDistance()</div><div class="ttdoc">Calcula la distancia plana (ignorando el eje Y) entre el slime y el jugador.</div><div class="ttdef"><b>Definition</b> <a href="#l00219">SlimeBase.cs:219</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a7cf2df5abfa2c03ab25f89d9e044724a"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a7cf2df5abfa2c03ab25f89d9e044724a">SlimeBase.dissolveProgress</a></div><div class="ttdeci">float dissolveProgress</div><div class="ttdoc">Progreso actual de la disolución, de 0 (sin disolver) a 1 (completamente disuelto).</div><div class="ttdef"><b>Definition</b> <a href="#l00086">SlimeBase.cs:86</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a7f91278aa183c7700efb878dc625f30d"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a7f91278aa183c7700efb878dc625f30d">SlimeBase.CreateOrbsByPercent</a></div><div class="ttdeci">void CreateOrbsByPercent(float Percent, GameObject Orb)</div><div class="ttdoc">Comprueba la probabilidad y, si se cumple, instancia el orbe indicado cerca del slime.</div><div class="ttdef"><b>Definition</b> <a href="#l00316">SlimeBase.cs:316</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a8b21b4bc3a81c2f9bb0837882eac54c1"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a8b21b4bc3a81c2f9bb0837882eac54c1">SlimeBase.puntuacion</a></div><div class="ttdeci">int puntuacion</div><div class="ttdoc">Puntos que se suman al perfil del jugador al matar este slime.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">SlimeBase.cs:37</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a8b397ee1b9149c29b04667b1734b2177"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a8b397ee1b9149c29b04667b1734b2177">SlimeBase.InstantiateOrb</a></div><div class="ttdeci">void InstantiateOrb(GameObject Orb)</div><div class="ttdef"><b>Definition</b> <a href="#l00339">SlimeBase.cs:339</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a8b70355691d715e770129144ec6507f8"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a8b70355691d715e770129144ec6507f8">SlimeBase._isDeath</a></div><div class="ttdeci">bool _isDeath</div><div class="ttdoc">Indica si el slime ya ha muerto. Bloquea el Update y el Hit cuando es true.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">SlimeBase.cs:79</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a916edda1269b3b46a3eae7e66f27cb51"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a916edda1269b3b46a3eae7e66f27cb51">SlimeBase.ActionCooldownRoutine</a></div><div class="ttdeci">IEnumerator ActionCooldownRoutine()</div><div class="ttdoc">Corrutina que bloquea nuevas acciones durante attackCooldown segundos y después las habilita de nuevo...</div><div class="ttdef"><b>Definition</b> <a href="#l00351">SlimeBase.cs:351</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a99ac7b232defb9c96a027ccf010d555a"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a99ac7b232defb9c96a027ccf010d555a">SlimeBase.Update</a></div><div class="ttdeci">virtual void Update()</div><div class="ttdoc">Cada frame busca al jugador si falta la referencia, comprueba si el slime está muerto y lanza la corr...</div><div class="ttdef"><b>Definition</b> <a href="#l00128">SlimeBase.cs:128</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a9d6724148ee551ff12a7938e7d191970"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a9d6724148ee551ff12a7938e7d191970">SlimeBase.delayBeforeStart</a></div><div class="ttdeci">float delayBeforeStart</div><div class="ttdoc">Segundos que se espera tras la muerte antes de iniciar la disolución.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">SlimeBase.cs:51</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_a9d81f6cd010a424404612e595e958df7"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#a9d81f6cd010a424404612e595e958df7">SlimeBase.CheckState</a></div><div class="ttdeci">void CheckState()</div><div class="ttdoc">Evalúa si el slime debe atacar o moverse en función de la distancia al jugador. Solo actúa si _nextAc...</div><div class="ttdef"><b>Definition</b> <a href="#l00203">SlimeBase.cs:203</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_aa6026f9416ece929b0946c8f4064e715"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#aa6026f9416ece929b0946c8f4064e715">SlimeBase.Move</a></div><div class="ttdeci">virtual void Move(float distanceToPlayer)</div><div class="ttdoc">Lógica de movimiento específica del enemigo. La base reproduce el JumpSound; las subclases deben llam...</div><div class="ttdef"><b>Definition</b> <a href="#l00163">SlimeBase.cs:163</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_aa6f1d7c0f8e408dd57fc75de7bdb6706"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#aa6f1d7c0f8e408dd57fc75de7bdb6706">SlimeBase.attackLayer</a></div><div class="ttdeci">LayerMask attackLayer</div><div class="ttdoc">Máscara de capas que el slime puede impactar con su ataque.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">SlimeBase.cs:33</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_aa773fe72d3929aa2696411bbab3a1f8f"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#aa773fe72d3929aa2696411bbab3a1f8f">SlimeBase.Hit</a></div><div class="ttdeci">virtual void Hit(float damage)</div><div class="ttdoc">Recibe un golpe, reduce la vida y activa la barra de vida. Si la vida llega a 0 o menos,...</div><div class="ttdef"><b>Definition</b> <a href="#l00239">SlimeBase.cs:239</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_ab0f5d40ea9d17fdf449408ba4754f7da"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#ab0f5d40ea9d17fdf449408ba4754f7da">SlimeBase.AttackSound</a></div><div class="ttdeci">AudioClip AttackSound</div><div class="ttdoc">Sonido que se reproduce cuando el slime realiza un ataque.</div><div class="ttdef"><b>Definition</b> <a href="#l00073">SlimeBase.cs:73</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_abb96de4b96b110f16d6d09e0f404a6fe"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#abb96de4b96b110f16d6d09e0f404a6fe">SlimeBase.OnUpdate</a></div><div class="ttdeci">virtual void OnUpdate()</div><div class="ttdoc">Se llama cada frame desde Update (ya filtrado por null y muerte). Sobreescribe para añadir lógica ext...</div><div class="ttdef"><b>Definition</b> <a href="#l00177">SlimeBase.cs:177</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_ac0c0dff4fbb33128632f9a6db25c1be9"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#ac0c0dff4fbb33128632f9a6db25c1be9">SlimeBase._nextActionTime</a></div><div class="ttdeci">bool _nextActionTime</div><div class="ttdoc">Bandera que habilita la siguiente acción del slime. Se pone a false al ejecutar una acción y vuelve a...</div><div class="ttdef"><b>Definition</b> <a href="#l00084">SlimeBase.cs:84</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_ac34e7df6a63e016dd308a4c112be6a90"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#ac34e7df6a63e016dd308a4c112be6a90">SlimeBase.DissolveAfterDelay</a></div><div class="ttdeci">virtual IEnumerator DissolveAfterDelay()</div><div class="ttdoc">Corrutina que espera delayBeforeStart segundos, luego aplica el shader de disolución a todos los rend...</div><div class="ttdef"><b>Definition</b> <a href="#l00279">SlimeBase.cs:279</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_ac6fd4e4697ca6fa1d8a7c0740f4d378d"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#ac6fd4e4697ca6fa1d8a7c0740f4d378d">SlimeBase.Awake</a></div><div class="ttdeci">virtual void Awake()</div><div class="ttdoc">Resuelve las dependencias de servicios desde el contenedor de la aplicación.</div><div class="ttdef"><b>Definition</b> <a href="#l00100">SlimeBase.cs:100</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_acca4b82f932f3474d22de74265ab05c2"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#acca4b82f932f3474d22de74265ab05c2">SlimeBase.Attack</a></div><div class="ttdeci">virtual void Attack()</div><div class="ttdoc">Lógica de ataque específica del enemigo. La base reproduce el AttackSound; las subclases deben llamar...</div><div class="ttdef"><b>Definition</b> <a href="#l00150">SlimeBase.cs:150</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_ace87a5128805caa571168290e67859c0"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#ace87a5128805caa571168290e67859c0">SlimeBase.JumpSound</a></div><div class="ttdeci">AudioClip JumpSound</div><div class="ttdoc">Sonido que se reproduce cuando el slime salta o se mueve.</div><div class="ttdef"><b>Definition</b> <a href="#l00071">SlimeBase.cs:71</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_ad403c4b06e6ff4fe758a0e5528c84daf"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#ad403c4b06e6ff4fe758a0e5528c84daf">SlimeBase.distanceToAttack</a></div><div class="ttdeci">float distanceToAttack</div><div class="ttdoc">Distancia máxima al jugador para activar el ataque en lugar del movimiento.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">SlimeBase.cs:25</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_ade1202c4c8d584ac095a633525de5b66"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#ade1202c4c8d584ac095a633525de5b66">SlimeBase.dissolveTime</a></div><div class="ttdeci">float dissolveTime</div><div class="ttdoc">Duración en segundos de la animación de disolución completa.</div><div class="ttdef"><b>Definition</b> <a href="#l00053">SlimeBase.cs:53</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_af0f835163fa1ba2ecc31dee976dbd2b3"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#af0f835163fa1ba2ecc31dee976dbd2b3">SlimeBase.damage</a></div><div class="ttdeci">float damage</div><div class="ttdoc">Daño que inflige el slime al jugador por ataque.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">SlimeBase.cs:29</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_af286ffeff64f2d9df642170a254bc3f3"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#af286ffeff64f2d9df642170a254bc3f3">SlimeBase.Life</a></div><div class="ttdeci">float Life</div><div class="ttdoc">Vida actual del slime. Se reduce con cada golpe recibido.</div><div class="ttdef"><b>Definition</b> <a href="#l00077">SlimeBase.cs:77</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_af5723b69deb7938b13625f790c13fb25"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#af5723b69deb7938b13625f790c13fb25">SlimeBase.percentSpawnLife</a></div><div class="ttdeci">float percentSpawnLife</div><div class="ttdoc">Probabilidad (0-100) de que aparezca un orbe de vida al morir.</div><div class="ttdef"><b>Definition</b> <a href="#l00062">SlimeBase.cs:62</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_af9c7f5bb0ebedcc7a87b5e14f70a660b"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#af9c7f5bb0ebedcc7a87b5e14f70a660b">SlimeBase.maxLife</a></div><div class="ttdeci">float maxLife</div><div class="ttdoc">Vida máxima del slime. También es el valor inicial de Life.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">SlimeBase.cs:31</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_afc460be79865710e6ab0db84f509c1c3"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#afc460be79865710e6ab0db84f509c1c3">SlimeBase._playerController</a></div><div class="ttdeci">PlayerController _playerController</div><div class="ttdoc">Referencia al controlador del jugador, localizado en escena.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">SlimeBase.cs:16</a></div></div>
+<div class="ttc" id="aclass_slime_base_html_aff42ff730fe5254fbf48d4504fbab34c"><div class="ttname"><a href="../../d8/d52/class_slime_base.html#aff42ff730fe5254fbf48d4504fbab34c">SlimeBase.dissolveTexture</a></div><div class="ttdeci">Texture2D dissolveTexture</div><div class="ttdoc">Textura de ruido usada por el shader Custom/Dissolve para controlar el patrón de disolución.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">SlimeBase.cs:47</a></div></div>
+<div class="ttc" id="ainterface_i_audio_service_html"><div class="ttname"><a href="../../de/d33/interface_i_audio_service.html">IAudioService</a></div><div class="ttdoc">Servicio encargado de gestionar la reproducción de música y efectos de sonido del juego mediante el c...</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d2b/_i_audio_service_8cs_source.html#l00006">IAudioService.cs:7</a></div></div>
+<div class="ttc" id="ainterface_i_profile_service_html"><div class="ttname"><a href="../../d1/df4/interface_i_profile_service.html">IProfileService</a></div><div class="ttdoc">Implementación de IProfileService que persiste los perfiles de usuario como archivos JSON en Applicat...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/de5/_i_profile_service_8cs_source.html#l00008">IProfileService.cs:9</a></div></div>
+<div class="ttc" id="ainterface_i_score_service_html"><div class="ttname"><a href="../../de/df6/interface_i_score_service.html">IScoreService</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d74/_i_score_service_8cs_source.html#l00004">IScoreService.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_4edcbb236dfd51dd81727243a38df6a0.html">Scripts</a></li><li class="navelem"><a href="../../dir_688c4ae6a1dfa8d0313260c50be64643.html">Enemy</a></li><li class="navelem"><a href="../../da/d76/_slime_base_8cs.html">SlimeBase.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

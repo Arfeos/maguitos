@@ -1,6 +1,8 @@
 using System;
 using UnityEngine.Localization;
-
+/// <summary>
+/// Interfaz que gestiona los pasos que se pueden meter dentro de un workflow
+/// </summary>
 public interface IStep
 {
     // Nombre del Step

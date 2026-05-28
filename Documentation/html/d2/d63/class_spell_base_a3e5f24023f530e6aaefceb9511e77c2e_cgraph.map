@@ -1,0 +1,9 @@
+<map id="SpellBase.CargarHechizo" name="SpellBase.CargarHechizo">
+<area shape="rect" id="Node000001" title="Corrutina que gestiona la carga progresiva del hechizo. Reproduce sonido de carga y avanza hasta alca..." alt="" coords="5,31,177,57"/>
+<area shape="rect" id="Node000002" href="$de/d33/interface_i_audio_service.html#aaca3ae84921b7d0838e7917e1c07bff7" title="Reproduce un efecto de sonido en bucle continuo y permite modificar su velocidad o tono." alt="" coords="225,5,422,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,32,212,31,207,32,178,37"/>
+<area shape="rect" id="Node000003" href="$d2/d63/class_spell_base.html#af8754964272cfc3e6cd6bf8b1f2e8392" title="Detiene el sonido de carga del hechizo si estaba reproduciéndose." alt="" coords="228,56,419,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,51,214,57,209,57,177,56"/>
+<area shape="rect" id="Node000004" href="$de/d33/interface_i_audio_service.html#aa49023d2d537957c3bdc24f7f0feadf8" title="Detiene la reproducción de un efecto de sonido específico." alt="" coords="470,56,640,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="419,67,457,69,452,69,419,72"/>
+</map>

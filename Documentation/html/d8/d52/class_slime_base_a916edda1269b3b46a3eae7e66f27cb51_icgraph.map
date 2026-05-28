@@ -1,0 +1,5 @@
+<map id="SlimeBase.ActionCooldownRoutine" name="SlimeBase.ActionCooldownRoutine">
+<area shape="rect" id="Node000001" title="Corrutina que bloquea nuevas acciones durante attackCooldown segundos y después las habilita de nuevo..." alt="" coords="184,5,367,48"/>
+<area shape="rect" id="Node000002" href="$d8/d52/class_slime_base.html#a99ac7b232defb9c96a027ccf010d555a" title="Cada frame busca al jugador si falta la referencia, comprueba si el slime está muerto y lanza la corr..." alt="" coords="5,13,136,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,27,136,29,136,24,171,26"/>
+</map>

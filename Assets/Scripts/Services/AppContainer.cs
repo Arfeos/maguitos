@@ -7,17 +7,17 @@ using System.Collections.Generic;
 /// </summary>
 public static class AppContainer
 {
-    // Diccionario con los servicios registrados de la aplicación
+    // Diccionario con los servicios registrados de la aplicaciÃ³n
     private static Dictionary<Type, Func<object>> _servicesRegistered = new Dictionary<Type, Func<object>>();
 
-    // Diccionario con los servicios instanciados (singleton) de la aplicación
+    // Diccionario con los servicios instanciados (singleton) de la aplicaciÃ³n
     private static Dictionary<Type, object> _services = new Dictionary<Type, object>();
 
     /// <summary>
     /// Registra un servicio
     /// </summary>
     /// <typeparam name="TInterface">Tipo de objeto a registrar</typeparam>
-    /// <param name="function">Función para instanciar el objeto cuando se solicite por primera vez</param>
+    /// <param name="function">FunciÃ³n para instanciar el objeto cuando se solicite por primera vez</param>
     public static void Register<T>(Func<object> function)
     {
         _servicesRegistered.Add(typeof(T), function);

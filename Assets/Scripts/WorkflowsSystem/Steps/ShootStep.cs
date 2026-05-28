@@ -3,7 +3,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
-
+/// <summary>
+/// Paso que se completa cuando el jugador dispara
+/// </summary>
 public class ShootStep : IStep
 {
     // --- Variables ---

@@ -1,0 +1,17 @@
+<map id="SpellBase" name="SpellBase">
+<area shape="rect" id="Node000001" title="Clase parcial encargada de definir la estructura base de un hechizo. Contiene elementos comunes utili..." alt="" coords="247,80,327,107"/>
+<area shape="rect" id="Node000003" href="$d0/d08/class_acid_bolt.html" title=" " alt="" coords="5,155,76,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,113,77,159,75,154,231,108"/>
+<area shape="rect" id="Node000004" href="$d3/d52/class_fireball.html" title=" " alt="" coords="100,155,163,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="249,113,160,157,158,152,244,114"/>
+<area shape="rect" id="Node000005" href="$d7/da1/class_solar_flare.html" title=" " alt="" coords="187,155,267,181"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="270,118,239,156,236,152,265,120"/>
+<area shape="rect" id="Node000006" href="$d2/d57/class_spell_antimatter.html" title=" " alt="" coords="292,155,402,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="308,116,339,155,334,154,306,121"/>
+<area shape="rect" id="Node000007" href="$d0/dd7/class_spell_lanza_de_luz.html" title=" " alt="" coords="427,155,550,181"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="337,110,456,154,450,154,336,115"/>
+<area shape="rect" id="Node000008" href="$d4/d9a/class_spell_light_spread.html" title=" " alt="" coords="574,155,694,181"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="343,104,577,153,572,155,342,109"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="232,5,343,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,46,289,81,285,78,286,50"/>
+</map>

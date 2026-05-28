@@ -13,8 +13,10 @@ public class Opendoor : MonoBehaviour, IHittable
     private Animator _animatorPuerta;
     private bool _estatusPuerta = false;
     private bool isOpening = false;
-
-
+    /// <summary>
+    /// Se ejecuta cuando algo golpea el boton
+    /// </summary>
+    /// <param name="damage">Parete de la interfaz no hace nada aqui</param>
     public void Hit(float damage)
     {
         if (!isOpening) { 
@@ -24,7 +26,10 @@ public class Opendoor : MonoBehaviour, IHittable
             StartCoroutine(ResetOpening());
         }
     }
-
+    /// <summary>
+    /// Espera para que la puerta pueda volver a activarse
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ResetOpening()
     {
         yield return new WaitForSeconds(1f);

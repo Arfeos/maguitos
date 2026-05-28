@@ -1,0 +1,7 @@
+<map id="LanternCollect" name="LanternCollect">
+<area shape="rect" id="Node000001" title="Objeto coleccionable que representa una linterna. Al ser recogida por el jugador, se acopla al socket..." alt="" coords="71,80,176,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,42,116,79,110,80,81,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="141,5,232,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,43,136,82,133,78,163,45"/>
+</map>

@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
-
+/// <summary>
+/// Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento, rotación de cámara, salto, agacharse, animaciones, sonidos, pausa, cambio de hechizos y daño recibido. Se comunica con múltiples servicios como <see cref="ICharacterService"/>, <see cref="IEventService"/>, <see cref="IAudioService"/>, <see cref="IPauseService"/> y <see cref="IProfileService"/>. 
+/// También utiliza <see cref="PlayerInputManager"/> para gestionar las entradas del jugador
+/// </summary>
 public class PlayerController : MonoBehaviour, IHittable
 {
     [Header("Movimiento")]
@@ -36,7 +39,6 @@ public class PlayerController : MonoBehaviour, IHittable
     private Vector2 dirAnimation;
 
     private float yRotation = 0f;
-    private float xRotation = 0f;
 
     private IPauseService _pauseService;
     private IEventService _eventService;
@@ -46,8 +48,10 @@ public class PlayerController : MonoBehaviour, IHittable
     private IAudioService _audioService;
     private Animator _animator;
 
-    
 
+    /// <summary>
+    /// Método ejecutado durante la inicialización del objeto. Configura el mapa de controles mediante <see cref="PlayerInputManager"/>, obtiene referencias a servicios mediante <see cref="AppContainer"/>, registra eventos de <see cref="PreferenceChangeEvent"/> y configura la cámara y el cursor
+    /// </summary>
     private void Awake()
     {
         PlayerInputManager.SwitchControlMap(PlayerInputManager.ControlMap.Player);
@@ -63,13 +67,19 @@ public class PlayerController : MonoBehaviour, IHittable
         _animator = GetComponent<Animator>();
         updatePreferences();
     }
+    /// <summary>
+    /// Método ejecutado al destruir el objeto. Elimina la suscripción al evento <see cref="PreferenceChangeEvent"/> desde <see cref="IEventService"/>
+    /// </summary>
     private void OnDestroy()
     {
         _eventService.Unsubscribe<PreferenceChangeEvent>(updatePreferences);
     }
+    /// <summary>
+    /// Método ejecutado automáticamente en cada frame. Gestiona las funciones principales del jugador como movimiento, cámara, agacharse, recarga, cambio de hechizos, pausa y animaciones
+    /// </summary>
     private void Update()
     {
-        Look();
+        Look ();
         Move();
         HandleCrouch();
         handleReload();
@@ -79,22 +89,25 @@ public class PlayerController : MonoBehaviour, IHittable
     }
 
 
-
-    private void Look()
+    /// <summary>
+    /// Gestiona la rotación de la cámara y del personaje utilizando las entradas proporcionadas por <see cref="PlayerInputManager"/>
+    /// </summary>
+    private void Look ()
     {
         Vector2  Input = PlayerInputManager.Actions.Player.Look.ReadValue<Vector2>();
 
         float  X =  Input.x * Sensitivity * xDirection;
         float  Y =  Input.y * Sensitivity * yDirection;
 
-        yRotation -= Y; 
-        xRotation += X;
+        yRotation -=  Y;
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
 
-        cameraTransform.localRotation = Quaternion.Euler(yRotation , xRotation, 0f);
+        cameraTransform.localRotation = Quaternion.Euler(yRotation , 0f, 0f);
         transform.Rotate(Vector3.up *  X);
     }
-
+    /// <summary>
+    /// Gestiona el movimiento del jugador, incluyendo desplazamiento, gravedad, salto, sprint y reproducción de sonidos mediante <see cref="IAudioService"/>
+    /// </summary>
     private void Move()
     {
         var inputPlayer = PlayerInputManager.Actions.Player.Move.ReadValue<Vector2>();
@@ -160,7 +173,9 @@ public class PlayerController : MonoBehaviour, IHittable
             characterController.Move(move * Velocity * Time.deltaTime);
         
     }
-
+    /// <summary>
+    /// Gestiona el estado agachado del jugador modificando progresivamente la altura del <see cref="CharacterController"/> y la posición de la cámara
+    /// </summary>
     private void HandleCrouch()
     {
         if (PlayerInputManager.Actions.Player.Crouch.WasPressedThisFrame())
@@ -183,8 +198,9 @@ public class PlayerController : MonoBehaviour, IHittable
         cameraTransform.localPosition = camPos;
 
     }
-
-
+    /// <summary>
+    /// Detecta la entrada de recarga mediante <see cref="PlayerInputManager"/> y publica un evento <see cref="ReloadEvent"/> mediante <see cref="IEventService"/>
+    /// </summary>
     public void handleReload()
     {
         if (PlayerInputManager.Actions.Player.Reload.WasPressedThisFrame())
@@ -193,7 +209,9 @@ public class PlayerController : MonoBehaviour, IHittable
             _eventService.Publish(reloadEvent);
         }
     }
-
+    /// <summary>
+    /// Detecta el cambio de hechizo mediante <see cref="PlayerInputManager"/> y publica eventos <see cref="SpellChangeEvent"/> mediante <see cref="IEventService"/>
+    /// </summary>
     public void handleChangeWeapon()
     {
         if (PlayerInputManager.Actions.Player.Next.WasPressedThisFrame())
@@ -209,12 +227,18 @@ public class PlayerController : MonoBehaviour, IHittable
             _eventService.Publish(reloadEvent);
         }
     }
+    /// <summary>
+    /// Detecta la acción de pausa mediante <see cref="PlayerInputManager"/> y alterna el estado del juego utilizando <see cref="IPauseService"/>
+    /// </summary>
     private void handlePause()
     {
         if (PlayerInputManager.Actions.Player.pause.WasPressedThisFrame()) {
             _pauseService.TogglePause();
         }
     }
+    /// <summary>
+    /// Actualiza los parámetros del <see cref="Animator"/> para sincronizar las animaciones con el estado actual del jugador, como movimiento, salto, carrera o agacharse
+    /// </summary>
     private void SetAnimation()
     {
         if (!characterController.isGrounded)
@@ -239,14 +263,18 @@ public class PlayerController : MonoBehaviour, IHittable
         _animator.SetBool("isRunning", isRunning);
 
     }
-
+    /// <summary>
+    /// Implementación de la interfaz IHittable. Aplica daño al personaje utilizando <see cref="ICharacterService"/>
+    /// </summary>
+    /// <param name="damage"></param>
     public void Hit(float damage)
     {
         _characterService.TakeDamage((int)damage);
     }
     /// <summary>
-    /// actualiza las preferencias del jugador en base a su perfil
+    /// Actualiza las preferencias del jugador utilizando los datos almacenados en <see cref="UserProfile"/> obtenidos mediante <see cref="IProfileService"/>. Modifica sensibilidad y configuración de ejes
     /// </summary>
+    /// <param name="game">Evento recibido desde <see cref="IEventService"/> para actualizar preferencias. Valor por defecto null</param>
     private void updatePreferences(GameEventBase game = null)
     {
         if (_profileService == null) return;
@@ -258,6 +286,6 @@ public class PlayerController : MonoBehaviour, IHittable
             yDirection = profile.settings.axisYDirection;
         }
     }
-    //TODO: alo pulsar al escape, bloquear el tiempo, volver a mostrar el cursor y mostrar un menu de pausa, con opciones para volver al menu principal, salir del juego o volver a jugar y si se vuelve a pulsar, bloquear el curso y hacerlo invisible
+
 
 }

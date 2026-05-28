@@ -1,0 +1,27 @@
+<map id="Gráfico de jerarquía de clases" name="Gráfico de jerarquía de clases">
+<area shape="rect" id="Node000000" href="$da/d8b/interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="5,284,58,311"/>
+<area shape="rect" id="Node000001" href="$de/da3/class_camera_move_step.html" title="Clase encargada de implementar un paso dentro de un sistema de tutorial o guía interactiva mediante l..." alt="" coords="111,5,238,32"/>
+<area shape="poly" id="edge81_Node000000_Node000001" title=" " alt="" coords="30,268,34,220,45,160,67,98,83,68,104,42,122,30,119,35,108,46,88,71,72,100,51,162,40,221,36,269"/>
+<area shape="rect" id="Node000002" href="$d0/d1a/class_crouch_step.html" title="Paso que se activa cuando el jugador pulsa el boton de agacharse." alt="" coords="129,56,220,83"/>
+<area shape="poly" id="edge82_Node000000_Node000002" title=" " alt="" coords="33,268,40,229,52,183,73,135,104,93,130,77,127,82,107,97,78,137,57,184,45,230,38,269"/>
+<area shape="rect" id="Node000003" href="$da/dfc/class_leave_tutorial_step.html" title="Paso que se activa solo al iniciarse para que salte el aviso de que ha terminado el tutorial." alt="" coords="111,107,238,133"/>
+<area shape="poly" id="edge83_Node000000_Node000003" title=" " alt="" coords="37,268,60,206,79,173,104,143,124,132,121,136,107,147,83,176,65,208,42,270"/>
+<area shape="rect" id="Node000004" href="$d1/d23/class_move_step.html" title="Paso que se completa cuando el jugador se mueve." alt="" coords="134,157,214,184"/>
+<area shape="poly" id="edge84_Node000000_Node000004" title=" " alt="" coords="44,269,69,230,104,194,135,179,132,183,107,198,73,234,49,271"/>
+<area shape="rect" id="Node000005" href="$d6/d67/class_open_door_step.html" title="Step que se completa cuando se cambia la posicion de una puerta determinada." alt="" coords="121,208,228,235"/>
+<area shape="poly" id="edge85_Node000000_Node000005" title=" " alt="" coords="60,273,104,244,133,233,129,237,107,249,64,276"/>
+<area shape="rect" id="Node000006" href="$d5/db8/class_pick_up_spell_step.html" title="Paso que se completa cuando el jugador tiene un hechizo en el inventario." alt="" coords="114,259,234,285"/>
+<area shape="poly" id="edge86_Node000000_Node000006" title=" " alt="" coords="71,288,116,281,112,285,75,292"/>
+<area shape="rect" id="Node000007" href="$d1/dcd/class_press_space_step.html" title="Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep...." alt="" coords="115,309,234,336"/>
+<area shape="poly" id="edge87_Node000000_Node000007" title=" " alt="" coords="72,302,117,310,112,314,74,307"/>
+<area shape="rect" id="Node000008" href="$d6/d5c/class_reload_step.html" title="Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep...." alt="" coords="130,360,219,387"/>
+<area shape="poly" id="edge88_Node000000_Node000008" title=" " alt="" coords="61,317,107,346,133,358,129,360,104,350,62,323"/>
+<area shape="rect" id="Node000009" href="$db/dad/class_shoot_step.html" title="Paso que se completa cuando el jugador dispara." alt="" coords="133,411,216,437"/>
+<area shape="poly" id="edge89_Node000000_Node000009" title=" " alt="" coords="46,322,73,361,107,397,135,412,130,414,104,401,69,364,47,327"/>
+<area shape="rect" id="Node000010" href="$d0/df9/class_shooting_range_step.html" title="Paso que se activa cuando se dispara a un cartel." alt="" coords="106,461,243,488"/>
+<area shape="poly" id="edge90_Node000000_Node000010" title=" " alt="" coords="40,323,65,387,83,419,107,447,125,460,120,461,104,451,79,422,60,389,39,328"/>
+<area shape="rect" id="Node000011" href="$dc/db4/class_take_lantern_step.html" title="Paso del tutorial que enseña al jugador a recoger y encender la linterna. Se completa en dos fases: p..." alt="" coords="115,512,234,539"/>
+<area shape="poly" id="edge91_Node000000_Node000011" title=" " alt="" coords="36,324,45,364,57,410,78,457,108,498,124,511,119,512,104,502,73,460,52,412,40,366,36,329"/>
+<area shape="rect" id="Node000012" href="$d2/d5d/class_take_orbs_step.html" title="Paso que se completa cuando se recoge un orbve de mana y otro de vida." alt="" coords="122,563,226,589"/>
+<area shape="poly" id="edge92_Node000000_Node000012" title=" " alt="" coords="33,323,40,374,51,433,72,495,88,523,108,549,124,563,119,563,104,553,83,526,67,497,45,434,34,374,33,329"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Fireball" name="Fireball">
+<area shape="rect" id="Node000001" title=" " alt="" coords="29,155,93,181"/>
+<area shape="rect" id="Node000002" href="$d2/d63/class_spell_base.html" title="Clase parcial encargada de definir la estructura base de un hechizo. Contiene elementos comunes utili..." alt="" coords="21,80,101,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,121,64,155,58,154,59,124"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,45,64,80,58,79,60,50"/>
+</map>

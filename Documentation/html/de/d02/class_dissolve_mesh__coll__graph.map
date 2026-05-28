@@ -1,0 +1,5 @@
+<map id="DissolveMesh" name="DissolveMesh">
+<area shape="rect" id="Node000001" title="Componente standalone que aplica el shader Custom/Dissolve al Renderer del objeto y lo destruye al te..." alt="" coords="9,80,113,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,46,64,80,58,79,59,50"/>
+</map>

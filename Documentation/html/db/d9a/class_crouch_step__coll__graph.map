@@ -1,0 +1,5 @@
+<map id="CrouchStep" name="CrouchStep">
+<area shape="rect" id="Node000001" title="Paso que se activa cuando el jugador pulsa el boton de agacharse." alt="" coords="5,80,96,107"/>
+<area shape="rect" id="Node000002" href="$da/d8b/interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="24,5,77,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,46,53,80,48,79,49,50"/>
+</map>

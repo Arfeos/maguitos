@@ -3,7 +3,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
-
+/// <summary>
+/// Paso que se activa cuando el jugador pulsa el boton de agacharse
+/// </summary>
 public class CrouchStep : IStep
 {
     // --- Variables ---

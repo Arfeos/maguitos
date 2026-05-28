@@ -1,0 +1,11 @@
+<map id="BaseButton" name="BaseButton">
+<area shape="rect" id="Node000001" title="Clase base para botones de la UI que reproducen un sonido al ser pulsados. Las subclases pueden sobre..." alt="" coords="116,80,205,107"/>
+<area shape="rect" id="Node000003" href="$dd/d77/class_back_button.html" title="Botón que navega a la escena anterior usando ISceneService. Hereda la reproducción de sonido de BaseB..." alt="" coords="5,155,95,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,116,71,156,68,152,126,114"/>
+<area shape="rect" id="Node000004" href="$d1/d4b/class_quit_button.html" title="Botón que cierra la aplicación al ser pulsado. Hereda la reproducción de sonido de BaseButton." alt="" coords="119,155,202,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,121,163,156,158,153,159,124"/>
+<area shape="rect" id="Node000005" href="$d3/d8b/class_scene_button.html" title="Botón que carga una escena específica usando ISceneService. La escena de destino se configura desde e..." alt="" coords="226,155,322,181"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="194,113,257,154,251,154,192,118"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="105,5,216,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,46,163,81,158,79,159,50"/>
+</map>

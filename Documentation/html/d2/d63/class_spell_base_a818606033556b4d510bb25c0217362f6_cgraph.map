@@ -1,0 +1,9 @@
+<map id="SpellBase.LanzarHechizo" name="SpellBase.LanzarHechizo">
+<area shape="rect" id="Node000001" title="Intenta lanzar un hechizo si hay mana suficiente y no se está casteando. Delega en el método correspo..." alt="" coords="5,56,177,83"/>
+<area shape="rect" id="Node000002" href="$d2/d63/class_spell_base.html#ab72bcd8726a9fc925bbb7e21e1924ff9" title="Gestiona el lanzamiento de un hechizo de tipo bola. Si es de tipo cargado, verifica carga máxima y ma..." alt="" coords="228,5,391,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,53,236,35,231,37,153,58"/>
+<area shape="rect" id="Node000003" href="$d2/d63/class_spell_base.html#a5c1e6bad5616c86da2045b5aa9ec6bdf" title="Gestiona el lanzamiento de un hechizo de tipo rayo. Si es de tipo cargado, verifica que se haya alcan..." alt="" coords="227,56,392,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,67,213,69,208,70,177,72"/>
+<area shape="rect" id="Node000004" href="$de/d33/interface_i_audio_service.html#acb8a7d08c3cd8660a5406c5011c79fe9" title="Reproduce un efecto de sonido una sola vez. Incluye una restricción temporal para evitar reproducir r..." alt="" coords="225,107,394,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="152,81,236,102,231,103,152,86"/>
+</map>

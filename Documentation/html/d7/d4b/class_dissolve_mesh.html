@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la clase DissolveMesh</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d7/d4b/class_dissolve_mesh.html','../../','d4/d95/class_dissolve_mesh-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase DissolveMesh</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Componente standalone que aplica el shader Custom/Dissolve al Renderer del objeto y lo destruye al terminar la animación. Versión simplificada de la disolución de SlimeBase para objetos que no son slimes (props, decorados, etc.).  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de DissolveMesh</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d24/class_dissolve_mesh__inherit__graph.png" border="0" usemap="#a_dissolve_mesh_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_dissolve_mesh_inherit__map" id="a_dissolve_mesh_inherit__map">
+<area shape="rect" title="Componente standalone que aplica el shader Custom/Dissolve al Renderer del objeto y lo destruye al te..." alt="" coords="9,80,113,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" title=" " alt="" coords="63,46,64,80,58,79,59,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración de DissolveMesh:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d02/class_dissolve_mesh__coll__graph.png" border="0" usemap="#a_dissolve_mesh_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_dissolve_mesh_coll__map" id="a_dissolve_mesh_coll__map">
+<area shape="rect" title="Componente standalone que aplica el shader Custom/Dissolve al Renderer del objeto y lo destruye al te..." alt="" coords="9,80,113,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" title=" " alt="" coords="63,46,64,80,58,79,59,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a1c50b53bb097b88bf0d7b0b9a5387f10" id="r_a1c50b53bb097b88bf0d7b0b9a5387f10"><td class="memItemLeft">Texture2D&#160;</td><td class="memItemRight"><a class="el" href="#a1c50b53bb097b88bf0d7b0b9a5387f10">dissolveTexture</a></td></tr>
+<tr class="memdesc:a1c50b53bb097b88bf0d7b0b9a5387f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Textura de ruido usada por el shader para controlar el patrón de disolución.  <br /></td></tr>
+<tr class="memitem:a529228da1aac0c53d637c54c964f42c9" id="r_a529228da1aac0c53d637c54c964f42c9"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#a529228da1aac0c53d637c54c964f42c9">dissolveColor</a> = Color.red</td></tr>
+<tr class="memdesc:a529228da1aac0c53d637c54c964f42c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color del borde que aparece durante la disolución.  <br /></td></tr>
+<tr class="memitem:a385c71f547dfbcde564eddfa3b280c96" id="r_a385c71f547dfbcde564eddfa3b280c96"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a385c71f547dfbcde564eddfa3b280c96">delayBeforeStart</a> = 3f</td></tr>
+<tr class="memdesc:a385c71f547dfbcde564eddfa3b280c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Segundos que se esperan antes de iniciar la animación de disolución.  <br /></td></tr>
+<tr class="memitem:a3311739d83a7eb595bf831d98ac41e67" id="r_a3311739d83a7eb595bf831d98ac41e67"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a3311739d83a7eb595bf831d98ac41e67">dissolveTime</a> = 2f</td></tr>
+<tr class="memdesc:a3311739d83a7eb595bf831d98ac41e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duración en segundos de la animación de disolución completa.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Componente standalone que aplica el shader Custom/Dissolve al Renderer del objeto y lo destruye al terminar la animación. Versión simplificada de la disolución de SlimeBase para objetos que no son slimes (props, decorados, etc.). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html#l00010">10</a> del archivo <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html">DissolveMesh.cs</a>.</p>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="a385c71f547dfbcde564eddfa3b280c96" name="a385c71f547dfbcde564eddfa3b280c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385c71f547dfbcde564eddfa3b280c96">&#9670;&#160;</a></span>delayBeforeStart</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float DissolveMesh.delayBeforeStart = 3f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Segundos que se esperan antes de iniciar la animación de disolución. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html#l00020">20</a> del archivo <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html">DissolveMesh.cs</a>.</p>
+
+</div>
+</div>
+<a id="a529228da1aac0c53d637c54c964f42c9" name="a529228da1aac0c53d637c54c964f42c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529228da1aac0c53d637c54c964f42c9">&#9670;&#160;</a></span>dissolveColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color DissolveMesh.dissolveColor = Color.red</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Color del borde que aparece durante la disolución. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html#l00017">17</a> del archivo <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html">DissolveMesh.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1c50b53bb097b88bf0d7b0b9a5387f10" name="a1c50b53bb097b88bf0d7b0b9a5387f10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c50b53bb097b88bf0d7b0b9a5387f10">&#9670;&#160;</a></span>dissolveTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Texture2D DissolveMesh.dissolveTexture</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Textura de ruido usada por el shader para controlar el patrón de disolución. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html#l00014">14</a> del archivo <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html">DissolveMesh.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3311739d83a7eb595bf831d98ac41e67" name="a3311739d83a7eb595bf831d98ac41e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3311739d83a7eb595bf831d98ac41e67">&#9670;&#160;</a></span>dissolveTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float DissolveMesh.dissolveTime = 2f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Duración en segundos de la animación de disolución completa. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html#l00023">23</a> del archivo <a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html">DissolveMesh.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>Scripts/Enemy/<a class="el" href="../../db/de1/_dissolve_mesh_8cs_source.html">DissolveMesh.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../d7/d4b/class_dissolve_mesh.html">DissolveMesh</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

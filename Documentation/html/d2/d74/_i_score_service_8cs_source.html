@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente Scripts/Services/Score/IScoreService.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d2/d74/_i_score_service_8cs_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">IScoreService.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d74/_i_score_service_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../de/df6/interface_i_score_service.html">    4</a></span><span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="../../de/df6/interface_i_score_service.html">IScoreService</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../de/df6/interface_i_score_service.html#af228ff53f9abf6aef8a0f743f808c37b">   10</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="../../d5/d5d/class_score_table.html">ScoreTable</a> <a class="code hl_function" href="../../de/df6/interface_i_score_service.html#af228ff53f9abf6aef8a0f743f808c37b">getScoreTable</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../de/df6/interface_i_score_service.html#a207f05663bc7289325b3cc955bf97b13">   17</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="../../de/df6/interface_i_score_service.html#a207f05663bc7289325b3cc955bf97b13">GetPoints</a>(<span class="keywordtype">string</span> player);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../de/df6/interface_i_score_service.html#a230856beb65e6d1c973943f4af13ff43">   24</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/df6/interface_i_score_service.html#a230856beb65e6d1c973943f4af13ff43">removePoints</a>(<span class="keywordtype">string</span> player, <span class="keywordtype">int</span> points);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../de/df6/interface_i_score_service.html#a5337ec2a4e60dc73d239885aba1667c7">   32</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/df6/interface_i_score_service.html#a5337ec2a4e60dc73d239885aba1667c7">addPoints</a>(<span class="keywordtype">string</span> player, <span class="keywordtype">int</span> points);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../de/df6/interface_i_score_service.html#a71a905c2c99d627bb26cf3f7fe3adc65">   38</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/df6/interface_i_score_service.html#a71a905c2c99d627bb26cf3f7fe3adc65">resetScore</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../de/df6/interface_i_score_service.html#a09dc851905ee1bd23325245f035f10d1">   45</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/df6/interface_i_score_service.html#a09dc851905ee1bd23325245f035f10d1">AddScore</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="ttc" id="aclass_score_table_html"><div class="ttname"><a href="../../d5/d5d/class_score_table.html">ScoreTable</a></div><div class="ttdoc">Contenedor serializable que agrupa la lista de entradas de puntuaciones. Se usa para serializar y des...</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d3a/_score_table_8cs_source.html#l00010">ScoreTable.cs:11</a></div></div>
+<div class="ttc" id="ainterface_i_score_service_html"><div class="ttname"><a href="../../de/df6/interface_i_score_service.html">IScoreService</a></div><div class="ttdef"><b>Definition</b> <a href="#l00004">IScoreService.cs:5</a></div></div>
+<div class="ttc" id="ainterface_i_score_service_html_a09dc851905ee1bd23325245f035f10d1"><div class="ttname"><a href="../../de/df6/interface_i_score_service.html#a09dc851905ee1bd23325245f035f10d1">IScoreService.AddScore</a></div><div class="ttdeci">void AddScore()</div><div class="ttdoc">Registra la puntuación del perfil activo en la tabla de puntuaciones globales, la ordena de mayor a m...</div></div>
+<div class="ttc" id="ainterface_i_score_service_html_a207f05663bc7289325b3cc955bf97b13"><div class="ttname"><a href="../../de/df6/interface_i_score_service.html#a207f05663bc7289325b3cc955bf97b13">IScoreService.GetPoints</a></div><div class="ttdeci">int GetPoints(string player)</div><div class="ttdoc">Devuelve la puntuación actual del jugador indicado. Si el jugador no existe en la lista,...</div></div>
+<div class="ttc" id="ainterface_i_score_service_html_a230856beb65e6d1c973943f4af13ff43"><div class="ttname"><a href="../../de/df6/interface_i_score_service.html#a230856beb65e6d1c973943f4af13ff43">IScoreService.removePoints</a></div><div class="ttdeci">void removePoints(string player, int points)</div><div class="ttdoc">Resta los puntos indicados al jugador designado. Si el jugador no existe en la lista,...</div></div>
+<div class="ttc" id="ainterface_i_score_service_html_a5337ec2a4e60dc73d239885aba1667c7"><div class="ttname"><a href="../../de/df6/interface_i_score_service.html#a5337ec2a4e60dc73d239885aba1667c7">IScoreService.addPoints</a></div><div class="ttdeci">void addPoints(string player, int points)</div><div class="ttdoc">Agrega los puntos indicados al jugador designado. Si el jugador no existe en la lista,...</div></div>
+<div class="ttc" id="ainterface_i_score_service_html_a71a905c2c99d627bb26cf3f7fe3adc65"><div class="ttname"><a href="../../de/df6/interface_i_score_service.html#a71a905c2c99d627bb26cf3f7fe3adc65">IScoreService.resetScore</a></div><div class="ttdeci">void resetScore()</div><div class="ttdoc">Reinicia la lista de puntuaciones de la partida actual, eliminando todos los jugadores y sus puntuaci...</div></div>
+<div class="ttc" id="ainterface_i_score_service_html_af228ff53f9abf6aef8a0f743f808c37b"><div class="ttname"><a href="../../de/df6/interface_i_score_service.html#af228ff53f9abf6aef8a0f743f808c37b">IScoreService.getScoreTable</a></div><div class="ttdeci">ScoreTable getScoreTable()</div><div class="ttdoc">Devuelve la tabla de puntuaciones, cargándola desde disco si aún no ha sido inicializada.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_4edcbb236dfd51dd81727243a38df6a0.html">Scripts</a></li><li class="navelem"><a href="../../dir_0f7e8dd2440a07a53a3c6bb386854dca.html">Services</a></li><li class="navelem"><a href="../../dir_4bfd928c54f291d6eda523fb1cba8c90.html">Score</a></li><li class="navelem"><a href="../../d2/d74/_i_score_service_8cs.html">IScoreService.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,5 +1,8 @@
-﻿using UnityEngine;
-
+using UnityEngine;
+/// <summary>
+/// Componente de Unity encargado de controlar el comportamiento de un objeto flotante coleccionable. 
+/// Gestiona la animación de flotación, la detección del jugador, la persecución automática y la aplicación de efectos al personaje mediante los servicios <see cref="ICharacterService"/> y <see cref="IAudioService"/>.
+/// </summary>
 public class ballController : MonoBehaviour
 {
     [Header("Flotación")]
@@ -46,12 +49,18 @@ public class ballController : MonoBehaviour
     private IAudioService _audioService;
 
     // ── Unity Lifecycle ─────────────────────────────────────────────────────
+    /// <summary>
+    /// Método ejecutado al inicializar el objeto. Obtiene las referencias a los servicios <see cref="ICharacterService"/> y <see cref="IAudioService"/> mediante <see cref="AppContainer"/>.
+    /// </summary>
     private void Awake()
     {
         _characterService = AppContainer.Get<ICharacterService>();
 
         _audioService = AppContainer.Get<IAudioService>();
     }
+    /// <summary>
+    /// Método ejecutado al comenzar la escena. Guarda la posición inicial del objeto y busca al jugador utilizando el tag especificado para almacenar su referencia.
+    /// </summary>
     void Start()
     {
         posicionInicial = transform.position;
@@ -68,7 +77,11 @@ public class ballController : MonoBehaviour
                              "Asegúrate de que el jugador tiene ese tag asignado.");
         }
     }
-
+    /// <summary>
+    /// Método ejecutado automáticamente a intervalos fijos. 
+    /// Controla el comportamiento del objeto comprobando la distancia con el jugador. 
+    /// Si el jugador se encuentra dentro del rango de detección, activa el modo persecución; cuando el jugador alcanza el rango de recogida, ejecuta Recoger().
+    /// </summary>
     void FixedUpdate()
     {
         if (jugador == null) return;
@@ -125,7 +138,8 @@ public class ballController : MonoBehaviour
 
     }
 
-    /// <summary>Instancia el efecto y destruye el objeto.</summary>
+    /// <summary>Gestiona la recogida del objeto. 
+    /// Reproduce un sonido mediante <see cref="IAudioService"/> si existe un efecto asignado, aplica los efectos correspondientes sobre el personaje mediante <see cref="ICharacterService"/> y elimina el objeto de la escena.</summary>
     void Recoger()
     {
         if (efectoRecogida != null)

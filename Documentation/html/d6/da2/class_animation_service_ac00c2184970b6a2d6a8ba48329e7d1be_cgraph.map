@@ -1,0 +1,5 @@
+<map id="AnimationService.WobbleAnimationWithSound" name="AnimationService.WobbleAnimationWithSound">
+<area shape="rect" id="Node000001" title="Inicia una animación de rebote sobre un objeto y reproduce un sonido mediante IAudioService." alt="" coords="5,5,234,48"/>
+<area shape="rect" id="Node000002" href="$de/d33/interface_i_audio_service.html#acb8a7d08c3cd8660a5406c5011c79fe9" title="Reproduce un efecto de sonido una sola vez. Incluye una restricción temporal para evitar reproducir r..." alt="" coords="282,13,451,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,24,269,27,263,27,234,29"/>
+</map>

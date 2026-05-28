@@ -1,0 +1,5 @@
+<map id="PickUpSpellStep" name="PickUpSpellStep">
+<area shape="rect" id="Node000001" title="Paso que se completa cuando el jugador tiene un hechizo en el inventario." alt="" coords="5,80,126,107"/>
+<area shape="rect" id="Node000002" href="$da/d8b/interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="39,5,92,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,46,68,80,63,79,64,50"/>
+</map>

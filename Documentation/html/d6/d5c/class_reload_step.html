@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la clase ReloadStep</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d6/d5c/class_reload_step.html','../../','d5/d09/class_reload_step-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase ReloadStep</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep. Detecta cuándo el jugador realiza una acción de recarga utilizando PlayerInputManager y marca el paso como completado cuando dicha acción es ejecutada.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de ReloadStep</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d0a/class_reload_step__inherit__graph.png" border="0" usemap="#a_reload_step_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_reload_step_inherit__map" id="a_reload_step_inherit__map">
+<area shape="rect" title="Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep...." alt="" coords="5,80,95,107"/>
+<area shape="rect" href="../../da/d8b/interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="24,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="52,46,53,80,47,79,48,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración de ReloadStep:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dc2/class_reload_step__coll__graph.png" border="0" usemap="#a_reload_step_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_reload_step_coll__map" id="a_reload_step_coll__map">
+<area shape="rect" title="Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep...." alt="" coords="5,80,95,107"/>
+<area shape="rect" href="../../da/d8b/interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="24,5,76,32"/>
+<area shape="poly" title=" " alt="" coords="52,46,53,80,47,79,48,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ac24ee122df548e2836f6e4ee2a8ccfec" id="r_ac24ee122df548e2836f6e4ee2a8ccfec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac24ee122df548e2836f6e4ee2a8ccfec">ReloadStep</a> ()</td></tr>
+<tr class="memdesc:ac24ee122df548e2836f6e4ee2a8ccfec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor encargado de crear una nueva instancia del paso de recarga.  <br /></td></tr>
+<tr class="memitem:a6ef1bfa357f9d62538852bebc327ecdd" id="r_a6ef1bfa357f9d62538852bebc327ecdd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6ef1bfa357f9d62538852bebc327ecdd">Activate</a> ()</td></tr>
+<tr class="memdesc:a6ef1bfa357f9d62538852bebc327ecdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activa el paso actual registrando el método HandleAction() al evento de recarga de PlayerInputManager para detectar la interacción del jugador.  <br /></td></tr>
+<tr class="memitem:a180a942e8468c47e42339e7f9acb7a4d" id="r_a180a942e8468c47e42339e7f9acb7a4d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a180a942e8468c47e42339e7f9acb7a4d">Deactivate</a> ()</td></tr>
+<tr class="memdesc:a180a942e8468c47e42339e7f9acb7a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desactiva el paso eliminando la suscripción al evento de recarga de PlayerInputManager.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Propiedades</h2></td></tr>
+<tr class="memitem:ac5de0113e8695610da3da0a6801a9324" id="r_ac5de0113e8695610da3da0a6801a9324"><td class="memItemLeft">LocalizedString&#160;</td><td class="memItemRight"><a class="el" href="#ac5de0113e8695610da3da0a6801a9324">Name</a><code> [get]</code></td></tr>
+<tr class="memdesc:ac5de0113e8695610da3da0a6801a9324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propiedad que devuelve el nombre localizado correspondiente al paso actual mediante el sistema de localización de Unity.  <br /></td></tr>
+<tr class="memitem:a41a76c31b3a5ba6eec12e6e34ef0d497" id="r_a41a76c31b3a5ba6eec12e6e34ef0d497"><td class="memItemLeft">LocalizedString&#160;</td><td class="memItemRight"><a class="el" href="#a41a76c31b3a5ba6eec12e6e34ef0d497">Description</a><code> [get]</code></td></tr>
+<tr class="memdesc:a41a76c31b3a5ba6eec12e6e34ef0d497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propiedad que genera una descripción localizada del paso incluyendo dinámicamente la tecla o entrada asignada a la acción de recarga obtenida desde PlayerInputManager.  <br /></td></tr>
+<tr class="memitem:a1da596804bb1153fe7c19c08ab69a81a" id="r_a1da596804bb1153fe7c19c08ab69a81a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1da596804bb1153fe7c19c08ab69a81a">IsComplete</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a1da596804bb1153fe7c19c08ab69a81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propiedad que almacena el estado actual del paso indicando si ha sido completado.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-events" class="groupheader"><a id="events" name="events"></a>
+Eventos</h2></td></tr>
+<tr class="memitem:a9ef34ce1d04eb0678686f43b4d63c32f" id="r_a9ef34ce1d04eb0678686f43b4d63c32f"><td class="memItemLeft">Action&#160;</td><td class="memItemRight"><a class="el" href="#a9ef34ce1d04eb0678686f43b4d63c32f">OnComplete</a></td></tr>
+<tr class="memdesc:a9ef34ce1d04eb0678686f43b4d63c32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evento ejecutado cuando el paso se completa correctamente.  <br /></td></tr>
+<tr class="inherit_header events_interface_i_step"><td colspan="2">Eventos heredados de <a class="el" href="../../da/d8b/interface_i_step.html">IStep</a></td></tr>
+<tr class="memitem:a510d8c904f60a50a69fd9c0fb29ae623 events_interface_i_step" id="r_a510d8c904f60a50a69fd9c0fb29ae623"><td class="memItemLeft">Action&#160;</td><td class="memItemRight"><a class="el" href="../../da/d8b/interface_i_step.html#a510d8c904f60a50a69fd9c0fb29ae623">OnComplete</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase encargada de implementar un paso dentro del sistema de tutorial mediante la interfaz IStep. Detecta cuándo el jugador realiza una acción de recarga utilizando PlayerInputManager y marca el paso como completado cuando dicha acción es ejecutada. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/da1/_reload_step_8cs_source.html#l00010">10</a> del archivo <a class="el" href="../../d8/da1/_reload_step_8cs_source.html">ReloadStep.cs</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="ac24ee122df548e2836f6e4ee2a8ccfec" name="ac24ee122df548e2836f6e4ee2a8ccfec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24ee122df548e2836f6e4ee2a8ccfec">&#9670;&#160;</a></span>ReloadStep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReloadStep.ReloadStep </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor encargado de crear una nueva instancia del paso de recarga. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/da1/_reload_step_8cs_source.html#l00052">52</a> del archivo <a class="el" href="../../d8/da1/_reload_step_8cs_source.html">ReloadStep.cs</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a6ef1bfa357f9d62538852bebc327ecdd" name="a6ef1bfa357f9d62538852bebc327ecdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef1bfa357f9d62538852bebc327ecdd">&#9670;&#160;</a></span>Activate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ReloadStep.Activate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Activa el paso actual registrando el método HandleAction() al evento de recarga de PlayerInputManager para detectar la interacción del jugador. </p>
+
+<p>Implementa <a class="el" href="../../da/d8b/interface_i_step.html#a2043df04b8d352e62c6a5a1bb7ee6154">IStep</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/da1/_reload_step_8cs_source.html#l00058">58</a> del archivo <a class="el" href="../../d8/da1/_reload_step_8cs_source.html">ReloadStep.cs</a>.</p>
+
+</div>
+</div>
+<a id="a180a942e8468c47e42339e7f9acb7a4d" name="a180a942e8468c47e42339e7f9acb7a4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180a942e8468c47e42339e7f9acb7a4d">&#9670;&#160;</a></span>Deactivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ReloadStep.Deactivate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Desactiva el paso eliminando la suscripción al evento de recarga de PlayerInputManager. </p>
+
+<p>Implementa <a class="el" href="../../da/d8b/interface_i_step.html#abeb097adb31c927ffce952cb2cb172d2">IStep</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/da1/_reload_step_8cs_source.html#l00068">68</a> del archivo <a class="el" href="../../d8/da1/_reload_step_8cs_source.html">ReloadStep.cs</a>.</p>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Documentación de propiedades</h2>
+<a id="a41a76c31b3a5ba6eec12e6e34ef0d497" name="a41a76c31b3a5ba6eec12e6e34ef0d497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a76c31b3a5ba6eec12e6e34ef0d497">&#9670;&#160;</a></span>Description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalizedString ReloadStep.Description</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Propiedad que genera una descripción localizada del paso incluyendo dinámicamente la tecla o entrada asignada a la acción de recarga obtenida desde PlayerInputManager. </p>
+
+<p>Implementa <a class="el" href="../../da/d8b/interface_i_step.html#ab5e21ff9790e0aa30204bf456ce03867">IStep</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/da1/_reload_step_8cs_source.html#l00024">24</a> del archivo <a class="el" href="../../d8/da1/_reload_step_8cs_source.html">ReloadStep.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1da596804bb1153fe7c19c08ab69a81a" name="a1da596804bb1153fe7c19c08ab69a81a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da596804bb1153fe7c19c08ab69a81a">&#9670;&#160;</a></span>IsComplete</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ReloadStep.IsComplete</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Propiedad que almacena el estado actual del paso indicando si ha sido completado. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado de finalización del paso</dd></dl>
+
+<p>Implementa <a class="el" href="../../da/d8b/interface_i_step.html#ae93fb7f7464e3b1ab0b3ce6a03a6ebae">IStep</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/da1/_reload_step_8cs_source.html#l00044">44</a> del archivo <a class="el" href="../../d8/da1/_reload_step_8cs_source.html">ReloadStep.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac5de0113e8695610da3da0a6801a9324" name="ac5de0113e8695610da3da0a6801a9324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5de0113e8695610da3da0a6801a9324">&#9670;&#160;</a></span>Name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalizedString ReloadStep.Name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Propiedad que devuelve el nombre localizado correspondiente al paso actual mediante el sistema de localización de Unity. </p>
+
+<p>Implementa <a class="el" href="../../da/d8b/interface_i_step.html#a610ba12ed7a6127863cb9d1da214d645">IStep</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/da1/_reload_step_8cs_source.html#l00020">20</a> del archivo <a class="el" href="../../d8/da1/_reload_step_8cs_source.html">ReloadStep.cs</a>.</p>
+
+</div>
+</div>
+<a name="doc-event-members" id="doc-event-members"></a><h2 id="header-doc-event-members" class="groupheader">Documentación de eventos</h2>
+<a id="a9ef34ce1d04eb0678686f43b4d63c32f" name="a9ef34ce1d04eb0678686f43b4d63c32f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef34ce1d04eb0678686f43b4d63c32f">&#9670;&#160;</a></span>OnComplete</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action ReloadStep.OnComplete</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evento ejecutado cuando el paso se completa correctamente. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/da1/_reload_step_8cs_source.html#l00048">48</a> del archivo <a class="el" href="../../d8/da1/_reload_step_8cs_source.html">ReloadStep.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>Scripts/WorkflowsSystem/Steps/<a class="el" href="../../d8/da1/_reload_step_8cs_source.html">ReloadStep.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../d6/d5c/class_reload_step.html">ReloadStep</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

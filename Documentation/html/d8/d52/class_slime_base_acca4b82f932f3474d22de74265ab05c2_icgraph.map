@@ -1,0 +1,9 @@
+<map id="SlimeBase.Attack" name="SlimeBase.Attack">
+<area shape="rect" id="Node000001" title="Lógica de ataque específica del enemigo. La base reproduce el AttackSound; las subclases deben llamar..." alt="" coords="584,5,711,32"/>
+<area shape="rect" id="Node000002" href="$d8/d52/class_slime_base.html#a9d81f6cd010a424404612e595e958df7" title="Evalúa si el slime debe atacar o moverse en función de la distancia al jugador. Solo actúa si _nextAc..." alt="" coords="379,5,536,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="566,19,537,21,537,16,571,19"/>
+<area shape="rect" id="Node000003" href="$d8/d52/class_slime_base.html#abb96de4b96b110f16d6d09e0f404a6fe" title="Se llama cada frame desde Update (ya filtrado por null y muerte). Sobreescribe para añadir lógica ext..." alt="" coords="184,5,331,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="361,19,332,21,331,16,366,19"/>
+<area shape="rect" id="Node000004" href="$d8/d52/class_slime_base.html#a99ac7b232defb9c96a027ccf010d555a" title="Cada frame busca al jugador si falta la referencia, comprueba si el slime está muerto y lanza la corr..." alt="" coords="5,5,136,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="165,19,136,21,136,16,171,18"/>
+</map>

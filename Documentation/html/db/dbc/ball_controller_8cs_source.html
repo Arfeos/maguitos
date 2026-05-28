@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Archivo de código fuente Scripts/Objects/collectable Orbs/ballController.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('db/dbc/ball_controller_8cs_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ballController.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/dbc/ball_controller_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html">    6</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="../../da/da2/classball_controller.html">ballController</a> : MonoBehaviour</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    [Header(<span class="stringliteral">&quot;Flotación&quot;</span>)]</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    [Tooltip(<span class="stringliteral">&quot;Altura máxima del movimiento de flotación&quot;</span>)]</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#a80dd69f533524437393dadc1bf93e09b">   10</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#a80dd69f533524437393dadc1bf93e09b">alturaFlotacion</a> = 0.3f;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    [Tooltip(<span class="stringliteral">&quot;Velocidad de la animación flotante&quot;</span>)]</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#ae20cdd08b26b8e38d720c89334fab5b4">   13</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#ae20cdd08b26b8e38d720c89334fab5b4">velocidadFlotacion</a> = 2f;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    [Header(<span class="stringliteral">&quot;Detección del jugador&quot;</span>)]</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    [Tooltip(<span class="stringliteral">&quot;Tag del jugador en la escena&quot;</span>)]</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#aec325a1815b94cbb533ee4381c041b8a">   17</a></span>    <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#aec325a1815b94cbb533ee4381c041b8a">tagJugador</a> = <span class="stringliteral">&quot;Player&quot;</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    [Tooltip(<span class="stringliteral">&quot;Distancia a la que el objeto empieza a perseguir al jugador&quot;</span>)]</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#a43192df9a0e53d3eb9cf52294c49ba13">   20</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#a43192df9a0e53d3eb9cf52294c49ba13">radioDeteccion</a> = 5f;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    [Tooltip(<span class="stringliteral">&quot;Distancia a la que el objeto se destruye (recogida)&quot;</span>)]</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#a92b72a8dc4c12948744279aa7eb15f8b">   23</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#a92b72a8dc4c12948744279aa7eb15f8b">radioRecogida</a> = 0.5f;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    [Header(<span class="stringliteral">&quot;Movimiento de persecución&quot;</span>)]</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    [Tooltip(<span class="stringliteral">&quot;Velocidad a la que el objeto se mueve hacia el jugador&quot;</span>)]</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#a5f47a22b5b25cbcbea2839434eab4721">   27</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#a5f47a22b5b25cbcbea2839434eab4721">velocidadPersecucion</a> = 4f;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    [Tooltip(<span class="stringliteral">&quot;Altura a la que vuela el objeto mientras persigue al jugador&quot;</span>)]</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#a4fd9d84307e883f4d0a728507a70b412">   30</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#a4fd9d84307e883f4d0a728507a70b412">alturaVuelo</a> = 1f;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    [Tooltip(<span class="stringliteral">&quot;Velocidad de interpolación para subir a alturaVuelo&quot;</span>)]</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#a4981473ce67293e5b1014aaabed991a5">   33</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#a4981473ce67293e5b1014aaabed991a5">suavizadoAltura</a> = 5f;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    [Header(<span class="stringliteral">&quot;Efectos (opcional)&quot;</span>)]</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    [Tooltip(<span class="stringliteral">&quot;Sonido que se reproduce al ser cogido&quot;</span>)]</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#a4af62f2ff41947e6f1bb576dc3c05b62">   37</a></span>    <span class="keyword">public</span> AudioClip <a class="code hl_variable" href="../../da/da2/classball_controller.html#a4af62f2ff41947e6f1bb576dc3c05b62">efectoRecogida</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    [Header(<span class="stringliteral">&quot;Valores de recogida&quot;</span>)]</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    [Tooltip(<span class="stringliteral">&quot;Efectos que se añaden al jugador al hacer contacto&quot;</span>)]</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#abcc9d2efd511cd9b284398aa4afa13b7">   41</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#abcc9d2efd511cd9b284398aa4afa13b7">mana</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../da/da2/classball_controller.html#a46107e6e1cdf9b40c0b14731697430d1">   42</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../da/da2/classball_controller.html#a46107e6e1cdf9b40c0b14731697430d1">vida</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// ── Estado interno ──────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">private</span> Transform jugador;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">private</span> Vector3 posicionInicial;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> persiguiendo = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">private</span> <a class="code hl_interface" href="../../db/dd8/interface_i_character_service.html">ICharacterService</a> _characterService;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">private</span> <a class="code hl_interface" href="../../de/d33/interface_i_audio_service.html">IAudioService</a> _audioService;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// ── Unity Lifecycle ─────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> Awake()</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        _characterService = AppContainer.Get&lt;<a class="code hl_interface" href="../../db/dd8/interface_i_character_service.html">ICharacterService</a>&gt;();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        _audioService = AppContainer.Get&lt;<a class="code hl_interface" href="../../de/d33/interface_i_audio_service.html">IAudioService</a>&gt;();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> Start()</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        posicionInicial = transform.position;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="comment">// Buscar al jugador por tag</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        GameObject objJugador = GameObject.FindGameObjectWithTag(<a class="code hl_variable" href="../../da/da2/classball_controller.html#aec325a1815b94cbb533ee4381c041b8a">tagJugador</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">if</span> (objJugador != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            jugador = objJugador.transform;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            Debug.LogWarning($<span class="stringliteral">&quot;[ObjetoFlotante] No se encontró ningún objeto con el tag &#39;{tagJugador}&#39;. &quot;</span> +</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                             <span class="stringliteral">&quot;Asegúrate de que el jugador tiene ese tag asignado.&quot;</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> FixedUpdate()</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">if</span> (jugador == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordtype">float</span> distancia = Vector3.Distance(transform.position, jugador.position);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">if</span> (!persiguiendo)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            AnimarFlotacion();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="comment">// ¿El jugador ya está dentro del radio de detección?</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">if</span> (distancia &lt;= <a class="code hl_variable" href="../../da/da2/classball_controller.html#a43192df9a0e53d3eb9cf52294c49ba13">radioDeteccion</a>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                persiguiendo = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            PerseguirJugador();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="comment">// ¿Llegó al jugador?</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">if</span> (distancia &lt;= <a class="code hl_variable" href="../../da/da2/classball_controller.html#a92b72a8dc4c12948744279aa7eb15f8b">radioRecogida</a>)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                Recoger();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">// ── Métodos privados ────────────────────────────────────────────────────</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> AnimarFlotacion()</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordtype">float</span> nuevaY = posicionInicial.y + Mathf.Sin(Time.time * <a class="code hl_variable" href="../../da/da2/classball_controller.html#ae20cdd08b26b8e38d720c89334fab5b4">velocidadFlotacion</a>) * <a class="code hl_variable" href="../../da/da2/classball_controller.html#a80dd69f533524437393dadc1bf93e09b">alturaFlotacion</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        transform.position = <span class="keyword">new</span> Vector3(posicionInicial.x, nuevaY, posicionInicial.z);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">void</span> PerseguirJugador()</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="comment">// Objetivo: posición del jugador + altura de vuelo</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        Vector3 objetivo = <span class="keyword">new</span> Vector3(</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            jugador.position.x,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            jugador.position.y + <a class="code hl_variable" href="../../da/da2/classball_controller.html#a4fd9d84307e883f4d0a728507a70b412">alturaVuelo</a>,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            jugador.position.z</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        );</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="comment">// Movimiento suavizado</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        transform.position = Vector3.MoveTowards(</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            transform.position,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            objetivo,</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <a class="code hl_variable" href="../../da/da2/classball_controller.html#a5f47a22b5b25cbcbea2839434eab4721">velocidadPersecucion</a> * Time.deltaTime</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        );</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">void</span> Recoger()</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/da2/classball_controller.html#a4af62f2ff41947e6f1bb576dc3c05b62">efectoRecogida</a> != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            _audioService.PlaySound(<a class="code hl_variable" href="../../da/da2/classball_controller.html#a4af62f2ff41947e6f1bb576dc3c05b62">efectoRecogida</a>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        _characterService.AddMana(<a class="code hl_variable" href="../../da/da2/classball_controller.html#abcc9d2efd511cd9b284398aa4afa13b7">mana</a>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        _characterService.Heal(<a class="code hl_variable" href="../../da/da2/classball_controller.html#a46107e6e1cdf9b40c0b14731697430d1">vida</a>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        Destroy(gameObject);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
+</div>
+<div class="ttc" id="aclassball_controller_html"><div class="ttname"><a href="../../da/da2/classball_controller.html">ballController</a></div><div class="ttdoc">Componente de Unity encargado de controlar el comportamiento de un objeto flotante coleccionable....</div><div class="ttdef"><b>Definition</b> <a href="#l00006">ballController.cs:7</a></div></div>
+<div class="ttc" id="aclassball_controller_html_a43192df9a0e53d3eb9cf52294c49ba13"><div class="ttname"><a href="../../da/da2/classball_controller.html#a43192df9a0e53d3eb9cf52294c49ba13">ballController.radioDeteccion</a></div><div class="ttdeci">float radioDeteccion</div><div class="ttdef"><b>Definition</b> <a href="#l00020">ballController.cs:20</a></div></div>
+<div class="ttc" id="aclassball_controller_html_a46107e6e1cdf9b40c0b14731697430d1"><div class="ttname"><a href="../../da/da2/classball_controller.html#a46107e6e1cdf9b40c0b14731697430d1">ballController.vida</a></div><div class="ttdeci">int vida</div><div class="ttdef"><b>Definition</b> <a href="#l00042">ballController.cs:42</a></div></div>
+<div class="ttc" id="aclassball_controller_html_a4981473ce67293e5b1014aaabed991a5"><div class="ttname"><a href="../../da/da2/classball_controller.html#a4981473ce67293e5b1014aaabed991a5">ballController.suavizadoAltura</a></div><div class="ttdeci">float suavizadoAltura</div><div class="ttdef"><b>Definition</b> <a href="#l00033">ballController.cs:33</a></div></div>
+<div class="ttc" id="aclassball_controller_html_a4af62f2ff41947e6f1bb576dc3c05b62"><div class="ttname"><a href="../../da/da2/classball_controller.html#a4af62f2ff41947e6f1bb576dc3c05b62">ballController.efectoRecogida</a></div><div class="ttdeci">AudioClip efectoRecogida</div><div class="ttdef"><b>Definition</b> <a href="#l00037">ballController.cs:37</a></div></div>
+<div class="ttc" id="aclassball_controller_html_a4fd9d84307e883f4d0a728507a70b412"><div class="ttname"><a href="../../da/da2/classball_controller.html#a4fd9d84307e883f4d0a728507a70b412">ballController.alturaVuelo</a></div><div class="ttdeci">float alturaVuelo</div><div class="ttdef"><b>Definition</b> <a href="#l00030">ballController.cs:30</a></div></div>
+<div class="ttc" id="aclassball_controller_html_a5f47a22b5b25cbcbea2839434eab4721"><div class="ttname"><a href="../../da/da2/classball_controller.html#a5f47a22b5b25cbcbea2839434eab4721">ballController.velocidadPersecucion</a></div><div class="ttdeci">float velocidadPersecucion</div><div class="ttdef"><b>Definition</b> <a href="#l00027">ballController.cs:27</a></div></div>
+<div class="ttc" id="aclassball_controller_html_a80dd69f533524437393dadc1bf93e09b"><div class="ttname"><a href="../../da/da2/classball_controller.html#a80dd69f533524437393dadc1bf93e09b">ballController.alturaFlotacion</a></div><div class="ttdeci">float alturaFlotacion</div><div class="ttdef"><b>Definition</b> <a href="#l00010">ballController.cs:10</a></div></div>
+<div class="ttc" id="aclassball_controller_html_a92b72a8dc4c12948744279aa7eb15f8b"><div class="ttname"><a href="../../da/da2/classball_controller.html#a92b72a8dc4c12948744279aa7eb15f8b">ballController.radioRecogida</a></div><div class="ttdeci">float radioRecogida</div><div class="ttdef"><b>Definition</b> <a href="#l00023">ballController.cs:23</a></div></div>
+<div class="ttc" id="aclassball_controller_html_abcc9d2efd511cd9b284398aa4afa13b7"><div class="ttname"><a href="../../da/da2/classball_controller.html#abcc9d2efd511cd9b284398aa4afa13b7">ballController.mana</a></div><div class="ttdeci">int mana</div><div class="ttdef"><b>Definition</b> <a href="#l00041">ballController.cs:41</a></div></div>
+<div class="ttc" id="aclassball_controller_html_ae20cdd08b26b8e38d720c89334fab5b4"><div class="ttname"><a href="../../da/da2/classball_controller.html#ae20cdd08b26b8e38d720c89334fab5b4">ballController.velocidadFlotacion</a></div><div class="ttdeci">float velocidadFlotacion</div><div class="ttdef"><b>Definition</b> <a href="#l00013">ballController.cs:13</a></div></div>
+<div class="ttc" id="aclassball_controller_html_aec325a1815b94cbb533ee4381c041b8a"><div class="ttname"><a href="../../da/da2/classball_controller.html#aec325a1815b94cbb533ee4381c041b8a">ballController.tagJugador</a></div><div class="ttdeci">string tagJugador</div><div class="ttdef"><b>Definition</b> <a href="#l00017">ballController.cs:17</a></div></div>
+<div class="ttc" id="ainterface_i_audio_service_html"><div class="ttname"><a href="../../de/d33/interface_i_audio_service.html">IAudioService</a></div><div class="ttdoc">Servicio encargado de gestionar la reproducción de música y efectos de sonido del juego mediante el c...</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d2b/_i_audio_service_8cs_source.html#l00006">IAudioService.cs:7</a></div></div>
+<div class="ttc" id="ainterface_i_character_service_html"><div class="ttname"><a href="../../db/dd8/interface_i_character_service.html">ICharacterService</a></div><div class="ttdoc">Define el contrato para gestionar el estado del personaje jugador: hechizos equipados,...</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d2c/_i_character_service_8cs_source.html#l00009">ICharacterService.cs:10</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_4edcbb236dfd51dd81727243a38df6a0.html">Scripts</a></li><li class="navelem"><a href="../../dir_c26c46c5b5fcb3853b173d83f1733998.html">Objects</a></li><li class="navelem"><a href="../../dir_24946d52bcef804f7c30f82efcdbf994.html">collectable Orbs</a></li><li class="navelem"><a href="../../db/dbc/ball_controller_8cs.html">ballController.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

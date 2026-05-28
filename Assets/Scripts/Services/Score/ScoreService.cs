@@ -3,17 +3,31 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Servicio encargado de gestionar la puntuación de los jugadores durante la partida,
+/// así como el guardado y carga del historial de puntuaciones en un archivo JSON.
+/// </summary>
 public class ScoreService : IScoreService
 {
+    // <summary>
+    /// Diccionario que almacena la puntuación actual de cada jugador durante la partida,
+    /// usando el nombre del jugador como clave y su puntuación como valor.
+    /// </summary>
     public Dictionary<string, int> PlayerList = new Dictionary<string, int>();
-    
-    public ScoreTable scoreTable;
-
-    
 
     /// <summary>
-    /// Agrega los puntos indicados al jugador designado
+    /// Tabla de puntuaciones persistente que se serializa y deserializa desde el archivo JSON.
     /// </summary>
+    public ScoreTable scoreTable;
+
+
+
+    /// <summary>
+    /// Agrega los puntos indicados al jugador designado.
+    /// Si el jugador no existe en la lista, lo registra con la puntuación indicada.
+    /// </summary>
+    /// <param name="player">Nombre del jugador al que se le suman los puntos.</param>
+    /// <param name="points">Cantidad de puntos a añadir.</param>
     public void addPoints(string player, int points)
     {
         if (PlayerList.TryGetValue(player, out int playerPoints))
@@ -30,8 +44,11 @@ public class ScoreService : IScoreService
     }
 
     /// <summary>
-    /// Devuelve los puntos del jugador indicado
+    /// Devuelve la puntuación actual del jugador indicado.
+    /// Si el jugador no existe en la lista, lo registra con 0 puntos y devuelve 0.
     /// </summary>
+    /// <param name="player">Nombre del jugador cuya puntuación se quiere consultar.</param>
+    /// <returns>Puntuación actual del jugador.</returns>
     public int GetPoints(string player)
     {
         if (PlayerList.TryGetValue(player, out int playerPoints)) return playerPoints;
@@ -44,8 +61,11 @@ public class ScoreService : IScoreService
     }
 
     /// <summary>
-    /// Quita los puntos indicados al jugador designado
+    /// Resta los puntos indicados al jugador designado.
+    /// Si el jugador no existe en la lista, lo registra con puntuación negativa.
     /// </summary>
+    /// <param name="player">Nombre del jugador al que se le restan los puntos.</param>
+    /// <param name="points">Cantidad de puntos a restar.</param>
     public void removePoints(string player, int points)
     {
         if (PlayerList.TryGetValue(player, out int playerPoints))
@@ -60,7 +80,8 @@ public class ScoreService : IScoreService
     }
 
     /// <summary>
-    /// Coge la lista de jugadores y la borra.
+    /// Reinicia la lista de puntuaciones de la partida actual,
+    /// eliminando todos los jugadores y sus puntuaciones registradas.
     /// </summary>
     public void resetScore()
     {
@@ -68,8 +89,9 @@ public class ScoreService : IScoreService
     }
 
 
-   /// <summary>
-    /// Agrega la puntuacion a la lista de puntuaciones y la ordena, después guarda la lista en el json.
+    /// <summary>
+    /// Registra la puntuación del perfil activo en la tabla de puntuaciones globales,
+    /// la ordena de mayor a menor y guarda el resultado en el archivo JSON.
     /// </summary>
     public void AddScore()
     {
@@ -83,7 +105,8 @@ public class ScoreService : IScoreService
     }
 
     /// <summary>
-    /// Guarda la lista en el json
+    /// Serializa la tabla de puntuaciones actual y la guarda en el archivo
+    /// <c>Scores.json</c> dentro de <see cref="Application.persistentDataPath"/>.
     /// </summary>
     private void SaveScores()
     {
@@ -94,7 +117,8 @@ public class ScoreService : IScoreService
     }
 
     /// <summary>
-    /// carga la lista
+    /// Carga la tabla de puntuaciones desde el archivo <c>Scores.json</c>.
+    /// Si el archivo no existe, inicializa una tabla vacía.
     /// </summary>
     private void LoadScores()
     {
@@ -109,6 +133,10 @@ public class ScoreService : IScoreService
         }
     }
 
+    /// <summary>
+    /// Devuelve la tabla de puntuaciones, cargándola desde disco si aún no ha sido inicializada.
+    /// </summary>
+    /// <returns>La <see cref="ScoreTable"/> con el historial de puntuaciones.</returns>
     public ScoreTable getScoreTable()
     {
         if (scoreTable == null) LoadScores();

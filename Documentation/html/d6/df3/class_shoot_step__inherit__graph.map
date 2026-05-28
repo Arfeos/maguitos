@@ -1,0 +1,5 @@
+<map id="ShootStep" name="ShootStep">
+<area shape="rect" id="Node000001" title="Paso que se completa cuando el jugador dispara." alt="" coords="5,80,88,107"/>
+<area shape="rect" id="Node000002" href="$da/d8b/interface_i_step.html" title="Interfaz que gestiona los pasos que se pueden meter dentro de un workflow." alt="" coords="20,5,73,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,46,49,80,44,79,45,50"/>
+</map>

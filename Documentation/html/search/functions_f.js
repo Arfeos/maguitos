@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['refreshtable_0',['RefreshTable',['../d6/d50/class_display_score_table.html#ad898569563d6f49ccf35ba6a205cbd52',1,'DisplayScoreTable']]],
+  ['registerfirstbutton_1',['RegisterFirstButton',['../d1/d5f/interface_i_u_i_service.html#ab86d2845e764dcfe70e9196e61bbe582',1,'IUIService.RegisterFirstButton()'],['../de/d79/class_u_i_service.html#a5f3816e67c86d43b36259059cf4dca1b',1,'UIService.RegisterFirstButton()']]],
+  ['reload_2',['Reload',['../d2/d63/class_spell_base.html#a44fdc1d327b193d32399ccbe3f9ae6cb',1,'SpellBase']]],
+  ['reloadstep_3',['ReloadStep',['../d6/d5c/class_reload_step.html#ac24ee122df548e2836f6e4ee2a8ccfec',1,'ReloadStep']]],
+  ['removecallbacks_4',['RemoveCallbacks',['../d4/de4/struct_input_system___actions_1_1_player_actions.html#aa05e9dcee22245c5c70747415e644400',1,'InputSystem_Actions.PlayerActions.RemoveCallbacks()'],['../db/d80/struct_input_system___actions_1_1_u_i_actions.html#ab9b01702cb63557009b54e8cd1f4ad69',1,'InputSystem_Actions.UIActions.RemoveCallbacks()']]],
+  ['removemana_5',['RemoveMana',['../d4/d4d/class_character_service.html#a061cdf8a59dd4539b201dd235391241c',1,'CharacterService.RemoveMana()'],['../db/dd8/interface_i_character_service.html#a68fa9406ba9704fd114361d7f9611ec9',1,'ICharacterService.RemoveMana()']]],
+  ['removepoints_6',['removePoints',['../de/df6/interface_i_score_service.html#a230856beb65e6d1c973943f4af13ff43',1,'IScoreService.removePoints()'],['../d1/d4d/class_score_service.html#ae8ca2c925966697744c23249ac667185',1,'ScoreService.removePoints()']]],
+  ['removespell_7',['removeSpell',['../d4/d4d/class_character_service.html#a9fa7eae9201d88bcc5a9d0813e5c17ac',1,'CharacterService.removeSpell(SpellBase spellToRemove)'],['../d4/d4d/class_character_service.html#a33722927a926fd38975ab885a8b121e9',1,'CharacterService.removeSpell(int spellToRemove)'],['../d4/d4d/class_character_service.html#a15c5f227a0ec0512fdfc27a635db4759',1,'CharacterService.removeSpell(string spellToRemove)'],['../db/dd8/interface_i_character_service.html#ada4181ed909eecb713446cb13f8b714b',1,'ICharacterService.removeSpell(SpellBase spellToRemove)'],['../db/dd8/interface_i_character_service.html#a2c7144d4545095be2d85131799f133a7',1,'ICharacterService.removeSpell(int spellToRemove)'],['../db/dd8/interface_i_character_service.html#a696eada8fe4fe888e124603f35cc22b5',1,'ICharacterService.removeSpell(string spellToRemove)']]],
+  ['reopenpause_8',['ReOpenPause',['../df/d79/class_setting_controller.html#a4f25721144abe193c9bda0f7b5b543df',1,'SettingController']]],
+  ['resetcast_9',['ResetCast',['../d2/d63/class_spell_base.html#a031e23abbdaa0bd8cada735c288adc4b',1,'SpellBase']]],
+  ['resetcharacter_10',['ResetCharacter',['../d4/d4d/class_character_service.html#a9437ff427b2ab36a056ab92f8a94f245',1,'CharacterService.ResetCharacter()'],['../db/dd8/interface_i_character_service.html#a1ce6efcae73ab3dbcb498288d08c6ea3',1,'ICharacterService.ResetCharacter()']]],
+  ['resetscore_11',['resetScore',['../de/df6/interface_i_score_service.html#a71a905c2c99d627bb26cf3f7fe3adc65',1,'IScoreService.resetScore()'],['../d1/d4d/class_score_service.html#a33ec388b94146a4ef618e6f658994f69',1,'ScoreService.resetScore()']]],
+  ['resetspellshot_12',['ResetSpellShot',['../d2/d63/class_spell_base.html#a169d62901ab9eee473d1eb4af2869a88',1,'SpellBase']]],
+  ['restartlevel_13',['RestartLevel',['../db/de1/class_pause_panel.html#a11e7b23b740fab15ae790ddc137ee966',1,'PausePanel']]],
+  ['resume_14',['Resume',['../db/de1/class_pause_panel.html#a1901227fd9c75681010be5856d2e9312',1,'PausePanel']]],
+  ['returnball_15',['ReturnBall',['../d3/d27/interface_i_spell_service.html#adb27ac7e8769421189c2a6ad1ba63e65',1,'ISpellService.ReturnBall()'],['../d1/d2d/class_spell_service.html#a867633e59d7a19d3d043b5e0ca34c077',1,'SpellService.ReturnBall()']]],
+  ['returnray_16',['ReturnRay',['../d3/d27/interface_i_spell_service.html#ac19ab08202978acf4d903ccd48df637e',1,'ISpellService.ReturnRay()'],['../d1/d2d/class_spell_service.html#ae12e4d44e98ab35f87de40774db7d08b',1,'SpellService.ReturnRay()']]]
+];

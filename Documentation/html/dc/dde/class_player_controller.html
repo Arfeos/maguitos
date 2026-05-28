@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exorcia: Referencia de la clase PlayerController</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../codefolding.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo_transparente.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Exorcia<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('../../',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/dde/class_player_controller.html','../../','d6/d63/class_player_controller-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase PlayerController</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento, rotación de cámara, salto, agacharse, animaciones, sonidos, pausa, cambio de hechizos y daño recibido. Se comunica con múltiples servicios como ICharacterService, IEventService, IAudioService, IPauseService y IProfileService. También utiliza PlayerInputManager para gestionar las entradas del jugador.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de PlayerController</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc2/class_player_controller__inherit__graph.png" border="0" usemap="#a_player_controller_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_player_controller_inherit__map" id="a_player_controller_inherit__map">
+<area shape="rect" title="Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento,..." alt="" coords="61,80,176,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" title=" " alt="" coords="82,42,111,79,106,80,79,47"/>
+<area shape="rect" title=" " alt="" coords="140,5,211,32"/>
+<area shape="poly" title=" " alt="" coords="159,43,130,82,126,78,154,45"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración de PlayerController:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/de2/class_player_controller__coll__graph.png" border="0" usemap="#a_player_controller_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_player_controller_coll__map" id="a_player_controller_coll__map">
+<area shape="rect" title="Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento,..." alt="" coords="61,80,176,107"/>
+<area shape="rect" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" title=" " alt="" coords="82,42,111,79,106,80,79,47"/>
+<area shape="rect" title=" " alt="" coords="140,5,211,32"/>
+<area shape="poly" title=" " alt="" coords="159,43,130,82,126,78,154,45"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ae2a1af6ba9497d5488c743ae7133df53" id="r_ae2a1af6ba9497d5488c743ae7133df53"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae2a1af6ba9497d5488c743ae7133df53">handleReload</a> ()</td></tr>
+<tr class="memdesc:ae2a1af6ba9497d5488c743ae7133df53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detecta la entrada de recarga mediante PlayerInputManager y publica un evento ReloadEvent mediante IEventService.  <br /></td></tr>
+<tr class="memitem:a883e6fcd1fa7cb0d51afe20dead73b38" id="r_a883e6fcd1fa7cb0d51afe20dead73b38"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a883e6fcd1fa7cb0d51afe20dead73b38">handleChangeWeapon</a> ()</td></tr>
+<tr class="memdesc:a883e6fcd1fa7cb0d51afe20dead73b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detecta el cambio de hechizo mediante PlayerInputManager y publica eventos SpellChangeEvent mediante IEventService.  <br /></td></tr>
+<tr class="memitem:a887f3a381c4386cd7b849b1c25bdf724" id="r_a887f3a381c4386cd7b849b1c25bdf724"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a887f3a381c4386cd7b849b1c25bdf724">Hit</a> (float damage)</td></tr>
+<tr class="memdesc:a887f3a381c4386cd7b849b1c25bdf724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementación de la interfaz IHittable. Aplica daño al personaje utilizando ICharacterService.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Componente de Unity encargado de gestionar el control completo del jugador. Controla el movimiento, rotación de cámara, salto, agacharse, animaciones, sonidos, pausa, cambio de hechizos y daño recibido. Se comunica con múltiples servicios como ICharacterService, IEventService, IAudioService, IPauseService y IProfileService. También utiliza PlayerInputManager para gestionar las entradas del jugador. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/d59/_player_controller_8cs_source.html#l00007">7</a> del archivo <a class="el" href="../../d3/d59/_player_controller_8cs_source.html">PlayerController.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a883e6fcd1fa7cb0d51afe20dead73b38" name="a883e6fcd1fa7cb0d51afe20dead73b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a883e6fcd1fa7cb0d51afe20dead73b38">&#9670;&#160;</a></span>handleChangeWeapon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerController.handleChangeWeapon </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Detecta el cambio de hechizo mediante PlayerInputManager y publica eventos SpellChangeEvent mediante IEventService. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/d59/_player_controller_8cs_source.html#l00215">215</a> del archivo <a class="el" href="../../d3/d59/_player_controller_8cs_source.html">PlayerController.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae2a1af6ba9497d5488c743ae7133df53" name="ae2a1af6ba9497d5488c743ae7133df53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2a1af6ba9497d5488c743ae7133df53">&#9670;&#160;</a></span>handleReload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerController.handleReload </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Detecta la entrada de recarga mediante PlayerInputManager y publica un evento ReloadEvent mediante IEventService. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/d59/_player_controller_8cs_source.html#l00204">204</a> del archivo <a class="el" href="../../d3/d59/_player_controller_8cs_source.html">PlayerController.cs</a>.</p>
+
+</div>
+</div>
+<a id="a887f3a381c4386cd7b849b1c25bdf724" name="a887f3a381c4386cd7b849b1c25bdf724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a887f3a381c4386cd7b849b1c25bdf724">&#9670;&#160;</a></span>Hit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerController.Hit </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>damage</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementación de la interfaz IHittable. Aplica daño al personaje utilizando ICharacterService. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">damage</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/d59/_player_controller_8cs_source.html#l00270">270</a> del archivo <a class="el" href="../../d3/d59/_player_controller_8cs_source.html">PlayerController.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>Scripts/Player/<a class="el" href="../../d3/d59/_player_controller_8cs_source.html">PlayerController.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dc/dde/class_player_controller.html">PlayerController</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

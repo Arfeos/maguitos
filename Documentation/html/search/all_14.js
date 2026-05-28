@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['tagjugador_0',['tagJugador',['../da/da2/classball_controller.html#aec325a1815b94cbb533ee4381c041b8a',1,'ballController']]],
+  ['takedamage_1',['TakeDamage',['../d4/d4d/class_character_service.html#af66efc05a12ac52aae7d2a276b83b794',1,'CharacterService.TakeDamage()'],['../db/dd8/interface_i_character_service.html#a342f13bc8b83720f0236c1ef2eb19374',1,'ICharacterService.TakeDamage()']]],
+  ['takedamagesound_2',['TakeDamageSound',['../d8/d52/class_slime_base.html#a63786eedf737d80c1726d9a1dabec029',1,'SlimeBase']]],
+  ['takelanternstep_3',['TakeLanternStep',['../dc/db4/class_take_lantern_step.html',1,'TakeLanternStep'],['../dc/db4/class_take_lantern_step.html#a603fa0d807e01be9f27c1872668df538',1,'TakeLanternStep.TakeLanternStep()']]],
+  ['takelanternstep_2ecs_4',['TakeLanternStep.cs',['../de/d1b/_take_lantern_step_8cs.html',1,'']]],
+  ['takeorbsstep_5',['TakeOrbsStep',['../d2/d5d/class_take_orbs_step.html',1,'TakeOrbsStep'],['../d2/d5d/class_take_orbs_step.html#a9a32255ec7c2ead2e107367dca34a799',1,'TakeOrbsStep.TakeOrbsStep()']]],
+  ['takeorbsstep_2ecs_6',['TakeOrbsStep.cs',['../da/d87/_take_orbs_step_8cs.html',1,'']]],
+  ['targetcontroller_7',['TargetController',['../d4/daa/class_target_controller.html',1,'']]],
+  ['targetcontroller_2ecs_8',['TargetController.cs',['../d1/db9/_target_controller_8cs.html',1,'']]],
+  ['teleporter_5fcontroller_9',['teleporter_controller',['../d3/d85/classteleporter__controller.html',1,'']]],
+  ['teleporter_5fcontroller_2ecs_10',['teleporter_controller.cs',['../d5/d03/teleporter__controller_8cs.html',1,'']]],
+  ['togglepause_11',['TogglePause',['../d8/dac/interface_i_pause_service.html#a8deff233435e0bf6a8d2fde0558d131d',1,'IPauseService.TogglePause()'],['../d4/da2/class_pause_service.html#adde550d219723c811e499d600d284096',1,'PauseService.TogglePause()']]],
+  ['toggleportal_12',['TogglePortal',['../d1/d3e/class_portal___controller.html#a2dcc818c38c7790e74ad292997b81d20',1,'Portal_Controller']]],
+  ['togglesettings_13',['ToggleSettings',['../d8/dac/interface_i_pause_service.html#a9dc9fd50defd0caa50a1a7d4360e7658',1,'IPauseService.ToggleSettings()'],['../d4/da2/class_pause_service.html#aacfbfe727190ea5c917b3889dc79173a',1,'PauseService.ToggleSettings()']]],
+  ['trackeddeviceorientation_14',['TrackedDeviceOrientation',['../db/d80/struct_input_system___actions_1_1_u_i_actions.html#a23d94820d4bb8edcd0688b5c946be731',1,'InputSystem_Actions::UIActions']]],
+  ['trackeddeviceposition_15',['TrackedDevicePosition',['../db/d80/struct_input_system___actions_1_1_u_i_actions.html#a931870fbe88fc3e31853ea16d7908ccf',1,'InputSystem_Actions::UIActions']]],
+  ['trygetactions_16',['TryGetActions',['../da/d90/class_player_input_manager.html#a28025108e8a75877577da76b94521635',1,'PlayerInputManager']]],
+  ['tutorial_17',['Tutorial',['../dd/d41/_scene_names_8cs.html#acce8ebf49aa91d2b542e060fc50fc270a368fe771261fcb18f7988833c9294a20',1,'SceneNames.cs']]],
+  ['tutorialgameevent_18',['TutorialGameEvent',['../da/d69/class_tutorial_game_event.html',1,'']]],
+  ['tutorialgameevent_2ecs_19',['TutorialGameEvent.cs',['../d8/d36/_tutorial_game_event_8cs.html',1,'']]],
+  ['tutorialinicializer_20',['TutorialInicializer',['../d8/db2/class_tutorial_inicializer.html',1,'']]],
+  ['tutorialinicializer_2ecs_21',['TutorialInicializer.cs',['../dd/dd5/_tutorial_inicializer_8cs.html',1,'']]]
+];
